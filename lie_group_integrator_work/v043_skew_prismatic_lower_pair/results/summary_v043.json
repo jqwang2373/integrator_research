@@ -1,0 +1,200 @@
+{
+  "experiment": {
+    "cases": {
+      "skew_prismatic_sharp": {
+        "dense_validation_pattern_build_sec": 0.04824819299392402,
+        "jvp_pruned_pattern_build_sec": 0.08864212600747123,
+        "patterns": {
+          "dense_validation": {
+            "colors": 18,
+            "density": 0.08695652173913043,
+            "nnz": 414
+          },
+          "generated_block_jvp_pruned": {
+            "colors": 18,
+            "density": 0.08695652173913043,
+            "nnz": 414
+          },
+          "generated_block_superset": {
+            "colors": 24,
+            "density": 0.21550094517958412,
+            "nnz": 1026
+          }
+        },
+        "relations": {
+          "block_vs_dense": {
+            "candidate_colors": 24,
+            "candidate_nnz": 1026,
+            "extra_vs_reference": 612,
+            "missing_vs_reference": 0,
+            "reference_colors": 18,
+            "reference_nnz": 414
+          },
+          "pruned_vs_dense": {
+            "candidate_colors": 18,
+            "candidate_nnz": 414,
+            "extra_vs_reference": 0,
+            "missing_vs_reference": 0,
+            "reference_colors": 18,
+            "reference_nnz": 414
+          }
+        },
+        "runs": {
+          "dense_jacfwd_csr": {
+            "avg_jacobian_eval_sec": 0.0013759004029755791,
+            "avg_linear_solve_sec": 0.0002582742638575534,
+            "max_endpoint_constraint_norm": 3.4982096358720017e-16,
+            "max_endpoint_velocity_constraint_norm": 3.3949597195211757e-17,
+            "max_linear_residual_norm": 3.134838102053391e-15,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_orientation_acceleration_constraint_norm": 4.782821326479391e-44,
+            "max_stage_position_acceleration_constraint_norm": 7.108895957933346e-16,
+            "position_error_vs_dense": 0.0,
+            "runtime_sec": 0.058019176009111106,
+            "status": "ok",
+            "steps": 4,
+            "total_jacobian_assemblies": 15,
+            "total_jacobian_eval_sec": 0.020638506044633687,
+            "total_linear_solve_sec": 0.003874113957863301,
+            "total_linear_solves": 15,
+            "total_newton_iterations": 19,
+            "total_residual_eval_sec": 0.012738001940306276,
+            "velocity_error_vs_dense": 0.0
+          },
+          "generated_block_jvp_pruned": {
+            "avg_jacobian_eval_sec": 0.0028954228037036955,
+            "avg_linear_solve_sec": 0.00020841240184381603,
+            "max_endpoint_constraint_norm": 3.4982096358720017e-16,
+            "max_endpoint_velocity_constraint_norm": 3.3949597195211757e-17,
+            "max_linear_residual_norm": 3.134838102053391e-15,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_orientation_acceleration_constraint_norm": 4.782821326479391e-44,
+            "max_stage_position_acceleration_constraint_norm": 7.108895957933346e-16,
+            "position_error_vs_dense": 0.0,
+            "runtime_sec": 0.08568934502545744,
+            "status": "ok",
+            "steps": 4,
+            "total_jacobian_assemblies": 15,
+            "total_jacobian_eval_sec": 0.04343134205555543,
+            "total_linear_solve_sec": 0.0031261860276572406,
+            "total_linear_solves": 15,
+            "total_newton_iterations": 19,
+            "total_residual_eval_sec": 0.016414358979091048,
+            "velocity_error_vs_dense": 0.0
+          }
+        },
+        "stribeck_velocity": 0.05
+      },
+      "skew_prismatic_smooth": {
+        "dense_validation_pattern_build_sec": 0.05456600495381281,
+        "jvp_pruned_pattern_build_sec": 4.7122167170164175,
+        "patterns": {
+          "dense_validation": {
+            "colors": 18,
+            "density": 0.08695652173913043,
+            "nnz": 414
+          },
+          "generated_block_jvp_pruned": {
+            "colors": 18,
+            "density": 0.08695652173913043,
+            "nnz": 414
+          },
+          "generated_block_superset": {
+            "colors": 24,
+            "density": 0.21550094517958412,
+            "nnz": 1026
+          }
+        },
+        "relations": {
+          "block_vs_dense": {
+            "candidate_colors": 24,
+            "candidate_nnz": 1026,
+            "extra_vs_reference": 612,
+            "missing_vs_reference": 0,
+            "reference_colors": 18,
+            "reference_nnz": 414
+          },
+          "pruned_vs_dense": {
+            "candidate_colors": 18,
+            "candidate_nnz": 414,
+            "extra_vs_reference": 0,
+            "missing_vs_reference": 0,
+            "reference_colors": 18,
+            "reference_nnz": 414
+          }
+        },
+        "runs": {
+          "dense_jacfwd_csr": {
+            "avg_jacobian_eval_sec": 0.0014358103459623333,
+            "avg_linear_solve_sec": 0.00023370715886509666,
+            "max_endpoint_constraint_norm": 3.509203307630268e-16,
+            "max_endpoint_velocity_constraint_norm": 2.3273757686693185e-17,
+            "max_linear_residual_norm": 3.2465312081686765e-15,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_orientation_acceleration_constraint_norm": 4.986930932541551e-37,
+            "max_stage_position_acceleration_constraint_norm": 6.280369834735101e-16,
+            "position_error_vs_dense": 0.0,
+            "runtime_sec": 0.05357470002491027,
+            "status": "ok",
+            "steps": 4,
+            "total_jacobian_assemblies": 12,
+            "total_jacobian_eval_sec": 0.017229724151547998,
+            "total_linear_solve_sec": 0.00280448590638116,
+            "total_linear_solves": 12,
+            "total_newton_iterations": 16,
+            "total_residual_eval_sec": 0.012545154080726206,
+            "velocity_error_vs_dense": 0.0
+          },
+          "generated_block_jvp_pruned": {
+            "avg_jacobian_eval_sec": 0.003479363746009767,
+            "avg_linear_solve_sec": 0.0003392954240553081,
+            "max_endpoint_constraint_norm": 3.509203307630268e-16,
+            "max_endpoint_velocity_constraint_norm": 2.3273757686693185e-17,
+            "max_linear_residual_norm": 3.2465312081686765e-15,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_orientation_acceleration_constraint_norm": 4.9869309325420644e-37,
+            "max_stage_position_acceleration_constraint_norm": 6.280369834735101e-16,
+            "position_error_vs_dense": 0.0,
+            "runtime_sec": 0.09169193304842338,
+            "status": "ok",
+            "steps": 4,
+            "total_jacobian_assemblies": 12,
+            "total_jacobian_eval_sec": 0.041752364952117205,
+            "total_linear_solve_sec": 0.004071545088663697,
+            "total_linear_solves": 12,
+            "total_newton_iterations": 16,
+            "total_residual_eval_sec": 0.019709295069333166,
+            "velocity_error_vs_dense": 0.0
+          }
+        },
+        "stribeck_velocity": 0.5
+      }
+    },
+    "dimension": 69,
+    "h": 0.02,
+    "stage_size": 23,
+    "t_final": 0.08
+  },
+  "jax": "0.10.1",
+  "model": {
+    "cases": {
+      "skew_prismatic_sharp": 0.05,
+      "skew_prismatic_smooth": 0.5
+    },
+    "dimension": 69,
+    "h": 0.02,
+    "method": "single_body_skew_prismatic_gauss6_fullva",
+    "stage_size": 23,
+    "t_final": 0.08
+  },
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 26.026955377019476,
+  "scipy": "1.17.1",
+  "source_versions": [
+    "v042_skew_axis_triple_revolute",
+    "v040_generated_block_triple_pattern"
+  ],
+  "version": "v043_skew_prismatic_lower_pair"
+}

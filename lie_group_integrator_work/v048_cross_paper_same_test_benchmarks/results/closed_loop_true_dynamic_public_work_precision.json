@@ -1,0 +1,42 @@
+{
+  "accepted_external_dynamic_order_examples": [],
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "This artifact adds the missing same-window public work/precision rows for the two closed-loop models at T=0.1 and h=0.1|0.05|0.025. It is not an external superiority claim because the local and public error columns still use different reference families.",
+  "local_raw_row_count": 6,
+  "local_true_dynamic_order_available_count": 2,
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "ok_row_count": 24,
+  "policy": "closed_loop_true_dynamic_newton_same_window_public_work_precision",
+  "public_forms": [
+    "rA",
+    "rp",
+    "reps"
+  ],
+  "public_raw_row_count": 18,
+  "public_work_precision_available_count": 2,
+  "public_work_precision_available_examples": [
+    "four_link",
+    "slider_crank"
+  ],
+  "public_work_precision_missing_count": 0,
+  "reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+  "reference_h": 0.0125,
+  "row_count": 24,
+  "schema": "closed-loop-true-dynamic-public-work-precision-v1",
+  "status": "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "strict_common_reference_error_columns": false,
+  "strict_public_policy_1e-4_required": false,
+  "summary_row_count": 8,
+  "t_end": 0.1
+}

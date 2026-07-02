@@ -1,0 +1,191 @@
+{
+  "schema": "v047-order-acceptance-gate-v1",
+  "status": "accepted_with_current_scope_external_dynamic_order_open",
+  "accepted_method": {
+    "name": "Gauss6/FullVA",
+    "method_order_claim": 6,
+    "local_defect_order": 7,
+    "global_error_order": 6,
+    "source": "v047_cylindrical_chain_pipeline/results/summary_v047.json"
+  },
+  "comparator": {
+    "name": "local_paper_style_m3_gauss_lobatto_tfe_formula_target",
+    "expected_order": 5,
+    "formula": "2m-1 with m=3",
+    "role": "paper_facing_comparator_not_source_paper_residual_reproduction"
+  },
+  "proof_contract": {
+    "regular_smooth_fullva_lift_required": true,
+    "stage_jacobian_uniformly_invertible_required": true,
+    "implemented_residual_defect_required": "O(h^7)",
+    "newton_tolerance_policy": "eta_h^tube <= c_eta h^7 for asymptotic proof",
+    "dynamic_symbolic_oracle_complete": false
+  },
+  "smooth_cylindrical_chain": {
+    "h_values": [
+      0.04,
+      0.02,
+      0.01
+    ],
+    "reference_h": 0.005,
+    "position_order": 7.161,
+    "velocity_order": 7.066,
+    "order_status": "accepted_supporting_evidence"
+  },
+  "observed_order_interpretation": {
+    "smooth_slopes": "7.161/7.066",
+    "method_order_claim": 6,
+    "not_seventh_order_claim": true,
+    "interpretation": "post-theorem finite-window consistency evidence for conditional sixth-order smooth behavior",
+    "candidate_causes": [
+      "small_leading_sixth_order_error_coefficient",
+      "short_smooth_projected_endpoint_window",
+      "reference_nonlinear_tolerance_and_floating_point_floor_near_finest_step"
+    ],
+    "requires_for_order_above_six": [
+      "wider_asymptotic_sweep",
+      "compact_tube_eta_h_O_h7_nonlinear_tolerance"
+    ]
+  },
+  "examples": {
+    "single_pendulum": {
+      "role": "accepted_dynamic_method_order",
+      "method_scope": "absolute_coordinate_driven_fullva_residual",
+      "min_observed_order": 6.024,
+      "order_status": "accepted_order",
+      "source_path": "asme_gate.method_runs.single_pendulum_driven_absolute_fullva"
+    },
+    "double_pendulum": {
+      "role": "accepted_dynamic_method_order",
+      "method_scope": "double_revolute_gauss6_fullva_local_self_reference",
+      "min_observed_order": 6.089,
+      "order_status": "accepted_order",
+      "source_path": "asme_gate.method_runs.double_pendulum_reference_policy"
+    },
+    "four_link": {
+      "role": "accepted_mechanism_coverage_not_dynamic_order",
+      "closed_loop_status": "accepted_kinematic_fullva",
+      "reaction_status": "accepted_reaction_dynamics",
+      "max_dynamics_residual_norm": 1.3382220299057966e-13,
+      "order_status": "not_accepted_dynamic_order",
+      "source_path": "asme_gate.method_runs.closed_loop_reaction_dynamics.models.four_link"
+    },
+    "slider_crank": {
+      "role": "accepted_mechanism_coverage_not_dynamic_order",
+      "closed_loop_status": "accepted_kinematic_fullva",
+      "reaction_status": "accepted_reaction_dynamics",
+      "max_dynamics_residual_norm": 6.492405015887445e-15,
+      "order_status": "not_accepted_dynamic_order",
+      "source_path": "asme_gate.method_runs.closed_loop_reaction_dynamics.models.slider_crank"
+    }
+  },
+  "accepted_example_set": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "accepted_dynamic_order_examples": [
+    "single_pendulum",
+    "double_pendulum"
+  ],
+  "coverage_only_examples": [
+    "four_link",
+    "slider_crank"
+  ],
+  "v048_external_dynamic_order_probe": {
+    "source": "v048_cross_paper_same_test_benchmarks/results/summary_v048.json",
+    "schema": "closed-loop-coarse-dynamic-order-probe-v1",
+    "step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "reference_h": 0.0125,
+    "ok_row_count": 11,
+    "row_count": 12,
+    "failed_row_count": 1,
+    "local_velocity_evidence_rows": 2,
+    "local_acceleration_evidence_rows": 2,
+    "local_position_floor_rows": 2,
+    "accepted_dynamic_order_count": 0,
+    "external_superiority_claim": false,
+    "same_test_campaign_status": "not_run"
+  },
+  "local_closed_loop_dynamic_order_candidates": {
+    "artifact": "v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order.json",
+    "schema": "closed-loop-true-dynamic-newton-coarse-order-v1",
+    "status": "coarse_true_dynamic_order_candidates_available_not_external_superiority",
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "reference_h": 0.0125,
+    "row_count": 6,
+    "ok_row_count": 6,
+    "stage_predictor_policy": "start_extrapolated_no_stage_oracle",
+    "stage_oracle_used": false,
+    "convergence_sweep_run": true,
+    "accepted_local_dynamic_order_candidate_count": 2,
+    "four_link_primary_orders": [
+      5.955,
+      5.955,
+      6.085,
+      5.971
+    ],
+    "slider_crank_primary_orders": [
+      6.164,
+      6.159,
+      7.341,
+      6.426
+    ],
+    "endpoint_acceleration_order_diagnostic_only": true,
+    "finite_window_diagnostics_only": true,
+    "does_not_instantiate_residual_to_error_implication": true,
+    "does_not_close_p7": true,
+    "does_not_promote_four_link_or_slider_crank_to_accepted_dynamic_order": true,
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "external_superiority_claim": false
+  },
+  "residual_to_error_proof_route": {
+    "source": "v048_cross_paper_same_test_benchmarks/results/closed_loop_residual_to_error_theorem_obligations.json",
+    "schema": "closed-loop-residual-to-error-theorem-obligations-v1",
+    "obligation_count": 7,
+    "blocking_obligation_count": 7,
+    "accepted_residual_to_error_theorem": false,
+    "accepted_dynamic_order_count": 0,
+    "required_obligations": [
+      "dynamic_residual_identity",
+      "residual_consistency_rate_O_h7",
+      "closed_loop_dae_stability_or_inf_sup_bound",
+      "calibrated_non_floor_limited_estimator",
+      "reference_floor_exclusion",
+      "coarse_first_accepted_campaign",
+      "manuscript_theorem_and_proof"
+    ]
+  },
+  "execution_policy": {
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "strict_public_policy_1e-4": "opt_in_only",
+    "default_1e-4_required": false,
+    "reason": "1e-4 rows are expensive and only reproduce strict public policies; they are not default evidence for the current order gate."
+  },
+  "allowed_claims": [
+    "Gauss6/FullVA has method-order claim 6 under the stated smooth FullVA proof contract.",
+    "The local paper-style m=3 Gauss-Lobatto TFE comparator has expected order 5.",
+    "The current four-example ASME mechanism coverage gate is accepted within the stated method-side scope."
+  ],
+  "forbidden_claims": [
+    "external_same_test_superiority_accepted",
+    "complete_source_paper_residual_reproduction_accepted",
+    "independent_full_tfe_stage_replacement_accepted",
+    "four_link_slider_crank_external_dynamic_order_accepted",
+    "default_1e-4_required_for_current_order_gate"
+  ]
+}

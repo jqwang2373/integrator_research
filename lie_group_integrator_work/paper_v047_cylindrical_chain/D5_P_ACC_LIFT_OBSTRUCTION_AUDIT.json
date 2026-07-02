@@ -1,0 +1,130 @@
+{
+  "acceleration_lift_rate_proved": false,
+  "claim_boundary": {
+    "allowed_now": "PA2 has a recorded obstruction: the velocity-collocation equations alone lose one power of h when solved for acceleration differences.",
+    "close_condition": "Close PA2 by proving an unweighted O(h^7) acceleration lift from a non-dynamic inverse estimate, by proving O(h^8) velocity-stage and velocity-row perturbations before applying A_G^{-1}/h, or by carrying P_acc as an explicit regularity assumption in the theorem.",
+    "forbidden_now": [
+      "P_acc primitive closure",
+      "PA2 closure",
+      "acceleration lift O(h^7) proved",
+      "Taylor term bounds certified from P_acc",
+      "primitive/Taylor PC2 route closure",
+      "unconditional sixth-order theorem"
+    ]
+  },
+  "current_recorded_inputs_imply_only_unweighted_acceleration_rate": "O(h^6)",
+  "gauss_matrix": {
+    "condition_2": 10.443612677074949,
+    "determinant": 0.008333333333333335,
+    "inverse_2_norm": 15.75551180759017,
+    "inverse_inf_norm": 24.327955589886443,
+    "invertible": true,
+    "stage_count": 3
+  },
+  "implementation_row_scaling_evidence": {
+    "features": {
+      "angular_velocity_collocation_uses_h_times_acceleration": true,
+      "angular_velocity_collocation_uses_relative_spin_acceleration": true,
+      "dynamic_rotational_rows_use_unweighted_angular_acceleration": true,
+      "dynamic_translational_rows_use_unweighted_acceleration": true,
+      "runtime_angular_velocity_row_layout_present": true,
+      "runtime_lower_pair_acceleration_constraint_layout_present": true,
+      "runtime_newton_euler_row_layout_present": true,
+      "runtime_stage_row_assembly_order_present": true,
+      "runtime_velocity_row_layout_present": true,
+      "translational_velocity_collocation_uses_h_times_acceleration": true,
+      "translational_velocity_collocation_uses_relative_acceleration": true
+    },
+    "lower_pair_boundary": "The lower-pair acceleration constraints are non-dynamic and unweighted, but they constrain only the lower-pair constraint directions; they do not provide a full unweighted inverse for all translational and angular body accelerations required by the 36 Newton-Euler Taylor terms.",
+    "row_layout_conclusion": "The accepted runtime residual has 36 Newton-Euler rows per three-stage step, with each stage placing those rows at offsets 24:36. The stage velocity-collocation families contain acceleration only through h*A_G, while the Newton-Euler dynamic rows contain masses[body]*a and J_b*alpha without an extra h factor.",
+    "run_v047_path": "../v047_cylindrical_chain_pipeline/run_v047.py",
+    "strict_consequence": "The implementation binding preserves the PA2 close condition: a strict Taylor proof still needs a uniform unweighted delta A=O(h^7) estimate, an O(h^8) pre-inversion velocity-collocation estimate, a genuine full non-dynamic acceleration inverse, or an explicit P_acceleration_lift theorem assumption.",
+    "supports_obstruction_not_closure": true,
+    "tokens": {
+      "angular_velocity_collocation_uses_h_times_acceleration": "spin_acc_coll_axis = kin[\"rel_spin_vel\"][joint] - initial_rel_spin_vel[joint] - h * sum(",
+      "angular_velocity_collocation_uses_relative_spin_acceleration": "stage_kin[sj][\"rel_spin_acc\"][joint]",
+      "dynamic_rotational_rows_use_unweighted_angular_acceleration": "Js[body] @ st[\"alpha\"][body]",
+      "dynamic_translational_rows_use_unweighted_acceleration": "trans = masses[body] * st[\"a\"][body]",
+      "runtime_angular_velocity_row_layout_present": "(\"angular_velocity_weak_defect\", 18, 6)",
+      "runtime_lower_pair_acceleration_constraint_layout_present": "(\"lower_pair_index3_weak_constraints\", 36, 8)",
+      "runtime_newton_euler_row_layout_present": "(\"newton_euler_weak_balance\", 24, 12)",
+      "runtime_stage_row_assembly_order_present": "out.extend([jnp.concatenate(pvel), jnp.concatenate(u_block), jnp.concatenate(pacc), jnp.concatenate(w_block), jnp.concatenate(dyn), jnp.concatenate(constraints)])",
+      "runtime_velocity_row_layout_present": "(\"translational_velocity_weak_defect\", 12, 6)",
+      "translational_velocity_collocation_uses_h_times_acceleration": "v_coll_axis = (kin[\"rel_vel\"][joint] - initial_rel_vel[joint] - h * sum(",
+      "translational_velocity_collocation_uses_relative_acceleration": "stage_kin[sj][\"rel_acc\"][joint]"
+    },
+    "usable_as_unweighted_acceleration_lift_proof": false
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-acc-pa2-obstruction}",
+      "velocity-collocation rows alone are insufficient",
+      "\\delta A=h^{-1}(A_G^{-1}\\otimes I)",
+      "PA2 therefore remains open"
+    ]
+  },
+  "pa2_closed": false,
+  "pa2_obstruction_recorded": true,
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_acceleration_lift",
+  "proof_gap_closed": false,
+  "rate_algebra": {
+    "acceleration_difference": "delta_A = h^{-1} (A_G^{-1} \\otimes I) (delta_V - rho_V)",
+    "if_delta_v_and_rho_v_are_O_h7": "delta_A is bounded only as O(h^6)",
+    "needed_for_unweighted_delta_A_O_h7": [
+      "delta_V=O(h^8) and rho_V=O(h^8) in the unweighted stage norm",
+      "or an independent non-dynamic stage-map inverse that controls acceleration directly",
+      "or an explicit theorem assumption P_acceleration_lift=O(h^7)"
+    ],
+    "velocity_collocation_difference": "delta_V - h (A_G \\otimes I) delta_A = rho_V",
+    "weighted_h_delta_A_O_h7_is_not_enough_for_current_D5_budget": true
+  },
+  "read_only": true,
+  "reference_paper_scaling_context": {
+    "features": {
+      "acceleration_from_velocity_relation_present": true,
+      "differential_residuals_present": true,
+      "first_order_derivative_scaling_present": true,
+      "newton_correction_derivative_relation_present": true,
+      "tfe_section_present": true,
+      "velocity_from_position_relation_present": true
+    },
+    "interpretation": "The source-paper TFE construction expresses derivative variables through position/velocity variables and step-size-dependent derivative operators. Its own first-order example records velocity and acceleration corrections with inverse powers of h. Therefore the source paper does not supply the missing unweighted O(h^7) acceleration-lift estimate for the accepted Gauss/FullVA residual.",
+    "reference_text": "../../s11044-026-10153-w.txt",
+    "section": "source paper Section 3, higher-order time integration in absolute coordinates using TFE",
+    "strict_consequence": "A submission-standard Taylor proof must still prove unweighted delta A=O(h^7), prove O(h^8) velocity-stage and velocity-row errors before the 1/h inversion, provide a direct non-dynamic acceleration inverse, or carry P_acceleration_lift=O(h^7) as an explicit theorem assumption.",
+    "supports_obstruction_not_closure": true,
+    "tokens": {
+      "acceleration_from_velocity_relation_present": "z\u0304 = x\u0304\u00a8 = \ud835\udf36\u00af y\u0304",
+      "differential_residuals_present": "res1 (t) = x\u0307(t) \u2212 y(t),       res2 (t) = y\u0307(t) \u2212 z(t)",
+      "first_order_derivative_scaling_present": "\u03b4v = h1 \u03b4u and \u03b4 v\u0307 = h12 \u03b4u",
+      "newton_correction_derivative_relation_present": "\u03b4 x\u0304\u02d9 = \ud835\udf36\u00af \u03b4 x\u0304,   \u03b4 x\u0304\u00a8 = \ud835\udf36\u00af \u03b4 x\u0304\u02d9",
+      "tfe_section_present": "3 Higher order time integration in absolute coordinates using TFE",
+      "velocity_from_position_relation_present": "y\u0304 = x\u0304\u02d9 = \ud835\udf36\u00af x\u0304"
+    },
+    "usable_as_p_acc_proof": false,
+    "why_not": "Derivative reconstruction or weighted residual formulas can control a scaled derivative variable, but the D5 acceleration Taylor rows contain m_b delta a and J_b delta alpha without an extra h factor."
+  },
+  "run_v047_invoked": false,
+  "schema": "d5-p-acc-lift-obstruction-audit-v1",
+  "source_consistency": {
+    "certified_non_dynamic_rows": 96,
+    "dynamic_family_excluded": "newton_euler_weak_balance",
+    "kinematic_certificate_schema": "kinematic-row-defect-certificate-v1",
+    "p_acc_independence_closed": true,
+    "p_acc_independence_pa2_open": true,
+    "p_acc_independence_schema": "d5-p-acc-independence-audit-v1",
+    "p_acc_row_binding_closed": true,
+    "p_acc_row_binding_schema": "d5-p-acc-row-binding-audit-v1",
+    "p_state_closed": false,
+    "p_state_future_subproofs_closed": 3,
+    "p_state_gap_schema": "d5-p-state-lift-gap-audit-v1"
+  },
+  "status": "p_acc_pa2_obstruction_recorded_lift_open",
+  "submission_ready": false,
+  "term_bounds_proved": 0,
+  "velocity_collocation_alone_sufficient_for_O_h7_acceleration": false
+}

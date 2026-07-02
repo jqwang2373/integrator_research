@@ -1,0 +1,84 @@
+{
+  "b4_can_close_from_tfe_demotion": false,
+  "b7_can_close_from_tfe_demotion": false,
+  "brown_mcphee_source_code_equivalent_law": false,
+  "current_claim_requires_tfe_source_policy_execution": false,
+  "current_figure_scope_policy": {
+    "allowed_now": [
+      "TFE formal-order and related-work discussion",
+      "candidate same-test or formula-order diagnostics clearly labeled non-source-policy"
+    ],
+    "forbidden_now": [
+      "TFE rows in current B4/B7 source-policy work/precision figures",
+      "Gauss6/FullVA beats original TFE source-policy runs",
+      "external-superiority claim from TFE source-policy evidence"
+    ]
+  },
+  "demoted_related_work_proxy_rows_for_current_claim": 16,
+  "demotion_reasons": [
+    "brown_mcphee_source_code_equivalent_law_open",
+    "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+    "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+    "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+    "full_T10_source_grid_endpoint_policy_open",
+    "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+  ],
+  "external_superiority_claim_allowed": false,
+  "future_reintroduction_requires_runner_or_code_path_rows": 16,
+  "future_source_policy_work_required": true,
+  "gauss6_fullva_source_policy_runner_implemented": false,
+  "heavy_numerical_run_invoked": false,
+  "pendulum_dae_runner_implemented": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "runner_equivalence_closed_precondition_count": 25,
+  "runner_equivalence_open_blocker_count": 6,
+  "runner_equivalence_open_blocker_ids": [
+    "brown_mcphee_source_code_equivalent_law_open",
+    "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+    "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+    "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+    "full_T10_source_grid_endpoint_policy_open",
+    "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+  ],
+  "runner_equivalence_preflight_status": "preflight_ready_runner_equivalence_open",
+  "schema": "tfe-b4-b7-source-policy-demotion-audit-v1",
+  "source_files": [
+    "TFE_SOURCE_POLICY_ROW_AUDIT.json",
+    "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+    "TFE_SOURCE_GRID_COMPATIBILITY_AUDIT.json",
+    "TFE_SOURCE_POLICY_SPEC.json",
+    "PAPER_NUMERICAL_RESULT_MATRIX.json"
+  ],
+  "source_grid_endpoint_incompatible_rows": 4,
+  "source_grid_policy_resolved_for_full_T10": false,
+  "source_policy_example_count": 4,
+  "source_policy_method_count": 4,
+  "source_policy_row_ids": [
+    "tfe2026_Newmark_beta:single_pendulum",
+    "tfe2026_TFE_m1:single_pendulum",
+    "tfe2026_TFE_m2:single_pendulum",
+    "tfe2026_trapezoidal:single_pendulum",
+    "tfe2026_Newmark_beta:double_pendulum",
+    "tfe2026_TFE_m1:double_pendulum",
+    "tfe2026_TFE_m2:double_pendulum",
+    "tfe2026_trapezoidal:double_pendulum",
+    "tfe2026_Newmark_beta:four_link",
+    "tfe2026_TFE_m1:four_link",
+    "tfe2026_TFE_m2:four_link",
+    "tfe2026_trapezoidal:four_link",
+    "tfe2026_Newmark_beta:slider_crank",
+    "tfe2026_TFE_m1:slider_crank",
+    "tfe2026_TFE_m2:slider_crank",
+    "tfe2026_trapezoidal:slider_crank"
+  ],
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_closed_by_demotion": 0,
+  "source_policy_rows_total": 16,
+  "source_policy_runner_equivalence_open": true,
+  "source_text_defers_brown_mcphee_law_to_refs_38_39": true,
+  "source_text_endpoint_convention_resolved_for_error_sampling": false,
+  "status": "tfe_source_policy_rows_demoted_from_current_b4_b7_figures",
+  "tfe_newmark_trapezoidal_source_policy_runners_implemented": false,
+  "v048_runner_invoked": false
+}

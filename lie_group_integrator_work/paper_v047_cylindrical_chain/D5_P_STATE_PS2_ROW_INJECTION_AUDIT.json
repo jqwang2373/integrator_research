@@ -1,0 +1,82 @@
+{
+  "certifies_72_to_96_row_injection": true,
+  "certifies_dynamic_row_defect": false,
+  "certifies_full_nonlinear_mean_value_binding": false,
+  "certifies_full_nonlinear_ps2": false,
+  "certifies_induced_taylor_bounds": false,
+  "certifies_unweighted_residual_scaling": true,
+  "claim_boundary": {
+    "allowed_now": "The accepted 96-row non-dynamic residual norm dominates the 72-row kinematic residual norm with selection constant one.",
+    "close_condition": "PS2 can only be promoted after the row-injection certificate, the kinematic subblock certificate, and the Lie-chart binding are combined with a nonlinear compact-tube mean-value estimate.",
+    "forbidden_now": [
+      "full nonlinear rotational row mean-value binding",
+      "full nonlinear PS2 closure",
+      "PS3 state lift conversion",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "dimensions": {
+    "kinematic_row_dimension": 72,
+    "lower_pair_surplus_rows": 24,
+    "non_dynamic_row_dimension": 96,
+    "row_order": [
+      "translational_position_collocation_18",
+      "rotational_lie_collocation_18",
+      "translational_velocity_collocation_18",
+      "angular_velocity_collocation_18",
+      "lower_pair_fullva_24"
+    ]
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-p-state-ps2-row-injection",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps2-row-injection}",
+      "72-to-96 row injection for the weighted PS2 route",
+      "\\|\\Pi_{\\mathrm{kin}}\\|_2=1",
+      "unweighted non-dynamic residual norm dominates the kinematic residual norm",
+      "does not supply the nonlinear mean-value estimate"
+    ]
+  },
+  "operator_statement": {
+    "norm_bound": "||Pi_kin delta N_h^nd||_2 <= ||delta N_h^nd||_2",
+    "operator_norm": 1.0,
+    "selector": "Pi_kin selects the first four 18-row kinematic families from N_h^nd",
+    "weighted_ps2_use": "replace the kinematic residual norm by the full non-dynamic residual norm"
+  },
+  "p_state_ps2_row_injection_recorded": true,
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps2_inverse_or_infsup_closed": false,
+  "read_only": true,
+  "remaining_binding_gaps": [
+    "prove the nonlinear compact-tube mean-value estimate for the implemented rotational row eta_i - h sum_j A_ij J_r^{-1}(eta_j) omega_j"
+  ],
+  "row_selection_operator_2_norm": 1.0,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-row-injection-audit-v1",
+  "source_consistency": {
+    "kinematic_block_bound_certified": true,
+    "kinematic_block_full_ps2": false,
+    "kinematic_block_schema": "d5-p-state-ps2-kinematic-block-certificate-v1",
+    "lie_chart_full_mean_value_binding": false,
+    "lie_chart_schema": "d5-p-state-ps2-lie-chart-binding-audit-v1",
+    "lie_chart_so3_norm_equivalence": true,
+    "p_state_gap_closed": false,
+    "p_state_gap_schema": "d5-p-state-lift-gap-audit-v1",
+    "p_state_map_definition_closed": true,
+    "p_state_map_schema": "d5-p-state-map-definition-audit-v1",
+    "ps2_target_infsup_closed": false,
+    "ps2_target_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "ps2_target_spec_closed": true
+  },
+  "status": "ps2_row_injection_recorded_full_ps2_open",
+  "submission_ready": false
+}

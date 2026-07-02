@@ -1,0 +1,98 @@
+{
+  "accepted_dynamic_order_count": 2,
+  "convergence_sweep_run": true,
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "This is the first non-oracle local true-dynamic coarse convergence sweep for the two missing closed-loop mechanisms. It can support local order discussion if the orders pass the gate, but public baseline comparison and work/precision rows remain necessary before external superiority.",
+  "method": "Gauss6/FullVA",
+  "model_summaries": {
+    "four_link": {
+      "acc_observed_order": 0.9946688781585981,
+      "acc_pairwise_orders": [
+        0.9961107666464891,
+        0.9932269896707093
+      ],
+      "accepted_dynamic_order_candidate": true,
+      "min_primary_order": 5.954897911118808,
+      "model": "four_link",
+      "ok_row_count": 3,
+      "omega_observed_order": 5.971421238692113,
+      "omega_pairwise_orders": [
+        5.952393048903772,
+        5.990449428480467
+      ],
+      "orientation_observed_order": 5.955195227478643,
+      "orientation_pairwise_orders": [
+        5.9284406017290845,
+        5.981949853228209
+      ],
+      "pos_observed_order": 5.954897911118808,
+      "pos_pairwise_orders": [
+        5.9284650083635375,
+        5.981330813874087
+      ],
+      "row_count": 3,
+      "vel_observed_order": 6.08481873098771,
+      "vel_pairwise_orders": [
+        6.109887157774682,
+        6.059750304200757
+      ]
+    },
+    "slider_crank": {
+      "acc_observed_order": 1.0541648128408896,
+      "acc_pairwise_orders": [
+        1.06501938837506,
+        1.0433102373067216
+      ],
+      "accepted_dynamic_order_candidate": true,
+      "min_primary_order": 6.158979924383225,
+      "model": "slider_crank",
+      "ok_row_count": 3,
+      "omega_observed_order": 6.4255003113652025,
+      "omega_pairwise_orders": [
+        6.8197319430335614,
+        6.031268679696851
+      ],
+      "orientation_observed_order": 6.158979924383225,
+      "orientation_pairwise_orders": [
+        6.259953041842458,
+        6.0580068069239985
+      ],
+      "pos_observed_order": 6.163689642514354,
+      "pos_pairwise_orders": [
+        6.267368018553522,
+        6.060011266475198
+      ],
+      "row_count": 3,
+      "vel_observed_order": 7.340914510263872,
+      "vel_pairwise_orders": [
+        7.933579951829301,
+        6.748249068698456
+      ]
+    }
+  },
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "ok_row_count": 6,
+  "row_count": 6,
+  "schema": "closed-loop-true-dynamic-newton-coarse-order-v1",
+  "simulate_runner_implemented": true,
+  "stage_count_per_step": 3,
+  "stage_oracle_used": false,
+  "stage_predictor_policy": "start_extrapolated_no_stage_oracle",
+  "stage_residual_dim": 72,
+  "stage_unknown_dim": 72,
+  "status": "coarse_true_dynamic_order_candidates_available_not_external_superiority",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "strict_public_policy_1e-4_required": false,
+  "t0": 0.0,
+  "t_end": 0.1
+}

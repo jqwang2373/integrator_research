@@ -1,0 +1,114 @@
+{
+  "schema": "implementation-path-audit-v1",
+  "status": "read_only_static_code_path_checked_not_symbolic_proof",
+  "submission_ready": false,
+  "accepted_method": "Gauss6/FullVA",
+  "source": "../v047_cylindrical_chain_pipeline/run_v047.py",
+  "execution_policy": {
+    "read_only_static_audit": true,
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "strict_public_policy_1e-4": "opt_in_only",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "code_path": {
+    "accepted_residual": "residual_cylindrical_chain",
+    "accepted_value": "R_VALUE = jax.jit(residual_cylindrical_chain)",
+    "accepted_jacobian": "R_JAC = jax.jit(jax.jacfwd(residual_cylindrical_chain, argnums=0))",
+    "dense_newton_path": "gauss_step(..., solver='dense_jacfwd_csr', ...) uses R_VALUE and R_JAC",
+    "stage_solve_path": "solve_gauss_stage_x uses R_VALUE and R_JAC",
+    "trajectory_path": "integrate calls gauss_step at every step",
+    "case_path": "run_case calls integrate for dense_jacfwd_csr, generated_block_jvp_pruned, and row_vjp_pruned",
+    "warmup_path": "warm_jax evaluates R_VALUE and R_JAC before runtime rows",
+    "summary_path": "main writes results/summary_v047.json with model.dimension = DIM"
+  },
+  "shape_contract": {
+    "n_bodies": 2,
+    "n_joints": 2,
+    "n_stages": 3,
+    "body_size": 18,
+    "lambda_size": 4,
+    "stage_size": 44,
+    "dim": 132
+  },
+  "row_families": [
+    {
+      "name": "translational_position_weak_defect",
+      "offset": 0,
+      "width": 6,
+      "total_rows": 18
+    },
+    {
+      "name": "rotational_lie_position_weak_defect",
+      "offset": 6,
+      "width": 6,
+      "total_rows": 18
+    },
+    {
+      "name": "translational_velocity_weak_defect",
+      "offset": 12,
+      "width": 6,
+      "total_rows": 18
+    },
+    {
+      "name": "angular_velocity_weak_defect",
+      "offset": 18,
+      "width": 6,
+      "total_rows": 18
+    },
+    {
+      "name": "newton_euler_weak_balance",
+      "offset": 24,
+      "width": 12,
+      "total_rows": 36
+    },
+    {
+      "name": "lower_pair_index3_weak_constraints",
+      "offset": 36,
+      "width": 8,
+      "total_rows": 24
+    }
+  ],
+  "audit_results": {
+    "residual_symbol_found": true,
+    "value_symbol_found": true,
+    "jacobian_symbol_found": true,
+    "dense_branch_uses_r_jac": true,
+    "stage_solve_uses_r_jac": true,
+    "integrate_calls_gauss_step": true,
+    "run_case_calls_integrate": true,
+    "warmup_uses_r_value_and_r_jac": true,
+    "summary_dimension_contract": 132,
+    "implementation_path_check_for_132_row_residual": true
+  },
+  "proof_boundary": {
+    "implementation_path_check_for_132_row_residual": true,
+    "runtime_formula_row_oracle_complete": true,
+    "runtime_ad_oracle_complete": true,
+    "independent_symbolic_row_oracle_complete": false,
+    "stage_residual_O_h7_implementation_defect_proved_by_this_static_path_audit": false,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "full_tfe_stage_replacement": false,
+    "external_superiority_claim": false
+  },
+  "source_files": {
+    "markdown": "IMPLEMENTATION_PATH_AUDIT.md",
+    "validator": "validate_implementation_path_audit.py",
+    "dynamic_row_oracle_gate": "DYNAMIC_ROW_ORACLE_GATE.json",
+    "implementation_fidelity_certificate": "IMPLEMENTATION_FIDELITY_CERTIFICATE.md",
+    "proof_contract_gate": "CMAME_PROOF_CONTRACT_GATE.json",
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "summary": "../v047_cylindrical_chain_pipeline/results/summary_v047.json"
+  },
+  "forbidden_claims": [
+    "independent_symbolic_row_oracle_complete_true",
+    "stage_residual_O_h7_implementation_defect_proved_by_this_static_path_audit_true",
+    "eta_h_O_h7_solver_policy_evidence_true",
+    "full_tfe_stage_replacement_true",
+    "run_v047_invoked_true",
+    "default_1e-4_required_true",
+    "submission_ready_true"
+  ]
+}

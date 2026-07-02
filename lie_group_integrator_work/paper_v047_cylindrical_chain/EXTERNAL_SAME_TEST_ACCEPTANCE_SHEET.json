@@ -1,0 +1,147 @@
+{
+  "schema": "external-same-test-acceptance-sheet-v1",
+  "status": "acceptance_requirements_defined_campaign_not_run",
+  "submission_ready": false,
+  "same_test_campaign_status": "not_run",
+  "external_superiority_claim": false,
+  "execution_policy": {
+    "read_only_acceptance_sheet": true,
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "coarse_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "coarse_reference_h": 0.0125,
+    "strict_public_policy_1e-4": "opt_in_only",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "acceptance_counts": {
+    "examples_required": 4,
+    "external_required_case_count": 17,
+    "performance_matrix_row_count": 48,
+    "performance_matrix_completed_row_count": 32,
+    "performance_matrix_not_complete_row_count": 16,
+    "performance_matrix_partial_row_count": 0,
+    "local_evidence_coverage_examples_count": 4,
+    "accepted_method_dynamic_order_examples_count": 2,
+    "mechanism_coverage_examples_count": 2,
+    "local_dynamic_order_examples_count": 2,
+    "accepted_source_policy_dynamic_order_examples_count": 0,
+    "accepted_external_dynamic_order_examples_count": 0,
+    "parallel_ready_batch_count": 2,
+    "parallel_shard_count_without_default_1e-4": 20
+  },
+  "required_metric_columns": [
+    "position_error",
+    "velocity_error",
+    "observed_order",
+    "runtime",
+    "work_precision",
+    "average_newton_iterations",
+    "constraint_drift",
+    "reference_policy",
+    "same_test_setup_identity"
+  ],
+  "example_acceptance_rows": [
+    {
+      "example": "single_pendulum",
+      "current_evidence": "coarse_first_order_time_available",
+      "accepted_for_internal_method_order": true,
+      "accepted_for_external_superiority": false,
+      "external_superiority_missing": "included_source_suites_complete_or_demoted"
+    },
+    {
+      "example": "double_pendulum",
+      "current_evidence": "coarse_first_order_time_available",
+      "accepted_for_internal_method_order": true,
+      "accepted_for_external_superiority": false,
+      "external_superiority_missing": "included_source_suites_complete_or_demoted"
+    },
+    {
+      "example": "four_link",
+      "current_evidence": "local_closed_loop_mechanism_coverage_coarse_order_candidate_and_strict_common_reference_work_precision",
+      "accepted_for_internal_method_order": false,
+      "accepted_for_mechanism_coverage": true,
+      "accepted_for_external_superiority": false,
+      "external_superiority_missing": "fair_public_source_same_test_decision"
+    },
+    {
+      "example": "slider_crank",
+      "current_evidence": "local_closed_loop_mechanism_coverage_coarse_order_candidate_and_strict_common_reference_work_precision",
+      "accepted_for_internal_method_order": false,
+      "accepted_for_mechanism_coverage": true,
+      "accepted_for_external_superiority": false,
+      "external_superiority_missing": "fair_public_source_same_test_decision"
+    }
+  ],
+  "source_suite_acceptance": [
+    {
+      "suite_id": "tfe2026_original_pendulum",
+      "closure_status": "not_ready_source_setup_encoding_required",
+      "source_policy_1e-4_required": "unknown_until_source_policy_encoded",
+      "default_1e-4_required": false,
+      "closure_action": "resolve_tfe_source_policy_dae_runner_brown_mcphee_endpoint_policy_and_work_rows_then_run_or_demote"
+    },
+    {
+      "suite_id": "ra2021_absolute_coordinate",
+      "closure_status": "partial_evidence_not_external_superiority",
+      "source_policy_1e-4_required": false,
+      "default_1e-4_required": false,
+      "closure_action": "finish_or_rerun_missing_coarse_shards_then_make_bounded_or_no_superiority_decision"
+    },
+    {
+      "suite_id": "hi2022_half_implicit",
+      "closure_status": "policy_decision_open",
+      "source_policy_1e-4_required": false,
+      "default_1e-4_required": false,
+      "closure_action": "choose_full_T8_reproduction_or_explicit_demotion"
+    },
+    {
+      "suite_id": "vp2024_velocity_partitioning",
+      "closure_status": "code_path_unresolved",
+      "source_policy_1e-4_required": false,
+      "default_1e-4_required": false,
+      "closure_action": "resolve_public_code_path_or_explicitly_demote"
+    }
+  ],
+  "closure_rules": {
+    "b2_closes_when": [
+      "included_external_source_suites_completed_under_fair_same_test_policy_or_explicitly_demoted",
+      "same_test_setup_identity_recorded",
+      "reference_policy_recorded",
+      "order_and_time_reported"
+    ],
+    "b4_closes_when": [
+      "fair_implemented_baselines_available",
+      "work_precision_curves_available",
+      "order_time_interpretation_clean"
+    ],
+    "residual_only_rows_count_as_dynamic_order": false,
+    "suite_demotions_must_be_in_manuscript": true,
+    "default_1e-4_required_for_b2_or_b4": false
+  },
+  "source_files": {
+    "external_baseline_gate": "CMAME_EXTERNAL_BASELINE_GATE.json",
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "run_queue": "EXTERNAL_SAME_TEST_RUN_QUEUE.json",
+    "four_example_source_policy_dashboard": "FOUR_EXAMPLE_SOURCE_POLICY_DASHBOARD.json",
+    "cross_paper_cases": "CROSS_PAPER_BENCHMARK_CASES.json",
+    "four_example_performance_summary": "../v048_cross_paper_same_test_benchmarks/results/four_example_performance_summary.json",
+    "true_dynamic_newton_coarse_order": "../v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order.json",
+    "strict_common_reference": "../v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_strict_common_reference.json"
+  },
+  "forbidden_claims": [
+    "external_superiority_claim_true",
+    "same_test_campaign_complete",
+    "default_1e-4_required_true",
+    "heavy_numerical_run_invoked_true",
+    "run_v047_invoked_true",
+    "v048_runner_invoked_true",
+    "residual_only_rows_count_as_dynamic_order_true",
+    "submission_ready_true"
+  ]
+}

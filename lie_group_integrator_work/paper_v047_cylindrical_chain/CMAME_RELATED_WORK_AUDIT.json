@@ -1,0 +1,63 @@
+{
+  "schema": "cmame-related-work-audit-v1",
+  "status": "b8_closed_related_work_depth_checked",
+  "submission_ready": false,
+  "mechanical_preflight_passed": true,
+  "quality_review_passed": false,
+  "execution_policy": {
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "strict_public_policy_1e-4": "opt_in_only",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked_by_audit": false
+  },
+  "closed_blocker": {
+    "id": "B8",
+    "area": "related_work_depth",
+    "status": "closed",
+    "closure_basis": "expanded_related_work_and_reference_set"
+  },
+  "checked_artifacts": {
+    "main_tex": "main_cmame.tex",
+    "flat_tex": "cmame_submission_flat/main_cmame_submission.tex",
+    "main_text": "main_cmame.txt",
+    "flat_text": "cmame_submission_flat/main_cmame_submission.txt"
+  },
+  "required_clusters": [
+    "lie_group_integration",
+    "absolute_coordinate_lie_group_dae_multibody",
+    "constrained_collocation_and_index_reduction",
+    "variational_and_symplectic_integrators",
+    "nonsmooth_contact_friction_complementarity",
+    "time_finite_elements"
+  ],
+  "added_reference_keys": [
+    "gear1985automatic",
+    "jay1996symplectic",
+    "marsden2001discrete",
+    "leyendecker2008variational",
+    "leok2012prolongation",
+    "stewart1996implicit",
+    "anitescu1997formulating",
+    "tasora2011matrixfree"
+  ],
+  "positioning_boundaries": {
+    "not_new_gauss_collocation_claim": true,
+    "not_discrete_variational_principle_claim": true,
+    "not_nonsmooth_contact_integrator_claim": true,
+    "accepted_contribution": "implemented Lie-group lower-pair FullVA stage residual with position, velocity, and acceleration consistency in one Newton solve"
+  },
+  "open_blocker_count_after_closure": 6,
+  "closed_blockers": [
+    "B5",
+    "B8"
+  ],
+  "open_blockers": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B6",
+    "B7"
+  ]
+}
+

@@ -1,0 +1,326 @@
+{
+  "algorithm_literal_endpoint_policy": "fixed_h_until_tn_ge_tfinal",
+  "comparison_h": [
+    0.012,
+    0.006,
+    0.003
+  ],
+  "csv": "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.csv",
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "run_v047_invoked": false,
+    "source_reference_h_1e4_invoked_for_scalar_reference": true,
+    "v048_campaign_invoked": false
+  },
+  "external_superiority_claim_allowed": false,
+  "method_count": 4,
+  "method_rows": [
+    {
+      "accepted_use": "algorithm_literal_full_T10_endpoint_probe_not_source_policy",
+      "coordinate_pairwise_orders": [
+        1.9900314276660334,
+        -0.04864320328776651
+      ],
+      "expected_order": 2,
+      "finite_metrics": true,
+      "frobenius_pairwise_orders": [
+        1.990026098379839,
+        -0.04864317813502925
+      ],
+      "max_residual_norm": 9.865615556594547e-13,
+      "metrics": [
+        {
+          "coordinate_error_q": 0.009729008686338858,
+          "frobenius_error_norm_eta": 0.01375884176901448,
+          "h": 0.012,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.865615556594547e-13,
+          "mechanical_energy_deviation": -0.0005054188061563991,
+          "signed_coordinate_error_q": -0.009729008686338858,
+          "signed_velocity_error_v": 0.023480049605870912,
+          "steps": 834.0,
+          "terminal_overshoot": 0.008000000000000895,
+          "terminal_time": 10.008000000000001,
+          "total_newton_iterations": 1042.0,
+          "velocity_error_v": 0.023480049605870912
+        },
+        {
+          "coordinate_error_q": 0.0024491164711850644,
+          "frobenius_error_norm_eta": 0.0034635728637517614,
+          "h": 0.006,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 8.375554551141379e-13,
+          "mechanical_energy_deviation": -0.0001336315359310447,
+          "signed_coordinate_error_q": -0.0024491164711850644,
+          "signed_velocity_error_v": 0.0058644666932197165,
+          "steps": 1667.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 1667.0,
+          "velocity_error_v": 0.0058644666932197165
+        },
+        {
+          "coordinate_error_q": 0.0025331009767719515,
+          "frobenius_error_norm_eta": 0.003582344798441414,
+          "h": 0.003,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.486371985246574e-13,
+          "mechanical_energy_deviation": -3.339236779709154e-05,
+          "signed_coordinate_error_q": -0.0025331009767719515,
+          "signed_velocity_error_v": 0.006065256054647472,
+          "steps": 3334.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 3328.0,
+          "velocity_error_v": 0.006065256054647472
+        }
+      ],
+      "paper_method": "tfe2026_Newmark_beta",
+      "source_method": "Newmark_beta",
+      "source_parameters": {
+        "beta": 0.3,
+        "gamma": 0.5
+      },
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "velocity_pairwise_orders": [
+        2.001363633838148,
+        -0.048568634892856656
+      ]
+    },
+    {
+      "accepted_use": "algorithm_literal_full_T10_endpoint_probe_not_source_policy",
+      "coordinate_pairwise_orders": [
+        1.8892994669808798,
+        0.06220722531978961
+      ],
+      "expected_order": 1,
+      "finite_metrics": true,
+      "frobenius_pairwise_orders": [
+        1.889293277204835,
+        0.06220718512541165
+      ],
+      "max_residual_norm": 9.912071163853398e-13,
+      "metrics": [
+        {
+          "coordinate_error_q": 0.010538637950861851,
+          "frobenius_error_norm_eta": 0.01490381574962328,
+          "h": 0.012,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.912071163853398e-13,
+          "mechanical_energy_deviation": -0.3913501272147357,
+          "signed_coordinate_error_q": -0.010538637950861851,
+          "signed_velocity_error_v": 0.028712912464462725,
+          "steps": 834.0,
+          "terminal_overshoot": 0.008000000000000895,
+          "terminal_time": 10.008000000000001,
+          "total_newton_iterations": 1562.0,
+          "velocity_error_v": 0.028712912464462725
+        },
+        {
+          "coordinate_error_q": 0.0028447799242621308,
+          "frobenius_error_norm_eta": 0.004023124994264746,
+          "h": 0.006,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.876544027065393e-13,
+          "mechanical_energy_deviation": -0.19545587352570237,
+          "signed_coordinate_error_q": -0.0028447799242621308,
+          "signed_velocity_error_v": 0.008417324272675053,
+          "steps": 1667.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 3060.0,
+          "velocity_error_v": 0.008417324272675053
+        },
+        {
+          "coordinate_error_q": 0.002724723476567714,
+          "frobenius_error_norm_eta": 0.0038533397022928527,
+          "h": 0.003,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.814371537686384e-13,
+          "mechanical_energy_deviation": -0.09768983574284107,
+          "signed_coordinate_error_q": -0.002724723476567714,
+          "signed_velocity_error_v": 0.007326284485715151,
+          "steps": 3334.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 5950.0,
+          "velocity_error_v": 0.007326284485715151
+        }
+      ],
+      "paper_method": "tfe2026_TFE_m1",
+      "source_method": "TFE_m1",
+      "source_parameters": {
+        "nu": 0.99
+      },
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "velocity_pairwise_orders": [
+        1.7702660737075764,
+        0.20027997423914137
+      ]
+    },
+    {
+      "accepted_use": "algorithm_literal_full_T10_endpoint_probe_not_source_policy",
+      "coordinate_pairwise_orders": [
+        1.9895936949422648,
+        2.2968296835382e-06
+      ],
+      "expected_order": 3,
+      "finite_metrics": true,
+      "frobenius_pairwise_orders": [
+        1.9895878709450696,
+        2.296828407615455e-06
+      ],
+      "max_residual_norm": 2.4823249955598125e-09,
+      "metrics": [
+        {
+          "coordinate_error_q": 0.01017076334913014,
+          "frobenius_error_norm_eta": 0.014383569472002384,
+          "h": 0.012,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 1.3110774791879058e-10,
+          "mechanical_energy_deviation": -2.133644188972994e-05,
+          "signed_coordinate_error_q": -0.01017076334913014,
+          "signed_velocity_error_v": 0.024553792692392662,
+          "steps": 834.0,
+          "terminal_overshoot": 0.008000000000000895,
+          "terminal_time": 10.008000000000001,
+          "total_newton_iterations": 1579.0,
+          "velocity_error_v": 0.024553792692392662
+        },
+        {
+          "coordinate_error_q": 0.0025610978290688813,
+          "frobenius_error_norm_eta": 0.0036219382945542277,
+          "h": 0.006,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 6.110477701140748e-10,
+          "mechanical_energy_deviation": -2.6609048404679925e-06,
+          "signed_coordinate_error_q": -0.0025610978290688813,
+          "signed_velocity_error_v": 0.0061322206775540344,
+          "steps": 1667.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 3218.0,
+          "velocity_error_v": 0.0061322206775540344
+        },
+        {
+          "coordinate_error_q": 0.002561093751699328,
+          "frobenius_error_norm_eta": 0.0036219325282876866,
+          "h": 0.003,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 2.4823249955598125e-09,
+          "mechanical_energy_deviation": -3.30821293914596e-07,
+          "signed_coordinate_error_q": -0.002561093751699328,
+          "signed_velocity_error_v": 0.0061321917907248835,
+          "steps": 3334.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 6516.0,
+          "velocity_error_v": 0.0061321917907248835
+        }
+      ],
+      "paper_method": "tfe2026_TFE_m2",
+      "source_method": "TFE_m2",
+      "source_parameters": {
+        "nu": 0.95
+      },
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "velocity_pairwise_orders": [
+        2.0014643664203455,
+        6.796067120507969e-06
+      ]
+    },
+    {
+      "accepted_use": "algorithm_literal_full_T10_endpoint_probe_not_source_policy",
+      "coordinate_pairwise_orders": [
+        1.9899298345312957,
+        -0.03717429946471455
+      ],
+      "expected_order": 2,
+      "finite_metrics": true,
+      "frobenius_pairwise_orders": [
+        1.989924393002212,
+        -0.03717427999155807
+      ],
+      "max_residual_norm": 9.786242707227817e-13,
+      "metrics": [
+        {
+          "coordinate_error_q": 0.00983097545178735,
+          "frobenius_error_norm_eta": 0.013903042827517944,
+          "h": 0.012,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.786242707227817e-13,
+          "mechanical_energy_deviation": -0.0007216009165915693,
+          "signed_coordinate_error_q": -0.00983097545178735,
+          "signed_velocity_error_v": 0.02373052632007111,
+          "steps": 834.0,
+          "terminal_overshoot": 0.008000000000000895,
+          "terminal_time": 10.008000000000001,
+          "total_newton_iterations": 1047.0,
+          "velocity_error_v": 0.02373052632007111
+        },
+        {
+          "coordinate_error_q": 0.0024749591901174206,
+          "frobenius_error_norm_eta": 0.0035001199596623738,
+          "h": 0.006,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 8.222129613713458e-13,
+          "mechanical_energy_deviation": -0.00019087435821063536,
+          "signed_coordinate_error_q": -0.0024749591901174206,
+          "signed_velocity_error_v": 0.0059269692264725116,
+          "steps": 1667.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 1667.0,
+          "velocity_error_v": 0.0059269692264725116
+        },
+        {
+          "coordinate_error_q": 0.0025395608386347135,
+          "frobenius_error_norm_eta": 0.0035914804153526596,
+          "h": 0.003,
+          "hits_exact_T": 0.0,
+          "max_residual_norm": 9.497229928525828e-13,
+          "mechanical_energy_deviation": -4.77030265386702e-05,
+          "signed_coordinate_error_q": -0.0025395608386347135,
+          "signed_velocity_error_v": 0.0060808821998623586,
+          "steps": 3334.0,
+          "terminal_overshoot": 0.002000000000000668,
+          "terminal_time": 10.002,
+          "total_newton_iterations": 3328.0,
+          "velocity_error_v": 0.0060808821998623586
+        }
+      ],
+      "paper_method": "tfe2026_trapezoidal",
+      "source_method": "trapezoidal",
+      "source_parameters": {},
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "velocity_pairwise_orders": [
+        2.0013776264704926,
+        -0.0369860747217061
+      ]
+    }
+  ],
+  "metric_row_count": 12,
+  "reference_exact_T": true,
+  "reference_h": 0.0001,
+  "reference_omega_final": -1.2836123173308356,
+  "reference_theta_final": -2.8790156956337563,
+  "remaining_to_close_source_policy": [
+    "prove the source paper's reported error/order sampling uses the algorithm-literal terminal state or another explicit endpoint convention",
+    "replace the scalar planar candidate runners with the source-equivalent absolute-coordinate DAE runners or source-code reproduction",
+    "keep source_policy_rows_completed at zero until runner equivalence and sampling policy are both closed"
+  ],
+  "schema": "tfe-algorithm-literal-endpoint-probe-v1",
+  "source_policy_exact_T_error_sampling_equivalent": false,
+  "source_policy_method_runner_equivalent": false,
+  "source_policy_rows_completed": 0,
+  "source_text_anchor_count": 9,
+  "source_text_fixed_h_loop_supported": true,
+  "status": "algorithm_literal_full_T10_probe_available_source_policy_open",
+  "submission_ready": false,
+  "t_final": 10.0,
+  "terminal_overrun_rows": 12
+}

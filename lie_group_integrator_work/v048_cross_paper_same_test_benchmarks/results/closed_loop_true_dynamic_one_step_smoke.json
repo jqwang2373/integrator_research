@@ -1,0 +1,32 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "convergence_sweep_run": false,
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "h": 0.1,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "One oracle-initialized Gauss6 dynamic step now executes for the two missing closed-loop models. The remaining gap is a non-oracle trajectory simulator and three-step order/work rows.",
+  "max_endpoint_pos_error_inf": 4.4112151542652356e-08,
+  "max_endpoint_vel_error_inf": 2.4150835160191564e-07,
+  "max_stage_residual_inf": 1.545430450278218e-13,
+  "method": "Gauss6/FullVA",
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "ok_row_count": 2,
+  "row_count": 2,
+  "schema": "closed-loop-true-dynamic-one-step-smoke-v1",
+  "simulate_runner_implemented": false,
+  "stage_count": 3,
+  "stage_residual_dim": 72,
+  "stage_unknown_dim": 72,
+  "status": "one_step_smoke_passed_order_rows_not_run",
+  "step_policy": "oracle_initialized_one_step_smoke_not_order",
+  "strict_public_policy_1e-4_required": false,
+  "t0": 0.0,
+  "t1": 0.1,
+  "trajectory_stepper_executed": true,
+  "trajectory_stepper_implemented": true
+}

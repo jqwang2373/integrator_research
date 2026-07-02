@@ -1,0 +1,1555 @@
+Multibody System Dynamics
+https://doi.org/10.1007/s11044-026-10153-w
+RESEARCH
+
+
+
+Higher-order integration of index-3 DAE with friction using
+time ﬁnite elements on Lie groups
+
+Ekansh Chaturvedi1 · Corina Sandu1 · Adrian Sandu2
+
+Received: 17 July 2025 / Accepted: 17 February 2026
+© The Author(s) 2026
+
+
+Abstract
+In multibody dynamics, Euler angles and Euler parameters (unit-quaternions) are common
+choices of global orientation parameters. Both approaches have their limitations, e.g., gim-
+bal lock and an extra normalization constraint, respectively. To circumvent these, the Lie-
+group based frameworks methods employ SO(3) or SE(3) representation of rotations with
+corresponding higher order Lie-group integration methods. However, quaternions represent
+a much more compact representation of rotations and offer a computational advantage over
+SO(3) or SE(3) representations. Implicit integration inevitably requires computation of Jaco-
+bian matrices for Newton-Raphson iterations. However, deriving the component of Newton-
+Raphson matrix corresponding to body-frame rotations within SO(3) formalism is not lim-
+ited to calculation of partial derivatives. In fact, the process of deriving these matrices in-
+volves a sequence of algebraic manipulations. Subsequently, they often need to be derived
+for the acting forces and torques, on a case-by-case basis. It is this limitation that emerges as
+a bottle-neck for modeling friction within Lie-group formalism, as friction loads are intricate
+nonlinear functions of generalized coordinates (and hence quaternions), velocities as well as
+Lagrange multipliers. To address this limitation, we propose a systematic partial-derivative
+based approach for computing the sub-element coefficient matrices with respect to body-
+frame Euler-rotations. This is achieved by defining general-purpose operators, as presented
+in this work, that support convenient computer application due to accessibility to a wide
+range of numerical and auto-differentiation tools. Further, recent advances in time-finite el-
+ement based methods have demonstrated higher-order accurate solutions for nonlinear and
+chaotic systems with relatively simple computer implementation. This work implements a
+family of time-finite element integrators in conjunction with exponential integration of rota-
+tions using Lie-group properties of quaternions. Further, numerical experiments showed that
+the Lie-group time-finite element integrators compare favorably with Lie-group Newmark-β
+and trapezoidal schemes.
+
+✉ E. Chaturvedi
+    ekanshchat96@vt.edu
+    C. Sandu
+    csandu@vt.edu
+    A. Sandu
+    sandu@cs.vt.edu
+
+1   Department of Mechanical Engineering, Virginia Tech, Blacksburg, 24060, VA, USA
+2   Department of Computer Science, Virginia Tech, Blacksburg, 24060, VA, USA
+                                                                                E. Chaturvedi et al.
+
+Keywords Multibody systems · Time-finite elements · Absolute coordinates · Friction ·
+Lie-integration · Quaternions
+
+
+1 Introduction
+
+In the multibody formulations based on global-coordinates, spatial locations are defined
+by Cartesian coordinates and global orientations are defined by unit quaternions or Euler-
+angles. In such cases, carrying out higher-order fully-implicit integration simply requires
+evaluation of Jacobian matrices, i.e., the partial derivatives with respect to generalized co-
+ordinates. However, simulating multibody systems in absolute coordinates, where spatial
+positions are defined by Cartesian coordinates and pose is defined by local rotations (also
+called local integration coordinate), implicit integration requires evaluation of Jacobian ma-
+trix (or equivalents) with respect to the body-frame Euler-rotation vector. Nevertheless, the
+body-frame Euler-rotations are not generalized coordinates, and hence can not be used for
+evaluating Jacobians. Instead, the recent work by Kissel et al. [1–3] rely on quantifying the
+slight change in the vector of interest by evaluating the small change in the rotation matrix,
+resulting in a matrix-valued operator Π. This provides a mapping between small changes in
+rotation matrices, and those in orientations in body-fixed frame. This contribution is impor-
+tant as the resulting first order sensitivities of kinematic constraints and constraint reaction
+forces are vital in the context of implicit integration. In addition, the authors reported sig-
+nificant improvement in computational performance with this approach, when compared to
+the methods employing quaternions or Euler-angles. Moreover, these formulations are de-
+scribed in standard matrix notation that aim to introduce the mainstream engineering com-
+munity to powerful, yet abstract, Lie-group formulations. Although these contributions also
+laid foundations for exploring higher-order integration, one important limitation that was
+reported, was exclusion of friction from simulation. We observed that this limitation also
+arises because evaluation of operator Π for complicated nonlinear functions requires ex-
+plicit definition.
+    For body-fixed constant vectors such as body-frame location vectors, evaluating these
+coefficient matrices is relatively straightforward [1, 2]. However, for nonlinear and time-
+varying vectors such as forces and torques, the process involves taking time-derivatives and
+algebraic manipulations to evaluate the coefficient matrices on a case-by-case basis. When
+the acting forces are represented by complex nonlinear functions of generalized coordinates,
+for instance friction forces [4–6], analytical evaluation of respective coefficient matrices can
+be tedious and often impossible for efficient computer applications. Due to this limitation,
+the extending absolute-coordinate formulation, in its current form, to account for friction,
+or any arbitrary functions of nonlinear forces dependent on generalized coordinates, can be
+difficult.
+    The absolute coordinate formulation [1–3] implements first-order Lie-integration on
+SO(3) rotation matrices, and emphasizes on the scope of developing the formulation fur-
+ther, for higher-order implicit integration. The existing literature on higher order implicit
+Lie-group integrators includes Lie-group generalized α methods that are often limited to
+second-order accuracy [7, 8]. Furthermore, Munthe-Kaas Runge-Kutta methods [9, 10] are
+widely acclaimed for being A-stable even in the explicit form, and have been employed
+for engineering applications [11]. Weiloch et al. [12] have further contributed second, third
+and fourth order accurate BDF integrators on Lie groups. In addition, the authors, in [12],
+claim that BDF methods feature reduced number of Lie-braket evaluations and hence are
+more efficient than Munthe-Kaas methods. However, BDF integration methods have been
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+demonstrated on ℝ3 × SO(3) and SE(3) formalisms. The SE(3) group is the most natural and
+unified representation of a rigid body pose and motion. It treats the entire 6-DOF motion as
+an element of a single Lie group. In the context of constrained dynamics, the constraints can
+be formulated directly on the full six dimensional state space or its velocity space, leverag-
+ing powerful tools from differential geometry and Lie group theory [13]. The ℝ3 × SO(3)
+representation, on the other hand, separates position and orientation, which is intuitive for
+many applications. However, rotation matrices must maintain their orthogonality and unit-
+determinant properties (9 elements with 6 constraints, leaving 3 DOF). While powerful for
+standard kinematics, managing these implicit constraints during numerical integration or
+when imposing additional motion constraints can be computationally intensive.
+    The ℝ3 × S 3 representation of rigid body motion offers the most compact singularity-
+free representation for rotation using quaternions, which is a major advantage over min-
+imal parameterizations like Euler angles. It is often preferred in simulations and control
+due to its numerical stability. The main trade-off is the need to explicitly enforce the unit-
+norm constraint of the quaternion (4 elements with 1 constraint, leaving 3 DOF) during
+calculations, which adds an algebraic constraint to the dynamics equations. Furthermore,
+Terze et al. proposed redundancy-free Lie-integration in minimal form [11, 14], by circum-
+venting the normalization constraint using Lie-group properties of unit quaternion group
+S 3 = {p ∈ ℝ4 | pT p = 1}. In fact, for quaternions, the exponential map can be written in
+an efficient closed form and numerically efficient truncations for inverse of differential of
+exponential map can be performed as well [9]. For these listed advantages, it is worth utiliz-
+ing powerful properties of quaternion Lie-groups to develop implicit integrators using this
+approach. Recently, [4, 5] used first-order exponential integration on S 3 group for a unified
+formalism for smooth and non-smooth dynamics problems, in optimization framework. Fur-
+thermore, the availability of exact analytical expression for matrix exponential [4, 5, 11, 14]
+assists in saving cost on Lie-bracket evaluations.
+
+1.1 Review of time ﬁnite elements
+
+Time finite element (TFE) methods based on Hamilton’s least action principle were first
+introduced by Bailey [15] and Liepholtz [16]. In later years of that decade, Borri et al.
+developed continuous TFE methods for multibody systems with large rotations, based on
+SE (3) representation of positions and rotations [17–19]. These contributions introduced
+evaluation of TFE discretized tangent matrices separately for each individual constraint and
+assembling them later as diagonal entries. Subsequently, in addition to tedious computer
+implementation, the resulting dimensionality of equations is larger than in joint-coordinate
+formulation.
+    In 1990s, discontinuous Galerkin methods were developed by Hulbert and Hughes, ap-
+plying space-time finite element formulations to structural dynamics problems using classi-
+cal polynomial interpolation schemes in both space and time [20, 21]. These methods were
+based on Hamilton’s single-field and two-field principles and demonstrated high accuracy
+with unconditionally stable time integration schemes exhibiting asymptotic annihilation.
+    In most classical integration methods, the direct integration approaches such as
+Newmark-β, generalized-α are preferred as they carry advantages of relatively easier com-
+puter implementation, in contrast to Runge-Kutta methods that require state-space conver-
+sions. A continuous TFE direct integration approach was developed for nonlinear structural-
+dynamics problems by Lee and Kwak [22]. In 1996, Fung proposed higher-order L-stable
+direct integration TFE methods based on Hermite polynomials [23].
+    Methods that can be proven unconditionally stable for linear problems may lead to in-
+stability when applied to nonlinear dynamical problems. Therefore, designing numerical
+                                                                               E. Chaturvedi et al.
+
+strategies for nonlinear dynamics is particularly challenging. The TFE approach as a gen-
+eral class of integrators for nonlinear and chaotic problems was established in 2016 by Jog
+et al. [24]. The study further revealed that a majority of existing methods recognized for
+their robustness in addressing periodic, parabolic or hyperbolic problems can be formulated
+within the framework of time finite elements. This approach, therefore, serves as a unifying
+foundation for time-stepping techniques employed across various fields.
+    In more recent years, the potential of TFE based integrators has again rejuvenated the
+attention of researchers from various fields. Antonietti et al. [25, 26] have developed discon-
+tinuous Galerkin spectral element methods for simulating seismic-wave propagation and
+showed that the resulting discrete formulations are well-posed, stable, and retain a super-
+optimal rate of convergence with respect to the step-size and polynomial order. Tamma et
+al. [27] have presented Petrov-Galerkin based unified framework to design high-order al-
+gorithms. This approach yields various unconditionally stable (A/L-stable) algorithms with
+controllable numerical dissipation. However, the applications have been limited to linear
+elastodynamics problems.
+    Furthermore, Bauchau [28] has recently employed Hamilton’s two-field principle to de-
+velop time-continuous and time-discontinuous TFE schemes for constrained multibody sys-
+tems. However, the computer-implementation has been demonstrated in problem-specific
+minimal coordinates, instead of more generic matrix formulations. In context of direct inte-
+gration methods, Kim and Reddy [29] have proposed a TFE based direct integration method
+that not only gives higher order accuracy for linear as well as nonlinear problems, but also
+gives active numerical damping control using a single parameter. This scheme is based on
+modified-weighted residual method where a single weighting function can be used to gener-
+ate linearly-independent relations at all the nodes in the finite element system. However, the
+method has been employed on structural-dynamics ordinary differential equations (ODEs).
+When dealing with DAEs, order reduction with ODE integrators is a common phenomena
+[30]. Hence, it is important to analyze the efficacy of TFE integrators in context of DAEs.
+
+1.2 Contributions of this study
+
+The focus of this work is the implementation of higher order integration schemes within
+S 3 Lie-group DAE framework, while accounting friction in joints. Hence, the discussion on
+Lie-theory is bypassed. The literature on Lie-group theory in context of dynamics is rich and
+readers may refer to primary contributions such as [10, 11, 13, 14, 31–33] for more details.
+To add context to the presented report, the efficacy of the approach [1–3] with its reported
+computational advantages was acknowledged. However, two primary limitations of this ap-
+proach were considered: (1) Evaluation of Jacobian-equivalent matrices for friction/arbitrary
+nonlinear loads will require case-by-case transformations, as provided for kinematic con-
+straints in [1–3]; (2) First order integration with the use of computed Jacobian-equivalent
+matrices. Aiming at these two primary deliverables, the key contributions of the reported
+work are as follows:
+1. Since simulating friction is essential to multibody systems, and intricacies that arise with
+   nonlinear loads need to be addressed to complete the Lie-group framework. The first con-
+   tribution of the submitted manuscript provides a generic derivative-based definition of
+   Jacobian-equivalent matrices for arbitrary nonlinear loads, including friction. This con-
+   tribution to include friction in Lie-group based frameworks is novel and, to the best of
+   our knowledge, has not been addressed in existing Lie-group frameworks.
+2. Higher order direct numerical integration methods for index-3 DAEs are implemented
+   in Lie-Group framework. For second order accuracy, implementation of Newmark-β,
+   method is presented.
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+3. A time-finite element (TFE) family of integrators for DAEs is formulated, targeting third
+   and fifth order accuracy. The performance of the discussed numerical methods is demon-
+   strated and compared using numerical experiments, focusing on the friction-induced ef-
+   fects.
+4. The performance of time-finite element integrators has not been studied considering
+   friction-induced nonlinearity to the best of our knowledge. The presented analysis es-
+   sentially aims to take a holistic approach of assessing these schemes in a Lie-group
+   framework equipped with friction modeling capability.
+    To the best of our knowledge, the above contributions are novel an have not been reported
+in existing literature.
+    The remainder of this paper is structured as follows. Section 2 outlines the absolute-
+coordinate index-3 DAE formulation with quaternions as generalized rotation coordinates
+and utilizes their Lie-group properties to circumvent the additional normalization constraint.
+Section 3 introduces a TFE based direct integration applied with S 3 group on index-3 DAEs.
+A general methodology for nonlinear DAEs with friction is proposed and the formulation
+of corresponding Newton-iteration is described in detail. In addition, the Sect. 3.3 demon-
+strates the implementation of time-tested Newmark-β and trapezoidal integration schemes
+in S 3 group formulation. Section 4 presents the numerical experiments on a rigid-pendulum
+case study. The performance of numerical integrators is assessed on two cases: frictionless
+pendulum and with friction in account. Section 5 concludes with key observations and a
+discussion on further scope of the work.
+
+
+2 Lie group formulation of DAE of multibody systems with friction
+
+The index-3 DAE describing a constrained multibody system dynamics in absolute coordi-
+nates (r–A formulation) is as follows:
+
+                                                  M r̈ + 𝚽rT 𝝀 = f(r, A),                            (1a)
+                                 J 𝝎˙ ′ + 𝝎˜ ′ J 𝝎′ + Π(𝚽)T 𝝀 = n′ (r, A),                           (1b)
+                                                      𝚽(r, A) = 0.                                   (1c)
+
+    Here, M ∈ ℝ3N×3N and J ∈ ℝ3N×3N are the global mass and inertia matrices, respec-
+tively, of the complete system comprising of N rigid bodies. For each body i, the Carte-
+sian coordinates ri ∈ ℝ3 denote the spatial position of the respective body, and the rota-
+tion matrix Ai ∈ ℝ3×3 represents its orientation with respect to global reference frame. The
+acting loads f and torques n′ are computed as functions of combined vector of spatial po-
+sitions r = [r1T , r2T , . . . , rNT ]T , and orientations A = {A1 , A2 , . . . AN | Ai ∈ SO(3)}. With al-
+gebraic constraints defined by the set of equations 𝚽(r, A) = 0 ∈ ℝC , the Jacobian matrix
+𝚽r ∈ ℝC×3N represents partial derivatives with respect to Cartesian coordinates.
+    The rotation matrix of ith body Ai is computed as a matrix-valued function of ei-
+ther Euler-parameters pi ∈ S 3 , pi = [e0 , eT ]iT in r–p formulation, or of Euler-angles 𝝐 i ∈
+ℝ3 , 𝝐 i = [ϕ, θ, ψ]T in r–𝝐 formulation [2, 3, 34]. The state variables in (1a)–(1c) comprise
+of linear and angular accelerations r̈ ∈ ℝ3N and 𝝎˙ ′ ∈ ℝ3N , respectively, and the Lagrange
+multipliers 𝝀 ∈ ℝC associated with the constraint manifold 𝚽 ∈ ℝC . Furthermore, the enti-
+ties f and n′ represent the externally acting forces and torques on the bodies, respectively,
+that are often nonlinear functions of the position and orientation variables. The operator
+                                                                                 E. Chaturvedi et al.
+
+“˜·” produces the skew-symmetric matrix form of the vector over which it operates, for in-
+stance, 𝝎˜ ′ in equation (1b) converts the body-fixed vector of angular velocity 𝝎′ into a
+skew-symmetric matrix.
+    Since the rotation matrix is always associated with a body-fixed vector s′ (represented
+globally as s = As′ ), the operator Π essentially reflects how the perturbation in A changes
+the orientation of s. As defined by Kissel et al. in [1–3], this infinitesimal change is computed
+as δs = Π(As′ ) δ𝜽 = −As˜′ δ𝜽 , where 𝜽 represents infinitesimal local-rotation. Similarly,
+the coefficient matrix Π(𝚽) ∈ ℝC×3N maps the infinitesimal first-order perturbation in ori-
+entation to the first-order perturbation in constraints 𝚽. In a Newton-Raphson scheme, these
+corrections in local orientation 𝜽 , 𝜽˜ ∈ 𝔰𝔬(3), are then used to update the rotation matrix A
+at every iteration step, as delineated by Kissel et al. in [1–3]. Here, 𝔰𝔬(3) is the Lie-Algebra
+of the SO(3) manifold parametrized by local rotations 𝜽 .
+    The solution strategy for solving the frictionless DAE (1a)–(1c), as established by Kissel
+et al. [1, 3], performs first-order implicit numerical integration, and lays the groundwork for
+developing higher-order integration schemes. Like most implicit integration schemes, this
+strategy also requires solving nonlinear equations of the following form:
+
+            d(r, A, 𝝀) = 0 ∈ ℝ6N+C , where A = {A1 , A2 , . . . AN | Ai ∈ SO(3)}.                (2)
+
+   This is achieved by running Newton-Raphson iterations at each time-step, which re-
+quires k iterations each solving a linear equation D̄k−1 𝜹 k = −d(rk−1 , Ak−1 , 𝝀k−1 ), where,
+𝜹 = [δrT , δ𝜽 T , δ𝝀T ]T is the vector containing infinitesimal corrections in position r ∈ ℝ3N ,
+body-frame Euler-rotation vector 𝜽 ∈ ℝ3N , and Lagrange multipliers 𝝀 ∈ ℝC . The Euler-
+rotation vector 𝜽 essentially contains the components of angle rotated by the body-fixed
+coordinate-frame about body-fixed axis directed along angular velocity vector 𝝎′ , within a
+specified time-interval [t0 , t], such that [14]:
+
+                               𝜽˙˜ (t) = dexp−1
+                                             −θ̃
+                                                 (𝝎˜ ′ ),   𝜽 (t0 ) = 0,                         (3)
+
+where dexp−1 −θ̃
+                 is the inverse of the differential of the exponent map. This nonlinear map is
+essential to take into account because large rotations are defined in SO(3), which means that
+integration of (3) yields a orientation-update iteration scheme in terms of angular velocity
+field 𝝎′ . Furthermore, in formulations based on Euler angles or quaternions, the rotation
+matrix A can be parameterized by either of the arguments, i.e., quaternions or Euler-angles.
+However, the true space of 3-D rotations is the SO(3) manifold while the arguments are only
+a coordinate representation of SO(3) space. Therefore, systems involving large-rotational
+motions must evolve on SO(3). After k iterations, the solution converges to numerical pre-
+cision ε such that ∥dk ∥ ≤ ε. For instance, the kth Newton-Raphson iteration on constraint
+equation (1c) yields:
+
+               𝚽(r, A) = 0 =⇒ 𝚽k−1
+                               r   δrk + Π(𝚽k−1 ) δ𝜽 k = −𝚽(rk−1 , Ak−1 ).                       (4)
+
+Here, the sub-Jacobians 𝚽r corresponding to corrections δr are simply the partial deriva-
+tives of constraint manifold 𝚽, with respect to r. However, computing the coefficient matrix
+Π(𝚽) corresponding to infinitesimal local rotations δ𝜽 is a relatively more complex pro-
+cess. As defined by Kissel et al. in [3], it requires evaluation of time-derivatives of the entity
+of interest and representing them as matrix-vector multiplications of a coefficient matrix
+and angular-velocity 𝝎′ . Kissel et al. describe this process in detail in [2], and give explicit
+analytically derived elements of Π(𝚽) for all fundamental kinematic constraints.
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+2.1 Modeling friction in Lie-group DAE formulation
+
+Consider the set of all the points in time 𝒯¯ = {t ∈ ℝ | t ≥ 0}. Let the kth finite time interval
+be defined as 𝒯 k = {𝒯 k ⊂ 𝒯¯ | t ∈ 𝒯 k =⇒ t1k ≤ t ≤ t2k , t1k = min(𝒯 k ), t2k = max(𝒯 k )}, such
+          ⋃︁
+           n
+that 𝒯¯ =    𝒯 k . The inverse of the differential of the exponent map (3) given by Terze et al.
+           k=1
+[14] is essentially an ordinary differential equation with initial conditions such that at every
+time-step, the starting point is the current pose itself. Hence emerges the initial condition
+                                                     ⋃︁
+                                                      n
+𝜽 (tinit ) = 0, where tinit ∈ 𝒯init := {t ∈ 𝒯¯ | t ∈    min(𝒯 k )}. Since, the equations (3) hold
+                                                               k=1
+true for all time intervals 𝒯 k ⊆ 𝒯¯ , they can be coupled with the dynamics DAEs for each
+time interval 𝒯 k , such that the initial conditions for the pose hold true at the beginning of
+each interval. Recent work [5] extends the DAE (1a)–(1c) to include friction in joints and
+yields the following modified DAE,
+
+                                         M r̈ + 𝚽rT 𝝀 = f(r, A) + ffric (r, ṙ, 𝝎′ , A, 𝝀),             (5a)
+                        ′       ′    ′                     ′            ′           ′
+                    J 𝝎˙ + 𝝎˜ J 𝝎 + Π(𝚽) 𝝀 = n (r, A) + n fric (r, ṙ, 𝝎 , A, 𝝀),
+                                                   T
+                                                                                                        (5b)
+                                            𝚽(r, A) = 0,                                                (5c)
+
+where ffric and n′ fric represent the friction induced forces and torques, respectively.
+   Furthermore, the inverse of the differential of the exponent map (3) can be expressed in
+the following two forms: as a series of commutators (6a), as well as a closed form (6b) [14]:
+                                                                             ∞
+                                                                            ∑︂
+                                   1 ˜ ′         1 [︁ ˜ ˜ ′ ]︁                   Bj
+           dexp−1      ′       ′
+                                                                                     (−adθ̃ (𝝎˜ ′ )),
+                                                                                         j
+                   (𝝎˜   ) = ˜
+                             𝝎   +   [𝜽 , ˜
+                                          𝝎 ] +      𝜽 , [𝜽 , ˜
+                                                              𝝎 ] + · · · =                             (6a)
+               −θ̃                 2            12                          j =0
+                                                                                 j !
+
+                                                                            ∥𝜽 ∥
+                                                    1          ∥𝜽 ∥ cot 2 − 2 2 ′
+                            dexp−1
+                                −θ̃
+                                    (𝝎˜ ′ ) = 𝝎˜ ′ + 𝜽˜ 𝝎˜ ′ +               𝜽˜ 𝝎˜ ,                    (6b)
+                                                    2               2 ∥𝜽 ∥2
+                                                           j
+where, Bj are the Bernoulli numbers and adθ̃ is the adjoint operator. In [14], the authors
+suggest truncating the series (6a) at p th index, where for the required kth order of accu-
+racy, p ≥ k − 2. This powerful property implies that upto fifth order of accuracy could be
+potentially achieved with just first three terms. It is hence of academic interest to assess
+the effectiveness of truncation index p = 3 for order preservation, in an implicit integration
+framework, i.e., with large time-step sizes. Moreover, (6a) preserves the skew-symmetric
+structure of the output, that makes one-to-one conversion of (6a) into vector space straight-
+forward. The first three terms of (6a), on conversion to vector-space, yield following ODE:
+                                                   ⎡T⎤
+                                                     l1
+                           𝝎′ = H(𝜽 )𝜽˙ , H(𝜽 ) = ⎣lT2 ⎦ , ∀ t ∈ 𝒯¯ ,
+                                                     lT3                                   (7)
+
+                               𝜽 (ti ) = 0,     ∀ ti ∈ 𝒯init
+
+where, H(𝜽 ) is computed as shown in Appendix A, and 𝜽 ∈ 𝔰𝔬(3). Differentiating (7) yields
+the following relationship with acceleration:
+
+                            𝝎˙ ′ = H(𝜽 )𝜽¨ + W(𝜽 , 𝜽˙ )𝜽˙ ,     W(𝜽 , 𝜼) = (H(𝜽 ) 𝜼)𝜽                    (8)
+                                                                                            E. Chaturvedi et al.
+
+   Just like H(𝜽 ), the matrix W(𝜽 , 𝜼) can also be evaluated symbolically. Substituting equa-
+tions (7) and (8) into (5a)–(5c), the DAEs can be transformed into absolute coordinates form
+where u = [rT , 𝜽 T ]T are absolute coordinates. The resulting DAEs for rotational motion
+(5b), for each time-interval 𝒯 k ⊆ 𝒯¯ can be re-written as:
+
+      Ĵ(𝜽 )𝜽¨ + Ĉ(𝜽 , 𝜽˙ ) 𝜽˙ + Π(𝚽)T 𝝀 = n′ (r, A) + n′ fric (r, ṙ, 𝝎′ , A, 𝝀),    𝜽 (t0 ) = 0,       (9a)
+
+                                                            (︁ ˜︂ )︁
+          Ĵ(𝜽 ) = J H(𝜽 ),     Ĉ(𝜽 , 𝜽˙ ) = J W(𝜽 , 𝜽˙ ) + H(𝜽 )𝜽˙ Ĵ(𝜽 ),      t0 = min (𝒯 k ).        (9b)
+
+Now, the DAE (5a)–(5c) can be modified such that the rotation matrix A is represented as a
+matrix-valued function of unit-quaternions, i.e., A = ψ(p) ⇐⇒ pT p = 1 where ψ : ℝ4 →
+ℝ3×3 . The modified DAE (5a)–(5c) can thus be written in fully-implicit form as follows:
+                                  [︃      ]︃ [︃                                        ]︃
+                                       d1      M̄ v̇ + FA (q, va , 𝝀) + Frot (𝜽 , 𝜽˙ )
+               d(q, v, 𝝀, v̇) =             =                                             = 0,          (10a)
+                                       d2                     𝚽(q)
+                     [︃             ]︃       [︃ ]︃        [︃ ]︃    [︃ ]︃ [︃ ]︃      [︃ ]︃
+                       M 0                     r̈           ṙ        ṙ   r          r
+             M̄ =                      , v̇ = ¨ , v = ˙ , va = ′ , q =         , u=       ,
+                        0 Ĵ(𝜽 )               𝜽            𝜽        𝝎     p          𝜽
+                     [︄                                           ]︄
+                           𝚽rT (q)𝝀 − f(q) − ffric (q, va , 𝝀)
+  FA (q, va , 𝝀) =                                                   ,
+                        ΠT (𝚽(q))𝝀 − n′ (q) − n′ fric (q, va , 𝝀)
+                                                                                            (10b)
+                     [︃               ]︃
+                            0
+    Frot (𝜽 , 𝜽˙ ) =                     ,
+                       Ĉ(𝜽 , 𝜽˙ ) 𝜽˙
+                                               [︃         ]︃
+                                                  I 0
+              va = Ĥ(𝜽 ) v, Ĥ(𝜽 ) =                        .
+                                                  0 H(𝜽 )
+
+    The sub-Jacobians of general nonlinear forcing functions, such as friction forces and
+torques in DAE (5a)–(5c), corresponding to infinitesimal corrections δr, δṙ, δr̈, δ𝝀, δ𝝎′ , δ 𝝎˙ ′
+can be simply obtained as their partial derivatives with respect to r, ṙ, r̈, 𝝀, 𝝎′ , 𝝎˙ ′ respec-
+tively. This can be achieved via a gamut of numerical and/or auto-differentiation tools.
+However, computing the coefficient matrix for nonlinear (friction) forces and torques cor-
+responding to infinitesimal local rotation δ 𝜽 can only be evaluated on a case-by-case basis.
+This limits the applicability of r–A formalism when arbitrary complex nonlinear forcing
+functions are included. In contrast to r–A formulation, r–p and r–𝝐 formulations are devoid
+of this limitation as the equivalent coefficient matrices are simply computed as Jacobians
+with respect to p and 𝝐 respectively. Hence, a general representation of these coefficient ma-
+trices in absolute coordinates is an open problem. Because of wide availability of numerical
+and automatic differentiation toolboxes, it is preferable to have the general representation as
+a composition of derivatives with respect to the global orientation parameters p or 𝝐.
+
+2.2 General representation of coeﬃcient matrix of local-rotations using Lie-group
+    properties of quaternions
+
+Computation of derivatives with respect to Euler-parameters (unit-quaternions) p allows to
+circumvent the issue of gimbal lock. The mapping between the body-fixed angular velocity
+vector 𝝎′ and the time derivative of p is given using the orthogonal matrix G(p) as follows
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+[4]:
+               [︁             ]︁
+       G (p) := −e −ẽ + e0 I3 ,
+                                                                                                [︃        ]︃     (11)
+                   1                                     1                                       0 −𝝎′ T
+            ṗ =     G (p)T 𝝎′        =⇒         ṗ =      𝒢 (𝝎′ ) p,    where          𝒢=                   .
+                   2                                     2                                       𝝎′ −𝝎˜ ′
+
+The bilinear mapping, from [4], proposes that the matrix 𝒢 (𝝎′ ) belongs to the Lie-algebra
+of quaternions. Further, in finite-element based formalism, the velocities and positions are
+approximated using polynomial bases as time-dependent functions [22, 27, 29]. Following
+this, the angular-velocity signals 𝝎′ (t) and orientation parameters p(t) care treated as time-
+dependent functions represented by polynomial bases. Hence, the resulting first order system
+(11) at a time t is as follows:
+
+                                                         1
+                                              ṗ(t) =      𝒢 (𝝎′ (t)) p(t).                                      (12)
+                                                         2
+
+Since the above system is non-autonomous, the general solution is represented as follows,
+where p0 is the initial value at t = t0 and 𝜽 (t0 ) = 0:
+                             (︃∫︂ t                      )︃                            (︂             )︂
+                                      1                                                     1
+              p(t) = exp                𝒢 (𝝎′ (t))dt          p0 =⇒ p(t) = exp                𝒢 (𝜽 (t)) p0 ,     (13)
+                                 t0   2                                                     2
+
+
+and after algebraic manipulations, such as in [4, 5], an exact representation of the matrix
+exponential is as follows:
+                                                                (︂        )︂
+                                                                   ∥𝜽(t)∥
+                        (︂         )︂     (︂        )︂      sin
+                        1                    ∥𝜽(t)∥                  2
+                    exp   𝒢 (𝜽 (t)) = cos              I4 +                  𝒢 (𝜽 (t)).                          (14)
+                        2                      2               ∥𝜽 (t)∥
+
+This exponential integration scheme on unit-quaternions automatically satisfies the normal-
+ization constraint pT p = 1 [4]. The operator 𝒢 applied to any input argument yields a skew-
+symmetric matrix containing the elements of the argument vector, as illustrated in equation
+(11). Moreover, unit quaternions are not a complete solution for large rotations, but just a
+chart. In true sense, quaternion Lie group is double cover of SO(3), which implies that two
+quaternions describe the same rotation [11, 14]. When the argument is the Euler rotation
+vector 𝜽 , the resulting matrix 𝒢 (𝜽 ) is simply composed of elements of vector 𝜽 and hence is
+linear in 𝜽 . Therefore, the discrete equation at nth time-step [tn−1 , tn ] equivalent to continu-
+ous form (13), can be represented as:
+                                        (︂          )︂                  (︂ (︂        )︂)︂
+                                             1                                  𝜽n
+                          pn = exp             𝒢 (𝜽 n ) pn−1 = exp 𝒢                        pn−1 .               (15)
+                                             2                                   2
+
+
+                                   (︂ (︂ kof)︂)︂pn at kth iteration from the previous time-
+In a Newton-Raphson iteration, evolution
+step pn−1 takes the form pn = exp 𝒢 𝜽2
+                           k
+                                                 pn−1 . In the following analysis, the sub-
+                                                                                         k
+                                                                            (︂ (︂ kin
+script denoting nth time-step has been dropped for brevity. For small perturbation  )︂)︂𝜽 ,
+the matrix exponential can be approximated with first-order expansion: exp 𝒢 2   δ𝜽
+                                                                                         ≈
+       (︂ k )︂        2
+I4 + 𝒢 δ𝜽2 + O(δ𝜽 k ). Subsequently, a perturbation δ𝜽 k in body-frame rotation produces
+                                                                                       E. Chaturvedi et al.
+
+the following correction in respective pk :
+                               (︄ (︄               )︄)︄
+                                     𝜽 k−1 + δ𝜽 k                    (︂ (︂ k−1 )︂)︂
+            p − p = exp 𝒢
+              k    k−1
+                                                        pn−1 − exp 𝒢 𝜽 2            pn−1 ,
+                                           2
+                               (︂ (︂ k−1 )︂)︂ (︂   (︂ (︂ k )︂)︂       )︂
+             =⇒ δpk = exp 𝒢 𝜽 2                 exp 𝒢 δ𝜽2        − I4 pn−1 ,
+                                                                                                     (16)
+                               (︂ (︂ k−1 )︂)︂ (︂ (︂ k )︂)︂
+             =⇒ δpk ≈ exp 𝒢 𝜽 2                 𝒢 δ𝜽2      pn−1 ,
+                          [︂      (︂ (︂ k−1 )︂)︂           ]︂
+                             1
+             =⇒ δpk ≈ exp 𝒢 𝜽 2                   G(pn−1 ) δ𝜽 k =: Texp (𝜽 k−1 ) δ𝜽 k .
+                              2
+
+Therefore, the matrix Texp (𝜽 k−1 ) can be used to compute change in global orientation δp
+for infinitesimal corrections in local-frame rotation 𝜽 . This means, that infinitesimal change
+in any arbitrary nonlinear vector-valued function of generalized coordinates and Euler rota-
+tions, q = [rT pT ]T and δ𝜽 respectively, containing p elements, g(q, 𝜽 ) : ℝ6 × S 3 → ℝp , can
+be computed by using Texp from equations (16). Hence, the coefficient matrix corresponding
+to local rotations Π(g) assumes a general form given as follows:
+
+      δgk = gq (qk−1 , 𝜽 k−1 ) δqk + g𝜽 (qk−1 , 𝜽 k−1 ) δ𝜽 k
+                                       [︁                                                ]︁
+   =⇒ δgk = gr (qk−1 , 𝜽 k−1 ) δrk + gp (qk−1 , 𝜽 k−1 )Texp (𝜽 k−1 ) + g𝜽 (qk−1 , 𝜽 k−1 ) δ 𝜽 k ,
+                                                                                                     (17)
+                                  [︃      ]︃
+            [︁ k−1              ]︁ δrk
+   =⇒ δg = gr Π(g )
+        k                 k−1
+                                             .
+                                    δ𝜽 k
+
+In equations (17), the action of right multiplication of Jacobian 𝚽p with matrix Texp essen-
+tially transports 𝚽p to an orientation rotated by 𝜽 . Hence, Texp can be defined as a transporta-
+tion matrix on S 3 group. Furthermore, we define a set of spatial coordinates u = [rT , 𝜽 T ]T ,
+corresponding to any concerned body at each time-step, that represent: (1) Cartesian coor-
+dinates in three-dimensional space, and (2) the angular rotation of the body-frame about a
+body-fixed axis, in a specified time-interval. Therefore, a generalized transformation opera-
+tor Π can be defined as follows.
+
+Deﬁnition 2.1 Consider the set ℬ = {a(p, 𝜽 ) | ∀p ∈ S 3 , 𝜽˜ ∈ 𝔰𝔬(3)}, the image of S 3
+through a vector valued function a(p, 𝜽 ) : S 3 × 𝔰𝔬(3) → ℝm . The operator Π : ℬ → ℝm×3 is
+a matrix valued function such that its action on an arbitrary vector a(p, 𝜽 ) ∈ ℬ , is obtained
+by right-multiplication of the Jacobian ap with the transportation matrix Texp parameterized
+by the Euler rotation 𝜽 , i.e.,
+
+                                      Π(a) = ap Texp (𝜽 ) + a𝜽 .                                     (18)
+
+The action of operator Π yields a coefficient matrix that maps the variations in a with respect
+to unit-quaternions p to the corresponding variations with respect to the Euler rotation 𝜽 .
+
+    Furthermore, the coefficient matrix Π(𝚽) corresponding to constraint torques can be ei-
+ther computed from analytical expressions in [1–3], or it can be equivalently computed as
+Π(𝚽) ≡ 𝚽p Texp . To demonstrate this principle experimentally, let Π∗ (𝚽) signify the ana-
+lytically evaluated matrix and 𝚽p can be evaluated either analytically [6, 34] or numerically.
+For worst case scenario, it is vital that the error dynamics be reported with 𝚽p evaluated
+numerically; for instance, using a central finite-difference scheme. As a measure of error,
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+the value of Frobenius error norm η can be stored at each simulation time-step, and can be
+computed using equation (19):
+
+                                        η = ∥Π∗ (𝚽) − 𝚽p Texp ∥F .                              (19)
+
+   Using Definition 2.1, a generalized transformation operator can be defined for the com-
+plete set of generalized coordinates.
+
+Deﬁnition 2.2 Consider the set ℱ = {g(q, 𝜽 ) | ∀q ∈ ℝ3 × S 3 , 𝜽˜ ∈ 𝔰𝔬(3)}. The operator
+𝚯 : ℱ → ℝ6×6 is a matrix valued function whose action on an arbitrary vector g(q, 𝜽 ) ∈ ℱ ,
+yields a coefficient matrix that maps the variations in g with respect to generalized coor-
+dinates q to the corresponding variations with respect to new set of defined coordinates u,
+i.e.,
+                                  [︁              ]︁ [︁         ]︁
+                          𝚯(g) = gr gp Texp + g𝜽 = gr Π(g) .                           (20)
+
+   The operator 𝚯 acts on the arbitrary vector g(q, 𝜽 ) and transforms into the coefficient
+matrix using equation (20). Using the operator 𝚯 from Definition 2.2 allows to rewrite
+equation (17) as follows:
+                                                        [︃     ]︃
+                                      [︁              ]︁ δrk
+                               δgk = gk−1r   Π(gk−1 )         k ,
+                                                           δ𝜽                          (21)
+                                  =⇒ δgk = gk−1
+                                            q   δqk = 𝚯(gk−1 ) δuk .
+
+   The friction loads (forces and torques) for fundamental joints are evaluated in the refer-
+ence [5]. It is clear that the friction loads are essentially intricate functions of q, v, 𝝀. While
+the Jacobians of friction loads with respect to v and 𝝀 can be directly computed as partial
+derivatives, it is important to convert Jacobian with respect to q to the absolute coordinate
+counterpart. This is achieved by the proposed operator Texp and the approach is general in
+the sense as the conversion does not depend on the type of joint.
+
+
+3 Higher order time integration in absolute coordinates using TFE
+
+For a numerical solution, one starts with the known states qn−1 , 𝜽 n−1 , vn−1 , 𝝀n−1 , v̇n−1 at tn−1
+and computes the unknown states qn , 𝜽 n , vn , 𝝀n , v̇n at tn . The solution of the implicit DAE
+(10a)–(10b) requires a Newton-Raphson iteration, starting with some initial values. Using
+the definition of the operator 𝚯 from equations (20), the kth Newton-Raphson iteration for
+solving equation (10a) can be stated as follows:
+[︄              (︂(︁  )︁k−1       )︂                                                           ]︄
+                            rot u̇ δun + Frot u̇ δvn + FA va δva n + FA 𝝀 δ𝝀n + 𝚯(FA
+  M̄k−1 δ v̇kn + M̄ v̇ u + Fk−1      k        k−1  k      k−1    k      k−1 k        k−1
+                                                                                         )δukn
+                                                   𝚯(𝚽k−1 ) δukn
+                                                          [︃            ]︃
+                                          (︁       )︁    0    0
+ = −d(qk−1    k−1  k−1 k−1
+       n , va n , 𝝀n , v̇n ),                  M̄ v̇ u =                   ,
+                                                         0 J W(𝜽 , 𝜽¨ )
+                                                                                               (22a)
+                                                                [︄                  ]︄
+                        ukn = uk−1
+                               n   + δukn ,                          (︂rkn )︂
+                                                        qkn =        1                 .      (22b)
+                        𝝀kn = 𝝀k−1 + δ𝝀kn ,                      exp 𝒢 (𝜽 kn ) pn−1
+                               n                                          2
+                                                                                                    E. Chaturvedi et al.
+
+   Furthermore, the corrections in va , i.e., δva , can be substituted back into equations (22a)
+from the following relationships:
+                                                                                    [︃             ]︃
+                                                                                      0   0
+                 δva kn = Ĥ(𝜽 k−1 ) δvkn + Ŵ(𝜽 k−1 , 𝜽˙
+                                                            k−1
+                                                                  ) δukn ,   Ŵ =                     .           (23)
+                                                                                      0 W(𝜽 , 𝜽˙ )
+
+   This step yields the following updated Newton-Raphson iteration:
+            [︄                                                                ]︄      [︃ k−1 ]︃
+                                  Av δvn + 𝚪 u
+                 M̄k−1 δ v̇kn + F̂k−1  k       k−1
+                                                   δukn + FA k−1 δ𝝀kn                   d
+                                                             𝝀
+                                                                                   = − 1k−1 ,
+                                       𝚯(𝚽k−1 ) δukn                                    d2
+                         (︂(︁        )︁k−1                                           )︂                           (24)
+                                                                k−1 ˙ k−1
+            𝚪 u k−1 =           M̄ v̇ u + Frot k−1
+                                               u   + FA k−1
+                                                        va Ŵ(𝜽    , 𝜽 ) + 𝚯(FA k−1 ) ,
+
+              Av = FA va Ĥ(𝜽     ) + Fk−1
+                              k−1
+            F̂k−1     k−1
+                                       rot u̇ .
+
+In equations (24), it is imperative that the corresponding corrections in derivatives δv and
+δ v̇ need to be expressed as some functions of δu and the step-size h. For instance, a simple
+first-order scheme [2, 3] simply translates to δv = h1 δu and δ v̇ = h12 δu. The problem at hand
+is to find the higher-order representations of the corrections δv and δ v̇ to facilitate time-
+integration of order greater than 1. To achieve the same, the following subsection revisits an
+efficient TFE based family of integrators proposed by Kim and Reddy [29].
+
+3.1 Direct implicit integration using TFE
+
+This section proposes an extension of a TFE approach, originally made for structural dy-
+namics problems [29], for solving the DAE of interest (10a). This approach illustrates a time
+finite element method based on modified weighted-residual method, applied to the velocity–
+displacement and velocity–acceleration relations. Consider the DAE (10a) re-written with
+separated algebraic and differential parts, as follows:
+                                [︄                     ]︄
+                                  M̄ a + F̂A (u, v, 𝝀)
+                                          𝚽(u)              = 0,      F̂A = FA + Frot
+                                           h2
+                                                                                                                  (25)
+                                                       u̇ = v,
+                                                       v̇ = a.
+
+The constraint equation is divided by h2 for stabilizing the condition number of the resulting
+Jacobian matrix. It is important to notice that this form of DAE can be stated with u as a
+state variable because generalized coordinates q can be represented as a function of u, as fol-
+lows from equations (13) and (22b). Next, the variables u and 𝝀 are augmented into a single
+vector-valued variable x = [uT 𝝀T ]T . The corresponding augmented variables containing
+velocities and accelerations are denoted by y = ẋ = [vT 𝝀˙ ]T and z = ẍ = [v̇T 𝝀¨ ]T . The
+                                                                 T                         T
+
+
+proposed TFE method is applied on the differential and algebraic parts by approximating
+independent signals x(t), y(t) and z(t) at time t = tn−1 + τ h within the interval 0 ≤ τ ≤ 1,
+using Lagrange polynomials φ(τ ) = [ϕ0 , ϕ1 , . . . , ϕm ] of degree m, built on fixed set of inter-
+polation points. These interpolation points, when considered in context of time discretiza-
+tion using finite elements, are essentially nodal coordinates within the time-element. For
+m = 1, 2 , and 3, these nodal coordinates, are tabulated in Table 1. It can be noticed that for
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+Table 1 Nodal coordinates in
+time-elements of different            Polynomial degree (m)                          Nodal coordinates
+polynomial order
+                                      m=1                                            {0, 1}
+                                                                                         1
+                                      m=2                                            {0, , 1}
+                                                                                          2
+                                      m = 3 (Equally-spaced)                         {0, 13 , 23 , 1}
+                                                                                         1 √ 1 √
+                                      m = 3 (Gauss-Lobatto)                          {0, − 105 , + 105 , 1}
+                                                                                          2           2
+
+
+m = 3, the distribution of nodal coordinates comes in two flavors: equidistant spacing and
+Gauss-Lobatto quadrature points.
+    The polynomial row vector φ(τ ) contains m + 1 polynomial expressions associated with
+m + 1 nodes. The polynomial approximations of the augmented variables can be represented
+as follows:
+                            ¯ )x̄ + ϕ0 (τ )xn−1 ,
+                     x(t) = 𝝋(τ                           ¯ ) := [ϕ1 , . . . , ϕm ] ⊗ I,
+                                                          𝝋(τ
+                            ¯ )ȳ + ϕ0 (τ )yn−1 ,
+                     y(t) = 𝝋(τ                                                                           (26)
+                             ¯ )z̄ + ϕ0 (τ )zn−1 .
+                      z(t) = 𝝋(τ
+
+    Here, ϕ0 (τ ) is the polynomial associated with the first node that represents previous
+(n − 1) time-step, where all the variables, i.e., xn−1 , yn−1 , zn−1 , are known.
+    Hence, with m degree polynomials, each time finite element has m + 1 nodes with un-
+known variables associated with only m nodes. The vectors x̄, ȳ, z̄ ∈ ℝm(6N+C)×1 , essen-
+tially comprise of unknowns xi , yi , zi at ith node ∀ i ∈ 2, . . . , m + 1. The differential parts
+with the augmented variables yield the following residual equations:
+
+                           res1 (t) = ẋ(t) − y(t),       res2 (t) = ẏ(t) − z(t).                        (27)
+
+The modified weighted residual statements, as established in [29], applied on the isolated
+differential parts in equations (27) can be stated as follows:
+                      ∫︂ 1
+                                 d j −1 res1 (τ )
+                           w(τ )                  dτ = 0, ∀j = 2, . . . , m + 1,
+                        0            dτ j −1
+                      ∫︂ 1                                                            (28)
+                                 d j −1 res2 (τ )
+                           w(τ )                  dτ = 0, ∀j = 2, . . . , m + 1.
+                        0            dτ j −1
+   Evaluation of above integrals requires only a single weight and yet yields m linearly inde-
+pendent equations. Carrying on with the weight-optimization yields the following relations
+between the augmented variables:
+                                                        ¯ n−1 + γ̄ yn−1 ,
+                                     ȳ = x̄˙ = 𝜶¯ x̄ + 𝜷x                                               (29a)
+                                                        ¯ n−1 + γ̄ zn−1 ,
+                                     z̄ = x̄¨ = 𝜶¯ ȳ + 𝜷y                                               (29b)
+                                     𝜶¯ = ᾱm×m ⊗ I6N+C×6N+C ,
+                                     𝜷¯ = β̄m×1 ⊗ I6N+C×6N+C ,                                           (29c)
+                                     𝜸¯ = γ̄m×1 ⊗ I6N+C×6N+C .
+
+The matrices ᾱ, β̄, γ̄ are weight coefficient matrices, parameterized by 0 < ν ≤ 1 as a damp-
+ing controlling parameter, where ν = 1 means no numerical damping. These matrices are
+                                                                                     E. Chaturvedi et al.
+
+defined in Appendix B for m ∈ {1, 2, 3}. The subscripts in equations (29c) denote the size of
+the matrices and vectors, with m being the degree of polynomial used. The readers are ad-
+vised to refer to [29] for more details on the derivation of weight matrices ᾱ, β̄ and γ̄ . With
+ODEs, commonly countered in structural dynamics problems, the discussed TFE method
+ensures 2m − 1 order of the solution [29]. Therefore, it is of primary interest to study this
+family of TFE integrators and the effect of nodal distributions in time-elements in the con-
+texts of DAEs.
+
+3.2 Solution strategy using Newton-Raphson method
+
+Consider the time finite element with m + 1 nodes. Node i = 1 corresponds to the time-step
+t0 = tn−1 . Hence, the state variables un−1 , vn−1 , v̇n−1 , 𝝀n−1 are known values at node i = 1.
+To find the unknowns at the ith node, ∀ i = 2, 3, . . . m + 1, the Newton-iteration (22a) can
+be stated in terms of augmented variables xi = [uiT , 𝝀iT ]T as follows:
+
+                  [︃        ]︃k−1 [︃ ]︃k [︃         ]︃k−1 [︃ ]︃k [︃               ]︃k−1 [︃ ]︃k
+                       M̄ 0         δ v̇     F̂Av 0         δv         𝚪u     FA𝝀         δu
+        −dk−1 =                            +                       +                           ,
+          i
+                       0 0 i        δ 𝝀¨ i     0 0 i        δ 𝝀˙ i   𝚯(𝚽)/ h2 0 i         δ𝝀 i
+
+  =⇒ −dk−1
+       i   = M̃i δ ẍki + C̃k−1
+                            i   δ ẋki + K̃k−1
+                                           i   δxki .
+                                                                                                   (30)
+
+The equations (30) for all the nodes in the system can be assembled together to yield the
+following Newton-Raphson equations:
+
+    ⎡                  ⎤k−1 ⎡        ⎤k ⎡                 ⎤k−1 ⎡        ⎤k
+      M̃2 0 . . . 0            δ ẍ2     C̃2 0 . . . 0            δ ẋ2
+    ⎢ 0 M̃3 . . . 0 ⎥ ⎢ δ ẍ3 ⎥         ⎢ 0 C̃3 . . . 0 ⎥ ⎢ δ ẋ3 ⎥
+    ⎢                  ⎥ ⎢           ⎥  ⎢                 ⎥ ⎢           ⎥
+    ⎢ .   .  .     .   ⎥ ⎢ .. ⎥ + ⎢ . . .             .. ⎥ ⎢ .. ⎥
+    ⎣ ..  .. . .   .. ⎦ ⎣ . ⎦           ⎣ .. .. . .    .  ⎦    ⎣    . ⎦
+       0 0 . . . M̃m+1       δ ẍm+1      0 0 . . . C̃m+1       δ ẋm+1
+                                                                                                 (31a)
+                             ⎡                 ⎤k−1 ⎡       ⎤k ⎡     ⎤k−1
+                              K̃2 0 . . . 0            δx2       d2
+                             ⎢ 0 K̃3 . . . 0 ⎥ ⎢ δx3 ⎥         ⎢ d3 ⎥
+                             ⎢                 ⎥ ⎢          ⎥  ⎢     ⎥
+                            +⎢ . . .       .   ⎥ ⎢ .. ⎥ = − ⎢ .. ⎥ ,
+                             ⎣ .. .. . .   .. ⎦ ⎣ . ⎦          ⎣ . ⎦
+                               0 0 . . . K̃m+1        δxm+1     dm+1
+
+                                ¯ x̄¨ k + C̄
+                            =⇒ M̄δ                          ¯ k−1 δ x̄k = −d̄k−1 .
+                                           ¯ k−1 δ x̄˙ k + K̄                                    (31b)
+
+   Using the equations (29a)–(29c), the corrections in accelerations and velocities at all
+nodes can be represented as follows:
+
+                                  δ x̄˙ = 𝜶¯ δ x̄,   δ x̄¨ = 𝜶¯ δ x̄˙ = 𝜶¯ 2 δ x̄.                 (32)
+
+Plugging the relations from equation (32) into (31b), the final Newton-Raphson iteration
+with TFE method can be retrieved as follows:
+                               [︁ ¯ 2 ¯ k−1      ¯ ]︁k−1 δ x̄k = −d̄k−1 ,
+                                 M̄𝜶¯ + C̄ 𝜶¯ + K̄                                               (33a)
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+Algorithm 1 TFE integration of multibody dynamics with friction in absolute coordinates
+ 1: Inputs: m, ν, t0 , tfinal , 𝝀0 , q0 , v0 , v̇0
+ 2: n ← 0
+ 3: 𝜽 0 ← 0
+          ¯ 𝜷,
+ 4: Call 𝜶,     ¯ 𝜸¯ for selected m and ν
+ 5: while tn < tfinal do
+ 6:     k←1
+ 7:     Evaluate guess states x̄¨ k , x̄˙ k , x̄k                                          ▷ Using (34)
+ 8:     while ∥d̄∥ ≥ ε do
+ 9:            for j = 2 : m + 1 do
+10:                Extract nodal states vj , uj , 𝝀j , v̇j from x̄¨ k , x̄˙ k , x̄k
+11:                Evaluate qj                                                             ▷ Using (15)
+12:                Evaluate nodal entities M̃j , C̃j , K̃j                                 ▷ Using (30)
+13:            end for
+14:            Assemble M̄,     ¯ K̄,
+                             ¯ C̄,   ¯ d̄                                           ▷ Using (31a)–(31b)
+15:            Solve kth Newton-Raphson iteration                                         ▷ Using (33a)
+16:            Update the global state-ensemble                                           ▷ Using (33b)
+17:            k←k+1
+18:     end while
+                        ⎡ ⎤at (m + 1) node
+                                             th
+19:     Extract
+        ⎡         ⎤the states
+           ¨x̄n−1         ¨x̄n
+20:     ⎣x̄˙ n−1 ⎦ ← ⎣x̄˙ n ⎦
+           x̄n−1          x̄n
+21:     tn ← tn−1 + h
+22:     n←n+1
+23: end while
+
+
+                        x̄k = x̄k−1 + δ x̄k ,
+                                         ¯ n−1 + 𝜸¯ ẋn−1 ,
+                        x̄˙ k = 𝜶¯ x̄k + 𝜷x
+
+                       x̄¨ k = 𝜶¯ x̄˙ k + 𝜷¯ ẋn−1 + 𝜸¯ ẍn−1 ,                                 (33b)
+                               [︄                           ]︄
+                                         (︂     rki )︂
+                       qi =k
+                                            1                   ,    ∀ i = 2, 3, . . . m + 1.
+                                  exp 𝒢 (𝜽 ki ) pn−1
+                                        2
+
+   The initial guess values at k = 1 are chosen using the following equations:
+
+                                            x̄¨ k=1 = x̄¨ n−1 ,
+                                            x̄˙ k=1 = x̄˙ n−1 + τ x̄¨ n−1 ,                       (34)
+                                            x̄   k=1
+                                                       = x̄n−1 + τ x̄˙ n−1 .
+
+    A step-by-step procedure to implement the discussed index-3 DAE formulation with
+TFE integration on Lie-group matrices of quaternions, is described in the Algorithm 1. For
+a target simulation time tfinal , the initial values of 𝜽 0 at time t0 should be assumed zero.
+    The extracted states on (m + 1)th node, i.e., at τ = 1, represent the states at the nth time
+step in step 18 of the algorithms 1. These can be later used to evaluate contact forces and
+friction forces and the torques generated by them using the equations discussed in [5]. It is
+                                                                                E. Chaturvedi et al.
+
+worth noting that presented TFE schemes not only promise higher order accuracy, i.e., upto
+5th order as discussed in this paper, but also feature a strong potential for parallelization.
+Essentially, steps 9 to 12 in algorithm 1 can be executed in a parallel computing environment
+that can improve the computational performance, i.e., the nodal entities corresponding to
+each node can be computed parallel to each other and then combined in step 14. However,
+the topic of parallelization is not aligned with the present scope of this study, although it is
+worth investigating as future study.
+
+3.3 Implementation of Lie-group Newmark-𝜷 and trapezoidal schemes
+
+The generalized definition of operator 𝚯 proposed in Sect. 2.2 also allows implementation
+of conventional integration schemes. This subsection discusses implementation of two com-
+monly used schemes in multibody applications, namely, Trapezoidal rule and Newmark-β
+method. Their implementation with proposed formulation also lays groundwork for assess-
+ing the performance of TFE integration in context of DAEs. No such analyses have been
+reported in existing literature, to the best of our knowledge.
+   Consider the DAE (25) with separated algebraic and differential state variables. The
+trapezoidal rule further yields following equations:
+                                               h (︁         )︁
+                                 vn = vn−1 +       an−1 + an ,                              (35a)
+                                               2
+                                               h (︁          )︁
+                                 un = un−1 +        vn−1 + vn .                             (35b)
+                                               2
+
+    Since the DAE (25) is inherently a set of nonlinear algebraic equations, a Newton-
+Raphson scheme is inevitable to solving the nonlinear system. The resulting linear system
+for evaluating corrections δyk at the kth Newton-Raphson iteration, can thus be stated as
+follows:
+
+                                     J̄k−1 δyk = −resk−1 ,                                  (36a)
+                       ⎡                                        ⎤        ⎡    ⎤
+                      M̄ ak−1 + F̂A (uk−1 , vk−1 , 𝝀k−1 )                   δak
+                    ⎢ k−1                (︁              )︁ ⎥             ⎢ k⎥
+                    ⎢ −v + vn−1 + h2 an−1 + ak−1 ⎥                        ⎢δv ⎥
+                    ⎢
+             res = ⎢ k−1
+                k−1
+                                         (︁              )︁ ⎥ ,     δyk = ⎢     ⎥
+                                                     k−1 ⎥                ⎢ k ⎥,
+                    ⎣−u + un−1 + 2 vn−1 + v
+                                       h
+                                                            ⎦             ⎣δu ⎦
+                                     𝚽(uk−1 )/ h2                          δ𝝀k
+                       ⎡                             ⎤k−1                                   (36b)
+                           M̄ F̂Av     𝚪u      FA𝝀
+                       ⎢h                         ⎥
+                       ⎢ 2 I −I 0               0 ⎥
+               J̄k−1 = ⎢
+                       ⎢
+                                                  ⎥
+                                                  ⎥         .
+                       ⎣ 0 2I
+                             h
+                                −I              0 ⎦
+                         0 0 𝚯(𝚽)/ h2           0
+
+    Although the trapezoidal rule has been well established for problems with friction [34]
+using tangent-space index-0 DAE, the periodic components contributed by 𝚯 operator can
+influence the stability of solution with the formulation proposed in this paper. The trape-
+zoidal integration rule comes with equal contribution from explicit and implicit parts. How-
+ever, the lack of controllable numerical damping in trapezoidal rule often makes it unsuitable
+for problems with high-frequency periodic noise.
+    The Newmark-β method is a popular integrator of choice for structural and multibody dy-
+namics equations, and can be derived from generalized-α method by keeping α = 0 [35–37].
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+Algorithm 2 Newmark-β and trapezoidal integration for multibody dynamics with friction
+in absolute coordinates
+  1: Inputs: t0 , tfinal , β, γ , 𝝀0 , q0 , v0 , a0
+  2: n ← 0
+  3: 𝜽 0 ← 0
+  4: while tn < tfinal do
+  5:     k←1
+  6:     Initialize yk ← yn
+  7:     Evaluate qk                                                     ▷ Using (15)
+  8:     while ∥res∥ ≥ ε do
+  9:         Evaluate J̄(yk , qk ), res(yk , qk )          ▷ Using (36a)–(36b) or (38)
+10:          yk ← yk − J̄−1 res
+11:          Evaluate qk                                                 ▷ Using (15)
+12:          k←k+1
+13:      end while
+14:      yn ← yk
+15:      tn ← tn−1 + h
+16:      n←n+1
+17: end while
+
+
+
+Unlike, the trapezoidal rule, this method is based on two additional parameters: γ to con-
+trol order and β to control numerical damping. This scheme ensures second-order accuracy
+           1                                               1
+with γ = and is equivalent to trapezoidal rule with γ = and β = 14 , i.e. no numerical
+           2                                               2
+damping. However, numerical damping can be induced by changing β [35]. The Newmark
+scheme yields the following equations:
+                                        (︁                  )︁
+                           vn = vn−1 + h (1 − γ )an−1 + γ an ,                        (37a)
+                                                  (︁ 1            )︁
+                           un = un−1 + hvn−1 + h2 ( − β)an−1 + βan .                  (37b)
+                                                            2
+
+  For β ̸= 0, the above equations are implicit and so is the DAE (25). The resulting Newton-
+Raphson iteration, has the following elements:
+                           ⎡                                               ⎤
+                              M̄ ak−1 + F̂A (uk−1 , vk−1 , 𝝀k−1 )
+                      ⎢                    (︁                     )︁       ⎥
+                      ⎢   −vk−1 + vn−1 + h (1 − γ )an−1 + γ ak−1           ⎥
+                  k−1 ⎢
+               res = ⎢ k−1                      (︁                      )︁ ⎥,
+                                               2 1                   k−1 ⎥
+                      ⎣−u + un−1 + hvn−1 + h ( 2 − β)an−1 + βa             ⎦
+                                                     𝚽(uk−1 )/ h2
+                                                                                       (38)
+                           ⎡                                    ⎤k−1
+                               M̄   F̂Av       𝚪u       FA𝝀
+                         ⎢                                  ⎥
+                         ⎢ γ hI −I   0                    0 ⎥
+                 J̄k−1 = ⎢
+                         ⎢ 2
+                                                            ⎥
+                                                            ⎥          .
+                         ⎣h  βI 0   −I                    0 ⎦
+                            0   0 𝚯(𝚽)/ h2                0
+
+Algorithm 2 delineates a step-by-step approach for implementing trapezoidal and
+Newmark-β schemes with the proposed formulation.
+                                                                             E. Chaturvedi et al.
+
+Fig. 1 Schematic diagram of a
+pendulum demonstrating a
+revolute pair
+
+
+
+
+Table 2 Case study
+specifications: Revolute pair   Property             Value                               Units
+
+                                m                    10                                  kg
+                                                     ⎡              ⎤
+                                                       0.05 0   0
+                                                     ⎢              ⎥
+                                J                    ⎣ 0 0.03 0.015 ⎦                    kg-m2
+                                                           0   0.015 0.028
+                                l                    2                                   m
+                                R                    0.5                                 m
+                                cmx                  3.09                                m
+                                μs                   0.3                                 −−
+                                μd                   0.2                                 −−
+
+
+
+4 Numerical experiments
+
+The test cases are based on the system in Fig. 1, where a pendulum i forms a revolute joint
+with a hinge pin j of radius R. The center of mass of the pendulum is located at cmx along
+local X direction. The pendulum i has mass m and inertia matrix J with its center of mass
+denoted by the generalized coordinates qi ∈ ℝ7 and the hinge pin j is mass-less and fixed
+at both ends. The gravity acts along the −Y axis. The system specific details illustrated in
+Fig. 1 are shown in Table 2.
+    Two cases of the pendulum are simulated with all the discussed integrators: (1) friction-
+less pendulum, and (2) pendulum with friction in the revolute joint with static and dynamic
+coefficients μs and μd respectively. The friction model used in this study was Brown and
+McPhee’s velocity based continuous friction model [38]. For more details on continuous
+friction models, readers are advised to refer to preliminary work by authors [39]. Further-
+more, all the partial derivatives/ Jacobian matrices
+                                             √        were computed using a central finite
+difference scheme with perturbation value ϵ̄, where ϵ̄ is machine precision value. The
+damping control parameters for the compared integrators are tabulated in Table 3.
+    As a proof of concept, Fig. 2 shows the Frobenius error norm defined in equation (19).
+Both methods produce same solution and the Frobenius error is observed to have an upper
+bound 0.049. Figures 3 and 4 compare TFE (m = 1, 2, 3), Newmark-β and trapezoidal in-
+tegrators for two step-sizes, h = 0.003 and h = 0.006 respectively, in case of a frictionless
+pendulum. A quick observation is the instability of the trapezoidal method with both step-
+sizes. This can be observed from the constraint force plots as well as the total mechanical
+energy plot. Among TFE family, the energy conservation improves marginally with increas-
+ing the degree of polynomial. The Newmark-β scheme performs better than TFE (m = 1)
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+Table 3 Damping control parameters of integrators under comparison
+
+Integrator                       Damping parameter             Friction neglected       Friction considered
+
+TFE (m = 1)                      ν                             0.99                     0.99
+TFE (m = 2)                      ν                             0.95                     0.95
+TFE (m = 3)                      ν                             0.9                      0.9
+Trapezoidal                      −                             −                        −
+Newmark-β (γ = 0.5)              β                             0.3                      0.3
+
+
+
+
+Fig. 2 Frictionless pendulum: Equivalence of proposed definition of the operator Π in equations (17) to that
+proposed in [1–3]. Frobenius norm computed as per equation (19)
+
+
+
+in terms of mitigating energy deviation. However, TFE for m = 2, 3 further reduce the en-
+ergy deviation. In all cases, the constraints were found to be well-preserved within machine
+precision. Furthermore, the iteration plots show that with step-size h = 0.006, all the TFE
+methods took 3 iterations at each time-step to achieve convergence criteria of ε = 1e − 7,
+while the iteration count for Newmark scheme varied periodically between 3 and 4. With
+step-size h = 0.003, TFE(m = 3) intermittently required 4 iterations, while TFE(m = 1 and
+m = 2) converged within 3 iterations per time-step.
+    Figure 6 compares the evolution of error and the obtained solution order in coordinates q
+and velocities v with increasing step-sizes. Although [29] guarantee 2m − 1 order, reduction
+in order can be noticed in TFE implementation for DAEs for m = 2, 3. In fact, it is observed
+that TFE (m = 3) achieves only fourth order accuracy. The order-loss could be results of
+multiple contributors. The prominent ones include inherent stiffness of DAE formulation,
+as opposed to ODE formulation, and the truncation index in (6a) being limited to the third
+                                                                                  E. Chaturvedi et al.
+
+
+
+
+Fig. 3 Frictionless pendulum: Comparison of Newmark and Trapezoidal schemes with TFE with step-size
+3e − 3. Trapezoidal scheme gives unstable solution
+
+
+term [12]. A formal investigation into this problem is hence an immediate future scope of
+this problem.
+    To evaluate errors for TFE and Newmark methods with step-sizes in range 6e − 3 ≤
+h ≤ 1.2e − 2, the reference solution was obtained for the respective integrator with step-
+size 1e − 4. Figure 5 shows computational cost of all the integrators compared. Because
+of increase in dimensionality, it is expected for TFE schemes with m = 2 and m = 3 to
+consume for computational resources. However, juxtaposing the Figs. 6 and 5, it can be
+noticed that using higher degree of polynomial allows using bigger step-size to achieve
+same order of error as with lower degree of polynomial. For instance, using TFE with m =
+3, h = 1.2e − 2 yields error < 1e − 3 at tf inal = 10 s for the simulation time 75 s, while
+m = 2, h = 6e − 3 yields error of order 1e − 3 at tf inal = 10 s for the simulation time of 81 s.
+Furthermore, Newmark-β scheme consistently gives second-order accurate solutions with
+lowest computational effort. This can be partially attributed to the lowest dimensionality of
+the resulting Newton-iteration, only next to TFE (m = 1).
+    Figures 7, 8, and 9 illustrate the evolving deviation in mechanical energy, error propa-
+gation in η, from equation (19), and the number of Newton iterations to convergence per
+time-step (bottom-most plot), for TFE with m = 1, 2, 3 respectively. It can be notices that
+Newmark-β takes the highest number of total iterations. Figure 10 shows the same quanti-
+ties for Newmark-β scheme. The work-precision diagrams, shown in Fig. 11 summarize the
+key-inferences from Figs. 6-11. It is evident that with m = 3, higher accuracy comes with
+increased computational cost. It can be observed that increasing the order of polynomial
+indeed mitigates the error propagation, however the total number of Newton-iterations by
+the end of tf inal do not differ significantly.
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+
+
+
+Fig. 4 Frictionless pendulum: Comparison of Newmark and Trapezoidal schemes with TFE with step-size
+6e − 3. Trapezoidal scheme gives unstable solution
+
+
+    Figures 12 and 13 present results for simulations with friction accounted in the revo-
+lute joint with μs = 0.3 and μd = 0.2, for step-sizes h = 0.003 and h = 0.008 respectively.
+Just like in the frictionless case, the trapezoidal rule fails to produce a stable solution. Fur-
+thermore, a quick observation shows that TFE (m = 3) requires more iterations at lower
+step-size h = 3e − 3 and exhibits a stable range of Newton iterations on large step-sizes.
+This correlates with the relatively high condition number of Newton-Raphson matrix for
+m = 3 as shown in Fig. 14. Unlike the case of frictionless pendulum, the TFE schemes take
+more iterations (5 − 6) than Newmark scheme for problems with friction.
+    Concluding the analysis, solutions obtained from equally-spaced nodes and Gauss-
+Lobatto nodal points are summarized in Fig. 15. For same damping parameter, TFE (m = 3)
+fails to produce a stable solution with equally-spaced nodes for all values of ν in this par-
+ticular experiment. Figure 16 shows the total simulation time with friction considered. It
+can be observed that adding nonlinearity such as friction may increase the computational
+resources required to achieve convergence for TFE schemes, while Newmark-β and trape-
+zoidal schemes show marginal increment in simulation time. Furthermore, Fig. 17 com-
+pares the evolution of error and the obtained solution order in coordinates q and velocities
+v with increasing step-sizes. Compared to friction-less case, accounting-in friction resulted
+in greater order loss, and larger error values. In addition, there is marginal improvement in
+errors in position with the usage of higher order methods, when compared to the first-order
+solution. However, a clear advantage of TFE schemes can be observed from Fig. 18, where
+TFE (m=2) is compared with Newmark-β at time-step h = 0.2. The solution from TFE
+scheme, with friction taken into account, yields mechanical energy at tf inal = 10 s close to
+                                                                                 E. Chaturvedi et al.
+
+
+
+
+Fig. 5 Frictionless pendulum: Computational times for a 10 s simulation
+
+
+
+
+Fig. 6 Frictionless pendulum: Solution order of q and v with TFE and Newmark-β schemes. Reference
+solution obtained with step-size h = 1e − 4, for each integrator
+
+
+the correct solution. On the other hand, Newmark-β fails to achieve convergence and yields
+incorrect solution.
+
+
+5 Conclusions
+
+In popular approaches for simulating multibody systems, rotation matrices of all the bodies
+are expressed as functions of their global rotational coordinates such as unit-quaternions
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+
+
+
+Fig. 7 Frictionless pendulum: Propagation of errors with polynomial order m = 1. Top panel: mechanical
+energy, Middle panel: Frobenius error norm η, from equation (19), Bottom panel: Newton iterations
+
+
+
+
+Fig. 8 Frictionless pendulum: Propagation of errors with polynomial order m = 2. Top panel: mechanical
+energy, Middle panel: Frobenius error norm η, from equation (19), Bottom panel: Newton iterations
+
+
+
+(Euler parameters) or Euler angles at each time step. Though unit-quaternions can circum-
+vent the problem of gimbal lock, associated with Euler parameters, they carry an additional
+normalization constraint. The methodology proposed in this contribution uses direct expo-
+                                                                                     E. Chaturvedi et al.
+
+
+
+
+Fig. 9 Frictionless pendulum: Propagation of errors with polynomial order m = 3. Top panel: mechanical
+energy, Middle panel: Frobenius error norm η, from equation (19), Bottom panel: Newton iterations
+
+
+
+
+Fig. 10 Frictionless pendulum: Propagation of errors with Newmark-β scheme. Top panel: mechanical en-
+ergy, Middle panel: Frobenius error norm η, from equation (19), Bottom panel: Newton iterations
+
+
+
+nential integration on S 3 to eschew the additional constraint. The methodology discussed
+herein contributes an approach of systematically formulating the first-order variations of
+quaternions in terms of variation in body-frame Euler-rotations. This is useful in convert-
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+
+
+
+Fig. 11 Frictionless pendulum: Work-precision diagrams for TFE and Newmark-β schemes
+
+
+
+
+Fig. 12 Pendulum with friction (μs = 0.3, μd = 0.2): Comparison of Newmark and Trapezoidal schemes
+with TFE with step-size 3e − 3. Trapezoidal scheme gives unstable solution
+
+
+
+
+ing the first-order variation in an arbitrary nonlinear force function with respect to Euler
+parameters, to that with respect to body-frame rotations. Since the angular velocity is a di-
+                                                                                 E. Chaturvedi et al.
+
+
+
+
+Fig. 13 Pendulum with friction (μs = 0.3, μd = 0.2): Comparison of Newmark and Trapezoidal schemes
+with TFE with step-size 8e − 3. Trapezoidal scheme gives unstable solution
+
+
+rect derivative of these Euler-rotations, this approach enables higher-order integration using
+Newton-Raphson iteration.
+    To facilitate higher-order integration, time finite element methods are explored on quater-
+nion Lie groups. Due to advantages of easy computer implementation, a TFE approach
+facilitating direct integration [29] was used. The TFE methods were modified to be used
+with the index-3 DAE by augmenting the Lagrange multipliers with position and orien-
+tation variables. Three integrators corresponding to degree of approximating polynomials,
+m, were used in this study, i.e., m = 1, 2 and 3. In addition to this, implementation of a
+Newmark-β scheme and a trapezoidal scheme on quaternion Lie-groups was presented and
+the TFE schemes were compared with the later two. The trapezoidal rule yielded unstable
+solution across the range of step-sizes, while Newmark-β scheme produced stable results
+with a positive damping, i.e., β = 0.3.
+    For analyzing error characteristics of TFE and Newmark schemes, the reference solution
+was obtained with step-size 1e − 4 for each integration scheme. While TFE schemes were
+found to yield better error control on energy-deviation even with large-step sizes, the ap-
+proach has limitations in terms of computational cost when nonlinearity, such as friction,
+is added to the system. However, for frictionless case, it was observed that this cost can be
+compensated by using higher degree polynomial with larger step-sizes. Furthermore, since
+the number of Newton-iterations for frictionless pendulum were the same for all integrators,
+the additional computational time for m = 2, 3 can be attributed to the dimensionality of the
+resulting Newton-iteration equations. Yet, in the case with friction accounted in, the TFE
+schemes exhibited much larger increase in simulation time than trapezoidal and Newmark-β
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+
+
+
+Fig. 14 Pendulum with friction (μs = 0.3, μd = 0.2): Condition number of Newton-Raphson matrix at final
+iteration for h = 3e − 3 and h = 12e − 3. The corresponding increase in number of iterations correlate with
+high condition number for m = 3 at smaller step-size
+
+
+
+
+Fig. 15 Pendulum with friction (μs = 0.3, μd = 0.2): Comparison of equally-spaced nodes and Gauss-
+Lobatto nodal points with 3rd degree polynomial (m = 3). The equally-spaced nodes were found to give
+out unstable solutions for all values of ν
+
+
+
+schemes. Yet, one major advantage of TFE schemes over Newmark-β method was observed
+to be the stability and credibility of TFE solutions with large time-steps, as established in
+Fig. 18.
+                                                                                        E. Chaturvedi et al.
+
+
+
+
+Fig. 16 Pendulum with friction (μs = 0.3, μd = 0.2): Total time for a 10 s simulation
+
+
+
+
+Fig. 17 Pendulum with friction (μs = 0.3, μd = 0.2): Solution order of q and v with TFE and Newmark-β
+schemes. Reference solution obtained with step-size h = 1e − 4, for each integrator
+
+
+   One limitation of presented approach is demonstration on a simple multibody system.
+However, the experiment nevertheless indicated that TFE schemes have relatively better
+solution stability at large time-step sizes. Although large time-step sizes are rarely used,
+TFE family’s stability nevertheless carries advantage for the simulations performed on large
+time-intervals. Future work will include an investigation on how the reported formulation
+can be leveraged to produce higher-order solutions with implicit and explicit Runge-Kutta
+methods, [11, 14]. In addition, TFE schemes exhibit potential for parallelization. A quanti-
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+
+
+
+Fig. 18 Advantage of TFE schemes over Newmark-β method: TFE schemes can achieve convergence at
+larger time-steps, where Newmark-β method may fail. In this particular example, the time-step is h = 0.2
+
+
+
+tative assessment of TFE schemes by accounting parallelization and adaptive time-stepping
+is an open problem to be further investigated. Furthermore, another open research problem
+is to develop direct TFE integration schemes based on Hermitian and Chebyshev polynomi-
+als, and developing direct integration schemes based on discontinuous Galerkin approach to
+obtain unconditionally stable algorithms for smooth as well as nonsmooth dynamics appli-
+cations.
+                                                                                                E. Chaturvedi et al.
+
+Appendix A: Truncated inverse of the differential of the exponent map
+                                        ⎡T⎤
+                                         l1
+Evaluation of H(𝜽 ),            H(θ ) = ⎣lT2 ⎦:
+                                         lT3
+         ⎡                                                             ⎤
+          θ1 4 +(θ1 2 θ2 2 )+(θ1 2 θ3 2 )+12 θ1 2 −12 θ2 2 −12 θ3 2 +144
+        ⎢                                 σ1                             ⎥
+   l1 = ⎢
+        ⎣
+                 θ1 3 θ2 +θ1 θ2 3 +(θ1 θ2 θ3 2 )+24 θ1 θ2 +72 θ3
+                                          σ1
+                                                                         ⎥,
+                                                                         ⎦
+                    3            2            3
+                 θ1 θ3 +(θ1 θ2 θ3 )+θ1 θ3 +24 θ1 θ3 −72 θ2
+                                          σ1
+         ⎡                                                             ⎤
+                θ1 3 θ2 +θ1 θ2 3 +(θ1 θ2 θ3 2 )+24 θ1 θ2 −72 θ3
+        ⎢ (θ 2 θ 2 )−12 θ 2 +θ 4 +(θσ21 θ 2 )+12 θ 2 −12 θ 2 +144 ⎥
+   l2 = ⎢
+        ⎣
+            1 2           1     2      2 3
+                                       σ1
+                                                     2        3   ⎥,
+                                                                  ⎦
+                (θ1 2 θ2 θ3 )+72 θ1 +θ2 3 θ3 +θ2 θ3 3 +24 θ2 θ3
+                                       σ1
+         ⎡                                                             ⎤
+                 θ1 3 θ3 +(θ1 θ2 2 θ3 )+θ1 θ3 3 +24 θ1 θ3 +72 θ2
+        ⎢                                σ1                              ⎥
+   l3 = ⎢
+        ⎣
+                 (θ1 2 θ2 θ3 )−72 θ1 +θ2 3 θ3 +θ2 θ3 3 +24 θ2 θ3
+                                         σ1
+                                                                         ⎥
+                                                                         ⎦
+          (θ1 2 θ3 2 )−12 θ1 2 +(θ2 2 θ3 2 )−12 θ2 2 +θ3 4 +12 θ3 2 +144
+                                         σ1
+
+  σ1 = θ1 4 + 2 θ1 2 θ2 2 + 2 θ1 2 θ3 2 + 12 θ1 2 + θ2 4 + 2 θ2 2 θ3 2 + 12 θ2 2 + θ3 4 + 12 θ3 2 + 144
+                                                                                                      (39)
+
+
+
+Appendix B: Time ﬁnite element integration coefﬁcients
+
+This section illustrates the TFE integration coefficients ᾱ, β̄, γ̄ for m ∈ {1, 2, 3}, with 2m −
+1 expected order of integration, as proposed by Kim and Reddy in [29]. The numerical
+damping is controlled by scalar parameter ν (0 < ν ≤ 1) and h is the time-step size.
+1. For a first order accurate method m = 1, ᾱ, β̄, γ̄ are defined as:
+
+                                              1+ν                     1+ν
+                                       ᾱ =       ,         β̄ = −        ,   γ̄ = −ν.                        (40)
+                                               h                       h
+
+2. For a third order accurate method m = 2, ᾱ, β̄, γ̄ are defined as:
+                         [︃               ]︃                           [︃      ]︃         [︃     ]︃
+                       1    1+ν      3−ν                              1 − 7+3ν             − 1+ν
+                  ᾱ =                4      ,                   β̄ =       4     ,   γ̄ =     4    .         (41)
+                       h −4 (1 + ν) ν + 3                             h 3ν + 1               ν
+
+3. For a fifth order accurate method m = 3, with equally spaced nodes, ᾱ, β̄, γ̄ are defined
+   as:
+                       ⎡ 11+2ν      8−ν     2ν−7 ⎤           ⎡ 164−11ν ⎤
+                     1 ⎣ −10(ν+1)
+                              6       6      54
+                                   5(ν+1) 26−10ν) ⎦        1        54
+                ᾱ =          3       3      27
+                                                    , β̄ = ⎣ 19+55ν 27
+                                                                            ⎦,
+                     h     9(2ν+1) −9(ν+2) 2ν+11)          h
+                              2       2       2
+                                                               − 2 (ν + 2)
+                                                                 11
+
+                     ⎡ 10+ν ⎤                                                            (42)
+                       − 27
+                γ̄ = ⎣ 10ν+1
+                         27
+                               ⎦.
+                        −ν
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+4. For a fifth order accurate method m = 3, with Gauss-Lobatto quadrature points as nodes,
+   ᾱ, β̄, γ̄ are defined as:
+               ⎡                  √         √      ⎤     ⎡      √            √ 3−2√5 ⎤
+                      1            5−3        5−1            3+ 5
+                                                                      −1  +   5
+             ν ⎢                                                 √         √      5√
+                                               5+1 ⎥ +
+                      √             2        √
+                                             10        1 ⎢     2
+                                                                                3+2 5 ⎥ ,
+     ᾱ = ⎣ − 5+3                   1      −       ⎦     ⎣ −1  −    5   3− 5
+                                                                                      ⎦
+             h 5        2√            √        10      h      √           √
+                                                                          2       5
+                 2
+                   (1 +   5)  5
+                              2
+                                (1 −    5)    1             5( 5−1)
+                                                               2
+                                                                      − 5( 5+1)
+                                                                            2
+                                                                                  6
+               ⎡       √        √ ⎤            ⎡     √    √ ⎤                             (43)
+                 6ν(1− 5)−11(1+ 5)                   ν(1− 5)−1− 5
+         1 ⎢     √ 10     √ ⎥                     ⎢     √ 10  √ ⎥
+     β̄ = ⎣ 6ν(1+ 5)−11(1− 5) ⎦ ,            γ̄ = ⎣ ν(1+ 5)−1+ 5 ⎦ .
+         h          10                                    10
+                −6ν − 1                                  −ν
+
+Acknowledgements This work was supported by the Terramechanics, Multibody, and Vehicle Systems
+(TMVS) Laboratory and by the Computational Science Laboratory (CSL), Virginia Tech, Blacksburg, VA,
+USA.
+
+Author contributions E. C. did the conceptualization, methodology, code implementation, results analysis
+and documentation. C. S. provided supervision and technical expertise in multibody dynamics. A. S. provided
+supervision and helped develop the proposed methodology. All the authors equally contributed to writing,
+responding to the reviewers’ comments, and revising-editing of the manuscript.
+
+Data availability No datasets were generated or analysed during the current study.
+
+Declarations
+
+Competing interests The authors declare no competing interests.
+
+Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which
+permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give
+appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence,
+and indicate if changes were made. The images or other third party material in this article are included in the
+article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is
+not included in the article’s Creative Commons licence and your intended use is not permitted by statutory
+regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.
+To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.
+
+
+
+References
+ 1. Kissel, A., Negrut, D., Taves, J.: n an exponential map approach for rigid body kinematics and dynamics
+    analysis. Technical Report TR-2020-08: https://sbel.wisc.edu/technicalreports/, Simulation-Based Engi-
+    neering Laboratory, University of Wisconsin-Madison (2020)
+ 2. Kissel, A., Negrut, D., Taves, J.: Dwelling on the connection between SO(3) and rotation matrices in
+    rigid multibody dynamics. Part 1: Description of an index-3 DAE solution approach. Proceedings of the
+    ASME 2021 International Design Engineering Technical Conferences and Computers and Information
+    in Engineering Conference IDETC-CIE2021
+ 3. Kissel, A., Negrut, D., Taves, J.: Constrained multibody kinematics and dynamics in absolute coordi-
+    nates: a discussion of three approaches to representing rigid body rotation. J. Comput. Nonlinear Dyn.
+    17(10), 101008 (2022)
+ 4. Chaturvedi, E., Sandu, C., Sandu, A.: Convex optimization framework with drift control strategies for
+    simulating joints with clearance and friction. Mech. Based Des. Struct. Mach., 1–45 (2024). https://doi.
+    org/10.1080/15397734.2024.2438797
+ 5. Chaturvedi, E., Sandu, C., Sandu, A.: Modeling ideal joints with friction in convex optimization frame-
+    work with Lie-integration of rotations. Mech. Based Des. Struct. Mach., 1–38 (2025). https://doi.org/10.
+    1080/15397734.2025.2486397
+ 6. Haug, E.J.: Computer-Aided Kinematics and Dynamics of Mechanical Systems: Modern Methods
+    (2022)
+                                                                                            E. Chaturvedi et al.
+
+ 7. Brüls, O., Cardona, A., Arnold, M.: Lie group generalized-α time integration of constrained
+    flexible multibody systems. Mech. Mach. Theory 48, 121–137 (2012). https://doi.org/10.1016/j.
+    mechmachtheory.2011.07.017
+ 8. Bruls, O., Arnold, M., Cardona, A.: Two Lie Group Formulations for Dynamic Multibody Systems with
+    Large Rotations. Volume 4: 8th International Conference on Multibody Systems, Nonlinear Dynamics,
+    and Control, Parts A and B (2011). https://doi.org/10.1115/detc2011-48132
+ 9. Munthe-Kaas, H.: Runge-Kutta methods on Lie groups. BIT Numer. Math. 38, 92–111 (1998)
+10. Munthe-Kaas, H.: High order Runge-Kutta methods on manifolds. Appl. Numer. Math. 29, 115–127
+    (1999)
+11. Terze, Z., Zlatar, D., Pandza, V.: Aircraft attitude reconstruction via novel quaternion-integration proce-
+    dure. Aerosp. Sci. Technol. 97, 105617 (2020)
+12. Wieloch, V., Arnold, M.: BDF integrators for constrained mechanical systems on Lie groups. J. Comput.
+    Appl. Math. 387, 112517 (2021). https://doi.org/10.1016/j.cam.2019.112517
+13. Terze, Z., Muller, A., Zlatar, D.: Lie-group integration method for constrained multibody systems in state
+    space. Multibody Syst. Dyn. 34(3), 275–305 (2015)
+14. Terze, Z., Mueller, A., Zlatar, D.: Singularity-free time integration of rotational quaternions using non-
+    redundant ordinary differential equations. Multibody Syst. Dyn. 38, 201–225 (2016). https://doi.org/10.
+    1007/s11044-016-9518-7
+15. Bailey, C.D.: Application of Hamilton’s law of varying action. AIAA J. 13, 1154–1157 (1975)
+16. Leipholtz, H.H.E.: Space-time formulation of Hamilton’s law. Mech. Res. Commun. 9, 117–323 (1982)
+17. Borri, M., Atluri, S.N.: Time-finite element method for the constrained dynamics of a rigid body. In:
+    Atluri, S.N., et al. (eds.) Computational Mechanics. Springer, Berlin Heidelberg (1988)
+18. Borri, M., Atluri, S.N.: Multi-body dynamics by the finite element method in time domain. In: Atluri,
+    S.N., et al. (eds.) Computational Mechanics. Springer, Berlin Heidelberg (1988)
+19. Mello, F.J., Borri, M., Atluri, S.N.: Time finite element methods for large rotational dynamics of multi-
+    body systems. Comput. Struct. 37(2), 231–240 (1990)
+20. Hughes, T.R.J., Hulbert, M.: Space-time finite element formulations for elasto-dynamics: formulation
+    and error estimates. Comput. Methods Appl. Mech. Eng. 66, 339–363 (1988)
+21. Hulbert, G.M.: Time finite element methods for structural dynamics. Int. J. Numer. Methods Eng. 33(2),
+    307–331 (1992)
+22. Lee, D.I., Kwak, B.M.: A direct integration method of elastodynamics using finite element time dis-
+    cretization. Comput. Struct. 47(2), 201–211 (1993)
+23. Fung, T.C.: Unconditionally stable higher-order accurate Hermitian time finite elements. Int. J. Numer.
+    Methods Eng. 39, 3475–3495 (1996)
+24. Jog, C.S., Agrawal, M., Nandy, A.: The time finite element as a robust general scheme for solving
+    nonlinear dynamic equations including chaotic systems. Appl. Math. Comput. 279, 43–61 (2016)
+25. Antonietti, P.F., Mazzieri, I., Migliorini, F.: A discontinuous Galerkin time integration scheme for second
+    order differential equations with applications to seismic wave propagation problems. Comput. Math.
+    Appl. 134, 87–100 (2023)
+26. Antonietti, P.F., Ferroni, A., Mazzieri, I., Paolucci, R., Quarteroni, A., Smerzini, C., Stupazzini, M.:
+    Numerical modeling of seismic waves by discontinuous spectral element methods. ESAIM Proc. Surv.
+    61, 1–37 (2018)
+27. Wanga, Y., Tamma, K.K., Xuec, T., Maxam, D., Qin, G.: Generalized Petrov-Galerkin time finite ele-
+    ment weighted residual methodology for designing high-order unconditionally stable algorithms with
+    controllable numerical dissipation. J. Comput. Phys. 430, 110097 (2021)
+28. Bauchau, O.A.: The finite element method in time for multibody dynamics. J. Comput. Nonlinear Dyn.
+    19(7), 071001 (2024). https://doi.org/10.1115/1.4063953
+29. Kim, W., Reddy, J.N.: A new family of higher-order time integration algorithms for the analysis of
+    structural dynamics. ASME. J. Appl. Mech. 84(7), 071008 (2017). https://doi.org/10.1115/1.4036821
+30. Banagaaya, N., Alì, G., Grundel, S., et al.: Index-aware model-order reduction for a special class of
+    nonlinear differential-algebraic equations. J. Dyn. Differ. Equ. 34, 2465–2489 (2022). https://doi.org/10.
+    1007/s10884-021-10063-9
+31. Marsden, J.E., Ratiu, T.S.: Introduction to Mechanics and Symmetry. Texts in Applied Mathematics,
+    vol. 17. Springer, New York (1994)
+32. Veeravalli, V.: Lie groups, Lie Algebras, and Their Representations, vol. 102. Springer, Berlin (2013)
+33. Muller, A., Maisser, P.: A Lie-group formulation of kinematics and dynamics of constrained MBS and
+    its application to analytical mechanics. Multibody Syst. Dyn. 9(4), 311–352 (2003)
+34. Haug, E.J.: Simulation of spatial multibody systems with friction. Mechanics based design of structures
+    and. Machines 46, 347–375 (2018). https://doi.org/10.1080/15397734.2017.1377086
+35. Newmark, N.M.: A method of computation for structural dynamics. J. Eng. Mech. Div. 85(3), 67–94
+    (1959). https://doi.org/10.1061/JMCEA3.0000098
+Higher-order implicit integration using time ﬁnite elements on Lie groups
+
+36. Gavrea, B., Negrut, D., Potra, F.A.: The newmark integration method for simulation of multibody sys-
+    tems: analytical considerations. In: Proceedings of the ASME 2005 International Mechanical Engineer-
+    ing Congress and Exposition. Design Engineering, Parts A and B, pp. 1079–1092. ASME, Orlando
+    (2005). https://doi.org/10.1115/IMECE2005-81770
+37. Uriarte, H., Fernández de Bustos, I., Urkullu, G., Olabarrieta, A.: On Classical Newmark Integration of
+    Multibody Dynamics. EuCoMeS 2018, (2018)
+38. Brown, P., McPhee, J.: A continuous velocity-based friction model for dynamics and control with phys-
+    ically meaningful parameters. J. Comput. Nonlinear Dyn. 11, 054502 (2016)
+39. Chaturvedi, E., Mukherjee, J., Sandu, C.: A novel dynamic dry friction model for applications in me-
+    chanical dynamical systems. In: Proc IMechE Part K: J Multi-Body Dynamics, Special 25th Year Issue,
+    pp. 1–12 (2023)
+
+Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and
+institutional affiliations.
+

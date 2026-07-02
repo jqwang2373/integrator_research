@@ -1,0 +1,147 @@
+{
+  "experiment": {
+    "cases": {
+      "double_revolute_sharp": {
+        "methods": {
+          "double_revolute_gauss6_fullva": {
+            "csr_jacobian": {
+              "avg_jvp_matvecs_per_solve": 0.0,
+              "avg_linear_solve_sec": 0.0008499873414014777,
+              "max_endpoint_constraint_norm": 7.45530467674111e-15,
+              "max_endpoint_velocity_constraint_norm": 2.338151674453127e-13,
+              "max_linear_residual_norm": 1.4051555451082052e-14,
+              "max_quaternion_unit_error": 0.0,
+              "max_stage_axis_acceleration_constraint_norm": 0.0,
+              "max_stage_pivot_acceleration_constraint_norm": 1.1933513528566256e-13,
+              "omega_l2_error": 4.894023697716968e-07,
+              "orientation_error_rad": 7.081325837377401e-09,
+              "runtime_sec": 0.022666185977868736,
+              "status": "ok",
+              "steps": 1,
+              "total_gmres_iterations": 0,
+              "total_jacobian_eval_sec": 0.0034596799523569643,
+              "total_jvp_eval_sec": 0.0,
+              "total_jvp_matvecs": 0,
+              "total_linear_solve_sec": 0.002549962024204433,
+              "total_linear_solves": 3,
+              "total_newton_iterations": 4,
+              "total_residual_eval_sec": 0.0029271310195326805
+            },
+            "jvp_gmres": {
+              "error_message": "GMRES failed with info=200, residual=1.574e+00",
+              "runtime_sec": 23.440209621971007,
+              "status": "failed"
+            }
+          }
+        },
+        "reference": {
+          "avg_jacobian_density": 0.030350766645662674,
+          "avg_linear_solve_sec": 0.0011083939850019913,
+          "final_energy_relative_change": -9.640005837578555e-05,
+          "max_endpoint_constraint_norm": 2.7755575615628914e-16,
+          "max_endpoint_velocity_constraint_norm": 2.67076214562993e-15,
+          "max_linear_residual_norm": 1.92960150354466e-14,
+          "max_quaternion_unit_error": 0.0,
+          "max_stage_axis_acceleration_constraint_norm": 0.0,
+          "max_stage_pivot_acceleration_constraint_norm": 3.9264870197688355e-14,
+          "max_step_energy_increase": 0.0,
+          "steps": 2,
+          "total_jacobian_eval_sec": 0.009387940866872668,
+          "total_linear_solve_sec": 0.006650363910011947,
+          "total_newton_iterations": 8,
+          "total_residual_eval_sec": 0.006887923984322697
+        },
+        "reference_h": 0.01,
+        "reference_method": "double_revolute_gauss6_fullva",
+        "reference_solver": "csr_jacobian",
+        "stribeck_velocity": 0.05
+      },
+      "double_revolute_smooth": {
+        "methods": {
+          "double_revolute_gauss6_fullva": {
+            "csr_jacobian": {
+              "avg_jvp_matvecs_per_solve": 0.0,
+              "avg_linear_solve_sec": 0.0007360759967317184,
+              "max_endpoint_constraint_norm": 3.590782058505315e-15,
+              "max_endpoint_velocity_constraint_norm": 4.269526586445943e-13,
+              "max_linear_residual_norm": 1.30559060344654e-14,
+              "max_quaternion_unit_error": 0.0,
+              "max_stage_axis_acceleration_constraint_norm": 0.0,
+              "max_stage_pivot_acceleration_constraint_norm": 8.287100676457588e-13,
+              "omega_l2_error": 1.5561222431729058e-08,
+              "orientation_error_rad": 8.20637089900327e-10,
+              "runtime_sec": 0.017190864018630236,
+              "status": "ok",
+              "steps": 1,
+              "total_gmres_iterations": 0,
+              "total_jacobian_eval_sec": 0.003943448013160378,
+              "total_jvp_eval_sec": 0.0,
+              "total_jvp_matvecs": 0,
+              "total_linear_solve_sec": 0.002208227990195155,
+              "total_linear_solves": 3,
+              "total_newton_iterations": 4,
+              "total_residual_eval_sec": 0.002101120015140623
+            },
+            "jvp_gmres": {
+              "error_message": "GMRES failed with info=200, residual=1.323e+00",
+              "runtime_sec": 20.48657763702795,
+              "status": "failed"
+            }
+          }
+        },
+        "reference": {
+          "avg_jacobian_density": 0.030350766645662674,
+          "avg_linear_solve_sec": 0.0008870090047518412,
+          "final_energy_relative_change": -0.00011456294276965417,
+          "max_endpoint_constraint_norm": 3.236828524569469e-16,
+          "max_endpoint_velocity_constraint_norm": 6.462975330012986e-15,
+          "max_linear_residual_norm": 2.2850345751066834e-14,
+          "max_quaternion_unit_error": 0.0,
+          "max_stage_axis_acceleration_constraint_norm": 0.0,
+          "max_stage_pivot_acceleration_constraint_norm": 1.438499482797219e-14,
+          "max_step_energy_increase": 0.0,
+          "steps": 2,
+          "total_jacobian_eval_sec": 0.006924940040335059,
+          "total_linear_solve_sec": 0.005322054028511047,
+          "total_newton_iterations": 8,
+          "total_residual_eval_sec": 0.004720944038126618
+        },
+        "reference_h": 0.01,
+        "reference_method": "double_revolute_gauss6_fullva",
+        "reference_solver": "csr_jacobian",
+        "stribeck_velocity": 0.5
+      }
+    },
+    "h": 0.02,
+    "t_final": 0.02
+  },
+  "jax": "0.10.1",
+  "model": {
+    "cases": {
+      "double_revolute_sharp": 0.05,
+      "double_revolute_smooth": 0.5
+    },
+    "gmres_atol": 1e-12,
+    "gmres_maxiter": 200,
+    "gmres_rtol": 1e-10,
+    "h": 0.02,
+    "methods": [
+      "double_revolute_gauss6_fullva"
+    ],
+    "reference_h": 0.01,
+    "reference_method": "double_revolute_gauss6_fullva",
+    "solvers": [
+      "csr_jacobian",
+      "jvp_gmres"
+    ],
+    "t_final": 0.02
+  },
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 109.20742238400271,
+  "scipy": "1.17.1",
+  "solver_parent": "v031_sparse_newton_double_revolute",
+  "source_version": "v029_double_revolute_pivotva_dae",
+  "version": "v032_matrix_free_newton_krylov"
+}

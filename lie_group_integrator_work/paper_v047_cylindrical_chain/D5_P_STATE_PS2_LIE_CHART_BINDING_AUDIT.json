@@ -1,0 +1,78 @@
+{
+  "certifies_dynamic_row_defect": false,
+  "certifies_full_nonlinear_mean_value_binding": false,
+  "certifies_full_nonlinear_ps2": false,
+  "certifies_full_row_injection_scaling": false,
+  "certifies_induced_taylor_bounds": false,
+  "certifies_rotational_chart_binding_constant": true,
+  "certifies_so3_chart_norm_equivalence": true,
+  "claim_boundary": {
+    "allowed_now": "The pure SO(3) chart norm-equivalence constants needed by the weighted PS2 kinematic route are recorded on a compact chart tube.",
+    "close_condition": "PS2 can only be promoted after this chart-equivalence input is combined with a nonlinear compact-tube mean-value estimate and the full 72-to-96 row injection/scaling proof.",
+    "forbidden_now": [
+      "full nonlinear rotational row mean-value binding",
+      "72-to-96 non-dynamic row injection/scaling closure",
+      "full nonlinear PS2 closure",
+      "PS3 state lift conversion",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "constants": {
+    "chart_equivalence_factor": 1.0104931253052678,
+    "chart_radius_rad": 0.5,
+    "right_jacobian_2_norm_bound": 1.0,
+    "right_jacobian_inverse_2_norm_bound": 1.0104931253052678,
+    "valid_radius_condition": "chart_radius_rad < pi"
+  },
+  "dimensions": {
+    "angular_velocity_rows": 18,
+    "bodies": 2,
+    "rotational_chart_rows": 18,
+    "rotational_kinematic_rows": 36,
+    "stages": 3
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-p-state-ps2-lie-chart-binding",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps2-lie-chart-binding}",
+      "SO(3) chart binding for the weighted PS2 route",
+      "\\|J_r(\\eta)\\|_2\\le 1",
+      "does not supply the nonlinear mean-value estimate",
+      "does not close PS2"
+    ]
+  },
+  "p_state_ps2_lie_chart_binding_recorded": true,
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps2_inverse_or_infsup_closed": false,
+  "read_only": true,
+  "remaining_binding_gaps": [
+    "prove the nonlinear compact-tube mean-value estimate for the implemented rotational row eta_i - h sum_j A_ij J_r^{-1}(eta_j) omega_j",
+    "record the full-row ordering/scaling injection from the 72 kinematic rows into the 96-row non-dynamic residual norm"
+  ],
+  "resolved_binding_input": "pure SO(3) chart norm-equivalence constants for the rotational coordinates in the weighted PS2 route",
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-lie-chart-binding-audit-v1",
+  "source_consistency": {
+    "p_state_gap_closed": false,
+    "p_state_gap_schema": "d5-p-state-lift-gap-audit-v1",
+    "p_state_map_definition_closed": true,
+    "p_state_map_schema": "d5-p-state-map-definition-audit-v1",
+    "p_tube_closed": true,
+    "p_tube_pc2_closed": false,
+    "p_tube_schema": "d5-p-tube-constants-audit-v1",
+    "ps2_target_infsup_closed": false,
+    "ps2_target_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "ps2_target_spec_closed": true
+  },
+  "status": "ps2_lie_chart_binding_recorded_full_ps2_open",
+  "submission_ready": false
+}

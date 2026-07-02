@@ -1,0 +1,48 @@
+{
+  "candidate_methods": [
+    "Newmark_beta",
+    "trapezoidal",
+    "TFE_m1",
+    "TFE_m2",
+    "TFE_m3_GL",
+    "Gauss6_FullVA"
+  ],
+  "case_id": "frictionless_pendulum_same_test_work_precision",
+  "default_1e-4_required": false,
+  "example": "source_pendulum",
+  "external_superiority_claim": false,
+  "external_superiority_claim_allowed": false,
+  "figure": "results/tfe_source_pendulum_same_test_work_precision.png",
+  "figure_available": true,
+  "fullva_dae_source_policy_equivalent": false,
+  "gauss6_coordinate_pairwise_order_floor": 5.982888264259109,
+  "gauss6_frobenius_pairwise_order_floor": 5.982860182643504,
+  "gauss6_velocity_pairwise_order_floor": 6.018130493493724,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "This artifact puts Newmark-beta, trapezoidal, TFE m=1/2/3, and the Gauss6/FullVA planar candidate on the same frictionless source-pendulum T=1 grid. It supplies a fair candidate-level work/precision diagnostic, but it is not an original TFE source-policy reproduction and does not authorize external-superiority claims.",
+  "method_count": 6,
+  "ok_row_count": 18,
+  "policy": "tfe_source_pendulum_same_test_candidate_work_precision",
+  "reference_h": 0.00025,
+  "reference_method": "rk4_reference",
+  "row_count": 18,
+  "same_test_work_precision_available": true,
+  "schema": "tfe-source-pendulum-same-test-work-precision-v1",
+  "source_policy_method_runner_equivalent": false,
+  "source_policy_rows_completed": 0,
+  "status": "same_test_candidate_work_precision_available_not_source_policy",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "summary_row_count": 6,
+  "t_final": 1.0,
+  "tfe_m3_coordinate_pairwise_order_floor": 6.68202776057924,
+  "tfe_m3_velocity_pairwise_order_floor": 5.188901922167423,
+  "work_proxy_columns": [
+    "runtime_sec",
+    "total_newton_iterations",
+    "work_units_newton_iterations"
+  ]
+}

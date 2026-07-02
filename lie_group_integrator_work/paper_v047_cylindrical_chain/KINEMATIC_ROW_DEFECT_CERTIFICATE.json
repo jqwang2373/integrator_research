@@ -1,0 +1,50 @@
+{
+  "schema": "kinematic-row-defect-certificate-v1",
+  "status": "partial_96_row_proof_certificate_not_submission_ready",
+  "submission_ready": false,
+  "accepted_method": "Gauss6/FullVA",
+  "accepted_residual": "residual_cylindrical_chain",
+  "proof_scope": {
+    "scope": "smooth_accepted_fullva_lift_non_dynamic_rows",
+    "certified_row_count": 96,
+    "certified_row_families": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "excluded_row_family": "newton_euler_weak_balance",
+    "excluded_row_count": 36,
+    "total_runtime_rows": 132
+  },
+  "certificate": {
+    "partial_stage_defect_certificate": true,
+    "collocation_lift_rows_zero_on_smooth_lift": true,
+    "lower_pair_index3_rows_zero_on_smooth_constrained_branch": true,
+    "formula_row_oracle_supports_runtime_mapping": true,
+    "compatible_with_local_h7_defect_budget_for_certified_rows": true,
+    "stage_residual_O_h7_implementation_defect_proved": false,
+    "dynamic_symbolic_oracle_complete": false,
+    "full_tfe_stage_replacement": false
+  },
+  "source_files": {
+    "manuscript": "main_cmame.tex",
+    "dynamic_oracle": "DYNAMIC_ROW_ORACLE_GATE.json",
+    "proof_contract": "CMAME_PROOF_CONTRACT_GATE.json",
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json"
+  },
+  "execution_policy": {
+    "default_1e-4_required": false,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false,
+    "heavy_numerical_run_invoked": false
+  },
+  "forbidden_claims": [
+    "stage_residual_O_h7_implementation_defect_proved_true",
+    "dynamic_symbolic_oracle_complete_true",
+    "full_tfe_stage_replacement_true",
+    "external_superiority_claim_true",
+    "submission_ready_true"
+  ]
+}

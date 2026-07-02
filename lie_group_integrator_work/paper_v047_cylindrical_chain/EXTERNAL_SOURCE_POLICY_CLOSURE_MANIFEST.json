@@ -1,0 +1,254 @@
+{
+  "b2_can_close_now": false,
+  "b4_can_close_now": false,
+  "claim_policy": {
+    "allowed_now": [
+      "conditional formal order comparison against the m=3 TFE formula target",
+      "bounded common-reference diagnostic order/error table",
+      "public baseline order/time summaries as non-superiority evidence"
+    ],
+    "forbidden_now": [
+      "paper-level external direct-error superiority",
+      "complete source-paper reproduction",
+      "VP2024 source-code reproduction",
+      "full T=8 HI2022 source-policy superiority",
+      "original TFE pendulum superiority before encoding the source setup"
+    ]
+  },
+  "closure_requirements": [
+    {
+      "blocking_suites": [
+        "ra2021_absolute_coordinate",
+        "hi2022_half_implicit",
+        "tfe2026_original_pendulum",
+        "vp2024_velocity_partitioning"
+      ],
+      "id": "SP1",
+      "requirement": "all included suites have source time horizon, h-grid, reference, norm, output map, and runtime policy closed",
+      "satisfied": false
+    },
+    {
+      "accepted_external_dynamic_order_examples_count": 0,
+      "id": "SP2",
+      "requirement": "all four examples have accepted external dynamic-order rows under source policy",
+      "satisfied": false
+    },
+    {
+      "id": "SP3",
+      "requirement": "paper-level direct external error superiority is allowed only after source-policy reproduction",
+      "satisfied": false,
+      "source_policy_reproduction": false,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "b2_can_close_now": false,
+      "b4_can_close_now": false,
+      "id": "SP4",
+      "requirement": "B2/B4 close only after fair implemented baselines and work/precision evidence are complete",
+      "satisfied": false
+    }
+  ],
+  "common_reference_boundary": {
+    "all_method_example_cells_checked": 44,
+    "bounded_common_reference_diagnostic_rows": 44,
+    "strict_external_error_claim_allowed_rows": 0
+  },
+  "default_1e_4_required": false,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "external_superiority_claim_allowed": false,
+  "heavy_numerical_run_invoked": false,
+  "not_ready_or_demote_suites": [
+    "tfe2026_original_pendulum",
+    "vp2024_velocity_partitioning"
+  ],
+  "paper_direct_error_superiority_claim_allowed": false,
+  "parallel_ready_shards_without_default_1e_4": 20,
+  "performance_matrix": {
+    "completed_row_count": 32,
+    "external_superiority_claim": false,
+    "not_complete_row_count": 16,
+    "partial_row_count": 0,
+    "row_count": 48
+  },
+  "runnable_parallel_suites": [
+    "ra2021_absolute_coordinate",
+    "hi2022_half_implicit"
+  ],
+  "same_test_campaign_status": "not_run",
+  "schema": "external-source-policy-closure-manifest-v1",
+  "source_policy_flagged_by_suite": {
+    "hi2022_half_implicit": 3,
+    "ra2021_absolute_coordinate": 5,
+    "tfe2026_original_pendulum": 4,
+    "vp2024_velocity_partitioning": 3
+  },
+  "source_policy_flagged_raw_rows": 45,
+  "source_policy_flagged_rows": 15,
+  "source_policy_reproduction": false,
+  "status": "not_closed_source_policy_reproduction_required",
+  "submission_ready": false,
+  "suites": [
+    {
+      "accepted_for_external_superiority": false,
+      "can_parallelize": true,
+      "claim_allowed_now": "baseline_order_time_summary_only",
+      "current_disposition": "run_remaining_same_test_or_bound_claim",
+      "current_status": "partial_public_policy_evidence_not_same-policy_superiority",
+      "label": "Kissel--Taves--Negrut absolute-coordinate suite",
+      "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+      "parallel_shard_count": 12,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 16,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "Gauss6/FullVA-public-horizon",
+          "rA",
+          "reps",
+          "rp"
+        ],
+        "not_complete_row_count": 0,
+        "row_count": 16,
+        "status_counts": {
+          "completed_public_dynamic_self_reference_order_policy": 3,
+          "completed_public_horizon_coarse_double_pilot": 1,
+          "completed_public_horizon_residual_trio": 2,
+          "completed_public_horizon_trio": 1,
+          "completed_public_order_policy": 9
+        }
+      },
+      "queue_status": "parallel_ready_existing_interfaces",
+      "required_to_close": [
+        "local Gauss6/FullVA dynamic order/work rows under the same public policy for all four examples",
+        "declared state/velocity output map and norm identical to the source scripts",
+        "runtime and Newton/work metrics reported under the same timing policy",
+        "explicit bounded/no-superiority decision if only coarse same-window rows are retained"
+      ],
+      "source_policy_flagged_rows": 5,
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "accepted_for_external_superiority": false,
+      "can_parallelize": true,
+      "claim_allowed_now": "bounded_pilot_only",
+      "current_disposition": "choose_full_T8_run_or_demote",
+      "current_status": "bounded_T0p1_pilot_not_full_T8_public_policy",
+      "label": "Fang--Kissel--Zhang--Negrut half-implicit suite",
+      "next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim",
+      "parallel_shard_count": 8,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 8,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "rA-hi2022",
+          "rA_half-hi2022"
+        ],
+        "not_complete_row_count": 0,
+        "row_count": 8,
+        "status_counts": {
+          "completed_bounded_pilot": 8
+        }
+      },
+      "queue_status": "parallel_ready_after_policy_selection",
+      "required_to_close": [
+        "choose full T=8 public-policy reproduction or explicit demotion",
+        "match the source paper's step sizes, reference policy, energy/constraint metrics, and work metrics",
+        "record rA and rA_half on the selected policy before any superiority statement"
+      ],
+      "source_policy_flagged_rows": 3,
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "accepted_for_external_superiority": false,
+      "can_parallelize": false,
+      "claim_allowed_now": "formal_order_literature_comparator_only",
+      "current_disposition": "encode_then_run_or_demote",
+      "current_status": "source_policy_runner_friction_endpoint_and_work_rows_open",
+      "label": "Chaturvedi--Sandu--Sandu TFE pendulum",
+      "next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running",
+      "parallel_shard_count": 0,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 0,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "TFE_m1",
+          "TFE_m2",
+          "TFE_m3"
+        ],
+        "not_complete_row_count": 12,
+        "row_count": 12,
+        "status_counts": {
+          "not_encoded_for_four_asme_examples": 12
+        }
+      },
+      "queue_status": "not_ready_source_setup_encoding_required",
+      "required_to_close": [
+        "prove or replace the candidate planar runner with a source-policy absolute-coordinate DAE runner",
+        "replace the local Brown--McPhee published-formula surrogate with a source-code-equivalent friction law",
+        "resolve the full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "run or explicitly demote Newmark, trapezoidal, TFE m=1/m=2/m=3, and Gauss6/FullVA work rows",
+        "keep TFE m=3 as expected order five unless a separate source-policy reproduction proves otherwise"
+      ],
+      "source_policy_flagged_rows": 4,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_for_external_superiority": false,
+      "can_parallelize": false,
+      "claim_allowed_now": "code-path-unresolved_related_work_only",
+      "current_disposition": "demote_until_code_path_resolved",
+      "current_status": "public_code_path_unresolved_or_proxy_only",
+      "label": "Kissel--Bakke--Negrut velocity-partitioning suite",
+      "next_action": "resolve public code path or explicitly demote this suite from the external-superiority claim",
+      "parallel_shard_count": 0,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 0,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "velocity_partitioning_2024"
+        ],
+        "not_complete_row_count": 4,
+        "row_count": 4,
+        "status_counts": {
+          "code_path_unresolved": 4
+        }
+      },
+      "queue_status": "not_ready_code_path_unresolved",
+      "required_to_close": [
+        "resolve the distinct public velocity-partitioning code path or explicitly demote the suite",
+        "extract its source time windows, step sizes, reference policy, and runtime metrics",
+        "do not use the local coordinate-partitioning proxy as a source-policy reproduction"
+      ],
+      "source_policy_flagged_rows": 3,
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ]
+}

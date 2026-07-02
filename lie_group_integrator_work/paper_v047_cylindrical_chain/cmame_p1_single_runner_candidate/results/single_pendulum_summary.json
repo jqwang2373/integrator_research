@@ -1,0 +1,21 @@
+{
+  "example": "single_pendulum",
+  "h_values": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "imports_v047_or_v048": false,
+  "omega_order": 6.005213069649138,
+  "orientation_order": 6.012040224786884,
+  "p1_complete": false,
+  "p1_single_only_ready": true,
+  "position_order": 6.013317461143006,
+  "proof_gap_closed": false,
+  "rows": 3,
+  "schema": "cmame-p1-single-runner-candidate-v1",
+  "source_policy_external_superiority_allowed": false,
+  "status": "single_runner_candidate_not_p1_complete",
+  "t_final": 0.1,
+  "velocity_order": 6.006882393965576
+}

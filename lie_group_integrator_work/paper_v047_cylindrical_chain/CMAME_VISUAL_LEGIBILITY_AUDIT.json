@@ -1,0 +1,67 @@
+{
+  "schema": "cmame-visual-legibility-audit-v1",
+  "status": "b5_closed_mechanism_visual_reproducibility_checked",
+  "submission_ready": false,
+  "mechanical_preflight_passed": true,
+  "quality_review_passed": false,
+  "execution_policy": {
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "strict_public_policy_1e-4": "opt_in_only",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked_by_audit": false
+  },
+  "closed_blocker": {
+    "id": "B5",
+    "area": "mechanism_visual_reproducibility",
+    "status": "closed",
+    "closure_basis": "final_pdf_legibility_check",
+    "split_mechanism_diagrams_required": false
+  },
+  "checked_artifacts": {
+    "main_pdf": "main_cmame.pdf",
+    "flat_pdf": "cmame_submission_flat/main_cmame_submission.pdf",
+    "main_figure": "figures/asme_lower_pair_graph_bridge.png",
+    "flat_figure": "cmame_submission_flat/Figure_2_asme_lower_pair_graph_bridge.png",
+    "figure_generator": "generate_publication_figures.py",
+    "main_log": "main_cmame.log",
+    "flat_log": "cmame_submission_flat/main_cmame_submission.log"
+  },
+  "figure_checks": {
+    "minimum_width_px": 2000,
+    "minimum_height_px": 1700,
+    "main_figure_width_px": 2028,
+    "main_figure_height_px": 1759,
+    "flat_figure_width_px": 2028,
+    "flat_figure_height_px": 1759,
+    "label_layout_pass_completed": true,
+    "source_image_visually_inspected": true,
+    "final_pdf_recompiled_after_regeneration": true,
+    "main_pdf_text_caption_present": true,
+    "flat_pdf_text_caption_present": true,
+    "latex_logs_clean": true
+  },
+  "remaining_figure_blocker": {
+    "id": "B7",
+    "status": "open",
+    "reason": "baseline comparison figures, clean cross-method work/precision figures, and limitation figure remain open"
+  },
+  "open_blocker_count_after_closure": 7,
+  "closed_blockers": [
+    "B5"
+  ],
+  "open_blockers": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B6",
+    "B7",
+    "B8"
+  ],
+  "current_narrowed_claim_override": {
+    "status": "historical_b5_audit_current_b7_closed_elsewhere",
+    "b7_current_status": "closed_under_narrowed_claim_policy",
+    "current_evidence": "CMAME_FIGURE_SET_AUDIT.md/json and CMAME_BLOCKER_CLOSURE_GATE.md/json",
+    "full_source_policy_figures_ready": false
+  }
+}

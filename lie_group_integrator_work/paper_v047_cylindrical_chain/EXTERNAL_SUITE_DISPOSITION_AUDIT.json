@@ -1,0 +1,88 @@
+{
+  "accepted_external_superiority_suite_count": 0,
+  "b2_b4_closure": {
+    "b2_can_close_now": false,
+    "b2_required_to_close": [],
+    "b4_can_close_now": false,
+    "b4_required_to_close": [],
+    "reason": "no accepted external dynamic-order suite and no completed fair implemented baseline/work-precision set"
+  },
+  "claim_boundary": {
+    "default_1e_4_required": false,
+    "external_superiority_allowed": false,
+    "suite_dispositions_are_execution_guidance_not_acceptance": true
+  },
+  "closure_counts": {
+    "accepted_external_dynamic_order_examples_count": 0,
+    "flagged_source_policy_rows": 15,
+    "parallel_ready_shards_without_default_1e_4": 20,
+    "position_aligned_velocity_mismatch_rows": 10,
+    "ready_shards_from_disposition_rows": 20,
+    "suites_requiring_run_or_bounded_claim": 1,
+    "suites_requiring_run_or_demote_decision": 3
+  },
+  "external_superiority_claim": false,
+  "manuscript_disposition_markers": {
+    "flat_cross_paper_gate_table": true,
+    "flat_no_external_superiority": true,
+    "flat_source_policy_diagnosis_table": true,
+    "main_cross_paper_gate_table": true,
+    "main_no_external_superiority": true,
+    "main_source_policy_diagnosis_table": true
+  },
+  "same_test_campaign_status": "not_run",
+  "schema": "external-suite-disposition-audit-v1",
+  "status": "suite_dispositions_defined_not_closed",
+  "submission_ready": false,
+  "suite_count": 4,
+  "suite_dispositions": [
+    {
+      "accepted_external_superiority": false,
+      "claim_allowed_now": "diagnostic_or_literature_only",
+      "closure_action_from_acceptance_sheet": "resolve_tfe_source_policy_dae_runner_brown_mcphee_endpoint_policy_and_work_rows_then_run_or_demote",
+      "closure_status": "not_ready_source_setup_encoding_required",
+      "current_disposition": "encode_then_run_or_demote",
+      "label": "Chaturvedi--Sandu--Sandu TFE pendulum",
+      "parallel_shard_count": 0,
+      "queue_status": "not_ready_source_setup_encoding_required",
+      "required_next_action": "encode source pendulum setup, output policy, friction law, and norm; then run or demote",
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_external_superiority": false,
+      "claim_allowed_now": "diagnostic_or_literature_only",
+      "closure_action_from_acceptance_sheet": "finish_or_rerun_missing_coarse_shards_then_make_bounded_or_no_superiority_decision",
+      "closure_status": "partial_evidence_not_external_superiority",
+      "current_disposition": "run_remaining_same_test_or_bound_claim",
+      "label": "Kissel--Taves--Negrut absolute-coordinate suite",
+      "parallel_shard_count": 12,
+      "queue_status": "parallel_ready_existing_interfaces",
+      "required_next_action": "finish or rerun coarse same-window shards and record setup identity, reference policy, order, and time",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "accepted_external_superiority": false,
+      "claim_allowed_now": "diagnostic_or_literature_only",
+      "closure_action_from_acceptance_sheet": "choose_full_T8_reproduction_or_explicit_demotion",
+      "closure_status": "policy_decision_open",
+      "current_disposition": "choose_full_T8_run_or_demote",
+      "label": "Fang--Kissel--Zhang--Negrut half-implicit suite",
+      "parallel_shard_count": 8,
+      "queue_status": "parallel_ready_after_policy_selection",
+      "required_next_action": "choose full T=8 public-policy reproduction or explicit demotion",
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "accepted_external_superiority": false,
+      "claim_allowed_now": "diagnostic_or_literature_only",
+      "closure_action_from_acceptance_sheet": "resolve_public_code_path_or_explicitly_demote",
+      "closure_status": "code_path_unresolved",
+      "current_disposition": "demote_until_code_path_resolved",
+      "label": "Kissel--Bakke--Negrut velocity-partitioning suite",
+      "parallel_shard_count": 0,
+      "queue_status": "not_ready_code_path_unresolved",
+      "required_next_action": "resolve public velocity-partitioning code path or state suite demotion",
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ]
+}

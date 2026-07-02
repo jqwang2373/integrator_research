@@ -1,0 +1,146 @@
+{
+  "allowed_inputs": [
+    {
+      "available": true,
+      "id": "A1",
+      "role": "supplies row residual magnitudes only; it does not by itself supply variable lift rates",
+      "source": "accepted 96-row non-dynamic residual certificate"
+    },
+    {
+      "available": true,
+      "id": "A2",
+      "role": "defines the stage map whose inverse/inf-sup constant must be proved in PS2",
+      "source": "P_state non-dynamic map definition"
+    },
+    {
+      "available": true,
+      "id": "A3",
+      "role": "bounds derivatives after PS2 establishes a uniform inverse neighborhood",
+      "source": "compact proof tube and smooth chart constants"
+    }
+  ],
+  "certifies_dynamic_row_defect": false,
+  "certifies_induced_taylor_bounds": false,
+  "claim_boundary": {
+    "allowed_now": "P_state PS4 anti-circularity is closed: PS2/PS3 may use only non-dynamic residual/map/tube inputs.",
+    "close_condition": "P_state closes only after PS2 proves a uniform inverse or inf-sup bound and PS3 converts the 96-row residual certificate into O(h^7) pose, translational-velocity, and angular-velocity lift rates.",
+    "forbidden_now": [
+      "P_state primitive closure",
+      "PS2 inverse or inf-sup closure",
+      "PS3 state lift O(h^7) conversion",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "dependency_gate": {
+    "all_allowed_inputs_available": true,
+    "all_forbidden_inputs_disallowed": true,
+    "closes_only_ps4": true,
+    "uses_d5_dynamic_residual_defect": false,
+    "uses_stage_residual_defect": false,
+    "uses_unproved_newton_solution_closeness": false
+  },
+  "forbidden_inputs": [
+    {
+      "disallowed_for_ps2_ps3": true,
+      "id": "F1",
+      "reason": "Using the stage residual perturbation lemma would make the P_state lift depend on a later residual-defect theorem.",
+      "source": "Lemma stage-residual-defect"
+    },
+    {
+      "disallowed_for_ps2_ps3": true,
+      "id": "F2",
+      "reason": "The state lift is an input to D5 and cannot depend on the D5 conclusion.",
+      "source": "D5 dynamic Newton-Euler residual defect"
+    },
+    {
+      "disallowed_for_ps2_ps3": true,
+      "id": "F3",
+      "reason": "Residual smallness must be converted to variable smallness by an independent inverse or inf-sup estimate.",
+      "source": "accepted Newton-solution closeness without inverse bound"
+    }
+  ],
+  "future_route": [
+    {
+      "allowed_inputs": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "closed_now": false,
+      "forbidden_inputs": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "id": "PS2",
+      "statement": "Prove a local inverse or inf-sup bound for the non-dynamic stage map on the compact proof tube."
+    },
+    {
+      "allowed_inputs": [
+        "A1",
+        "A2",
+        "A3",
+        "PS2"
+      ],
+      "closed_now": false,
+      "forbidden_inputs": [
+        "F1",
+        "F2",
+        "F3"
+      ],
+      "id": "PS3",
+      "statement": "Convert the 96-row non-dynamic residual certificate into O(h^7) pose and velocity lift rates."
+    }
+  ],
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "P_{\\mathrm{state}}",
+      "\\mathcal N_h^{\\mathrm{nd}}",
+      "compact proof-tube smoothness constants",
+      "residual identities alone are disallowed as inputs",
+      "Likewise Lemma~\\ref{lem:stage-residual-defect}",
+      "The D5 dynamic residual defect is disallowed as an input to"
+    ]
+  },
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps4_anticircularity_closed": true,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-anticircularity-audit-v1",
+  "source_consistency": {
+    "dynamic_readiness_pc2_closed": true,
+    "kinematic_certificate_certified_rows": 96,
+    "kinematic_certificate_excluded_dynamic_rows": 36,
+    "kinematic_certificate_schema": "kinematic-row-defect-certificate-v1",
+    "kinematic_certificate_status": "partial_96_row_proof_certificate_not_submission_ready",
+    "p_state_map_definition_closed": true,
+    "p_state_map_definition_primitive_closed": false,
+    "p_state_map_definition_schema": "d5-p-state-map-definition-audit-v1",
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open"
+  },
+  "state_lift_rate_proved": false,
+  "status": "p_state_ps4_anticircularity_closed_lift_open",
+  "submission_ready": false,
+  "summary": {
+    "closed_p_state_subproofs_after_ps4": 2,
+    "induced_taylor_bounds_proved": 0,
+    "open_p_state_subproofs_after_ps4": 2,
+    "ps1_map_definition_closed": true,
+    "ps2_inverse_or_infsup_closed": false,
+    "ps3_state_lift_conversion_closed": false,
+    "ps4_anticircularity_closed": true,
+    "term_rows_using_p_state": 126
+  }
+}

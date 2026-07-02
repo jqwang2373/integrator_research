@@ -1,0 +1,238 @@
+{
+  "artifact_alignment": {
+    "double_reference_policy": [
+      "finer_public_dynamics_self_reference"
+    ],
+    "forms": [
+      "rA",
+      "reps",
+      "rp"
+    ],
+    "models": [
+      "double_pendulum",
+      "four_link",
+      "single_pendulum",
+      "slider_crank"
+    ],
+    "public_double_order_groups": 3,
+    "public_order_groups_total": 12,
+    "public_order_summary_completed_rows": 9,
+    "public_order_summary_rows": 9,
+    "raw_order_ok_rows": 36,
+    "raw_order_rows": 36,
+    "single_four_slider_reference_mode": [
+      "kinematics"
+    ],
+    "summary_finest_h_values": [
+      0.0001
+    ],
+    "t_end_values": [
+      3.0
+    ],
+    "timing_ok_rows": 12,
+    "timing_rows": 12
+  },
+  "claim_boundary": {
+    "can_close_ra2021_b2_requirement_now": false,
+    "default_1e_4_required": false,
+    "existing_velocity_mismatch_rows_reinterpreted_as_policy_mismatch_not_unknown_output_mapping": true,
+    "external_superiority_claim_allowed": false,
+    "heavy_numerical_run_invoked": false,
+    "output_mapping_verified_from_source": true,
+    "run_v047_invoked": false,
+    "source_policy_reproduction_rows_closed": 0,
+    "time_grid_policy_extracted_from_source": true,
+    "v048_runner_invoked": false
+  },
+  "forensic_issue_counts": {
+    "position_aligned_velocity_mismatch_rows": 9,
+    "ra2021_forensic_rows": 12,
+    "velocity_nonmonotone_or_floor_limited_rows": 1
+  },
+  "form_velocity_assignments": {
+    "rA": {
+      "dynamics_update": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rA/system_ra.py",
+        "line": 164,
+        "needle": "body.dr = body.dr_prev + self.h*body.ddr"
+      },
+      "position_update": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rA/system_ra.py",
+        "line": 167,
+        "needle": "body.r = body.r_prev + self.h*body.dr"
+      },
+      "translational_velocity": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rA/system_ra.py",
+        "line": 248,
+        "needle": "body.dr = dq[3*j:3*(j+1), :]"
+      }
+    },
+    "reps": {
+      "translational_velocity": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rEps/system_reps.py",
+        "line": 308,
+        "needle": "body.dr = dq[3*j:3*(j+1), :]"
+      }
+    },
+    "rp": {
+      "translational_velocity": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rp/system_rp.py",
+        "line": 351,
+        "needle": "body.dr = dq[3*j:3*(j+1), :]"
+      }
+    }
+  },
+  "output_assignments": {
+    "double_pendulum": {
+      "acceleration": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+        "line": 85,
+        "needle": "acc_data[j, :, i] = body.ddr.T"
+      },
+      "position": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+        "line": 83,
+        "needle": "pos_data[j, :, i] = body.r.T"
+      },
+      "velocity": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+        "line": 84,
+        "needle": "vel_data[j, :, i] = body.dr.T"
+      }
+    },
+    "four_link": {
+      "acceleration": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+        "line": 101,
+        "needle": "acc_data[j, :, i] = body.ddr.T"
+      },
+      "position": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+        "line": 99,
+        "needle": "pos_data[j, :, i] = body.r.T"
+      },
+      "velocity": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+        "line": 100,
+        "needle": "vel_data[j, :, i] = body.dr.T"
+      }
+    },
+    "slider_crank": {
+      "acceleration": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+        "line": 104,
+        "needle": "acc_data[j, :, i] = body.ddr.T"
+      },
+      "position": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+        "line": 102,
+        "needle": "pos_data[j, :, i] = body.r.T"
+      },
+      "velocity": {
+        "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+        "line": 103,
+        "needle": "vel_data[j, :, i] = body.dr.T"
+      }
+    }
+  },
+  "read_only": true,
+  "schema": "ra2021-source-identity-audit-v1",
+  "setup_identity": {
+    "form_choices_present": true,
+    "form_dispatch": {
+      "rA": true,
+      "reps": true,
+      "rp": true
+    },
+    "mode_choices_present": true,
+    "mode_dispatch": {
+      "dynamics": true,
+      "kinematics": true
+    },
+    "tol_optional": true
+  },
+  "source_files": {
+    "double_pendulum_model": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+    "four_link_model": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+    "slider_crank_model": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+    "standard_setup": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/utils/tools.py",
+    "system_ra": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rA/system_ra.py",
+    "system_reps": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rEps/system_reps.py",
+    "system_rp": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/rp/system_rp.py"
+  },
+  "source_suite": "ra2021_taves_kissel_negrut",
+  "status": "source_output_time_grid_policy_extracted_promotion_still_open",
+  "subrequirements_resolved_by_this_audit": [
+    "document_public_code_path_and_source_setup_identity",
+    "verify_body_r_body_dr_body_ddr_output_mapping_from_source",
+    "extract_public_endpoint_time_grid_convention_from_source"
+  ],
+  "subrequirements_still_open": [
+    "run_or_promote_local_Gauss6_FullVA_under_the_same_RA2021_source_time_grid_and_dynamic_policy",
+    "bind_error_norm_columns_to_accepted_source_policy_order_rows",
+    "tie_runtime_and_Newton_iteration_policy_to_the_accepted_source_policy_order_rows",
+    "produce_rerun_or_independent_verification_artifact_for_promoted_rows"
+  ],
+  "suite_id": "ra2021_absolute_coordinate",
+  "time_grid_policy": {
+    "example_interval_T3_h1e_3": 0.0010003334444814939,
+    "h_argument": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/utils/tools.py",
+      "line": 25,
+      "needle": "parser.add_argument('--step_size', type=float, default=1e-3, dest='h')"
+    },
+    "public_grid_formula": "numpy.linspace(0, t_end, int(t_end / h), endpoint=True)",
+    "public_grid_interval_formula": "t_end / (int(t_end / h) - 1) for saved output times when int(t_end / h) > 1",
+    "public_point_count_formula": "int(t_end / h)",
+    "step_call_double_pendulum": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+      "line": 77,
+      "needle": "sys.do_step(i, t)"
+    },
+    "step_call_four_link": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+      "line": 93,
+      "needle": "sys.do_step(i, t)"
+    },
+    "step_call_slider_crank": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+      "line": 96,
+      "needle": "sys.do_step(i, t)"
+    },
+    "t_end_argument": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/utils/tools.py",
+      "line": 24,
+      "needle": "parser.add_argument('-t', '--end_time', type=float, default=3, dest='t_end')"
+    },
+    "time_grid_double_pendulum": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+      "line": 65,
+      "needle": "t_grid = np.linspace(0, params.t_end, t_steps, endpoint=True)"
+    },
+    "time_grid_four_link": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+      "line": 78,
+      "needle": "t_grid = np.linspace(0, params.t_end, t_steps, endpoint=True)"
+    },
+    "time_grid_slider_crank": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+      "line": 82,
+      "needle": "t_grid = np.linspace(0, params.t_end, t_steps, endpoint=True)"
+    },
+    "time_step_count_double_pendulum": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+      "line": 64,
+      "needle": "t_steps = int(params.t_end/params.h)"
+    },
+    "time_step_count_four_link": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+      "line": 77,
+      "needle": "t_steps = int(params.t_end/params.h)"
+    },
+    "time_step_count_slider_crank": {
+      "file": "external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+      "line": 81,
+      "needle": "t_steps = int(params.t_end/params.h)"
+    }
+  }
+}

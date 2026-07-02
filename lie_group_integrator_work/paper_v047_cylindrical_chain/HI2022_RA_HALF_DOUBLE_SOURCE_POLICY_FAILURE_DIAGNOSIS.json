@@ -1,0 +1,230 @@
+{
+  "candidate_contract": {
+    "canonical_hi2022_output_untouched_by_writer": true,
+    "estimated_candidate_steps": [
+      400,
+      800,
+      1600
+    ],
+    "estimated_reference_steps": 8000,
+    "execute_requested": true,
+    "execution_phase": "candidate",
+    "form": "rA_half",
+    "full_public_grid_selected": false,
+    "heavy_numerical_run_invoked_by_source_candidate": true,
+    "model": "double_pendulum",
+    "reference_runtime_sec": 12.791629565996118,
+    "reference_status": "ok",
+    "selected_coarse_trio": true,
+    "selected_reference_h": 0.001,
+    "selected_step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "selected_t_end": 8.0,
+    "source_policy_1e_4_included": false,
+    "source_policy_reference_h_selected": true,
+    "source_policy_time_window_selected": true,
+    "summary_status": "partial_or_failed_full_T8_source_policy_candidate_not_promoted"
+  },
+  "diagnosis": {
+    "failed_h_values": [
+      0.02,
+      0.01
+    ],
+    "failure_loci": [
+      {
+        "failure_iteration_k": 100,
+        "failure_time": 2.24,
+        "h": 0.02,
+        "message_parsed": true,
+        "tolerance": 1e-10
+      },
+      {
+        "failure_iteration_k": 100,
+        "failure_time": 5.8,
+        "h": 0.01,
+        "message_parsed": true,
+        "tolerance": 1e-10
+      }
+    ],
+    "failure_messages": [
+      "failed:RuntimeError:Newton-Raphson not converging at t: 2.240, k: 100",
+      "failed:RuntimeError:Newton-Raphson not converging at t: 5.800, k: 100"
+    ],
+    "newton_failure_count": 2,
+    "ok_h_values": [
+      0.005
+    ],
+    "pair_orders_available": false,
+    "partial_or_failed_shard": true,
+    "root_cause_labels": [
+      "selected_step_trio_incomplete",
+      "coarse_and_mid_rows_newton_failure",
+      "newton_failures_at_k_100_under_rA_half_tolerance_1e_10",
+      "single_ok_row_insufficient_for_order",
+      "full_public_grid_not_selected",
+      "tolerance_repair_attempt_recorded_but_source_policy_still_open",
+      "work_precision_publication_binding_missing"
+    ]
+  },
+  "execution_evidence": {
+    "acceleration_pair_orders": [],
+    "avg_iteration_values": [
+      10.4525
+    ],
+    "candidate_partial": true,
+    "failed_row_count": 2,
+    "max_iteration_values": [
+      22.0
+    ],
+    "ok_row_count": 1,
+    "position_pair_orders": [],
+    "reference_tolerance_values": [
+      0.0001
+    ],
+    "row_count": 3,
+    "rows_complete": false,
+    "runtime_sec_values": [
+      2.684584806091152
+    ],
+    "selected_step_trio_completed": false,
+    "selected_tolerance_values": [
+      1e-10
+    ],
+    "source_policy_candidate_rows_completed": 1,
+    "status_counts": {
+      "failed:RuntimeError:Newton-Raphson not converging at t: 2.240, k: 100": 1,
+      "failed:RuntimeError:Newton-Raphson not converging at t: 5.800, k: 100": 1,
+      "ok": 1
+    },
+    "velocity_pair_orders": []
+  },
+  "heavy_numerical_run_invoked_by_this_builder": false,
+  "input_artifacts": {
+    "candidate_rows": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_rows.csv",
+    "candidate_summary": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_summary.json",
+    "tolerance_repair_audit": "HI2022_T8_TOLERANCE_REPAIR_AUDIT.json"
+  },
+  "promotion_decision": {
+    "b4_b7_can_close_from_this_diagnosis": false,
+    "external_superiority_claim_allowed": false,
+    "promotion_blockers": [
+      "full HI2022 public step grid is not selected or not completed",
+      "work/precision figure rows are not promoted from this isolated shard",
+      "runtime and error/order rows are not yet bound into a publication-grade full-policy figure",
+      "selected coarse trio is not the full encoded HI2022 public step family"
+    ],
+    "promotion_ready": false,
+    "reason": "The isolated HI2022 rA_half double-pendulum T=8 selected-coarse-trio shard completed only the h=0.005 row; h=0.02 and h=0.01 failed with Newton-Raphson nonconvergence, leaving no pairwise order or publication work/precision curve.",
+    "source_policy_rows_closed_by_this_diagnosis": 0,
+    "source_policy_rows_promoted_by_this_diagnosis": 0
+  },
+  "read_only": true,
+  "rows": [
+    {
+      "acc_final_linf": NaN,
+      "avg_iterations": NaN,
+      "canonical_hi2022_output_untouched": true,
+      "execution_path": "not_run",
+      "failed": true,
+      "failure_message": "failed:RuntimeError:Newton-Raphson not converging at t: 2.240, k: 100",
+      "full_public_grid_selected": false,
+      "h": 0.02,
+      "max_iterations": NaN,
+      "newton_failure_iteration_k": 100,
+      "newton_failure_message_parsed": true,
+      "newton_failure_time": 2.24,
+      "pos_final_linf": NaN,
+      "reference_tolerance": 0.0001,
+      "runtime_sec": NaN,
+      "source_policy_reference_h_selected": true,
+      "source_policy_row_promoted": false,
+      "source_policy_selected_coarse_h": true,
+      "source_policy_time_window_selected": true,
+      "status": "failed:RuntimeError:Newton-Raphson not converging at t: 2.240, k: 100",
+      "tolerance": 1e-10,
+      "vel_final_linf": NaN
+    },
+    {
+      "acc_final_linf": NaN,
+      "avg_iterations": NaN,
+      "canonical_hi2022_output_untouched": true,
+      "execution_path": "not_run",
+      "failed": true,
+      "failure_message": "failed:RuntimeError:Newton-Raphson not converging at t: 5.800, k: 100",
+      "full_public_grid_selected": false,
+      "h": 0.01,
+      "max_iterations": NaN,
+      "newton_failure_iteration_k": 100,
+      "newton_failure_message_parsed": true,
+      "newton_failure_time": 5.8,
+      "pos_final_linf": NaN,
+      "reference_tolerance": 0.0001,
+      "runtime_sec": NaN,
+      "source_policy_reference_h_selected": true,
+      "source_policy_row_promoted": false,
+      "source_policy_selected_coarse_h": true,
+      "source_policy_time_window_selected": true,
+      "status": "failed:RuntimeError:Newton-Raphson not converging at t: 5.800, k: 100",
+      "tolerance": 1e-10,
+      "vel_final_linf": NaN
+    },
+    {
+      "acc_final_linf": 4277.943708494249,
+      "avg_iterations": 10.4525,
+      "canonical_hi2022_output_untouched": true,
+      "execution_path": "public_run_function",
+      "failed": false,
+      "failure_message": "",
+      "full_public_grid_selected": false,
+      "h": 0.005,
+      "max_iterations": 22.0,
+      "newton_failure_iteration_k": null,
+      "newton_failure_message_parsed": false,
+      "newton_failure_time": null,
+      "pos_final_linf": 2.877263564646432,
+      "reference_tolerance": 0.0001,
+      "runtime_sec": 2.684584806091152,
+      "source_policy_reference_h_selected": true,
+      "source_policy_row_promoted": false,
+      "source_policy_selected_coarse_h": true,
+      "source_policy_time_window_selected": true,
+      "status": "ok",
+      "tolerance": 1e-10,
+      "vel_final_linf": 118.27954796466474
+    }
+  ],
+  "run_v047_invoked_by_this_builder": false,
+  "safe_next_actions": [
+    "Keep this shard as diagnostic evidence only.",
+    "Do not promote HI2022 rA_half:double_pendulum to B4/B7 source-policy rows from a 1/3 shard.",
+    "If pursuing HI2022 closure, repair the Newton convergence policy or document a formal suite demotion before rebuilding B7 figures.",
+    "Bind accepted source-policy errors, runtime, and iteration counts from complete rows before any B4/B7 promotion."
+  ],
+  "schema": "hi2022-ra-half-double-source-policy-failure-diagnosis-v1",
+  "status": "diagnosis_only_partial_newton_failure_not_promoted",
+  "tolerance_repair_context": {
+    "additional_repair_tolerance_bases": [
+      1e-06
+    ],
+    "audit_status": "tolerance_repair_attempt_recorded_not_source_policy_closure",
+    "combined_best_complete_groups": [
+      4,
+      8
+    ],
+    "combined_best_rows_ok_total": [
+      19,
+      24
+    ],
+    "external_superiority_claim_allowed": false,
+    "full_T8_policy_completed": false,
+    "interpretation": "Existing tolerance-repair evidence is useful negative evidence only: it recovers one row in the broader T=8 audit but still leaves the HI2022 source-policy reproduction, full T=8 policy, and external-superiority claim open.",
+    "original_tolerance_base": 1e-10,
+    "recovered_row_count": 1,
+    "repair_tolerance_base": 1e-07,
+    "source_policy_reproduction_closed": false
+  },
+  "v048_runner_invoked_by_this_builder": false
+}

@@ -1,0 +1,40 @@
+{
+  "alias_methods": {
+    "vp2024_lie_group_ode_partitioning": "vp2024_coordinate_partitioning_rA"
+  },
+  "apples_to_apples_coarse_claim": true,
+  "claim": "These rows are direct final-state error comparisons under one shared reference and norm per example on the coarse h grid. Public-code baselines are replayed on fixed times t_i=i*h to avoid the source helper time-grid convention at coarse h. This is an apples-to-apples coarse comparison, not source-policy reproduction.",
+  "direct_error_comparable_rows": 40,
+  "direct_error_superiority_claim": true,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "kissel_negrut_velocity_error_comparisons": 24,
+  "kissel_negrut_velocity_error_wins": 24,
+  "local_finest_velocity_error_comparisons": 40,
+  "local_finest_velocity_error_wins": 40,
+  "local_velocity_order_comparisons": 40,
+  "local_velocity_order_wins": 40,
+  "omitted_methods": {
+    "tfe2026_TFE_m3_GL": "source_backed_scope_excluded_four_link"
+  },
+  "original_paper_velocity_error_comparisons": 16,
+  "original_paper_velocity_error_wins": 16,
+  "public_code_fixed_grid_replay": true,
+  "public_source_run_helpers_time_grid_caveat": "The 2021/2022 public run_* helpers allocate int(T/h) samples with linspace(0,T,int(T/h)); the common-reference audit uses the same setup and steppers but replays coarse rows on t_i=i*h.",
+  "raw_row_count": 132,
+  "reference_h": 0.0125,
+  "run_method_count": 11,
+  "schema": "common-reference-error-audit-v1",
+  "source_policy_reproduction": false,
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "summary_row_count": 44,
+  "t_end": 0.1
+}

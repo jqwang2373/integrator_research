@@ -1,0 +1,293 @@
+{
+  "b4_source_policy_execution_invoked": false,
+  "current_queries": 11,
+  "current_query_count": 11,
+  "date": "2026-06-20",
+  "date_checked": "2026-06-20",
+  "evidence_policy": {
+    "no_positive_query_result_action": "retain_prior_unable_to_reproduce_not_promoted_disposition",
+    "not_reproducible_rows_are_external_superiority_ready": false,
+    "not_reproducible_rows_are_source_policy_closed": false,
+    "query_absence_is_global_absence_proof": false,
+    "rate_limited_search_is_positive_artifact_evidence": false
+  },
+  "exact_b4_opt_in_required_for_execution": true,
+  "external_superiority_ready_rows": 0,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked": false,
+  "latest_external_probe": {
+    "access_limited_probe_count": 4,
+    "date_checked": "2026-06-21",
+    "global_absence_proved": false,
+    "parseable_zero_result_probe_count": 1,
+    "positive_public_code_artifact_rows": 0,
+    "probe_count": 9,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed_by_probe": 0
+  },
+  "latest_external_probe_access_limited_count": 4,
+  "latest_external_probe_count": 9,
+  "latest_external_probe_date_checked": "2026-06-21",
+  "latest_external_probe_global_absence_proved": false,
+  "latest_external_probe_marker": "2026-06-21/9/0/0/4/False/False",
+  "latest_external_probe_positive_public_code_artifact_rows": 0,
+  "latest_external_probe_rows": [
+    {
+      "access_limited": false,
+      "interface": "web_search",
+      "observation": "available_search_interface_returned_no_result_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups\" code GitHub",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "access_limited": false,
+      "interface": "web_search",
+      "observation": "available_search_interface_returned_no_result_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"10.1007/s11044-026-10153-w\" GitHub",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "access_limited": true,
+      "interface": "github_rest_search_api",
+      "observation": "github_anonymous_api_rate_limited_no_search_result_obtained",
+      "positive_public_code_artifact_found": false,
+      "query": "\"Higher-order integration\" \"index-3\" \"time finite elements\"",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "access_limited": false,
+      "interface": "github_html_repository_search",
+      "observation": "github_html_repository_search_parseable_zero_results",
+      "parseable_result_count": 0,
+      "positive_public_code_artifact_found": false,
+      "query": "\"Higher-order integration\" \"index-3\" \"time finite elements\"",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "access_limited": true,
+      "interface": "github_html_code_search",
+      "observation": "github_html_code_search_secondary_rate_limited_no_search_result_obtained",
+      "positive_public_code_artifact_found": false,
+      "query": "\"s11044-026-10153-w\"",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "access_limited": false,
+      "interface": "web_search",
+      "observation": "available_search_interface_returned_no_result_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"velocity partitioning\" \"Kissel\" \"Bakke\" \"Negrut\" GitHub",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "access_limited": false,
+      "interface": "web_search",
+      "observation": "available_search_interface_returned_no_result_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"DETC2023\" \"116950\" \"velocity\" \"partition\" GitHub",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "access_limited": true,
+      "interface": "github_rest_search_api",
+      "observation": "github_anonymous_api_rate_limited_no_search_result_obtained",
+      "positive_public_code_artifact_found": false,
+      "query": "\"velocity partitioning\" Negrut",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "access_limited": true,
+      "interface": "github_html_code_search",
+      "observation": "github_html_code_search_secondary_rate_limited_no_search_result_obtained",
+      "positive_public_code_artifact_found": false,
+      "query": "\"velocity partitioning\" Negrut",
+      "source_policy_rows_closed_by_probe": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ],
+  "latest_external_probe_source_policy_reopen_triggered": false,
+  "latest_external_probe_source_policy_rows_closed": 0,
+  "local_positive_reopen_artifact_rows": 0,
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "open_execution_queue_rows": 0,
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "positive_public_code_artifact_rows": 0,
+  "public_code_available_rows": 0,
+  "query_count": 11,
+  "read_only": true,
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "row_count": 20,
+  "rows": 20,
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "safe_actions_without_b4_opt_in": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "schema": "source-policy-public-code-refresh-20260620-v1",
+  "self_reproduction_attempted_rows": 20,
+  "source_files": [
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260614.json",
+    "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json"
+  ],
+  "source_policy_closed": false,
+  "source_policy_closed_ratio": "0/20",
+  "source_policy_closed_rows": 0,
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_reopen_triggered": false,
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_promoted": 0,
+  "status": "public_code_refresh_20260620_no_positive_new_source_artifact_rows_remain_unable_to_reproduce",
+  "submission_ready": false,
+  "suite_refreshes": [
+    {
+      "current_queries": [
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups\" code GitHub"
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"10.1007/s11044-026-10153-w\" GitHub"
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"10.1007/s11044-026-10153-w\""
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"Higher-order integration of index-3 DAE\""
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"time finite elements\" \"Lie groups\" \"Brown\" \"McPhee\" code"
+        }
+      ],
+      "current_query_count": 5,
+      "external_superiority_ready_rows": 0,
+      "final_disposition": "unable_to_reproduce_not_promoted",
+      "positive_public_code_artifact_found": false,
+      "prior_refresh_disposition": "unable_to_reproduce_not_promoted",
+      "prior_refresh_public_code_available": false,
+      "public_code_available_now": false,
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "row_count": 16,
+      "self_reproduction_attempted_rows": 16,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_promoted": 0,
+      "suite_id": "tfe2026_original_pendulum",
+      "unable_to_reproduce_rows": 16
+    },
+    {
+      "current_queries": [
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"velocity partitioning\" \"Kissel\" \"Bakke\" \"Negrut\" GitHub"
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"DETC2023\" \"116950\" \"velocity\" \"partition\" GitHub"
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"DETC2023\" \"116950\" \"velocity\" \"partition\""
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "\"sbel-reproducibility\" \"velocity partitioning\""
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "site:github.com/uwsbel/sbel-reproducibility \"DETC2023\" \"116950\""
+        },
+        {
+          "interface": "web_search",
+          "observation": "no_positive_public_source_code_artifact_found",
+          "query": "site:github.com/uwsbel/sbel-reproducibility \"velocity partitioning\""
+        }
+      ],
+      "current_query_count": 6,
+      "external_superiority_ready_rows": 0,
+      "final_disposition": "unable_to_reproduce_not_promoted",
+      "positive_public_code_artifact_found": false,
+      "prior_refresh_disposition": "unable_to_reproduce_not_promoted",
+      "prior_refresh_public_code_available": false,
+      "public_code_available_now": false,
+      "reopen_condition": "new_distinct_public_vp2024_velocity_partitioning_code_path",
+      "row_count": 4,
+      "self_reproduction_attempted_rows": 4,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_promoted": 0,
+      "suite_id": "vp2024_velocity_partitioning",
+      "unable_to_reproduce_rows": 4
+    }
+  ],
+  "supplemental_to": "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260614.json",
+  "unable_to_reproduce_rows": 20,
+  "v048_runner_invoked": false
+}

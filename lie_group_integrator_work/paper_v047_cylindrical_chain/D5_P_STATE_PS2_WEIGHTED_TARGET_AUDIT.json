@@ -1,0 +1,103 @@
+{
+  "certifies_dynamic_row_defect": false,
+  "certifies_induced_taylor_bounds": false,
+  "claim_boundary": {
+    "allowed_now": "PS2 target specification is fixed as a weighted state-block inf-sup estimate.",
+    "close_condition": "Close PS2 only after proving a uniform lower bound for the state-block linearization in the h-weighted norm on the compact proof tube, independently of D5 dynamic residual closure.",
+    "forbidden_now": [
+      "PS2 inverse or inf-sup constant proved",
+      "PS3 state lift O(h^7) conversion",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "dimensions": {
+    "auxiliary_acceleration_dimension": 36,
+    "bodies": 2,
+    "domain_dimension_with_acceleration": 108,
+    "non_dynamic_row_dimension": 96,
+    "row_deficit_vs_full_state_acceleration_domain": 12,
+    "row_family_dimensions": {
+      "angular_velocity_weak_defect": 18,
+      "lower_pair_index3_weak_constraints": 24,
+      "rotational_lie_position_weak_defect": 18,
+      "translational_position_weak_defect": 18,
+      "translational_velocity_weak_defect": 18
+    },
+    "row_surplus_vs_state_block": 24,
+    "stages": 3,
+    "state_block_dimension": 72
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps2-weighted-target}",
+      "weighted PS2 target",
+      "h\\|\\delta A\\|",
+      "does not close PS2",
+      "does not close PS3"
+    ]
+  },
+  "non_circularity": {
+    "allowed_inputs": [
+      "96-row non-dynamic residual certificate",
+      "P_state map definition",
+      "P_state PS4 anti-circularity audit",
+      "compact proof-tube smoothness constants"
+    ],
+    "uses_d5_dynamic_residual_defect": false,
+    "uses_residual_identity_as_variable_lift": false,
+    "uses_stage_residual_defect": false
+  },
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps2_inverse_or_infsup_closed": false,
+  "ps2_target_spec_closed": true,
+  "ps3_state_lift_conversion_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-weighted-target-audit-v1",
+  "source_consistency": {
+    "kinematic_certificate_certified_rows": 96,
+    "kinematic_certificate_schema": "kinematic-row-defect-certificate-v1",
+    "p_acc_current_unweighted_acceleration_rate": "O(h^6)",
+    "p_acc_obstruction_schema": "d5-p-acc-lift-obstruction-audit-v1",
+    "p_state_anticircularity_closed": true,
+    "p_state_anticircularity_pc2_closed": false,
+    "p_state_anticircularity_schema": "d5-p-state-anticircularity-audit-v1",
+    "p_state_map_definition_closed": true,
+    "p_state_map_primitive_closed": false,
+    "p_state_map_schema": "d5-p-state-map-definition-audit-v1",
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open"
+  },
+  "state_lift_rate_proved": false,
+  "status": "p_state_ps2_weighted_infsup_target_recorded_ps2_open",
+  "submission_ready": false,
+  "summary": {
+    "auxiliary_acceleration_dimension": 36,
+    "closed_p_state_subproofs_after_target_spec": 2,
+    "induced_taylor_bounds_proved": 0,
+    "non_dynamic_row_dimension": 96,
+    "ps2_inverse_or_infsup_closed": false,
+    "ps2_target_spec_closed": true,
+    "ps3_state_lift_conversion_closed": false,
+    "state_block_dimension": 72
+  },
+  "weighted_infsup_target": {
+    "compatible_with_p_acc_obstruction": "The P_acc audit shows that velocity collocation alone naturally loses one h-power for unweighted acceleration; PS2 only needs h-weighted acceleration influence for the state estimate.",
+    "literal_full_domain_inverse_possible": false,
+    "reason_literal_inverse_not_target": "The map has 96 non-dynamic residual rows but 108 state-plus-acceleration coordinates, so a square inverse in (S,A) is not the PS2 object.",
+    "state_block_infsup_with_acceleration_parameter": true,
+    "target_estimate": "||delta S|| <= C_PS2 (||delta N_h^nd|| + h ||delta A||)",
+    "weighted_domain_norm": "||delta S|| + h ||delta A||",
+    "why_h_weighted": "The collocation equations see acceleration through h A_G delta A; an unweighted acceleration inverse would be nonuniform as h -> 0."
+  }
+}

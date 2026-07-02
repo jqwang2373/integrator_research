@@ -1,0 +1,96 @@
+{
+  "actual_ps3_input_instantiation_closed": false,
+  "certifies_dynamic_row_defect": false,
+  "certifies_induced_taylor_bounds": false,
+  "claim_boundary": {
+    "allowed_now": "PS3 has a closed conditional algebraic conversion, and the aggregate PS2 inverse dependency is satisfied.",
+    "close_condition": "Actual PS3 closes only after the closed aggregate PS2 estimate is combined with non-circular ledger entries supplying the 96-row non-dynamic residual O(h^7) defect and the h-weighted acceleration O(h^7) input for the P_state lift.",
+    "forbidden_now": [
+      "actual PS3 residual and acceleration inputs instantiated",
+      "actual PS3 state lift proved",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "conditional_implication": {
+    "assumptions": [
+      "closed aggregate weighted PS2 inverse on the compact proof tube",
+      "96-row non-dynamic residual defect is supplied as O(h^7) in an actual PS3 ledger",
+      "h-weighted acceleration input is supplied as O(h^7) in an actual PS3 ledger"
+    ],
+    "closed_as_algebraic_implication": true,
+    "conclusion_under_assumptions": "||delta S|| = O(h^7)",
+    "does_not_close_because": [
+      "the aggregate PS2 constant is proved, but the actual PS3 residual and acceleration inputs have not been instantiated in the lift ledger",
+      "the actual P_state primitive still depends on the open PS3 instantiation",
+      "no P_state-induced Taylor term bound is certified",
+      "separate primitive-route certificate remains open"
+    ]
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps3-conditional-conversion}",
+      "conditional PS3 conversion",
+      "\\|\\delta S\\|=O(h^7)",
+      "does not by itself instantiate the actual PS3 lift",
+      "required residual and acceleration-rate hypotheses"
+    ]
+  },
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps2_dependency_satisfied_by_aggregate": true,
+  "ps2_inverse_or_infsup_closed": true,
+  "ps2_uniform_infsup_required": true,
+  "ps3_actual_state_lift_conversion_closed": false,
+  "ps3_conditional_conversion_closed": true,
+  "rate_budget": {
+    "conditional_state_lift_rate": "O(h^7)",
+    "non_dynamic_residual_rate": "O(h^7)",
+    "state_estimate": "||delta S|| <= C_PS2 (||delta N_h^nd|| + h ||delta A||)",
+    "unweighted_acceleration_input_rate": "O(h^6)",
+    "weighted_acceleration_input_rate": "h * O(h^6) = O(h^7)"
+  },
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps3-conditional-conversion-audit-v1",
+  "source_consistency": {
+    "kinematic_certificate_certified_rows": 96,
+    "kinematic_certificate_excluded_dynamic_rows": 36,
+    "kinematic_certificate_schema": "kinematic-row-defect-certificate-v1",
+    "p_acc_current_unweighted_acceleration_rate": "O(h^6)",
+    "p_acc_obstruction_schema": "d5-p-acc-lift-obstruction-audit-v1",
+    "p_acc_pa2_closed": false,
+    "p_acc_pc2_closed": false,
+    "p_state_ps2_aggregate_infsup_closed": true,
+    "p_state_ps2_aggregate_pc2_closed": false,
+    "p_state_ps2_aggregate_promotion_recorded": true,
+    "p_state_ps2_aggregate_schema": "d5-p-state-ps2-aggregate-promotion-audit-v1",
+    "p_state_ps2_aggregate_uniform_constant_certified": true,
+    "p_state_ps2_infsup_closed": false,
+    "p_state_ps2_pc2_closed": false,
+    "p_state_ps2_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "p_state_ps2_target_spec_closed": true
+  },
+  "state_lift_rate_proved": false,
+  "status": "p_state_ps3_conditional_conversion_recorded_ps3_actual_open",
+  "submission_ready": false,
+  "summary": {
+    "actual_ps3_input_instantiation_closed": false,
+    "conditional_state_lift_rate": "O(h^7)",
+    "induced_taylor_bounds_proved": 0,
+    "non_dynamic_rows_certified": 96,
+    "ps2_dependency_satisfied_by_aggregate": true,
+    "ps2_inverse_or_infsup_closed": true,
+    "ps2_uniform_infsup_required": true,
+    "ps3_actual_state_lift_conversion_closed": false,
+    "ps3_conditional_conversion_closed": true,
+    "weighted_acceleration_input_rate": "O(h^7)"
+  }
+}

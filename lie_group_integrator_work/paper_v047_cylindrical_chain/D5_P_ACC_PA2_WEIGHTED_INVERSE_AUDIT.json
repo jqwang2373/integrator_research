@@ -1,0 +1,181 @@
+{
+  "acceleration_lift_rate_proved": false,
+  "case": "cylindrical_smooth",
+  "claim_boundary": {
+    "allowed_now": "finite weighted-inverse diagnostics show bounded finite control of h*delta A through the same weighted PS2 operator used for the state lift target",
+    "close_condition": "PA2 closes only after the weighted finite projection diagnostic is replaced by a uniform compact-tube estimate that controls the unweighted acceleration lift at O(h^7), or after the theorem explicitly carries P_acceleration_lift as an assumption.",
+    "forbidden_now": [
+      "PA2 closure",
+      "P_acc primitive closure",
+      "uniform unweighted acceleration lift proof",
+      "Taylor term bounds certified from P_acc",
+      "primitive/Taylor PC2 route closure",
+      "unconditional sixth-order theorem"
+    ]
+  },
+  "h_values": [
+    0.04,
+    0.02,
+    0.01
+  ],
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "PA2 weighted-inverse diagnostic",
+      "bounded finite control of \\(h\\delta A\\)",
+      "does not prove a uniform unweighted acceleration lift",
+      "PA2 remains open",
+      "primitive-and-Taylor route to PC2 remains open"
+    ]
+  },
+  "one_step_stage_newton_invoked": true,
+  "operator_definition": {
+    "acceleration_block": "A=(a,alpha) over three Gauss stages and two bodies",
+    "lambda_columns_excluded": true,
+    "map": "(delta S, delta A) -> (D N_h^nd[delta S, delta A], h delta A)",
+    "non_dynamic_rows": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "source": "same finite weighted operator used by D5_P_STATE_PS2_LINEARIZATION_PROBE",
+    "state_block": "S=(r,eta,v,omega) over three Gauss stages and two bodies"
+  },
+  "pa2_closed": false,
+  "pa2_weighted_inverse_probe_recorded": true,
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_acceleration_lift",
+  "probes": [
+    {
+      "acceleration_column_count": 36,
+      "case": "cylindrical_smooth",
+      "condition_number": 362.7290422635366,
+      "domain_column_count": 108,
+      "full_column_rank": true,
+      "gauss_stage_residual_norm": 1.0292829673060734e-14,
+      "h": 0.04,
+      "h_times_unweighted_acceleration_projection_constant": 1.0000000000000004,
+      "max_singular_value": 14.50403728957033,
+      "min_singular_value": 0.03998587264769549,
+      "non_dynamic_row_count": 96,
+      "operator_definition": "(delta S, delta A) -> (D N_h^nd[delta S, delta A], h delta A)",
+      "rank_tolerance": 4.251117063310347e-13,
+      "state_column_count": 72,
+      "state_projection_constant": 2.0194700009526936,
+      "unweighted_acceleration_projection_constant": 25.00000000000001,
+      "weighted_h_acceleration_projection_constant": 1.0000000000000018,
+      "weighted_operator_rank": 108,
+      "weighted_operator_shape": [
+        132,
+        108
+      ]
+    },
+    {
+      "acceleration_column_count": 36,
+      "case": "cylindrical_smooth",
+      "condition_number": 723.4843411616006,
+      "domain_column_count": 108,
+      "full_column_rank": true,
+      "gauss_stage_residual_norm": 9.238506732914585e-15,
+      "h": 0.02,
+      "h_times_unweighted_acceleration_projection_constant": 1.0000000000000013,
+      "max_singular_value": 14.468413786021543,
+      "min_singular_value": 0.019998240408066848,
+      "non_dynamic_row_count": 96,
+      "operator_definition": "(delta S, delta A) -> (D N_h^nd[delta S, delta A], h delta A)",
+      "rank_tolerance": 4.2406758543719194e-13,
+      "state_column_count": 72,
+      "state_projection_constant": 2.007889290259502,
+      "unweighted_acceleration_projection_constant": 50.00000000000007,
+      "weighted_h_acceleration_projection_constant": 1.0000000000000016,
+      "weighted_operator_rank": 108,
+      "weighted_operator_shape": [
+        132,
+        108
+      ]
+    },
+    {
+      "acceleration_column_count": 36,
+      "case": "cylindrical_smooth",
+      "condition_number": 1446.2488274759571,
+      "domain_column_count": 108,
+      "full_column_rank": true,
+      "gauss_stage_residual_norm": 1.2213250127267018e-14,
+      "h": 0.01,
+      "h_times_unweighted_acceleration_projection_constant": 1.0000000000000062,
+      "max_singular_value": 14.462170456956997,
+      "min_singular_value": 0.009999780246803636,
+      "non_dynamic_row_count": 96,
+      "operator_definition": "(delta S, delta A) -> (D N_h^nd[delta S, delta A], h delta A)",
+      "rank_tolerance": 4.238845941624988e-13,
+      "state_column_count": 72,
+      "state_projection_constant": 2.0055934526401247,
+      "unweighted_acceleration_projection_constant": 100.00000000000063,
+      "weighted_h_acceleration_projection_constant": 1.0000000000000056,
+      "weighted_operator_rank": 108,
+      "weighted_operator_shape": [
+        132,
+        108
+      ]
+    }
+  ],
+  "proof_gap_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-acc-pa2-weighted-inverse-audit-v1",
+  "source_consistency": {
+    "p_acc_independence_closed": true,
+    "p_acc_independence_primitive_closed": false,
+    "p_acc_independence_schema": "d5-p-acc-independence-audit-v1",
+    "p_acc_lift_obstruction_pa2_closed": false,
+    "p_acc_lift_obstruction_recorded": true,
+    "p_acc_lift_obstruction_schema": "d5-p-acc-lift-obstruction-audit-v1",
+    "p_acc_row_binding_closed": true,
+    "p_acc_row_binding_schema": "d5-p-acc-row-binding-audit-v1",
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_pc2_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+    "ps2_probe_full_column_rank_all": true,
+    "ps2_probe_schema": "d5-p-state-ps2-linearization-probe-v1",
+    "ps2_probe_uniform_constant_proved": false,
+    "run_v047_path": "v047_cylindrical_chain_pipeline/run_v047.py",
+    "runtime_row_dimension": 132
+  },
+  "status": "pa2_weighted_inverse_diagnostic_recorded_unweighted_lift_open",
+  "submission_ready": false,
+  "summary": {
+    "acceleration_block_dimension": 36,
+    "domain_dimension": 108,
+    "finite_probe_full_column_rank_all": true,
+    "h_times_unweighted_acceleration_projection_constant_range": [
+      1.0000000000000004,
+      1.0000000000000062
+    ],
+    "max_condition_number_across_probes": 1446.2488274759571,
+    "max_state_projection_constant": 2.0194700009526936,
+    "max_unweighted_acceleration_projection_constant": 100.00000000000063,
+    "max_weighted_h_acceleration_projection_constant": 1.0000000000000056,
+    "max_weighted_operator_rank": 108,
+    "min_singular_value_across_probes": 0.009999780246803636,
+    "min_weighted_operator_rank": 108,
+    "non_dynamic_row_dimension": 96,
+    "pa2_closed": false,
+    "pc2_closed": false,
+    "probe_count": 3,
+    "state_block_dimension": 72,
+    "unweighted_acceleration_uniform_control_proved": false,
+    "weighted_h_acceleration_control_recorded": true,
+    "weighted_operator_shape": [
+      132,
+      108
+    ]
+  },
+  "term_bounds_proved": 0,
+  "unweighted_acceleration_uniform_control_proved": false,
+  "weighted_h_acceleration_control_recorded": true
+}

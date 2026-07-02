@@ -1,0 +1,208 @@
+{
+  "actual_taylor_bounds_proved": 0,
+  "ars_route": "academic-paper-reviewer/full",
+  "b4_b7_closed_by_narrowed_claim_policy": true,
+  "blocking_findings": [],
+  "decision": "submit_under_narrowed_claim",
+  "direct_nonlocal_velocity_error_comparisons": 40,
+  "direct_nonlocal_velocity_error_wins": 40,
+  "direct_nonlocal_velocity_order_comparisons": 40,
+  "direct_nonlocal_velocity_order_wins": 40,
+  "direct_pc2_proof_gap_closed": true,
+  "direct_residual_bridge_active_standard_name": "strict_direct_residual_bridge_submission_standard",
+  "direct_residual_bridge_submission_standard_satisfied": true,
+  "direct_residual_bridge_submission_standard_scope": "closed_by_direct_residual_bridge_kantorovich_route_primitive_taylor_conditional_schema_open",
+  "direct_substitution_supplies_active_pc2_residual_bridge": true,
+  "eta_h_O_h7_solver_policy_evidence": false,
+  "external_superiority_claim_allowed": false,
+  "figure_set_b7_closed": true,
+  "flat_manuscript_inventory": {
+    "algorithm_count": 1,
+    "audit_residue_mentions": 228,
+    "data_availability_present": true,
+    "declarations_present": true,
+    "figure_count": 13,
+    "heading_count": 753,
+    "label": "current_flat_submission_pdf",
+    "line_count": 13293,
+    "numerical_experiments_present": true,
+    "page_break_count": 259,
+    "proof_token_count": 110,
+    "references_present": true,
+    "source_policy_mentions": 225,
+    "table_count": 51,
+    "theorem_count": 4,
+    "word_count": 86855,
+    "work_precision_mentions": 9
+  },
+  "flat_manuscript_pdf": "cmame_submission_flat/main_cmame_submission.pdf",
+  "flat_manuscript_text": "cmame_submission_flat/main_cmame_submission.txt",
+  "flat_manuscript_text_read": true,
+  "full_source_policy_package_ready": false,
+  "global_submission_standard_met": false,
+  "manuscript_inventory": {
+    "algorithm_count": 1,
+    "audit_residue_mentions": 228,
+    "data_availability_present": true,
+    "declarations_present": true,
+    "figure_count": 13,
+    "heading_count": 753,
+    "label": "current_main_cmame_pdf",
+    "line_count": 13293,
+    "numerical_experiments_present": true,
+    "page_break_count": 259,
+    "proof_token_count": 110,
+    "references_present": true,
+    "source_policy_mentions": 225,
+    "table_count": 51,
+    "theorem_count": 4,
+    "word_count": 86855,
+    "work_precision_mentions": 9
+  },
+  "manuscript_pdf": "main_cmame.pdf",
+  "manuscript_style_features": {
+    "all_method_matrix_visible": true,
+    "artifact_appendix_present": true,
+    "data_availability_and_declarations": true,
+    "figure_set_present": true,
+    "pdf_text_read": true,
+    "proofs_present": true,
+    "reproducibility_appendix_compacted": true,
+    "reproducibility_appendix_present": true,
+    "theorem_present": true
+  },
+  "manuscript_text": "main_cmame.txt",
+  "manuscript_text_read": true,
+  "minimal_reproducibility_submission_ready": false,
+  "narrowed_claim_evidence_supported": true,
+  "narrowed_claim_submission_standard_met": true,
+  "nonblocking_scope_findings": [
+    {
+      "evidence": "B4_B7_NON_SUPERIORITY_ROUTE_AUDIT.json",
+      "id": "B4",
+      "reason": "source-policy work/precision remains excluded; common-reference diagnostics support only the narrowed claim",
+      "severity": "scope_boundary"
+    },
+    {
+      "evidence": "CMAME_PROSE_RESIDUE_AUDIT.json",
+      "id": "B6",
+      "reason": "main-body machine tokens are zero and the final prose pass is closed under the narrowed B4/B7 boundary",
+      "severity": "scope_boundary"
+    },
+    {
+      "evidence": "CMAME_FIGURE_SET_AUDIT.json",
+      "id": "B7",
+      "reason": "the current figure set is publication-grade for common-reference diagnostics, while source-policy work/precision figures remain future work",
+      "severity": "scope_boundary"
+    }
+  ],
+  "open_blockers": [],
+  "open_taylor_bound_terms": 162,
+  "primitive_taylor_route_closed": false,
+  "primitive_taylor_schema_blocker_summary": "0/162 Taylor bounds certified; five primitive lift/bilinear antecedents remain open",
+  "primitive_taylor_schema_current_instance_available": false,
+  "primitive_taylor_schema_role": "conditional Newton-Euler primitive Taylor certificate schema; non-load-bearing under the active direct PC2 residual-bridge route",
+  "proof_gap_closed": true,
+  "proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+  "prose_b6_closed": true,
+  "quality_review_passed": true,
+  "readiness_boundary": {
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ],
+    "narrowed_claim_b4_b6_b7_statuses": {
+      "B4": "closed",
+      "B6": "closed",
+      "B7": "closed"
+    },
+    "pdf_style_review_scope": "pdf_read_quality_review_under_narrowed_claim",
+    "submission_standard_scope": "narrowed_claim_only"
+  },
+  "reference_inventory": {
+    "algorithm_count": 2,
+    "audit_residue_mentions": 0,
+    "data_availability_present": true,
+    "declarations_present": true,
+    "figure_count": 18,
+    "heading_count": 179,
+    "label": "reference_style_pdf",
+    "line_count": 1587,
+    "numerical_experiments_present": true,
+    "page_break_count": 33,
+    "proof_token_count": 0,
+    "references_present": true,
+    "source_policy_mentions": 0,
+    "table_count": 3,
+    "theorem_count": 0,
+    "word_count": 11863,
+    "work_precision_mentions": 4
+  },
+  "reference_pdf": "../../s11044-026-10153-w.pdf",
+  "reference_style_features": {
+    "algorithm_boxes_present": true,
+    "appendix_coefficients_present": true,
+    "data_availability_and_declarations": true,
+    "numerical_experiments_section": true,
+    "title_detected": true,
+    "work_precision_figures": true
+  },
+  "reference_text": "../../s11044-026-10153-w.txt",
+  "reference_text_read": true,
+  "remaining_gate_scope": {
+    "accepted_residual_to_error_theorem": false,
+    "b6_b7_closed_under_narrowed_claim": true,
+    "direct_pc2_proof_gap_closed": true,
+    "direct_residual_bridge_route_satisfied": true,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "eta_h_theorem_condition_retained": true,
+    "full_source_policy_package_ready": false,
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ],
+    "global_submission_standard_met": false,
+    "minimal_reproducibility_submission_ready": false,
+    "narrowed_claim_submission_standard_met": true,
+    "quality_review_passed_under_narrowed_claim": true,
+    "residual_to_error_blocking_obligations": 7,
+    "residual_to_error_route_promoted": false,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_total": 40,
+    "submission_ready_not_claimed_by_pdf_style_audit": true
+  },
+  "review_panel": [
+    {
+      "finding": "The PDF has a complete methods-paper structure, a strict direct proof route, and explicit narrowed-claim boundaries for source-policy work/precision.",
+      "recommendation": "send_to_review_under_narrowed_claim",
+      "role": "EIC / CMAME fit"
+    },
+    {
+      "finding": "The reference paper supports claims with implemented algorithms and work/precision figures; this manuscript is reviewable because it excludes source-policy external-superiority and source-policy work/precision claims.",
+      "recommendation": "reviewable_with_scope_checks",
+      "role": "methodology reviewer"
+    },
+    {
+      "finding": "The method narrative keeps eta_h and residual-to-error boundaries explicit, and repository-facing language is confined to reproducibility material.",
+      "recommendation": "minor_scope_watch",
+      "role": "domain reviewer"
+    },
+    {
+      "finding": "The strongest external-superiority interpretation is explicitly forbidden by the current evidence contract and remains outside the submission claim.",
+      "recommendation": "do_not_overclaim_external_superiority",
+      "role": "devils_advocate"
+    }
+  ],
+  "schema": "cmame-pdf-style-review-audit-v1",
+  "source_policy_rows_closed": 0,
+  "source_policy_total_rows": 40,
+  "stage_residual_O_h7_implementation_defect_proved": true,
+  "status": "pdf_read_review_passed_narrowed_claim_subcheck_global_boundary_retained",
+  "submission_ready": false,
+  "submission_ready_scope": "pdf_style_review_narrowed_claim_subcheck_passed_global_submission_boundary_retained",
+  "submission_standard_met": true,
+  "submission_standard_role": "narrowed_claim_subcheck_not_global_review_verdict",
+  "submission_standard_scope": "narrowed_claim_only"
+}

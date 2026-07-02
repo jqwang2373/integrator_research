@@ -1,0 +1,16 @@
+{
+  "accepted_nonlocal_rows": 43,
+  "claim": "Observed order comparisons are usable because each method has a consistent step-size sweep. The main coarse matrix still has mixed reference policies, but the separate common-reference audit supplies direct final-state velocity-error evidence for the runnable accepted methods. Rejected/source-unresolved methods remain outside that claim.",
+  "common_reference_direct_error_superiority_claim": true,
+  "common_reference_direct_error_vs_local_comparable_rows": 40,
+  "common_reference_local_finest_velocity_error_wins": 40,
+  "common_reference_local_velocity_order_wins": 40,
+  "direct_error_vs_local_comparable_rows": 40,
+  "large_step_local_direct_common_reference_error_wins_vs_vp": 0,
+  "large_step_local_reported_finest_velocity_error_wins_vs_vp": 1,
+  "large_step_local_velocity_order_wins_vs_vp": 4,
+  "main_row_count": 52,
+  "mixed_policy_direct_error_vs_local_comparable_rows": 0,
+  "observed_order_comparable_rows": 43,
+  "schema": "error-reference-policy-audit-v1"
+}

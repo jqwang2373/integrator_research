@@ -1,0 +1,97 @@
+{
+  "convention": {
+    "operator": "Pi(g) = g_p T_exp + g_theta; Theta(g) = [g_r, Pi(g)]",
+    "quaternion_order": "scalar_first",
+    "update": "p(theta) = exp(theta/2) * p0"
+  },
+  "jax": "0.10.1",
+  "numpy": "2.4.6",
+  "pi_theta_validation": {
+    "sharp_eps_0p05_base": {
+      "eps": 0.05,
+      "mu": 0.08,
+      "runtime_sec": 0.13016039301874116,
+      "theta_norm": 0.3426368339802363,
+      "theta_operator_vs_direct_ad_max_abs": 2.42861286636753e-15,
+      "theta_operator_vs_direct_ad_relative": 3.913886053366552e-15,
+      "transported_pi_vs_direct_ad_max_abs": 2.42861286636753e-15,
+      "transported_pi_vs_direct_ad_relative": 3.862129792225366e-15,
+      "transported_pi_vs_finite_difference_max_abs": 1.205093108636035e-10,
+      "transported_pi_vs_finite_difference_relative": 2.922341765774275e-10,
+      "unit_quaternion_error": 2.220446049250313e-16
+    },
+    "sharp_eps_0p05_larger_rotation": {
+      "eps": 0.05,
+      "mu": 0.08,
+      "runtime_sec": 0.14756444795057178,
+      "theta_norm": 0.7538010347565198,
+      "theta_operator_vs_direct_ad_max_abs": 1.6653345369377348e-16,
+      "theta_operator_vs_direct_ad_relative": 2.167827280944909e-16,
+      "transported_pi_vs_direct_ad_max_abs": 1.6653345369377348e-16,
+      "transported_pi_vs_direct_ad_relative": 2.1678367625190364e-16,
+      "transported_pi_vs_finite_difference_max_abs": 2.1647955650294648e-10,
+      "transported_pi_vs_finite_difference_relative": 2.0323511697513485e-10,
+      "unit_quaternion_error": 0.0
+    },
+    "smooth_eps_0p50_base": {
+      "eps": 0.5,
+      "mu": 0.08,
+      "runtime_sec": 4.835933725989889,
+      "theta_norm": 0.3426368339802363,
+      "theta_operator_vs_direct_ad_max_abs": 1.6653345369377348e-16,
+      "theta_operator_vs_direct_ad_relative": 4.734042339388064e-16,
+      "transported_pi_vs_direct_ad_max_abs": 1.6653345369377348e-16,
+      "transported_pi_vs_direct_ad_relative": 4.742637287052755e-16,
+      "transported_pi_vs_finite_difference_max_abs": 7.503947463405325e-11,
+      "transported_pi_vs_finite_difference_relative": 2.1387281561314094e-10,
+      "unit_quaternion_error": 2.220446049250313e-16
+    },
+    "smooth_eps_0p50_larger_rotation": {
+      "eps": 0.5,
+      "mu": 0.08,
+      "runtime_sec": 0.1282293580006808,
+      "theta_norm": 0.7538010347565198,
+      "theta_operator_vs_direct_ad_max_abs": 2.220446049250313e-16,
+      "theta_operator_vs_direct_ad_relative": 2.0265954659608006e-16,
+      "transported_pi_vs_direct_ad_max_abs": 2.220446049250313e-16,
+      "transported_pi_vs_direct_ad_relative": 2.0274706674746244e-16,
+      "transported_pi_vs_finite_difference_max_abs": 1.6137419178718915e-10,
+      "transported_pi_vs_finite_difference_relative": 1.9089866970629533e-10,
+      "unit_quaternion_error": 0.0
+    }
+  },
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 7.3436715040006675,
+  "transport_matrix_validation": {
+    "large": {
+      "max_abs_T_minus_AD": 1.1102230246251565e-16,
+      "np_jax_update_l2": 7.850462293418876e-17,
+      "relative_T_error": 2.4461489738219565e-16,
+      "theta_norm": 1.6449316095205904,
+      "unit_norm_error": 0.0
+    },
+    "moderate": {
+      "max_abs_T_minus_AD": 5.551115123125783e-17,
+      "np_jax_update_l2": 1.1102230246251565e-16,
+      "relative_T_error": 1.1368154510080397e-16,
+      "theta_norm": 0.3426368339802363,
+      "unit_norm_error": 0.0
+    },
+    "small": {
+      "max_abs_T_minus_AD": 5.551115123125783e-17,
+      "np_jax_update_l2": 0.0,
+      "relative_T_error": 1.199177925747965e-16,
+      "theta_norm": 0.00026925824035672517,
+      "unit_norm_error": 0.0
+    },
+    "tiny": {
+      "max_abs_T_minus_AD": 1.1102230246251565e-16,
+      "np_jax_update_l2": 2.4196749845665633e-16,
+      "relative_T_error": 1.75541673428835e-16,
+      "theta_norm": 2.692582403567252e-08,
+      "unit_norm_error": 0.0
+    }
+  },
+  "version": "v011_s3_transport_operator"
+}

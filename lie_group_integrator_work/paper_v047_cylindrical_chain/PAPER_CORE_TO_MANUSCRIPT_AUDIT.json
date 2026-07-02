@@ -1,0 +1,251 @@
+{
+  "claim_boundary": {
+    "allowed_closed_loop_claim": "four-link and slider-crank have closed-loop coarse dynamics diagnostic evidence with no stage oracle.",
+    "allowed_non_policy_core_claim": "Gauss6/FullVA achieves about sixth-order velocity convergence on the four paper examples and wins all bounded common-reference nonlocal order/error comparisons against accepted runnable rows.",
+    "forbidden_claims": [
+      "strict source-paper policy external superiority",
+      "source-policy apples-to-apples closure",
+      "accepted residual-to-error theorem for closed-loop coverage examples",
+      "submission-ready manuscript/package"
+    ],
+    "submission_ready": false
+  },
+  "core_result_status": "paper_core_results_consolidated_replay_only",
+  "execution_policy": {
+    "experiments_launched": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "run_v048_invoked": false
+  },
+  "flat_rows": [
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "single_pendulum_order_error"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "double_pendulum_order_error"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "four_link_order_error"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "slider_crank_order_error"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "closed_loop_four_link_true_dynamic"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "closed_loop_slider_crank_true_dynamic"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "source_policy_boundary"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "common_reference_pack_table"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "all_method_matrix_table"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "strict_common_reference_figure"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "closed_loop_true_dynamic_figure"
+    },
+    {
+      "flat_pdf_present": true,
+      "flat_tex_present": true,
+      "label": "all_method_result_matrix_figure"
+    }
+  ],
+  "flat_tex_pdf_core_present": true,
+  "main_tex_pdf_core_structure_present": true,
+  "main_tex_pdf_core_values_present": true,
+  "paper_core_traceability_closed": true,
+  "schema": "paper-core-to-manuscript-audit-v1",
+  "source_files": {
+    "core_consolidation": "PAPER_CORE_RESULT_CONSOLIDATION.json",
+    "flat_pdf_text": "cmame_submission_flat/main_cmame_submission.txt",
+    "flat_tex": "cmame_submission_flat/main_cmame_submission.tex",
+    "main_pdf_text": "main_cmame.txt",
+    "main_tex": "main_cmame.tex"
+  },
+  "status": "paper_core_results_visible_in_tex_pdf",
+  "structure_rows": [
+    {
+      "label": "common_reference_pack_table",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Bounded common-reference velocity evidence"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "\\label{tab:common-reference-pack}",
+        "Bounded common-reference velocity evidence"
+      ]
+    },
+    {
+      "label": "all_method_matrix_table",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "All runnable common-reference velocity rows"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "\\label{tab:common-reference-all-methods}",
+        "All runnable common-reference velocity rows"
+      ]
+    },
+    {
+      "label": "strict_common_reference_figure",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Strict common-reference work/precision rows"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "\\label{fig:strict-common-reference}",
+        "Strict common-reference work/precision rows"
+      ]
+    },
+    {
+      "label": "closed_loop_true_dynamic_figure",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Closed-loop coarse-dynamics diagnostic evidence"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "\\label{fig:closed-loop-true-dynamic-order}",
+        "Closed-loop coarse-dynamics diagnostic evidence"
+      ]
+    },
+    {
+      "label": "all_method_result_matrix_figure",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "All-method common-reference result matrix"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "\\label{fig:all-method-result-matrix}",
+        "All-method common-reference result matrix"
+      ]
+    }
+  ],
+  "submission_ready": false,
+  "value_rows": [
+    {
+      "label": "single_pendulum_order_error",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Single pendulum 5.801",
+        "5.801 / 1.155"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "Single pendulum & 5.801",
+        "5.801 / $1.155\\times10^{-12}$"
+      ]
+    },
+    {
+      "label": "double_pendulum_order_error",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Double pendulum 6.010",
+        "6.010 / 2.346"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "Double pendulum & 6.010",
+        "6.010 / $2.346\\times10^{-13}$"
+      ]
+    },
+    {
+      "label": "four_link_order_error",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Four-link 6.085",
+        "6.085 / 1.093"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "Four-link & 6.085",
+        "6.085 / $1.093\\times10^{-11}$"
+      ]
+    },
+    {
+      "label": "slider_crank_order_error",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "Slider-crank 7.341",
+        "7.341 / 9.189"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "Slider-crank & 7.341",
+        "7.341 / $9.189\\times10^{-12}$"
+      ]
+    },
+    {
+      "label": "closed_loop_four_link_true_dynamic",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "5.955/5.955/6.085/5.971",
+        "position/velocity order 5.955/6.085"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "Four-link primary-state orders $5.955/5.955/6.085/5.971$",
+        "position/velocity order $5.955/6.085$"
+      ]
+    },
+    {
+      "label": "closed_loop_slider_crank_true_dynamic",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "6.164/6.159/7.341/6.426",
+        "position/velocity order 6.164/7.341"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "slider-crank orders $6.164/6.159/7.341/6.426$",
+        "position/velocity order $6.164/7.341$"
+      ]
+    },
+    {
+      "label": "source_policy_boundary",
+      "pdf_present": true,
+      "pdf_tokens": [
+        "no source-policy-closed external same-test error row is established",
+        "strict external error-claim rows"
+      ],
+      "tex_present": true,
+      "tex_tokens": [
+        "no source-policy-closed external same-test error row is established",
+        "Strict external error-claim rows & 0"
+      ]
+    }
+  ]
+}

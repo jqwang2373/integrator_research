@@ -1,0 +1,202 @@
+{
+  "experiment": {
+    "cases": {
+      "skew_axis_sharp": {
+        "block_pattern_build_sec": 0.0016258609830401838,
+        "dense_validation_pattern_build_sec": 1.378854609967675,
+        "jvp_pruned_pattern_build_sec": 0.05084932700265199,
+        "patterns": {
+          "dense_validation": {
+            "colors": 31,
+            "density": 0.050899670937478124,
+            "nnz": 2181
+          },
+          "generated_block_jvp_pruned": {
+            "colors": 31,
+            "density": 0.050899670937478124,
+            "nnz": 2181
+          },
+          "generated_block_superset": {
+            "colors": 32,
+            "density": 0.06784289014912834,
+            "nnz": 2907
+          }
+        },
+        "relations": {
+          "block_vs_dense": {
+            "candidate_colors": 32,
+            "candidate_nnz": 2907,
+            "extra_vs_reference": 726,
+            "missing_vs_reference": 0,
+            "reference_colors": 31,
+            "reference_nnz": 2181
+          },
+          "pruned_vs_dense": {
+            "candidate_colors": 31,
+            "candidate_nnz": 2181,
+            "extra_vs_reference": 0,
+            "missing_vs_reference": 0,
+            "reference_colors": 31,
+            "reference_nnz": 2181
+          }
+        },
+        "runs": {
+          "dense_jacfwd_csr": {
+            "avg_jacobian_eval_sec": 0.0037413520039990544,
+            "avg_linear_solve_sec": 0.0009221042144215769,
+            "max_endpoint_constraint_norm": 7.231728663436362e-16,
+            "max_endpoint_velocity_constraint_norm": 1.7268382596067602e-16,
+            "max_linear_residual_norm": 1.4392149327427387e-13,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 9.124916369490042e-16,
+            "max_stage_pivot_acceleration_constraint_norm": 8.464127421671993e-16,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "runtime_sec": 0.09869692800566554,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 9,
+            "total_jacobian_eval_sec": 0.03367216803599149,
+            "total_linear_solve_sec": 0.008298937929794192,
+            "total_linear_solves": 9,
+            "total_newton_iterations": 12,
+            "total_residual_eval_sec": 0.01701039489125833
+          },
+          "generated_block_jvp_pruned": {
+            "avg_jacobian_eval_sec": 0.0026801065671154195,
+            "avg_linear_solve_sec": 0.00041538243466574285,
+            "max_endpoint_constraint_norm": 7.231728663436362e-16,
+            "max_endpoint_velocity_constraint_norm": 1.9878352001599515e-16,
+            "max_linear_residual_norm": 1.0058295655562744e-13,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 6.563366482912121e-16,
+            "max_stage_pivot_acceleration_constraint_norm": 7.74060459574965e-16,
+            "omega_error_vs_dense": 8.441528768080324e-17,
+            "orientation_error_vs_dense_rad": 0.0,
+            "runtime_sec": 0.05088861100375652,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 9,
+            "total_jacobian_eval_sec": 0.024120959104038775,
+            "total_linear_solve_sec": 0.0037384419119916856,
+            "total_linear_solves": 9,
+            "total_newton_iterations": 12,
+            "total_residual_eval_sec": 0.0043749179458245635
+          }
+        },
+        "stribeck_velocity": 0.05
+      },
+      "skew_axis_smooth": {
+        "block_pattern_build_sec": 0.0027500069700181484,
+        "dense_validation_pattern_build_sec": 1.386745736002922,
+        "jvp_pruned_pattern_build_sec": 5.40938622498652,
+        "patterns": {
+          "dense_validation": {
+            "colors": 31,
+            "density": 0.050899670937478124,
+            "nnz": 2181
+          },
+          "generated_block_jvp_pruned": {
+            "colors": 31,
+            "density": 0.050899670937478124,
+            "nnz": 2181
+          },
+          "generated_block_superset": {
+            "colors": 32,
+            "density": 0.06784289014912834,
+            "nnz": 2907
+          }
+        },
+        "relations": {
+          "block_vs_dense": {
+            "candidate_colors": 32,
+            "candidate_nnz": 2907,
+            "extra_vs_reference": 726,
+            "missing_vs_reference": 0,
+            "reference_colors": 31,
+            "reference_nnz": 2181
+          },
+          "pruned_vs_dense": {
+            "candidate_colors": 31,
+            "candidate_nnz": 2181,
+            "extra_vs_reference": 0,
+            "missing_vs_reference": 0,
+            "reference_colors": 31,
+            "reference_nnz": 2181
+          }
+        },
+        "runs": {
+          "dense_jacfwd_csr": {
+            "avg_jacobian_eval_sec": 0.003842245890862412,
+            "avg_linear_solve_sec": 0.0006785281131871872,
+            "max_endpoint_constraint_norm": 7.991705564618921e-16,
+            "max_endpoint_velocity_constraint_norm": 4.451392230726942e-16,
+            "max_linear_residual_norm": 1.076431581700781e-13,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 1.1308520718625628e-15,
+            "max_stage_pivot_acceleration_constraint_norm": 1.26873647678265e-15,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "runtime_sec": 0.0943805249989964,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 9,
+            "total_jacobian_eval_sec": 0.03458021301776171,
+            "total_linear_solve_sec": 0.006106753018684685,
+            "total_linear_solves": 9,
+            "total_newton_iterations": 12,
+            "total_residual_eval_sec": 0.016088421980384737
+          },
+          "generated_block_jvp_pruned": {
+            "avg_jacobian_eval_sec": 0.0025158488877221113,
+            "avg_linear_solve_sec": 0.0003890894456870026,
+            "max_endpoint_constraint_norm": 7.991705564618921e-16,
+            "max_endpoint_velocity_constraint_norm": 4.2603370468622073e-16,
+            "max_linear_residual_norm": 1.2139937707899517e-13,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 8.394661510529499e-16,
+            "max_stage_pivot_acceleration_constraint_norm": 1.1738477821992085e-15,
+            "omega_error_vs_dense": 2.8609792490763984e-17,
+            "orientation_error_vs_dense_rad": 0.0,
+            "runtime_sec": 0.04775809496641159,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 9,
+            "total_jacobian_eval_sec": 0.022642639989499003,
+            "total_linear_solve_sec": 0.0035018050111830235,
+            "total_linear_solves": 9,
+            "total_newton_iterations": 12,
+            "total_residual_eval_sec": 0.005663977877702564
+          }
+        },
+        "stribeck_velocity": 0.5
+      }
+    },
+    "dimension": 207,
+    "h": 0.01,
+    "stage_size": 69,
+    "t_final": 0.03
+  },
+  "jax": "0.10.1",
+  "model": {
+    "cases": {
+      "skew_axis_sharp": 0.05,
+      "skew_axis_smooth": 0.5
+    },
+    "dimension": 207,
+    "h": 0.01,
+    "method": "skew_axis_triple_revolute_gauss6_fullva",
+    "stage_size": 69,
+    "t_final": 0.03
+  },
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 18.43648321600631,
+  "scipy": "1.17.1",
+  "source_versions": [
+    "v041_triple_pattern_cache_refresh",
+    "v040_generated_block_triple_pattern"
+  ],
+  "version": "v042_skew_axis_triple_revolute"
+}

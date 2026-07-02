@@ -1,0 +1,64 @@
+{
+  "certifies_dynamic_row_defect": false,
+  "certifies_induced_taylor_bounds": false,
+  "claim_boundary": {
+    "allowed_now": "P_tube uniform compact-tube constants are closed for D5.",
+    "close_condition": "separate primitive-route certificate remains open until the five open primitive obligations are proved and every induced D5 Taylor term bound is certified.",
+    "forbidden_now": [
+      "all primitive obligations closed",
+      "Taylor term bounds certified",
+      "O(h^7) dynamic-row defect proof",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "closure_mode": "closed_by_regular_compact_tube_lemma",
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-compact-tube-constants",
+    "main_tex_present": true,
+    "tokens": [
+      "Compact proof-tube constants for D5",
+      "\\label{lem:d5-compact-tube-constants}",
+      "P_{\\mathrm{tube}}\\) holds",
+      "five lift and bilinear obligations remain open",
+      "does not prove the state,"
+    ]
+  },
+  "pc2_closed": false,
+  "plan_id": "P_tube",
+  "primitive_closed": true,
+  "primitive_id": "P_uniform_tube_constants",
+  "proof_gap_closed": false,
+  "read_only": true,
+  "remaining_primitive_obligations": [
+    "P_state_lift",
+    "P_acceleration_lift",
+    "P_multiplier_lift",
+    "P_geometry_lift",
+    "P_gyroscopic_lift"
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-p-tube-constants-audit-v1",
+  "source_consistency": {
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+    "smooth_force_schema": "smooth-force-lift-certificate-v1",
+    "smooth_force_submission_ready": false,
+    "term_budget_pc2_closed": false,
+    "term_budget_schema": "d5-taylor-term-budget-audit-v1"
+  },
+  "status": "p_tube_compact_constants_closed_pc2_open",
+  "submission_ready": false,
+  "summary": {
+    "induced_taylor_bounds_proved": 0,
+    "primitive_obligation_count": 6,
+    "primitive_obligations_closed": 1,
+    "primitive_obligations_remaining": 5,
+    "term_rows": 162,
+    "term_rows_using_p_tube": 162
+  }
+}

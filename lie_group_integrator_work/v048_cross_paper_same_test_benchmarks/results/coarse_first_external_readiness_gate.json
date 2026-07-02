@@ -1,0 +1,32 @@
+{
+  "closed_loop_floor_audit_available_count": 2,
+  "closed_loop_surrogate_available_count": 0,
+  "coarse_reference_h": 0.0125,
+  "coarse_same_window_ready_count": 2,
+  "coarse_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "default_policy": "coarse_first_no_default_1e-4",
+  "dynamic_order_missing_count": 0,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "external_superiority_claim": false,
+  "interpretation": "This is a read-only readiness gate for the user's coarse-first comparison policy. It does not run numerical simulations. Local true-dynamic order rows can close the closed-loop dynamic-order gap. Same-window public work/precision rows can close the work/precision availability gap. Strict common-reference rows can close the reference family gap, but external superiority still requires publication-quality figure integration and broader external-suite closure decisions.",
+  "local_true_dynamic_order_available_count": 2,
+  "public_work_precision_available_count": 2,
+  "public_work_precision_missing_count": 0,
+  "row_count": 4,
+  "same_test_campaign_status": "not_run",
+  "schema": "coarse-first-external-readiness-gate-v1",
+  "single_coarse_same_window_available_count": 1,
+  "strict_common_reference_available_count": 2,
+  "strict_common_reference_figure_available": true,
+  "strict_common_reference_gap_count": 0,
+  "submission_ready": false
+}

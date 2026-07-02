@@ -1,0 +1,54 @@
+{
+  "full_hi2022_campaign_completed": false,
+  "groups": {
+    "rA_half:double_pendulum": {
+      "acc_final_linf_order": null,
+      "completed": false,
+      "ok_row_count": 1,
+      "planned_row_count": 0,
+      "pos_final_linf_order": null,
+      "reference_execution_path": "public_run_function",
+      "reference_mode": "dynamics",
+      "reference_policy": "bounded_rA_dynamics_self_reference",
+      "reference_runtime_sec": 6.487838882021606,
+      "reference_status": "ok",
+      "row_count": 3,
+      "selected_step_trio_completed": false,
+      "step_sizes": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "vel_final_linf_order": null
+    }
+  },
+  "ok_row_count": 1,
+  "planned_row_count": 0,
+  "policy": "hi2022_bounded_four_example_pilot_not_full_campaign",
+  "row_count": 3,
+  "run_mode": "hi2022_bounded_four_example_pilot_model_shard",
+  "run_public_code": true,
+  "runtime_patches": [
+    "SimEngineMBD.rA.gcons_ra",
+    "SimEngineMBD.rA_half.gcons_ra_half"
+  ],
+  "selected_forms": [
+    "rA_half"
+  ],
+  "selected_groups": [
+    "rA_half:double_pendulum"
+  ],
+  "selected_models": [
+    "double_pendulum"
+  ],
+  "selected_reference_h": 0.0125,
+  "selected_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "selected_step_trio_group_count": 0,
+  "selected_step_trio_required_group_count": 1,
+  "selected_t_end": 8.0,
+  "tolerance_base": 1e-07
+}

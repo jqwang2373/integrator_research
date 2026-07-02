@@ -1,0 +1,176 @@
+{
+  "active_pc2_required_route": "direct_residual_bridge_kantorovich_route",
+  "active_pc2_standard_name": "strict_direct_residual_bridge_submission_standard",
+  "b3_can_close_from_proof_review": true,
+  "b3_direct_proof_review_passed": true,
+  "b3_previous_status": "closed",
+  "b3_review_requirement": "direct_residual_bridge_kantorovich_route_closure",
+  "close_requirements": {
+    "pc2_satisfaction_mode": "D5 same-branch residual-value certificate: 96-row O(h^7) non-dynamic certificate plus 36 dynamic zero rows at Z_G",
+    "satisfied": 4,
+    "unsatisfied": 0
+  },
+  "direct_certificate": {
+    "direct_route_certificate_closed": true,
+    "direct_route_non_circular": true,
+    "dynamic_zero_residual_rows": 36,
+    "forbidden_shortcuts_clean": true,
+    "forbidden_shortcuts_used": 0,
+    "full_stage_rows_if_promoted": 132,
+    "full_stage_rows_when_assembled_by_bridge": 132,
+    "legacy_full_stage_rows_if_promoted_scope": "schema-compatible alias; active direct PC2 route already consumes the bridge"
+  },
+  "direct_residual_bridge_required_pc2_route": "direct_residual_bridge_kantorovich_route",
+  "direct_residual_bridge_submission_standard_satisfied": true,
+  "direct_substitution_supplies_active_pc2_residual_bridge": true,
+  "manuscript_review": {
+    "dynamic_matrix_status": "present_direct_substitution_closure_inputs",
+    "flat_pdf_full_stage_token": true,
+    "flat_tex_direct_tokens": true,
+    "main_pdf_full_stage_token": true,
+    "main_tex_direct_tokens": true,
+    "traceability_flat_boundary_tokens": true,
+    "traceability_main_boundary_tokens": true
+  },
+  "primitive_taylor_actual_bounds_proved": 0,
+  "primitive_taylor_open_bound_terms": 162,
+  "primitive_taylor_open_primitive_count": 5,
+  "primitive_taylor_required_for_active_pc2": false,
+  "primitive_taylor_route_status": "conditional_schema_open_not_required_for_b3_closure",
+  "proof_closure": {
+    "accepted_residual_to_error_theorem": false,
+    "direct_pc2_proof_gap_closed": true,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "pc2_closed_by_direct_substitution": true,
+    "primitive_lift_route_closed": false,
+    "proof_gap_closed": true,
+    "proof_gap_closed_reading_rule": "The schema-only compatibility boolean proof_gap_closed is a schema-compatible shorthand for direct_pc2_proof_gap_closed under the active direct PC2 residual-bridge/Kantorovich route. It does not close the primitive/Taylor route, P6 solver-policy evidence, P7 residual-to-error nonpromotion boundary, source-policy readiness, or full-TFE replacement.",
+    "proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+    "schema_compatibility": {
+      "legacy_key": "proof_gap_closed",
+      "legacy_key_retained_for_schema_compatibility": true,
+      "preferred_key": "direct_pc2_proof_gap_closed"
+    },
+    "stage_residual_O_h7_implementation_defect_proved": true
+  },
+  "proof_strength_guards": {
+    "all_present_main_and_flat": true,
+    "groups": {
+      "p6_evidence_grade_locks": {
+        "flat": true,
+        "keys": [
+          "p6_evidence_grade_rule",
+          "p6_only_one_theorem_grade_input",
+          "p6_predeclared_same_branch_residual_envelope",
+          "p6_diagnostic_grade_evidence_only",
+          "p6_log_specializes_not_creates"
+        ],
+        "main": true
+      },
+      "reference_order_contract": {
+        "flat": true,
+        "keys": [
+          "reference_proof_method_alignment",
+          "reference_ordering_template_not_literal_transfer",
+          "reference_no_estimate_transfer_ledger",
+          "reference_fullva_translation_checkpoint",
+          "reference_constrained_dae_slot_checkpoint",
+          "reference_dependency_graph_not_premise"
+        ],
+        "main": true
+      },
+      "same_object_composition_locks": {
+        "flat": true,
+        "keys": [
+          "same_object_closure_criterion",
+          "same_object_branch_row_norm_endpoint_agree",
+          "same_object_no_cross_branch_splicing",
+          "same_object_jointly_admissible_tuple"
+        ],
+        "main": true
+      },
+      "taylor_route_separation": {
+        "flat": true,
+        "keys": [
+          "taylor_layer_separation_checkpoint",
+          "taylor_t1_t2_load_bearing",
+          "taylor_t2_full_residual_map_layer",
+          "primitive_taylor_route_retained",
+          "taylor_no_t2_to_prove_primitives"
+        ],
+        "main": true
+      },
+      "theorem_direction_locks": {
+        "flat": true,
+        "keys": [
+          "theorem_input_output_reading_rule",
+          "theorem_no_backward_arrows",
+          "theorem_reported_run_only_specializes",
+          "theorem_no_retroactive_instance_change"
+        ],
+        "main": true
+      }
+    },
+    "interpretation": "These manuscript-level guards make the B3 proof review depend on the reference no-estimate-transfer rule, the theorem-level Taylor-route separation, the no-backward-arrow direction rule, the same-object composition criterion, and the P6 theorem-grade/diagnostic-grade evidence split. They do not prove P6, P7, or the primitive/Taylor route, source-policy rows, or full-TFE replacement."
+  },
+  "read_only_audit": true,
+  "remaining_global_submission_boundaries_not_resolved_by_this_audit": [
+    "full_source_policy_package_ready",
+    "theorem_level_eta_h_solver_policy_evidence",
+    "closed_residual_to_error_theorem_for_mechanism_rows"
+  ],
+  "remaining_narrowed_claim_submission_blockers_not_resolved_by_this_audit": [],
+  "retained_theorem_boundaries": {
+    "accepted_residual_to_error_theorem": false,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "eta_h_condition_retained": "eta_h^tube <= c_eta h^7 for asymptotic proof",
+    "fixed_tolerance_runs_are_asymptotic_proof": false
+  },
+  "schema": "b3-direct-proof-review-audit-v1",
+  "source_files": {
+    "d5_direct_certificate": "D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE.json",
+    "flat_pdf_text": "cmame_submission_flat/main_cmame_submission.txt",
+    "flat_tex": "cmame_submission_flat/main_cmame_submission.tex",
+    "main_pdf_text": "main_cmame.txt",
+    "main_tex": "main_cmame.tex",
+    "proof_closure_manifest": "PROOF_CLOSURE_MANIFEST.json",
+    "proof_contract": "CMAME_PROOF_CONTRACT_GATE.json",
+    "strict_proof_audit": "CMAME_STRICT_PROOF_AUDIT.json",
+    "traceability": "PROOF_CLAIM_TRACEABILITY_AUDIT.json"
+  },
+  "status": "b3_direct_proof_review_passed_residual_bridge_closure_closed",
+  "strict_conditional_taylor_proof": {
+    "b1_status": "closed",
+    "b3_status": "closed",
+    "direct_route_stage_residual_O_h7": true,
+    "flat_conditional_order_theorem": true,
+    "flat_contraction_radius": true,
+    "flat_discrete_gronwall_step": true,
+    "flat_endpoint_closure_explicit_constant": true,
+    "flat_inexact_newton_endpoint_constant": true,
+    "flat_inexact_newton_scaled_endpoint_constant": true,
+    "flat_local_global_reduced_grid_constant": true,
+    "flat_newton_kantorovich_absorption": true,
+    "flat_primitive_taylor_route_retained": true,
+    "flat_quadratic_remainder": true,
+    "flat_qv_reporting_explicit_constant": true,
+    "flat_stage_error_bound": true,
+    "flat_stage_taylor_expansion": true,
+    "main_conditional_order_theorem": true,
+    "main_contraction_radius": true,
+    "main_discrete_gronwall_step": true,
+    "main_endpoint_closure_explicit_constant": true,
+    "main_inexact_newton_endpoint_constant": true,
+    "main_inexact_newton_scaled_endpoint_constant": true,
+    "main_local_global_reduced_grid_constant": true,
+    "main_newton_kantorovich_absorption": true,
+    "main_primitive_taylor_route_retained": true,
+    "main_quadratic_remainder": true,
+    "main_qv_reporting_explicit_constant": true,
+    "main_stage_error_bound": true,
+    "main_stage_taylor_expansion": true,
+    "strict_conditional_math_proof_present": true,
+    "two_layer_boundary_consistent": true
+  },
+  "submission_ready": false
+}

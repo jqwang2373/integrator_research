@@ -1,0 +1,675 @@
+{
+  "acceptance_criteria": {
+    "forbids_dynamic_load_v029": true,
+    "forbids_primary_import_run_v047": true,
+    "max_python_files": 12,
+    "max_python_lines": 2000,
+    "required_reference_h": 0.0125,
+    "required_rows": 6,
+    "required_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "required_t_end": 0.1,
+    "requires_regenerated_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "requires_self_contained_double_mechanism": true,
+    "requires_self_contained_single_mechanism": true
+  },
+  "common_reference_error_wins": 40,
+  "common_reference_order_wins": 40,
+  "dynamic_import_boundaries": [
+    {
+      "id": "v048_import_v047",
+      "source": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_v048.py",
+      "status": "open",
+      "symbol": "import_v047_single_fullva_module",
+      "target": "v047_cylindrical_chain_pipeline/run_v047.py"
+    },
+    {
+      "id": "v047_load_v029",
+      "source": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "status": "open",
+      "symbol": "load_v029",
+      "target": "V029_PATH dynamic module"
+    }
+  ],
+  "next_extraction_actions": [
+    "keep the self-contained single/double P1 runner candidates synchronized with PAPER_NUMERICAL_RESULT_MATRIX",
+    "do not promote P1 local rows into source-policy external-superiority claims",
+    "continue with P2 external public baselines or P4 proof-boundary closure before submission readiness"
+  ],
+  "open_blockers": [
+    {
+      "evidence": "standalone P1 single/double candidates regenerate local rows without importing run_v047.py",
+      "id": "P1B1_primary_v047_import",
+      "status": "closed"
+    },
+    {
+      "evidence": "standalone double-pendulum candidate vendors the required FullVA residual and does not load run_v029.py",
+      "id": "P1B2_dynamic_v029_bridge",
+      "status": "closed"
+    },
+    {
+      "evidence": "standalone single-pendulum and double-pendulum candidates are present",
+      "id": "P1B3_no_standalone_mechanism_module",
+      "status": "closed"
+    },
+    {
+      "evidence": "single-pendulum and double-pendulum candidates regenerated 6/6 local rows",
+      "id": "P1B4_no_p1_row_regeneration_certificate",
+      "status": "closed"
+    }
+  ],
+  "p1_double_runner_candidate": {
+    "csv": "cmame_p1_double_runner_candidate/results/double_pendulum_rows.csv",
+    "csv_exists": true,
+    "example": "double_pendulum",
+    "finest_position_error": 3.099742684753437e-13,
+    "finest_velocity_error": 2.34558900080728e-13,
+    "h_values": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "imports_v047_v048_or_v029": false,
+    "p1_complete": false,
+    "p1_double_only_ready": true,
+    "path": "cmame_p1_double_runner_candidate",
+    "position_order": 6.01071161969125,
+    "proof_gap_closed": false,
+    "reference_h": 0.0125,
+    "rows": 3,
+    "schema": "cmame-p1-double-runner-candidate-v1",
+    "script": "cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+    "script_exists": true,
+    "script_python_lines": 785,
+    "source_policy_external_superiority_allowed": false,
+    "status": "double_runner_candidate_not_source_policy_or_proof_complete",
+    "summary": "cmame_p1_double_runner_candidate/results/double_pendulum_summary.json",
+    "summary_exists": true,
+    "t_final": 0.1,
+    "validator": "validate_cmame_p1_double_runner_candidate.py",
+    "validator_exists": true,
+    "validator_python_lines": 131,
+    "velocity_order": 6.009704989719966
+  },
+  "p1_double_runner_candidate_ready": true,
+  "p1_local_single_double_ready": true,
+  "p1_missing_candidate_rows": 0,
+  "p1_regenerated_candidate_rows": 6,
+  "p1_required_reference_h": 0.0125,
+  "p1_required_rows": 6,
+  "p1_required_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "p1_required_t_end": 0.1,
+  "p1_single_runner_candidate": {
+    "csv": "cmame_p1_single_runner_candidate/results/single_pendulum_rows.csv",
+    "csv_exists": true,
+    "example": "single_pendulum",
+    "h_values": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "imports_v047_or_v048": false,
+    "omega_order": 6.005213069649138,
+    "orientation_order": 6.012040224786884,
+    "p1_complete": false,
+    "p1_single_only_ready": true,
+    "path": "cmame_p1_single_runner_candidate",
+    "position_order": 6.013317461143006,
+    "proof_gap_closed": false,
+    "rows": 3,
+    "schema": "cmame-p1-single-runner-candidate-v1",
+    "script": "cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+    "script_exists": true,
+    "script_python_lines": 442,
+    "source_policy_external_superiority_allowed": false,
+    "status": "single_runner_candidate_not_p1_complete",
+    "summary": "cmame_p1_single_runner_candidate/results/single_pendulum_summary.json",
+    "summary_exists": true,
+    "t_final": 0.1,
+    "validator": "validate_cmame_p1_single_runner_candidate.py",
+    "validator_exists": true,
+    "validator_python_lines": 116,
+    "velocity_order": 6.006882393965576
+  },
+  "p1_single_runner_candidate_ready": true,
+  "p1_target_examples": [
+    "single_pendulum",
+    "double_pendulum"
+  ],
+  "paper_matrix_raw_rows": 132,
+  "paper_matrix_rows": 44,
+  "read_only": true,
+  "reviewer_facing_python_file_limit": 12,
+  "reviewer_facing_python_line_limit": 2000,
+  "schema": "cmame-p1-local-runner-extraction-audit-v1",
+  "self_contained_runner_ready": false,
+  "source_policy_closed_rows": 0,
+  "source_policy_total_rows": 40,
+  "status": "closed_single_double_runner_candidates_ready",
+  "submission_ready": false,
+  "v047_optional_closed_loop_symbols": [
+    {
+      "direct_attribute_call_names": [
+        "exec_module",
+        "module_from_spec",
+        "spec_from_file_location"
+      ],
+      "direct_call_names": [],
+      "direct_external_attribute_call_count": 0,
+      "direct_external_attribute_calls": [],
+      "direct_internal_call_count": 0,
+      "direct_internal_calls": [],
+      "end_line": 4165,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "dynamic_four_link_slider_crank_source_loader",
+      "start_line": 4159,
+      "symbol": "load_v046",
+      "symbol_line_count": 7
+    },
+    {
+      "direct_attribute_call_names": [
+        "asarray"
+      ],
+      "direct_call_names": [
+        "project_matrix_to_so3"
+      ],
+      "direct_external_attribute_call_count": 1,
+      "direct_external_attribute_calls": [
+        "np.asarray"
+      ],
+      "direct_internal_call_count": 1,
+      "direct_internal_calls": [
+        "project_matrix_to_so3"
+      ],
+      "end_line": 26009,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "closed_loop_projection_helper",
+      "start_line": 26007,
+      "symbol": "project_v046_system_to_so3",
+      "symbol_line_count": 3
+    },
+    {
+      "direct_attribute_call_names": [
+        "asarray",
+        "copy",
+        "exp_so3",
+        "get_gamma",
+        "get_nu",
+        "get_phi",
+        "get_phi_q",
+        "max",
+        "maybe_swap_gcons",
+        "min",
+        "norm",
+        "reshape",
+        "solve",
+        "svd"
+      ],
+      "direct_call_names": [
+        "RuntimeError",
+        "ValueError",
+        "enumerate",
+        "float",
+        "max",
+        "project_matrix_to_so3",
+        "project_v046_system_to_so3",
+        "range"
+      ],
+      "direct_external_attribute_call_count": 3,
+      "direct_external_attribute_calls": [
+        "np.asarray",
+        "np.max",
+        "np.min"
+      ],
+      "direct_internal_call_count": 2,
+      "direct_internal_calls": [
+        "project_matrix_to_so3",
+        "project_v046_system_to_so3"
+      ],
+      "end_line": 26049,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "closed_loop_kinematic_solver",
+      "start_line": 26012,
+      "symbol": "solve_v046_local_kinematic_fullva_time",
+      "symbol_line_count": 38
+    },
+    {
+      "direct_attribute_call_names": [
+        "asarray",
+        "concatenate",
+        "copy",
+        "get_phi_r",
+        "get_pi",
+        "norm",
+        "solve",
+        "vstack"
+      ],
+      "direct_call_names": [
+        "float"
+      ],
+      "direct_external_attribute_call_count": 3,
+      "direct_external_attribute_calls": [
+        "np.asarray",
+        "np.concatenate",
+        "np.vstack"
+      ],
+      "direct_internal_call_count": 0,
+      "direct_internal_calls": [],
+      "end_line": 26067,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "closed_loop_reaction_reconstruction",
+      "start_line": 26052,
+      "symbol": "reconstruct_v046_reaction_dynamics",
+      "symbol_line_count": 16
+    }
+  ],
+  "v047_primary_direct_internal_dependencies": [
+    "asme_bar_mass_inertia",
+    "asme_double_pendulum_initial_state",
+    "asme_double_world_rotation",
+    "asme_single_absolute_endpoint_diagnostics",
+    "asme_single_absolute_initial_state",
+    "solve_asme_single_absolute_fullva_step"
+  ],
+  "v047_primary_direct_internal_dependency_count": 6,
+  "v047_primary_recursive_internal_dependency_count": 24,
+  "v047_primary_recursive_internal_dependency_lines": 460,
+  "v047_primary_recursive_internal_dependency_symbols": [
+    "asme_bar_mass_inertia",
+    "asme_double_pendulum_initial_state",
+    "asme_double_world_rotation",
+    "asme_single_absolute_drive_diagnostics",
+    "asme_single_absolute_endpoint_diagnostics",
+    "asme_single_absolute_initial_state",
+    "asme_single_absolute_stage_guess",
+    "asme_single_absolute_stage_metrics",
+    "asme_single_constraint_norms",
+    "asme_single_kinematic_state",
+    "asme_single_reaction_dynamics",
+    "asme_single_rot",
+    "asme_single_state_from_time",
+    "asme_single_theta",
+    "asme_single_theta_ddot",
+    "asme_single_theta_dot",
+    "compare_nested_trajectory",
+    "integrate_asme_single_driven_absolute_fullva",
+    "integrate_v029_asme_double_trajectory",
+    "load_v029",
+    "make_asme_double_pendulum_params",
+    "rot_to_quat",
+    "solve_asme_single_absolute_fullva_step",
+    "unpack_asme_single_absolute_fullva_stage"
+  ],
+  "v047_primary_seed_symbols": [
+    {
+      "direct_attribute_call_names": [
+        "append"
+      ],
+      "direct_call_names": [
+        "ValueError",
+        "abs",
+        "asme_single_absolute_endpoint_diagnostics",
+        "asme_single_absolute_initial_state",
+        "int",
+        "max",
+        "range",
+        "round",
+        "solve_asme_single_absolute_fullva_step"
+      ],
+      "direct_external_attribute_call_count": 0,
+      "direct_external_attribute_calls": [],
+      "direct_internal_call_count": 3,
+      "direct_internal_calls": [
+        "asme_single_absolute_endpoint_diagnostics",
+        "asme_single_absolute_initial_state",
+        "solve_asme_single_absolute_fullva_step"
+      ],
+      "end_line": 25118,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "single_pendulum_local_gauss6_fullva",
+      "start_line": 25030,
+      "symbol": "integrate_asme_single_driven_absolute_fullva",
+      "symbol_line_count": 89
+    },
+    {
+      "direct_attribute_call_names": [
+        "exec_module",
+        "module_from_spec",
+        "spec_from_file_location"
+      ],
+      "direct_call_names": [],
+      "direct_external_attribute_call_count": 0,
+      "direct_external_attribute_calls": [],
+      "direct_internal_call_count": 0,
+      "direct_internal_calls": [],
+      "end_line": 4156,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "dynamic_double_pendulum_source_loader",
+      "start_line": 4150,
+      "symbol": "load_v029",
+      "symbol_line_count": 7
+    },
+    {
+      "direct_attribute_call_names": [
+        "Params",
+        "array",
+        "diag",
+        "zeros"
+      ],
+      "direct_call_names": [
+        "asme_bar_mass_inertia"
+      ],
+      "direct_external_attribute_call_count": 4,
+      "direct_external_attribute_calls": [
+        "np.array",
+        "np.diag",
+        "np.zeros",
+        "v029.Params"
+      ],
+      "direct_internal_call_count": 1,
+      "direct_internal_calls": [
+        "asme_bar_mass_inertia"
+      ],
+      "end_line": 23855,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "double_pendulum_asme_parameter_bridge",
+      "start_line": 23835,
+      "symbol": "make_asme_double_pendulum_params",
+      "symbol_line_count": 21
+    },
+    {
+      "direct_attribute_call_names": [
+        "base_method",
+        "gauss_step",
+        "residual_mode",
+        "zeros",
+        "zeros_like"
+      ],
+      "direct_call_names": [
+        "ValueError",
+        "abs",
+        "asme_double_pendulum_initial_state",
+        "asme_double_world_rotation",
+        "int",
+        "max",
+        "range",
+        "record",
+        "round"
+      ],
+      "direct_external_attribute_call_count": 5,
+      "direct_external_attribute_calls": [
+        "np.zeros",
+        "np.zeros_like",
+        "v029.base_method",
+        "v029.gauss_step",
+        "v029.residual_mode"
+      ],
+      "direct_internal_call_count": 2,
+      "direct_internal_calls": [
+        "asme_double_pendulum_initial_state",
+        "asme_double_world_rotation"
+      ],
+      "end_line": 23936,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "double_pendulum_local_gauss6_fullva_trajectory",
+      "start_line": 23893,
+      "symbol": "integrate_v029_asme_double_trajectory",
+      "symbol_line_count": 44
+    },
+    {
+      "direct_attribute_call_names": [
+        "abs",
+        "isclose",
+        "max",
+        "norm",
+        "reshape"
+      ],
+      "direct_call_names": [
+        "ValueError",
+        "float",
+        "int",
+        "round"
+      ],
+      "direct_external_attribute_call_count": 3,
+      "direct_external_attribute_calls": [
+        "np.abs",
+        "np.isclose",
+        "np.max"
+      ],
+      "direct_internal_call_count": 0,
+      "direct_internal_calls": [],
+      "end_line": 23959,
+      "exists": true,
+      "path": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+      "role": "double_pendulum_reference_error_metric",
+      "start_line": 23939,
+      "symbol": "compare_nested_trajectory",
+      "symbol_line_count": 21
+    }
+  ],
+  "v047_source": "lie_group_integrator_work/v047_cylindrical_chain_pipeline/run_v047.py",
+  "v047_source_python_lines": 69264,
+  "v048_coarse_python_lines": 2159,
+  "v048_coarse_source": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_coarse_four_example_order.py",
+  "v048_run_python_lines": 5106,
+  "v048_run_source": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_v048.py",
+  "v048_wrapper_run_v047_symbols_called": [
+    "asme_single_state_from_time",
+    "compare_nested_trajectory",
+    "integrate_asme_single_driven_absolute_fullva",
+    "integrate_v029_asme_double_trajectory",
+    "load_v029",
+    "make_asme_double_pendulum_params"
+  ],
+  "v048_wrapper_symbols": [
+    {
+      "direct_attribute_call_names": [
+        "exec_module",
+        "module_from_spec",
+        "spec_from_file_location"
+      ],
+      "direct_call_names": [
+        "ImportError"
+      ],
+      "direct_external_attribute_call_count": 0,
+      "direct_external_attribute_calls": [],
+      "direct_internal_call_count": 0,
+      "direct_internal_calls": [],
+      "end_line": 749,
+      "exists": true,
+      "path": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_v048.py",
+      "role": "dynamic_v047_import_boundary",
+      "start_line": 738,
+      "symbol": "import_v047_single_fullva_module",
+      "symbol_line_count": 12
+    },
+    {
+      "direct_attribute_call_names": [
+        "abs",
+        "asme_single_state_from_time",
+        "max"
+      ],
+      "direct_call_names": [
+        "float",
+        "patch_modern_numpy_scalar_assignments",
+        "run_public_model",
+        "switch_simengine_root"
+      ],
+      "direct_external_attribute_call_count": 3,
+      "direct_external_attribute_calls": [
+        "np.abs",
+        "np.max",
+        "v047_module.asme_single_state_from_time"
+      ],
+      "direct_internal_call_count": 3,
+      "direct_internal_calls": [
+        "patch_modern_numpy_scalar_assignments",
+        "run_public_model",
+        "switch_simengine_root"
+      ],
+      "end_line": 1689,
+      "exists": true,
+      "path": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_v048.py",
+      "role": "single_public_reference_alignment",
+      "start_line": 1680,
+      "symbol": "public_single_reference_alignment",
+      "symbol_line_count": 10
+    },
+    {
+      "direct_attribute_call_names": [
+        "append",
+        "integrate_asme_single_driven_absolute_fullva",
+        "isclose",
+        "items",
+        "perf_counter",
+        "update"
+      ],
+      "direct_call_names": [
+        "all",
+        "any",
+        "bool",
+        "estimate_order",
+        "failure_status",
+        "finite_or_none",
+        "float",
+        "import_v047_single_fullva_module",
+        "len",
+        "list",
+        "public_single_reference_alignment",
+        "set",
+        "sum"
+      ],
+      "direct_external_attribute_call_count": 3,
+      "direct_external_attribute_calls": [
+        "np.isclose",
+        "time.perf_counter",
+        "v047_module.integrate_asme_single_driven_absolute_fullva"
+      ],
+      "direct_internal_call_count": 5,
+      "direct_internal_calls": [
+        "estimate_order",
+        "failure_status",
+        "finite_or_none",
+        "import_v047_single_fullva_module",
+        "public_single_reference_alignment"
+      ],
+      "end_line": 1957,
+      "exists": true,
+      "path": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_v048.py",
+      "role": "single_local_row_wrapper",
+      "start_line": 1811,
+      "symbol": "run_gauss6_fullva_public_horizon_single_rows",
+      "symbol_line_count": 147
+    },
+    {
+      "direct_attribute_call_names": [
+        "append",
+        "compare_nested_trajectory",
+        "get",
+        "integrate_v029_asme_double_trajectory",
+        "isclose",
+        "isfinite",
+        "items",
+        "load_v029",
+        "make_asme_double_pendulum_params",
+        "perf_counter",
+        "update"
+      ],
+      "direct_call_names": [
+        "any",
+        "bool",
+        "estimate_order",
+        "failure_status",
+        "finite_or_none",
+        "float",
+        "import_v047_single_fullva_module",
+        "len",
+        "list",
+        "set",
+        "str",
+        "sum"
+      ],
+      "direct_external_attribute_call_count": 7,
+      "direct_external_attribute_calls": [
+        "np.isclose",
+        "np.isfinite",
+        "time.perf_counter",
+        "v047_module.compare_nested_trajectory",
+        "v047_module.integrate_v029_asme_double_trajectory",
+        "v047_module.load_v029",
+        "v047_module.make_asme_double_pendulum_params"
+      ],
+      "direct_internal_call_count": 4,
+      "direct_internal_calls": [
+        "estimate_order",
+        "failure_status",
+        "finite_or_none",
+        "import_v047_single_fullva_module"
+      ],
+      "end_line": 2108,
+      "exists": true,
+      "path": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_v048.py",
+      "role": "double_local_row_wrapper",
+      "start_line": 1960,
+      "symbol": "run_gauss6_fullva_public_horizon_double_coarse_rows",
+      "symbol_line_count": 149
+    },
+    {
+      "direct_attribute_call_names": [
+        "Gauss6PublicDoubleCoarseConfig",
+        "Gauss6PublicSingleConfig",
+        "append",
+        "run_gauss6_fullva_public_horizon_double_coarse_rows",
+        "run_gauss6_fullva_public_horizon_single_rows"
+      ],
+      "direct_call_names": [
+        "raw_row",
+        "str"
+      ],
+      "direct_external_attribute_call_count": 4,
+      "direct_external_attribute_calls": [
+        "rv.Gauss6PublicDoubleCoarseConfig",
+        "rv.Gauss6PublicSingleConfig",
+        "rv.run_gauss6_fullva_public_horizon_double_coarse_rows",
+        "rv.run_gauss6_fullva_public_horizon_single_rows"
+      ],
+      "direct_internal_call_count": 1,
+      "direct_internal_calls": [
+        "raw_row"
+      ],
+      "end_line": 313,
+      "exists": true,
+      "path": "lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/run_coarse_four_example_order.py",
+      "role": "coarse_four_example_local_entry",
+      "start_line": 256,
+      "symbol": "run_local_single_double_rows",
+      "symbol_line_count": 58
+    }
+  ],
+  "v048_wrapper_v047_attribute_calls": [
+    "v047_module.asme_single_state_from_time",
+    "v047_module.compare_nested_trajectory",
+    "v047_module.integrate_asme_single_driven_absolute_fullva",
+    "v047_module.integrate_v029_asme_double_trajectory",
+    "v047_module.load_v029",
+    "v047_module.make_asme_double_pendulum_params"
+  ]
+}

@@ -1,0 +1,1269 @@
+{
+  "claim_boundary": {
+    "allowed_paper_statement": "All nonlocal rows are bounded common-reference diagnostics. They support observed order/error reporting under the common-reference grid, not source-policy external-superiority claims.",
+    "common_reference_claim_allowed": true,
+    "external_superiority_ready_rows_from_ledger": 0,
+    "flagged_nonlocal_rows": 15,
+    "flagged_nonlocal_rows_from_sanity_audit": 15,
+    "forbidden_paper_statement": "Do not state that the cited external implementations are fully reproduced or that source-policy external superiority is established.",
+    "nonlocal_source_policy_closed_rows": 0,
+    "nonlocal_source_policy_open_rows": 40,
+    "paper_direct_error_superiority_claim_allowed": false,
+    "source_policy_closed_rows_from_ledger": 0,
+    "source_policy_superiority_claim_allowed": false,
+    "strict_external_error_claim_allowed_rows": 0
+  },
+  "coverage": {
+    "all_four_examples_checked": true,
+    "examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "expected_nonlocal_cells": 40,
+    "local_cells": 4,
+    "method_count": 11,
+    "nonlocal_cells": 40,
+    "nonlocal_method_count": 10,
+    "raw_rows_recomputed": 132,
+    "summary_mismatches": 0,
+    "total_cells": 44
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "issue_counts": {
+    "near_floor_order_unidentifiable": 3,
+    "negative_velocity_order": 3,
+    "original_tfe_runner_and_friction_source_policy_open": 16,
+    "position_aligned_velocity_mismatch": 20,
+    "source_policy_not_closed": 40,
+    "velocity_error_nonmonotone_or_floor_limited": 5,
+    "vp2024_code_path_unresolved_or_proxy": 4
+  },
+  "per_example": [
+    {
+      "example": "double_pendulum",
+      "issue_counts": {
+        "negative_velocity_order": 1,
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "source_policy_not_closed": 10,
+        "velocity_error_nonmonotone_or_floor_limited": 2,
+        "vp2024_code_path_unresolved_or_proxy": 1
+      },
+      "local_finest_velocity_error_wins": 10,
+      "local_velocity_order_wins": 10,
+      "row_count": 10,
+      "sanity_flagged_rows": 2,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "example": "four_link",
+      "issue_counts": {
+        "near_floor_order_unidentifiable": 1,
+        "negative_velocity_order": 1,
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 6,
+        "source_policy_not_closed": 10,
+        "velocity_error_nonmonotone_or_floor_limited": 1,
+        "vp2024_code_path_unresolved_or_proxy": 1
+      },
+      "local_finest_velocity_error_wins": 10,
+      "local_velocity_order_wins": 10,
+      "row_count": 10,
+      "sanity_flagged_rows": 4,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "example": "single_pendulum",
+      "issue_counts": {
+        "near_floor_order_unidentifiable": 1,
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 9,
+        "source_policy_not_closed": 10,
+        "velocity_error_nonmonotone_or_floor_limited": 1,
+        "vp2024_code_path_unresolved_or_proxy": 1
+      },
+      "local_finest_velocity_error_wins": 10,
+      "local_velocity_order_wins": 10,
+      "row_count": 10,
+      "sanity_flagged_rows": 8,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "example": "slider_crank",
+      "issue_counts": {
+        "near_floor_order_unidentifiable": 1,
+        "negative_velocity_order": 1,
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 5,
+        "source_policy_not_closed": 10,
+        "velocity_error_nonmonotone_or_floor_limited": 1,
+        "vp2024_code_path_unresolved_or_proxy": 1
+      },
+      "local_finest_velocity_error_wins": 10,
+      "local_velocity_order_wins": 10,
+      "row_count": 10,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    }
+  ],
+  "per_method": [
+    {
+      "issue_counts": {
+        "position_aligned_velocity_mismatch": 3,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "hi2022_rA",
+      "row_count": 4,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "negative_velocity_order": 1,
+        "position_aligned_velocity_mismatch": 3,
+        "source_policy_not_closed": 4,
+        "velocity_error_nonmonotone_or_floor_limited": 1
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "hi2022_rA_half",
+      "row_count": 4,
+      "sanity_flagged_rows": 2,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "position_aligned_velocity_mismatch": 3,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "ra2021_rA",
+      "row_count": 4,
+      "sanity_flagged_rows": 2,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "position_aligned_velocity_mismatch": 3,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "ra2021_reps",
+      "row_count": 4,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "position_aligned_velocity_mismatch": 3,
+        "source_policy_not_closed": 4,
+        "velocity_error_nonmonotone_or_floor_limited": 1
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "ra2021_rp",
+      "row_count": 4,
+      "sanity_flagged_rows": 2,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 2,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "tfe2026_Newmark_beta",
+      "row_count": 4,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 1,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "tfe2026_TFE_m1",
+      "row_count": 4,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 1,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "tfe2026_TFE_m2",
+      "row_count": 4,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "original_tfe_runner_and_friction_source_policy_open": 4,
+        "position_aligned_velocity_mismatch": 1,
+        "source_policy_not_closed": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "tfe2026_trapezoidal",
+      "row_count": 4,
+      "sanity_flagged_rows": 1,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    },
+    {
+      "issue_counts": {
+        "near_floor_order_unidentifiable": 3,
+        "negative_velocity_order": 2,
+        "source_policy_not_closed": 4,
+        "velocity_error_nonmonotone_or_floor_limited": 3,
+        "vp2024_code_path_unresolved_or_proxy": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "row_count": 4,
+      "sanity_flagged_rows": 3,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0
+    }
+  ],
+  "per_suite": [
+    {
+      "issue_counts": {
+        "negative_velocity_order": 1,
+        "position_aligned_velocity_mismatch": 6,
+        "source_policy_not_closed": 8,
+        "velocity_error_nonmonotone_or_floor_limited": 1
+      },
+      "local_finest_velocity_error_wins": 8,
+      "local_velocity_order_wins": 8,
+      "row_count": 8,
+      "sanity_flagged_rows": 3,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "issue_counts": {
+        "position_aligned_velocity_mismatch": 9,
+        "source_policy_not_closed": 12,
+        "velocity_error_nonmonotone_or_floor_limited": 1
+      },
+      "local_finest_velocity_error_wins": 12,
+      "local_velocity_order_wins": 12,
+      "row_count": 12,
+      "sanity_flagged_rows": 5,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "issue_counts": {
+        "original_tfe_runner_and_friction_source_policy_open": 16,
+        "position_aligned_velocity_mismatch": 5,
+        "source_policy_not_closed": 16
+      },
+      "local_finest_velocity_error_wins": 16,
+      "local_velocity_order_wins": 16,
+      "row_count": 16,
+      "sanity_flagged_rows": 4,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "issue_counts": {
+        "near_floor_order_unidentifiable": 3,
+        "negative_velocity_order": 2,
+        "source_policy_not_closed": 4,
+        "velocity_error_nonmonotone_or_floor_limited": 3,
+        "vp2024_code_path_unresolved_or_proxy": 4
+      },
+      "local_finest_velocity_error_wins": 4,
+      "local_velocity_order_wins": 4,
+      "row_count": 4,
+      "sanity_flagged_rows": 3,
+      "source_policy_closed_rows": 0,
+      "strict_external_error_claim_allowed_rows": 0,
+      "suite": "vp2024_velocity_partitioning"
+    }
+  ],
+  "rows": [
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA",
+      "method_finest_velocity_error": 0.07724512569144606,
+      "method_velocity_order": 1.0048086154087903,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA_half",
+      "method_finest_velocity_error": 0.07724512569111117,
+      "method_velocity_order": 1.8406313645741985,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rA",
+      "method_finest_velocity_error": 13.048835859820088,
+      "method_velocity_order": 0.6168510882974088,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "ra2021_reps",
+      "method_finest_velocity_error": 13.048835859331048,
+      "method_velocity_order": 0.6168510900491304,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rp",
+      "method_finest_velocity_error": 14.98997809311229,
+      "method_velocity_order": 0.5168125044779709,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_Newmark_beta",
+      "method_finest_velocity_error": 14.790935093291326,
+      "method_velocity_order": 0.9007970954347223,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m1",
+      "method_finest_velocity_error": 14.982446288217862,
+      "method_velocity_order": 1.0208211940993241,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m2",
+      "method_finest_velocity_error": 110.22022919229548,
+      "method_velocity_order": 0.0537298177876258,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_trapezoidal",
+      "method_finest_velocity_error": 14.982640405168288,
+      "method_velocity_order": 1.024464124340307,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "single_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "near_floor_order_unidentifiable",
+        "velocity_error_nonmonotone_or_floor_limited",
+        "source_policy_not_closed",
+        "vp2024_code_path_unresolved_or_proxy"
+      ],
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 5.801328578195651,
+      "local_velocity_order_win": true,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_velocity_error": 3.162803352673932e-11,
+      "method_velocity_order": 6.1493372218877035e-15,
+      "paper_claim_scope": "proxy_or_alias_diagnostic_not_original_code_superiority",
+      "required_action": "resolve independent VP2024 code path or demote as proxy evidence",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_proxy_or_alias",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "vp2024_velocity_partitioning"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA",
+      "method_finest_velocity_error": 4.9441369128544466e-05,
+      "method_velocity_order": 1.049061571466351,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "negative_velocity_order",
+        "velocity_error_nonmonotone_or_floor_limited",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA_half",
+      "method_finest_velocity_error": 2.969954502545404,
+      "method_velocity_order": -0.7989948361784505,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rA",
+      "method_finest_velocity_error": 4.924120875315907e-05,
+      "method_velocity_order": 1.0524410322831526,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "ra2021_reps",
+      "method_finest_velocity_error": 4.924120875537952e-05,
+      "method_velocity_order": 1.052441032250626,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "velocity_error_nonmonotone_or_floor_limited",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rp",
+      "method_finest_velocity_error": 5.240982609822607e-05,
+      "method_velocity_order": 0.3613896450646621,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_Newmark_beta",
+      "method_finest_velocity_error": 0.0004245500343553442,
+      "method_velocity_order": 1.786509368556354,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m1",
+      "method_finest_velocity_error": 0.00027079647030569566,
+      "method_velocity_order": 1.9960575232876485,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m2",
+      "method_finest_velocity_error": 8.711100752408114e-05,
+      "method_velocity_order": 1.869929411329913,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_trapezoidal",
+      "method_finest_velocity_error": 0.0002708081833336356,
+      "method_velocity_order": 1.999659298630473,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "double_pendulum",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "vp2024_code_path_unresolved_or_proxy"
+      ],
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.009704989719966,
+      "local_velocity_order_win": true,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_velocity_error": 0.00216511642574702,
+      "method_velocity_order": 1.000054044890297,
+      "paper_claim_scope": "proxy_or_alias_diagnostic_not_original_code_superiority",
+      "required_action": "resolve independent VP2024 code path or demote as proxy evidence",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_proxy_or_alias",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "vp2024_velocity_partitioning"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA",
+      "method_finest_velocity_error": 0.1970422879518936,
+      "method_velocity_order": 1.015449537603277,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA_half",
+      "method_finest_velocity_error": 0.19704228794818812,
+      "method_velocity_order": 1.589647783732383,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rA",
+      "method_finest_velocity_error": 0.19704229997398626,
+      "method_velocity_order": 1.0154496752651214,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "ra2021_reps",
+      "method_finest_velocity_error": 0.01457768079053734,
+      "method_velocity_order": 2.8937856370268396,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rp",
+      "method_finest_velocity_error": 0.014578766190558312,
+      "method_velocity_order": 2.893731945597507,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_Newmark_beta",
+      "method_finest_velocity_error": 0.016721971482511755,
+      "method_velocity_order": 1.87247358966353,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m1",
+      "method_finest_velocity_error": 0.0005253358770684891,
+      "method_velocity_order": 3.865655250588376,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m2",
+      "method_finest_velocity_error": 0.0006711311439073775,
+      "method_velocity_order": 1.0213293368837018,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_trapezoidal",
+      "method_finest_velocity_error": 0.0005305821183068105,
+      "method_velocity_order": 3.8881084589425803,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "four_link",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "near_floor_order_unidentifiable",
+        "negative_velocity_order",
+        "velocity_error_nonmonotone_or_floor_limited",
+        "source_policy_not_closed",
+        "vp2024_code_path_unresolved_or_proxy"
+      ],
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 6.08481873098771,
+      "local_velocity_order_win": true,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_velocity_error": 1.0874561251483783e-08,
+      "method_velocity_order": -0.0005331508233240909,
+      "paper_claim_scope": "proxy_or_alias_diagnostic_not_original_code_superiority",
+      "required_action": "resolve independent VP2024 code path or demote as proxy evidence",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_proxy_or_alias",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "vp2024_velocity_partitioning"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA",
+      "method_finest_velocity_error": 0.03280724961770063,
+      "method_velocity_order": 0.9405135627721478,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "hi2022_rA_half",
+      "method_finest_velocity_error": 0.03280724964511248,
+      "method_velocity_order": 2.4585355719204536,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "bounded T=0.1 replay; full T=8 public policy is not closed",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_bounded_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rA",
+      "method_finest_velocity_error": 0.03280678977122397,
+      "method_velocity_order": 0.940523673404011,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "ra2021_reps",
+      "method_finest_velocity_error": 0.03280698982575842,
+      "method_velocity_order": 0.9404961730814937,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "position_aligned_velocity_mismatch",
+        "source_policy_not_closed"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "ra2021_rp",
+      "method_finest_velocity_error": 0.03280685790034398,
+      "method_velocity_order": 0.9404611290486714,
+      "paper_claim_scope": "bounded_common_reference_diagnostic_not_source_policy_superiority",
+      "required_action": "verify velocity mapping, time grid, norm, and runtime before source-policy superiority",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "public_code_replay",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_Newmark_beta",
+      "method_finest_velocity_error": 0.0015312303900446508,
+      "method_velocity_order": 2.051164940451728,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m1",
+      "method_finest_velocity_error": 0.0006263600542035716,
+      "method_velocity_order": 2.4813573655672228,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_TFE_m2",
+      "method_finest_velocity_error": 9.880693573564164e-05,
+      "method_velocity_order": 2.2898993941964103,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": false,
+      "issues": [
+        "source_policy_not_closed",
+        "original_tfe_runner_and_friction_source_policy_open"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "tfe2026_trapezoidal",
+      "method_finest_velocity_error": 0.0007327759579871182,
+      "method_velocity_order": 2.3293486660896003,
+      "paper_claim_scope": "formula_proxy_diagnostic_not_original_paper_superiority",
+      "required_action": "resolve the original TFE source-policy DAE runner, Brown--McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and work rows or demote",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_formula_proxy",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_common_reference_diagnostic": true,
+      "example": "slider_crank",
+      "flagged_by_sanity_audit": true,
+      "issues": [
+        "near_floor_order_unidentifiable",
+        "negative_velocity_order",
+        "velocity_error_nonmonotone_or_floor_limited",
+        "source_policy_not_closed",
+        "vp2024_code_path_unresolved_or_proxy"
+      ],
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_finest_velocity_error_win": true,
+      "local_velocity_order": 7.340914510263872,
+      "local_velocity_order_win": true,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_velocity_error": 1.331825765504835e-07,
+      "method_velocity_order": -3.25315475197517e-07,
+      "paper_claim_scope": "proxy_or_alias_diagnostic_not_original_code_superiority",
+      "required_action": "resolve independent VP2024 code path or demote as proxy evidence",
+      "row_disposition": "bounded_common_reference_diagnostic_only_source_policy_not_closed",
+      "source_level": "local_proxy_or_alias",
+      "source_policy_closed": false,
+      "strict_external_error_claim_allowed": false,
+      "suite": "vp2024_velocity_partitioning"
+    }
+  ],
+  "schema": "all-method-example-claim-disposition-audit-v1",
+  "status": "all_nonlocal_method_example_rows_checked_common_reference_closed_source_policy_open",
+  "submission_ready": false,
+  "win_counts": {
+    "comparison_audit_direct_error_comparisons": 40,
+    "comparison_audit_direct_error_wins": 40,
+    "comparison_audit_direct_order_comparisons": 40,
+    "comparison_audit_direct_order_wins": 40,
+    "local_finest_velocity_error_comparisons": 40,
+    "local_finest_velocity_error_wins": 40,
+    "local_velocity_order_comparisons": 40,
+    "local_velocity_order_wins": 40
+  }
+}

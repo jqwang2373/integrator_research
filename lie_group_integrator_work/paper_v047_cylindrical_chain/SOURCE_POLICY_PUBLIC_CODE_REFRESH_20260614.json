@@ -1,0 +1,130 @@
+{
+  "date_checked": "2026-06-14",
+  "external_superiority_ready_rows": 0,
+  "heavy_numerical_run_invoked": false,
+  "open_execution_queue_rows": 0,
+  "policy": {
+    "failed_or_proxy_self_reproduction_action": "mark_unable_to_reproduce_not_promoted",
+    "not_reproducible_rows_are_external_superiority_ready": false,
+    "not_reproducible_rows_are_source_policy_closed": false,
+    "public_code_absent_action": "use_self_reproduction_attempt_evidence",
+    "rate_limited_query_policy": "rate_limited_queries_are_not_positive_public_code_evidence"
+  },
+  "public_code_available_rows": 0,
+  "read_only": true,
+  "row_count": 20,
+  "run_v047_invoked": false,
+  "schema": "source-policy-public-code-refresh-20260614-v1",
+  "self_reproduction_attempted_rows": 20,
+  "source_files": [
+    "TFE_PUBLIC_CODE_RECHECK_20260613.json",
+    "VP2024_PUBLIC_CODE_RECHECK_20260613.json",
+    "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json"
+  ],
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_promoted": 0,
+  "status": "public_code_refresh_no_new_source_artifact_nonpublic_rows_remain_unable_to_reproduce",
+  "suite_refreshes": [
+    {
+      "confirmed_zero_queries": [
+        {
+          "interface": "web_search",
+          "query": "\"Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups\" code GitHub",
+          "result": "no_entries_returned"
+        },
+        {
+          "interface": "web_search",
+          "query": "\"10.1007/s11044-026-10153-w\" GitHub",
+          "result": "no_entries_returned"
+        },
+        {
+          "interface": "web_search",
+          "query": "\"time finite elements\" \"Lie groups\" \"Brown\" \"McPhee\" code",
+          "result": "no_entries_returned"
+        },
+        {
+          "interface": "github_repository_search_api",
+          "query": "s11044-026-10153-w",
+          "total_count": 0
+        },
+        {
+          "interface": "github_repository_search_api",
+          "query": "\"Higher-order integration of index-3 DAE\"",
+          "total_count": 0
+        },
+        {
+          "interface": "github_repository_search_api",
+          "query": "\"time finite elements\" \"Lie groups\" pendulum",
+          "total_count": 0
+        }
+      ],
+      "confirmed_zero_query_count": 6,
+      "final_disposition": "unable_to_reproduce_not_promoted",
+      "prior_public_code_recheck": "TFE_PUBLIC_CODE_RECHECK_20260613.json",
+      "prior_recheck_status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+      "public_code_available_now": false,
+      "rate_limited_queries": [
+        {
+          "interface": "github_repository_search_api",
+          "query": "\"Brown McPhee\" \"time finite element\"",
+          "result": "api_rate_limited_no_positive_evidence"
+        }
+      ],
+      "rate_limited_query_count": 1,
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "row_count": 16,
+      "self_reproduction_attempted_rows": 16,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_promoted": 0,
+      "suite_id": "tfe2026_original_pendulum",
+      "unable_to_reproduce_rows": 16
+    },
+    {
+      "confirmed_zero_queries": [
+        {
+          "interface": "web_search",
+          "query": "\"velocity partitioning\" \"Kissel\" \"Bakke\" \"Negrut\" GitHub",
+          "result": "no_entries_returned"
+        },
+        {
+          "interface": "web_search",
+          "query": "\"DETC2023\" \"116950\" \"velocity\" \"partition\" GitHub",
+          "result": "no_entries_returned"
+        },
+        {
+          "interface": "web_search",
+          "query": "site:github.com/uwsbel/sbel-reproducibility \"DETC2023\" \"116950\"",
+          "result": "no_entries_returned"
+        },
+        {
+          "interface": "web_search",
+          "query": "site:github.com/uwsbel/sbel-reproducibility \"velocity partitioning\"",
+          "result": "no_entries_returned"
+        }
+      ],
+      "confirmed_zero_query_count": 4,
+      "final_disposition": "unable_to_reproduce_not_promoted",
+      "prior_public_code_recheck": "VP2024_PUBLIC_CODE_RECHECK_20260613.json",
+      "prior_recheck_status": "public_code_rechecked_no_distinct_vp2024_path_attempted_not_reproducible",
+      "public_code_available_now": false,
+      "public_repository_tree_refresh": {
+        "keyword_path_hit_count": 0,
+        "keyword_path_hits": [],
+        "keyword_regex": "velocity|Velocity|partition|Partition|DETC2023|116950|4065254|Kissel|Bakke|Negrut",
+        "tree_api_url": "https://api.github.com/repos/uwsbel/sbel-reproducibility/git/trees/master?recursive=1",
+        "tree_sha": "cf9884a24a22a5281bacc3d87e67ff06c0911dfc",
+        "tree_total_paths": 4487,
+        "tree_truncated": false
+      },
+      "reopen_condition": "new_distinct_public_vp2024_velocity_partitioning_code_path",
+      "row_count": 4,
+      "self_reproduction_attempted_rows": 4,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_promoted": 0,
+      "suite_id": "vp2024_velocity_partitioning",
+      "unable_to_reproduce_rows": 4
+    }
+  ],
+  "unable_to_reproduce_rows": 20,
+  "v048_runner_invoked": false
+}

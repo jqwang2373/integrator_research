@@ -1,0 +1,42 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "coarse_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "current_local_row_kind": "kinematic_fullva_plus_reaction_reconstruction",
+  "current_local_setup_mode": "kinematics",
+  "current_public_baseline_kind": "rA_public_dynamics",
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "interpretation": "The current source and artifacts prove that four_link/slider_crank local rows are kinematic/reaction rows. They should not be counted as accepted dynamic order rows until a true dynamic DAE trajectory row or residual-to-error theorem is added.",
+  "method_order_theorem": {
+    "accepted_method": "Gauss6/FullVA",
+    "applies_to": "true smooth dynamic trajectory row, not kinematic/reaction replay",
+    "global_order": 6
+  },
+  "missing_dynamic_order_models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "reference_h": 0.0125,
+  "required_next_implementation": "local_closed_loop_dynamic_dae_gauss6_fullva_runner_or_residual_to_error_theorem",
+  "row_count": 2,
+  "schema": "closed-loop-true-dynamic-row-feasibility-audit-v1",
+  "source_identity_checks": {
+    "local_dynamic_fullva_runner_exists": false,
+    "local_setup_system_dynamics_path_exists": false,
+    "v047_local_runner_reconstructs_reactions_after_kinematics": true,
+    "v047_local_runner_setup_mode_is_kinematics": true,
+    "v048_closed_loop_runner_uses_local_kinematic_fullva": true,
+    "v048_public_baseline_uses_public_dynamics": true
+  },
+  "strict_public_policy_1e-4_required": false,
+  "submission_ready": false,
+  "true_dynamic_local_rows_available": 0
+}

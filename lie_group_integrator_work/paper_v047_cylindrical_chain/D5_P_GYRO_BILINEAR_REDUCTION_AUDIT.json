@@ -1,0 +1,128 @@
+{
+  "algebraic_reduction_closed": true,
+  "claim_boundary": {
+    "allowed_now": "P_gyro algebraic bilinear conditional reduction is recorded; the P_gyro primitive remains open until the P_state angular-velocity lift closes",
+    "close_condition": "P_gyro closes only after P_state proves the O(h^7) angular-velocity lift and the conditional reduction is applied to the listed rotational rows.",
+    "forbidden_now": [
+      "P_gyro primitive closure",
+      "P_state closure",
+      "Taylor term bounds certified",
+      "primitive/Taylor PC2 route closure",
+      "unconditional sixth-order theorem"
+    ]
+  },
+  "closed_subproofs": [
+    "constant_body_inertia_and_compact_angular_velocity_bounds",
+    "bilinear_difference_identity_and_lipschitz_bound",
+    "binding_to_18_rotational_newton_euler_rows"
+  ],
+  "conditional_gyro_row_bounds_under_p_state": {
+    "actual_taylor_bounds_proved": 0,
+    "assumption": "P_state angular-velocity lift ||omega_hat_{s,b}-omega_b(t_s)|| <= C_omega h^7",
+    "closed": true,
+    "constant": "C_gyro = 2 M_omega J_max C_omega",
+    "pc2_closed": false,
+    "primitive_closed": false,
+    "row_count": 18,
+    "rows": [
+      27,
+      28,
+      29,
+      33,
+      34,
+      35,
+      71,
+      72,
+      73,
+      77,
+      78,
+      79,
+      115,
+      116,
+      117,
+      121,
+      122,
+      123
+    ]
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-gyro-bilinear-reduction}",
+      "\\label{cor:d5-gyro-row-bound-under-pstate}",
+      "Gyroscopic bilinear reduction",
+      "G(\\omega)=\\omega\\times J\\omega",
+      "C_{\\mathrm{gyro}}=2M_\\omega J_{\\max}C_\\omega",
+      "does not close \\(P_{\\mathrm{gyro}}\\)",
+      "angular-velocity lift supplied by \\(P_{\\mathrm{state}}\\)"
+    ]
+  },
+  "open_dependencies": [
+    "P_state angular-velocity lift O(h^7)"
+  ],
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_gyroscopic_lift",
+  "proof_gap_closed": false,
+  "proof_sketch": {
+    "compact_bound": "If ||omega|| and ||omega_hat|| are bounded by M on the compact proof tube, then ||G(omega_hat)-G(omega)|| <= 2 M ||J|| ||omega_hat-omega||.",
+    "conditional_rate": "The gyroscopic contribution is O(h^7) once P_state supplies ||omega_hat-omega|| = O(h^7).",
+    "difference_identity": "G(omega_hat)-G(omega) = (omega_hat-omega) x J omega_hat + omega x J (omega_hat-omega)",
+    "map": "G(omega)=omega x J omega"
+  },
+  "read_only": true,
+  "rotational_row_ids": [
+    27,
+    28,
+    29,
+    33,
+    34,
+    35,
+    71,
+    72,
+    73,
+    77,
+    78,
+    79,
+    115,
+    116,
+    117,
+    121,
+    122,
+    123
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-p-gyro-bilinear-reduction-audit-v1",
+  "source_consistency": {
+    "p_state_closed": false,
+    "p_state_pc2_closed": false,
+    "p_state_schema": "d5-p-state-lift-gap-audit-v1",
+    "p_tube_closed": true,
+    "p_tube_pc2_closed": false,
+    "p_tube_schema": "d5-p-tube-constants-audit-v1",
+    "proof_manifest_pc2_closed": true,
+    "readiness_direct_substitution_closed_rows": 36,
+    "readiness_pc2_closed": true,
+    "readiness_primitive_taylor_closed_rows": 0,
+    "readiness_schema": "d5-dynamic-defect-readiness-audit-v1",
+    "readiness_status": "d5_direct_substitution_closure_recorded_primitive_taylor_route_open",
+    "rotational_rows": 18
+  },
+  "status": "p_gyro_bilinear_reduction_closed_primitive_open",
+  "submission_ready": false,
+  "summary": {
+    "closed_subproof_count": 3,
+    "component_rows": 18,
+    "conditional_gyro_row_bounds_under_p_state": 18,
+    "open_dependency_count": 1,
+    "p_state_closed": false,
+    "p_tube_closed": true,
+    "pc2_closed": false,
+    "required_subproof_count": 3,
+    "stage_body_pairs": 6,
+    "term_rows_conditionally_reduced": 18
+  },
+  "term_bounds_proved": 0,
+  "term_rows_conditionally_reduced": 18
+}

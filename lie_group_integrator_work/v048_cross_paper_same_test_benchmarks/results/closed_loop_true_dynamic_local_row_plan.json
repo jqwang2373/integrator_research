@@ -1,0 +1,60 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "do_not_run": [
+    "v047_cylindrical_chain_pipeline/run_v047.py",
+    "strict_public_policy_1e-4_without_explicit_opt_in",
+    "residual_only_surrogate_as_dynamic_order"
+  ],
+  "execution_status": "not_run",
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "This is a row contract only. It closes no dynamic-order claim; it prevents the next work item from drifting into default 1e-4 source-policy runs.",
+  "local_method": "Gauss6/FullVA",
+  "local_target_row_count": 6,
+  "metrics": [
+    "position_error",
+    "velocity_error",
+    "acceleration_error",
+    "observed_order",
+    "runtime",
+    "newton_iterations",
+    "constraint_drift"
+  ],
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "new_code_required_before_execution": true,
+  "parallelization": "split_by_model_method_and_step",
+  "plan_only": true,
+  "public_baselines": [
+    "rA",
+    "rp",
+    "reps"
+  ],
+  "public_comparator_row_count": 18,
+  "reference_h": 0.0125,
+  "required_new_runner": "local_closed_loop_dynamic_dae_gauss6_fullva_runner",
+  "row_count": 24,
+  "schema": "closed-loop-true-dynamic-local-row-plan-v1",
+  "source_inputs": {
+    "closure_contract_schema": "closed-loop-dynamic-order-closure-contract-v1",
+    "current_local_row_kind": "kinematic_fullva_plus_reaction_reconstruction",
+    "feasibility_audit_schema": "closed-loop-true-dynamic-row-feasibility-audit-v1",
+    "missing_dynamic_order_models": [
+      "four_link",
+      "slider_crank"
+    ]
+  },
+  "status": "plan_only_not_run",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "strict_public_policy_1e-4_required": false,
+  "time_window": "coarse_first_selected_window_before_strict_public_policy",
+  "true_dynamic_local_rows_available": 0
+}

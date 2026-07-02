@@ -1,0 +1,328 @@
+{
+  "b4_can_close_from_certificate": false,
+  "b7_can_close_from_certificate": false,
+  "claim_boundary": {
+    "accepted_source_policy_dynamic_order_examples": 0,
+    "coarse_trio_diagnostic_repair_completed": false,
+    "external_superiority_claim_allowed": false,
+    "full_T8_policy_completed": false,
+    "full_public_grid_matches_repair_policy": false,
+    "source_policy_reproduction_closed": false,
+    "targeted_repair_completed": false
+  },
+  "closure_decision": {
+    "can_close_hi2022_ra_half_double_now": false,
+    "can_promote_to_b4_b7_source_policy_figure": false,
+    "reason": "The targeted repair recovers only the h=0.025 row for rA_half:double_pendulum. The h=0.05 and h=0.1 rows remain Newton failures after tolerance repair, and the repair grid/reference do not match the full HI2022 public-grid contract."
+  },
+  "example": "double_pendulum",
+  "external_superiority_ready": false,
+  "full_public_grid_contract": {
+    "forms": [
+      "rA",
+      "rA_half"
+    ],
+    "models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "promotion_requires": [
+      "all public form/model/step rows complete with finite error and work metrics",
+      "row audit binds reference_h, tolerance_base, output norm, runtime, and Newton diagnostics",
+      "no B4/B7 external-superiority row may be promoted from coarse repair-only diagnostics"
+    ],
+    "reference_h": 0.001,
+    "required_form_model_groups": 8,
+    "required_rows": 72,
+    "step_sizes": [
+      0.0001,
+      0.0002,
+      0.0004,
+      0.001,
+      0.002,
+      0.004,
+      0.01,
+      0.02,
+      0.04
+    ],
+    "t_end": 8.0,
+    "tolerance_base": 1e-10
+  },
+  "heavy_numerical_run_invoked_by_this_builder": false,
+  "initial_selected_trio_diagnosis": {
+    "failed_h_values": [
+      0.02,
+      0.01
+    ],
+    "failed_row_count": 2,
+    "failure_loci": [
+      {
+        "failure_iteration_k": 100,
+        "failure_time": 2.24,
+        "h": 0.02,
+        "message_parsed": true,
+        "tolerance": 1e-10
+      },
+      {
+        "failure_iteration_k": 100,
+        "failure_time": 5.8,
+        "h": 0.01,
+        "message_parsed": true,
+        "tolerance": 1e-10
+      }
+    ],
+    "ok_h_values": [
+      0.005
+    ],
+    "ok_row_count": 1,
+    "pair_orders_available": false,
+    "row_count": 3,
+    "source_policy_rows_promoted": 0,
+    "status": "diagnosis_only_partial_newton_failure_not_promoted"
+  },
+  "method": "hi2022_rA_half",
+  "next_required_actions": [
+    "Keep this row out of B4/B7 source-policy work-precision figures.",
+    "Do not claim external superiority from this target group.",
+    "Either repair all rA_half:double_pendulum T=8 rows under the documented policy or demote the family.",
+    "Full promotion still requires all 72 public-grid rows with T=8, reference_h=0.001, tolerance_base=1e-10, output norm, runtime, and Newton diagnostics bound."
+  ],
+  "read_only": true,
+  "row_ledger_status": {
+    "command_artifact_statuses": [
+      "partial_or_failed_full_T8_source_policy_candidate_not_promoted"
+    ],
+    "command_refs": [
+      "hi2022_selected_t8_rA_half_double_pendulum"
+    ],
+    "counts_as_open_execution_queue": true,
+    "post_execution_decision": "not_promoted",
+    "primary_promotion_blocker": "hi2022_ra_half_double_partial_newton_failure_not_promoted",
+    "promotion_evidence_ref": "HI2022_RA_HALF_DOUBLE_SOURCE_POLICY_FAILURE_DIAGNOSIS.json",
+    "readiness_status": "selected_candidate_partial_or_failed_not_promoted",
+    "source_policy_disposition": "promotion_open"
+  },
+  "run_v047_invoked_by_this_builder": false,
+  "schema": "hi2022-ra-half-double-repair-attempt-certificate-v1",
+  "source_files": [
+    "HI2022_RA_HALF_DOUBLE_SOURCE_POLICY_FAILURE_DIAGNOSIS.json",
+    "HI2022_T8_TOLERANCE_REPAIR_AUDIT.json",
+    "B4_SOURCE_POLICY_ROW_CLOSURE_READINESS_LEDGER.json",
+    "B4_SOURCE_POLICY_POST_EXECUTION_AUDIT.json"
+  ],
+  "source_policy_closed": false,
+  "source_policy_rows_promoted": 0,
+  "status": "targeted_repair_attempted_not_reproducible_not_promoted",
+  "suite_id": "hi2022_half_implicit",
+  "target_group": "rA_half:double_pendulum",
+  "tolerance_repair_evidence": {
+    "additional_repair_tolerance_bases": [
+      1e-06
+    ],
+    "builder_v048_runner_invoked": false,
+    "combined_best_complete_groups": 4,
+    "combined_best_group_count": 8,
+    "combined_best_ok_rows": 19,
+    "combined_best_row_count": 24,
+    "combined_failed_target_rows": [
+      {
+        "attempts": [
+          {
+            "failure_family": "newton_not_converging",
+            "form": "rA_half",
+            "h": 0.05,
+            "max_iterations": null,
+            "model": "double_pendulum",
+            "reference_h": 0.0125,
+            "source_label": "original_t8_coarse_1e-10",
+            "status": "failed:RuntimeError:Newton-Raphson not converging at t: 5.850, k: 100",
+            "t_end": 8.0,
+            "tolerance": 1e-10,
+            "tolerance_base": 1e-10
+          },
+          {
+            "failure_family": "newton_not_converging",
+            "form": "rA_half",
+            "h": 0.05,
+            "max_iterations": null,
+            "model": "double_pendulum",
+            "reference_h": 0.0125,
+            "source_label": "repair_t8_tol_1e-7",
+            "status": "failed:RuntimeError:Newton-Raphson not converging at t: 3.650, k: 100",
+            "t_end": 8.0,
+            "tolerance": 1e-07,
+            "tolerance_base": 1e-07
+          },
+          {
+            "failure_family": "newton_not_converging",
+            "form": "rA_half",
+            "h": 0.05,
+            "max_iterations": null,
+            "model": "double_pendulum",
+            "reference_h": 0.0125,
+            "source_label": "repair_t8_tol_1e-6",
+            "status": "failed:RuntimeError:Newton-Raphson not converging at t: 3.000, k: 100",
+            "t_end": 8.0,
+            "tolerance": 1e-06,
+            "tolerance_base": 1e-06
+          }
+        ],
+        "best_source_label": "original_t8_coarse_1e-10",
+        "best_status": "failed:RuntimeError:Newton-Raphson not converging at t: 5.850, k: 100",
+        "failure_family": "newton_not_converging",
+        "h": 0.05
+      },
+      {
+        "attempts": [
+          {
+            "failure_family": "newton_not_converging",
+            "form": "rA_half",
+            "h": 0.1,
+            "max_iterations": null,
+            "model": "double_pendulum",
+            "reference_h": 0.0125,
+            "source_label": "original_t8_coarse_1e-10",
+            "status": "failed:RuntimeError:Newton-Raphson not converging at t: 5.000, k: 100",
+            "t_end": 8.0,
+            "tolerance": 1e-10,
+            "tolerance_base": 1e-10
+          },
+          {
+            "failure_family": "newton_not_converging",
+            "form": "rA_half",
+            "h": 0.1,
+            "max_iterations": null,
+            "model": "double_pendulum",
+            "reference_h": 0.0125,
+            "source_label": "repair_t8_tol_1e-7",
+            "status": "failed:RuntimeError:Newton-Raphson not converging at t: 2.900, k: 100",
+            "t_end": 8.0,
+            "tolerance": 1e-07,
+            "tolerance_base": 1e-07
+          },
+          {
+            "failure_family": "newton_not_converging",
+            "form": "rA_half",
+            "h": 0.1,
+            "max_iterations": null,
+            "model": "double_pendulum",
+            "reference_h": 0.0125,
+            "source_label": "repair_t8_tol_1e-6",
+            "status": "failed:RuntimeError:Newton-Raphson not converging at t: 6.300, k: 100",
+            "t_end": 8.0,
+            "tolerance": 1e-06,
+            "tolerance_base": 1e-06
+          }
+        ],
+        "best_source_label": "original_t8_coarse_1e-10",
+        "best_status": "failed:RuntimeError:Newton-Raphson not converging at t: 5.000, k: 100",
+        "failure_family": "newton_not_converging",
+        "h": 0.1
+      }
+    ],
+    "combined_target_group": {
+      "complete_three_step_group": false,
+      "failed_row_count": 2,
+      "failure_families": {
+        "newton_not_converging": 2,
+        "ok": 1
+      },
+      "h_values": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "max_iterations": 54.0,
+      "ok_row_count": 1,
+      "row_count": 3,
+      "status_values": [
+        "failed:RuntimeError:Newton-Raphson not converging at t: 5.000, k: 100",
+        "failed:RuntimeError:Newton-Raphson not converging at t: 5.850, k: 100",
+        "ok"
+      ]
+    },
+    "contains_source_policy_1e_4_rows": false,
+    "original_target_group": {
+      "complete_three_step_group": false,
+      "failed_row_count": 3,
+      "failure_families": {
+        "newton_not_converging": 3
+      },
+      "h_values": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "max_iterations": 0.0,
+      "ok_row_count": 0,
+      "row_count": 3,
+      "status_values": [
+        "failed:RuntimeError:Newton-Raphson not converging at t: 5.000, k: 100",
+        "failed:RuntimeError:Newton-Raphson not converging at t: 5.275, k: 100",
+        "failed:RuntimeError:Newton-Raphson not converging at t: 5.850, k: 100"
+      ]
+    },
+    "original_tolerance_base": 1e-10,
+    "recovered_rows": [
+      {
+        "form": "rA_half",
+        "h": 0.025,
+        "max_iterations": 54.0,
+        "model": "double_pendulum",
+        "source_label": "repair_t8_tol_1e-7",
+        "status": "ok",
+        "tolerance_base": 1e-07
+      }
+    ],
+    "remaining_incomplete_group_count": 4,
+    "repair_attempts": [
+      {
+        "artifact_dir": "v048_cross_paper_same_test_benchmarks/results/hi2022_T8_tolerance_repair_shards",
+        "summary_complete_groups": 0,
+        "summary_group_count": 4,
+        "summary_ok_rows": 7,
+        "summary_row_count": 12,
+        "target_group_complete": false,
+        "target_group_failed_rows": 2,
+        "target_group_max_iterations": 54.0,
+        "target_group_ok_rows": 1,
+        "target_group_status_values": [
+          "failed:RuntimeError:Newton-Raphson not converging at t: 2.900, k: 100",
+          "failed:RuntimeError:Newton-Raphson not converging at t: 3.650, k: 100",
+          "ok"
+        ],
+        "tolerance_base": 1e-07
+      },
+      {
+        "artifact_dir": "v048_cross_paper_same_test_benchmarks/results/hi2022_T8_tol1e6_shards",
+        "summary_complete_groups": 2,
+        "summary_group_count": 6,
+        "summary_ok_rows": 13,
+        "summary_row_count": 18,
+        "target_group_complete": false,
+        "target_group_failed_rows": 2,
+        "target_group_max_iterations": 86.0,
+        "target_group_ok_rows": 1,
+        "target_group_status_values": [
+          "failed:RuntimeError:Newton-Raphson not converging at t: 3.000, k: 100",
+          "failed:RuntimeError:Newton-Raphson not converging at t: 6.300, k: 100",
+          "ok"
+        ],
+        "tolerance_base": 1e-06
+      }
+    ],
+    "repair_audit_status": "tolerance_repair_attempt_recorded_not_source_policy_closure",
+    "repair_reference_h": 0.0125,
+    "repair_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "repair_t_end": 8.0,
+    "repair_tolerance_base": 1e-07,
+    "repair_v048_runner_invoked_in_original_artifact": true
+  },
+  "v048_runner_invoked_by_this_builder": false
+}

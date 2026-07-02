@@ -1,0 +1,15 @@
+{
+  "affected_methods": [
+    "ra2021_rA",
+    "ra2021_reps",
+    "ra2021_rp"
+  ],
+  "affected_row_count": 3,
+  "common_reference_rows_quarantined": false,
+  "negative_common_reference_order_count": 0,
+  "replacement_reading": "The repaired Dan/Kissel/Negrut single-pendulum rows can be used in the common-reference apples-to-apples matrix. Do not present them as source-policy reproduction.",
+  "retract_previous_single_pendulum_dan_claim": true,
+  "safe_claim_scope": "coarse_apples_to_apples_fixed_grid_replay_not_source_policy_reproduction",
+  "safe_for_paper_claim": true,
+  "schema": "dan-single-pendulum-reference-policy-audit-v1"
+}

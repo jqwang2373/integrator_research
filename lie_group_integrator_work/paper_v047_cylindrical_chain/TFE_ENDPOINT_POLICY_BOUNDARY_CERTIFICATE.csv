@@ -1,0 +1,7 @@
+row_id,case_id,friction_enabled,h,t_final,exact_steps,ceil_steps_to_reach_or_exceed_T,algorithm_literal_terminal_time,algorithm_literal_overshoot,algorithm_literal_overrun_strictly_less_than_h,hits_exact_T,integer_step_compatible,final_partial_step_size_for_exact_T,final_partial_step_fraction_of_h,requires_source_error_sampling_policy,source_policy_row_completed,source_policy_demoted_until_source_endpoint_sampling_policy
+frictionless_pendulum:h=0.003,frictionless_pendulum,False,0.003,10.0,3333.3333333333335,3334,10.002,0.002000000000000668,True,False,False,0.0009999999999994458,0.3333333333331486,True,False,True
+frictionless_pendulum:h=0.006,frictionless_pendulum,False,0.006,10.0,1666.6666666666667,1667,10.002,0.002000000000000668,True,False,False,0.0039999999999995595,0.6666666666665932,True,False,True
+frictionless_pendulum:h=0.012,frictionless_pendulum,False,0.012,10.0,833.3333333333334,834,10.008000000000001,0.008000000000000895,True,False,False,0.0039999999999995595,0.3333333333332966,True,False,True
+frictional_pendulum:h=0.003,frictional_pendulum,True,0.003,10.0,3333.3333333333335,3334,10.002,0.002000000000000668,True,False,False,0.0009999999999994458,0.3333333333331486,True,False,True
+frictional_pendulum:h=0.008,frictional_pendulum,True,0.008,10.0,1250.0,1250,10.0,0.0,True,True,True,0.0,0.0,False,False,False
+frictional_pendulum:h=0.2,frictional_pendulum,True,0.2,10.0,50.0,50,10.0,0.0,True,True,True,0.0,0.0,False,False,False

@@ -1,0 +1,177 @@
+{
+  "schema": "dynamic-row-oracle-gate-v2",
+  "status": "runtime_row_and_block_oracle_passable_symbolic_oracle_open",
+  "scope_note": "This artifact is a runtime/symbolic-oracle gate only. Later direct-substitution sidecars close the accepted direct stage-residual route separately.",
+  "accepted_method": "Gauss6/FullVA",
+  "accepted_residual": "residual_cylindrical_chain",
+  "accepted_jacobian": "R_JAC_jacfwd_argnums0",
+  "accepted_block_functional": "R_INDEPENDENT_STAGE_FUNCTIONAL_BLOCKS",
+  "source": "../v047_cylindrical_chain_pipeline/run_v047.py",
+  "probe": {
+    "case": "cylindrical_smooth",
+    "stribeck_velocity": 0.5,
+    "h": 0.04,
+    "stage_vector": "zero_DIM_vector",
+    "residual_shape": [
+      132
+    ],
+    "jacobian_shape": [
+      132,
+      132
+    ],
+    "residual_must_be_finite": true,
+    "jacobian_must_be_finite": true
+  },
+  "runtime_block_functional_crosscheck": {
+    "checked": true,
+    "source_function": "R_INDEPENDENT_STAGE_FUNCTIONAL_BLOCKS",
+    "stage_vector": "deterministic_small_sine_DIM_vector",
+    "relation_checked": "block_family == sqrt(h*b_i) * residual_row_family",
+    "row_family_count": 6,
+    "tolerance": 1e-10,
+    "gauss6_equivalent_not_full_tfe": true,
+    "symbolic_oracle_complete": false
+  },
+  "partial_independent_formula_row_oracle": {
+    "checked": true,
+    "stage_vector": "deterministic_small_sine_DIM_vector",
+    "row_families": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "row_count": 96,
+    "excluded_row_family": "newton_euler_weak_balance",
+    "relation_checked": "independently reassembled kinematic and lower-pair constraint formulas equal accepted residual row families",
+    "tolerance": 1e-10,
+    "partial_oracle_only": true,
+    "symbolic_oracle_complete": false,
+    "stage_residual_O_h7_implementation_defect_proved": false
+  },
+  "partial_kinematic_stage_defect_certificate": {
+    "checked": true,
+    "source": "KINEMATIC_ROW_DEFECT_CERTIFICATE.json",
+    "row_families": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "row_count": 96,
+    "excluded_row_family": "newton_euler_weak_balance",
+    "partial_stage_defect_certificate": true,
+    "symbolic_oracle_complete": false,
+    "stage_residual_O_h7_implementation_defect_proved": false
+  },
+  "full_independent_formula_row_oracle": {
+    "checked": true,
+    "stage_vector": "deterministic_small_sine_DIM_vector",
+    "row_families": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "newton_euler_weak_balance",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "row_count": 132,
+    "added_row_family": "newton_euler_weak_balance",
+    "relation_checked": "independently reassembled kinematic, Newton-Euler, and lower-pair constraint formulas equal accepted residual row families",
+    "tolerance": 1e-10,
+    "runtime_formula_row_oracle_complete": true,
+    "symbolic_oracle_complete": false,
+    "stage_residual_O_h7_implementation_defect_proved": false
+  },
+  "formula_row_ad_jacobian_oracle": {
+    "checked": true,
+    "stage_vector": "deterministic_small_sine_DIM_vector",
+    "multi_probe_checked": true,
+    "probe_count": 3,
+    "probe_vectors": [
+      "deterministic_small_sine_DIM_vector",
+      "deterministic_small_cosine_DIM_vector",
+      "deterministic_mixed_sine_cosine_DIM_vector"
+    ],
+    "row_count": 132,
+    "column_count": 132,
+    "relation_checked": "jax.jacfwd(independent_formula_family_major_vector) equals accepted R_JAC in row-family-major order",
+    "tolerance": 1e-10,
+    "runtime_ad_oracle_complete": true,
+    "symbolic_oracle_complete": false,
+    "stage_residual_O_h7_implementation_defect_proved": false
+  },
+  "layout": {
+    "n_bodies": 2,
+    "n_joints": 2,
+    "n_stages": 3,
+    "body_size": 18,
+    "lambda_size": 4,
+    "stage_size": 44,
+    "dim": 132,
+    "row_families": [
+      {
+        "name": "translational_position_weak_defect",
+        "offset": 0,
+        "width": 6,
+        "total_rows": 18
+      },
+      {
+        "name": "rotational_lie_position_weak_defect",
+        "offset": 6,
+        "width": 6,
+        "total_rows": 18
+      },
+      {
+        "name": "translational_velocity_weak_defect",
+        "offset": 12,
+        "width": 6,
+        "total_rows": 18
+      },
+      {
+        "name": "angular_velocity_weak_defect",
+        "offset": 18,
+        "width": 6,
+        "total_rows": 18
+      },
+      {
+        "name": "newton_euler_weak_balance",
+        "offset": 24,
+        "width": 12,
+        "total_rows": 36
+      },
+      {
+        "name": "lower_pair_index3_weak_constraints",
+        "offset": 36,
+        "width": 8,
+        "total_rows": 24
+      }
+    ]
+  },
+  "acceptance_boundary": {
+    "runtime_residual_shape_checked": true,
+    "runtime_jacobian_shape_checked": true,
+    "runtime_row_partition_checked": true,
+    "runtime_finite_values_checked": true,
+    "runtime_block_functional_crosscheck_checked": true,
+    "partial_independent_formula_rows_checked": true,
+    "full_independent_formula_rows_checked": true,
+    "formula_row_ad_jacobian_checked": true,
+    "formula_row_ad_jacobian_multi_probe_checked": true,
+    "partial_kinematic_stage_defect_certificate_checked": true,
+    "block_functional_is_gauss6_equivalent_not_symbolic": true,
+    "independent_symbolic_row_oracle_complete": false,
+    "stage_residual_O_h7_implementation_defect_proved": false,
+    "stage_residual_O_h7_implementation_defect_proved_scope": "false only for this runtime/symbolic-oracle lane; direct-substitution sidecars close the accepted direct route separately",
+    "full_tfe_stage_replacement": false,
+    "submission_ready": false
+  },
+  "forbidden_claims": [
+    "independent_symbolic_row_oracle_complete",
+    "stage_residual_O_h7_implementation_defect_proved",
+    "full_tfe_stage_replacement_true",
+    "submission_ready_true"
+  ]
+}

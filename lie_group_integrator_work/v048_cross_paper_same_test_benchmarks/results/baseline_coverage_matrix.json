@@ -1,0 +1,34 @@
+{
+  "accepted_same_grid_four_example_methods": 11,
+  "alias_resolved_methods": [
+    "vp2024_lie_group_ode_partitioning"
+  ],
+  "claim_boundary": "local velocity order can be compared against finite runnable rows; main-matrix reported velocity errors use heterogeneous reference policies, but the separate common-reference audit supplies bounded direct final-state velocity-error diagnostics for accepted runnable methods; the all-example forensic audit blocks paper-level direct error superiority until source-policy reproduction is closed; the VP Lie-group ODE label is resolved as an alias of the implemented VP coordinate-partitioning wrapper; TFE(m=3) four-link is a source-backed excluded stress row rather than a required accepted baseline",
+  "common_reference_direct_error_superiority_claim": true,
+  "common_reference_local_finest_velocity_error_wins": 40,
+  "common_reference_local_velocity_order_wins": 40,
+  "direct_error_vs_local_comparable_rows": 40,
+  "external_superiority_claim_allowed": false,
+  "implemented_or_alias_resolved_methods": 12,
+  "observed_order_comparable_rows": 43,
+  "paper_direct_error_superiority_claim_allowed": false,
+  "rejected_partial_methods": [],
+  "required_methods_resolved": true,
+  "required_methods_resolved_count": 13,
+  "row_count": 13,
+  "schema": "baseline-coverage-matrix-v1",
+  "scope_excluded_methods": [
+    "tfe2026_TFE_m3_GL"
+  ],
+  "source_policy_reproduction": false,
+  "source_unresolved_methods": [],
+  "tfe_m3_four_link_smoke_rows": 4,
+  "tfe_m3_required_accepted_matrix_excludes_method": true,
+  "tfe_m3_scope_exclusion_source_backed": true,
+  "vp_code_search_rows": 18,
+  "vp_large_step_comparable_examples": 4,
+  "vp_large_step_local_finest_velocity_error_wins": 1,
+  "vp_large_step_local_velocity_order_wins": 4,
+  "vp_method_identity_alias_resolved": true,
+  "vp_method_identity_implemented_as": "vp2024_coordinate_partitioning_rA"
+}

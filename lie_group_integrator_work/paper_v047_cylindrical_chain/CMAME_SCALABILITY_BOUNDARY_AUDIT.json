@@ -1,0 +1,112 @@
+{
+  "b7_closed": false,
+  "blocker": "B7",
+  "case_rows": [
+    {
+      "case": "cylindrical_smooth",
+      "column_colors": 90,
+      "component_block_assembly_required": true,
+      "dense_beats_row": true,
+      "dense_dimension": 132,
+      "effective_row_colors_at_dense_cost": 49.0284457375376,
+      "median_column_runtime_sec": 0.12634333095047623,
+      "median_dense_runtime_sec": 0.10697956196963787,
+      "median_row_runtime_sec": 0.13091937999706715,
+      "pattern_nnz": 2637,
+      "row_beats_column": false,
+      "row_colors": 60,
+      "row_runtime_over_column": 1.0362191578468407,
+      "row_runtime_over_dense": 1.2237793610916419,
+      "row_runtime_reduction_needed_for_10pct_dense_win": 0.26457331393693606,
+      "row_runtime_reduction_needed_to_match_dense": 0.18285923770770673,
+      "row_seed_reduction_fraction": 0.33333333333333337,
+      "status": "speed_gap_quantified_dense_still_faster",
+      "target_row_colors_for_10pct_dense_win": 44.12560116378384
+    },
+    {
+      "case": "cylindrical_sharp",
+      "column_colors": 90,
+      "component_block_assembly_required": true,
+      "dense_beats_row": true,
+      "dense_dimension": 132,
+      "effective_row_colors_at_dense_cost": 49.864941630746415,
+      "median_column_runtime_sec": 0.1316000260412693,
+      "median_dense_runtime_sec": 0.1098427859833464,
+      "median_row_runtime_sec": 0.13216835202183574,
+      "pattern_nnz": 2637,
+      "row_beats_column": false,
+      "row_colors": 60,
+      "row_runtime_over_column": 1.004318585623898,
+      "row_runtime_over_dense": 1.2032501801426831,
+      "row_runtime_reduction_needed_for_10pct_dense_win": 0.25202587553880373,
+      "row_runtime_reduction_needed_to_match_dense": 0.16891763948755978,
+      "row_seed_reduction_fraction": 0.33333333333333337,
+      "status": "speed_gap_quantified_dense_still_faster",
+      "target_row_colors_for_10pct_dense_win": 44.878447467671776
+    }
+  ],
+  "current_reference_implementation": {
+    "column_colors": [
+      90
+    ],
+    "component_block_assembly_required_all_cases": true,
+    "dense_beats_row_all_cases": true,
+    "effective_row_colors_at_dense_cost_max": 49.864941630746415,
+    "effective_row_colors_at_dense_cost_min": 49.0284457375376,
+    "pattern_nnz": [
+      2637
+    ],
+    "residual_dimension": 132,
+    "row_colors": [
+      60
+    ],
+    "row_runtime_over_dense_max": 1.2237793610916419,
+    "row_runtime_over_dense_min": 1.2032501801426831,
+    "row_runtime_reduction_needed_for_10pct_dense_win_max": 0.26457331393693606,
+    "row_runtime_reduction_needed_for_10pct_dense_win_min": 0.25202587553880373,
+    "row_runtime_reduction_needed_to_match_dense_max": 0.18285923770770673,
+    "row_runtime_reduction_needed_to_match_dense_min": 0.16891763948755978
+  },
+  "performance_superiority_claim_allowed": false,
+  "production_scalability_claim_allowed": false,
+  "read_only": true,
+  "required_to_close": [
+    "N-body chain benchmark for N=2,4,8,16,32",
+    "dense AD versus sparse/block Jacobian timing",
+    "wall-clock, Newton-iteration, Jacobian-assembly, and linear-solve breakdowns",
+    "condition-number or rank diagnostics versus body count",
+    "memory scaling versus body count",
+    "complete source-policy work-precision curves for external suites"
+  ],
+  "run_v047_invoked": false,
+  "scalability_campaign_status": {
+    "completed_body_counts": [],
+    "condition_number_vs_body_count_present": false,
+    "jacobian_assembly_vs_body_count_present": false,
+    "linear_solve_time_vs_body_count_present": false,
+    "memory_scaling_vs_body_count_present": false,
+    "n_body_chain_sweep_present": false,
+    "newton_iterations_vs_body_count_present": false,
+    "requested_body_counts": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "wall_clock_vs_body_count_present": false
+  },
+  "schema": "cmame-scalability-boundary-audit-v1",
+  "status": "reference_implementation_scalability_boundary_recorded_b7_open",
+  "submission_ready": false,
+  "work_precision_boundary": {
+    "coarse_baseline_work_precision_figure_present": true,
+    "common_reference_error_wins": 40,
+    "common_reference_order_wins": 40,
+    "external_source_policy_superiority_allowed": false,
+    "source_policy_closed_rows": 0,
+    "source_policy_total_rows": 40,
+    "sparse_speed_gap_figure_present": true,
+    "strict_common_reference_figure_present": true
+  }
+}

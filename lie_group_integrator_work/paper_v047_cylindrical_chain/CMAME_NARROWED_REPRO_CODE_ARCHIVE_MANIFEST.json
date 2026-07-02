@@ -1,0 +1,1056 @@
+{
+  "archive": "cmame_narrowed_repro_code_archive.zip",
+  "archive_bytes": 433630,
+  "archive_sha256": "1bc18503fe91c4cbbcabc7f1a811fd16dcbdde5ceea1d38782486478327e2d64",
+  "entries": [
+    {
+      "bytes": 48831,
+      "path": "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.json",
+      "role": "supporting_artifact",
+      "sha256": "c7b2125528deabe72fdebf5d87ca6a0741fc38c34fad903181c20ed8f708374b"
+    },
+    {
+      "bytes": 3277,
+      "path": "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.md",
+      "role": "supporting_artifact",
+      "sha256": "8cf9f60f36fd4bea8b00b4e67fc4fb54c680dc6bc0b774dbbfeccb303b85cc7b"
+    },
+    {
+      "bytes": 6113,
+      "path": "B6_FOUR_EXAMPLE_LOCAL_EVIDENCE_SUMMARY.json",
+      "role": "supporting_artifact",
+      "sha256": "1d2057f027ebf726699e06ac5f69fe64f3ca82b24a0c91cac96d2596ab96c31a"
+    },
+    {
+      "bytes": 1167,
+      "path": "B6_FOUR_EXAMPLE_LOCAL_EVIDENCE_SUMMARY.md",
+      "role": "supporting_artifact",
+      "sha256": "bd8bfb66df3475fd6667b9bb1290656164ed09073ddd57f4eb15567198462178"
+    },
+    {
+      "bytes": 12743,
+      "path": "CLAIM_BOUNDARY.json",
+      "role": "supporting_artifact",
+      "sha256": "30b4257688dcd22c9435ce4ee070ecb1c567816dc6ac05e7e4063e7cd93647f2"
+    },
+    {
+      "bytes": 8406,
+      "path": "CMAME_CLOSED_LOOP_LOCAL_RUNNER_CANDIDATE_MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "33109d720dd2afe3d086aabe0e4169fed6a7e002a1d9b2e016db052992fb996e"
+    },
+    {
+      "bytes": 630,
+      "path": "CMAME_CLOSED_LOOP_LOCAL_RUNNER_CANDIDATE_MANIFEST.md",
+      "role": "supporting_artifact",
+      "sha256": "c0551bbbaeef014f82082708b19c1ec9aa66c40f00e42a2a8d545e56d586c7ed"
+    },
+    {
+      "bytes": 3368,
+      "path": "CMAME_LOCAL_ACCEPTED_RUNNER_COMPANION_MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "1b9c75f2987b225f49c9e356f55b9629c760c128dc70d6200d182ad7e1256190"
+    },
+    {
+      "bytes": 1140,
+      "path": "CMAME_LOCAL_ACCEPTED_RUNNER_COMPANION_MANIFEST.md",
+      "role": "supporting_artifact",
+      "sha256": "0936f338279e07c02c94da786aa6a9071a115097d9ae06b895e517c29db6daae"
+    },
+    {
+      "bytes": 6754,
+      "path": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "3f68cfa3f317886ae18d2c09e1caef877ed8aa8d91110aa2ba0c96d1163ae021"
+    },
+    {
+      "bytes": 1397,
+      "path": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.md",
+      "role": "supporting_artifact",
+      "sha256": "c011f2b60601617dbeaee792cc144b741d463c0c688e60ca016aed36aadd5db5"
+    },
+    {
+      "bytes": 5540,
+      "path": "CMAME_NARROWED_REPRODUCIBILITY_PACKAGE_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "b814697bc6f476c357fce2a5a02a55543011b34052efaa1ee58db579b5abc838"
+    },
+    {
+      "bytes": 1803,
+      "path": "CMAME_NARROWED_REPRODUCIBILITY_PACKAGE_AUDIT.md",
+      "role": "supporting_artifact",
+      "sha256": "31041e369e1e6e7e84cce051c50694b8e160db9a2ede9a7907a71e9c45921a1a"
+    },
+    {
+      "bytes": 21137,
+      "path": "CMAME_P1_LOCAL_RUNNER_EXTRACTION_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "06196236385326ae6f94f7fdd145ca5dfd1f094bf855acf14f71ea2f1ab15ea8"
+    },
+    {
+      "bytes": 4277,
+      "path": "CMAME_P1_LOCAL_RUNNER_EXTRACTION_AUDIT.md",
+      "role": "supporting_artifact",
+      "sha256": "ee8da899aaac757dc8d6005259884e52a0057fa0f555a79c7649424eb1fa2b06"
+    },
+    {
+      "bytes": 471653,
+      "path": "CMAME_REVIEW_AGENT_REPORT.json",
+      "role": "supporting_artifact",
+      "sha256": "1a6f09ad477a976325d52ba99c704a8baf1bf835e733f565c52febca1d522b83"
+    },
+    {
+      "bytes": 5418,
+      "path": "CMAME_RUNNER_ADAPTER_CANDIDATE_MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "4474a48ae46577c4072ac4544acd60d99c6bb14a5c55dc77362ec7f2d4bd3bec"
+    },
+    {
+      "bytes": 522,
+      "path": "CMAME_RUNNER_ADAPTER_CANDIDATE_MANIFEST.md",
+      "role": "supporting_artifact",
+      "sha256": "7af853a8c0b268070ad2a279b106af24f71574c5b7af1e2e8d040028b8864ba2"
+    },
+    {
+      "bytes": 96834,
+      "path": "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "2ec4bc921e29a2d52d84898cb777d5a9599b70e3f726f8443d306300568c212b"
+    },
+    {
+      "bytes": 23058,
+      "path": "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.md",
+      "role": "supporting_artifact",
+      "sha256": "644e8f343460665137c0a706f65b6eea4de4cfe581b4e40b9930e0e1903327ec"
+    },
+    {
+      "bytes": 283617,
+      "path": "OBJECTIVE_COMPLETION_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "3d270f873b5150ddaa2497a0d8501b992f179470ba820681ed9b0cd396d4b8cc"
+    },
+    {
+      "bytes": 22650,
+      "path": "OBJECTIVE_COMPLETION_AUDIT.md",
+      "role": "supporting_artifact",
+      "sha256": "9cf8f89d8e2951c8e9a07ba6e9f73d5f60ab9a354b9cf8c2a8abb63f9e08d5db"
+    },
+    {
+      "bytes": 25097,
+      "path": "PAPER_NUMERICAL_RESULT_MATRIX.csv",
+      "role": "supporting_artifact",
+      "sha256": "5eef4f7415bc5ec88bb60cdcf139a0bd8389e3c9f8ec37750a158e7dacda66a9"
+    },
+    {
+      "bytes": 62850,
+      "path": "PAPER_NUMERICAL_RESULT_MATRIX.json",
+      "role": "supporting_artifact",
+      "sha256": "c61a1f6f6d48c7ab03a63d5aefa145cacaf45081ec7ef61bc62325d4d5303a0c"
+    },
+    {
+      "bytes": 12374,
+      "path": "PAPER_NUMERICAL_RESULT_MATRIX.md",
+      "role": "supporting_artifact",
+      "sha256": "df4e8801c0a1c9753a98a5734998cf1bf270fef84482e064f650bde833ebfb3b"
+    },
+    {
+      "bytes": 210674,
+      "path": "PROOF_CLOSURE_MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "c59a956c408c7b244c849218aebe7a278f0532451612aedd5403a7144637c90c"
+    },
+    {
+      "bytes": 11080,
+      "path": "REPRODUCIBILITY_GUIDE.md",
+      "role": "supporting_artifact",
+      "sha256": "5fa0885f3e0478c245f90c08803e8862a424788a97271e586ebe4be29102081e"
+    },
+    {
+      "bytes": 8229,
+      "path": "cmame_closed_loop_local_runner_candidate/MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "cfba15478ca6bbaba35f7a9fe778936c24d1846d86e929d87c467ca9222a9523"
+    },
+    {
+      "bytes": 678,
+      "path": "cmame_closed_loop_local_runner_candidate/README.md",
+      "role": "supporting_artifact",
+      "sha256": "4781f8ba914ae56b2cfee2bcd582f59d150cd0d56fbd86b492ec1e987f27597a"
+    },
+    {
+      "bytes": 4380,
+      "path": "cmame_closed_loop_local_runner_candidate/results/closed_loop_local_rows.csv",
+      "role": "supporting_artifact",
+      "sha256": "b6b4207110dca607765108241097e7d6f674f2d11a3ecb0a7df22f8f651bd204"
+    },
+    {
+      "bytes": 2183,
+      "path": "cmame_closed_loop_local_runner_candidate/results/closed_loop_local_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "115464389de13518ec5df79aef4e7248155cb34b11cad7351512b3e0eea985e8"
+    },
+    {
+      "bytes": 269,
+      "path": "cmame_closed_loop_local_runner_candidate/results/closed_loop_local_summary.md",
+      "role": "supporting_artifact",
+      "sha256": "cfe56665922cea1ad677f86c4ab315b6194b2b975c1cc6aab05f8169a4875f0e"
+    },
+    {
+      "bytes": 14195,
+      "path": "cmame_closed_loop_local_runner_candidate/scripts/run_closed_loop_fullva_candidate.py",
+      "role": "python_source",
+      "sha256": "51c76a344cb823782592f53458de89004cd3ab1b16282c4d20dab418a331a0cb"
+    },
+    {
+      "bytes": 22624,
+      "path": "cmame_closed_loop_local_runner_candidate/src/closed_loop_fullva_dynamic_residual.py",
+      "role": "python_source",
+      "sha256": "6dd8eb14ad6822001f24c153d33915513aafb447cbed1e9abf46028824af9013"
+    },
+    {
+      "bytes": 5154,
+      "path": "cmame_closed_loop_local_runner_candidate/src/local_closed_loop_helpers.py",
+      "role": "python_source",
+      "sha256": "25510a9f035abc2c00a052c3258d1d61768f9a36989bc2affc6da270b2ab07d4"
+    },
+    {
+      "bytes": 1304,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/example_models/four_link.py",
+      "role": "python_source",
+      "sha256": "d700ce6d61dcf5701de00bf0ac7fbc5d8b68f3d97b123c39183e50e060852b6c"
+    },
+    {
+      "bytes": 5467,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/example_models/models/four_link.json",
+      "role": "supporting_artifact",
+      "sha256": "3dc22dc1a04e0bde9daf30b45692f2e24072da9662efc7ea539f678b569e2029"
+    },
+    {
+      "bytes": 6554,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/example_models/models/slider_crank.json",
+      "role": "supporting_artifact",
+      "sha256": "6c06250f52366107a9674a1230804fb98d2096accbca62d29672bc1ae49377cd"
+    },
+    {
+      "bytes": 1380,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/example_models/slider_crank.py",
+      "role": "python_source",
+      "sha256": "a677447c61472588dc2bd5af8161d0042adfbb2bee2222b114cc35936f2479ba"
+    },
+    {
+      "bytes": 15606,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/rA/gcons_ra.py",
+      "role": "python_source",
+      "sha256": "7b1737df15e84a04a92c85f4da246b2d1f02f0869533380c5e46513b40958360"
+    },
+    {
+      "bytes": 4595,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/rA/system_ra.py",
+      "role": "python_source",
+      "sha256": "dd2f4f094db63c10fb0b9be4da90215c446b1e43bc733e758380125873fead7c"
+    },
+    {
+      "bytes": 2641,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/utils/physics.py",
+      "role": "python_source",
+      "sha256": "f0f419fb2b883d937d9a8a84f7f03800d60e6bd281460696cf3f9b2b1ceb4029"
+    },
+    {
+      "bytes": 445,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/utils/systems.py",
+      "role": "python_source",
+      "sha256": "7995833f6118600c9eea3429acb2ba9314503a0baa563a9670b3df104719454c"
+    },
+    {
+      "bytes": 1523,
+      "path": "cmame_closed_loop_local_runner_candidate/vendor/SimEngineMBD/utils/tools.py",
+      "role": "python_source",
+      "sha256": "ef6afb1e61ca6e9a66e992cbdf7736ad4247a982fe9275f89941e4c8957101cb"
+    },
+    {
+      "bytes": 3368,
+      "path": "cmame_local_accepted_runner_companion/MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "1b9c75f2987b225f49c9e356f55b9629c760c128dc70d6200d182ad7e1256190"
+    },
+    {
+      "bytes": 1353,
+      "path": "cmame_local_accepted_runner_companion/README.md",
+      "role": "supporting_artifact",
+      "sha256": "35e0e736030ff73ee4cc2d41535e50cda95877fec0ca06c5bc9c47e9efc8515e"
+    },
+    {
+      "bytes": 6291,
+      "path": "cmame_local_accepted_runner_companion/scripts/run_local_accepted_runner_companion.py",
+      "role": "python_source",
+      "sha256": "8e3d7dadb75513773de4dfe3bb32c3e79883485333a3133b792dcaa131bca463"
+    },
+    {
+      "bytes": 6754,
+      "path": "cmame_minimal_reproducibility_candidate/MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "3f68cfa3f317886ae18d2c09e1caef877ed8aa8d91110aa2ba0c96d1163ae021"
+    },
+    {
+      "bytes": 1833,
+      "path": "cmame_minimal_reproducibility_candidate/README.md",
+      "role": "supporting_artifact",
+      "sha256": "fd6e7dc14ece5d1258bb63ed1170e079329d472bd1704b8ea0861ff5558c922d"
+    },
+    {
+      "bytes": 12743,
+      "path": "cmame_minimal_reproducibility_candidate/data/CLAIM_BOUNDARY.json",
+      "role": "supporting_artifact",
+      "sha256": "30b4257688dcd22c9435ce4ee070ecb1c567816dc6ac05e7e4063e7cd93647f2"
+    },
+    {
+      "bytes": 471653,
+      "path": "cmame_minimal_reproducibility_candidate/data/CMAME_REVIEW_AGENT_REPORT.json",
+      "role": "supporting_artifact",
+      "sha256": "56ba2e9389dcf79b95fdbeeff134b10d7af905bd9ce7f4701f4eba374fe310be"
+    },
+    {
+      "bytes": 8671,
+      "path": "cmame_minimal_reproducibility_candidate/data/FOUR_EXAMPLE_SOURCE_POLICY_DASHBOARD.json",
+      "role": "supporting_artifact",
+      "sha256": "8ed2336ffbfe87e5836cf52cf89eaaf97a71d4ae01bb90cef2646aef3ee41d98"
+    },
+    {
+      "bytes": 50544,
+      "path": "cmame_minimal_reproducibility_candidate/data/NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "15790e2d87df46b924ddd9a6fa1f793dc1dd301725117e6156ea66394e817e7d"
+    },
+    {
+      "bytes": 25097,
+      "path": "cmame_minimal_reproducibility_candidate/data/PAPER_NUMERICAL_RESULT_MATRIX.csv",
+      "role": "supporting_artifact",
+      "sha256": "5eef4f7415bc5ec88bb60cdcf139a0bd8389e3c9f8ec37750a158e7dacda66a9"
+    },
+    {
+      "bytes": 62850,
+      "path": "cmame_minimal_reproducibility_candidate/data/PAPER_NUMERICAL_RESULT_MATRIX.json",
+      "role": "supporting_artifact",
+      "sha256": "c61a1f6f6d48c7ab03a63d5aefa145cacaf45081ec7ef61bc62325d4d5303a0c"
+    },
+    {
+      "bytes": 12374,
+      "path": "cmame_minimal_reproducibility_candidate/data/PAPER_NUMERICAL_RESULT_MATRIX.md",
+      "role": "supporting_artifact",
+      "sha256": "df4e8801c0a1c9753a98a5734998cf1bf270fef84482e064f650bde833ebfb3b"
+    },
+    {
+      "bytes": 210674,
+      "path": "cmame_minimal_reproducibility_candidate/data/PROOF_CLOSURE_MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "c59a956c408c7b244c849218aebe7a278f0532451612aedd5403a7144637c90c"
+    },
+    {
+      "bytes": 3918,
+      "path": "cmame_minimal_reproducibility_candidate/data/RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "e4c94457dadd1714c8f6045ae5ddb5736eef56b94e2823efdfd7b1d9556aea54"
+    },
+    {
+      "bytes": 8654,
+      "path": "cmame_minimal_reproducibility_candidate/scripts/replay_paper_matrix.py",
+      "role": "python_source",
+      "sha256": "198b413099786c1e2db1b804ce48d5cf9625f2a1fb007ff35e6058dab1f27d47"
+    },
+    {
+      "bytes": 2353,
+      "path": "cmame_narrowed_repro_bundle/MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "be9f45c41ca4cc220085a89419579bd5f441a21397634b56c70b9789fd3812cc"
+    },
+    {
+      "bytes": 1038,
+      "path": "cmame_narrowed_repro_bundle/README.md",
+      "role": "supporting_artifact",
+      "sha256": "563cd36a22c3151f1f5d62c93533c124ab84aac76bdb1c432883a8aa63897c0a"
+    },
+    {
+      "bytes": 10167,
+      "path": "cmame_narrowed_repro_bundle/results/narrowed_repro_bundle_report.md",
+      "role": "supporting_artifact",
+      "sha256": "635f49e8e49d72c14347c536c4790787c75414d71c99ecf85a18dbd8cf241a3c"
+    },
+    {
+      "bytes": 1812,
+      "path": "cmame_narrowed_repro_bundle/results/narrowed_repro_bundle_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "ca0e5f2d19a88c3049eb15cb76bebac48ccb1e8fd17f38a9938b0a166b71ecc0"
+    },
+    {
+      "bytes": 1217,
+      "path": "cmame_narrowed_repro_bundle/results/narrowed_repro_bundle_summary.md",
+      "role": "supporting_artifact",
+      "sha256": "cf6651ecb892b6fb028b28a00cd4761b878a8bed10b497c21abd632900a3ec8c"
+    },
+    {
+      "bytes": 9141,
+      "path": "cmame_narrowed_repro_bundle/scripts/run_narrowed_repro_bundle.py",
+      "role": "python_source",
+      "sha256": "6874f54b97b2b960e7c0c2399795eab55dd9c17e3fef0717d546435323ec7ed9"
+    },
+    {
+      "bytes": 1200,
+      "path": "cmame_p1_double_runner_candidate/README.md",
+      "role": "supporting_artifact",
+      "sha256": "334f9094a8991a1b5386290277ff30ebb969bbd5fcf47a2eeca4429fb5f76c42"
+    },
+    {
+      "bytes": 1486,
+      "path": "cmame_p1_double_runner_candidate/results/double_pendulum_rows.csv",
+      "role": "supporting_artifact",
+      "sha256": "8a8cfda985eeb78934208f3458ab38f9d310afb0e244d0ad0f3ad3c141971618"
+    },
+    {
+      "bytes": 666,
+      "path": "cmame_p1_double_runner_candidate/results/double_pendulum_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "88a119ffe225109991da1581dadf4eac02a5da14ff42bfb2b7787931d3859bf3"
+    },
+    {
+      "bytes": 31518,
+      "path": "cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+      "role": "python_source",
+      "sha256": "2b43dff6b213de5d557235b9c973ec4259bcfb61b7c9c40705e0f548be9d2c2d"
+    },
+    {
+      "bytes": 1191,
+      "path": "cmame_p1_single_runner_candidate/README.md",
+      "role": "supporting_artifact",
+      "sha256": "d05332247ea442691af8fa10a91e77aede58f3d87590f7ddc01150ff11f880b1"
+    },
+    {
+      "bytes": 1147,
+      "path": "cmame_p1_single_runner_candidate/results/single_pendulum_rows.csv",
+      "role": "supporting_artifact",
+      "sha256": "387800f642b24d1ebdcc4317fa5a0135490122b9c62e603af3b383612356768f"
+    },
+    {
+      "bytes": 551,
+      "path": "cmame_p1_single_runner_candidate/results/single_pendulum_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "07a72a14bff113a7368dda4722ef5e0fe741a241c207caf93c8959d9c2bea2d3"
+    },
+    {
+      "bytes": 16747,
+      "path": "cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+      "role": "python_source",
+      "sha256": "7874143e4990631cc14f222b4e4c7f61d921433d61866ff5fab1816d70cfdb4d"
+    },
+    {
+      "bytes": 5418,
+      "path": "cmame_runner_adapter_candidate/MANIFEST.json",
+      "role": "supporting_artifact",
+      "sha256": "4474a48ae46577c4072ac4544acd60d99c6bb14a5c55dc77362ec7f2d4bd3bec"
+    },
+    {
+      "bytes": 1558,
+      "path": "cmame_runner_adapter_candidate/README.md",
+      "role": "supporting_artifact",
+      "sha256": "9955476ba59350cd8cb8c5e7523b62add61200c2500576f886d6a75b5acce87a"
+    },
+    {
+      "bytes": 8769,
+      "path": "cmame_runner_adapter_candidate/data/audit/CMAME_RUNNER_CENTERED_REPRODUCIBILITY_AUDIT.json",
+      "role": "supporting_artifact",
+      "sha256": "1abc2e420dd5e1cf4f20063e54e131dc3b83cc135c13770a260b88def654e907"
+    },
+    {
+      "bytes": 25097,
+      "path": "cmame_runner_adapter_candidate/data/paper_matrix/PAPER_NUMERICAL_RESULT_MATRIX.csv",
+      "role": "supporting_artifact",
+      "sha256": "5eef4f7415bc5ec88bb60cdcf139a0bd8389e3c9f8ec37750a158e7dacda66a9"
+    },
+    {
+      "bytes": 62850,
+      "path": "cmame_runner_adapter_candidate/data/paper_matrix/PAPER_NUMERICAL_RESULT_MATRIX.json",
+      "role": "supporting_artifact",
+      "sha256": "c61a1f6f6d48c7ab03a63d5aefa145cacaf45081ec7ef61bc62325d4d5303a0c"
+    },
+    {
+      "bytes": 1751,
+      "path": "cmame_runner_adapter_candidate/data/v048_report/closed_loop_true_dynamic_strict_common_reference.json",
+      "role": "supporting_artifact",
+      "sha256": "533dcf51a8a5841f860da699778d6af3bb4dee1f65e9ba3905228a217bf98163"
+    },
+    {
+      "bytes": 20010,
+      "path": "cmame_runner_adapter_candidate/data/v048_report/closed_loop_true_dynamic_strict_common_reference_rows.csv",
+      "role": "supporting_artifact",
+      "sha256": "fe5fe0518e09d107ec648ff8b814fd9c8b945f3635351f8dbaaab1da62162122"
+    },
+    {
+      "bytes": 28066,
+      "path": "cmame_runner_adapter_candidate/data/v048_report/coarse_four_example_order_summary.csv",
+      "role": "supporting_artifact",
+      "sha256": "ff95bb6ba1c5e796a689e470d0e1fdfff26f758d234819680140bf8730e4257a"
+    },
+    {
+      "bytes": 3519,
+      "path": "cmame_runner_adapter_candidate/data/v048_report/coarse_four_example_order_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "78fdb4a3a0a2ba351dd87918b42ce1db2a4ecd336183e56eb39a6762fd7d3d3e"
+    },
+    {
+      "bytes": 23981,
+      "path": "cmame_runner_adapter_candidate/data/v048_report/common_reference_error_summary.csv",
+      "role": "supporting_artifact",
+      "sha256": "1e93b65a49bfbc959f75512e2b32ba9e6c14786dc2b03bcc9744e3c5baeecf01"
+    },
+    {
+      "bytes": 1648,
+      "path": "cmame_runner_adapter_candidate/data/v048_report/common_reference_error_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "7e9b96c91aab69ee941949bdb6e28f7b299907a6ae8278b5254c828e7bd2e3a5"
+    },
+    {
+      "bytes": 789,
+      "path": "cmame_runner_adapter_candidate/results/closed_loop_local_rows.csv",
+      "role": "supporting_artifact",
+      "sha256": "aa49fe69cf5c222314bdb1b6eea3744015a252fefd943ff12afe4d6c7f8ea8d5"
+    },
+    {
+      "bytes": 677,
+      "path": "cmame_runner_adapter_candidate/results/closed_loop_local_rows_summary.json",
+      "role": "supporting_artifact",
+      "sha256": "d4b00f1ec577af33c996031d73c9f50418213d9991aac557d1d644ca79fb255f"
+    },
+    {
+      "bytes": 6867,
+      "path": "cmame_runner_adapter_candidate/scripts/replay_closed_loop_local_rows.py",
+      "role": "python_source",
+      "sha256": "35037163a9fdba8840589e7874139b88d608ddffbc9a62f3c824cbad97d2ae87"
+    },
+    {
+      "bytes": 6279,
+      "path": "cmame_runner_adapter_candidate/scripts/run_four_example_matrix_adapter.py",
+      "role": "python_source",
+      "sha256": "cc643e13b77fdaa67ecdc95a14f1e204fa666055ac98d0fce6d39b126aadd4c5"
+    },
+    {
+      "bytes": 6896,
+      "path": "human_reproducibility_result_table.md",
+      "role": "supporting_artifact",
+      "sha256": "539e92ae986362682579a56d7dd65bc7644892bf644b19796ecdddbc60955a81"
+    },
+    {
+      "bytes": 8882,
+      "path": "replay_reproducibility_core.py",
+      "role": "python_source",
+      "sha256": "ebeccea32b40cac74c50d1f207e701406ba5877897d4ee51640361e1d821d86a"
+    },
+    {
+      "bytes": 10889,
+      "path": "run_human_reproducibility.py",
+      "role": "python_source",
+      "sha256": "2252d6920b59bbc162efbe9f0e5b30e610e5e3d4d410cd4f8b0b90bca4c8c8d3"
+    },
+    {
+      "bytes": 10048,
+      "path": "validate_cmame_closed_loop_local_runner_candidate.py",
+      "role": "python_source",
+      "sha256": "148e24f4f0fdcbd53abf43a16ce2c894e0cf1c1076b7dc2014997630369b8c0d"
+    },
+    {
+      "bytes": 13874,
+      "path": "validate_cmame_local_accepted_runner_companion.py",
+      "role": "python_source",
+      "sha256": "6ffbe9971765663c187cb48d894a13de45f219b908ad42d8f04dc01c3609fb7e"
+    },
+    {
+      "bytes": 20261,
+      "path": "validate_cmame_minimal_reproducibility_candidate.py",
+      "role": "python_source",
+      "sha256": "19e694767730dc50efbc2a3f318d24ff810bc338990bf87a4489e0e2e685242f"
+    },
+    {
+      "bytes": 10708,
+      "path": "validate_cmame_narrowed_repro_bundle.py",
+      "role": "python_source",
+      "sha256": "da235810ca6037d1804d5c16376d0553e39c2c7f174d70c75883705fda5e10a1"
+    },
+    {
+      "bytes": 5329,
+      "path": "validate_cmame_p1_double_runner_candidate.py",
+      "role": "python_source",
+      "sha256": "94deb77eaccac3aea2941a22f2abd93a6f57493da41ec986c41ff6c39212dfba"
+    },
+    {
+      "bytes": 4456,
+      "path": "validate_cmame_p1_single_runner_candidate.py",
+      "role": "python_source",
+      "sha256": "984f7d9e99bd7a0c1c03ceb6d8e89ccf05a429914f67eca3a5828f59ddabf988"
+    },
+    {
+      "bytes": 11040,
+      "path": "validate_cmame_runner_adapter_candidate.py",
+      "role": "python_source",
+      "sha256": "890ed657219a8ff873d2bbe4bba19e2748ae92760c423511d3b9acb316824f33"
+    }
+  ],
+  "entry_count": 99,
+  "entrypoint": "cmame_narrowed_repro_bundle/scripts/run_narrowed_repro_bundle.py",
+  "exact_b4_opt_in_required_for_execution": true,
+  "full_source_policy_runner_package_ready": false,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "internal_manifest": {
+    "bytes": 45535,
+    "path": "CMAME_NARROWED_REPRO_CODE_ARCHIVE_INTERNAL_MANIFEST.json",
+    "sha256": "fa77a324ceda363468c64dd9d4cf4e7696ec2bb061c9b7c3b5200a9ffc050258"
+  },
+  "narrowed_archive_boundary": {
+    "archive_closure_status_by_id": {
+      "OC12": "partial_narrowed_replay_ready_full_archive_open",
+      "OC4": "open",
+      "OC6": "partial_terminal_not_promoted"
+    },
+    "archive_effect_by_id": {
+      "OC12": "current_archive_is_narrowed_claim_provenance_only",
+      "OC4": "blocks_full_archive_primary_use",
+      "OC6": "blocks_tfe_rows_from_full_archive_promotion"
+    },
+    "blocker_closure_allowed_by_id": {
+      "OC12": false,
+      "OC4": false,
+      "OC6": false
+    },
+    "blocker_closure_decision_by_id": {
+      "OC12": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+      "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
+      "OC6": "remain_open_no_positive_source_equivalent_artifact"
+    },
+    "blocker_next_actions_by_id": {
+      "OC12": "promote the partial local runner package to a full source-policy runner archive after OC4/OC6 close",
+      "OC4": "RA/HI can only close through exact B4 opt-in authorized closeout or a new source-policy promotion artifact; TFE/VP remain unable-to-reproduce/not-promoted",
+      "OC6": "keep TFE source-policy terminal/unable-to-reproduce unless a new public or source-code-equivalent TFE implementation artifact appears"
+    },
+    "blocker_open_by_id": {
+      "OC12": true,
+      "OC4": true,
+      "OC6": true
+    },
+    "blocker_opt_in_required_actions_by_id": {
+      "OC12": [
+        {
+          "allowed_without_b4_opt_in": false,
+          "command_count": 13,
+          "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+          "driver_does_not_authorize_execution": true,
+          "driver_requires_exact_approval": true,
+          "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "id": "authorized_b4_ra_hi_source_policy_execution",
+          "mapped_external_rows": 20,
+          "post_execution_promotion_required": true,
+          "requires_exact_user_approval_statement": true
+        }
+      ],
+      "OC4": [
+        {
+          "allowed_without_b4_opt_in": false,
+          "command_count": 13,
+          "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+          "driver_does_not_authorize_execution": true,
+          "driver_requires_exact_approval": true,
+          "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "id": "authorized_b4_ra_hi_source_policy_execution",
+          "mapped_external_rows": 20,
+          "post_execution_promotion_required": true,
+          "requires_exact_user_approval_statement": true
+        }
+      ],
+      "OC6": []
+    },
+    "blocker_required_to_close_by_id": {
+      "OC12": {
+        "action_boundary": {
+          "exact_b4_opt_in_required_for_execution": true,
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "opt_in_action_ids": [
+            "authorized_b4_ra_hi_source_policy_execution"
+          ],
+          "opt_in_required_action_count": 1,
+          "opt_in_required_command_count": 13,
+          "opt_in_required_mapped_external_rows": 20,
+          "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "safe_action_ids": [
+            "rebuild_read_only_audit_chain",
+            "rerun_read_only_validators",
+            "keep_narrowed_archive_provenance_only",
+            "monitor_reopen_conditions"
+          ],
+          "safe_without_b4_opt_in_count": 4,
+          "source_policy_execution_allowed_now": false
+        },
+        "closure_condition": "promote the narrowed replay package to a full source-policy runner archive only after OC4 source-policy rows and OC6 TFE runner boundary are closed",
+        "current_archive_usable_as_full_source_policy_runner_archive": false,
+        "full_source_policy_runner_package_ready": false,
+        "narrowed_repro_code_archive_ready": true,
+        "narrowed_repro_code_archive_submission_ready": false,
+        "remaining_source_policy_rows_to_close": 40,
+        "safe_current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "source_policy_closed_ratio": "0/40",
+        "upstream_blockers": [
+          "OC4",
+          "OC6"
+        ]
+      },
+      "OC4": {
+        "authorized_ra_hi_closeout_route": {
+          "execution_allowed_now": false,
+          "execution_invoked": false,
+          "expected_output_schema_command_traceability": {
+            "commands_executed_by_audit": false,
+            "commands_with_existing_expected_output": 13,
+            "commands_with_existing_expected_summary": 8,
+            "commands_with_expected_output_path": 13,
+            "commands_with_expected_summary_path": 8,
+            "commands_with_shell_command": 13,
+            "commands_without_expected_summary_path": 5,
+            "source_policy_execution_invoked": false
+          },
+          "expected_output_schema_command_traceability_tuple": "13/13/8/5/13/8/False/False",
+          "guarded_driver_refusal_boundary_20260621": {
+            "driver_invoked_by_audit": false,
+            "marker": "b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False",
+            "no_opt_in_refusal_proved_static": true,
+            "post_guard_source_policy_command_count": 13,
+            "pre_guard_command_count": 0,
+            "refusal_branch_source_policy_command_count": 0,
+            "refusal_exit_code": 2,
+            "source_policy_execution_invoked": false,
+            "status": "guarded_driver_refusal_boundary_static_proved_not_executed",
+            "submission_ready": false,
+            "wrong_approval_refusal_proved_static": true
+          },
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "opt_in_required_command_count": 13,
+          "opt_in_required_mapped_external_rows": 20,
+          "ready_command_count": 13,
+          "ready_command_mapped_rows": 20,
+          "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "requires_exact_b4_opt_in": true
+        },
+        "closure_condition": "close all 40 source-policy rows or introduce a new promotion artifact accepted by the source-policy ledger",
+        "current_handoff_status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+        "current_source_policy_closed_ratio": "0/40",
+        "promotion_ready_rows": 0,
+        "safe_current_disposition": "keep source-policy rows unpromoted until authorized execution or a new source-policy promotion artifact exists",
+        "source_policy_rows_closed": 0,
+        "source_policy_rows_total": 40
+      },
+      "OC6": {
+        "callable_contract_count": 3,
+        "candidate_backed_contract_count": 3,
+        "candidate_backed_non_equivalent_runner_blocks": [
+          "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+          "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+          "gauss6_fullva_absolute_coordinate_source_policy_runner_missing"
+        ],
+        "closure_condition": "provide a source-equivalent TFE/pendulum DAE runner certificate or reopen only on a new public/source-code-equivalent TFE artifact",
+        "contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+        "effective_execution_block_count": 4,
+        "effective_execution_blocks": [
+          "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+          "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+          "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+          "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+        ],
+        "entrypoint_count": 3,
+        "external_source_artifact_recheck_20260621": {
+          "date": "2026-06-21",
+          "global_absence_proved": false,
+          "positive_public_code_artifact_rows": 0,
+          "query_count": 10,
+          "source_code_equivalent_artifact_rows": 0,
+          "source_policy_reopen_triggered": false,
+          "source_policy_rows_closed_by_recheck": 0,
+          "submission_ready": false
+        },
+        "latest_external_probe": {
+          "access_limited_count": 4,
+          "date": "2026-06-21",
+          "global_absence_proved": false,
+          "positive_public_code_artifact_rows": 0,
+          "probe_count": 9,
+          "reopen_triggered": false,
+          "source_policy_rows_closed": 0
+        },
+        "nonheavy_terminal_blocks": [
+          "brown_mcphee_source_code_equivalent_law_open",
+          "full_T10_source_grid_endpoint_policy_open"
+        ],
+        "publisher_artifact_availability_20260621": {
+          "date": "2026-06-21",
+          "global_absence_proved": false,
+          "official_article_checked": true,
+          "positive_public_code_artifact_rows": 0,
+          "source_artifact_signal_count": 0,
+          "source_code_equivalent_artifact_rows": 0,
+          "source_policy_reopen_triggered": false,
+          "source_policy_rows_closed_by_publisher_audit": 0,
+          "submission_ready": false
+        },
+        "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+        "safe_current_disposition": "retain terminal unable-to-reproduce disposition; do not promote candidate runners as source-policy equivalent",
+        "source_equivalent_artifact_request_packet_20260621": {
+          "corresponding_author_email": "ekanshchat96@vt.edu",
+          "date_prepared": "2026-06-21",
+          "global_absence_proved": false,
+          "request_ready": true,
+          "request_sent": false,
+          "requested_artifact_count": 7,
+          "source_policy_reopen_triggered": false,
+          "source_policy_rows_closed_by_packet": 0,
+          "status": "request_packet_ready_not_sent_no_source_policy_closure",
+          "submission_ready": false
+        },
+        "source_policy_rows_completed": 0,
+        "tfe_runner_closed": false
+      }
+    },
+    "blocker_safe_next_actions_by_id": {
+      "OC12": [
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rebuild_read_only_audit_chain",
+          "representative_scripts": [
+            "build_full_source_policy_row_provenance_audit.py",
+            "build_full_source_policy_runner_archive_gap_audit.py",
+            "build_objective_completion_audit.py",
+            "cmame_submission_review_agent.py",
+            "build_cmame_reproducibility_package_manifest.py",
+            "sync_submission_artifact_manifest_boundary.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rerun_read_only_validators",
+          "representative_scripts": [
+            "validate_full_source_policy_runner_archive_gap_audit.py",
+            "validate_objective_completion_audit.py",
+            "validate_submission_artifact_manifest_boundary_sync.py",
+            "validate_paper_package.py",
+            "../validate_pipeline_outputs.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+          "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "keep_narrowed_archive_provenance_only"
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "monitor_reopen_conditions",
+          "reopen_conditions": {
+            "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+            "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+          }
+        }
+      ],
+      "OC4": [
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rebuild_read_only_audit_chain",
+          "representative_scripts": [
+            "build_full_source_policy_row_provenance_audit.py",
+            "build_full_source_policy_runner_archive_gap_audit.py",
+            "build_objective_completion_audit.py",
+            "cmame_submission_review_agent.py",
+            "build_cmame_reproducibility_package_manifest.py",
+            "sync_submission_artifact_manifest_boundary.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rerun_read_only_validators",
+          "representative_scripts": [
+            "validate_full_source_policy_runner_archive_gap_audit.py",
+            "validate_objective_completion_audit.py",
+            "validate_submission_artifact_manifest_boundary_sync.py",
+            "validate_paper_package.py",
+            "../validate_pipeline_outputs.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+          "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "keep_narrowed_archive_provenance_only"
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "monitor_reopen_conditions",
+          "reopen_conditions": {
+            "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+            "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+          }
+        }
+      ],
+      "OC6": [
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rebuild_read_only_audit_chain",
+          "representative_scripts": [
+            "build_full_source_policy_row_provenance_audit.py",
+            "build_full_source_policy_runner_archive_gap_audit.py",
+            "build_objective_completion_audit.py",
+            "cmame_submission_review_agent.py",
+            "build_cmame_reproducibility_package_manifest.py",
+            "sync_submission_artifact_manifest_boundary.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rerun_read_only_validators",
+          "representative_scripts": [
+            "validate_full_source_policy_runner_archive_gap_audit.py",
+            "validate_objective_completion_audit.py",
+            "validate_submission_artifact_manifest_boundary_sync.py",
+            "validate_paper_package.py",
+            "../validate_pipeline_outputs.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+          "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "keep_narrowed_archive_provenance_only"
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "monitor_reopen_conditions",
+          "reopen_conditions": {
+            "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+            "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+          }
+        }
+      ]
+    },
+    "blocker_status_by_id": {
+      "OC12": "partial",
+      "OC4": "open",
+      "OC6": "partial"
+    },
+    "blocking_ids": [
+      "OC4",
+      "OC6",
+      "OC12"
+    ],
+    "closure_allowed_by_id": {
+      "OC12": false,
+      "OC4": false,
+      "OC6": false
+    },
+    "current_archive_usable_as_full_source_policy_runner_archive": false,
+    "exact_b4_opt_in_required_for_execution": true,
+    "full_source_policy_runner_package_ready": false,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "narrowed_claim_reproducibility_package_ready": true,
+    "objective_blocker_matrix_status": "global_objective_blockers_remain_open",
+    "objective_complete": false,
+    "objective_completion_status": "not_complete_submission_standard_open",
+    "objective_submission_ready": false,
+    "opt_in_action_ids": [
+      "authorized_b4_ra_hi_source_policy_execution"
+    ],
+    "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "safe_action_ids": [
+      "rebuild_read_only_audit_chain",
+      "rerun_read_only_validators",
+      "keep_narrowed_archive_provenance_only",
+      "monitor_reopen_conditions"
+    ],
+    "schema": "narrowed-repro-code-archive-boundary-v1",
+    "scope": "narrowed_claim_only",
+    "source_artifacts": [
+      "OBJECTIVE_COMPLETION_AUDIT.json",
+      "OBJECTIVE_COMPLETION_AUDIT.md",
+      "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json",
+      "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.md"
+    ],
+    "source_policy_closed_ratio": "0/40",
+    "source_policy_execution_allowed_now": false,
+    "source_policy_execution_invoked": false,
+    "status": "narrowed_archive_ready_not_full_source_policy_runner_archive"
+  },
+  "narrowed_claim_reproducibility_package_ready": true,
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "python_file_count": 26,
+  "python_line_count": 6154,
+  "required_entries": [
+    "run_human_reproducibility.py",
+    "replay_reproducibility_core.py",
+    "cmame_narrowed_repro_bundle/scripts/run_narrowed_repro_bundle.py",
+    "cmame_minimal_reproducibility_candidate/scripts/replay_paper_matrix.py",
+    "cmame_runner_adapter_candidate/scripts/run_four_example_matrix_adapter.py",
+    "cmame_runner_adapter_candidate/scripts/replay_closed_loop_local_rows.py",
+    "cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+    "cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+    "cmame_closed_loop_local_runner_candidate/scripts/run_closed_loop_fullva_candidate.py",
+    "cmame_local_accepted_runner_companion/scripts/run_local_accepted_runner_companion.py"
+  ],
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "run_v047_invoked": false,
+  "run_v048_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "schema": "cmame-narrowed-repro-code-archive-manifest-v1",
+  "scope": "narrowed_claim_only",
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_handoff": {
+    "boundary_artifacts": [
+      "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.json",
+      "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.md"
+    ],
+    "commands_not_run_by_handoff": true,
+    "driver_does_not_authorize_execution": true,
+    "driver_requires_exact_approval": true,
+    "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "execution_authorized": false,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+    "terminal_unable_to_reproduce_rows": 20
+  },
+  "source_policy_execution_invoked": false,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_total": 40,
+  "status": "narrowed_repro_code_archive_ready_source_policy_open",
+  "submission_ready": false
+}

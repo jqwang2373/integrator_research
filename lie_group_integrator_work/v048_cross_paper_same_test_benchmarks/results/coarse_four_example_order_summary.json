@@ -1,0 +1,114 @@
+{
+  "alias_resolved_methods": [
+    "vp2024_lie_group_ode_partitioning"
+  ],
+  "default_1e-4_required": false,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "local_acceleration_error_comparisons": 32,
+  "local_acceleration_error_wins": 26,
+  "local_method_orders": {
+    "double_pendulum": {
+      "acc_order": "nan",
+      "finest_acc_error": "nan",
+      "finest_pos_error": "3.0997426847534371e-13",
+      "finest_vel_error": "2.3455890008072799e-13",
+      "pos_order": "6.0107116196912500e+00",
+      "vel_order": "6.0097049897199657e+00"
+    },
+    "four_link": {
+      "acc_order": "9.9466887815859806e-01",
+      "finest_acc_error": "8.8043932382672896e-01",
+      "finest_pos_error": "2.2888357875672227e-12",
+      "finest_vel_error": "1.0927703186780491e-11",
+      "pos_order": "5.9548979111188078e+00",
+      "vel_order": "6.0848187309877098e+00"
+    },
+    "single_pendulum": {
+      "acc_order": "5.0559023369543672e+00",
+      "finest_acc_error": "1.0036319409164219e-12",
+      "finest_pos_error": "3.3233240878418187e-14",
+      "finest_vel_error": "1.1551877762897842e-12",
+      "pos_order": "6.0128039157529658e+00",
+      "vel_order": "5.8013285781956512e+00"
+    },
+    "slider_crank": {
+      "acc_order": "1.0541648128408896e+00",
+      "finest_acc_error": "1.0394461155700940e-01",
+      "finest_pos_error": "8.5831619589527008e-12",
+      "finest_vel_error": "9.1888510689308589e-12",
+      "pos_order": "6.1636896425143544e+00",
+      "vel_order": "7.3409145102638718e+00"
+    }
+  },
+  "local_position_error_comparisons": 43,
+  "local_position_error_wins": 20,
+  "local_velocity_error_comparisons": 43,
+  "local_velocity_error_loss_rows": [
+    {
+      "example": "four_link",
+      "local_vel_order": 6.08481873098771,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_vel_error": 2.3741009158584347e-12,
+      "method_vel_order": 0.926632312964791,
+      "vel_error_ratio_vs_local": 0.2172552525704068
+    },
+    {
+      "example": "single_pendulum",
+      "local_vel_order": 5.801328578195651,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_vel_error": 5.551115123125783e-17,
+      "method_vel_order": 2.708201040995234e-15,
+      "vel_error_ratio_vs_local": 4.805379036259175e-05
+    },
+    {
+      "example": "slider_crank",
+      "local_vel_order": 7.340914510263872,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "method_finest_vel_error": 9.786615962070755e-14,
+      "method_vel_order": 0.6605035965124864,
+      "vel_error_ratio_vs_local": 0.010650532790939495
+    }
+  ],
+  "local_velocity_error_wins": 40,
+  "local_velocity_order_comparisons": 43,
+  "local_velocity_order_wins": 43,
+  "missing_or_incomplete_methods": [
+    "tfe2026_TFE_m3_GL",
+    "vp2024_lie_group_ode_partitioning"
+  ],
+  "raw_row_count": 148,
+  "reference_h": 0.0125,
+  "required_methods_resolved": true,
+  "required_unresolved_methods": [],
+  "runnable_methods": [
+    "hi2022_rA",
+    "hi2022_rA_half",
+    "local_Gauss6_FullVA",
+    "ra2021_rA",
+    "ra2021_reps",
+    "ra2021_rp",
+    "tfe2026_Newmark_beta",
+    "tfe2026_TFE_m1",
+    "tfe2026_TFE_m2",
+    "tfe2026_TFE_m3_GL",
+    "tfe2026_trapezoidal",
+    "vp2024_coordinate_partitioning_rA"
+  ],
+  "schema": "coarse-four-example-order-v1",
+  "scope_excluded_methods": [
+    "tfe2026_TFE_m3_GL"
+  ],
+  "status": "required_complete",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "summary_row_count": 52,
+  "t_end": 0.1
+}

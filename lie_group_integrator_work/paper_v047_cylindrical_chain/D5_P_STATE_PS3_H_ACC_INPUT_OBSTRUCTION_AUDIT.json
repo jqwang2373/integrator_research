@@ -1,0 +1,185 @@
+{
+  "certifies_actual_ps3": false,
+  "certifies_induced_taylor_bounds": false,
+  "certifies_p_state": false,
+  "certifies_taylor_bounds": false,
+  "claim_boundary": {
+    "allowed_now": "The current evidence records a strict obstruction: residual-only non-dynamic rows do not supply the independent h-weighted acceleration input required by actual PS3.",
+    "close_condition": "Actual PS3 requires a theorem-level, non-circular source of h ||delta A||=O(h^7), or an explicitly stated theorem assumption, before the conditional PS3 estimate can be instantiated.",
+    "forbidden_now": [
+      "finite probe promoted to theorem-level PS3 input",
+      "velocity collocation used circularly as P_state input",
+      "actual PS3 state lift proved",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "dimensions": {
+    "auxiliary_acceleration_dimension": 36,
+    "domain_dimension": 108,
+    "non_dynamic_row_dimension": 96,
+    "residual_only_row_deficit": 12,
+    "state_block_dimension": 72,
+    "weighted_operator_shape": [
+      132,
+      108
+    ]
+  },
+  "finite_probe_diagnostic": {
+    "h_acceleration_rows_required_by_weighted_operator": true,
+    "h_values": [
+      0.04,
+      0.02,
+      0.01
+    ],
+    "non_dynamic_jacobian_rank_range": [
+      96,
+      96
+    ],
+    "non_dynamic_jacobian_ranks": [
+      96,
+      96,
+      96
+    ],
+    "probe_count": 3,
+    "residual_only_input_sufficient_for_h_acceleration": false,
+    "residual_only_nullities": [
+      12,
+      12,
+      12
+    ],
+    "residual_only_nullity_range": [
+      12,
+      12
+    ],
+    "theorem_level_independent_h_acceleration_input_proved": false,
+    "weighted_operator_full_column_rank_all": true,
+    "weighted_operator_rank_range": [
+      108,
+      108
+    ],
+    "weighted_operator_ranks": [
+      108,
+      108,
+      108
+    ]
+  },
+  "finite_probe_is_proof": false,
+  "independent_h_weighted_acceleration_input_closed": false,
+  "next_strict_proof_target": {
+    "must_not_do": [
+      "derive h delta A from delta_V after P_state is the unknown being solved for",
+      "promote the finite rank probe to a compact-tube theorem",
+      "claim actual PS3 while PC2/D5 remains open"
+    ],
+    "recommended_first_step": "Close the D5 lifted-stage dynamic defect for the 36 Newton-Euler rows by a row-local Taylor proof, then use the full stage-residual perturbation criterion to obtain the missing state and acceleration input non-circularly.",
+    "target": "PC2 full dynamic-row defect proof or explicit theorem weakening"
+  },
+  "non_circular_close_routes": {
+    "recommended_route": "full_132_row_dynamic_residual_route",
+    "route_R1_full_132_row_dynamic_residual": {
+      "closed": false,
+      "non_circular_if_completed": true,
+      "requires": [
+        "PC2 D5 dynamic-row defect proof for the 36 Newton-Euler rows",
+        "stage-residual perturbation criterion applied to the full 132-row residual",
+        "no use of P_state actual PS3 as an input to the dynamic-row defect proof"
+      ],
+      "why_it_addresses_the_obstruction": "The missing 12 non-dynamic directions are the dynamic/free stage directions. A full residual perturbation proof controls the whole stage vector directly rather than asking the 96-row non-dynamic residual to supply h delta A."
+    },
+    "route_R2_stronger_velocity_before_inversion": {
+      "closed": false,
+      "non_circular_if_completed": true,
+      "requires": [
+        "delta_V=O(h^8) before velocity-collocation inversion",
+        "rho_V=O(h^8) before velocity-collocation inversion",
+        "a proof of those O(h^8) bounds that does not use P_state actual PS3"
+      ],
+      "why_not_closed": "Current recorded inputs only give the O(h^7) scale before the A_G^{-1}/h velocity-collocation inversion."
+    },
+    "route_R3_explicit_theorem_assumption": {
+      "closed": false,
+      "non_circular_if_stated": true,
+      "requires": [
+        "state the independent h-weighted acceleration input as an explicit theorem assumption",
+        "weaken the manuscript claim boundary accordingly",
+        "prevent the assumption from being reported as a proved PS3 input"
+      ],
+      "why_not_closure": "This would make the theorem conditional rather than proving actual PS3 from the current residual artifacts."
+    }
+  },
+  "non_circular_ps3_instantiation_closed": false,
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps3_actual_state_lift_conversion_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps3-h-acc-input-obstruction-audit-v1",
+  "source_consistency": {
+    "aggregate_pc2_closed": false,
+    "aggregate_primitive_closed": false,
+    "aggregate_ps2_closed": true,
+    "aggregate_schema": "d5-p-state-ps2-aggregate-promotion-audit-v1",
+    "conditional_actual_inputs_closed": false,
+    "conditional_actual_ps3_closed": false,
+    "conditional_closed": true,
+    "conditional_schema": "d5-p-state-ps3-conditional-conversion-audit-v1",
+    "kinematic_certified_rows": 96,
+    "kinematic_excluded_rows": 36,
+    "kinematic_schema": "kinematic-row-defect-certificate-v1",
+    "p_acc_current_unweighted_acceleration_rate": "O(h^6)",
+    "p_acc_obstruction_schema": "d5-p-acc-lift-obstruction-audit-v1",
+    "p_acc_pa2_closed": false,
+    "p_acc_pc2_closed": false,
+    "p_acc_velocity_collocation_alone_sufficient": false,
+    "p_acc_weighted_h_control_recorded": true,
+    "p_acc_weighted_schema": "d5-p-acc-pa2-weighted-inverse-audit-v1",
+    "p_acc_weighted_unweighted_uniform_control_proved": false,
+    "ps2_probe_pc2_closed": false,
+    "ps2_probe_recorded": true,
+    "ps2_probe_schema": "d5-p-state-ps2-linearization-probe-v1",
+    "ps2_probe_uniform_constant_proved": false
+  },
+  "status": "h_acc_input_obstruction_recorded_actual_ps3_open",
+  "strict_obstruction": {
+    "acceleration_formula": "delta_A = h^{-1} (A_G^{-1} \\otimes I) (delta_V - rho_V)",
+    "finite_rank_diagnostic": "At the recorded solved stages, DN_h^nd has rank 96 over the 108-dimensional domain, while adjoining hI_A raises the weighted operator rank to 108.",
+    "ps2_estimate": "||delta S|| <= C_PS2 (||delta N_h^nd|| + h ||delta A||)",
+    "residual_only_gap": "The current 96 non-dynamic rows act on the 108-dimensional (S,A) domain and therefore do not by themselves provide the h-weighted acceleration input required by the PS2 estimate.",
+    "velocity_collocation_circular_for_p_state": true,
+    "velocity_collocation_formula": "delta_V - h (A_G \\otimes I) delta_A = rho_V",
+    "why_velocity_collocation_is_circular": "The velocity-collocation rearrangement gives delta_A from delta_V and rho_V. Since delta_V is a P_state component, using that rearrangement as the independent PS3 input would assume part of the state lift being proved."
+  },
+  "submission_ready": false,
+  "summary": {
+    "auxiliary_acceleration_dimension": 36,
+    "domain_dimension": 108,
+    "explicit_assumption_route_available": true,
+    "finite_probe_non_dynamic_rank_max": 96,
+    "finite_probe_non_dynamic_rank_min": 96,
+    "finite_probe_nullity_max": 12,
+    "finite_probe_nullity_min": 12,
+    "finite_probe_weighted_operator_full_rank_all": true,
+    "finite_probe_weighted_operator_rank_max": 108,
+    "finite_probe_weighted_operator_rank_min": 108,
+    "full_dynamic_residual_route_closed": false,
+    "h_acceleration_input_obstruction_recorded": true,
+    "independent_h_weighted_acceleration_input_closed": false,
+    "induced_taylor_bounds_proved": 0,
+    "non_circular_ps3_instantiation_closed": false,
+    "non_dynamic_row_dimension": 96,
+    "pc2_closed": false,
+    "pc2_required_for_recommended_route": true,
+    "primitive_closed": false,
+    "ps3_actual_state_lift_conversion_closed": false,
+    "recommended_non_circular_close_route": "full_132_row_dynamic_residual_route",
+    "residual_only_input_sufficient_for_h_acceleration": false,
+    "residual_only_row_deficit": 12,
+    "state_block_dimension": 72,
+    "stronger_velocity_route_closed": false
+  }
+}

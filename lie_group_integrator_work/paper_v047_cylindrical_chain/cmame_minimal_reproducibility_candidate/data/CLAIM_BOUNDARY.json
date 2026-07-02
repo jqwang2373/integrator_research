@@ -1,0 +1,303 @@
+{
+  "schema": "v047-paper-claim-boundary-v1",
+  "primary_claim": {
+    "name": "sixth_order_fullva_formal_order_alternative",
+    "status": "accepted_as_formal_order_alternative_not_external_superiority",
+    "accepted_method": "Gauss6/FullVA",
+    "method_order_claim": 6,
+    "smooth_projected_orders": {
+      "position": 7.161,
+      "velocity": 7.066
+    },
+    "asme_gate_status": "four_asme_method_rows_accepted_projection_sharp_sparse_caveats",
+    "accepted_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "accepted_examples_role": "mechanism_coverage_examples_not_all_dynamic_order",
+    "accepted_examples_scope_note": "the accepted_examples compatibility list means four-example mechanism coverage; dynamic-order support is limited to accepted_dynamic_order_examples",
+    "accepted_dynamic_order_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "accepted_mechanism_coverage_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "coverage_only_dynamic_order_examples": [
+      "four_link",
+      "slider_crank"
+    ]
+  },
+  "asme_acceptance": {
+    "status": "four_asme_method_rows_accepted_projection_sharp_sparse_caveats",
+    "source": "v047_cylindrical_chain_pipeline/results/summary_v047.json:asme_gate.method_runs",
+    "full_tfe_required_for_gate": false,
+    "accepted_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "accepted_examples_role": "mechanism_coverage_examples_not_all_dynamic_order",
+    "accepted_examples_scope_note": "the accepted_examples compatibility list means four-example mechanism coverage; dynamic-order support is limited to accepted_dynamic_order_examples",
+    "accepted_dynamic_order_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "accepted_mechanism_coverage_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "coverage_only_dynamic_order_examples": [
+      "four_link",
+      "slider_crank"
+    ],
+    "single_pendulum": {
+      "mapping_status": "exact_driven_absolute_fullva_residual",
+      "absolute_fullva_min_order": 6.024,
+      "max_stage_residual_norm": 3.664e-12
+    },
+    "double_pendulum": {
+      "mapping_status": "accepted_method_side_double_revolute_fullva_reference_policy",
+      "method_min_order": 6.089,
+      "accepted_reference": "v029_fullva_nested_h0.005",
+      "max_endpoint_constraint_norm": 7.034e-13,
+      "max_endpoint_velocity_constraint_norm": 8.323e-12
+    },
+    "four_link": {
+      "mapping_status": "accepted_closed_loop_kinematic_fullva_reaction_dynamics",
+      "dynamic_order_status": "not_accepted_dynamic_order",
+      "evidence_role": "mechanism_coverage_constraint_reaction_coarse_dynamics_diagnostic",
+      "closed_loop_status": "accepted_kinematic_fullva",
+      "reaction_status": "accepted_reaction_dynamics",
+      "h_values": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "max_closed_loop_constraint_norm": 1.052e-14,
+      "max_dynamics_residual_norm": 1.338e-13
+    },
+    "slider_crank": {
+      "mapping_status": "accepted_closed_loop_kinematic_fullva_reaction_dynamics",
+      "dynamic_order_status": "not_accepted_dynamic_order",
+      "evidence_role": "mechanism_coverage_constraint_reaction_coarse_dynamics_diagnostic",
+      "closed_loop_status": "accepted_kinematic_fullva",
+      "reaction_status": "accepted_reaction_dynamics",
+      "h_values": [
+        0.02,
+        0.01,
+        0.005
+      ],
+      "max_closed_loop_constraint_norm": 1.204e-15,
+      "max_dynamics_residual_norm": 6.492e-15
+    }
+  },
+  "comparator": {
+    "name": "local_paper_style_m3_gauss_lobatto_tfe_formula_target",
+    "expected_order": 5,
+    "role": "formal_order_comparator_not_source_policy_superiority_claim",
+    "complete_source_paper_residual_accepted": false
+  },
+  "not_claimed": [
+    "complete_source_paper_residual_reproduction",
+    "independent_full_tfe_stage_replacement",
+    "sparse_ad_wall_clock_speed_win",
+    "sharp_friction_coarse_regime_solved"
+  ],
+  "open_caveats": [
+    "sparse_speed_quantified",
+    "full_tfe_stage_replacement_missing",
+    "sharp_friction_coarse_order_reduction_ultra_recovered"
+  ],
+  "remaining_caveat_contracts": {
+    "sparse_speed_quantified": {
+      "status": "speed_gap_quantified_dense_still_faster",
+      "cost_model_status": "sparse_cost_model_quantified_dense_still_faster",
+      "pattern_nnz": 2637,
+      "row_colors": 60,
+      "column_colors": 90,
+      "repeats": 5,
+      "dense_beats_row": true,
+      "smooth_row_runtime_over_dense": 1.224,
+      "sharp_row_runtime_over_dense": 1.203,
+      "max_row_runtime_reduction_needed_to_match_dense": 0.182859,
+      "max_row_runtime_reduction_needed_for_10pct_dense_win": 0.264573,
+      "min_effective_row_colors_at_dense_cost": 49.028,
+      "role": "quantified_caveat_not_sparse_wall_clock_speed_win"
+    },
+    "sharp_friction_coarse_order_reduction_ultra_recovered": {
+      "smoothness_status": "ok",
+      "coarse_stribeck_velocity": 0.05,
+      "coarse_position_order": 1.894,
+      "coarse_velocity_order": 2.683,
+      "smooth_stribeck_velocity": 0.5,
+      "smooth_position_order": 7.161,
+      "smooth_velocity_order": 7.066,
+      "ultra_status": "ultra_high_order_recovered",
+      "ultra_h_values": [
+        0.005,
+        0.0025,
+        0.00125
+      ],
+      "ultra_position_order_all": 7.521,
+      "ultra_velocity_order_all": 5.725,
+      "ultra_position_tail_order": 7.626,
+      "ultra_velocity_tail_order": 8.279,
+      "cost_status": "sharp_refinement_cost_quantified_ultra_high_order_cost_caveat",
+      "practical_cost_caveat": true,
+      "max_runtime_factor_vs_h001": 7.252,
+      "max_accepted_steps_factor_vs_h001": 8.0,
+      "max_newton_iteration_factor_vs_h001": 8.0,
+      "max_velocity_error_reduction_vs_h001": 1058391.921,
+      "role": "practical_coarse_regime_cost_caveat_not_asymptotic_failure"
+    }
+  },
+  "full_tfe_stage_replacement": false,
+  "terminology": {
+    "tfe": "temporal finite element",
+    "fte": "typo_for_tfe_not_a_separate_method",
+    "full_tfe_replacement": {
+      "meaning": "replace the accepted Gauss6/FullVA 132-row stage residual with paper-derived temporal finite-element weak rows",
+      "role": "stronger_source_paper_reproduction_gate_not_prerequisite_for_formal_order_comparison",
+      "accepted": false
+    }
+  },
+  "order_conventions": {
+    "accepted_method": "Gauss6/FullVA",
+    "accepted_method_order": 6,
+    "observed_smooth_projected_orders": {
+      "position": 7.161,
+      "velocity": 7.066,
+      "source": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_convergence.csv"
+    },
+    "local_paper_style_tfe_formula_target": {
+      "nodes": "m=3 Gauss-Lobatto",
+      "expected_order": 5,
+      "role": "comparator_not_accepted_method"
+    },
+    "diagnostic_candidates_not_accepted": [
+      {
+        "name": "source_free_final_stage_velocity_closure",
+        "smooth_orders": {
+          "position": 3.523,
+          "velocity": 4.828
+        },
+        "reason": "order_limited_not_full_tfe_replacement"
+      },
+      {
+        "name": "endpoint_pose_velocity_predictor_smoke",
+        "smooth_orders": {
+          "position": 4.142,
+          "velocity": 2.305
+        },
+        "reason": "terminal_closure_but_order_limited"
+      }
+    ]
+  },
+  "full_tfe_gap_contract": {
+    "status": "full_stage_acceptance_gap_quantified_not_full_tfe",
+    "full_tfe_stage_replacement": false,
+    "stage_row_budget": 132,
+    "h_values": [
+      0.04,
+      0.02,
+      0.01
+    ],
+    "reference_h": 0.005,
+    "proxy_residual_solved": true,
+    "derived_full_tfe_stage_functional_present": false,
+    "endpoint_boundary_source_removed": false,
+    "max_proxy_residual_norm": 2.192e-12,
+    "min_acceptance_satisfied_count": 6,
+    "max_acceptance_missing_count": 3,
+    "readiness_counts": {
+      "satisfied": 31,
+      "partial": 38,
+      "missing": 1
+    },
+    "closure_acceptance_matrix": {
+      "accepted_candidate_count": 0,
+      "best_order_preserving_source_free_candidate": "source_free_mean_blend_trajectory_best_alpha",
+      "best_terminal_velocity_candidate": "source_free_final_stage_velocity_closure"
+    },
+    "velocity_compression_blocker": {
+      "accepted_h_sweep_present": false,
+      "row_space_compression_rows": 36,
+      "row_space_spans": 0,
+      "weak_row_structure_rows": 216,
+      "weak_row_structure_spans": 0,
+      "best_row_space_residual": 0.737762,
+      "best_nonfinal_residual": 0.981503
+    },
+    "source_free_final_stage_split": {
+      "terminal_velocity_closed": true,
+      "max_raw_terminal_endpoint_velocity_constraint_norm": 4.011e-16,
+      "smooth_position_order": 3.523,
+      "smooth_velocity_order": 4.828,
+      "reason_not_accepted": "terminal_closed_but_smooth_position_order_below_accepted_full_tfe_floor"
+    },
+    "order_closure_blend_split": {
+      "order_and_terminal_intersection_present": false,
+      "terminal_closing_beta_max_velocity": 4.011e-16,
+      "terminal_closing_beta_min_order": 1.918
+    },
+    "next_repair_target": "derive a nonterminal endpoint-pose predictor that closes terminal velocity on trajectory",
+    "compression_next_repair_target": "derive a revised analytical weak-row formula or nonlinear recurrent history source law for the coefficient-gradient closure"
+  },
+  "read_only_validators": [
+    "validate_cmame_submission.py",
+    "validate_paper_claims.py",
+    "validate_paper_package.py",
+    "validate_proof_evidence_matrix.py",
+    "validate_order_acceptance_gate.py",
+    "validate_source_paper_comparison.py",
+    "validate_submission_bundle.py",
+    "validate_four_asme_minimal.py",
+    "validate_full_tfe_gap.py",
+    "validate_full_tfe_repair_spec.py",
+    "validate_pipeline_outputs.py"
+  ],
+  "evidence_files": {
+    "summary_json": "v047_cylindrical_chain_pipeline/results/summary_v047.json",
+    "convergence_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_convergence.csv",
+    "asme_gate_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_asme_gate.csv",
+    "asme_method_runs_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_asme_method_runs.csv",
+    "asme_single_absolute_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_asme_single_absolute_fullva_runs.csv",
+    "asme_double_method_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_asme_double_method_runs.csv",
+    "asme_closed_loop_kinematic_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_asme_closed_loop_kinematic_fullva.csv",
+    "asme_closed_loop_reaction_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_asme_closed_loop_reaction_dynamics.csv",
+    "paper_formula_mapping_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_endpoint_tfe_paper_formula_mapping_audit.csv",
+    "full_tfe_gap_ledger": "v047_cylindrical_chain_pipeline/FULL_TFE_REPLACEMENT_GAP_LEDGER.md",
+    "full_tfe_repair_spec": "v047_cylindrical_chain_pipeline/FULL_TFE_REPAIR_SPEC.md",
+    "paper_tex": "paper_v047_cylindrical_chain/main.tex",
+    "paper_pdf": "paper_v047_cylindrical_chain/main.pdf",
+    "cmame_tex": "paper_v047_cylindrical_chain/main_cmame.tex",
+    "cmame_pdf": "paper_v047_cylindrical_chain/main_cmame.pdf",
+    "cmame_highlights": "paper_v047_cylindrical_chain/highlights_cmame.txt",
+    "cmame_declarations": "paper_v047_cylindrical_chain/declarations_cmame.md",
+    "cmame_checklist": "paper_v047_cylindrical_chain/CMAME_SUBMISSION_CHECKLIST.md",
+    "cmame_readiness_audit": "paper_v047_cylindrical_chain/CMAME_SUBMISSION_READINESS_AUDIT.md",
+    "cmame_flat_tex": "paper_v047_cylindrical_chain/cmame_submission_flat/main_cmame_submission.tex",
+    "cmame_flat_pdf": "paper_v047_cylindrical_chain/cmame_submission_flat/main_cmame_submission.pdf",
+    "proof_evidence_matrix": "paper_v047_cylindrical_chain/PROOF_EVIDENCE_MATRIX.md",
+    "order_acceptance_gate": "paper_v047_cylindrical_chain/ORDER_ACCEPTANCE_GATE.md",
+    "order_acceptance_gate_json": "paper_v047_cylindrical_chain/ORDER_ACCEPTANCE_GATE.json",
+    "paper_claim_ledger": "paper_v047_cylindrical_chain/PAPER_CLAIM_LEDGER.md",
+    "paper_reviewer_checklist": "paper_v047_cylindrical_chain/REVIEWER_CHECKLIST.md",
+    "paper_current_status_cn": "paper_v047_cylindrical_chain/CURRENT_STATUS_CN.md",
+    "source_paper_comparison": "paper_v047_cylindrical_chain/SOURCE_PAPER_COMPARISON.md",
+    "current_pipeline_contract": "CURRENT_PIPELINE_CONTRACT.md"
+  },
+  "full_generator": {
+    "script": "run_v047.py",
+    "required_for_paper_claim_check": false
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "algorithm_literal_endpoint_policy": "fixed_h_until_tn_ge_tfinal",
+  "algorithm_literal_exact_T_row_count": 2,
+  "algorithm_literal_overrun_row_count": 4,
+  "claim_boundary": {
+    "accepted_use": "endpoint_policy_boundary_proof_not_source_policy",
+    "demoted": [
+      "endpoint-incompatible noninteger T/h rows without source-confirmed endpoint/output sampling"
+    ],
+    "not_proved": [
+      "source-code-equivalent endpoint/output sampling for noninteger T/h rows",
+      "exact-T source-policy error sampling equivalence",
+      "source-policy method-runner equivalence",
+      "B4/B7 source-policy closure"
+    ],
+    "proved": "algorithm_literal_fixed_h_endpoint_overrun_bound"
+  },
+  "diagnostic_work_precision_boundary": {
+    "endpoint_policy_sensitivity_audit": "TFE_ENDPOINT_POLICY_SENSITIVITY_AUDIT.json",
+    "endpoint_probe_metric_rows": 12,
+    "endpoint_probe_terminal_overrun_rows": 12,
+    "endpoint_sensitivity_raw_rows": 48,
+    "endpoint_sensitivity_source_policy_rows_completed": 0,
+    "source_probe": "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.json",
+    "work_precision_audit": "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.json",
+    "work_precision_b4_closure": false,
+    "work_precision_b4_progress": true,
+    "work_precision_figure_available": true,
+    "work_precision_rows": 12,
+    "work_precision_summary_rows": 4
+  },
+  "endpoint_incompatible_demotion_contract": "Algorithm-literal overrun rows are diagnostic-only and excluded from source-policy promotion unless source-confirmed endpoint/output sampling for noninteger T/h is found.",
+  "endpoint_incompatible_rows_demoted_from_source_policy": 4,
+  "external_superiority_claim_allowed": false,
+  "policy_disposition": [
+    {
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "proved_grid_effect": "overrun_for_noninteger_T_over_h",
+      "source_equivalent_for_exact_T_error_sampling": false,
+      "source_policy_rows_completed": 0
+    },
+    {
+      "policy": "adjust_h_to_hit_T_exactly",
+      "proved_grid_effect": "exact_T_by_changing_published_h",
+      "source_equivalent_for_exact_T_error_sampling": false,
+      "source_policy_rows_completed": 0
+    },
+    {
+      "policy": "integer_steps_plus_final_partial_step",
+      "proved_grid_effect": "exact_T_by_adding_unconfirmed_partial_step",
+      "source_equivalent_for_exact_T_error_sampling": false,
+      "source_policy_rows_completed": 0
+    },
+    {
+      "policy": "interpolate_or_sample_exact_T",
+      "proved_grid_effect": "requires_source_output_policy_not_present_in_text",
+      "source_equivalent_for_exact_T_error_sampling": false,
+      "source_policy_rows_completed": 0
+    }
+  ],
+  "read_only": true,
+  "row_count": 6,
+  "rows": [
+    {
+      "algorithm_literal_overrun_strictly_less_than_h": true,
+      "algorithm_literal_overshoot": 0.002000000000000668,
+      "algorithm_literal_terminal_time": 10.002,
+      "case_id": "frictionless_pendulum",
+      "ceil_steps_to_reach_or_exceed_T": 3334,
+      "exact_steps": 3333.3333333333335,
+      "final_partial_step_fraction_of_h": 0.3333333333331486,
+      "final_partial_step_size_for_exact_T": 0.0009999999999994458,
+      "friction_enabled": false,
+      "h": 0.003,
+      "hits_exact_T": false,
+      "integer_step_compatible": false,
+      "requires_source_error_sampling_policy": true,
+      "row_id": "frictionless_pendulum:h=0.003",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_row_completed": false,
+      "t_final": 10.0
+    },
+    {
+      "algorithm_literal_overrun_strictly_less_than_h": true,
+      "algorithm_literal_overshoot": 0.002000000000000668,
+      "algorithm_literal_terminal_time": 10.002,
+      "case_id": "frictionless_pendulum",
+      "ceil_steps_to_reach_or_exceed_T": 1667,
+      "exact_steps": 1666.6666666666667,
+      "final_partial_step_fraction_of_h": 0.6666666666665932,
+      "final_partial_step_size_for_exact_T": 0.0039999999999995595,
+      "friction_enabled": false,
+      "h": 0.006,
+      "hits_exact_T": false,
+      "integer_step_compatible": false,
+      "requires_source_error_sampling_policy": true,
+      "row_id": "frictionless_pendulum:h=0.006",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_row_completed": false,
+      "t_final": 10.0
+    },
+    {
+      "algorithm_literal_overrun_strictly_less_than_h": true,
+      "algorithm_literal_overshoot": 0.008000000000000895,
+      "algorithm_literal_terminal_time": 10.008000000000001,
+      "case_id": "frictionless_pendulum",
+      "ceil_steps_to_reach_or_exceed_T": 834,
+      "exact_steps": 833.3333333333334,
+      "final_partial_step_fraction_of_h": 0.3333333333332966,
+      "final_partial_step_size_for_exact_T": 0.0039999999999995595,
+      "friction_enabled": false,
+      "h": 0.012,
+      "hits_exact_T": false,
+      "integer_step_compatible": false,
+      "requires_source_error_sampling_policy": true,
+      "row_id": "frictionless_pendulum:h=0.012",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_row_completed": false,
+      "t_final": 10.0
+    },
+    {
+      "algorithm_literal_overrun_strictly_less_than_h": true,
+      "algorithm_literal_overshoot": 0.002000000000000668,
+      "algorithm_literal_terminal_time": 10.002,
+      "case_id": "frictional_pendulum",
+      "ceil_steps_to_reach_or_exceed_T": 3334,
+      "exact_steps": 3333.3333333333335,
+      "final_partial_step_fraction_of_h": 0.3333333333331486,
+      "final_partial_step_size_for_exact_T": 0.0009999999999994458,
+      "friction_enabled": true,
+      "h": 0.003,
+      "hits_exact_T": false,
+      "integer_step_compatible": false,
+      "requires_source_error_sampling_policy": true,
+      "row_id": "frictional_pendulum:h=0.003",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_row_completed": false,
+      "t_final": 10.0
+    },
+    {
+      "algorithm_literal_overrun_strictly_less_than_h": true,
+      "algorithm_literal_overshoot": 0.0,
+      "algorithm_literal_terminal_time": 10.0,
+      "case_id": "frictional_pendulum",
+      "ceil_steps_to_reach_or_exceed_T": 1250,
+      "exact_steps": 1250.0,
+      "final_partial_step_fraction_of_h": 0.0,
+      "final_partial_step_size_for_exact_T": 0.0,
+      "friction_enabled": true,
+      "h": 0.008,
+      "hits_exact_T": true,
+      "integer_step_compatible": true,
+      "requires_source_error_sampling_policy": false,
+      "row_id": "frictional_pendulum:h=0.008",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": false,
+      "source_policy_row_completed": false,
+      "t_final": 10.0
+    },
+    {
+      "algorithm_literal_overrun_strictly_less_than_h": true,
+      "algorithm_literal_overshoot": 0.0,
+      "algorithm_literal_terminal_time": 10.0,
+      "case_id": "frictional_pendulum",
+      "ceil_steps_to_reach_or_exceed_T": 50,
+      "exact_steps": 50.0,
+      "final_partial_step_fraction_of_h": 0.0,
+      "final_partial_step_size_for_exact_T": 0.0,
+      "friction_enabled": true,
+      "h": 0.2,
+      "hits_exact_T": true,
+      "integer_step_compatible": true,
+      "requires_source_error_sampling_policy": false,
+      "row_id": "frictional_pendulum:h=0.2",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": false,
+      "source_policy_row_completed": false,
+      "t_final": 10.0
+    }
+  ],
+  "schema": "tfe-endpoint-policy-boundary-certificate-v1",
+  "source_endpoint_compatible_row_ids": [
+    "frictional_pendulum:h=0.008",
+    "frictional_pendulum:h=0.2"
+  ],
+  "source_endpoint_incompatible_row_ids": [
+    "frictionless_pendulum:h=0.003",
+    "frictionless_pendulum:h=0.006",
+    "frictionless_pendulum:h=0.012",
+    "frictional_pendulum:h=0.003"
+  ],
+  "source_endpoint_incompatible_row_ids_demoted_from_source_policy": [
+    "frictionless_pendulum:h=0.003",
+    "frictionless_pendulum:h=0.006",
+    "frictionless_pendulum:h=0.012",
+    "frictional_pendulum:h=0.003"
+  ],
+  "source_files": {
+    "algorithm_literal_endpoint_probe": "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.json",
+    "algorithm_literal_work_precision": "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.json",
+    "endpoint_sensitivity": "TFE_ENDPOINT_POLICY_SENSITIVITY_AUDIT.json",
+    "grid_audit": "TFE_SOURCE_GRID_COMPATIBILITY_AUDIT.json"
+  },
+  "source_grid_policy_resolved_for_exact_T_compatible_rows": true,
+  "source_grid_policy_resolved_for_full_T10": false,
+  "source_policy_exact_T_error_sampling_equivalent": false,
+  "source_policy_method_runner_equivalent": false,
+  "source_policy_rows_completed": 0,
+  "source_text_support": {
+    "algorithm_literal_constant_h_until_tn_ge_tfinal": true,
+    "anchor_count": 9,
+    "source_endpoint_convention_resolved_for_error_sampling": false,
+    "source_text_available": true
+  },
+  "status": "endpoint_policy_literal_overrun_bound_proved_source_policy_open",
+  "submission_ready": false,
+  "t_final": 10.0,
+  "theorem": {
+    "assumptions": [
+      "Algorithm 1 advances by the published fixed step h.",
+      "The loop condition is while t_n < t_final.",
+      "No source-confirmed interpolation, adjusted h, or partial final step is used for the reported error sample."
+    ],
+    "conclusion": "Endpoint-incompatible published h rows need a source-confirmed error/output sampling policy before any exact-T source-policy row or work/precision row can be accepted; otherwise they remain explicitly demoted from the source-policy row set.",
+    "name": "fixed_h_until_final_time_endpoint_bound",
+    "proof_steps": [
+      "The loop performs N=ceil(T/h) fixed-size updates before the first index with t_N >= T.",
+      "By the ceiling definition, N-1 < T/h <= N.",
+      "Multiplying by h gives (N-1)h < T <= Nh.",
+      "Thus t_N=Nh and t_N-T is nonnegative and strictly smaller than h.",
+      "The residual is zero exactly when T/h is an integer; otherwise the terminal state is an overrun state rather than an exact-T state."
+    ],
+    "statement": "For T>0 and h>0, the Algorithm-1-literal loop with fixed h and N=ceil(T/h) terminates at t_N=N h. If T/h is not an integer, then 0 < t_N - T < h; if T/h is an integer, then t_N=T."
+  }
+}

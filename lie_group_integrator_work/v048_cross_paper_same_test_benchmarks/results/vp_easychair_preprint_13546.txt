@@ -1,0 +1,121 @@
+                     EasyChair Preprint
+                             № 13546
+
+
+
+
+A Performance Comparison of Several Lie Group
+Integration Methods for Solving the Equations
+of Constrained Multibody Dynamics
+
+Alexandra Kissel, Luning Bakke and Dan Negrut
+
+
+
+
+                                 EasyChair preprints are intended for rapid
+                                 dissemination of research results and are
+                                 integrated with the rest of EasyChair.
+
+
+
+                       June 4, 2024
+                                                           The 7th International Conference on Multibody System Dynamics
+                                                                                       June 9-13, 2024, Madison, WI, USA
+
+
+     A performance comparison of several Lie group integration methods
+         for solving the equations of constrained multibody dynamics
+                             Alexandra Kissel, Luning Bakke, Dan Negrut
+
+                                Department of Mechanical Engineering
+                                   University of Wisconsin–Madison
+                             1513 University Ave, Madison, WI 53706, USA
+                                   [akissel, lfang9, negrut]@wisc.edu
+
+Abstract
+When expressed in absolute coordinates, the constrained multibody dynamics problem results in a sys-
+tem of index-3 differential algebraic equations (DAEs). In [1, 2, 3, 4, 5], we explored three Lie group
+integration methods for solving these DAEs: fully-implicit, half-implicit, and velocity coordinate parti-
+tioning. It was found that these methods are computationally more efficient in approximating the solution
+to the equations of motion than methods which rely on Euler angles or Euler parameters as generalized
+coordinates. In this work, we directly compare the accuracy and performance of the three Lie group
+approaches to solving the index-3 DAEs. The Python code developed to generate the reported results is
+open-source and available in a public repository for reproducibility studies [6].
+
+Methods comparison
+Implementation details for the three methods can be found in [1, 2, 3, 4, 5]. In the results reported below,
+a tolerance of εtol = 10−5 was used for all numerical experiments. In [4], a similar scaling analysis was
+done to compare the fully- and half-implicit integrators. Therein, the tolerances were chosen to ensure
+that the methods achieved a similar quality of solution.
+Convergence analysis: The fully-implicit, half-implicit, and coordinate partitioning methods employ
+first-order Euler explicit and/or implicit integration schemes. We confirmed their first-order accuracy
+by conducting an order analysis on the double pendulum in Fig. 1a with physical properties that match
+those used in [1, 2, 3, 4, 5]. A reference solution was obtained by integrating a set of ordinary differential
+equations (ODEs) using a highly accurate, 8th order Runge-Kutta solver DoPri853 with a step size of
+h = 1 × 10−6 s. Relative errors were calculated as ||yi − yref         ref                   ref
+                                                             i ||2 /||yi ||2 , where yi and yi are the values
+of the solution at time ti produced by the Lie group integrator and the reference solution, respectively.
+The relative errors in position were plotted as a function of the step size h on a log-log scale in Fig. 1b.
+The half-implicit integrator is shown to be significantly more accurate, very likely due to its symplectic
+property (detailed in [4]).
+Scaling Analysis: A scaling analysis was performed using a N-body pendulum to compare the computa-
+tional performance of the three methods. As shown in Fig. 2a, N rigid links were connected by spherical
+joints and subjected to a randomly directed gravitational force ~g. At time t = 0, the links are assigned
+an angular velocity of random magnitude ω    ~ i around their longitudinal axis. Tests were conducted for
+N = 1, 2, 4, 8, 16, 32. The timing results reported in Fig. 2 indicate that the half-implicit method is the
+most time-efficient. This computational advantage is likely due to its Newton iteration matrix, which
+is both more accurate and less costly to compute, as discussed in [4]. Conversely, the coordinate parti-
+tioning approach demonstrated poor scalability compared to the fully- and half-implicit methods. This
+result is mainly linked to the increasing cost of the partitioning step as the number of system degrees of
+freedom grows [5].
+
+Discussion. Future work
+When comparing the three Lie group methods, the half-implicit solver stands out in both speed and ac-
+curacy. While it was only marginally faster than the fully-implicit solver in the scaling analysis, it is
+assumed that the higher accuracy reported above translates to the N-body pendulum. Thus, a looser
+tolerance and/or larger step size could achieve faster simulation times depending on solution accuracy
+requirements. On the other hand, the coordinate partitioning method, while slower than the direct inte-
+gration methods, offers advantages in applications which favor ODEs [5]. A similar comparative analysis
+will be presented for a seven-body mechanism to provide insights for a complex closed-loop system, but
+it has been omitted here due to space limitations.
+             (a) Double pendulum schematic.              (b) Order analysis; position coordinate.
+
+                      Figure 1: Integrator order analysis using a double pendulum.
+
+
+
+
+             (a) N-body pendulum schematic.           (b) N-body pendulum scaling results; log-log.
+
+                          Figure 2: Scaling analysis using a N-body pendulum.
+
+
+References
+[1] Taves, J., Kissel, A., and Negrut, D., 2021, “Dwelling on the connection between SO(3) and rotation
+    matrices in rigid multibody dynamics. part 1: Description of an index-3 DAE solution approach,” In
+    ASME 2021 International Design Engineering Technical Conferences and Computers and Informa-
+    tion in Engineering Conference, American Society of Mechanical Engineers.
+
+[2] Taves, J., Kissel, A., and Negrut, D., 2021, “Dwelling on the connection between SO(3) and rotation
+    matrices in rigid multibody dynamics. part 2: Comparison against formulations using Euler param-
+    eters or Euler angles,” In ASME 2021 International Design Engineering Technical Conferences and
+    Computers and Information in Engineering Conference, American Society of Mechanical Engineers.
+
+[3] Kissel, A., Taves, J., and Negrut, D., 2022, “Constrained multibody kinematics and dynamics in
+    absolute coordinates: A discussion of three approaches to representing rigid body rotation,” Journal
+    of Computational and Nonlinear Dynamics, 17(10), 08, p. 101008 101008.
+
+[4] Fang, L., Kissel, A., Zhang, R., and Negrut, D., 2022, “On the Use of Half-Implicit Numerical
+    Integration in Multibody Dynamics,” Journal of Computational and Nonlinear Dynamics, 18(1), 11,
+    p. 014501 014501.
+
+[5] Kissel, A., Fang, L., and Negrut, D., 2023, “Using velocity partitioning in the ra formulation to solve
+    the equations of constrained multibody dynamics,” In ASME 2023 International Design Engineering
+    Technical Conference and Computer and Information in Engineering Conference, Vol. 10, American
+    Society of Mechanical Engineers.
+
+[6] Taves, J., Kissel, A., and Negrut, D., 2021,         Software and models for the r −
+    A formulation https://github.com/uwsbel/public-metadata/tree/master/2021/ASME/
+    rA-formulation Simulation-Based Engineering Laboratory, University of Wisconsin-Madison.
+

@@ -1,0 +1,179 @@
+{
+  "date_checked": "2026-06-21",
+  "evidence_policy": {
+    "browser_search_absence_is_global_absence_proof": false,
+    "no_positive_query_result_action": "retain_oc6_open_no_positive_source_equivalent_artifact",
+    "not_reproducible_rows_are_source_policy_closed": false,
+    "unrelated_publication_refs_are_source_code_artifacts": false
+  },
+  "forbidden_execution_flags": {
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "source_policy_execution_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "global_absence_proved": false,
+  "positive_public_code_artifact_rows": 0,
+  "prior_latest_external_probe_marker": "2026-06-21/9/0/0/4/False/False",
+  "prior_oc6_readiness_status": "oc6_reopen_conditions_monitored_no_positive_source_equivalent_artifact",
+  "query_count": 10,
+  "read_only": true,
+  "reopen_conditions": {
+    "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+    "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+  },
+  "rows": [
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups\"",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups\" GitHub",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"10.1007/s11044-026-10153-w\" GitHub",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "non_source_result_example": "https://arxiv.org/abs/1112.6037",
+      "observation": "available_search_interface_returned_only_unrelated_publication_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "time finite element Lie groups index-3 DAE friction Chaturvedi Sandu Sandu",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "site:github.com \"time finite element\" \"Lie groups\"",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"Solving a system of ordinary differential equations via velocity partitioning and Lie group\"",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"A. Kissel\" \"L. Bakke\" \"D. Negrut\" velocity partitioning",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"DETC2023-116950\" \"velocity partitioning\"",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "non_source_result_example": "https://arxiv.org/abs/1205.6697",
+      "observation": "available_search_interface_returned_only_unrelated_publication_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "\"velocity partitioning\" Negrut",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "accepted_use": "reopen_monitoring_only_not_source_policy_evidence",
+      "access_limited": false,
+      "interface": "browser_web_search",
+      "observation": "available_search_interface_returned_no_positive_source_code_refs",
+      "positive_public_code_artifact_found": false,
+      "query": "site:github.com \"velocity partitioning\" \"Negrut\"",
+      "source_code_equivalent_artifact_found": false,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ],
+  "schema": "oc6-external-source-artifact-recheck-20260621-v1",
+  "source_code_equivalent_artifact_rows": 0,
+  "source_policy_closed": false,
+  "source_policy_reopen_triggered": false,
+  "source_policy_rows_closed_by_recheck": 0,
+  "status": "no_positive_external_source_artifact_found_reopen_conditions_remain_open",
+  "submission_ready": false,
+  "suite_count": 2,
+  "suite_summaries": [
+    {
+      "positive_public_code_artifact_rows": 0,
+      "query_count": 5,
+      "source_code_equivalent_artifact_rows": 0,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "positive_public_code_artifact_rows": 0,
+      "query_count": 5,
+      "source_code_equivalent_artifact_rows": 0,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed_by_recheck": 0,
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ],
+  "supplemental_to": [
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json",
+    "OC6_SOURCE_EQUIVALENT_REOPEN_READINESS_AUDIT_20260620.json"
+  ]
+}

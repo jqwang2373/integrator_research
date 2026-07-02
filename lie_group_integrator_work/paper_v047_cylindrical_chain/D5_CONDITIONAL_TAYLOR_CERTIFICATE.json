@@ -1,0 +1,4765 @@
+{
+  "anti_overclaim": {
+    "assumes_not_proves_five_open_primitives": true,
+    "conditional_templates_not_additive_proof_evidence": true,
+    "conditional_templates_not_spliced_with_direct_pc2_bridge": true,
+    "direct_pc2_bridge_does_not_close_primitive_route": true,
+    "does_not_certify_actual_taylor_bounds": true,
+    "does_not_close_pc2": true,
+    "does_not_close_proof_gap": true,
+    "does_not_mark_submission_ready": true,
+    "finite_sum_constant_is_conditional_only": true,
+    "finite_sum_not_inverse_projection_from_aggregate_residual": true,
+    "primitive_route_requires_five_lifts_and_redone_chain": true
+  },
+  "conditional_certificate_only": true,
+  "conditional_terms": [
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 24,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 24,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 24,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 24,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 25,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 25,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 25,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 25,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 26,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 26,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 26,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 26,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 27,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 27,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 27,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 27,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 27,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 28,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 28,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 28,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 28,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 28,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 29,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 29,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 29,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 29,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 29,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 30,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 30,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 30,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 30,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 31,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 31,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 31,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 31,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 32,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 32,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 32,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 32,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 33,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 33,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 33,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 33,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 33,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 34,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 34,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 34,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 34,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 34,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 35,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 35,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 35,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 35,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 35,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 0,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 68,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 68,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 68,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 68,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 69,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 69,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 69,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 69,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 70,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 70,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 70,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 70,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 71,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 71,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 71,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 71,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 71,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 72,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 72,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 72,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 72,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 72,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 73,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 73,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 73,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 73,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 73,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 74,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 74,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 74,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 74,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 75,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 75,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 75,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 75,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 76,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 76,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 76,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 76,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 77,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 77,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 77,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 77,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 77,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 78,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 78,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 78,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 78,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 78,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 79,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 79,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 79,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 79,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 79,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 1,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 112,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 112,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 112,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 112,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 113,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 113,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 113,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 113,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 114,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 114,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 114,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 114,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 115,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 115,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 115,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 115,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 115,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 116,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 116,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 116,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 116,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 116,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 117,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 117,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 117,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 117,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 117,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 118,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 118,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 118,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 118,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 119,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 119,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 119,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 119,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 120,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 120,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_external_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 120,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_multiplier_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 120,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "T_friction_force_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 121,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 121,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 121,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 121,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 121,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 122,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 122,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 122,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 122,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 122,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 123,
+      "open_obligations_assumed": [
+        "P_acceleration_lift"
+      ],
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_angular_acceleration_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 123,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_gyroscopic_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_gyroscopic_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 123,
+      "open_obligations_assumed": [
+        "P_state_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_external_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 123,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_multiplier_torque_lift",
+      "unknown_obligations": []
+    },
+    {
+      "actual_taylor_bound_proved": false,
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "conditional_bound_if_open_primitives_assumed": true,
+      "global_row": 123,
+      "open_obligations_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "proved_obligations": [
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "required_bound": "O(h^7)",
+      "stage": 2,
+      "term_id": "R_friction_torque_lift",
+      "unknown_obligations": []
+    }
+  ],
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-primitive-obligation-implication",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-primitive-obligation-implication}",
+      "\\label{cor:d5-p-acc-row-bound-under-pacc}",
+      "\\label{cor:d5-smooth-force-row-bound-under-lifts}",
+      "Assume the five remaining primitive obligations",
+      "every D5 Taylor subterm",
+      "The four Taylor templates are",
+      "The conditional row-level acceleration version is",
+      "row-level smooth force/torque/friction corollary then bounds the 72 smooth-map",
+      "The conditional row-level smooth-map version is",
+      "covers exactly the 72 external-force, friction-force, external-torque, and friction-torque",
+      "does not turn the D4 direct-route smoothness certificate into a primitive-rate proof",
+      "does not use the D4 direct-route smoothness certificate as a",
+      "with zero Taylor remainder",
+      "does not prove PA2 or the unweighted acceleration",
+      "finite dependency certificate, not a generic smoothness assertion",
+      "36\\ \\text{acceleration lift}",
+      "72\\ \\text{smooth force/torque/friction lift}",
+      "dependency graph is acyclic in the separate route",
+      "every primitive subterm has an assigned template and primitive-input set",
+      "not a projection of the accepted \\(132\\)-row direct residual estimate",
+      "Taylor's formula with integral remainder",
+      "\\int_0^1 DF",
+      "\\int_0^1 DA",
+      "\\widehat\\omega\\times J\\widehat\\omega-\\omega\\times J\\omega",
+      "C_{\\mathrm{D5},r}h^7",
+      "finite primitive-row summation is the only aggregation step",
+      "not an inverse projection from the aggregate 132-row residual estimate",
+      "does not close the primitive-and-Taylor route to PC2",
+      "not additive proof evidence",
+      "conditional templates cannot be spliced",
+      "Reference-proof boundary for the primitive Taylor route",
+      "but it supplies no primitive FullVA lift estimate",
+      "not a borrowed Taylor local-error theorem",
+      "FullVA-specific finite implication",
+      "the reference paper cannot close the primitive/Taylor status map or supply PC2",
+      "primitive-route theorem would have to prove the five open primitive obligations",
+      "redo the residual-to-root, endpoint, solver, and global-transfer chain"
+    ]
+  },
+  "mismatches": [],
+  "pc2_closed": false,
+  "pc2_closed_scope": "false only for the separate primitive/Taylor PC2 route; active direct PC2 residual-bridge slot is closed separately",
+  "primitive_route_pc2_closed": false,
+  "primitive_route_proof_gap_closed": false,
+  "primitive_route_stage_residual_O_h7_implementation_defect_proved": false,
+  "proof_gap_closed": false,
+  "proof_gap_closed_scope": "false only for the separate primitive/Taylor proof gap; active direct PC2 residual-bridge proof-gap slot is closed separately",
+  "read_only": true,
+  "readiness_boundary": {
+    "conditional_taylor_certificate_scope": "conditional_162_subterm_implication_under_open_primitives_not_actual_taylor_bound_closure",
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ],
+    "narrowed_claim_package_decision_not_made_by_this_certificate": true,
+    "open_primitive_assumptions": [
+      "P_acceleration_lift",
+      "P_geometry_lift",
+      "P_gyroscopic_lift",
+      "P_multiplier_lift",
+      "P_state_lift"
+    ]
+  },
+  "reference_proof_boundary": {
+    "imports_reference_hidden_constraint_estimate": false,
+    "imports_reference_multiplier_recursion": false,
+    "imports_reference_taylor_estimate": false,
+    "primitive_taylor_certificate_role": "fullva_specific_finite_implication_under_open_primitive_inputs",
+    "reference_closes_primitive_taylor_ledger": false,
+    "reference_role": "proof_order_discipline_only",
+    "reference_supplies_pc2": false,
+    "reference_supplies_primitive_fullva_lift_estimate": false
+  },
+  "remaining_gate_scope": {
+    "actual_taylor_bounds_proved": 0,
+    "conditional_templates_not_additive_proof_evidence": true,
+    "conditional_templates_not_spliced_with_direct_pc2_bridge": true,
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ],
+    "narrowed_claim_package_decision_not_made_by_this_certificate": true,
+    "open_primitive_assumption_count": 5,
+    "pc2_closed": false,
+    "proof_gap_closed": false
+  },
+  "remaining_global_submission_boundaries": [
+    "full_source_policy_package_ready",
+    "theorem_level_eta_h_solver_policy_evidence",
+    "closed_residual_to_error_theorem_for_mechanism_rows"
+  ],
+  "route_separation": {
+    "conditional_templates_not_additive_proof_evidence": true,
+    "conditional_templates_not_spliced_with_direct_pc2_bridge": true,
+    "diagnostic_route": "conditional_primitive_taylor_template_library",
+    "direct_pc2_bridge_does_not_close_primitive_route": true,
+    "finite_sum_not_inverse_projection_from_aggregate_residual": true,
+    "finite_sum_row_constant_recorded": true,
+    "load_bearing_route": "direct_132_row_residual_bridge",
+    "primitive_route_must_prove_five_uniform_lift_primitives": true,
+    "primitive_route_must_redo_residual_to_root_endpoint_solver_global_chain": true,
+    "route_separation_scope": "conditional_taylor_templates_are_schema_only_until_their_own_primitive_lifts_and_full_perturbation_chain_close"
+  },
+  "row_certificates": [
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 24,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 25,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 26,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 27,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 28,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 29,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 30,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 31,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 32,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 33,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 34,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 35,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 68,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 69,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 70,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 71,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 72,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 73,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 74,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 75,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 76,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 77,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 78,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 79,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 112,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 113,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 114,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 115,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 116,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 117,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 118,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 119,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "translational_newton_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 4,
+      "expected_term_count": 4,
+      "global_row": 120,
+      "term_count": 4
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 121,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 122,
+      "term_count": 5
+    },
+    {
+      "actual_row_bound_proved": false,
+      "actual_terms_proved": 0,
+      "balance_block": "rotational_euler_balance",
+      "conditional_row_bound_if_open_primitives_assumed": true,
+      "conditional_terms": 5,
+      "expected_term_count": 5,
+      "global_row": 123,
+      "term_count": 5
+    }
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-conditional-taylor-certificate-v1",
+  "source_consistency": {
+    "closure_plan_induced_bounds_proved": 0,
+    "closure_plan_open_primitives": 5,
+    "closure_plan_pc2_closed": false,
+    "closure_plan_schema": "d5-primitive-obligation-closure-plan-v1",
+    "open_gap_open_primitives": 5,
+    "open_gap_pc2_closed": false,
+    "open_gap_schema": "d5-open-primitive-gap-audit-v1",
+    "p_tube_closed": true,
+    "p_tube_pc2_closed": false,
+    "p_tube_schema": "d5-p-tube-constants-audit-v1",
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_rules": 162,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "primitive_reduction_term_bounds_proved": 0,
+    "primitive_reduction_terms": 162,
+    "term_budget_certified_terms": 0,
+    "term_budget_pc2_closed": false,
+    "term_budget_schema": "d5-taylor-term-budget-audit-v1",
+    "term_budget_terms": 162
+  },
+  "stage_residual_O_h7_implementation_defect_proved": false,
+  "stage_residual_O_h7_implementation_defect_proved_scope": "not proved by this separate primitive/Taylor certificate; active theorem residual input is proved by the direct 96+36 bridge",
+  "status": "conditional_taylor_certificate_recorded_primitive_taylor_pc2_open",
+  "strict_taylor_template_library": {
+    "acceleration_lift": {
+      "bound": "||L(Ahat)-L(A)|| <= C_acc ||delta A|| = O(h^7) under P_acceleration_lift",
+      "formula": "L(Ahat)-L(A)=m_b delta a or J_b delta alpha",
+      "primitive_inputs": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "template_kind": "exact_linear_no_remainder",
+      "term_ids": [
+        "T_acceleration_lift",
+        "R_angular_acceleration_lift"
+      ],
+      "term_rows": 36,
+      "uses_direct_substitution": false
+    },
+    "gyroscopic_bilinear_lift": {
+      "bound": "||delta(omega x J omega)|| <= C_gyro ||delta omega|| = O(h^7) under P_state_lift",
+      "formula": "what x J what - w x J w = delta w x J what + w x J delta w",
+      "primitive_inputs": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "template_kind": "exact_bilinear_difference",
+      "term_ids": [
+        "R_gyroscopic_lift"
+      ],
+      "term_rows": 18,
+      "uses_direct_substitution": false
+    },
+    "multiplier_geometry_lift": {
+      "bound": "||delta(A^T lambda)|| <= C_A (||delta q||+||delta lambda||) = O(h^7) under P_state_lift and P_multiplier_lift",
+      "formula": "A(qhat)^T lambdahat-A(q)^T lambda=A(q)^T delta lambda+(int_0^1 DA(q+theta delta q)[delta q] dtheta)^T lambdahat",
+      "primitive_inputs": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "template_kind": "product_taylor_mean_value",
+      "term_ids": [
+        "T_multiplier_force_lift",
+        "R_multiplier_torque_lift"
+      ],
+      "term_rows": 36,
+      "uses_direct_substitution": false
+    },
+    "smooth_force_torque_lift": {
+      "bound": "||F(zhat)-F(z)|| <= L_F ||delta z|| = O(h^7) under P_state_lift and, where present, P_multiplier_lift",
+      "formula": "F(zhat)-F(z)=int_0^1 DF(z+theta delta z) delta z dtheta",
+      "primitive_inputs": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "template_kind": "first_order_taylor_integral_remainder",
+      "term_ids": [
+        "T_external_force_lift",
+        "T_friction_force_lift",
+        "R_external_torque_lift",
+        "R_friction_torque_lift"
+      ],
+      "term_rows": 72,
+      "uses_direct_substitution": false
+    }
+  },
+  "strict_taylor_template_status": {
+    "all_templates_are_taylor_or_exact_linear": true,
+    "finite_probe_used_as_proof": false,
+    "template_count": 4,
+    "template_rows": {
+      "acceleration_lift": 36,
+      "gyroscopic_bilinear_lift": 18,
+      "multiplier_geometry_lift": 36,
+      "smooth_force_torque_lift": 72
+    },
+    "template_rows_sum": 162,
+    "uses_direct_substitution": false,
+    "uses_residual_to_error_promotion": false
+  },
+  "submission_ready": false,
+  "submission_ready_scope": "d5_conditional_taylor_global_boundary_not_narrowed_claim_package_decision",
+  "summary": {
+    "actual_dynamic_rows_proved": 0,
+    "actual_taylor_bounds_proved": 0,
+    "conditional_dynamic_rows_under_open_primitive_assumptions": 36,
+    "conditional_term_bounds_under_open_primitive_assumptions": 162,
+    "dynamic_rows": 36,
+    "mismatch_count": 0,
+    "open_primitive_assumption_count": 5,
+    "primitive_obligation_usage": {
+      "P_acceleration_lift": 36,
+      "P_geometry_lift": 36,
+      "P_gyroscopic_lift": 18,
+      "P_multiplier_lift": 72,
+      "P_state_lift": 126,
+      "P_uniform_tube_constants": 162
+    },
+    "proved_primitive_count": 1,
+    "reduction_group_usage": {
+      "acceleration_lift": 36,
+      "gyroscopic_bilinear_lift": 18,
+      "multiplier_geometry_lift": 36,
+      "smooth_force_torque_lift": 72
+    },
+    "strict_taylor_templates_recorded": 4,
+    "term_rows": 162
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "claim": "Local Gauss6 FullVA has higher observed velocity order on all four VP-coordinate comparison rows. VP coordinate partitioning wins three finest-step velocity-error rows on this grid. The larger-step diagnostic keeps the same order conclusion but also keeps the boundary that local does not win every finest-step error row.",
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "h_values_coarse_to_fine": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "large_step_comparable_examples": 4,
+  "large_step_local_finest_velocity_error_wins": 1,
+  "large_step_local_velocity_order_wins": 4,
+  "local_velocity_order_wins": 4,
+  "row_count": 4,
+  "schema": "vp-coordinate-partitioning-order-audit-v1",
+  "vp_finest_velocity_error_wins": 3,
+  "vp_floor_dominated_error_wins": 3
+}

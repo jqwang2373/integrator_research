@@ -1,0 +1,9 @@
+{
+  "alias_method": "vp2024_lie_group_ode_partitioning",
+  "alias_resolved": true,
+  "claim": "The VP Lie-group ODE partitioning label is resolved as the same method already implemented as vp2024_coordinate_partitioning_rA. This does not create a new independent comparison row; it removes the duplicate unresolved VP gate.",
+  "distinct_unresolved_vp_method_remaining": false,
+  "implemented_method": "vp2024_coordinate_partitioning_rA",
+  "row_count": 3,
+  "schema": "vp-method-identity-audit-v1"
+}

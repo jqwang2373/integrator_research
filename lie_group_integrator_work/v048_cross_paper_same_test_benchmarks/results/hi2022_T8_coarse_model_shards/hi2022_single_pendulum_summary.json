@@ -1,0 +1,76 @@
+{
+  "full_hi2022_campaign_completed": false,
+  "groups": {
+    "rA:single_pendulum": {
+      "acc_final_linf_order": 0.7630865310183514,
+      "completed": false,
+      "ok_row_count": 3,
+      "planned_row_count": 0,
+      "pos_final_linf_order": -0.212962907710791,
+      "reference_execution_path": "public_run_function",
+      "reference_mode": "kinematics",
+      "reference_policy": "bounded_rA_kinematics_reference",
+      "reference_runtime_sec": 6.365466726012528,
+      "reference_status": "ok",
+      "row_count": 3,
+      "selected_step_trio_completed": true,
+      "step_sizes": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "vel_final_linf_order": 1.0040874919720273
+    },
+    "rA_half:single_pendulum": {
+      "acc_final_linf_order": 0.7630865313157601,
+      "completed": false,
+      "ok_row_count": 3,
+      "planned_row_count": 0,
+      "pos_final_linf_order": -0.24271341358511686,
+      "reference_execution_path": "public_run_function",
+      "reference_mode": "kinematics",
+      "reference_policy": "bounded_rA_kinematics_reference",
+      "reference_runtime_sec": 6.365466726012528,
+      "reference_status": "ok",
+      "row_count": 3,
+      "selected_step_trio_completed": true,
+      "step_sizes": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "vel_final_linf_order": 1.0040874919717873
+    }
+  },
+  "ok_row_count": 6,
+  "planned_row_count": 0,
+  "policy": "hi2022_bounded_four_example_pilot_not_full_campaign",
+  "row_count": 6,
+  "run_mode": "hi2022_bounded_four_example_pilot_model_shard",
+  "run_public_code": true,
+  "runtime_patches": [
+    "SimEngineMBD.rA.gcons_ra",
+    "SimEngineMBD.rA_half.gcons_ra_half"
+  ],
+  "selected_forms": [
+    "rA",
+    "rA_half"
+  ],
+  "selected_groups": [
+    "rA:single_pendulum",
+    "rA_half:single_pendulum"
+  ],
+  "selected_models": [
+    "single_pendulum"
+  ],
+  "selected_reference_h": 0.0125,
+  "selected_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "selected_step_trio_group_count": 2,
+  "selected_step_trio_required_group_count": 2,
+  "selected_t_end": 8.0,
+  "tolerance_base": 1e-10
+}

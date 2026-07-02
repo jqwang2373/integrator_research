@@ -1,0 +1,1229 @@
+{
+  "closure_rule": {
+    "all_rows_must_be_closed_or_demoted": true,
+    "b2_can_close_now": false,
+    "b4_can_close_now": false,
+    "reason": "All 15 flagged source-policy rows are row-level open. The fixed-grid common-reference arithmetic is useful diagnostic evidence, but no row can support an external-superiority claim until its required evidence is supplied or its suite is explicitly demoted.",
+    "row_demotions_must_be_stated_in_manuscript": true
+  },
+  "common_reference_claim_allowed": true,
+  "comparison_matrix_closed": true,
+  "coverage": {
+    "action_counts": {
+      "choose_full_T8_public_policy_or_demote": 3,
+      "demote_until_velocity_partitioning_code_path_resolved": 3,
+      "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime": 5,
+      "resolve_tfe_runner_friction_endpoint_then_rerun_or_demote": 4
+    },
+    "all_four_examples_covered": true,
+    "flagged_by_example": {
+      "double_pendulum": 2,
+      "four_link": 4,
+      "single_pendulum": 8,
+      "slider_crank": 1
+    },
+    "flagged_by_suite": {
+      "hi2022_half_implicit": 3,
+      "ra2021_absolute_coordinate": 5,
+      "tfe2026_original_pendulum": 4,
+      "vp2024_velocity_partitioning": 3
+    },
+    "flagged_examples": [
+      "double_pendulum",
+      "four_link",
+      "single_pendulum",
+      "slider_crank"
+    ],
+    "flagged_row_count": 15,
+    "rows_external_superiority_ready": 0,
+    "rows_source_policy_closed": 0
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "parallel_ready_shards_without_default_1e_4": 20,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim": false,
+  "rows": [
+    {
+      "action_class": "choose_full_T8_public_policy_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch"
+        ],
+        "finest_position_error": 8.773097803782548e-09,
+        "finest_velocity_error": 0.1970422879518936,
+        "source_policy_risks": [
+          "bounded_pilot_not_full_T8_public_policy",
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "state_velocity_output_mapping_requires_recheck"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 1.015449537603277
+      },
+      "display_action": "choose_full_T8_public_policy_or_demote",
+      "example": "four_link",
+      "method": "hi2022_rA",
+      "missing_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": null,
+      "priority": 3,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "hi2022_halfimplicit_full_policy_decision",
+        "can_parallelize": true,
+        "next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim",
+        "parallel_shard_count": 8,
+        "queue_status": "parallel_ready_after_policy_selection",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "choose_full_T8_public_policy_or_explicitly_demote_hi2022_four_link_before_external_superiority",
+      "required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "resolved_evidence": [],
+      "resolved_evidence_count": 0,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "hi2022_double_pendulum_open_loop_convergence",
+          "hi2022_four_link_closed_loop_convergence",
+          "hi2022_slider_crank_closed_loop_convergence",
+          "hi2022_double_pendulum_energy",
+          "hi2022_timing_iterations",
+          "hi2022_n_pendulum_scaling",
+          "hi2022_slider_crank_friction"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "action_class": "choose_full_T8_public_policy_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "negative_order_large_error_fixed_grid_or_form_mismatch"
+        ],
+        "finest_position_error": 0.16399844706161448,
+        "finest_velocity_error": 2.969954502545404,
+        "source_policy_risks": [
+          "bounded_pilot_not_full_T8_public_policy",
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "state_velocity_output_mapping_requires_recheck"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": -0.7989948361784505
+      },
+      "display_action": "choose_full_T8_public_policy_or_demote",
+      "example": "double_pendulum",
+      "method": "hi2022_rA_half",
+      "missing_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": null,
+      "priority": 3,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "hi2022_halfimplicit_full_policy_decision",
+        "can_parallelize": true,
+        "next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim",
+        "parallel_shard_count": 8,
+        "queue_status": "parallel_ready_after_policy_selection",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "choose_full_T8_public_policy_or_explicitly_demote_hi2022_double_pendulum_before_external_superiority",
+      "required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "resolved_evidence": [],
+      "resolved_evidence_count": 0,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "hi2022_double_pendulum_open_loop_convergence",
+          "hi2022_four_link_closed_loop_convergence",
+          "hi2022_slider_crank_closed_loop_convergence",
+          "hi2022_double_pendulum_energy",
+          "hi2022_timing_iterations",
+          "hi2022_n_pendulum_scaling",
+          "hi2022_slider_crank_friction"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "action_class": "choose_full_T8_public_policy_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch"
+        ],
+        "finest_position_error": 8.772638171450353e-09,
+        "finest_velocity_error": 0.19704228794818812,
+        "source_policy_risks": [
+          "bounded_pilot_not_full_T8_public_policy",
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "state_velocity_output_mapping_requires_recheck"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 1.589647783732383
+      },
+      "display_action": "choose_full_T8_public_policy_or_demote",
+      "example": "four_link",
+      "method": "hi2022_rA_half",
+      "missing_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": null,
+      "priority": 3,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "hi2022_halfimplicit_full_policy_decision",
+        "can_parallelize": true,
+        "next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim",
+        "parallel_shard_count": 8,
+        "queue_status": "parallel_ready_after_policy_selection",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "choose_full_T8_public_policy_or_explicitly_demote_hi2022_four_link_before_external_superiority",
+      "required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "resolved_evidence": [],
+      "resolved_evidence_count": 0,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "hi2022_double_pendulum_open_loop_convergence",
+          "hi2022_four_link_closed_loop_convergence",
+          "hi2022_slider_crank_closed_loop_convergence",
+          "hi2022_double_pendulum_energy",
+          "hi2022_timing_iterations",
+          "hi2022_n_pendulum_scaling",
+          "hi2022_slider_crank_friction"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "hi2022_half_implicit"
+    },
+    {
+      "action_class": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 1.0449974229687651e-10,
+        "finest_velocity_error": 13.048835859820088,
+        "source_policy_risks": [
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "source_helpers_use_linspace_0_T_int_T_over_h_convention",
+          "local_Gauss6_FullVA_source_policy_promotion_open",
+          "error_norm_runtime_Newton_policy_binding_open",
+          "rerun_or_independent_verification_artifact_missing"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 0.6168510882974088
+      },
+      "display_action": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "example": "single_pendulum",
+      "method": "ra2021_rA",
+      "missing_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "missing_evidence_count": 4,
+      "post_public_code_disposition": null,
+      "priority": 1,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "ra2021_coarse_same_window_order_time",
+        "can_parallelize": true,
+        "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+        "parallel_shard_count": 12,
+        "queue_status": "parallel_ready_existing_interfaces",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "rerun_or_verify_ra2021_single_pendulum_under_declared_same_test_policy_with_state_velocity_mapping_time_grid_norm_and_runtime",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "ra2021_single_pendulum_order",
+          "ra2021_four_link_order",
+          "ra2021_slider_crank_order",
+          "ra2021_single_pendulum_timing_iterations",
+          "ra2021_double_pendulum_timing_iterations",
+          "ra2021_four_link_timing_iterations",
+          "ra2021_slider_crank_timing_iterations"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "action_class": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch"
+        ],
+        "finest_position_error": 1.0859859678191697e-08,
+        "finest_velocity_error": 0.19704229997398626,
+        "source_policy_risks": [
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "source_helpers_use_linspace_0_T_int_T_over_h_convention",
+          "local_Gauss6_FullVA_source_policy_promotion_open",
+          "error_norm_runtime_Newton_policy_binding_open",
+          "rerun_or_independent_verification_artifact_missing"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 1.0154496752651214
+      },
+      "display_action": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "example": "four_link",
+      "method": "ra2021_rA",
+      "missing_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "missing_evidence_count": 4,
+      "post_public_code_disposition": null,
+      "priority": 1,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "ra2021_coarse_same_window_order_time",
+        "can_parallelize": true,
+        "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+        "parallel_shard_count": 12,
+        "queue_status": "parallel_ready_existing_interfaces",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "rerun_or_verify_ra2021_four_link_under_declared_same_test_policy_with_state_velocity_mapping_time_grid_norm_and_runtime",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "ra2021_single_pendulum_order",
+          "ra2021_four_link_order",
+          "ra2021_slider_crank_order",
+          "ra2021_single_pendulum_timing_iterations",
+          "ra2021_double_pendulum_timing_iterations",
+          "ra2021_four_link_timing_iterations",
+          "ra2021_slider_crank_timing_iterations"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "action_class": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 6.609660352030609e-14,
+        "finest_velocity_error": 13.048835859331048,
+        "source_policy_risks": [
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "source_helpers_use_linspace_0_T_int_T_over_h_convention",
+          "local_Gauss6_FullVA_source_policy_promotion_open",
+          "error_norm_runtime_Newton_policy_binding_open",
+          "rerun_or_independent_verification_artifact_missing"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 0.6168510900491304
+      },
+      "display_action": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "example": "single_pendulum",
+      "method": "ra2021_reps",
+      "missing_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "missing_evidence_count": 4,
+      "post_public_code_disposition": null,
+      "priority": 1,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "ra2021_coarse_same_window_order_time",
+        "can_parallelize": true,
+        "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+        "parallel_shard_count": 12,
+        "queue_status": "parallel_ready_existing_interfaces",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "rerun_or_verify_ra2021_single_pendulum_under_declared_same_test_policy_with_state_velocity_mapping_time_grid_norm_and_runtime",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "ra2021_single_pendulum_order",
+          "ra2021_four_link_order",
+          "ra2021_slider_crank_order",
+          "ra2021_single_pendulum_timing_iterations",
+          "ra2021_double_pendulum_timing_iterations",
+          "ra2021_four_link_timing_iterations",
+          "ra2021_slider_crank_timing_iterations"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "action_class": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 1.1137700720795299e-14,
+        "finest_velocity_error": 14.98997809311229,
+        "source_policy_risks": [
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "source_helpers_use_linspace_0_T_int_T_over_h_convention",
+          "local_Gauss6_FullVA_source_policy_promotion_open",
+          "error_norm_runtime_Newton_policy_binding_open",
+          "rerun_or_independent_verification_artifact_missing"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 0.5168125044779709
+      },
+      "display_action": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "example": "single_pendulum",
+      "method": "ra2021_rp",
+      "missing_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "missing_evidence_count": 4,
+      "post_public_code_disposition": null,
+      "priority": 1,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "ra2021_coarse_same_window_order_time",
+        "can_parallelize": true,
+        "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+        "parallel_shard_count": 12,
+        "queue_status": "parallel_ready_existing_interfaces",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "rerun_or_verify_ra2021_single_pendulum_under_declared_same_test_policy_with_state_velocity_mapping_time_grid_norm_and_runtime",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "ra2021_single_pendulum_order",
+          "ra2021_four_link_order",
+          "ra2021_slider_crank_order",
+          "ra2021_single_pendulum_timing_iterations",
+          "ra2021_double_pendulum_timing_iterations",
+          "ra2021_four_link_timing_iterations",
+          "ra2021_slider_crank_timing_iterations"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "action_class": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "diagnostic_common_reference_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "low_order_but_small_error_needs_wider_step_window"
+        ],
+        "finest_position_error": 0.0054493531595405376,
+        "finest_velocity_error": 5.240982609822607e-05,
+        "source_policy_risks": [
+          "public_code_setup_retained_but_common_reference_fixed_grid_replay",
+          "source_helpers_use_linspace_0_T_int_T_over_h_convention",
+          "local_Gauss6_FullVA_source_policy_promotion_open",
+          "error_norm_runtime_Newton_policy_binding_open",
+          "rerun_or_independent_verification_artifact_missing"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 0.3613896450646621
+      },
+      "display_action": "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime",
+      "example": "double_pendulum",
+      "method": "ra2021_rp",
+      "missing_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "missing_evidence_count": 4,
+      "post_public_code_disposition": null,
+      "priority": 1,
+      "public_code_recheck_status": null,
+      "queue": {
+        "batch_id": "ra2021_coarse_same_window_order_time",
+        "can_parallelize": true,
+        "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+        "parallel_shard_count": 12,
+        "queue_status": "parallel_ready_existing_interfaces",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "rerun_or_verify_ra2021_double_pendulum_under_declared_same_test_policy_with_state_velocity_mapping_time_grid_norm_and_runtime",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "ra2021_single_pendulum_order",
+          "ra2021_four_link_order",
+          "ra2021_slider_crank_order",
+          "ra2021_single_pendulum_timing_iterations",
+          "ra2021_double_pendulum_timing_iterations",
+          "ra2021_four_link_timing_iterations",
+          "ra2021_slider_crank_timing_iterations"
+        ],
+        "not_run_count": 7
+      },
+      "source_policy_closed": false,
+      "suite": "ra2021_absolute_coordinate"
+    },
+    {
+      "action_class": "resolve_tfe_runner_friction_endpoint_then_rerun_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 1.0457013043656772e-10,
+        "finest_velocity_error": 14.790935093291326,
+        "source_policy_risks": [
+          "source_policy_DAE_runner_equivalence_open",
+          "brown_mcphee_source_code_equivalent_law_open",
+          "full_T10_endpoint_policy_open",
+          "accepted_source_policy_work_rows_not_bound"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 0.9007970954347223
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "single_pendulum",
+      "method": "tfe2026_Newmark_beta",
+      "missing_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 2,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "tfe2026_original_pendulum_encoding",
+        "can_parallelize": false,
+        "next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_source_setup_encoding_required",
+        "source_policy_1e_4_required": "unknown_until_source_policy_encoded"
+      },
+      "required_closure_action": "encode_original_tfe_pendulum_setup_error_norm_friction_law_output_policy_then_rerun_or_demote",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "resolved_evidence": [
+        "source pendulum body/setup parameters encoded by TFE_SOURCE_POLICY_SPEC.json and TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+        "source coordinate/velocity output and error norm policy encoded",
+        "full T=10 h_ref=1e-4 source-reference feasibility probe completed without promoting rows"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [
+          "pendulum setup and source-paper error norm still need to be encoded",
+          "friction law and source-paper output policy still need to be encoded"
+        ],
+        "case_count": 2,
+        "case_ids": [
+          "tfe2026_rigid_pendulum_no_friction",
+          "tfe2026_rigid_pendulum_with_friction"
+        ],
+        "not_run_count": 2
+      },
+      "source_policy_closed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "action_class": "resolve_tfe_runner_friction_endpoint_then_rerun_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 1.0456990838229744e-10,
+        "finest_velocity_error": 14.982446288217862,
+        "source_policy_risks": [
+          "source_policy_DAE_runner_equivalence_open",
+          "brown_mcphee_source_code_equivalent_law_open",
+          "full_T10_endpoint_policy_open",
+          "accepted_source_policy_work_rows_not_bound"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 1.0208211940993241
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "single_pendulum",
+      "method": "tfe2026_TFE_m1",
+      "missing_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 2,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "tfe2026_original_pendulum_encoding",
+        "can_parallelize": false,
+        "next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_source_setup_encoding_required",
+        "source_policy_1e_4_required": "unknown_until_source_policy_encoded"
+      },
+      "required_closure_action": "encode_original_tfe_pendulum_setup_error_norm_friction_law_output_policy_then_rerun_or_demote",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "resolved_evidence": [
+        "source pendulum body/setup parameters encoded by TFE_SOURCE_POLICY_SPEC.json and TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+        "source coordinate/velocity output and error norm policy encoded",
+        "full T=10 h_ref=1e-4 source-reference feasibility probe completed without promoting rows"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [
+          "pendulum setup and source-paper error norm still need to be encoded",
+          "friction law and source-paper output policy still need to be encoded"
+        ],
+        "case_count": 2,
+        "case_ids": [
+          "tfe2026_rigid_pendulum_no_friction",
+          "tfe2026_rigid_pendulum_with_friction"
+        ],
+        "not_run_count": 2
+      },
+      "source_policy_closed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "action_class": "resolve_tfe_runner_friction_endpoint_then_rerun_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 1.0456990837310336e-10,
+        "finest_velocity_error": 110.22022919229548,
+        "source_policy_risks": [
+          "source_policy_DAE_runner_equivalence_open",
+          "brown_mcphee_source_code_equivalent_law_open",
+          "full_T10_endpoint_policy_open",
+          "accepted_source_policy_work_rows_not_bound"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 0.0537298177876258
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "single_pendulum",
+      "method": "tfe2026_TFE_m2",
+      "missing_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 2,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "tfe2026_original_pendulum_encoding",
+        "can_parallelize": false,
+        "next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_source_setup_encoding_required",
+        "source_policy_1e_4_required": "unknown_until_source_policy_encoded"
+      },
+      "required_closure_action": "encode_original_tfe_pendulum_setup_error_norm_friction_law_output_policy_then_rerun_or_demote",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "resolved_evidence": [
+        "source pendulum body/setup parameters encoded by TFE_SOURCE_POLICY_SPEC.json and TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+        "source coordinate/velocity output and error norm policy encoded",
+        "full T=10 h_ref=1e-4 source-reference feasibility probe completed without promoting rows"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [
+          "pendulum setup and source-paper error norm still need to be encoded",
+          "friction law and source-paper output policy still need to be encoded"
+        ],
+        "case_count": 2,
+        "case_ids": [
+          "tfe2026_rigid_pendulum_no_friction",
+          "tfe2026_rigid_pendulum_with_friction"
+        ],
+        "not_run_count": 2
+      },
+      "source_policy_closed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "action_class": "resolve_tfe_runner_friction_endpoint_then_rerun_or_demote",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "position_aligned_velocity_mismatch",
+          "single_pendulum_velocity_output_policy_suspect"
+        ],
+        "finest_position_error": 1.0457013043656772e-10,
+        "finest_velocity_error": 14.982640405168288,
+        "source_policy_risks": [
+          "source_policy_DAE_runner_equivalence_open",
+          "brown_mcphee_source_code_equivalent_law_open",
+          "full_T10_endpoint_policy_open",
+          "accepted_source_policy_work_rows_not_bound"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 1.024464124340307
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "single_pendulum",
+      "method": "tfe2026_trapezoidal",
+      "missing_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 2,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "tfe2026_original_pendulum_encoding",
+        "can_parallelize": false,
+        "next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_source_setup_encoding_required",
+        "source_policy_1e_4_required": "unknown_until_source_policy_encoded"
+      },
+      "required_closure_action": "encode_original_tfe_pendulum_setup_error_norm_friction_law_output_policy_then_rerun_or_demote",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "resolved_evidence": [
+        "source pendulum body/setup parameters encoded by TFE_SOURCE_POLICY_SPEC.json and TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+        "source coordinate/velocity output and error norm policy encoded",
+        "full T=10 h_ref=1e-4 source-reference feasibility probe completed without promoting rows"
+      ],
+      "resolved_evidence_count": 3,
+      "source_case_status": {
+        "blockers": [
+          "pendulum setup and source-paper error norm still need to be encoded",
+          "friction law and source-paper output policy still need to be encoded"
+        ],
+        "case_count": 2,
+        "case_ids": [
+          "tfe2026_rigid_pendulum_no_friction",
+          "tfe2026_rigid_pendulum_with_friction"
+        ],
+        "not_run_count": 2
+      },
+      "source_policy_closed": false,
+      "suite": "tfe2026_original_pendulum"
+    },
+    {
+      "action_class": "demote_until_velocity_partitioning_code_path_resolved",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "near_reference_floor_order_not_identifiable",
+          "low_order_but_small_error_needs_wider_step_window"
+        ],
+        "finest_position_error": 1.0457013043656772e-10,
+        "finest_velocity_error": 3.162803352673932e-11,
+        "source_policy_risks": [
+          "velocity_partitioning_code_path_unresolved",
+          "coordinate_partitioning_proxy_only",
+          "near_reference_floor_can_make_order_unidentifiable",
+          "distinct_public_vp2024_code_path_not_found",
+          "coordinate_partitioning_proxy_not_source_policy_reproduction"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": 6.1493372218877035e-15
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "single_pendulum",
+      "method": "vp2024_coordinate_partitioning_rA",
+      "missing_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 4,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_vp2024_path_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "vp2024_velocity_partitioning_code_resolution",
+        "can_parallelize": false,
+        "next_action": "resolve public code path or explicitly demote this suite from the external-superiority claim",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_code_path_unresolved",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "resolve_velocity_partitioning_code_path_or_demote_vp2024_suite",
+      "required_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "resolved_evidence": [],
+      "resolved_evidence_count": 0,
+      "source_case_status": {
+        "blockers": [
+          "paper and open-source-code claim found; no distinct velocity-partitioning directory located in the local sbel-reproducibility or public-metadata origin/master or origin/user/aaron/msd trees, or by the public web search"
+        ],
+        "case_count": 1,
+        "case_ids": [
+          "vp2024_velocity_partitioning_code_resolution"
+        ],
+        "not_run_count": 1
+      },
+      "source_policy_closed": false,
+      "suite": "vp2024_velocity_partitioning"
+    },
+    {
+      "action_class": "demote_until_velocity_partitioning_code_path_resolved",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "near_reference_floor_order_not_identifiable",
+          "low_order_but_small_error_needs_wider_step_window"
+        ],
+        "finest_position_error": 8.772780724086715e-09,
+        "finest_velocity_error": 1.0874561251483783e-08,
+        "source_policy_risks": [
+          "velocity_partitioning_code_path_unresolved",
+          "coordinate_partitioning_proxy_only",
+          "near_reference_floor_can_make_order_unidentifiable",
+          "distinct_public_vp2024_code_path_not_found",
+          "coordinate_partitioning_proxy_not_source_policy_reproduction"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": -0.0005331508233240909
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "four_link",
+      "method": "vp2024_coordinate_partitioning_rA",
+      "missing_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 4,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_vp2024_path_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "vp2024_velocity_partitioning_code_resolution",
+        "can_parallelize": false,
+        "next_action": "resolve public code path or explicitly demote this suite from the external-superiority claim",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_code_path_unresolved",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "resolve_velocity_partitioning_code_path_or_demote_vp2024_suite",
+      "required_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "resolved_evidence": [],
+      "resolved_evidence_count": 0,
+      "source_case_status": {
+        "blockers": [
+          "paper and open-source-code claim found; no distinct velocity-partitioning directory located in the local sbel-reproducibility or public-metadata origin/master or origin/user/aaron/msd trees, or by the public web search"
+        ],
+        "case_count": 1,
+        "case_ids": [
+          "vp2024_velocity_partitioning_code_resolution"
+        ],
+        "not_run_count": 1
+      },
+      "source_policy_closed": false,
+      "suite": "vp2024_velocity_partitioning"
+    },
+    {
+      "action_class": "demote_until_velocity_partitioning_code_path_resolved",
+      "can_support_external_superiority": false,
+      "current_allowed_use": "attempted_not_reproducible_not_promoted_diagnostic_only",
+      "current_evidence": {
+        "candidate_compared_on_shared_reference_norm": true,
+        "claim_disposition": "diagnostic_only_not_external_superiority_evidence",
+        "common_reference_arithmetic_verified": true,
+        "diagnosis_row_present": true,
+        "diagnostic_categories": [
+          "near_reference_floor_order_not_identifiable",
+          "low_order_but_small_error_needs_wider_step_window"
+        ],
+        "finest_position_error": 3.023802170321055e-07,
+        "finest_velocity_error": 1.331825765504835e-07,
+        "source_policy_risks": [
+          "velocity_partitioning_code_path_unresolved",
+          "coordinate_partitioning_proxy_only",
+          "near_reference_floor_can_make_order_unidentifiable",
+          "distinct_public_vp2024_code_path_not_found",
+          "coordinate_partitioning_proxy_not_source_policy_reproduction"
+        ],
+        "three_coarse_step_sizes_present": true,
+        "velocity_order": -3.25315475197517e-07
+      },
+      "display_action": "attempted_not_reproducible_not_promoted",
+      "example": "slider_crank",
+      "method": "vp2024_coordinate_partitioning_rA",
+      "missing_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "missing_evidence_count": 5,
+      "post_public_code_disposition": "attempted_not_reproducible_not_promoted",
+      "priority": 4,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_vp2024_path_attempted_not_reproducible",
+      "queue": {
+        "batch_id": "vp2024_velocity_partitioning_code_resolution",
+        "can_parallelize": false,
+        "next_action": "resolve public code path or explicitly demote this suite from the external-superiority claim",
+        "parallel_shard_count": 0,
+        "queue_status": "not_ready_code_path_unresolved",
+        "source_policy_1e_4_required": false
+      },
+      "required_closure_action": "resolve_velocity_partitioning_code_path_or_demote_vp2024_suite",
+      "required_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "resolved_evidence": [],
+      "resolved_evidence_count": 0,
+      "source_case_status": {
+        "blockers": [
+          "paper and open-source-code claim found; no distinct velocity-partitioning directory located in the local sbel-reproducibility or public-metadata origin/master or origin/user/aaron/msd trees, or by the public web search"
+        ],
+        "case_count": 1,
+        "case_ids": [
+          "vp2024_velocity_partitioning_code_resolution"
+        ],
+        "not_run_count": 1
+      },
+      "source_policy_closed": false,
+      "suite": "vp2024_velocity_partitioning"
+    }
+  ],
+  "schema": "source-policy-row-closure-ledger-v1",
+  "source_files": {
+    "all_examples_source_policy_audit": "ALL_EXAMPLES_SOURCE_POLICY_AUDIT.json",
+    "cross_paper_cases": "CROSS_PAPER_BENCHMARK_CASES.json",
+    "external_same_test_run_queue": "EXTERNAL_SAME_TEST_RUN_QUEUE.json",
+    "ra2021_source_identity_audit": "RA2021_SOURCE_IDENTITY_AUDIT.json",
+    "source_policy_diagnosis": "EXTERNAL_BASELINE_SOURCE_POLICY_DIAGNOSIS.json",
+    "source_policy_self_reproduction_attempt_audit": "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json",
+    "tfe_public_code_recheck": "TFE_PUBLIC_CODE_RECHECK_20260613.json",
+    "tfe_source_policy_spec": "TFE_SOURCE_POLICY_SPEC.json",
+    "triage": "SOURCE_POLICY_CLOSURE_TRIAGE.json",
+    "vp2024_public_code_recheck": "VP2024_PUBLIC_CODE_RECHECK_20260613.json"
+  },
+  "source_policy_superiority_claim_allowed": false,
+  "status": "row_level_source_policy_closure_open",
+  "submission_ready": false,
+  "suite_closure_status": {
+    "hi2022_half_implicit": {
+      "flagged_rows": 3,
+      "parallel_ready_after_policy_selection": true,
+      "queue_batch": "hi2022_halfimplicit_full_policy_decision",
+      "status": "open_choose_full_T8_policy_or_demote"
+    },
+    "ra2021_absolute_coordinate": {
+      "flagged_rows": 5,
+      "output_mapping_verified_from_source": true,
+      "parallel_ready": true,
+      "queue_batch": "ra2021_coarse_same_window_order_time",
+      "source_identity_resolved_evidence_per_row": 3,
+      "source_identity_status": "source_output_time_grid_policy_extracted_promotion_still_open",
+      "source_policy_promotion_evidence_remaining_per_row": 4,
+      "status": "open_verify_or_rerun_public_rows",
+      "time_grid_policy_extracted_from_source": true
+    },
+    "tfe2026_original_pendulum": {
+      "attempted_not_reproducible_rows": 16,
+      "flagged_rows": 4,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+      "runner_gap": {
+        "absolute_coordinate_dae_residual_smoke_implemented": true,
+        "bounded_candidate_runner_api_implemented": true,
+        "brown_mcphee_friction_law_implemented": false,
+        "candidate_friction_law_encoded": true,
+        "external_superiority_allowed": false,
+        "frictionless_planar_rhs_smoke_implemented": true,
+        "full_T10_coarse_candidate_probe_implemented": true,
+        "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_equivalent": false,
+        "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_implemented": false,
+        "gauss6_fullva_on_source_pendulum_implemented": false,
+        "gauss6_fullva_source_pendulum_candidate_smoke_implemented": true,
+        "gauss6_fullva_source_pendulum_candidate_smoke_source_policy_rows_completed": 0,
+        "newmark_trapezoidal_candidate_runner_smoke_implemented": true,
+        "newmark_trapezoidal_runner_implemented": false,
+        "pendulum_dae_runner_implemented": false,
+        "source_error_norm_and_output_policy_encoded": true,
+        "source_pendulum_parameter_model_implemented": true,
+        "source_policy_rows_completed": 0,
+        "source_policy_spec_extracted": true,
+        "tfe_m1_m2_m3_candidate_runner_smoke_implemented": true,
+        "tfe_m1_m2_m3_runner_implemented": false
+      },
+      "self_reproduction_attempt_status": "nonpublic_code_rows_attempted_not_reproducible_not_promoted",
+      "source_policy_status": "source_policy_extracted_candidate_scaffold_present_source_policy_open",
+      "source_reference_h": 0.0001,
+      "status": "attempted_not_reproducible_not_promoted_source_policy_rows_not_closed"
+    },
+    "vp2024_velocity_partitioning": {
+      "attempted_not_reproducible_rows": 4,
+      "code_path_resolved": false,
+      "flagged_rows": 3,
+      "public_code_recheck_status": "public_code_rechecked_no_distinct_vp2024_path_attempted_not_reproducible",
+      "queue_batch": "vp2024_velocity_partitioning_code_resolution",
+      "self_reproduction_attempt_status": "nonpublic_code_rows_attempted_not_reproducible_not_promoted",
+      "status": "attempted_not_reproducible_not_promoted_no_distinct_public_code_path"
+    }
+  }
+}

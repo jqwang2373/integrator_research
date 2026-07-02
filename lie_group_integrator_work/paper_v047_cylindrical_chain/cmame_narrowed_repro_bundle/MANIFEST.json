@@ -1,0 +1,56 @@
+{
+  "schema": "cmame-narrowed-repro-bundle-manifest-v1",
+  "status": "narrowed_repro_bundle_ready_replay_plus_local_runners_source_policy_open",
+  "scope": "narrowed_claim_only",
+  "entrypoint": "scripts/run_narrowed_repro_bundle.py",
+  "expected_outputs": [
+    "results/narrowed_repro_bundle_report.md",
+    "results/narrowed_repro_bundle_summary.json",
+    "results/narrowed_repro_bundle_summary.md"
+  ],
+  "included_lanes": [
+    "paper_matrix_replay",
+    "p1_single_pendulum_local_runner",
+    "p1_double_pendulum_local_runner",
+    "closed_loop_four_link_slider_crank_replay",
+    "closed_loop_four_link_slider_crank_self_contained_candidate",
+    "local_accepted_runner_companion"
+  ],
+  "source_policy_boundary": {
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_total": 40,
+    "full_source_policy_runner_package_ready": false,
+    "external_superiority_claim_allowed": false
+  },
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "exact_b4_opt_in_required_for_execution": true,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "source_policy_execution_handoff": {
+    "status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+    "execution_authorized": false,
+    "commands_not_run_by_handoff": true,
+    "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "driver_requires_exact_approval": true,
+    "driver_does_not_authorize_execution": true,
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "terminal_unable_to_reproduce_rows": 20
+  },
+  "proof_boundary": {
+    "direct_pc2_proof_gap_closed": true,
+    "symbolic_primitive_lane_closed": false,
+    "submission_ready": false
+  }
+}

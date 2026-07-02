@@ -1,0 +1,16 @@
+{
+  "claim": "TFE(m=3) Gauss-Lobatto is not counted as a required accepted four-example baseline because the original paper validates a single revolute-pendulum setting, explicitly reports DAE order loss for m=3, and the local four-link wrapper gives rejected negative-order evidence rather than convergence.",
+  "failed_example": "four_link",
+  "local_wrapper_partial_rows_run": [
+    "single_pendulum",
+    "double_pendulum",
+    "slider_crank"
+  ],
+  "method": "tfe2026_TFE_m3_GL",
+  "paper_four_link_claim_found": false,
+  "paper_numerical_scope": "single_revolute_pendulum",
+  "required_accepted_matrix_excludes_method": true,
+  "row_count": 4,
+  "schema": "tfe-m3-scope-exclusion-audit-v1",
+  "source_backed_exclusion": true
+}

@@ -1,0 +1,49 @@
+{
+  "acceleration_column_diagnostic": true,
+  "accepted_external_dynamic_order_examples": [],
+  "common_reference_h": 0.0125,
+  "common_reference_method": "v047_exact_kinematic_endpoint",
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "figure": "results/closed_loop_true_dynamic_strict_common_reference_work_precision.png",
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "This artifact recomputes the public closed-loop dynamics rows against the same v047 exact endpoint reference already used by the local true-dynamic Newton rows. It closes the strict common-reference error-column gap for position/velocity/acceleration columns at the coarse window, but it is not an external superiority claim.",
+  "local_raw_row_count": 6,
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "ok_row_count": 24,
+  "policy": "closed_loop_true_dynamic_strict_common_reference",
+  "public_forms": [
+    "rA",
+    "rp",
+    "reps"
+  ],
+  "public_raw_row_count": 18,
+  "publication_quality_figure_available": true,
+  "row_count": 24,
+  "schema": "closed-loop-true-dynamic-strict-common-reference-v1",
+  "status": "strict_common_reference_error_columns_available_not_external_superiority",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "strict_common_reference_available_count": 2,
+  "strict_common_reference_available_examples": [
+    "four_link",
+    "slider_crank"
+  ],
+  "strict_common_reference_columns": [
+    "pos_final_linf",
+    "vel_final_linf",
+    "acc_final_linf"
+  ],
+  "strict_common_reference_error_columns": true,
+  "strict_common_reference_gap_count": 0,
+  "strict_public_policy_1e-4_required": false,
+  "summary_row_count": 8,
+  "t_end": 0.1
+}

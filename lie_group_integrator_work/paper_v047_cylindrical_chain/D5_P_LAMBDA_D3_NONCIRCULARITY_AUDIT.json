@@ -1,0 +1,157 @@
+{
+  "claim_boundary": {
+    "allowed_now": "PL3 is closed: the D3 row-expanded virtual-work identity may be used as an algebraic multiplier-wrench mapping interface for the 36 Newton-Euler rows.",
+    "close_condition": "P_lambda closes only after PL2 proves a uniform multiplier inf-sup bound and PL4 propagates the open state and acceleration lift estimates to an O(h^7) multiplier rate.",
+    "forbidden_now": [
+      "P_lambda primitive closure",
+      "uniform multiplier inf-sup bound proved",
+      "multiplier lift O(h^7) proved",
+      "Taylor term bounds certified from P_lambda",
+      "D3 wrench identity used as a multiplier-rate proof",
+      "primitive/Taylor PC2 route closure"
+    ]
+  },
+  "closed_subproofs": [
+    "PL1_multiplier_variable_and_kkt_column_interface_exposed",
+    "PL3_D3_wrench_consistency_used_non_circularly"
+  ],
+  "d3_evidence": {
+    "checked_rows": 36,
+    "multiplier_wrench_consistency_closed": true,
+    "proof_gap_closed": false,
+    "rotational_rows": 18,
+    "row_expanded_virtual_work_identity_proved": true,
+    "schema": "newton-euler-virtual-work-wrench-audit-v1",
+    "site_count_checked": 9,
+    "stage_residual_defect_rate_proved": false,
+    "status": "d3_row_expanded_virtual_work_identity_checked_dynamic_defect_open",
+    "template_virtual_work_identity_proved": true,
+    "translational_rows": 18
+  },
+  "d3_non_circularity_gate": {
+    "d3_identity_does_not_assume_dynamic_defect_rate": true,
+    "d3_identity_is_algebraic_mapping": true,
+    "d3_identity_not_used_as_inf_sup_bound": true,
+    "d3_identity_not_used_as_multiplier_rate": true,
+    "d3_identity_not_used_as_taylor_bound": true,
+    "stage_residual_perturbation_lemma_disallowed_as_input": true
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-lambda-d3-noncircularity}",
+      "closes PL3",
+      "does not prove a multiplier lift rate",
+      "does not prove a uniform inf-sup bound",
+      "does not close the primitive-and-Taylor route to PC2"
+    ]
+  },
+  "multiplier_lift_rate_proved": false,
+  "open_subproofs": [
+    "PL2_uniform_multiplier_inf_sup_bound",
+    "PL4_state_acceleration_lift_propagation_to_multiplier_rate"
+  ],
+  "p_lambda_inf_sup_probe_link": {
+    "finite_probe_full_column_rank_all": true,
+    "max_condition_number_across_probes": 2.7707407702069617,
+    "min_singular_value_across_probes": 0.6142803888036007,
+    "p_lambda_inf_sup_probe_recorded": true,
+    "pc2_closed": false,
+    "pl2_uniform_inf_sup_bound_proved": false,
+    "schema": "d5-p-lambda-inf-sup-probe-v1",
+    "uniform_constant_proved": false
+  },
+  "p_lambda_interface_link": {
+    "d3_link_closed": true,
+    "pc2_closed": false,
+    "pl1_interface_closed": true,
+    "primitive_closed": false,
+    "schema": "d5-p-lambda-interface-audit-v1"
+  },
+  "pc2_closed": false,
+  "pl2_uniform_inf_sup_bound_proved": false,
+  "pl3_d3_noncircularity_closed": true,
+  "pl4_lift_propagation_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_multiplier_lift",
+  "proof_gap_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-lambda-d3-noncircularity-audit-v1",
+  "source_consistency": {
+    "primitive_closed_in_reduction": false,
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "primitive_term_rows_using_p_lambda": 72,
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_pc2_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+    "proof_manifest_schema": "proof-closure-manifest-v1"
+  },
+  "status": "p_lambda_d3_noncircularity_closed_lift_open",
+  "submission_ready": false,
+  "summary": {
+    "closed_subproof_count_for_this_audit": 1,
+    "direct_multiplier_term_rows": 36,
+    "multiplier_lift_rate_proved": false,
+    "open_subproof_count_after_d3": 2,
+    "p_lambda_closed_subproof_count_after_d3": 2,
+    "pc2_closed": false,
+    "pl2_uniform_inf_sup_bound_proved": false,
+    "pl3_d3_noncircularity_closed": true,
+    "pl4_lift_propagation_closed": false,
+    "required_subproof_count": 4,
+    "term_bounds_proved": 0,
+    "term_rows_using_p_lambda": 72
+  },
+  "term_bounds_proved": 0,
+  "term_budget_link": {
+    "certified_taylor_bound_terms": 0,
+    "direct_multiplier_global_rows": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123
+    ],
+    "direct_multiplier_taylor_bounds_proved": 0,
+    "direct_multiplier_term_rows": 36,
+    "p_lambda_term_rows": 72,
+    "term_budget_pc2_closed": false,
+    "term_budget_schema": "d5-taylor-term-budget-audit-v1"
+  },
+  "uniform_inf_sup_bound_proved": false
+}

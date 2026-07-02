@@ -1,0 +1,42 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "The closed-loop FullVA dynamic residual can be made square at 216 unknowns/residuals for each model with three Gauss stages. This artifact specifies the runner layout but does not implement or accept trajectory-order rows.",
+  "local_runner_implemented": false,
+  "method": "Gauss6/FullVA",
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "n_stages": 3,
+  "required_code_symbols": [
+    "pack_closed_loop_fullva_stage_vector",
+    "unpack_closed_loop_fullva_stage_vector",
+    "closed_loop_fullva_stage_residual",
+    "gauss6_closed_loop_fullva_dynamic_step",
+    "simulate_v046_local_dynamic_fullva"
+  ],
+  "required_runner": "local_closed_loop_dynamic_dae_gauss6_fullva_runner",
+  "residual_families": [
+    "position_constraints_phi",
+    "velocity_constraints_phiq_v_minus_nu",
+    "acceleration_constraints_phiq_a_minus_gamma",
+    "newton_euler_balance"
+  ],
+  "row_count": 2,
+  "schema": "closed-loop-true-dynamic-residual-scaffold-v1",
+  "source_inputs": {
+    "interface_audit_schema": "closed-loop-true-dynamic-interface-audit-v1",
+    "interface_dynamic_setup_ok_count": 2,
+    "row_plan_count": 24,
+    "row_plan_schema": "closed-loop-true-dynamic-local-row-plan-v1"
+  },
+  "square_total_system": true,
+  "stage_unknown_dim": 72,
+  "status": "residual_layout_specified_runner_not_implemented",
+  "strict_public_policy_1e-4_required": false,
+  "total_unknown_dim": 216
+}

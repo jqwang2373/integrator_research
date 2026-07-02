@@ -1,0 +1,1582 @@
+{
+  "accepted_method": "Gauss6/FullVA",
+  "body_count": 2,
+  "closure_boundary": {
+    "closed_obligation_count": 5,
+    "dynamic_symbolic_oracle_complete": false,
+    "newton_euler_symbolic_defect_certificate_complete": false,
+    "open_obligation_count": 1,
+    "stage_residual_O_h7_implementation_defect_proved": false,
+    "submission_ready": false,
+    "symbolic_target_inventory_complete": true
+  },
+  "execution_policy": {
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_audit": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "forbidden_claims": [
+    "newton_euler_symbolic_defect_certificate_complete_true",
+    "stage_residual_O_h7_implementation_defect_proved_true",
+    "dynamic_symbolic_oracle_complete_true",
+    "submission_ready_true"
+  ],
+  "obligation_coverage_matrix": {
+    "all_obligations_have_target_rows": true,
+    "all_rows_have_required_obligations": true,
+    "coverage_matrix_complete": true,
+    "dynamic_symbolic_oracle_complete": false,
+    "expected_obligations_per_row": 5,
+    "obligation_count": 6,
+    "obligations_with_target_rows": 6,
+    "per_obligation": [
+      {
+        "id": "translational_balance_identity",
+        "proof_status": "closed_by_obligation_gate",
+        "required_proof": null,
+        "source_gate_status": "closed",
+        "target_global_rows": [
+          24,
+          25,
+          26,
+          30,
+          31,
+          32,
+          68,
+          69,
+          70,
+          74,
+          75,
+          76,
+          112,
+          113,
+          114,
+          118,
+          119,
+          120
+        ],
+        "target_row_count": 18
+      },
+      {
+        "id": "rotational_balance_identity",
+        "proof_status": "closed_by_obligation_gate",
+        "required_proof": null,
+        "source_gate_status": "closed",
+        "target_global_rows": [
+          27,
+          28,
+          29,
+          33,
+          34,
+          35,
+          71,
+          72,
+          73,
+          77,
+          78,
+          79,
+          115,
+          116,
+          117,
+          121,
+          122,
+          123
+        ],
+        "target_row_count": 18
+      },
+      {
+        "id": "multiplier_wrench_consistency",
+        "proof_status": "closed_by_obligation_gate",
+        "required_proof": null,
+        "source_gate_status": "closed",
+        "target_global_rows": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
+        ],
+        "target_row_count": 36
+      },
+      {
+        "id": "smooth_force_lift_consistency",
+        "proof_status": "closed_by_obligation_gate",
+        "required_proof": null,
+        "source_gate_status": "closed",
+        "target_global_rows": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
+        ],
+        "target_row_count": 36
+      },
+      {
+        "id": "gauss_stage_dynamic_defect_rate",
+        "proof_status": "open_not_closed_by_coverage_matrix",
+        "required_proof": "primitive/Taylor or global symbolic-certificate route for the dynamic-row residual; the active direct D5 substitution route is recorded separately and is closed",
+        "source_gate_status": "symbolic_primitive_route_open",
+        "target_global_rows": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
+        ],
+        "target_row_count": 36
+      },
+      {
+        "id": "symbolic_runtime_row_equivalence",
+        "proof_status": "closed_by_obligation_gate",
+        "required_proof": null,
+        "source_gate_status": "closed",
+        "target_global_rows": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123
+        ],
+        "target_row_count": 36
+      }
+    ],
+    "proof_closure_advanced": false,
+    "reading_rule": "complete coverage matrix specifies row-level obligations and mirrors the obligation gate status; it does not by itself prove any obligation",
+    "row_count": 36,
+    "row_obligation_link_count": 180,
+    "rows_with_complete_obligation_sets": 36,
+    "stage_residual_O_h7_implementation_defect_proved": false,
+    "submission_ready": false
+  },
+  "open_obligations": [
+    {
+      "id": "gauss_stage_dynamic_defect_rate",
+      "required_proof": "primitive/Taylor or global symbolic-certificate route for the dynamic-row residual; the active direct D5 substitution route is recorded separately and is closed",
+      "row_count": 36,
+      "status": "symbolic_primitive_route_open"
+    }
+  ],
+  "rotational_row_count": 18,
+  "row_count": 36,
+  "row_family": "newton_euler_weak_balance",
+  "row_indexing": {
+    "local_rows_0_to_2": "body0 translational xyz",
+    "local_rows_3_to_5": "body0 rotational xyz",
+    "local_rows_6_to_8": "body1 translational xyz",
+    "local_rows_9_to_11": "body1 rotational xyz",
+    "row_family_offset": 24,
+    "runtime_source_order": "matches run_v047.py NEWTON_EULER_SOURCE_COMPONENT_LAYOUT and dyn.extend([trans, rot]) inside the body loop",
+    "stage_major_formula": "global_row = stage * 44 + 24 + local_block_row",
+    "stage_size": 44
+  },
+  "row_obligation_coverage": [
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 24,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 25,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 26,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 27,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 28,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 29,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 30,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 31,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 32,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 33,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 34,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 35,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 0
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 68,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 69,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 70,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 71,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 72,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 73,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 74,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 75,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 76,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 77,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 78,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 79,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 1
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 112,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 113,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 114,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 115,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 116,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 117,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 118,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 119,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 120,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "translational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "x",
+      "global_row": 121,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "y",
+      "global_row": 122,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "complete_obligation_set": true,
+      "component": "z",
+      "global_row": 123,
+      "obligation_count": 5,
+      "obligation_ids": [
+        "rotational_balance_identity",
+        "multiplier_wrench_consistency",
+        "smooth_force_lift_consistency",
+        "gauss_stage_dynamic_defect_rate",
+        "symbolic_runtime_row_equivalence"
+      ],
+      "stage": 2
+    }
+  ],
+  "row_targets": [
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "x",
+      "global_row": 24,
+      "local_block_row": 0,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "y",
+      "global_row": 25,
+      "local_block_row": 1,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "z",
+      "global_row": 26,
+      "local_block_row": 2,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "x",
+      "global_row": 27,
+      "local_block_row": 3,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "y",
+      "global_row": 28,
+      "local_block_row": 4,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "z",
+      "global_row": 29,
+      "local_block_row": 5,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "x",
+      "global_row": 30,
+      "local_block_row": 6,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "y",
+      "global_row": 31,
+      "local_block_row": 7,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "z",
+      "global_row": 32,
+      "local_block_row": 8,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "x",
+      "global_row": 33,
+      "local_block_row": 9,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "y",
+      "global_row": 34,
+      "local_block_row": 10,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "z",
+      "global_row": 35,
+      "local_block_row": 11,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 0,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "x",
+      "global_row": 68,
+      "local_block_row": 0,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "y",
+      "global_row": 69,
+      "local_block_row": 1,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "z",
+      "global_row": 70,
+      "local_block_row": 2,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "x",
+      "global_row": 71,
+      "local_block_row": 3,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "y",
+      "global_row": 72,
+      "local_block_row": 4,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "z",
+      "global_row": 73,
+      "local_block_row": 5,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "x",
+      "global_row": 74,
+      "local_block_row": 6,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "y",
+      "global_row": 75,
+      "local_block_row": 7,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "z",
+      "global_row": 76,
+      "local_block_row": 8,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "x",
+      "global_row": 77,
+      "local_block_row": 9,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "y",
+      "global_row": 78,
+      "local_block_row": 10,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "z",
+      "global_row": 79,
+      "local_block_row": 11,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 1,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "x",
+      "global_row": 112,
+      "local_block_row": 0,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "y",
+      "global_row": 113,
+      "local_block_row": 1,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "z",
+      "global_row": 114,
+      "local_block_row": 2,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body0_translational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 0,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "x",
+      "global_row": 115,
+      "local_block_row": 3,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "y",
+      "global_row": 116,
+      "local_block_row": 4,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "z",
+      "global_row": 117,
+      "local_block_row": 5,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body0_rotational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 3,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "x",
+      "global_row": 118,
+      "local_block_row": 6,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "y",
+      "global_row": 119,
+      "local_block_row": 7,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "z",
+      "global_row": 120,
+      "local_block_row": 8,
+      "required_symbolic_identity": "translational_balance_identity",
+      "runtime_source_component": "body1_translational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 6,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "m_i a_i - f_i^ext - m_i g - f_i^joint(lambda) - f_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "x",
+      "global_row": 121,
+      "local_block_row": 9,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 0,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "y",
+      "global_row": 122,
+      "local_block_row": 10,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 1,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "z",
+      "global_row": 123,
+      "local_block_row": 11,
+      "required_symbolic_identity": "rotational_balance_identity",
+      "runtime_source_component": "body1_rotational_balance_source",
+      "runtime_source_component_index": 2,
+      "runtime_source_component_offset": 9,
+      "runtime_source_component_width": 3,
+      "stage": 2,
+      "target_equation": "J_i alpha_i + omega_i x J_i omega_i - tau_i^ext - tau_i^joint(lambda) - tau_i^friction = 0"
+    }
+  ],
+  "rows_per_body_stage": 6,
+  "schema": "newton-euler-symbolic-target-audit-v1",
+  "source_files": {
+    "dynamic_oracle": "DYNAMIC_ROW_ORACLE_GATE.json",
+    "newton_euler_defect_obligation_gate": "NEWTON_EULER_DEFECT_OBLIGATION_GATE.json"
+  },
+  "stage_count": 3,
+  "status": "row_level_symbolic_targets_extracted_dynamic_defect_proof_open",
+  "submission_ready": false,
+  "supporting_runtime_evidence": {
+    "formula_row_ad_jacobian_oracle_checked": true,
+    "formula_row_ad_jacobian_probe_count": 3,
+    "full_formula_row_oracle_132_rows_checked": true,
+    "newton_euler_formula_row_family_added": "newton_euler_weak_balance",
+    "runtime_ad_oracle_complete": true,
+    "runtime_formula_row_oracle_complete": true,
+    "runtime_source_anchors": {
+      "component_tuple_anchors": [
+        {
+          "anchor": {
+            "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+            "line": 102,
+            "needle": "(\"body0_translational_balance_source\", 0, 3, 0, \"translational_balance\")",
+            "role": "runtime layout tuple for body0_translational_balance_source"
+          },
+          "balance_block": "translational_newton_balance",
+          "body": 0,
+          "name": "body0_translational_balance_source",
+          "offset": 0,
+          "source_component_kind": "translational_balance",
+          "width": 3
+        },
+        {
+          "anchor": {
+            "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+            "line": 103,
+            "needle": "(\"body0_rotational_balance_source\", 3, 3, 0, \"rotational_balance\")",
+            "role": "runtime layout tuple for body0_rotational_balance_source"
+          },
+          "balance_block": "rotational_euler_balance",
+          "body": 0,
+          "name": "body0_rotational_balance_source",
+          "offset": 3,
+          "source_component_kind": "rotational_balance",
+          "width": 3
+        },
+        {
+          "anchor": {
+            "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+            "line": 104,
+            "needle": "(\"body1_translational_balance_source\", 6, 3, 1, \"translational_balance\")",
+            "role": "runtime layout tuple for body1_translational_balance_source"
+          },
+          "balance_block": "translational_newton_balance",
+          "body": 1,
+          "name": "body1_translational_balance_source",
+          "offset": 6,
+          "source_component_kind": "translational_balance",
+          "width": 3
+        },
+        {
+          "anchor": {
+            "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+            "line": 105,
+            "needle": "(\"body1_rotational_balance_source\", 9, 3, 1, \"rotational_balance\")",
+            "role": "runtime layout tuple for body1_rotational_balance_source"
+          },
+          "balance_block": "rotational_euler_balance",
+          "body": 1,
+          "name": "body1_rotational_balance_source",
+          "offset": 9,
+          "source_component_kind": "rotational_balance",
+          "width": 3
+        }
+      ],
+      "layout_definition": {
+        "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+        "line": 101,
+        "needle": "NEWTON_EULER_SOURCE_COMPONENT_LAYOUT = [",
+        "role": "runtime source component layout definition"
+      },
+      "primary_residual_definition": {
+        "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+        "line": 4926,
+        "needle": "def residual_cylindrical_chain(",
+        "role": "primary Gauss6/FullVA residual definition"
+      },
+      "primary_residual_dyn_extend": {
+        "file": "v047_cylindrical_chain_pipeline/run_v047.py",
+        "line": 5033,
+        "needle": "dyn.extend([trans, rot])",
+        "role": "primary residual appends translational then rotational balances inside each body loop"
+      },
+      "run_v047_path": "v047_cylindrical_chain_pipeline/run_v047.py",
+      "source_anchor_scope": "anchors prove the implemented row-order source locations used by the target audit; they do not prove symbolic algebraic equivalence or the O(h^7) defect bound"
+    },
+    "runtime_source_anchors_present": true,
+    "runtime_source_component_layout": [
+      {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "name": "body0_translational_balance_source",
+        "offset": 0,
+        "width": 3
+      },
+      {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "name": "body0_rotational_balance_source",
+        "offset": 3,
+        "width": 3
+      },
+      {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "name": "body1_translational_balance_source",
+        "offset": 6,
+        "width": 3
+      },
+      {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "name": "body1_rotational_balance_source",
+        "offset": 9,
+        "width": 3
+      }
+    ],
+    "runtime_source_component_layout_matches_targets": true
+  },
+  "target_equation_families": [
+    {
+      "id": "translational_balance_identity",
+      "required_terms": [
+        "mass times translational acceleration",
+        "gravity force",
+        "applied body force",
+        "lower-pair multiplier force",
+        "smooth friction force",
+        "Gauss stage weight and row ordering"
+      ],
+      "rows": 18,
+      "target": "m_i a_i = f_i^ext + m_i g + f_i^joint(lambda) + f_i^friction"
+    },
+    {
+      "id": "rotational_balance_identity",
+      "required_terms": [
+        "body inertia times angular acceleration",
+        "gyroscopic angular momentum term",
+        "applied body torque",
+        "lower-pair multiplier moment arm",
+        "smooth friction torque",
+        "Gauss stage weight and row ordering"
+      ],
+      "rows": 18,
+      "target": "J_i alpha_i + omega_i x J_i omega_i = tau_i^ext + tau_i^joint(lambda) + tau_i^friction"
+    },
+    {
+      "id": "multiplier_wrench_consistency",
+      "required_terms": [
+        "lambda normal components",
+        "joint basis",
+        "moment arms",
+        "equal and opposite body wrenches"
+      ],
+      "rows": 36,
+      "target": "constraint multipliers induce identical generalized forces in constraint and dynamics rows"
+    },
+    {
+      "id": "smooth_force_lift_consistency",
+      "required_terms": [
+        "Brown-McPhee smooth friction",
+        "stage kinematics",
+        "bounded derivatives on proof tube"
+      ],
+      "rows": 36,
+      "target": "all force, torque, and friction evaluations use the same smooth FullVA stage lift"
+    },
+    {
+      "id": "gauss_stage_dynamic_defect_rate",
+      "required_terms": [
+        "Gauss collocation order",
+        "smooth force composition",
+        "constraint force consistency"
+      ],
+      "rows": 36,
+      "target": "dynamic rows evaluated on the mathematical smooth lift have O(h^7) defect"
+    },
+    {
+      "id": "symbolic_runtime_row_equivalence",
+      "required_terms": [
+        "row-family-major ordering",
+        "stage-major slices",
+        "AD-expanded residual path"
+      ],
+      "rows": 36,
+      "target": "implemented runtime row ordering and symbolic target rows are identical"
+    }
+  ],
+  "translational_row_count": 18
+}

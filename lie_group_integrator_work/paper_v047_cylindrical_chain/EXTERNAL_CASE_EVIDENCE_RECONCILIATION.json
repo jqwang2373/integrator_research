@@ -1,0 +1,402 @@
+{
+  "acceptance_boundary": {
+    "accepted_external_dynamic_order_examples_count": 0,
+    "b2_can_close_now": false,
+    "b4_can_close_now": false,
+    "external_superiority_claim": false
+  },
+  "bounded_or_public_evidence_suites": [
+    "ra2021_absolute_coordinate",
+    "hi2022_half_implicit"
+  ],
+  "case_inventory_case_count": 17,
+  "case_inventory_status_counts": {
+    "code_path_unresolved": 1,
+    "not_run": 16
+  },
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "interpretation": {
+    "case_inventory_not_run_is_not_zero_evidence": true,
+    "current_source_policy_reading": "The 2021 public baselines and timing rows are substantially complete, but local Gauss6/FullVA rows are not yet complete source-policy dynamic order/work rows for all four examples.",
+    "reason": "The case inventory tracks the full source-policy same-test campaign. The reconciliation records bounded/coarse evidence already present in v048 while keeping source-policy closure and external-superiority claims open."
+  },
+  "not_ready_or_demote_suites": [
+    "tfe2026_original_pendulum",
+    "vp2024_velocity_partitioning"
+  ],
+  "same_test_campaign_status": "not_run",
+  "schema": "external-case-evidence-reconciliation-v1",
+  "source_policy_progress": {
+    "hi2022_public_baselines": {
+      "bounded_pilot_groups_completed": 8,
+      "bounded_pilot_groups_required": 8,
+      "bounded_pilot_rows_ok": 24,
+      "full_T8_policy_completed": false
+    },
+    "ra2021_local_gauss6_rows": {
+      "accepted_external_dynamic_order_count": 0,
+      "accepted_external_dynamic_order_examples": [],
+      "closed_loop_public_horizon_rows_completed": true,
+      "closed_loop_row_kind": "kinematic_reaction_residual_not_true_dynamic_order",
+      "double_current_policy": "gauss6_fullva_public_horizon_double_coarse_not_full_campaign",
+      "double_current_step_sizes": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "double_public_policy_rows_completed": false,
+      "single_public_policy_order_floor_limited": true,
+      "single_public_policy_rows_completed": true
+    },
+    "ra2021_public_baselines": {
+      "order_groups_completed": 12,
+      "order_groups_required": 12,
+      "order_rows_ok": 36,
+      "order_rows_total": 36,
+      "timing_rows_completed": 12,
+      "timing_rows_required": 12
+    },
+    "remaining_source_policy_blockers": [
+      "local Gauss6/FullVA double-pendulum rows are coarse-first, not the 2021 public h policy",
+      "four-link and slider-crank local public-horizon rows are kinematic/reaction residual rows, not true dynamic order rows",
+      "single-pendulum local public-policy rows are reference-floor limited",
+      "HI2022 is only a bounded T=0.1 pilot, not the full T=8 public policy",
+      "TFE source pendulum runner is not implemented",
+      "VP2024 distinct public code path is unresolved"
+    ]
+  },
+  "source_policy_row_ledger": {
+    "flagged_by_example": {
+      "double_pendulum": 2,
+      "four_link": 4,
+      "single_pendulum": 8,
+      "slider_crank": 1
+    },
+    "flagged_rows": 15,
+    "rows_external_superiority_ready": 0,
+    "rows_source_policy_closed": 0
+  },
+  "status": "bounded_evidence_present_full_source_policy_campaign_open",
+  "submission_ready": false,
+  "suites": [
+    {
+      "bounded_evidence_present": true,
+      "case_group_id": "ra2021_absolute_coordinate",
+      "case_inventory": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "ra2021_single_pendulum_order",
+          "ra2021_four_link_order",
+          "ra2021_slider_crank_order",
+          "ra2021_single_pendulum_timing_iterations",
+          "ra2021_double_pendulum_timing_iterations",
+          "ra2021_four_link_timing_iterations",
+          "ra2021_slider_crank_timing_iterations"
+        ],
+        "case_status_counts": {
+          "not_run": 7
+        }
+      },
+      "case_inventory_interpretation": "not_run markers mean the full source-policy same-test campaign remains open; bounded/coarse evidence exists separately",
+      "claim_allowed_now": "baseline_order_time_summary_only",
+      "closure_manifest_status": "partial_public_policy_evidence_not_same-policy_superiority",
+      "external_superiority_ready": false,
+      "extra_performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 4,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "Gauss6/FullVA-public-horizon"
+        ],
+        "not_complete_row_count": 0,
+        "row_count": 4,
+        "status_counts": {
+          "completed_public_horizon_coarse_double_pilot": 1,
+          "completed_public_horizon_residual_trio": 2,
+          "completed_public_horizon_trio": 1
+        }
+      },
+      "full_source_policy_campaign_completed": false,
+      "order_group_status": {
+        "double_pendulum_public_dynamic_self_reference": {
+          "complete_groups": [
+            "rA:double_pendulum",
+            "reps:double_pendulum"
+          ],
+          "completed_group_count": 2,
+          "failed_or_partial_groups": [
+            "rp:double_pendulum"
+          ],
+          "group_count": 3,
+          "incomplete_group_count": 1,
+          "incomplete_groups": [
+            "rp:double_pendulum"
+          ],
+          "ok_row_count": 6,
+          "row_count": 9,
+          "selected_step_trio_group_count": 2,
+          "selected_step_trio_required_group_count": 3
+        },
+        "single_four_slider_public_order": {
+          "complete_groups": [],
+          "completed_group_count": 0,
+          "failed_or_partial_groups": [],
+          "group_count": 9,
+          "incomplete_group_count": 9,
+          "incomplete_groups": [
+            "rA:four_link",
+            "rA:single_pendulum",
+            "rA:slider_crank",
+            "reps:four_link",
+            "reps:single_pendulum",
+            "reps:slider_crank",
+            "rp:four_link",
+            "rp:single_pendulum",
+            "rp:slider_crank"
+          ],
+          "ok_row_count": 27,
+          "row_count": 27,
+          "selected_step_trio_group_count": null,
+          "selected_step_trio_required_group_count": null
+        }
+      },
+      "parallel_shard_count": 12,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 12,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "rA",
+          "reps",
+          "rp"
+        ],
+        "not_complete_row_count": 0,
+        "row_count": 12,
+        "status_counts": {
+          "completed_public_dynamic_self_reference_order_policy": 3,
+          "completed_public_order_policy": 9
+        }
+      },
+      "queue_batch_id": "ra2021_coarse_same_window_order_time",
+      "queue_next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim",
+      "queue_status": "parallel_ready_existing_interfaces",
+      "required_to_close": [
+        "local Gauss6/FullVA dynamic order/work rows under the same public policy for all four examples",
+        "declared state/velocity output map and norm identical to the source scripts",
+        "runtime and Newton/work metrics reported under the same timing policy",
+        "explicit bounded/no-superiority decision if only coarse same-window rows are retained"
+      ],
+      "source_policy_closed": false,
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "bounded_evidence_present": true,
+      "case_group_id": "hi2022_half_implicit",
+      "case_inventory": {
+        "blockers": [],
+        "case_count": 7,
+        "case_ids": [
+          "hi2022_double_pendulum_open_loop_convergence",
+          "hi2022_four_link_closed_loop_convergence",
+          "hi2022_slider_crank_closed_loop_convergence",
+          "hi2022_double_pendulum_energy",
+          "hi2022_timing_iterations",
+          "hi2022_n_pendulum_scaling",
+          "hi2022_slider_crank_friction"
+        ],
+        "case_status_counts": {
+          "not_run": 7
+        }
+      },
+      "case_inventory_interpretation": "bounded T=0.1 pilot exists; full T=8 source policy is still a run-or-demote decision",
+      "claim_allowed_now": "bounded_pilot_only",
+      "closure_manifest_status": "bounded_T0p1_pilot_not_full_T8_public_policy",
+      "external_superiority_ready": false,
+      "full_source_policy_campaign_completed": false,
+      "order_group_status": {
+        "bounded_T0p1_groups": {
+          "complete_groups": [
+            "rA:double_pendulum",
+            "rA:four_link",
+            "rA:single_pendulum",
+            "rA:slider_crank",
+            "rA_half:double_pendulum",
+            "rA_half:four_link",
+            "rA_half:single_pendulum",
+            "rA_half:slider_crank"
+          ],
+          "completed_group_count": 8,
+          "failed_or_partial_groups": [],
+          "group_count": 8,
+          "incomplete_group_count": 0,
+          "incomplete_groups": [],
+          "ok_row_count": 24,
+          "row_count": 24,
+          "selected_step_trio_group_count": 8,
+          "selected_step_trio_required_group_count": 8
+        }
+      },
+      "parallel_shard_count": 8,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 8,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "rA-hi2022",
+          "rA_half-hi2022"
+        ],
+        "not_complete_row_count": 0,
+        "row_count": 8,
+        "status_counts": {
+          "completed_bounded_pilot": 8
+        }
+      },
+      "queue_batch_id": "hi2022_halfimplicit_full_policy_decision",
+      "queue_next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim",
+      "queue_status": "parallel_ready_after_policy_selection",
+      "required_to_close": [
+        "choose full T=8 public-policy reproduction or explicit demotion",
+        "match the source paper's step sizes, reference policy, energy/constraint metrics, and work metrics",
+        "record rA and rA_half on the selected policy before any superiority statement"
+      ],
+      "source_policy_closed": false,
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "bounded_evidence_present": false,
+      "case_group_id": "tfe2026_original_pendulum",
+      "case_inventory": {
+        "blockers": [
+          "pendulum setup and source-paper error norm still need to be encoded",
+          "friction law and source-paper output policy still need to be encoded"
+        ],
+        "case_count": 2,
+        "case_ids": [
+          "tfe2026_rigid_pendulum_no_friction",
+          "tfe2026_rigid_pendulum_with_friction"
+        ],
+        "case_status_counts": {
+          "not_run": 2
+        }
+      },
+      "case_inventory_interpretation": "source pendulum setup, friction law, error norm, and output policy are not encoded",
+      "claim_allowed_now": "formal_order_literature_comparator_only",
+      "closure_manifest_status": "source_policy_runner_friction_endpoint_and_work_rows_open",
+      "external_superiority_ready": false,
+      "full_source_policy_campaign_completed": false,
+      "order_group_status": {},
+      "parallel_shard_count": 0,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 0,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "TFE_m1",
+          "TFE_m2",
+          "TFE_m3"
+        ],
+        "not_complete_row_count": 12,
+        "row_count": 12,
+        "status_counts": {
+          "not_encoded_for_four_asme_examples": 12
+        }
+      },
+      "queue_batch_id": "tfe2026_original_pendulum_encoding",
+      "queue_next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running",
+      "queue_status": "not_ready_source_setup_encoding_required",
+      "required_to_close": [
+        "prove or replace the candidate planar runner with a source-policy absolute-coordinate DAE runner",
+        "replace the local Brown--McPhee published-formula surrogate with a source-code-equivalent friction law",
+        "resolve the full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "run or explicitly demote Newmark, trapezoidal, TFE m=1/m=2/m=3, and Gauss6/FullVA work rows",
+        "keep TFE m=3 as expected order five unless a separate source-policy reproduction proves otherwise"
+      ],
+      "source_policy_closed": false,
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "bounded_evidence_present": false,
+      "case_group_id": "vp2024_velocity_partitioning",
+      "case_inventory": {
+        "blockers": [
+          "paper and open-source-code claim found; no distinct velocity-partitioning directory located in the local sbel-reproducibility or public-metadata origin/master or origin/user/aaron/msd trees, or by the public web search"
+        ],
+        "case_count": 1,
+        "case_ids": [
+          "vp2024_velocity_partitioning_code_resolution"
+        ],
+        "case_status_counts": {
+          "code_path_unresolved": 1
+        }
+      },
+      "case_inventory_interpretation": "distinct velocity-partitioning public code path is unresolved; coordinate-partitioning proxy is not source-policy evidence",
+      "claim_allowed_now": "code-path-unresolved_related_work_only",
+      "closure_manifest_status": "public_code_path_unresolved_or_proxy_only",
+      "external_superiority_ready": false,
+      "full_source_policy_campaign_completed": false,
+      "order_group_status": {},
+      "parallel_shard_count": 0,
+      "performance_rows": {
+        "all_four_examples_present": true,
+        "completed_row_count": 0,
+        "examples": [
+          "double_pendulum",
+          "four_link",
+          "single_pendulum",
+          "slider_crank"
+        ],
+        "methods": [
+          "velocity_partitioning_2024"
+        ],
+        "not_complete_row_count": 4,
+        "row_count": 4,
+        "status_counts": {
+          "code_path_unresolved": 4
+        }
+      },
+      "queue_batch_id": "vp2024_velocity_partitioning_code_resolution",
+      "queue_next_action": "resolve public code path or explicitly demote this suite from the external-superiority claim",
+      "queue_status": "not_ready_code_path_unresolved",
+      "required_to_close": [
+        "resolve the distinct public velocity-partitioning code path or explicitly demote the suite",
+        "extract its source time windows, step sizes, reference policy, and runtime metrics",
+        "do not use the local coordinate-partitioning proxy as a source-policy reproduction"
+      ],
+      "source_policy_closed": false,
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ]
+}

@@ -1,0 +1,1563 @@
+{
+  "case_id": "frictionless_pendulum_active_b2_planar_candidate",
+  "endpoint_policies": [
+    "adjust_h_to_hit_T_exactly",
+    "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+    "floor_horizon",
+    "integer_steps_plus_final_partial_step"
+  ],
+  "execution_policy": {
+    "default_1e_4_campaign_invoked": false,
+    "run_v047_invoked": false,
+    "source_policy_rows_completed": 0
+  },
+  "external_superiority_claim_allowed": false,
+  "interpretation": "Endpoint-policy choices can be measured with the current planar candidate runner, but this does not resolve the source paper's error-sampling convention or prove source-policy equivalence.",
+  "method_count": 4,
+  "nominal_h": [
+    0.012,
+    0.006,
+    0.003
+  ],
+  "policy_count": 4,
+  "raw_row_count": 48,
+  "raw_rows": [
+    {
+      "coordinate_error_q": 0.0004504953494266495,
+      "effective_h": 0.012004801920768308,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0006370966275578427,
+      "max_residual_norm": 9.979934191762468e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "Newmark_beta",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1043.0,
+      "velocity_error_v": 0.0010707351853025404
+    },
+    {
+      "coordinate_error_q": 0.00011245681808524921,
+      "effective_h": 0.00599880023995201,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00015903795723363456,
+      "max_residual_norm": 8.407856998053701e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "Newmark_beta",
+      "steps": 1667,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1667.0,
+      "velocity_error_v": 0.0002673845978788947
+    },
+    {
+      "coordinate_error_q": 2.812908135885195e-05,
+      "effective_h": 0.003000300030003,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 3.9780528353439635e-05,
+      "max_residual_norm": 5.000730161509756e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "Newmark_beta",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3327.0,
+      "velocity_error_v": 6.688762354456479e-05
+    },
+    {
+      "coordinate_error_q": 0.0004020366163048905,
+      "effective_h": 0.012004801920768308,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0005685656315198449,
+      "max_residual_norm": 9.912071163853398e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m1",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1553.0,
+      "velocity_error_v": 0.004158692908841077
+    },
+    {
+      "coordinate_error_q": 0.00028831516026261994,
+      "effective_h": 0.00599880023995201,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0004077392084689548,
+      "max_residual_norm": 9.623413177450857e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m1",
+      "steps": 1667,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3057.0,
+      "velocity_error_v": 0.0022842657638535435
+    },
+    {
+      "coordinate_error_q": 0.00016608046379795738,
+      "effective_h": 0.003000300030003,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00023487324407839074,
+      "max_residual_norm": 9.978684545330907e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m1",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 5961.0,
+      "velocity_error_v": 0.001193936358746761
+    },
+    {
+      "coordinate_error_q": 3.726490449551534e-08,
+      "effective_h": 0.012004801920768308,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 5.270053331883609e-08,
+      "max_residual_norm": 1.5034580517333537e-10,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m2",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1582.0,
+      "velocity_error_v": 2.631604887337602e-07
+    },
+    {
+      "coordinate_error_q": 4.7436850003634845e-09,
+      "effective_h": 0.00599880023995201,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 6.708583629713029e-09,
+      "max_residual_norm": 6.475998374089242e-10,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m2",
+      "steps": 1667,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3213.0,
+      "velocity_error_v": 3.301713658032668e-08
+    },
+    {
+      "coordinate_error_q": 5.722511353667414e-10,
+      "effective_h": 0.003000300030003,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 8.092853412956862e-10,
+      "max_residual_norm": 2.676253849073688e-09,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m2",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 6509.0,
+      "velocity_error_v": 4.0553582714153436e-09
+    },
+    {
+      "coordinate_error_q": 0.00034650356364496204,
+      "effective_h": 0.012004801920768308,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0004900300366658144,
+      "max_residual_norm": 9.9101634195185e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "trapezoidal",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1044.0,
+      "velocity_error_v": 0.0008207253213359245
+    },
+    {
+      "coordinate_error_q": 8.650329978809879e-05,
+      "effective_h": 0.00599880023995201,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00012233413971219335,
+      "max_residual_norm": 8.332364841509816e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "trapezoidal",
+      "steps": 1667,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1667.0,
+      "velocity_error_v": 0.00020494956476313497
+    },
+    {
+      "coordinate_error_q": 2.1637632417803587e-05,
+      "effective_h": 0.003000300030003,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 3.060023322224612e-05,
+      "max_residual_norm": 5.02776639765834e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "trapezoidal",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3327.0,
+      "velocity_error_v": 5.126901356855562e-05
+    },
+    {
+      "coordinate_error_q": 0.0004417195738413149,
+      "effective_h": 0.012,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0006246858070134391,
+      "max_residual_norm": 9.865615556594547e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "Newmark_beta",
+      "steps": 834,
+      "terminal_time": 10.008000000000001,
+      "terminal_time_offset_from_T": 0.008000000000000895,
+      "total_newton_iterations": 1042.0,
+      "velocity_error_v": 0.0010734800052834004
+    },
+    {
+      "coordinate_error_q": 0.00011197667579709858,
+      "effective_h": 0.006,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00015835893349900904,
+      "max_residual_norm": 8.375554551141379e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "Newmark_beta",
+      "steps": 1667,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 1667.0,
+      "velocity_error_v": 0.0002677209342156761
+    },
+    {
+      "coordinate_error_q": 2.7992170210211498e-05,
+      "effective_h": 0.003,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 3.958690675028624e-05,
+      "max_residual_norm": 9.486371985246574e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "Newmark_beta",
+      "steps": 3334,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 3328.0,
+      "velocity_error_v": 6.69315727879205e-05
+    },
+    {
+      "coordinate_error_q": 0.000367909690681234,
+      "effective_h": 0.012,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0005203028713554724,
+      "max_residual_norm": 9.912071163853398e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m1",
+      "steps": 834,
+      "terminal_time": 10.008000000000001,
+      "terminal_time_offset_from_T": 0.008000000000000895,
+      "total_newton_iterations": 1558.0,
+      "velocity_error_v": 0.004159382853303306
+    },
+    {
+      "coordinate_error_q": 0.00028368677727508285,
+      "effective_h": 0.006,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00040119368654302853,
+      "max_residual_norm": 9.805489753489383e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m1",
+      "steps": 1667,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 3058.0,
+      "velocity_error_v": 0.002285136645232333
+    },
+    {
+      "coordinate_error_q": 0.0001636303295828867,
+      "effective_h": 0.003,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0002314082310535135,
+      "max_residual_norm": 9.967582315084655e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m1",
+      "steps": 3334,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 5967.0,
+      "velocity_error_v": 0.001194096858283089
+    },
+    {
+      "coordinate_error_q": 3.5088949967843064e-08,
+      "effective_h": 0.012,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 4.962326897089361e-08,
+      "max_residual_norm": 1.3110774791879058e-10,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m2",
+      "steps": 834,
+      "terminal_time": 10.008000000000001,
+      "terminal_time_offset_from_T": 0.008000000000000895,
+      "total_newton_iterations": 1579.0,
+      "velocity_error_v": 2.630812383497272e-07
+    },
+    {
+      "coordinate_error_q": 4.682086718332812e-09,
+      "effective_h": 0.006,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 6.621470497057994e-09,
+      "max_residual_norm": 6.110477701140748e-10,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m2",
+      "steps": 1667,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 3218.0,
+      "velocity_error_v": 3.305011864185303e-08
+    },
+    {
+      "coordinate_error_q": 6.0471716523125e-10,
+      "effective_h": 0.003,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 8.551992277448479e-10,
+      "max_residual_norm": 2.4823249955598125e-09,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m2",
+      "steps": 3334,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 6516.0,
+      "velocity_error_v": 4.163289490932698e-09
+    },
+    {
+      "coordinate_error_q": 0.0003397528083928236,
+      "effective_h": 0.012,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0004804830271725436,
+      "max_residual_norm": 9.786242707227817e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "trapezoidal",
+      "steps": 834,
+      "terminal_time": 10.008000000000001,
+      "terminal_time_offset_from_T": 0.008000000000000895,
+      "total_newton_iterations": 1047.0,
+      "velocity_error_v": 0.0008230032910832019
+    },
+    {
+      "coordinate_error_q": 8.613395686474234e-05,
+      "effective_h": 0.006,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00012181180994133097,
+      "max_residual_norm": 8.222129613713458e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "trapezoidal",
+      "steps": 1667,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 1667.0,
+      "velocity_error_v": 0.00020521840096288102
+    },
+    {
+      "coordinate_error_q": 2.1532308347449458e-05,
+      "effective_h": 0.003,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 3.0451282493586568e-05,
+      "max_residual_norm": 9.497229928525828e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "trapezoidal",
+      "steps": 3334,
+      "terminal_time": 10.002,
+      "terminal_time_offset_from_T": 0.002000000000000668,
+      "total_newton_iterations": 3328.0,
+      "velocity_error_v": 5.1305427573034024e-05
+    },
+    {
+      "coordinate_error_q": 0.00045432805916734154,
+      "effective_h": 0.012,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0006425168975150856,
+      "max_residual_norm": 9.865615556594547e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "floor_horizon",
+      "source_method": "Newmark_beta",
+      "steps": 833,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 1041.0,
+      "velocity_error_v": 0.0010680056310534702
+    },
+    {
+      "coordinate_error_q": 0.00011355022750558774,
+      "effective_h": 0.006,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00016058427166265309,
+      "max_residual_norm": 8.375554551141379e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "floor_horizon",
+      "source_method": "Newmark_beta",
+      "steps": 1666,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 1666.0,
+      "velocity_error_v": 0.000267023725961657
+    },
+    {
+      "coordinate_error_q": 2.8189041961557137e-05,
+      "effective_h": 0.003,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 3.986532545101149e-05,
+      "max_residual_norm": 9.486371985246574e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "floor_horizon",
+      "source_method": "Newmark_beta",
+      "steps": 3333,
+      "terminal_time": 9.999,
+      "terminal_time_offset_from_T": -0.0009999999999994458,
+      "total_newton_iterations": 3327.0,
+      "velocity_error_v": 6.684530016931589e-05
+    },
+    {
+      "coordinate_error_q": 0.0004190632923730675,
+      "effective_h": 0.012,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0005926449872301804,
+      "max_residual_norm": 9.912071163853398e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m1",
+      "steps": 833,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 1556.0,
+      "velocity_error_v": 0.004156230682434092
+    },
+    {
+      "coordinate_error_q": 0.0002976897251336652,
+      "effective_h": 0.006,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00042099684510861664,
+      "max_residual_norm": 9.805489753489383e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m1",
+      "steps": 1666,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 3056.0,
+      "velocity_error_v": 0.0022837340214019175
+    },
+    {
+      "coordinate_error_q": 0.0001672836939992095,
+      "effective_h": 0.003,
+      "expected_order": 1,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0002365748685417386,
+      "max_residual_norm": 9.967582315084655e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m1",
+      "steps": 3333,
+      "terminal_time": 9.999,
+      "terminal_time_offset_from_T": -0.0009999999999994458,
+      "total_newton_iterations": 5965.0,
+      "velocity_error_v": 0.0011936822141058734
+    },
+    {
+      "coordinate_error_q": 3.828768457836418e-08,
+      "effective_h": 0.012,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 5.4146962779059813e-08,
+      "max_residual_norm": 1.3110774791879058e-10,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m2",
+      "steps": 833,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 1577.0,
+      "velocity_error_v": 2.6272092346069087e-07
+    },
+    {
+      "coordinate_error_q": 4.883464299609841e-09,
+      "effective_h": 0.006,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 6.906261487494356e-09,
+      "max_residual_norm": 6.110477701140748e-10,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m2",
+      "steps": 1666,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 3216.0,
+      "velocity_error_v": 3.3025783663376274e-08
+    },
+    {
+      "coordinate_error_q": 6.174118993840239e-10,
+      "effective_h": 0.003,
+      "expected_order": 3,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 8.731522766338176e-10,
+      "max_residual_norm": 2.4823249955598125e-09,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m2",
+      "steps": 3333,
+      "terminal_time": 9.999,
+      "terminal_time_offset_from_T": -0.0009999999999994458,
+      "total_newton_iterations": 6514.0,
+      "velocity_error_v": 4.161952116277234e-09
+    },
+    {
+      "coordinate_error_q": 0.0003494519679860808,
+      "effective_h": 0.012,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.0004941997100092729,
+      "max_residual_norm": 9.786242707227817e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "floor_horizon",
+      "source_method": "trapezoidal",
+      "steps": 833,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 1046.0,
+      "velocity_error_v": 0.000818543691132767
+    },
+    {
+      "coordinate_error_q": 8.734439178548214e-05,
+      "effective_h": 0.006,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 0.00012352362342097248,
+      "max_residual_norm": 8.222129613713458e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "floor_horizon",
+      "source_method": "trapezoidal",
+      "steps": 1666,
+      "terminal_time": 9.996,
+      "terminal_time_offset_from_T": -0.0039999999999995595,
+      "total_newton_iterations": 1666.0,
+      "velocity_error_v": 0.00020465051150919678
+    },
+    {
+      "coordinate_error_q": 2.1683748368417355e-05,
+      "effective_h": 0.003,
+      "expected_order": 2,
+      "final_partial_h": 0.0,
+      "frobenius_error_norm_eta": 3.0665451025070914e-05,
+      "max_residual_norm": 9.497229928525828e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "floor_horizon",
+      "source_method": "trapezoidal",
+      "steps": 3333,
+      "terminal_time": 9.999,
+      "terminal_time_offset_from_T": -0.0009999999999994458,
+      "total_newton_iterations": 3327.0,
+      "velocity_error_v": 5.123514037141952e-05
+    },
+    {
+      "coordinate_error_q": 0.0004500621060263832,
+      "effective_h": 0.012,
+      "expected_order": 2,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 0.0006364839288808791,
+      "max_residual_norm": 9.865615556594547e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "Newmark_beta",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1042.0,
+      "velocity_error_v": 0.0010695521292281018
+    },
+    {
+      "coordinate_error_q": 0.00011249045482708553,
+      "effective_h": 0.006,
+      "expected_order": 2,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 0.00015908552677004932,
+      "max_residual_norm": 8.375554551141379e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "Newmark_beta",
+      "steps": 1666,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1667.0,
+      "velocity_error_v": 0.0002674405905715993
+    },
+    {
+      "coordinate_error_q": 2.8122326231283523e-05,
+      "effective_h": 0.003,
+      "expected_order": 2,
+      "final_partial_h": 0.0009999999999994458,
+      "frobenius_error_norm_eta": 3.977097516046677e-05,
+      "max_residual_norm": 9.486371985246574e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "Newmark_beta",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3328.0,
+      "velocity_error_v": 6.68691850700398e-05
+    },
+    {
+      "coordinate_error_q": 0.00040230676745478533,
+      "effective_h": 0.012,
+      "expected_order": 1,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 0.0005689476829321976,
+      "max_residual_norm": 9.912071163853398e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m1",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1558.0,
+      "velocity_error_v": 0.004157598391158146
+    },
+    {
+      "coordinate_error_q": 0.0002884239725275961,
+      "effective_h": 0.006,
+      "expected_order": 1,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 0.00040789309224825265,
+      "max_residual_norm": 9.805489753489383e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m1",
+      "steps": 1666,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3058.0,
+      "velocity_error_v": 0.0022847108603174515
+    },
+    {
+      "coordinate_error_q": 0.000166082153398861,
+      "effective_h": 0.003,
+      "expected_order": 1,
+      "final_partial_h": 0.0009999999999994458,
+      "frobenius_error_norm_eta": 0.0002348756335348902,
+      "max_residual_norm": 9.967582315084655e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m1",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 5967.0,
+      "velocity_error_v": 0.0011938218490876729
+    },
+    {
+      "coordinate_error_q": 3.723589658832793e-08,
+      "effective_h": 0.012,
+      "expected_order": 3,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 5.265950998795961e-08,
+      "max_residual_norm": 4.240548090303706e-10,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m2",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1579.0,
+      "velocity_error_v": 2.6284638998674836e-07
+    },
+    {
+      "coordinate_error_q": 4.750677629061784e-09,
+      "effective_h": 0.006,
+      "expected_order": 3,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 6.718472758630501e-09,
+      "max_residual_norm": 6.110477701140748e-10,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m2",
+      "steps": 1666,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3218.0,
+      "velocity_error_v": 3.304176887652943e-08
+    },
+    {
+      "coordinate_error_q": 6.132458985064204e-10,
+      "effective_h": 0.003,
+      "expected_order": 3,
+      "final_partial_h": 0.0009999999999994458,
+      "frobenius_error_norm_eta": 8.672606632678855e-10,
+      "max_residual_norm": 6.843627118021719e-09,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m2",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 6516.0,
+      "velocity_error_v": 4.161078814846064e-09
+    },
+    {
+      "coordinate_error_q": 0.0003461811169191975,
+      "effective_h": 0.012,
+      "expected_order": 2,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 0.0004895740281399021,
+      "max_residual_norm": 9.786242707227817e-13,
+      "nominal_h": 0.012,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "trapezoidal",
+      "steps": 833,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1047.0,
+      "velocity_error_v": 0.0008197424025890854
+    },
+    {
+      "coordinate_error_q": 8.653085075316369e-05,
+      "effective_h": 0.006,
+      "expected_order": 2,
+      "final_partial_h": 0.0039999999999995595,
+      "frobenius_error_norm_eta": 0.0001223731026606417,
+      "max_residual_norm": 8.222129613713458e-13,
+      "nominal_h": 0.006,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "trapezoidal",
+      "steps": 1666,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 1667.0,
+      "velocity_error_v": 0.000204980565124524
+    },
+    {
+      "coordinate_error_q": 2.163259240894888e-05,
+      "effective_h": 0.003,
+      "expected_order": 2,
+      "final_partial_h": 0.0009999999999994458,
+      "frobenius_error_norm_eta": 3.059310557342227e-05,
+      "max_residual_norm": 9.497229928525828e-13,
+      "nominal_h": 0.003,
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "trapezoidal",
+      "steps": 3333,
+      "terminal_time": 10.0,
+      "terminal_time_offset_from_T": 0.0,
+      "total_newton_iterations": 3328.0,
+      "velocity_error_v": 5.125365911728963e-05
+    }
+  ],
+  "read_only": true,
+  "reference_h": 0.0001,
+  "schema": "tfe-endpoint-policy-sensitivity-audit-v1",
+  "sensitivity_by_method": {
+    "tfe2026_Newmark_beta": {
+      "finest_velocity_error_ratio_across_policies": 1.0012906310299465,
+      "policy_count": 4,
+      "velocity_order_spread_across_policies": 0.005423559374090781
+    },
+    "tfe2026_TFE_m1": {
+      "finest_velocity_error_ratio_across_policies": 1.0003473656324235,
+      "policy_count": 4,
+      "velocity_order_spread_across_policies": 0.07268522662509569
+    },
+    "tfe2026_TFE_m2": {
+      "finest_velocity_error_ratio_across_policies": 1.0266144720869965,
+      "policy_count": 4,
+      "velocity_order_spread_across_policies": 0.03705320378088972
+    },
+    "tfe2026_trapezoidal": {
+      "finest_velocity_error_ratio_across_policies": 1.0013718553536688,
+      "policy_count": 4,
+      "velocity_order_spread_across_policies": 0.005781379074761617
+    }
+  },
+  "source_policy_rows_completed": 0,
+  "source_policy_runner_equivalent": false,
+  "status": "diagnostic_endpoint_policy_sensitivity_not_source_policy",
+  "submission_ready": false,
+  "summary_row_count": 16,
+  "summary_rows": [
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.00040931906636,
+        2.0001024073213323
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.002141080657096,
+        1.9992367892484508
+      ],
+      "effective_h": [
+        0.012004801920768308,
+        0.00599880023995201,
+        0.003000300030003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.812908135885195e-05,
+      "finest_velocity_error": 6.688762354456479e-05,
+      "max_residual_norm": 9.979934191762468e-13,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "Newmark_beta",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 6037.0,
+      "velocity_pairwise_orders_effective_h": [
+        1.9998821414622558,
+        1.9999707318636777
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.001613446673431,
+        1.9991051707782062
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        0.4792653030809548,
+        0.7961088667635239
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        0.4796802047891888,
+        0.7957643212939872
+      ],
+      "effective_h": [
+        0.012004801920768308,
+        0.00599880023995201,
+        0.003000300030003
+      ],
+      "expected_order": 1,
+      "finest_coordinate_error": 0.00016608046379795738,
+      "finest_velocity_error": 0.001193936358746761,
+      "max_residual_norm": 9.978684545330907e-13,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m1",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 10571.0,
+      "velocity_pairwise_orders_effective_h": [
+        0.8636519776438958,
+        0.9364098396767554
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        0.8643996442881129,
+        0.9360045737874282
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.9711652962307014,
+        3.0526090162150594
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.973737444785849,
+        3.051287887094768
+      ],
+      "effective_h": [
+        0.012004801920768308,
+        0.00599880023995201,
+        0.003000300030003
+      ],
+      "expected_order": 3,
+      "finest_coordinate_error": 5.722511353667414e-10,
+      "finest_velocity_error": 4.0553582714153436e-09,
+      "max_residual_norm": 2.676253849073688e-09,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "TFE_m2",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 11304.0,
+      "velocity_pairwise_orders_effective_h": [
+        2.9920657423407246,
+        3.026623610195355
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.994655984487747,
+        3.025313727217761
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.0003114405891056,
+        2.000078126350519
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.0020431174460893,
+        1.999212518786123
+      ],
+      "effective_h": [
+        0.012004801920768308,
+        0.00599880023995201,
+        0.003000300030003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.1637632417803587e-05,
+      "finest_velocity_error": 5.126901356855562e-05,
+      "max_residual_norm": 9.9101634195185e-13,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_method": "trapezoidal",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 6038.0,
+      "velocity_pairwise_orders_effective_h": [
+        1.9998992183495132,
+        1.9999754441289592
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.0016305383442115,
+        1.999109881004081
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        1.979932506545965,
+        2.000103009804854
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        1.979932506545965,
+        2.000103009804854
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.7992170210211498e-05,
+      "finest_velocity_error": 6.69315727879205e-05,
+      "max_residual_norm": 9.865615556594547e-13,
+      "max_terminal_time_offset_abs": 0.008000000000000895,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "Newmark_beta",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.008000000000001,
+        10.002,
+        10.002
+      ],
+      "total_newton_iterations": 6037.0,
+      "velocity_pairwise_orders_effective_h": [
+        2.003493460863907,
+        1.9999711328226417
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.003493460863907,
+        1.9999711328226417
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        0.3750527694282185,
+        0.7938587249606378
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        0.3750527694282185,
+        0.7938587249606378
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 1,
+      "finest_coordinate_error": 0.0001636303295828867,
+      "finest_velocity_error": 0.001194096858283089,
+      "max_residual_norm": 9.967582315084655e-13,
+      "max_terminal_time_offset_abs": 0.008000000000000895,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m1",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.008000000000001,
+        10.002,
+        10.002
+      ],
+      "total_newton_iterations": 10583.0,
+      "velocity_pairwise_orders_effective_h": [
+        0.8640890476934001,
+        0.9363605727868647
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        0.8640890476934001,
+        0.9363605727868647
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.9057932155312765,
+        2.952819218904932
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.9057932155312765,
+        2.952819218904932
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 3,
+      "finest_coordinate_error": 6.0471716523125e-10,
+      "finest_velocity_error": 4.163289490932698e-09,
+      "max_residual_norm": 2.4823249955598125e-09,
+      "max_terminal_time_offset_abs": 0.008000000000000895,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "TFE_m2",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.008000000000001,
+        10.002,
+        10.002
+      ],
+      "total_newton_iterations": 11313.0,
+      "velocity_pairwise_orders_effective_h": [
+        2.992781010533251,
+        2.988859666965654
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.992781010533251,
+        2.988859666965654
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        1.9798314631958658,
+        2.000079117702045
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        1.9798314631958658,
+        2.000079117702045
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.1532308347449458e-05,
+      "finest_velocity_error": 5.1305427573034024e-05,
+      "max_residual_norm": 9.786242707227817e-13,
+      "max_terminal_time_offset_abs": 0.008000000000000895,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_method": "trapezoidal",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.008000000000001,
+        10.002,
+        10.002
+      ],
+      "total_newton_iterations": 6042.0,
+      "velocity_pairwise_orders_effective_h": [
+        2.003738103426359,
+        1.9999767354467843
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.003738103426359,
+        1.9999767354467843
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.000403811982556,
+        2.010124244454451
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.000403811982556,
+        2.010124244454451
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.8189041961557137e-05,
+      "finest_velocity_error": 6.684530016931589e-05,
+      "max_residual_norm": 9.865615556594547e-13,
+      "max_terminal_time_offset_abs": 0.0039999999999995595,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "floor_horizon",
+      "source_method": "Newmark_beta",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        9.996,
+        9.996,
+        9.999
+      ],
+      "total_newton_iterations": 6034.0,
+      "velocity_pairwise_orders_effective_h": [
+        1.9998794125894865,
+        1.998069901489816
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        1.9998794125894865,
+        1.998069901489816
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        0.4933587275908913,
+        0.8315126019701953
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        0.4933587275908913,
+        0.8315126019701953
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 1,
+      "finest_coordinate_error": 0.0001672836939992095,
+      "finest_velocity_error": 0.0011936822141058734,
+      "max_residual_norm": 9.967582315084655e-13,
+      "max_terminal_time_offset_abs": 0.0039999999999995595,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m1",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        9.996,
+        9.996,
+        9.999
+      ],
+      "total_newton_iterations": 10577.0,
+      "velocity_pairwise_orders_effective_h": [
+        0.8638810952904655,
+        0.9359758259517841
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        0.8638810952904655,
+        0.9359758259517841
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.9709035617334236,
+        2.9835997565747956
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.9709035617334236,
+        2.9835997565747956
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 3,
+      "finest_coordinate_error": 6.174118993840239e-10,
+      "finest_velocity_error": 4.161952116277234e-09,
+      "max_residual_norm": 2.4823249955598125e-09,
+      "max_terminal_time_offset_abs": 0.0039999999999995595,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "floor_horizon",
+      "source_method": "TFE_m2",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        9.996,
+        9.996,
+        9.999
+      ],
+      "total_newton_iterations": 11307.0,
+      "velocity_pairwise_orders_effective_h": [
+        2.991866402828207,
+        2.988260523436871
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.991866402828207,
+        2.988260523436871
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.000307192881544,
+        2.010100903245769
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.000307192881544,
+        2.010100903245769
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.1683748368417355e-05,
+      "finest_velocity_error": 5.123514037141952e-05,
+      "max_residual_norm": 9.786242707227817e-13,
+      "max_terminal_time_offset_abs": 0.0039999999999995595,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "floor_horizon",
+      "source_method": "trapezoidal",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        9.996,
+        9.996,
+        9.999
+      ],
+      "total_newton_iterations": 6039.0,
+      "velocity_pairwise_orders_effective_h": [
+        1.9998971523075002,
+        1.9979567243515972
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        1.9998971523075002,
+        1.9979567243515972
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.0003215095672706,
+        2.0000147476185828
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.0003215095672706,
+        2.0000147476185828
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.8122326231283523e-05,
+      "finest_velocity_error": 6.68691850700398e-05,
+      "max_residual_norm": 9.865615556594547e-13,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_Newmark_beta",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "Newmark_beta",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 6037.0,
+      "velocity_pairwise_orders_effective_h": [
+        1.9997164491777033,
+        1.9998050053631078
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        1.9997164491777033,
+        1.9998050053631078
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        0.48010492664048,
+        0.7962940252869413
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        0.48010492664048,
+        0.7962940252869413
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 1,
+      "finest_coordinate_error": 0.000166082153398861,
+      "finest_velocity_error": 0.0011938218490876729,
+      "max_residual_norm": 9.967582315084655e-13,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m1",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m1",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 10583.0,
+      "velocity_pairwise_orders_effective_h": [
+        0.8637388080826394,
+        0.936424034707735
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        0.8637388080826394,
+        0.936424034707735
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.970488879099847,
+        2.953595726899105
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.970488879099847,
+        2.953595726899105
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 3,
+      "finest_coordinate_error": 6.132458985064204e-10,
+      "finest_velocity_error": 4.161078814846064e-09,
+      "max_residual_norm": 6.843627118021719e-09,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_TFE_m2",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "TFE_m2",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 11313.0,
+      "velocity_pairwise_orders_effective_h": [
+        2.991857092647576,
+        2.9892614030780993
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        2.991857092647576,
+        2.9892614030780993
+      ]
+    },
+    {
+      "coordinate_pairwise_orders_effective_h": [
+        2.000240540295651,
+        2.000008021504062
+      ],
+      "coordinate_pairwise_orders_nominal_h": [
+        2.000240540295651,
+        2.000008021504062
+      ],
+      "effective_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 2.163259240894888e-05,
+      "finest_velocity_error": 5.125365911728963e-05,
+      "max_residual_norm": 9.786242707227817e-13,
+      "max_terminal_time_offset_abs": 0.0,
+      "nominal_h": [
+        0.012,
+        0.006,
+        0.003
+      ],
+      "paper_method": "tfe2026_trapezoidal",
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_method": "trapezoidal",
+      "source_policy_row_completed": false,
+      "terminal_times": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "total_newton_iterations": 6042.0,
+      "velocity_pairwise_orders_effective_h": [
+        1.9996834961193266,
+        1.9997602188520125
+      ],
+      "velocity_pairwise_orders_nominal_h": [
+        1.9996834961193266,
+        1.9997602188520125
+      ]
+    }
+  ],
+  "t_final": 10.0
+}

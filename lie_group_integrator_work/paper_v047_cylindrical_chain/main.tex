@@ -1,0 +1,2365 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{assumption}{Assumption}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\method}{Gauss6/FullVA}
+\newcommand{\tfe}{TFE}
+\newcommand{\artifact}[1]{\texttt{#1}}
+\newcommand{\figpath}{figures}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\plotfigure}[3]{%
+  \begin{figure}[t]
+    \centering
+    \IfFileExists{#1}{%
+      \includegraphics[width=0.95\linewidth]{#1}%
+    }{%
+      \fbox{\parbox{0.9\linewidth}{Missing figure: \nolinkurl{#1}}}%
+    }
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\title{Lie-Group FullVA Integration for Cylindrical Lower-Pair Mechanisms:\\
+A Conditional Sixth-Order Formal-Order Comparison with Separated Four-Example Evidence}
+\author{Jingquan Wang}
+\date{v047 artifact-backed paper build}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper reports the v047 evidence for a Lie-group FullVA integrator applied
+to cylindrical lower-pair mechanisms.  The accepted \method{} path is evaluated
+on the cylindrical-chain benchmark and on four ASME-style mechanism examples
+with separated evidence roles: single pendulum, double pendulum, four link,
+and slider crank.  On the smooth
+cylindrical h-sweep, the method records observed position and velocity orders
+7.161 and 7.066.  The sharp Brown--McPhee friction case is order-reduced on the
+coarse h-sweep, but high-order behavior reappears under deeper fixed
+refinement, leaving a practical coarse-regime caveat rather than a closed-form
+correctness failure.
+
+The main claim of this paper is therefore a conditional formal-order
+comparison: within the current artifact scope, the accepted \method{} path
+has a conditional sixth-order Lie-group FullVA theorem on the selected smooth
+branch, while the four examples provide separated method-side evidence roles.
+The single- and double-pendulum rows support dynamic-order evidence; the
+four-link and slider-crank rows support lower-pair mechanism coverage.  The
+local paper-style $m=3$ Lobatto-\tfe{} formula target is order five.  A
+full-\tfe{} replacement would strengthen the reproduction claim, but it is not
+needed for this bounded formal-order comparison.
+
+The paper also separates this accepted result from a stricter reproduction
+claim.  The original Chaturvedi--Sandu--Sandu paper has its own full \tfe{}
+formulation.  In this v047 implementation, ``full-\tfe{} replacement'' means
+replacing the accepted Gauss6/FullVA stage residual by paper-derived
+temporal-finite-element weak rows inside the nonlinear solve.  That replacement
+gate remains open and machine-readable as
+\nolinkurl{full_tfe_stage_replacement=false}.  The open replacement gate is
+reported as a limitation and as future reproduction work; it does not weaken
+the accepted conditional method/proof claim or the separated four-example
+evidence roles.
+\end{abstract}
+
+\section*{Reviewer-Facing Summary}
+
+The current paper should be read as an artifact-backed status paper, not as a
+claim that every research gate is closed.  The accepted method claim is the
+conditional sixth-order \method{} path under the direct residual-bridge proof
+route.  The cylindrical-chain benchmark records smooth position/velocity
+orders 7.161/7.066.  The four ASME-style examples have separated roles:
+single and double pendula provide dynamic-order evidence, while four link and
+slider crank provide mechanism-coverage and reaction/constraint diagnostics.
+
+The paper-\tfe{} claim is separate.  The encoded paper formula map uses
+$m=3$ Gauss--Lobatto temporal finite elements and has expected order five in
+the formula-mapping audit, but this is not yet an accepted method replacement.
+The machine-readable gate remains
+\nolinkurl{full_tfe_stage_replacement=false}.  The remaining missing object is
+an eight-row source-free lower-pair closure that replaces the terminal bridge
+inside the 132-row nonlinear stage residual while preserving the paper-\tfe{}
+order target.
+Equivalently, the source paper is not missing a \tfe{} method; the missing
+piece is our artifact-backed substitution of that paper-style residual into
+the v047 solver.
+The newest endpoint-pose trajectory smoke has narrowed that missing object:
+the terminal-equivalent endpoint row closes velocity but loses order, while a
+nearby nonterminal row preserves neither terminal closure nor order.  The next
+repair therefore has to be a nonterminal endpoint-pose predictor that closes
+terminal velocity on trajectory without collapsing the h-sweep order.  Sliding
+the extrapolation points almost onto the endpoint closes terminal velocity, but
+it reproduces the same 4.142/2.305 smooth-order loss; quadratic nonterminal
+extrapolation does the same.
+
+Routine paper validation should use the read-only validators, not the full
+generator.  The historical \artifact{run\_v047.py} file is an accumulated
+audit harness containing positive evidence, negative screens, and artifact
+generation code; the latest recorded full generation time is
+$2386.76\,\mathrm{s}$.  It is not needed to check the accepted four-example
+claim or rebuild this PDF.
+
+\section{Scope and Claims}
+
+The v047 pipeline has one primary paper goal and one optional stronger
+reproduction goal.  The primary goal is to validate a conditional sixth-order
+Lie-group multibody integrator for cylindrical lower-pair mechanisms.  This is the
+accepted \method{} path: it has a conditional sixth-order theorem on the
+selected smooth branch by the direct 132-row residual bridge, records smooth
+position/velocity orders 7.161/7.066 in the current h-sweep, and has
+four-example coverage with separated evidence roles.  The single- and
+double-pendulum rows provide dynamic-order evidence, while the four-link and
+slider-crank rows provide closed-loop constraint/reaction checks that are not
+interpreted as accepted asymptotic order estimates.  The
+optional stronger goal audits whether a
+complete paper-derived temporal finite-element stage residual can replace the
+current stage equations without relying on endpoint projection, endpoint
+source data, or terminal-row substitution.  This second goal is intentionally
+stricter and is not needed for the formal-order comparison claim.
+
+The source paper itself is therefore not being accused of lacking a full
+\tfe{} formulation.  The open v047 item is narrower and implementation-facing:
+we have not yet produced an accepted nonlinear solve in which the paper-style
+\tfe{} stage rows replace the Gauss6/FullVA stage rows while retaining the
+required order, rank, residual, and endpoint-closure evidence.
+
+The full-\tfe{} replacement is therefore not needed to state the four-example
+method evidence or the bounded formal-order comparison.  It is needed only for the
+stronger statement that the implemented nonlinear residual is the original
+paper-style temporal finite-element method rather than the accepted
+conditional Gauss6/FullVA method proved through the direct 132-row residual
+bridge with separate diagnostic closure evidence.
+Keeping this boundary explicit is important because otherwise the formal-order
+comparison could be confused with a solved paper-method reproduction.
+
+The distinction matters for interpreting the numerical order.  The accepted
+\method{} path is high order on smooth data.  The current source-free
+final-stage \tfe{} closure candidate and the newer endpoint-pose velocity
+predictor smoke are not accepted replacements: they close or nearly close
+terminal velocity, but they do not preserve the target trajectory order.  The
+paper therefore reports the \method{} theorem and method evidence as the
+positive result and the full \tfe{} replacement as an open proof and
+implementation gate.
+
+\subsection{Terminology and Claim Boundary}
+
+The phrase \emph{independent full-\tfe{} stage replacement} is used in a narrow
+technical sense.  It does not mean merely adding an endpoint correction to an
+otherwise accepted Gauss trajectory.  It means replacing the stage residual
+rows themselves by paper-derived temporal finite-element rows and solving those
+rows inside the nonlinear trajectory problem.
+
+\begin{table}[t]
+\centering
+\caption{Terms used in the v047 paper and pipeline.}
+\label{tab:terms}
+\begin{tabular}{p{0.27\linewidth}p{0.65\linewidth}}
+\toprule
+Term & Meaning in this paper \\
+\midrule
+\method{} &
+The accepted Gauss collocation/FullVA trajectory residual: a conditional
+order-six method path on the selected smooth branch by the direct 132-row
+residual bridge. \\
+Paper-\tfe{} &
+The temporal finite-element formula family encoded from the paper coefficient
+maps; the v047 formula-mapping audit uses $m=3$ Gauss--Lobatto nodes with
+expected order five. \\
+Independent full-\tfe{} replacement &
+All 132 stage rows are replaced by paper-derived stage rows and are solved
+inside Newton, with accepted h-sweep order, residual, rank, and endpoint checks. \\
+Source-free lower-pair closure &
+The lower-pair closure rows do not receive an external endpoint source and do
+not rely on endpoint-boundary source data. \\
+Terminal-row replacement &
+A diagnostic shortcut that inserts raw endpoint velocity rows in place of
+paper rows.  This is useful for debugging but is not accepted as full \tfe{}. \\
+Projection &
+A post-step velocity correction.  Projection is accepted only on the historical
+Gauss diagnostic path, not on the independent full-\tfe{} replacement path. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Thus the current open issue is not whether the four examples run.  They do.
+It is whether the stricter paper-\tfe{} residual can replace the Gauss stage
+equations without losing the order and endpoint behavior already demonstrated
+by the accepted \method{} path.  The occasional spelling ``FTE'' in notes should
+be read as \tfe{}, temporal finite element.
+
+\subsection{Claim Map}
+
+The current result has one primary accepted formal-order comparison, one accepted
+four-example method gate, and one optional open reproduction claim.  The
+primary claim is that \method{} is a conditional sixth-order method in the
+artifact scope used here: it has observed smooth orders 7.161/7.066, whereas
+the encoded local paper-style $m=3$ Lobatto-\tfe{} target has expected order
+five.  The open claim is narrower: a paper-derived
+full-\tfe{} stage residual has not yet independently replaced the Gauss stage
+equations.
+
+\begin{table}[t]
+\centering
+\caption{Current claim boundary.  The order labels are intentionally separated
+because they refer to different residuals.}
+\label{tab:claim-map}
+\begin{tabular}{P{0.29\linewidth}P{0.17\linewidth}P{0.43\linewidth}}
+\toprule
+Claim & Status & Evidence or blocker \\
+\midrule
+Formal-order comparison relative to the local paper-style \tfe{} target &
+Accepted bounded comparison &
+\method{} has a conditional order-six theorem by the direct residual-bridge
+proof and records smooth observed orders 7.161/7.066; the encoded $m=3$
+Gauss--Lobatto \tfe{} formula target has expected order five.  This is not a
+full residual reproduction claim. \\
+Gauss6/FullVA cylindrical-chain method &
+Accepted method path &
+Direct 132-row bridge: 96 non-dynamic rows supply row-local \(O(h^7)\)
+residual input and 36 Newton--Euler rows vanish by direct substitution on the
+lifted Gauss stage, giving the conditional local \(O(h^7)\)/global \(O(h^6)\)
+claim under the stated interfaces. \\
+Four ASME-style method rows &
+Accepted method gate &
+Single and double pendulum method-side FullVA rows are accepted; four-link and
+slider-crank closed-loop kinematic FullVA plus reaction-dynamics rows are
+accepted. \\
+Paper formula mapping &
+Mapped diagnostic &
+The encoded $m=3$ Gauss--Lobatto \tfe{} operator has expected order five, but
+mapping the formulas is not the same as solving a full replacement residual. \\
+Source-free terminal lower-pair closure &
+Useful but not accepted as full \tfe{} &
+Raw terminal endpoint velocity closes to $4.01\times10^{-16}$, but smooth
+position order is 3.523. \\
+Independent full-\tfe{} stage replacement &
+Open &
+The missing eight source-free lower-pair closure rows must preserve terminal
+closure and restore the paper-\tfe{} h-sweep order without endpoint source,
+projection, terminal-row replacement, or a target-direction oracle. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Comparator Definition}
+
+The comparison in Proposition~1 is deliberately local and reproducible.  The
+comparator is the paper-style $m=3$ Gauss--Lobatto \tfe{} formula target
+encoded in the v047 formula-mapping audit, not an independently accepted
+implementation of every source-paper residual row.  This keeps the accepted
+claim aligned with the available evidence: the pipeline can prove that the
+conditional \method{} path has formal order six while the local paper-style
+target has expected order five, while still reporting that the complete source-paper
+residual reproduction remains open.
+
+\begin{table}[t]
+\centering
+\caption{Comparator definition for the paper-facing formal-order comparison.}
+\label{tab:comparator-definition}
+\begin{tabular}{P{0.24\linewidth}P{0.24\linewidth}P{0.40\linewidth}}
+\toprule
+Object & Role in this paper & Current evidence boundary \\
+\midrule
+Accepted \method{} path &
+Method being claimed &
+Gauss/FullVA nonlinear residual with a conditional order-six theorem by direct
+132-row residual bridge; smooth observed orders 7.161/7.066; four-example
+evidence separated into dynamic-order pendulum rows and residual/reaction
+coverage on four-link/slider crank. \\
+Local paper-style $m=3$ Lobatto-\tfe{} target &
+Comparator used for Proposition~\ref{prop:formal-order-comparison} &
+Formula-mapping target with expected order five.  It is sufficient for the
+current formal-order comparison because the comparison is an order and
+evidence-scope claim. \\
+Complete source-paper \tfe{} residual &
+Not used as the accepted comparator &
+The source paper has a full \tfe{} formulation, but v047 has not yet accepted
+an implementation in which all paper-derived stage rows replace the
+Gauss6/FullVA rows inside Newton.  This is the open
+\nolinkurl{full_tfe_stage_replacement=false} reproduction gate. \\
+v046/rA baseline &
+Historical reproducibility anchor &
+Useful for repository regression context, but not the main paper-facing
+comparator for Proposition~\ref{prop:formal-order-comparison}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Original-paper boundary versus accepted v047 claim.}
+\label{tab:source-paper-v047-boundary}
+\begin{tabular}{P{0.24\linewidth}P{0.32\linewidth}P{0.32\linewidth}}
+\toprule
+Question & Source-paper/local target & Accepted v047 claim \\
+\midrule
+What is being compared? &
+The local paper-style $m=3$ Lobatto-\tfe{} formula target, whose expected
+order is five in the formula-mapping audit. &
+The accepted \method{} path, a conditional order-six Gauss/FullVA one-step map
+with smooth observed orders 7.161/7.066. \\
+What is implemented as the method? &
+The complete source-paper \tfe{} residual is not used as the accepted
+comparator because the independent replacement gate remains open. &
+The nonlinear solve uses the accepted 132-row Gauss/FullVA residual and the
+audited projection/KKT endpoint closure. \\
+What is proved by the artifacts? &
+They prove the local order-five paper-style target boundary, not a completed
+source-paper residual reproduction. &
+They support a paper-facing formal-order comparison inside the current
+v047 artifact scope and separated four-example ASME evidence gate. \\
+What remains outside the claim? &
+Full source-paper residual reproduction requires accepted paper-derived stage
+rows inside Newton. &
+\nolinkurl{full_tfe_stage_replacement=false} remains an explicit caveat and
+future stronger gate. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Acceptance criteria for the paper-facing formal-order comparison.}
+\label{tab:formal-order-acceptance}
+\begin{tabular}{P{0.25\linewidth}P{0.48\linewidth}P{0.15\linewidth}}
+\toprule
+Criterion & Required evidence & Status \\
+\midrule
+Accepted method path &
+The claimed method is the \method{} one-step map in
+Section~\ref{sec:accepted-one-step-integrator}, not a diagnostic
+paper-\tfe{} substitution. &
+Pass \\
+Order exceedance &
+The direct residual-bridge theorem gives order six under the stated interfaces,
+and the accepted smooth h-sweep records position/velocity orders 7.161/7.066,
+above the encoded local $m=3$ Lobatto-\tfe{} expected order-five target. &
+Pass \\
+Four-example gate &
+The accepted method rows cover single pendulum, double pendulum, four link,
+and slider crank under the same read-only ASME gate. &
+Pass \\
+Comparator boundary &
+The comparison is against the local paper-style formula target; complete
+source-paper residual reproduction remains a separate gate. &
+Pass \\
+Caveat separation &
+Sparse speed, sharp-friction coarse-regime behavior, and
+\nolinkurl{full_tfe_stage_replacement=false} are explicit caveats and do not
+contradict the narrower comparative claim. &
+Pass \\
+Read-only reproducibility &
+The paper-claim, paper-package, four-ASME, full-\tfe{} gap, repair-spec, and
+pipeline-output validators check the claim without invoking the full v047
+generator. &
+Pass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Main Comparative Proposition}
+
+\begin{proposition}[Formal-order comparison]
+\label{prop:formal-order-comparison}
+Within the current v047 artifact scope, the accepted \method{} path supports a
+conditional formal-order comparison relative to the encoded local paper-style
+$m=3$ Lobatto-\tfe{} target.
+\end{proposition}
+
+\begin{proof}[Evidence and proof sketch]
+The accepted method path is the Gauss/FullVA residual on the cylindrical
+lower-pair benchmark.  Its order statement is the conditional theorem proved
+by the direct 132-row residual bridge: on the selected smooth compact branch,
+the 96 non-dynamic rows supply row-local \(O(h^7)\) residual input, the 36
+Newton--Euler rows vanish by direct substitution on the lifted Gauss stage,
+and endpoint/Newton perturbations are retained at \(O(h^7)\) before the
+local-to-global \(O(h^6)\) transfer.  The smooth h-sweep records observed
+position and velocity orders 7.161/7.066 as downstream numerical evidence, and
+the same pipeline accepts the four-example evidence gate.  Only the single-
+and double-pendulum dynamic rows are used as method-order evidence; the
+four-link and slider-crank rows remain closed-loop constraint/reaction checks
+whose near-roundoff trajectory differences are not interpreted as convergence
+order.  The comparator used for this proposition is not a complete
+source-paper residual implementation; it is the locally encoded $m=3$
+Gauss--Lobatto \tfe{} formula target, whose expected order is five in the
+formula-mapping audit.  Therefore the artifact-backed comparison is between a
+conditional order-six Gauss/FullVA method path and a local order-five
+paper-style target.  This proves the bounded paper-facing comparative
+statement claimed here.
+
+The proposition is intentionally not a full residual reproduction theorem.  A
+full source-paper reproduction statement would require the still-open
+independent full-\tfe{} stage replacement gate, where the paper-derived rows
+replace the Gauss6/FullVA stage residual inside the nonlinear solve and pass
+the rank, residual, endpoint-closure, and h-sweep checks without endpoint
+source data, terminal-row replacement, projection, or a target-direction
+oracle.  That stronger statement remains outside the accepted
+formal-order comparison.
+\end{proof}
+
+\subsection{Contributions}
+
+The paper is organized around artifact-backed claims rather than a
+single final theorem.  The current contributions are:
+\begin{itemize}
+  \item a conditional order-six integrator comparison for the cylindrical
+  lower-pair benchmark: the accepted \method{} path is proved through the
+  direct 132-row residual bridge and records smooth position and velocity
+  orders 7.161/7.066, while the local paper-style $m=3$ Lobatto-\tfe{} formula
+  target has expected order five;
+  \item accepted method-side evidence for four ASME-style examples, including
+  lower-pair graph, rank, closed-loop kinematic FullVA, and reaction-dynamics
+  checks for the closed-loop examples;
+  \item a paper-\tfe{} formula-mapping and substitution audit that keeps the
+  expected fifth-order Lobatto-\tfe{} claim distinct from the accepted Gauss6
+  method claim;
+  \item a source-free final-stage lower-pair closure that removes endpoint
+  source data, terminal-row replacement, and projection while closing raw
+  terminal velocity to roundoff;
+  \item a negative but useful compression-audit sequence showing which
+  source-free eight-row closure families do not yet provide an independent
+  full-\tfe{} replacement.
+\end{itemize}
+
+\subsection{Role of the Full-TFE Replacement}
+
+The full-\tfe{} replacement is not needed to support the accepted Gauss6
+result: the order-six claim is conditional on the retained compact-branch,
+endpoint, binding, and solver-scale interfaces, with smooth numerical evidence
+downstream.  The replacement is optional future work for a stronger
+source-paper reproduction claim.  If the paper is to claim a temporal
+finite-element stage method rather than a Gauss-stage method with endpoint
+diagnostics, then the rows solved by Newton must be the paper-derived weak/TFE
+rows themselves.  In particular, the lower-pair endpoint closure must be
+produced by stage-local source-free rows, not by an endpoint source, a
+final-row selector, a projection step, or a local target-Jacobian oracle.
+
+This distinction is why the pipeline keeps running targeted compression audits
+after the four-example method gate is accepted.  Those audits are not redoing
+the four examples.  They are isolating the specific eight-row lower-pair
+closure law that would make the paper-\tfe{} residual independently viable.
+
+\subsection{Reader Status Checklist}
+
+The current status can be read from four separate questions.  This separation
+prevents the accepted method evidence from being confused with the still-open
+paper-\tfe{} replacement evidence.
+
+\begin{table}[t]
+\centering
+\caption{Status checklist for interpreting the v047 claims.}
+\label{tab:reader-status}
+\begin{tabular}{P{0.31\linewidth}P{0.17\linewidth}P{0.40\linewidth}}
+\toprule
+Question & Answer & Evidence boundary \\
+\midrule
+Is the main formal-order comparison accepted? &
+Yes &
+\method{} is the accepted conditional order-six method path; the smooth
+h-sweep records 7.161/7.066, above the local paper-style $m=3$
+Lobatto-\tfe{} expected order-five target. \\
+Does the four-example method-evidence gate pass? &
+Yes &
+The accepted method gate covers single pendulum and double pendulum as
+dynamic-order evidence, and four link and slider crank as lower-pair
+constraint/reaction coverage on the \method{} path. \\
+Is the production method sixth order? &
+Conditionally &
+The theorem proves local \(O(h^7)\)/global \(O(h^6)\) on the selected smooth
+branch under the compact-tube, endpoint, implementation-binding, and
+solver-scale interfaces; the smooth h-sweep records observed orders
+7.161/7.066. \\
+Is the paper $m=3$ Lobatto-\tfe{} formula mapped? &
+Yes &
+The formula-mapping audit records expected order five, but this is not by
+itself a solved method replacement. \\
+Is the independent full-\tfe{} stage replacement accepted? &
+No &
+The source-free terminal closure closes endpoint velocity, but the replacement
+candidate remains order-limited and the machine-readable gate remains
+\nolinkurl{full_tfe_stage_replacement=false}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Numerical Model}
+
+The v047 cylindrical-chain benchmark replaces twist-locked prismatic joints by
+cylindrical joints.  The cylindrical lower pair constrains axis alignment and a
+perpendicular point relation while leaving axial translation and relative spin
+free.  The main residual has dimension 132.  Its sparse Jacobian pattern has
+2637 nonzeros; column coloring uses 90 colors, and the row-VJP backend uses 60
+row colors while preserving trajectory agreement to roundoff.
+
+The accepted trajectory integrator uses a three-stage Gauss collocation
+structure with FullVA variables and is claimed through the conditional
+order-six residual-bridge theorem.  Each body carries position, orientation,
+velocity, angular velocity, acceleration, and angular acceleration information
+inside the stage solve.  Lower-pair constraints enter at position, velocity,
+and acceleration levels through the stage residual.  Endpoint velocity closure
+is audited through both the historical projection path and a square endpoint
+KKT residual.
+
+At a schematic level, the accepted path solves
+\begin{equation}
+  R_{\mathrm{Gauss6}}(q_n,v_n,a_n,Z;h)=0,
+\end{equation}
+where $Z$ denotes the FullVA stage variables.  Lower-pair constraints appear as
+\begin{equation}
+  \Phi(q)=0,\qquad
+  \Phi_q(q)v=0,\qquad
+  \Phi_q(q)a+\dot{\Phi}_q(q,v)v=0.
+\end{equation}
+The paper-\tfe{} replacement target instead seeks a stage residual
+\begin{equation}
+  R_{\tfe{}}(q_n,v_n,a_n,Z;h)=
+  \begin{bmatrix}
+  R_x & R_y & R_z & R_{\mathrm{NE}} & R_{\Phi,v} & R_{\Phi,a}
+  \end{bmatrix}^{T}=0,
+\end{equation}
+with the same 132-row stage budget, but with rows derived from the paper
+temporal finite-element construction rather than from the Gauss stage formula.
+This replacement is counted as full only when the resulting trajectory solve,
+not just a one-step tangent or residual evaluation, passes the acceptance
+checks.
+
+\subsection{Accepted One-Step Integrator}
+\label{sec:accepted-one-step-integrator}
+
+The integrator claimed in Proposition~\ref{prop:formal-order-comparison} is the
+one-step map
+\begin{equation}
+  x_{n+1}=\Psi_h^{\mathrm{G6FVA}}(x_n),
+  \qquad x_n=(q_n,v_n,a_n),
+\end{equation}
+defined by the accepted Gauss6/FullVA residual and its recorded endpoint
+closure audit.  It is not the complete paper-\tfe{} replacement residual.
+For each step, v047 uses the following evidence-backed construction:
+\begin{enumerate}
+  \item assemble the cylindrical lower-pair constraints and FullVA stage
+  unknowns $Z$ for the current state $x_n$ and step size $h$;
+  \item solve the 132-row nonlinear stage system
+  $R_{\mathrm{Gauss6}}(q_n,v_n,a_n,Z;h)=0$ to the Newton tolerance recorded in
+  the CSV and JSON artifacts;
+  \item recover the raw endpoint by the Gauss collocation quadrature and the
+  local Lie-group retraction used by the v047 trajectory code;
+  \item audit endpoint velocity closure through the square endpoint KKT path
+  while keeping historical projection residual/correction measurements as
+  diagnostics;
+  \item emit the per-step residual, constraint, order, runtime, and plotting
+  artifacts consumed by the paper and pipeline validators.
+\end{enumerate}
+The theorem endpoint object is the velocity-level/KKT closure functional.
+It is evaluated on the accepted Gauss6/FullVA path.  Raw projection residuals
+are diagnostics, not theorem inputs or full-\tfe{} replacements.  This is the
+integrator whose smooth cylindrical-chain h-sweep records 7.161/7.066
+position/velocity orders and whose four-example method gate is accepted.
+
+\subsection{Order Numbers}
+
+There are two order targets in the current evidence.  The production method is
+the conditional order-six Gauss6/FullVA path, and the smooth benchmark measures
+position/velocity orders 7.161/7.066 on the tested range.  The paper formula
+mapping audit separately encodes an $m=3$ Gauss--Lobatto \tfe{} operator with
+expected order five.  An earlier source-free terminal-closed candidate has
+smooth orders 3.523/4.828.  The latest endpoint-pose velocity predictor
+trajectory smoke closes terminal velocity even more tightly on the terminal
+row, but gives only 4.142/2.305 position/velocity order on the three-$h$
+smooth refinement.  These are useful closure diagnostics, not accepted
+replacements, because they still degrade the trajectory order.
+
+\begin{table}[t]
+\centering
+\caption{Order conventions used in the paper.  The rows are deliberately
+separated because they refer to different nonlinear residuals.}
+\label{tab:order-conventions}
+\begin{tabular}{P{0.28\linewidth}P{0.24\linewidth}P{0.36\linewidth}}
+\toprule
+Path & Order statement & Interpretation \\
+\midrule
+Accepted \method{} path &
+Conditional order-six method; observed smooth orders 7.161/7.066 &
+This is the method used for the accepted cylindrical-chain and four-example
+evidence claims. \\
+Paper $m=3$ Lobatto-\tfe{} formula map &
+Expected order five &
+This is a formula-mapping diagnostic.  It becomes a method claim only after the
+paper-derived rows replace the stage residual inside Newton. \\
+Current source-free terminal-closed \tfe{} candidate &
+Smooth orders 3.523/4.828 &
+Terminal velocity is closed without endpoint source, terminal-row replacement,
+or projection, but order is too low for an accepted full-\tfe{} replacement. \\
+Endpoint-pose velocity predictor smoke &
+Smooth orders 4.142/2.305 &
+The terminal-equivalent \nolinkurl{0p00} row closes terminal velocity to
+$8.124\times10^{-17}$, but the trajectory order remains too low; the nearby
+nonterminal \nolinkurl{0p01} row leaves terminal velocity at
+$6.255\times10^{-6}$. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Proof Status}
+
+The proof ledger separates the load-bearing theorem from generated numerical
+evidence.  The accepted \method{} path is not certified merely by a generic
+``Gauss collocation inherits order'' slogan.  The load-bearing argument fixes
+the implemented 132-row FullVA residual, inserts the classical three-stage
+Gauss local defect into that same stage object, uses the 96-row non-dynamic
+certificate and the 36-row Newton--Euler direct-substitution identity, and then
+passes the resulting \(O(h^7)\) stage residual through the compact-tube
+Kantorovich, endpoint, inexact-Newton, and local-to-global transfer lemmas.
+Sparse AD and row/column coloring do not change this order because they only
+change how the same Newton residual and Jacobian are evaluated.
+
+\begin{assumption}[Smooth accepted-path order assumptions]
+\label{ass:g6fva-order}
+For the smooth cylindrical benchmark and reported h-sweep, assume:
+\begin{enumerate}
+  \item the square FullVA residual is locally equivalent to a regular smooth
+  constrained flow in a local Lie-group chart;
+  \item the three-stage Gauss collocation equations are solved to a Newton
+  tolerance below the sixth-order truncation scale;
+  \item the local chart and retraction used for endpoint reconstruction are
+  smooth diffeomorphisms on the tested trajectory tube;
+  \item the theorem endpoint output is the velocity-level/KKT closure
+  functional on the same compact branch, while raw endpoint projection
+  monitors remain diagnostics and do not supply the endpoint theorem input;
+  \item the sparse backend evaluates the same residual and Jacobian as the
+  dense backend.
+\end{enumerate}
+\end{assumption}
+
+\begin{theorem}[Order of the accepted \method{} map]
+\label{thm:g6fullva-order}
+Under Assumption~\ref{ass:g6fva-order}, interpreted as the retained
+accepted-branch P1--P3/P6 compact-tube interfaces with the P4/P5 direct
+\(96+36\) residual bridge as the only consumed residual-value certificate, the
+accepted \method{} one-step map in
+Section~\ref{sec:accepted-one-step-integrator} has local defect \(O(h^7)\) and
+reduced-chart/reported position--velocity grid error \(O(h^6)\) on fixed smooth
+time intervals, for reported grids whose transitions satisfy the predeclared
+branch, endpoint, proof-norm, and \(\eta_h^{\rm tube}\le c_\eta h^7\)
+solver-envelope conditions.  For driven or otherwise nonautonomous rows, the
+residual \(F_{A,h,t_n}\), stage times \(t_n+c_i h\), endpoint map, and proof
+norm are fixed on the same transition slice before constants or diagnostics
+are used.  This is a conditional order-six statement for
+the accepted branch-selected map only.  It retains P6 as a theorem-level
+solver-envelope condition, does not prove a P7 residual-to-error transfer, does not
+prove residual, reaction, multiplier, or constraint-output error estimates,
+does not use source-policy rows, and does not use or complete the separate
+primitive/Taylor T3 route.  Equivalently, the theorem asserts only the
+local defect $O(h^7)$ and same-initial-state global error $O(h^6)$ under these
+retained interfaces and only for this displayed reduced/reporting grid scope.
+\end{theorem}
+
+\begin{proof}
+By Assumption~\ref{ass:g6fva-order}, the proof is carried out on a fixed
+smooth compact branch in the local Lie-group chart.  The classical
+three-stage Gauss local defect is inserted into the implemented FullVA stage
+object, not into a different reduced model.  On that branch, the 96
+non-dynamic rows provide the row-local \(O(h^7)\) residual input and the 36
+Newton--Euler rows vanish by direct substitution on the lifted Gauss stage.
+Thus the accepted 132-row bridge supplies the \(O(h^7)\) stage residual
+defect used by the conditional theorem.  Endpoint closure and the inexact
+Newton iterate add only \(O(h^7)\) perturbations under the retained
+compact-tube hypotheses, and the local-to-global transfer then gives the
+\(O(h^6)\) grid estimate for the same branch-selected reported grid.  The
+proof order is the constrained Lie-group BDF order of obligations, not an
+estimate transfer: fix the discrete object, insert the smooth constrained
+branch, prove the local defect for that fixed object, and only then apply the
+stability recurrence and reporting map.  No BDF local-error constant,
+hidden-constraint estimate, multiplier-history estimate, or multistep
+zero-stability theorem is imported into this one-step FullVA proof.
+The solver residual bound is a retained P6 envelope fixed before the run, not a
+conclusion drawn from fixed-tolerance logs, and the residual-to-error P7
+interface remains open.  Sparse and dense backends evaluate the same
+residual/Jacobian path, so backend choice is an implementation diagnostic, not
+an additional order argument.  Residual-only mechanism rows, source-policy
+rows, and the separate primitive/Taylor T3 route are not theorem inputs and cannot
+be combined with the direct residual bridge to strengthen the theorem.
+\end{proof}
+
+\begin{lemma}[Order of the local paper-style \tfe{} target]
+\label{lem:tfe-target-order}
+The proof-level order target for the $m=3$ Gauss--Lobatto paper-style
+\tfe{} formula used in this manuscript is five.
+\end{lemma}
+
+\begin{proof}
+The source-paper family is compared through the temporal finite-element
+formula-order convention $p_{\mathrm{TFE}}(m)=2m-1$.  Substituting $m=3$
+gives $p_{\mathrm{TFE}}(3)=5$.  This is distinct from the source paper's
+reported DAE pendulum order reduction.
+\end{proof}
+
+\begin{theorem}[Accepted formal-order comparison theorem]
+\label{thm:accepted-formal-order-comparison}
+Assume Assumption~\ref{ass:g6fva-order}.  Also assume the current v047 artifact contract:
+the read-only validators accept the four-example coverage rows, the single-
+and double-pendulum dynamic rows provide the method-side order evidence, the
+four-link and slider-crank rows are treated only as closed-loop
+constraint/reaction checks, the smooth cylindrical h-sweep records the reported
+7.161/7.066 position/velocity orders, the local paper-style $m=3$
+Lobatto-\tfe{} formula target has expected order five, and the claim boundary records
+\nolinkurl{full_tfe_stage_replacement=false}.  Then the v047 evidence supports
+the following and only the following paper-facing statement: the accepted
+\method{} one-step map is a conditional sixth-order method relative to the
+local order-five paper-style \tfe{} target and is covered by the four
+ASME-style examples under the stated evidence boundary.  The theorem does not assert complete source-paper
+\tfe{} residual reproduction.
+\end{theorem}
+
+\begin{proof}
+\emph{Order.}  Theorem~\ref{thm:g6fullva-order} gives the conditional
+order-six result for the accepted \method{} one-step map through the direct
+132-row residual bridge under the smooth compact-branch and solver-scale
+interfaces.  The generated convergence artifacts give the independent
+numerical check used by the paper: the smooth cylindrical h-sweep records
+position and velocity orders 7.161/7.066.
+
+\emph{Four-example evidence.}  The same artifact contract accepts the
+single pendulum, double pendulum, four link, and slider crank method rows on
+the \method{} path.  These rows are accepted as method evidence rows, not as
+full-\tfe{} replacement rows.
+
+\emph{Comparison.}  The comparator in this paper is the locally encoded
+paper-style $m=3$ Lobatto-\tfe{} formula target.  Lemma~\ref{lem:tfe-target-order}
+fixes its expected order as five. Combining this order-five comparator with
+the conditional order-six accepted \method{} map proves the formal-order
+comparison statement inside the stated
+artifact scope.
+
+\emph{Boundary.}  A complete source-paper residual reproduction would require
+accepted paper-derived stage rows inside the 132-row nonlinear solve, without
+endpoint source data, terminal-row replacement, projection, or a
+target-direction oracle.  The current artifact contract records
+\nolinkurl{full_tfe_stage_replacement=false}; therefore that stronger
+statement is excluded rather than silently assumed.  The theorem proves only
+the accepted formal-order comparison claim.
+\end{proof}
+
+\begin{corollary}[Artifact-backed formal-order comparison acceptance]
+\label{cor:artifact-backed-acceptance}
+Under Assumption~\ref{ass:g6fva-order} and the current read-only v047 artifact
+checks, Proposition~\ref{prop:formal-order-comparison} is accepted within the stated
+artifact scope.
+\end{corollary}
+
+\begin{proof}
+Theorem~\ref{thm:g6fullva-order} gives the conditional order-six direct
+residual-bridge theorem for the accepted \method{} one-step map, and
+Theorem~\ref{thm:accepted-formal-order-comparison} packages the order,
+four-example, comparator, and boundary evidence into the formal paper-facing
+claim.  The generated convergence artifacts record smooth position/velocity
+orders 7.161/7.066, and the minimal four-example validator accepts single
+pendulum, double pendulum, four link, and slider crank on the accepted method
+path.  The comparator definition keeps the local $m=3$ Lobatto-\tfe{}
+expected-order-five target separate from the complete source-paper residual
+reproduction gate.  The full-\tfe{} gap and repair-spec validators keep
+\nolinkurl{full_tfe_stage_replacement=false} explicit, so the corollary
+accepts only the formal-order comparison and not the stronger reproduction
+claim.
+\end{proof}
+
+This is deliberately not a proof of the independent paper-\tfe{} replacement.
+The current paper-\tfe{} rows are either formula maps, local tangent probes, or
+diagnostic substitutions unless they replace the stage residual inside the
+nonlinear h-sweep and pass the acceptance test in
+Table~\ref{tab:full-tfe-acceptance-test}.  The velocity-level/KKT closure
+functional is the theorem endpoint object on the accepted Gauss path; raw
+endpoint projection measurements are diagnostics and do not discharge the
+endpoint raw-defect hypothesis or define an accepted full-\tfe{} method.
+
+\begin{table}[t]
+\centering
+\caption{Proof/status boundary inherited from the order-proof ledger.}
+\label{tab:proof-status}
+\begin{tabular}{P{0.29\linewidth}P{0.22\linewidth}P{0.37\linewidth}}
+\toprule
+Object & Status & Reason \\
+\midrule
+\method{} smooth cylindrical method &
+Conditional order-six argument &
+Direct 132-row bridge gives local \(O(h^7)\) residual defect and global
+\(O(h^6)\) grid error under the retained compact-branch, endpoint, and
+solver-scale interfaces. \\
+Sparse Jacobian backend &
+Order-preserving backend change &
+Exact AD and sparse linear algebra evaluate the same residual/Jacobian to the
+same Newton tolerance. \\
+Endpoint closure path &
+Diagnostic caveat &
+Raw endpoint/projection residuals remain diagnostics; the theorem endpoint
+object is the velocity-level/KKT closure functional, so projection monitors are
+not used to claim independent full-\tfe{} acceptance. \\
+Paper $m=3$ Lobatto-\tfe{} mapping &
+Mapped but not accepted as a method &
+Expected order five is recorded for the formula map, but the rows have not yet
+produced an accepted full replacement h-sweep. \\
+Independent full-\tfe{} replacement &
+Open proof obligation &
+The source-free terminal closure is algebraically useful, but the current
+h-sweep remains order-limited and the gate is still
+\nolinkurl{full_tfe_stage_replacement=false}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Validation Protocol}
+
+Every reported method claim is tied to generated artifacts in the v047 results
+directory.  The core h-sweeps use
+three step sizes $h\in\{0.04,0.02,0.01\}$ against an $h=0.005$ reference unless
+otherwise noted.  The four ASME-style examples are:
+\begin{itemize}
+  \item single pendulum;
+  \item double pendulum;
+  \item four link;
+  \item slider crank.
+\end{itemize}
+
+The validation records CSV rows, summary JSON entries, plots, and a generated
+report.  Accepted method rows require small residuals, clean constraints, and
+consistent observed order or a documented reference policy.  Diagnostic rows
+are kept separate from accepted rows when they use projection, endpoint-source
+data, local tangent probes, terminal-row replacement, or incomplete \tfe{}
+stage substitution.
+
+\subsection{Proposition Evidence Traceability}
+
+Table~\ref{tab:proposition-traceability} records the evidence chain for
+Proposition~\ref{prop:formal-order-comparison}.  It is deliberately read-only: every
+entry is checked from existing CSV, JSON, PDF, and ledger artifacts rather than
+by rerunning the full v047 generator.
+
+\begin{table}[t]
+\centering
+\caption{Traceability for the formal-order comparison proposition.}
+\label{tab:proposition-traceability}
+\begin{tabular}{P{0.26\linewidth}P{0.43\linewidth}P{0.19\linewidth}}
+\toprule
+Proposition component & Artifact evidence & Read-only check \\
+\midrule
+Accepted \method{} one-step map &
+Summary JSON, convergence CSV, and
+Section~\ref{sec:accepted-one-step-integrator} &
+Paper-claim validator \\
+Smooth high-order behavior &
+Convergence CSV and convergence figure record 7.161/7.066 orders &
+v047 and paper-package validators \\
+Four-example acceptance &
+Summary JSON ASME gate with single pendulum, double pendulum,
+four link, and slider crank &
+Minimal four-ASME validator \\
+Comparator boundary &
+Comparator table and paper claim ledger separate the local
+$m=3$ Lobatto-\tfe{} target from complete source-paper residual reproduction &
+Paper-claim validator \\
+Open full-\tfe{} caveat &
+Full-\tfe{} gap ledger and repair specification keep
+\nolinkurl{full_tfe_stage_replacement=false} explicit &
+Full-\tfe{} gap and repair-spec validators \\
+Corollary acceptance &
+Assumption--lemma--theorem--corollary chain accepts the proposition only inside
+the current read-only v047 artifact scope &
+Paper-claim validator \\
+Repository synchronization &
+Order-proof ledger, pipeline audit, and version ledger carry the same claim
+boundary &
+Pipeline-output validator \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Accepted Gauss6/FullVA Results}
+
+\plotfigure{\figpath/convergence.png}
+{Cylindrical-chain convergence for the accepted \method{} path.  The smooth
+case is high order; the sharp-friction case is order-reduced on the coarse
+h-sweep.}
+{fig:convergence}
+
+\begin{table}[t]
+\centering
+\caption{Cylindrical-chain observed orders for the accepted \method{} path.}
+\label{tab:main-order}
+\begin{tabular}{P{0.39\linewidth}P{0.18\linewidth}P{0.18\linewidth}P{0.10\linewidth}}
+\toprule
+Case & Step sizes & Position order & Velocity order \\
+\midrule
+Smooth, projected velocity & 0.04, 0.02, 0.01 & 7.161 & 7.066 \\
+Smooth, raw endpoint       & 0.04, 0.02, 0.01 & 7.161 & 7.066 \\
+Sharp, projected velocity  & 0.04, 0.02, 0.01 & 1.894 & 2.683 \\
+Sharp, raw endpoint        & 0.04, 0.02, 0.01 & 1.894 & 2.683 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:main-order} gives the headline convergence behavior.  The
+smooth branch is above sixth order on the tested range.  The sharp branch is
+not treated as a silent failure; it is tracked by a Brown--McPhee smoothness
+sweep and by deeper fixed refinements.
+
+\plotfigure{\figpath/friction_smoothness_sweep.png}
+{Brown--McPhee smoothness sweep.  Reducing the stribeck velocity moves the
+problem from a smooth high-order branch to a coarse sharp-friction
+order-reduced branch.}
+{fig:smoothness}
+
+\begin{table}[t]
+\centering
+\caption{Sharp-friction refinement evidence.}
+\label{tab:sharp}
+\begin{tabular}{lccc}
+\toprule
+Audit & Step window & Position order & Velocity order \\
+\midrule
+Fixed refinement & 0.02, 0.01, 0.005 & 3.294 & 5.867 \\
+Deep fixed refinement & 0.01, 0.005, 0.0025 & 6.398 & 5.870 \\
+Ultra fixed refinement & 0.005, 0.0025, 0.00125 & 7.521 & 5.725 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ultra-refinement audit recovers high observed order, but only at increased
+work.  Relative to the $h=0.01$ sharp baseline, the high-order window around
+$h=0.00125$ costs about $7.25\times$ runtime and $8\times$ steps/Newton
+iterations while reducing velocity error by approximately $1.06\times10^6$.
+The remaining sharp-friction caveat is therefore a practical coarse-regime
+cost issue rather than a complete asymptotic failure.
+
+\section{Four-Example Mechanism Gate}
+
+\plotfigure{\figpath/asme_lower_pair_graph_bridge.png}
+{Lower-pair graph bridge over the four ASME-style examples.}
+{fig:graph-bridge}
+
+\plotfigure{\figpath/asme_closed_loop_kinematic_fullva.png}
+{Closed-loop kinematic FullVA solves for the four-link and slider-crank
+examples.}
+{fig:closed-loop}
+
+\begin{table}[t]
+\centering
+\caption{Four-example evidence summary.}
+\label{tab:asme}
+\begin{tabular}{lp{0.66\linewidth}}
+\toprule
+Example & Accepted evidence \\
+\midrule
+Single pendulum &
+Exact driven kinematic mapping; full absolute-coordinate driven FullVA
+residual; embedded scalar FullVA bridge; reaction-multiplier reconstruction. \\
+Double pendulum &
+Method-side FullVA mapping with accepted nested local v029/FullVA
+self-reference; v046 retained as reproducibility and reference-floor
+diagnostic. \\
+Four link &
+Lower-pair graph bridge, full-row-rank $\Phi_q$ audit, accepted local
+closed-loop kinematic FullVA solve, and accepted reaction-dynamics rows. \\
+Slider crank &
+Lower-pair graph bridge, full-row-rank $\Phi_q$ audit, accepted local
+closed-loop kinematic FullVA solve, and accepted reaction-dynamics rows. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Quantitative evidence behind the accepted four-example gate.}
+\label{tab:asme-quant}
+\begin{tabular}{P{0.20\linewidth}P{0.39\linewidth}P{0.29\linewidth}}
+\toprule
+Example & Quantitative evidence & Artifact path \\
+\midrule
+Single pendulum &
+Absolute-coordinate driven FullVA residual has minimum observed order 6.024
+across position, velocity, orientation, and angular velocity; max stage
+residual is $3.664\times10^{-12}$. &
+Single absolute FullVA runs CSV \\
+Double pendulum &
+Accepted local v029/FullVA self-reference has minimum orientation/angular
+velocity order 6.089; endpoint position/velocity constraint norms stay below
+$7.034\times10^{-13}$ and $8.323\times10^{-12}$. &
+Double method runs CSV \\
+Four link &
+Closed-loop kinematic FullVA solve over $h=\{0.02,0.01,0.005\}$ keeps
+position/velocity/acceleration constraint norms below
+$1.052\times10^{-14}$; reaction-dynamics residual is at most
+$1.338\times10^{-13}$. &
+Closed-loop kinematic and reaction CSVs \\
+Slider crank &
+Closed-loop kinematic FullVA solve over $h=\{0.02,0.01,0.005\}$ keeps
+position/velocity/acceleration constraint norms below
+$1.204\times10^{-15}$; reaction-dynamics residual is at most
+$6.492\times10^{-15}$. &
+Closed-loop kinematic and reaction CSVs \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The four-example gate is accepted as coverage, not as four independent
+dynamic-order proofs.  This does not mean all
+research caveats are closed: sparse speed, the independent full-\tfe{} stage
+replacement, and practical sharp-friction coarse-step behavior remain open
+items.  The machine-readable summary status for this claim is
+\nolinkurl{four_asme_method_rows_accepted_projection_sharp_sparse_caveats}.
+
+\section{Endpoint Closure and TFE Replacement Audit}
+
+\plotfigure{\figpath/endpoint_kkt_closure.png}
+{Endpoint KKT residual closure.  The endpoint velocity constraint is enforced
+inside a square residual in this diagnostic path.}
+{fig:kkt}
+
+The endpoint KKT diagnostic closes endpoint velocity to roundoff while
+preserving the accepted \method{} stage equations.  It is important evidence,
+but it is not the same as a complete paper-\tfe{} stage replacement.  The full
+\tfe{} replacement target is stricter: all 132 stage rows must be replaced by
+independently derived paper-\tfe{} rows, and the resulting nonlinear h-sweep
+must pass residual, rank, endpoint, and observed-order checks without relying
+on endpoint projection, endpoint source data, terminal-row substitution, or
+local tangent-only arguments.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Representative paper-\tfe{} replacement audits.  ``Full'' denotes
+accepted independent full-stage replacement, not merely a successful local
+solve.}
+\label{tab:tfe-audits}
+\begin{tabular}{P{0.41\linewidth}P{0.18\linewidth}P{0.18\linewidth}P{0.08\linewidth}}
+\toprule
+Audit & Max residual & Smooth orders & Full \tfe{}? \\
+\midrule
+Position-row substitution & $5.68\times10^{-12}$ & 1.227 / 0.731 & No \\
+Kinematic-row substitution & $9.57\times10^{-12}$ & 1.406 / 1.542 & No \\
+All-row substitution & $9.64\times10^{-12}$ & 1.406 / 1.542 & No \\
+Consistent-z0 terminal output & $9.79\times10^{-12}$ & 4.046 / 4.420 & No \\
+Lower-pair acceleration terminal output & $8.35\times10^{-12}$ & 4.937 / 4.799 & No \\
+Source-free mean-velocity closure & $8.13\times10^{-12}$ & 3.512 / 4.448 & No \\
+Source-free final-stage velocity closure & $9.49\times10^{-12}$ & 3.523 / 4.828 & No \\
+Source-free order/closure blend, best-order beta & $8.90\times10^{-12}$ & 5.341 / 6.825 & No \\
+Endpoint-pose predictor, \nolinkurl{0p00} three-$h$ smoke & $9.76\times10^{-12}$ & 4.142 / 2.305 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Latest Source-Free Final-Stage Closure}
+
+\plotfigure{\figpath/source_free_final_stage_velocity_closure.png}
+{Source-free final-stage lower-pair velocity closure.  This audit closes raw
+terminal endpoint velocity but remains smooth-position-order limited.}
+{fig:final-stage}
+
+The latest lower-pair audit inserts 16 centered acceleration
+source-consistency rows and 8 final paper-stage velocity rows.  It removes the
+external endpoint source, removes endpoint-boundary source data from the
+trajectory, avoids terminal-row replacement, and does not use velocity
+projection.  The nonlinear h-sweep solves six smooth/sharp trajectory rows with
+maximum residual $9.49\times10^{-12}$ and raw terminal endpoint velocity
+$4.01\times10^{-16}$.
+
+This is a real improvement: the terminal-velocity gate is closed by source-free
+stage rows.  It is still not an accepted full-\tfe{} replacement because the
+smooth position order is 3.523, below the acceptance floor used by the
+pipeline.  The current blocker has shifted from terminal closure to preserving
+paper-\tfe{} order after the closure rows are inserted into the nonlinear
+trajectory solve.
+
+\subsection{Latest Endpoint-Pose Trajectory Smoke}
+
+The latest bounded JSON-only follow-up promotes the local endpoint-pose row
+into the nonlinear 132-row residual without running the full artifact
+generator.  The target
+\nolinkurl{lower_pair_endpoint_pose_velocity_predictor_h_sweep_smoke} keeps
+rank 132 and converges all requested smooth short-trajectory steps.  With the
+terminal-equivalent \nolinkurl{stage02_convex_pose_velocity_0p00_z} row, the
+three-$h$ refinement over $h=[0.04,0.02,0.01]$ against reference
+$h=0.005$ closes raw terminal endpoint velocity to
+$8.124\times10^{-17}$, but the position/velocity orders are only 4.142/2.305.
+
+This resolves an ambiguity in the local row-space evidence.  The endpoint row
+is not merely untested at trajectory level: it closes terminal velocity inside
+Newton, but loses the paper-\tfe{} order.  Moving slightly away from the
+endpoint does not fix the problem.  The nearby nonterminal
+\nolinkurl{stage02_convex_pose_velocity_0p01_z} row converges, but leaves
+terminal endpoint velocity at $6.255\times10^{-6}$ and gives only 2.345/1.878
+orders.  The remaining repair target is therefore a nonterminal endpoint-pose
+predictor that keeps terminal velocity closed on trajectory while recovering
+the paper-\tfe{} order target.
+
+The best non-projection follow-up in this family is the terminal-limit
+extrapolated row
+\nolinkurl{stage02_convex_pose_velocity_extrapolate_0p01_0p02_z}.  The default
+two-$h$ smoke has \nolinkurl{projection_used=false}, reduces terminal velocity
+to $1.254\times10^{-7}$, and records 6.412/3.775 orders.  However, the
+three-$h$ smooth refinement gives only 4.054/2.364 position/velocity order and
+still has maximum terminal velocity $1.254\times10^{-7}$, with the finest-$h$
+row at $1.244\times10^{-8}$.  It is therefore a useful trajectory near-miss,
+not an accepted replacement.
+
+Moving the extrapolation points closer to the terminal endpoint improves only
+the terminal velocity.  The default two-$h$ sweep over
+\nolinkurl{0p005/0p01}, \nolinkurl{0p002/0p005}, and \nolinkurl{0p001/0p002}
+has \nolinkurl{projection_used=false}, terminal velocities
+$3.135\times10^{-8}$, $6.270\times10^{-9}$, and $1.254\times10^{-9}$, and
+orders 6.621/4.648, 6.599/4.566, and 6.591/4.521.  A three-$h$ refinement of
+\nolinkurl{stage02_convex_pose_velocity_extrapolate_0p001_0p002_z} gives
+terminal velocities $1.254\times10^{-9}$ overall and $1.244\times10^{-10}$ at
+the finest step, but only 4.143/2.307 order.  The ultra-near
+\nolinkurl{stage02_convex_pose_velocity_extrapolate_0p00001_0p00002_z} row
+finally satisfies the terminal-velocity tolerance without projection, with max
+terminal velocity $1.254\times10^{-13}$ and finest-$h$ terminal velocity
+$1.254\times10^{-14}$, but its three-$h$ order is still 4.142/2.305 and
+\nolinkurl{smooth_order_ok=false}.  This is terminal-equivalent limiting
+evidence, not a full-\tfe{} replacement.
+
+A three-point quadratic extrapolation check reaches the same conclusion without
+evaluating the terminal row.  The
+\nolinkurl{stage02_convex_pose_velocity_quadextrapolate_*} laws estimate the
+weight-zero closure from three strictly nonterminal rows and keep
+\nolinkurl{projection_used=false}.  The default two-$h$ sweep over
+\nolinkurl{0p01/0p02/0p05}, \nolinkurl{0p005/0p01/0p02}, and
+\nolinkurl{0p002/0p005/0p01} records terminal velocities
+$2.029\times10^{-11}$, $2.029\times10^{-12}$, and $2.029\times10^{-13}$, but
+all three velocity orders remain about 4.508.  The best row,
+\nolinkurl{stage02_convex_pose_velocity_quadextrapolate_0p002_0p005_0p01_z},
+closes the terminal-velocity tolerance on the three-$h$ refinement, with max
+terminal velocity $2.029\times10^{-13}$ and finest-$h$ terminal velocity
+$8.254\times10^{-15}$, but its order is still 4.142/2.305.  Thus quadratic
+nonterminal extrapolation is also terminal-equivalent limiting evidence rather
+than a full-\tfe{} replacement.
+
+A projection-like terminal-tangent follow-up rules out the simplest correction
+of that nonterminal row.  The full
+\nolinkurl{stage02_convex_pose_velocity_0p01_terminalproj_z} correction fails
+in the reference run with residual divergence $6.739\times10^8$.  Damped
+variants converge but move in the wrong direction:
+\nolinkurl{stage02_convex_pose_velocity_0p01_terminalproj_p0p1_z} leaves
+terminal velocity at $7.028\times10^{-6}$ with orders 2.301/1.788, and
+\nolinkurl{stage02_convex_pose_velocity_0p01_terminalproj_p0p5_z} leaves
+terminal velocity at $1.321\times10^{-5}$ with orders 2.158/1.433.  These
+rows set \nolinkurl{projection_used=true}, so they are diagnostic exclusions
+rather than candidate acceptance evidence.
+
+\subsection{Why the Next Audit Is an Eight-Row Velocity Compression}
+
+The source-free elimination audit shows that the 24 lower-pair stage rows have
+rank 16 after removing the external source; the missing rank is exactly eight
+rows.  Mean-velocity and scalar/component blend closures preserve useful order
+but leave terminal endpoint velocity at roughly $10^{-5}$.  The final-stage
+velocity closure drives terminal velocity to roundoff, but its smooth position
+order drops to 3.523.  The problem is therefore not the existence of any
+closure row, but the choice of the eight source-free rows that close terminal
+velocity while preserving the paper-stage order.
+
+\plotfigure{\figpath/velocity_compression.png}
+{Velocity-compression audit.  The all-stage lower-pair velocity rows span the
+terminal bridge in the local tangent model, but nonlinear trajectory acceptance
+of a universal eight-row compression remains pending.}
+{fig:velocity-compression}
+
+The current velocity-compression audit is intentionally local.  It tests 24
+candidate/case/step tangent rows and finds that fixed source-free compression
+can span the terminal bridge directions, with the best fixed candidate
+recording projection residuals around $10^{-15}$.  The strengthened audit now
+shows that those fixed compressions collapse to the final-stage selector: the
+universal full $8\times24$ selector-relative distance is $1.53\times10^{-15}$
+and the largest non-final-stage energy fraction is $1.71\times10^{-15}$.
+
+\plotfigure{\figpath/velocity_compression_nondegenerate.png}
+{Non-degenerate velocity-compression probe.  Fixed stage-0/stage-1 injections
+with meaningful non-final-stage energy lose the local terminal-bridge span.}
+{fig:velocity-compression-nondegenerate}
+
+The follow-up non-degenerate probe makes this failure mode explicit.  It
+sweeps 192 candidate/case/step/eta rows by fixing the final-stage coefficient
+at one and injecting stage-0 and/or stage-1 lower-pair velocity rows.  There
+are 84 rows with meaningful non-final-stage energy, but none of them spans the
+local terminal-bridge target; the best meaningful projection residual is
+$1.59\times10^{-3}$, far above the $10^{-8}$ local-span threshold.  Only the
+eta-zero rows span, and their non-final-stage energy is exactly zero.  Thus the
+local compression is not yet a new independent closure formula.
+
+\plotfigure{\figpath/velocity_compression_state_dependent.png}
+{State-dependent velocity-compression probe.  Diagonal state-local direction
+oracles with meaningful non-final-stage energy still fail to span the local
+terminal-bridge target.}
+{fig:velocity-compression-state-dependent}
+
+The state-dependent follow-up tests the natural next option: choose diagonal
+stage directions from the local tangent state rather than using fixed scalar
+stage weights.  It sweeps 72 candidate/case/step/eta rows over a 65-direction
+finite grid.  There are 36 rows with meaningful non-final-stage energy, but
+none spans the local terminal-bridge target; the best meaningful projection
+residual is $9.90\times10^{-3}$.  This rules out diagonal state-dependent
+direction weights as the missing independent closure.
+
+\plotfigure{\figpath/velocity_compression_component_mixing.png}
+{Non-final component-mixing probe.  Removing the final-stage rows and allowing
+full stage-0/stage-1 component mixing still does not span the terminal bridge.}
+{fig:velocity-compression-component-mixing}
+
+The full component-mixing follow-up removes the final-stage velocity rows from
+the active fit and allows full $8\times8$ or $8\times16$ mixing over stage 0,
+stage 1, or both non-final stages.  It tests 36 case/step/candidate rows using
+both case-local and universal fits.  None spans the local terminal-bridge
+target; the best tangent residual is $9.81\times10^{-1}$.  Some rows are
+value-balanced to roundoff, with minimum value residual
+$2.19\times10^{-16}$, but value balance alone is not a tangent closure.  The
+result motivates the value-level and derivative-aware probes below, rather
+than serving as an accepted full-\tfe{} replacement.
+
+\plotfigure{\figpath/velocity_compression_value_level.png}
+{Value-level source-free compression probe.  Value fits can balance rows, but
+meaningful non-final value-level fits do not span the terminal bridge.}
+{fig:velocity-compression-value-level}
+
+The value-level follow-up reverses the diagnostic priority: it fits row values
+first, then checks whether the induced Jacobian rows span the terminal bridge.
+It tests 72 case/step/candidate rows.  All 72 rows balance values; 18 also
+span the local tangent.  However, the spanning value-balanced rows are
+final-stage-selector-like: the maximum spanning non-final-stage energy fraction
+is $2.12\times10^{-15}$, and the count of meaningful non-final value-balanced
+tangent spans is zero.  This rules out a purely value-fitted non-final closure
+as the missing independent replacement.  The next target is a meaningful
+non-final, derivative-aware value-level compression.
+
+\plotfigure{\figpath/velocity_compression_derivative_aware.png}
+{Derivative-aware value-level oracle.  A coefficient-gradient correction gives
+meaningful non-final value-balanced tangent spans, but it is still a local
+oracle rather than a bounded nonlinear row formula.}
+{fig:velocity-compression-derivative-aware}
+
+The derivative-aware follow-up keeps the same value-level non-final row values
+and asks whether a local coefficient-gradient correction can close the tangent
+gap.  It tests 36 case/step/candidate rows over scalar, component-wise, and
+full non-final active velocity families.  All 36 rows balance values and span
+the local terminal-bridge tangent with meaningful non-final energy after the
+oracle correction.  The best corrected projection residual is
+$9.02\times10^{-16}$, while the best uncorrected value-level base residual is
+still $9.82\times10^{-1}$ and the maximum required coefficient-gradient
+Frobenius norm is $1.95\times10^{17}$.  This is a useful upper bound: it says
+the next repair can focus on deriving the missing coefficient-gradient law
+rather than searching for another value-only row family.  It is not yet a full
+TFE replacement, because the correction has not been converted into a bounded
+analytic formula and inserted into a nonlinear trajectory h-sweep.
+
+\plotfigure{\figpath/velocity_compression_bounded_gradient.png}
+{Bounded-gradient cap sweep.  The local derivative-aware oracle is capped by a
+global Frobenius gradient budget.  Practical caps recover only part of the
+local tangent span, while all local spans require cap $10^{18}$.}
+{fig:velocity-compression-bounded-gradient}
+
+The bounded-gradient follow-up quantifies how hard the oracle is to realize as
+a formula.  It tests 288 cap/candidate/case/step rows.  All 288 rows preserve
+the value balance and meaningful non-final row energy, but only 92 rows span at
+the tested caps.  A practical cap of $10^{12}$ spans only 12 rows; all 36 local
+derivative-aware spans appear only at cap $10^{18}$.  Thus the local tangent
+gap is closed only by a very large derivative budget.  The next mathematical
+target is still a bounded analytic coefficient-gradient law followed by a
+nonlinear h-sweep, not another unconstrained local fit.
+
+\plotfigure{\figpath/velocity_compression_bounded_formula.png}
+{Bounded analytic saturation-law probe.  Tanh and rational saturation laws
+preserve the value balance, but all local spans require cap $10^{22}$ and the
+correction direction is still a target-direction oracle.}
+{fig:velocity-compression-bounded-formula}
+
+The bounded-formula follow-up replaces the hard cap with explicit saturation
+laws: global tanh, rowwise tanh, and rowwise rational-quadratic scaling.  It
+tests 648 law/cap/candidate/case/step rows.  All 648 rows preserve value
+balance and meaningful non-final row energy, and 366 rows span at the tested
+caps.  For each tested law, complete coverage of the 36 local
+derivative-aware spans appears only at cap $10^{22}$.  The best single-row
+projection residual is $8.02\times10^{-16}$, attained by the rowwise tanh law
+at cap $10^{14}$.  This is still not a full \tfe{} replacement: the saturation
+formula bounds the magnitude, but the correction direction remains the local
+target-direction oracle and no nonlinear trajectory h-sweep has accepted it.
+
+\plotfigure{\figpath/velocity_compression_target_free_formula.png}
+{Target-direction-free bounded formula probe.  The correction direction is
+computed from the current closure and active non-final velocity rows, not from
+the target Jacobian.}
+{fig:velocity-compression-target-free-formula}
+
+The target-direction-free follow-up is the narrowest diagnostic needed after
+the saturation-law result.  It tests 2592 law/cap/candidate/case/step rows over
+12 direction laws: the positive and negative closure tangent, the mean and
+dominant active non-final velocity rows, stage-2 and endpoint velocity
+extrapolations from the first two Gauss stages, the non-final stage slope, the
+extrapolated-stage2-minus-closure direction, the all-active mean and
+anti-aligned rows, and all-active SVD modes with and without closure-row
+orthogonalization.  The target bridge is still used to score projection
+residuals, but it is not used to construct the correction direction.  All 2592
+rows preserve value balance and meaningful
+non-final row energy, but none spans the local terminal-bridge
+tangent; every tested cap and direction law has zero spanning rows.  The best
+projection residual is $9.82\times10^{-1}$, attained by the dominant active
+velocity direction at cap $10^{12}$.  This separates two issues that were
+previously entangled: the bounded saturation result already showed that a large
+target-direction oracle can supply the magnitude, while this target-free probe
+shows that the simple source-derived direction laws are not the missing
+formula.  As with the preceding probes, this is not yet a full \tfe{}
+replacement because it is still a local tangent audit rather than a nonlinear
+trajectory h-sweep.
+
+\plotfigure{\figpath/velocity_compression_direction_capacity.png}
+{Direction-capacity audit.  All-stage velocity feature spaces can reproduce the
+local derivative-aware correction, but non-final active/source feature spaces
+cannot.}
+{fig:velocity-compression-direction-capacity}
+
+The direction-capacity audit separates feature-space capacity from an actual
+target-free formula.  It tests 216 candidate/feature/case/step rows.  The
+all-stage velocity feature spaces span 72 rows at roundoff, with best
+projection residual $1.09\times10^{-15}$ and best correction residual
+$1.51\times10^{-15}$.  Every non-final active/source feature family has zero
+spanning rows: the best non-final projection residual is
+$9.81\times10^{-1}$ and the best non-final correction residual is
+$9.998\times10^{-1}$.  This audit uses the target Jacobian only to define the
+local correction being projected; it does not use a target-direction oracle in
+the formula path and it is not an accepted full \tfe{} replacement.  It
+therefore moves the test from linear feature capacity to nonlinear
+second-differential source features.
+
+\plotfigure{\figpath/velocity_compression_nonlinear_capacity.png}
+{Nonlinear second-differential capacity audit.  Finite-difference source
+features increase the local non-final feature library, but none spans the
+local lower-pair correction.}
+{fig:velocity-compression-nonlinear-capacity}
+
+The nonlinear-capacity audit tests 216 rows across six finite-difference
+source-feature families.  It records zero spanning rows:
+the best projection residual is $6.95\times10^{-1}$ and the best correction
+residual is $7.01\times10^{-1}$.  The target Jacobian is used only to define
+and project the local correction being tested, not to construct a
+target-direction oracle formula.  No final-stage velocity selector is accepted,
+no nonlinear h-sweep is accepted, and the tested second-differential
+non-final source features are ruled out.  This motivates the higher-order and
+nonlocal source-feature test below.
+
+\plotfigure{\figpath/velocity_compression_higher_order_capacity.png}
+{Higher-order/nonlocal capacity audit.  Third finite-difference source
+features and same-case cross-step source deltas still do not span the local
+lower-pair correction.}
+{fig:velocity-compression-higher-order-capacity}
+
+The higher-order/nonlocal capacity audit tests another 216 rows across six
+feature families: third differentials along active non-final velocity rows,
+active-plus-third-differential rows, second-plus-third source differentials,
+same-case cross-step source-row deltas, active-plus-nonlocal deltas, and a
+combined higher-order/nonlocal source feature library.  It again records zero
+spanning rows.  The best projection residual is $6.95\times10^{-1}$, and the
+best correction residual is $7.01\times10^{-1}$.  This closes the narrow next
+step from the previous audit: the missing coefficient-gradient law is not
+present in these tested third-differential or simple cross-step nonlocal
+source features.  The next repair target is therefore a different
+history-dependent non-final source law or a revised weak-row formula, followed
+by the nonlinear h-sweep.
+
+\plotfigure{\figpath/velocity_compression_history_capacity.png}
+{History-transport capacity audit.  One-step transported source-row and
+non-final velocity-row deltas still do not span the local lower-pair
+correction.}
+{fig:velocity-compression-history-capacity}
+
+The history-transport capacity audit tests another 216 rows across six
+feature families: transported source-row deltas, active-plus-source transport
+deltas, transported non-final velocity-row deltas, active-plus-velocity
+transport deltas, combined source/velocity transport deltas, and the same
+combined transport library with active non-final velocity rows included.  It
+again records zero spanning rows.  The best projection residual is
+$7.13\times10^{-1}$, and the best correction residual is
+$7.12\times10^{-1}$.  Thus a one-step trajectory-history feature space is not
+enough.
+
+\plotfigure{\figpath/velocity_compression_multi_step_history_capacity.png}
+{Two-step history-transport capacity audit.  Transported source-row and
+non-final velocity-row deltas from two future states still do not span the
+local lower-pair correction.}
+{fig:velocity-compression-multi-step-history-capacity}
+
+The two-step history-transport capacity audit advances the terminal output
+twice and stacks the transported source-row and non-final velocity-row deltas
+from both future states.  It again tests 216 rows across six feature families
+and records zero spans.  The best projection residual is
+$6.95\times10^{-1}$, and the best correction residual is
+$7.01\times10^{-1}$.  The remaining target is therefore no longer simply
+``try history'': the tested one-step and two-step transported feature spaces
+are insufficient.
+
+\plotfigure{\figpath/velocity_compression_recurrent_history_capacity.png}
+{Recurrent history-capacity audit.  Two-step curvature and bilinear
+source/velocity history features still do not span the local lower-pair
+correction.}
+{fig:velocity-compression-recurrent-history-capacity}
+
+The recurrent history-capacity audit then tests 216 rows over two-step
+source/velocity curvature and pairwise bilinear source/velocity history
+features.  It records zero spans; the best projection and correction residuals
+are $6.952\times10^{-1}$ and $7.012\times10^{-1}$.  The next repair therefore
+needs a revised weak-row formula or richer nonlinear recurrent history source
+law, followed by the nonlinear h-sweep.
+
+\plotfigure{\figpath/velocity_compression_weak_row_structure_capacity.png}
+{Weak-row structure-capacity audit.  Source/active cross-Gram, Hadamard,
+cross-Hadamard, and shifted-commutator feature rows still do not span the local
+lower-pair correction.}
+{fig:velocity-compression-weak-row-structure-capacity}
+
+The weak-row structure-capacity audit then tests 216 rows over six algebraic
+source-active feature families.  These features are target-free in construction
+and use the target Jacobian only for capacity scoring.  They again record zero
+spans; the best projection and correction residuals are
+$6.952\times10^{-1}$ and $7.012\times10^{-1}$.  This is a narrower negative
+result than the history tests: the missing row is not recovered by the tested
+cross-Gram, Hadamard, cross-Hadamard, or shifted-commutator structure rows.
+The next repair therefore needs a revised analytical weak-row formula or a
+richer nonlinear recurrent history source law.
+
+\plotfigure{\figpath/velocity_compression_row_space_compression.png}
+{Row-space compression audit.  Target-free SVD, row-norm, and stage-balanced
+frozen eight-row compressions of the all-stage/non-final velocity row space do
+not provide a value-balanced tangent closure.}
+{fig:velocity-compression-row-space-compression}
+
+The row-space compression audit removes the target Jacobian and target
+direction from the formula construction.  It builds frozen case-local
+compression matrices from the velocity row space only, then scores whether the
+resulting eight rows span the terminal lower-pair bridge.  Across 36 rows
+covering six laws, two cases, and three step sizes, it records zero spans and
+24 value-balanced rows.  The best projection residual is
+$7.378\times10^{-1}$ for \artifact{all\_stage\_svd\_top8}; the best value
+residual is $3.68\times10^{-12}$ for the same law, but that value balance does
+not close the tangent gap.  The best non-final residual is
+$9.815\times10^{-1}$.  Because the coefficients are frozen state-dependent
+quantities and coefficient derivatives are not included, this is not a
+nonlinear full-\tfe{} residual.  It rules out this target-free row-space
+compression family and leaves the same repair target: a revised analytical
+weak-row formula or richer nonlinear recurrent history source law.
+
+\plotfigure{\figpath/order_closure_blend.png}
+{Order/closure blend trajectory audit.  The beta path connects the
+order-preserving mean-acceleration closure to the terminal-closing final-stage
+velocity closure.  It confirms that the two properties remain split.}
+{fig:order-closure-blend}
+
+That targeted promotion has now been run as an 18-row diagnostic over two
+cases, three step sizes, and beta values $\{0,0.5,1\}$.  The beta-zero and
+beta-half smooth branches preserve position order above five, but leave raw
+terminal endpoint velocity around $4\times10^{-6}$.  The beta-one branch closes
+terminal velocity to $4.01\times10^{-16}$, but has smooth position order 3.523.
+Thus the intersection flag is false: no tested beta simultaneously satisfies
+the terminal-velocity and order gates.  The evidence narrows the next repair to
+a genuinely new eight-row source-free closure formula rather than another
+scalar blend on the same endpoints.
+
+A newer recurrent/terminal gamma-blend smoke promotes the same tradeoff to a
+bounded trajectory h-sweep without invoking the full generator.  The latest
+default run used smooth and sharp cases, $\gamma\in\{0.5,1.0\}$,
+$h\in\{0.04,0.02\}$, and an $h=0.01$ reference.  It converged all 24 requested
+steps with rank 132 and maximum residual $4.77\times10^{-12}$.  The
+terminal-closing branch is still $\gamma=1.0$, with raw terminal endpoint
+velocities $3.05\times10^{-16}$ and $2.94\times10^{-16}$ in the smooth and
+sharp cases, but its smooth minimum order is only 4.397 and the sharp velocity
+order remains $-0.428$.  The best smooth-order branch, $\gamma=0.5$, reaches
+minimum order 4.413 but leaves terminal velocity up to $8.11\times10^{-6}$ on
+the sharp case.  This targeted result is consistent with the larger
+order/closure audit: the properties remain split, so the full-\tfe{} gate stays
+open.
+
+A denser bounded scalar-gamma screen over
+$\gamma\in\{0,0.25,0.5,0.75,1\}$ converged all 60 requested short-trajectory
+steps with the same rank-132 residual structure.  It did not change the
+conclusion.  The best smooth-order branch moved only to $\gamma=0.75$, with
+minimum order 4.414, while terminal closure remained only on the
+$\gamma=1.0$ branch and the maximum terminal velocity over the grid stayed at
+$8.23\times10^{-6}$.  The scalar interpolation family is therefore exhausted
+as a plausible repair; the next candidate must change the eight lower-pair
+closure rows themselves.
+
+A near-terminal scalar-policy screen over
+$\gamma\in\{0.9,0.99,0.999,1\}$ also fails.  It converges all 48 requested
+short-trajectory steps, and its best smooth-order branch is $\gamma=0.99$ with
+minimum order 4.415.  However, that branch leaves sharp terminal velocity at
+$3.08\times10^{-6}$, while even $\gamma=0.999$ leaves
+$4.68\times10^{-7}$.  Only $\gamma=1.0$ closes terminal velocity to roundoff,
+and that is exactly the order-limited final-stage endpoint.  This closes the
+near-terminal scalar-policy loophole.
+
+A component-wise one-step gamma sensitivity check then releases one of the
+eight terminal directions at a time to $\gamma=0.999$.  The run covers smooth
+and sharp cases with 10 gamma vectors, for 20 one-step rows, and completes in
+31.6 seconds.  It preserves rank 132 with maximum residual
+$1.77\times10^{-12}$.  Five nontrivial rows close terminal velocity at the
+$10^{-12}$ tolerance; the best is
+\texttt{component\_2\_release\_0p999} at $3.46\times10^{-17}$, while
+\texttt{component\_7\_release\_0p999} is the worst component release at
+$1.23\times10^{-11}$.  This is useful sensitivity evidence, but it is still a
+one-step screen rather than a trajectory h-sweep, so the independent
+full-\tfe{} replacement remains open.
+
+The same component idea was then promoted to a bounded trajectory h-sweep over
+four vector labels:
+\texttt{all\_ones}, \texttt{all\_0p999},
+\texttt{component\_2\_release\_0p999}, and
+\texttt{component\_7\_release\_0p999}.  The run covers smooth and sharp cases,
+$h\in\{0.04,0.02\}$, and an $h=0.01$ reference, converging all 48 short
+trajectory steps in 98.4 seconds with rank 132 and maximum residual
+$4.77\times10^{-12}$.  The best terminal vector is
+\texttt{component\_2\_release\_0p999}, with terminal velocity
+$2.70\times10^{-16}$, but its smooth minimum order remains about 4.397.  The
+best smooth-order vector is \texttt{all\_0p999}, with smooth minimum order
+4.401, but it leaves terminal velocity $4.68\times10^{-7}$.  Thus the
+trajectory-level component screen still has no order/terminal intersection.
+
+A final lightweight nonlinear-source smoke sets the component-wise blend from
+the previous step's history source, rather than from a prescribed scalar or
+fixed vector.  The default smooth-only
+\texttt{history\_abs\_inf} run uses releases $\{0.001,0.01\}$, the same
+$h\in\{0.04,0.02\}$ sweep, and an $h=0.01$ reference.  It converges all 12
+short-trajectory steps in 38.9 seconds with rank 132 and maximum residual
+$2.59\times10^{-12}$.  The best branch has terminal velocity
+$1.45\times10^{-7}$ and smooth minimum order 4.402.  A signed-policy follow-up
+with \texttt{history\_signed\_positive} and
+\texttt{history\_signed\_negative} converges in 36.9 seconds; its best
+terminal velocity is still $1.45\times10^{-7}$ and its best smooth minimum
+order is 4.415.  This excludes the simple explicit recurrent history-gamma
+law as the missing full-\tfe{} replacement.  The next target is therefore a
+revised analytical weak-row formula or a richer nonlinear history source law
+that changes the eight closure rows themselves.
+
+The next diagnostic looks at that weak-row formula locally.  A one-step
+recurrent weak-row differential audit evaluates the current source-free
+recurrent weak closure in the smooth case at $h=0.04$, using both the
+zero-initial and post-one-step history modes.  It completes in 26.0 seconds,
+keeps rank 132, and has maximum residual $2.48\times10^{-12}$.  However, the
+current recurrent weak row does not span the terminal-bridge tangent: the
+projection residual remains between 0.899 and 0.974 and the independent target
+rank remains eight.  The final-stage terminal row, used only as a scoring
+comparison, projects at $1.46\times10^{-15}$.  The missing direction is
+stage-2-local and dominated by translational velocity variables, while the
+relative recurrent-vs-final closure Jacobian gap reaches 6.872.  This is the
+most concrete current blocker: the next formula must supply that stage-2
+velocity coefficient-gradient contribution without substituting the
+final-stage terminal row.
+
+A follow-up source/history coefficient-gradient probe tests exactly that
+direction without running a full trajectory solve.  It modulates the stage-2
+lower-pair velocity row by curvature-plus-history features with gains
+$10^8$ and $10^{12}$.  The smooth local run covers both history modes and 8
+candidate rows, completes in 35.3 seconds, keeps rank 132, and has maximum
+residual $2.48\times10^{-12}$.  None of the candidates spans the
+terminal-bridge tangent: the best projection residual remains 0.899 and the
+independent target rank remains eight.  The largest closure-value perturbation
+from the recurrent weak row is $1.25\times10^{-9}$, showing that this simple
+stage-2 coefficient-gradient correction perturbs the row value without adding
+the missing tangent.  The next formula must therefore be richer than a scalar
+source/history modulation of the stage-2 velocity row.
+
+A matrix-mixing follow-up makes that statement stronger while still avoiding a
+full trajectory solve.  It applies target-free row-broadcast, column-broadcast,
+symmetric-broadcast, diagonal-plus-row-broadcast, shifted-column-broadcast, and
+bilinear stage-2 velocity coefficient matrices to the same stage-2 lower-pair
+velocity row, with gains $10^8$ and $10^{12}$.  The smooth local run covers
+both history modes and 32 candidate rows, completes in 68.1 seconds, keeps rank
+132, and has maximum residual
+$2.48\times10^{-12}$.  None of these matrix-mixed rows spans the
+terminal-bridge tangent either: the best law is
+\texttt{diagonal\_plus\_row\_broadcast\_feature} at gain $10^{12}$, with
+projection residual 0.898873 and independent target rank eight.  Its largest
+closure-value perturbation from the recurrent weak row is
+$4.00\times10^{-9}$, so row/column mixing changes the value but still does not
+supply the missing stage-2 tangent.  The remaining full-\tfe{} repair target is
+therefore a genuinely different analytical weak-row formula, not a matrix
+premultiplication of the current stage-2 velocity row.
+
+An active-velocity extension of the same matrix audit then uses the stage-2
+velocity row itself, the stage-2 minus stage-1 velocity row, and the velocity
+curvature as coefficient features.  This run again covers both history modes,
+16 candidate rows, and gains $10^8$ and $10^{12}$; it completes in 46.6
+seconds with rank 132 and maximum residual $2.48\times10^{-12}$.  The best
+law, \nolinkurl{stage2_velocity_column_broadcast_feature} at gain
+$10^{12}$, improves the local projection residual to 0.585746, but still has
+independent target rank eight and no terminal-bridge span.  Its largest
+closure-value perturbation is $1.46\times10^{-6}$.  Thus active stage-2
+velocity dependence carries more of the missing tangent than source/history
+features, but it still cannot be accepted as a full-\tfe{} replacement or
+promoted to a trajectory h-sweep without a different weak-row formula.
+
+A final small active-law grid widens that check without adding any new
+trajectory machinery.  It tests symmetric, diagonal-plus-row, and shifted
+column broadcasts of the stage-2 velocity feature, plus column broadcasts of
+stage-2-minus-stage-1 and stage-0/1 mean velocity.  The grid covers 20 local
+rows and completes in 51.2 seconds.  The best row is
+\nolinkurl{stage2_velocity_shifted_column_broadcast_feature} at gain
+$10^{12}$, improving the projection residual only to 0.576548.  The
+independent target rank remains eight and no row spans the terminal bridge.
+This leaves the active-velocity family useful as localization evidence, not as
+an acceptably derived eight-row lower-pair closure.
+
+The best active-law row was then rerun alone with a missing-direction
+decomposition, again without invoking the full artifact pipeline.  This
+targeted check covers 2 local rows in 27.8 seconds.  The zero-initial row has
+projection residual 0.909693; its missing direction has rank eight, dominant
+variable family \nolinkurl{translation_velocity_v} at fraction 0.487, and
+stage-2 fraction 0.965.  The post-one-step row is the best row, with
+projection residual 0.576548; its missing direction again has rank eight, but
+the dominant variable family shifts to \nolinkurl{angular_velocity_w} at
+fraction 0.503, with stage fractions 0.0185, 0.0185, and 0.963 for stages 0,
+1, and 2.  This makes the next repair target narrower: it should derive a
+stage-2 lower-pair weak row whose coefficient derivative couples the velocity
+closure to angular velocity, rather than continuing to widen generic
+matrix-premultiplication families.
+
+A stage-2 angular-velocity mask follow-up tests the simplest version of that
+localization: keep only the angular components of the stage-2 lower-pair
+velocity feature.  It covers 8 local rows in 35.3 seconds with four matrix
+laws and gain $10^{12}$.  The best law,
+\nolinkurl{stage2_angular_velocity_shifted_column_broadcast_feature}, reaches
+projection residual 0.752997, worse than the unmasked active-law residual
+0.576548.  The independent target rank remains eight and no row spans the
+terminal bridge.  The best missing direction shifts back to
+\nolinkurl{translation_velocity_v} at fraction 0.660, with 97.8\% of the
+energy still in stage 2.  Thus the missing formula is not a simple angular-only
+mask; it likely needs coupled stage-2 translational/angular weak-row
+structure.
+
+A direct translation/angular cross-coupling follow-up then tests the simplest
+outer-cross matrix versions of that idea.  It covers 8 local rows in 35.3
+seconds with four laws and gain $10^{12}$.  The best law,
+\nolinkurl{stage2_velocity_angular_to_translation_cross_feature}, reaches
+projection residual 0.898812, again worse than the unmasked active-law
+residual 0.576548.  The independent target rank remains eight and no row spans
+the terminal bridge.  Its remaining direction is dominated by
+\nolinkurl{translation_velocity_v} at fraction 0.556, with essentially all
+energy in stage 2.  Thus simple outer-cross coefficient matrices are also not
+the missing weak row.
+
+A target-free endpoint-pose velocity-predictor follow-up moves closer to the
+missing row family.  It evaluates lower-pair velocity constraints at the paper
+terminal pose using several generalized-velocity predictors from the stage
+data.  The best of 10 local rows uses the positive part of the Gauss-node
+terminal Lagrange velocity predictor.
+It reduces the projection residual to 0.117782, but still leaves independent
+target rank eight and no terminal-bridge span.  The remaining direction is
+dominated by \nolinkurl{translation_velocity_v} at fraction 0.514, with 96.2\%
+of its energy in stage 0.  This is the sharpest current local repair probe,
+but it remains diagnostic.
+
+A Gauss endpoint-pose version of the same predictor family is negative.  The
+best of 7 local rows is
+\nolinkurl{gauss_endpoint_pose_positive_lagrange_z}; it reaches only residual
+0.208599, leaves independent target rank eight and no span, and changes the
+dominant missing family to \nolinkurl{lie_position_u} at fraction 0.651.  Since
+this is worse than the paper endpoint-pose residual 0.117782, it is a ruled-out
+endpoint-pose alternative rather than a new repair direction.
+The remaining 11 Gauss endpoint-pose quarter, stage1-half, convex, and mean
+predictors are also negative.  Their best row,
+\nolinkurl{gauss_endpoint_pose_stage02_convex_0p00_z}, reaches residual
+0.172659, leaves independent target rank six and no span, and keeps the
+remaining direction dominated by \nolinkurl{lie_position_u} at fraction
+0.952340.
+
+A near-terminal stage-0/stage-2 convex predictor screen clarifies the remaining
+boundary.  The stage-2-only endpoint-pose row spans the terminal bridge at
+roundoff, but this is exactly the terminal-stage bridge row already known to be
+order-limited in nonlinear h-sweeps.  The best nonterminal row uses a 5\%
+stage-0, 95\% stage-2 velocity predictor; it lowers the local residual to
+0.049317 at $h=0.04$, but still leaves independent target rank eight and no
+nonterminal span.  Focused reruns at $h=0.02$ and $h=0.01$ give residuals
+0.051890 and 0.052472.  The terminal-equivalent row still spans at roundoff,
+but the nonterminal row does not converge to a span as $h$ is reduced, so the
+remaining target is an analytical nonterminal weak row rather than a
+continuation toward the terminal bridge.
+
+The synchronized pose/velocity version of the same test evaluates
+$C_v(q_\alpha,z_\alpha)$ at matching stage-0/stage-2 convex points.  Its best
+row, \nolinkurl{stage02_convex_pose_velocity_0p01_z}, reduces the local
+residual to 0.009512 at $h=0.04$.  However, it still leaves rank eight
+unspanned, and h-scaling gives 0.009978 at $h=0.02$ and 0.010085 at
+$h=0.01$.  The residual is nearly proportional to the offset from the
+terminal row: 0p02 gives 0.019205, 0p05 gives 0.049390, and 0p10 gives
+0.103464.  This is useful localization evidence but still a near-terminal
+limit, not an independent full-\tfe{} replacement.
+
+A terminal-limit extrapolation check then combines two nonterminal synchronized
+rows.  The 0p01/0p02 extrapolated law reduces the local residual to
+$4.699\times10^{-6}$ at $h=0.04$, and the wider 0p01/0p05 extrapolation gives
+$1.175\times10^{-5}$.  Under h-scaling the 0p01/0p02 residual decreases to
+$2.335\times10^{-6}$ and $1.168\times10^{-6}$ at $h=0.02$ and $h=0.01$, but
+it still does not span the terminal bridge: the independent target ranks are
+8, 8, and 7.  We therefore mark these rows as terminal-bridge-equivalent
+extrapolations, not as independent full-\tfe{} replacements.
+
+Adding the centered bridge's mean-acceleration term directly does not fix the
+remaining tangent.  The signed acceleration-bridge variants worsen the
+projection residual from $4.699\times10^{-6}$ to at least 0.076159 and move
+the dominant missing direction to \nolinkurl{lie_position_u}.  This excludes
+the direct mean-acceleration bridge term as the missing nonterminal correction.
+
+A bilinear active-velocity outer-product follow-up then checks whether simple
+component-pair coupling between the coefficient feature and the stage-2
+velocity row supplies the missing tangent.  It covers 24 local rows in 57.3
+seconds using feature/stage-2-velocity outer, reverse outer, symmetric outer,
+and related active-feature variants.  The best row is
+\nolinkurl{stage2_velocity_feature_outer_stage2_velocity} at gain $10^{12}$,
+with projection residual 0.898720.  The independent target rank remains eight
+and no row spans the terminal bridge.  This rules out the tested bilinear
+outer-product coupling family; it does not improve on the previous
+shifted-column active-law localization residual 0.576548.
+
+A componentwise active-velocity diagonal follow-up then tests whether the
+missing stage-2 tangent is row-local rather than an outer product.  It covers
+24 local rows in 56.7 seconds using Hadamard diagonal, shifted diagonal, and
+diagonal-plus-row/column variants.  The best row is
+\nolinkurl{stage2_velocity_diagonal_plus_hadamard_row_feature_stage2_velocity}
+at gain $10^{12}$, with projection residual 0.898530.  The independent target
+rank remains eight and no row spans the terminal bridge.  This rules out the
+tested componentwise and shifted-diagonal active-velocity couplings as the
+missing eight-row weak closure.
+
+Two acceleration-correction follow-ups test whether the synchronized
+near-terminal row only needs a simple Taylor term.  The first adds the centered
+bridge mean-acceleration closure directly to
+\nolinkurl{stage02_convex_pose_velocity_0p01_z} and its 0p02 analogue with
+signed coefficients $\pm0.1$ and $\pm1$.  The second applies the same signed
+coefficient as a generalized-velocity shift,
+$z_\alpha+\gamma h\dot z_\alpha$, before evaluating $C_v(q_\alpha,z_\alpha)$.
+Each grid covers 18 local rows, keeps rank 132, and records zero nonterminal
+spans.  In both grids the best row remains the uncorrected
+\nolinkurl{stage02_convex_pose_velocity_0p01_z} with residual 0.009512; the
+best acceleration-corrected residual is only 0.012376, while unit corrections
+are no better than 0.077874.  Thus a direct acceleration closure or
+generalized-velocity acceleration predictor is not the missing nonterminal
+full-\tfe{} weak row.
+
+A further geometry-oriented test replaces or perturbs $z_\alpha$ toward the
+stage-0/stage-2 pose slope $(q_2-q_0)/(h(c_2-c_0))$.  This is meant to check
+whether the missing row is just a kinematic velocity estimate from the paper
+stage positions.  It covers 26 local rows, again with no nonterminal span.  The
+best row is still the uncorrected
+\nolinkurl{stage02_convex_pose_velocity_0p01_z} at residual 0.009512; the best
+pose-slope row,
+\nolinkurl{stage02_convex_pose_velocity_0p02_poseslope_m0p1_z}, has residual
+0.878519 and leaves a stage-2 dominated translation-velocity direction.  The
+tested pose-slope velocity predictor is therefore also not the missing
+full-\tfe{} weak row.
+
+Finally, a source-to-velocity lift test maps lower-pair source rows through
+the current endpoint velocity matrix $C_{v,z}(q_\alpha)$ into a minimum-norm
+generalized-velocity correction.  This is a richer target-free source law than
+the scalar Taylor corrections: it uses the mean acceleration closure, stage
+source estimates, source curvature, and the history/source delta.  The full
+grid covers 34 local rows in 76.4 seconds and again has zero nonterminal spans.
+The best row overall is still the uncorrected
+\nolinkurl{stage02_convex_pose_velocity_0p01_z} at residual 0.009512.  A
+focused rerun gives the best source-lift residual 0.609803 for
+\nolinkurl{stage02_convex_pose_velocity_0p01_sourcelift_historydelta_p1_z}
+and the equivalent source0 branch.  This excludes the tested current-pose
+$C_v$ source-to-velocity lift as the independent weak row.
+
+A final near-terminal slope probe tests the finite-difference slope of the
+same synchronized pose/velocity family rather than its terminal-limit
+intercept.  It covers four local rows in 25.8 seconds, keeps rank 132, and
+again has no span.  The best law,
+\nolinkurl{stage02_convex_pose_velocity_slope_0p01_0p05_z}, reaches only
+projection residual 0.677034 with independent target rank eight and dominant
+remaining family \nolinkurl{translation_velocity_v}.  Thus the first
+nonterminal slope of the near-terminal convex row is also not the missing
+coefficient-gradient closure.
+
+A near-terminal curvature probe then tests the second finite-difference
+curvature of the same synchronized pose/velocity family.  It covers four local
+rows in 26.7 seconds, keeps rank 132, and again has no span.  The best law,
+\nolinkurl{stage02_convex_pose_velocity_curvature_0p01_0p05_0p10_z}, reaches
+only projection residual 0.871228 with independent target rank eight and
+dominant remaining family \nolinkurl{translation_velocity_v}.  Thus the local
+second derivative of the near-terminal convex row is also not the missing
+coefficient-gradient closure.
+
+A source/history coefficient-feature matrix probe then tests recurrent
+features such as history delta, source0/source2, source02 delta, and source
+curvature as shifted-column coefficient matrices multiplying the stage-2
+lower-pair velocity row.  It covers 16 local rows in 44.8 seconds, keeps rank
+132, and again has no span.  The best law,
+\nolinkurl{source_curvature_shifted_column_broadcast_feature}, reaches only
+projection residual 0.898873 with independent target rank eight and dominant
+remaining family \nolinkurl{translation_velocity_v}.  Thus the tested
+source/history coefficient features are also not the missing
+coefficient-gradient closure.
+
+A nonlinear recurrent curvature/history matrix-feature extension then adds
+source-curvature minus history-delta, source/history Hadamard, unit-Hadamard,
+and normalized curvature-plus-history feature prefixes.  It covers 16 local
+rows in 45.5 seconds, keeps rank 132, and again has no span.  The best law,
+\nolinkurl{source_curvature_minus_history_delta_diagonal_plus_row_broadcast_feature},
+reaches only projection residual 0.898865 with independent target rank eight
+and a stage-2 dominated \nolinkurl{translation_velocity_v} gap, with dominant
+fraction 0.556051 and stage-2 fraction 0.999996.  Thus the tested nonlinear
+recurrent curvature/history matrix features are also excluded.
+
+A terminal-limit source-lift matrix-difference probe then tests whether the
+best near-terminal extrapolated intercept can be repaired by adding a
+stage-local $C_v$ source-to-velocity lift before extrapolation.  It covers
+eight local rows in 47.5 seconds, keeps rank 132, and again has no span.  The
+best law is the \texttt{curvature\_m0p1} source-lift variant; it reaches
+projection residual $5.298\times10^{-6}$ with independent target rank eight
+and dominant remaining family \nolinkurl{translation_acceleration_a}.
+This is close to, but not better than, the uncorrected terminal-limit residual
+$4.699\times10^{-6}$, so the tested $C_v$ source-lift correction is also not
+the missing coefficient-gradient closure.
+A curvature source-lift scale refinement then tests the same terminal-limit
+row with signed curvature coefficients from $0.01$ to $0.5$.  It covers eleven
+local rows in 52.9 seconds and again has no span; the best
+\texttt{curvature\_p0p01} law still reaches only
+$5.298\times10^{-6}$, with independent target rank eight, dominant
+\nolinkurl{translation_acceleration_a} fraction 0.407672, and stage fractions
+0.549481/0.005742/0.444777.  The local source-curvature norm is
+$1.076\times10^{-14}$, so this is not merely a missed source-lift scale.
+A mean-acceleration bridge scale refinement then tests the same terminal-limit
+row with signed bridge coefficients from $0.01$ to $0.5$.  It covers eleven
+local rows in 31.4 seconds and again has no span.  The best nonterminal law,
+\texttt{accel\_p0p01}, reaches only 0.000867721 with independent target rank
+eight and dominant \nolinkurl{lie_position_u} fraction 0.706665, while the
+overall best row remains the terminal-bridge-equivalent uncorrected
+extrapolation.  Thus this is not merely a missed small acceleration-bridge
+coefficient.
+A generalized-acceleration Taylor-shift scale refinement then uses separate
+$h\dot z$ shifts at the left and right convex points before the same
+extrapolation.  It covers eleven local rows in 30.2 seconds and again has no
+span.  The best nonterminal law, \texttt{genaccel\_p0p01}, reaches only
+0.000866899 with independent target rank eight and dominant
+\nolinkurl{lie_position_u} fraction 0.701135.  Thus the missing row is not the
+tested stage-local generalized-acceleration Taylor shift.
+A pose-acceleration Taylor-shift scale refinement then moves the evaluated
+pose rather than only the velocity, using separate $h^2\dot z$ shifts at the
+same left and right convex points.  It covers eleven local rows in 29.9
+seconds and again has no span.  The best nonterminal law,
+\texttt{poseaccel\_p0p01}, reaches 4.1835e-05 with independent target rank
+eight, dominant \nolinkurl{lie_position_u} fraction 0.711570, and stage-2
+fraction 0.771337.  This pose-directed perturbation is closer than the
+velocity-only generalized-acceleration shift, but it still does not provide an
+independent full-\tfe{} stage row.
+A tiny pose-acceleration scale refinement then lowers the signed coefficients
+to $0.0005$, $0.001$, $0.002$, and $0.005$, while retaining the previous
+positive $0.01$ row.  It covers ten local rows in 30.0 seconds and still has no
+span.  The best nonterminal law,
+\texttt{poseaccel\_p0p0005}, reaches 5.5898e-06 with independent target rank
+eight and dominant \nolinkurl{translation_acceleration_a} fraction 0.350240.
+Thus small pose shifts only approach the terminal-equivalent row and do not
+produce an independent full-\tfe{} closure row.
+A pose+velocity acceleration Taylor refinement then combines the small
+$h^2\dot z$ pose shift with signed small $h\dot z$ velocity shifts.  It covers
+eleven local rows in 30.7 seconds and again has no span.  The best nonterminal
+law, \texttt{posevelaccel\_p0p0005\_m0p0001}, reaches 1.0173e-05 with
+independent target rank eight and dominant \nolinkurl{lie_position_u} fraction
+0.544660.  Thus this simple combined Taylor correction is also not the missing
+independent full-\tfe{} closure row.
+A component-split pose-acceleration refinement then separates the same
+$h^2\dot z$ pose shift into translation-only and angular/Lie-only branches.
+The two JSON-only screens cover 26 local rows in 32.3+32.3 seconds, keep rank
+132, and again have no span.  Translation-only shifts through coefficient
+0.1 are locally indistinguishable from the uncorrected terminal-limit row; the
+best nonterminal law, \texttt{transposeaccel\_m0p01}, remains at 5.298e-06 with
+dominant \nolinkurl{translation_acceleration_a} fraction 0.407672.  The
+angular-only branch reproduces the earlier full pose-acceleration behavior:
+\texttt{angposeaccel\_p0p002} reaches 9.6511e-06, and
+\texttt{angposeaccel\_p0p01} reaches 4.1835e-05.  Thus the observed
+pose-acceleration effect is angular/Lie-pose dominated; a translation-only
+pose shift is not the missing independent weak row.
+
+A component-split velocity-acceleration Taylor refinement then performs the
+analogous split on the $h\dot z$ generalized-velocity shift.  The first
+JSON-only screen covers 13 local rows in 31.8 seconds, keeps rank 132, and
+finds no span.  Its best nonterminal row,
+\texttt{transvelaccel\_m0p01}, reaches projection residual
+$2.138\times10^{-4}$ with independent target rank eight and dominant
+\nolinkurl{translation_acceleration_a} fraction 0.886603.  The best angular
+velocity branch, \texttt{angvelaccel\_p0p01}, reaches only 0.000864560 and
+moves the dominant missing family to \nolinkurl{lie_position_u}.  A tiny
+translational scale follow-up covers 11 local rows in 31.4 seconds; its best
+law, \texttt{transvelaccel\_m0p0005}, reaches
+$9.8175\times10^{-6}$, still worse than the uncorrected terminal-limit
+residual $5.298\times10^{-6}$.  Thus the velocity-acceleration split only
+approaches the terminal-equivalent limit and does not provide an independent
+full-\tfe{} closure row.
+
+A component-mixed pose/velocity Taylor refinement then combines the two most
+promising split directions: angular/Lie pose shift with translational velocity
+shift, plus the complementary translation-pose/angular-velocity branch.  It
+covers 13 local rows in 32.0 seconds, keeps rank 132, and again finds no span.
+The best nonterminal row is the $p0.0005/m0.0005$ angular-pose/translational-
+velocity row.  It reaches only $9.987\times10^{-6}$, with independent target
+rank eight and a dominant translation-acceleration fraction of 0.774582.  The
+complementary translation-pose/angular-velocity branch reaches only
+0.000864560.  This is still worse than the uncorrected terminal-limit residual
+$5.298\times10^{-6}$, so the tested component-mixed Taylor cross term is also
+not the missing independent full-\tfe{} closure row.
+
+A stage-2-fixed/delta acceleration velocity-shift refinement then tests whether
+the dominant translation-acceleration residual is an artifact of using the
+interpolated acceleration source.  It covers 13 local rows in 31.8 seconds,
+keeps rank 132, and again finds no span.  The best nonterminal row is
+\texttt{transvelaccelstage2\_m0p0005}, with residual
+$9.8175\times10^{-6}$ and translation-acceleration fraction 0.802349.  The best
+delta20 row reaches only $1.0119\times10^{-5}$.  Thus stage-2-fixed and
+delta20 acceleration sources reproduce the earlier tiny-shift limit rather
+than providing the independent full-\tfe{} closure row.
+
+A nonfinal terminal velocity/source predictor refinement then tries to predict
+the terminal lower-pair velocity closure from only stage-0/stage-1 velocity rows
+and source estimates.  It covers nine local rows in 30.9 seconds, keeps rank
+132, and finds no span.  The best law, \texttt{euler1}, reaches only 0.923466,
+with dominant \nolinkurl{translation_velocity_v} fraction 0.526951 and stage-2
+fraction 0.959959.  Thus a plain nonfinal velocity/source integral predictor
+does not supply the missing stage-2 terminal-bridge Jacobian direction.
+The corresponding bounded trajectory smoke confirms this at nonlinear-solve
+level: the stage-0/stage-1 family converges 24/24 rows with rank 132, but its
+best terminal velocity is only $1.770\times10^{-7}$, and the order-friendlier
+\texttt{euler1}/\texttt{ab01}/\texttt{source01linear1} rows remain at
+$3.584\times10^{-7}$.  A stage-0/1/2 extension using the third Gauss stage also
+converges all 18 rows with \nolinkurl{projection_used=false}, but
+\nolinkurl{terminal_velocity_closed=false}: the closest rows reach
+$2.559\times10^{-11}$ at $h=0.04$ and then jump to $1.328\times10^{-7}$ at
+$h=0.02$, while the stable \texttt{linear012} row is only
+$1.134\times10^{-7}$.
+
+A stage-2 source-to-velocity transport refinement applies the source/history
+projection directly at the stage-2 pose/velocity closure.  The first screen
+covers 13 local rows in 53.4 seconds and reaches 0.001251 with independent
+target rank six.  A scale refinement over the matrix-difference history-delta
+family covers 11 rows in 57.7 seconds and improves the best residual to
+0.0001251 at \texttt{historydelta\_m0p01}.  An ultra-fine scale follow-up
+covers nine rows in 49.6 seconds and pushes the best nonterminal residual to
+$1.251\times10^{-6}$ at \texttt{historydelta\_m0p0001}.  This is the strongest
+nonterminal transport clue so far, but it still has no span and leaves a
+rank-six \nolinkurl{lie_position_u} missing direction.  A combined
+source-transport/angular-pose follow-up covers eight rows in 48.7 seconds; the
+source-only row remains best, and the best combined row reaches only
+$1.296\times10^{-6}$ while raising the independent target rank to eight and
+still finding no span.
+Promoting those two source-transport rows into the bounded nonlinear trajectory
+smoke does not change the acceptance boundary.  The three-law comparison runs
+in 74.1 seconds, keeps rank 132, uses no projection, and writes no artifacts.
+The source-only transported row
+\nolinkurl{stage02_convex_pose_velocity_0p00_sourceliftmatrixdiff_historydelta_m0p0001_z}
+keeps the two-point trajectory orders at 6.588/4.508, but its max terminal
+velocity is $8.020\times10^{-12}$, above the $10^{-12}$ closure tolerance.
+Adding the small angular-pose shift worsens the terminal velocity to
+$2.102\times10^{-7}$ and lowers the velocity order to 2.820.  Thus the
+source-to-velocity transport clue is now a trajectory-level negative as well
+as a local no-span result.
+A three-$h$ refinement of the source-only transported row confirms that this
+is not a two-point artifact: it converges all seven short-sweep steps in 46.4
+seconds, keeps rank 132 and no projection, but its maximum terminal velocity is
+still $8.020\times10^{-12}$ even though the finest-$h$ value is
+$5.904\times10^{-13}$.  Its position/velocity orders are again only
+4.142/2.305, matching the bare endpoint-row order loss rather than recovering
+the full-\tfe{} acceptance target.
+Shrinking the same source-transport coefficient by another factor of ten gives
+a useful limiting negative: the
+\nolinkurl{stage02_convex_pose_velocity_0p00_sourceliftmatrixdiff_historydelta_m0p00001_z}
+row closes the terminal tolerance with max/finest terminal velocity
+$8.021\times10^{-13}$/$5.910\times10^{-14}$, but the smooth orders remain
+4.142/2.305.  Coefficient shrinking can therefore recover terminal closure in
+this family, but only by approaching the same order-limited endpoint-row
+behavior.
+
+\section{Next Full-\tfe{} Repair Target}
+
+The remaining full-\tfe{} work is now narrow enough to state as a concrete
+repair target.  It is not another four-example validation run, and it is not a
+request to rerun the complete historical audit harness.  The missing object is
+an eight-row, source-free lower-pair closure formula that can replace the
+terminal bridge while preserving the trajectory order of the paper-derived
+stage residual.
+
+\begin{table}[t]
+\centering
+\caption{Acceptance test for a future independent full-\tfe{} replacement.}
+\label{tab:full-tfe-acceptance-test}
+\begin{tabular}{P{0.27\linewidth}P{0.61\linewidth}}
+\toprule
+Requirement & Acceptance evidence \\
+\midrule
+Stage residual replacement &
+The nonlinear solve uses the paper-derived 132 stage rows, including the new
+eight lower-pair closure rows, rather than appending an endpoint correction to
+a Gauss trajectory. \\
+Source-free construction &
+The lower-pair closure uses only stage-local state/history data; it does not
+use endpoint-boundary source data, terminal-row replacement, projection, or a
+target-direction oracle. \\
+Algebraic health &
+The solve keeps rank 132, residuals near the existing Newton tolerance, and
+well-recorded conditioning diagnostics on the same smooth/sharp cases. \\
+Trajectory evidence &
+The candidate is promoted from local tangent probes to a nonlinear h-sweep over
+$h=\{0.04,0.02,0.01\}$ against the $h=0.005$ reference, with CSV/JSON/plot
+artifacts. \\
+Order and closure &
+The h-sweep must close raw terminal endpoint velocity while restoring the
+paper-\tfe{} order target; the current source-free terminal-closed candidate
+fails here because its smooth position order is 3.523. \\
+Pipeline synchronization &
+The summary JSON, full-\tfe{} gap ledger, repair spec, paper claim ledger, and
+read-only validators must all move from the current
+\nolinkurl{full_tfe_stage_replacement=false} boundary to the new accepted
+claim. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This target also explains why the recent negative audits are useful.  They do
+not show that \tfe{} is impossible; they show which tempting shortcuts are not
+the missing row.  Frozen row-space compression can balance values without
+closing the tangent gap.  Near-terminal convex rows can approach the terminal
+bridge but remain terminal-equivalent.  Current-pose and stage-difference
+$C_v$ source-to-velocity lifts move source rows into generalized velocity
+space, but still do not span the eight missing directions.  The next useful
+implementation therefore has to change the weak-row formula itself, most
+likely through a genuinely nonlinear recurrent history source law or a
+stage-2 translational/angular coefficient-gradient term derived from the
+lower-pair weak balance.
+
+\section{Sparse Backend Status}
+
+\plotfigure{\figpath/sparse_speed_gap.png}
+{Sparse speed gap audit.  Row-VJP reduces the seed count but is not yet a
+stable wall-clock improvement over dense \texttt{jacfwd}.}
+{fig:sparse}
+
+The row-colored VJP backend uses 60 row colors rather than the 90 column colors
+of the dense-pattern coloring.  It preserves trajectory agreement, but the
+current implementation is not a consistent runtime win over dense
+\texttt{jacfwd}.  The sparse cost-model audit records the required row-runtime
+reduction needed to match dense and to achieve a 10\% dense win.  This is an
+engineering caveat, not a correctness caveat.
+
+\section{Reproducibility Artifacts}
+
+The primary generated artifacts are:
+\begin{itemize}
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/run\_v047.py};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/validate\_v047\_outputs.py};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/validate\_full\_tfe\_gap.py};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/validate\_full\_tfe\_repair\_spec.py};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/FULL\_TFE\_REPLACEMENT\_GAP\_LEDGER.md};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/FULL\_TFE\_REPAIR\_SPEC.md};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/results/summary\_v047.json};
+  \item \artifact{v047\_cylindrical\_chain\_pipeline/results/v047\_report.md};
+  \item \artifact{ORDER\_PROOF\_LEDGER.md};
+  \item \artifact{VALIDATION\_QUICKSTART.md};
+  \item \artifact{paper\_v047\_cylindrical\_chain/CLAIM\_BOUNDARY.json};
+  \item \artifact{paper\_v047\_cylindrical\_chain/REVIEWER\_CHECKLIST.md};
+  \item the CSV and PNG files under \artifact{v047\_cylindrical\_chain\_pipeline/results/}.
+\end{itemize}
+
+The machine-readable claim boundary is \artifact{CLAIM\_BOUNDARY.json} in
+this paper directory.  It records the accepted formal-order comparison, the
+local paper-style comparator, the explicit non-claims, the open caveats, and
+an \nolinkurl{evidence_files} manifest.  That manifest points to the summary
+JSON, convergence CSV, ASME CSV rows, paper-\tfe{} formula-mapping CSV,
+full-\tfe{} gap ledger, repair specification, paper PDF, claim ledger,
+reviewer checklist, and Chinese status note.  The paper-claim validator parses
+this JSON and checks those evidence paths before accepting the paper package.
+
+At the time of this build, the validator expects the source-free closure, the
+order/closure blend, and the velocity-compression probe artifacts through the
+row-space compression, coefficient-derivative, state-feature coefficient-derivative,
+and four-history source-law audits plus the JSON-only active-stage velocity
+matrix-gradient localization.  The four-history source-law screen is negative
+evidence: it keeps \texttt{terminal\_closed\_row\_count=0} while the best
+smooth-order branch has min order \texttt{5.342}.  The rebuilt v047 artifact set passes the
+v047 validator with 292 result files, 147 CSV files, and 120 PNG files; the
+top-level pipeline validator also passes with 48 version directories, 695
+result files, 286 CSV files, 202 PNG files, and 113 JSON files.
+
+The full numerical regeneration is deliberately not the default paper build
+path.  The latest recorded full v047 generation time is
+$2386.76\,\mathrm{s}$, because \artifact{run\_v047.py} has accumulated the
+complete historical audit suite.  For the four-example paper claim, the
+authoritative evidence is the existing generated artifact set plus the
+read-only validators.  A new full regeneration is needed only when numerical
+CSV/JSON/PNG evidence changes.
+Accordingly, \artifact{run\_v047.py} should be read as an audit harness and
+artifact generator, not as a compact reference implementation of the accepted
+integrator.  Its size reflects the accumulated negative full-\tfe{} screens and
+historical diagnostics.  It is not necessary to execute that harness merely to
+check the four-example claim or rebuild this paper.
+The paper build and paper-claim check run from this paper directory; the v047
+artifact checks run from the v047 pipeline directory.
+The reviewer checklist in this directory gives the shortest read-only command
+sequence for checking the accepted method claims, the diagnostic full-\tfe{}
+boundary, and the explicit rule that \artifact{run\_v047.py} should not be run
+for routine paper edits.
+For full-\tfe{} blocker exploration, the preferred workflow is a targeted
+\artifact{V047\_TARGET\_AUDIT} run that prints JSON for one local audit.  The
+recent active-stage velocity matrix grid used this path, took 51.2 seconds,
+and did not regenerate the full artifact set.  Later terminal-limit
+Taylor-style probes used the same JSON-only pattern: an earlier pose+velocity
+acceleration refinement covered 11 local rows in 30.7 seconds, found best
+nonterminal row
+\nolinkurl{stage02_convex_pose_velocity_extrapolate_0p01_0p02_posevelaccel_p0p0005_m0p0001_z}
+at residual $1.0173\times10^{-5}$, and still found no terminal-bridge span.
+The latest stage-2 source-to-velocity transport screen is the strongest
+nonterminal transport clue so far: the scaled
+\nolinkurl{stage02_convex_pose_velocity_0p00_sourceliftmatrixdiff_historydelta_m0p0001_z}
+row reaches residual $1.251\times10^{-6}$, reduces the independent target rank
+to six, and still has no span.  Adding a small angular/Lie pose shift does not
+improve it: the best combined row reaches only $1.296\times10^{-6}$ and also
+has no span.  A final three-row bare endpoint-pose velocity check finds that
+\nolinkurl{stage02_convex_pose_velocity_0p00_z} spans the local terminal
+bridge at roundoff, with residual $1.327\times10^{-15}$, but this is recorded
+as a local row-space span rather than an accepted full-\tfe{} replacement: no
+trajectory h-sweep, order proof, or artifact update is attached.  These probes
+are intentionally diagnostic local evidence; they do not update the accepted
+four-example artifact set.
+A bounded JSON-only trajectory smoke now promotes that local span into the
+nonlinear 132-row residual.  The \nolinkurl{stage02_convex_pose_velocity_0p00_z}
+row closes terminal velocity to $8.124\times10^{-17}$ on a smooth three-$h$
+short sweep, but its position/velocity orders are only $4.142/2.305$.  The
+nearby nonterminal \nolinkurl{stage02_convex_pose_velocity_0p01_z} row
+converges but leaves terminal velocity at $6.255\times10^{-6}$.  This is
+trajectory-level diagnostic evidence, not an accepted full-\tfe{} replacement.
+A non-projection extrapolation limit reaches terminal velocity
+$1.254\times10^{-13}$ at
+\nolinkurl{stage02_convex_pose_velocity_extrapolate_0p00001_0p00002_z}, but
+the three-$h$ order remains $4.142/2.305$, so the terminal/order split is not
+removed by taking the nonterminal points closer to the endpoint.
+
+\section{Non-Claims and Limitations}
+
+The accepted evidence is intentionally narrower than the complete research
+program.  The paper therefore makes the following non-claims explicit.
+
+\begin{table}[t]
+\centering
+\caption{Statements that are not claimed by the current v047 evidence.}
+\label{tab:nonclaims}
+\begin{tabular}{P{0.30\linewidth}P{0.58\linewidth}}
+\toprule
+Non-claim & Current reason \\
+\midrule
+The paper-\tfe{} method is fully accepted &
+False.  The machine-readable gate remains
+\nolinkurl{full_tfe_stage_replacement=false}; the accepted trajectory method
+is the sixth-order \method{} path. \\
+The four-example gate requires a new full regeneration &
+False.  The four-example coverage rows are already accepted in the existing
+artifact set and are checked by the lightweight four-example validator, but
+the four-link and slider-crank rows are not dynamic-order proof rows. \\
+\artifact{run\_v047.py} is a compact reference implementation &
+False.  It is an accumulated audit harness and artifact generator containing
+historical positive and negative screens. \\
+Sparse AD is a speed win &
+Not yet.  Row-VJP reduces seed count but is not a stable wall-clock
+improvement over dense \texttt{jacfwd}. \\
+Sharp Brown--McPhee friction is inexpensive at coarse steps &
+Not yet.  Ultra refinement recovers high order, but the practical coarse
+regime remains order-reduced and more expensive. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Recommended reproducibility levels for this paper build.}
+\label{tab:repro-levels}
+\begin{tabular}{P{0.22\linewidth}P{0.42\linewidth}P{0.26\linewidth}}
+\toprule
+Level & Command or artifact & Purpose \\
+\midrule
+Paper build &
+\artifact{cmd.exe /c latexmk -pdf -interaction=nonstopmode main.tex} &
+Rebuilds the PDF from the current text and figure snapshot. \\
+Paper package check &
+\artifact{validate\_paper\_package.py} &
+Runs the lightweight paper/four-example/artifact checks against the existing
+PDF; pass \artifact{--latex} to attempt a rebuild from the wrapper. \\
+Paper-claim check &
+\artifact{validate\_paper\_claims.py} &
+Checks that this paper's headline claims match the current summary, figures,
+and PDF. \\
+Four-example gate check &
+\artifact{validate\_four\_asme\_minimal.py} &
+Checks only the existing single, double, four-link, and slider-crank method
+evidence. \\
+Full-\tfe{} gap check &
+\artifact{validate\_full\_tfe\_gap.py} &
+Checks the open replacement boundary and verifies that terminal closure,
+order/closure split, and compression blockers remain explicit. \\
+Full-\tfe{} repair spec check &
+\artifact{validate\_full\_tfe\_repair\_spec.py} &
+Checks the next candidate's 132-row residual budget and the 16+8 lower-pair
+implementation contract, including the bounded smoke entry. \\
+Read-only artifact check &
+\artifact{validate\_v047\_outputs.py} &
+Checks the already-generated v047 CSV/JSON/PNG/report evidence without
+rerunning the simulations. \\
+Full numerical regeneration &
+\artifact{run\_v047.py} &
+Regenerates the full historical v047 audit suite; use this only after changing
+the numerical method or artifact-producing code. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Remaining Gaps}
+
+\begin{table}[t]
+\centering
+\caption{Current missing items after the accepted four-example method gate.}
+\label{tab:remaining}
+\begin{tabular}{p{0.27\linewidth}p{0.65\linewidth}}
+\toprule
+Gap & Current status \\
+\midrule
+Independent full-\tfe{} stage replacement &
+Open.  Source-free terminal closure is available, but the accepted-order
+nonlinear h-sweep is still missing.  The latest 36 target-free compression
+rows, velocity-matrix, source/history, terminal-limit source-lift, curvature
+source-lift scale, acceleration-bridge scale, generalized-acceleration shift,
+pose-acceleration shift, tiny pose-acceleration scale, pose+velocity Taylor
+shift, component-split pose-acceleration, component-split
+velocity-acceleration, component-mixed pose/velocity Taylor, and Gauss
+endpoint-pose probes all have zero spans.  The
+closest terminal-limit source-lift family remains at
+$5.298\times10^{-6}$ with source-curvature norm $1.076\times10^{-14}$, so the
+next repair cannot be a simple source-lift scale tweak.  The strongest
+nonterminal transport clue is the stage-2 source-to-velocity transport screen:
+it reaches residual $1.251\times10^{-6}$ and lowers the independent target
+rank to six, but it still has no span; the angular-pose combined follow-up
+reaches only $1.296\times10^{-6}$ and remains no-span.  The bare
+\nolinkurl{stage02_convex_pose_velocity_0p00_z} row spans locally at
+$1.327\times10^{-15}$, confirming the endpoint limit of that family, but this
+is not an accepted full-\tfe{} replacement.  The bounded nonlinear smoke closes
+terminal velocity to $8.124\times10^{-17}$ for that row but gives only
+$4.142/2.305$ position/velocity order; the nonterminal $0p01$ row leaves
+terminal velocity at $6.255\times10^{-6}$.  Ultra-near linear extrapolation
+and three-point quadratic nonterminal extrapolation both close terminal
+velocity without projection, but both retain the same $4.142/2.305$ order
+loss.  The diagnostic ledger also retains the missing-direction decomposition
+and source-to-velocity evidence: the 34-row audit based on the
+current-pose endpoint velocity matrix does not span; the matrix-difference
+branch records 0.042593 before scale refinement, 0.009527 after scale refinement, and 0.009590
+for the normalized-history source law.  The next repair must therefore derive a nonterminal endpoint-pose
+predictor that closes terminal velocity on trajectory without order loss. \\
+Sparse backend speed &
+Open engineering caveat.  Row-VJP reduces seed count but is not yet a stable
+runtime win over dense \texttt{jacfwd}. \\
+Sharp-friction coarse regime &
+Open practical caveat.  Deeper fixed refinement recovers high order, but the
+coarse Brown--McPhee sharp case remains order-reduced and more expensive. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusion}
+
+The v047 evidence supports the intended conditional formal-order comparison.  The accepted
+\method{} path follows the conditional sixth-order Gauss/FullVA theorem,
+records smooth position/velocity orders 7.161/7.066 on the cylindrical
+lower-pair benchmark, and has four-example coverage with dynamic-order
+evidence on the single- and double-pendulum rows and closed-loop
+residual/reaction evidence on the
+four-link and slider-crank rows.  In the current artifact scope, this is the
+result to compare against the local paper-style $m=3$
+Lobatto-\tfe{} formula target with expected order five.  The sharp-friction
+behavior is localized to a practical coarse-regime issue with high-order
+recovery under deeper fixed refinement, not to a failure of the smooth
+conditional sixth-order method claim.
+
+The independent full-\tfe{} replacement remains open.  The source-free
+final-stage velocity closure closes raw terminal endpoint velocity without
+projection, endpoint source data, or terminal-row replacement, but its smooth
+position order is too low for an accepted paper-\tfe{} replacement.  The newer
+endpoint-pose velocity predictor smoke shows the same split at trajectory
+level: the terminal-equivalent row closes velocity but loses order, while the
+nearby nonterminal row does not close terminal velocity.  Ultra-near
+non-projection extrapolation closes the terminal velocity tolerance at
+$1.254\times10^{-13}$ but retains the same $4.142/2.305$ order loss; a
+three-point quadratic nonterminal extrapolation similarly closes at
+$2.029\times10^{-13}$ with finest-$h$ terminal velocity $8.254\times10^{-15}$
+and the same order loss.  The
+machine-readable
+gate remains \nolinkurl{full_tfe_stage_replacement=false}.  The latest
+compression
+diagnostics rule out the tested target-free linear direction laws,
+finite-difference second-differential non-final source features,
+higher-order/nonlocal source features, one-step and two-step history-transport
+features, recurrent curvature/bilinear history features,
+source-active cross-Gram/Hadamard/shifted-commutator weak-row structures, and
+target-free frozen row-space compressions.  The latest active-stage velocity
+matrix-gradient localization improves the residual to 0.576548 but still has
+rank-eight missing directions and no terminal-bridge span.  The best-row
+decomposition puts 96.3\% of the remaining tangent energy in stage 2 and
+identifies \nolinkurl{angular_velocity_w} as the dominant variable family.  A
+simple angular-only mask follow-up reaches only 0.752997 and shifts the
+remaining direction back to \nolinkurl{translation_velocity_v}; a direct
+translation/angular cross-coupling follow-up reaches only 0.898812; an
+endpoint-pose positive-Lagrange velocity predictor improves the local residual
+to 0.117782 but still has rank eight/no span; a near-terminal convex predictor
+has a terminal-equivalent local span but its best nonterminal row remains
+rank eight/no span at 0.049317, 0.051890, and 0.052472 over
+$h=0.04,0.02,0.01$; synchronized pose/velocity near-terminal rows reduce the
+best local residual to 0.009512 but keep rank eight/no span; nonterminal
+terminal-limit extrapolation reduces the residual to $4.699\times10^{-6}$ but
+still has no span and is marked terminal-bridge-equivalent; direct
+near-terminal slope rows reach only 0.677034; direct mean-acceleration bridge
+correction worsens the residual to 0.076159 or above;
+a direct near-terminal curvature screen reaches only 0.871228;
+a source/history coefficient-feature matrix screen reaches only 0.898873;
+a nonlinear recurrent curvature/history matrix-feature screen reaches only
+0.898865;
+a terminal-limit $C_v$ source-lift screen reaches only $5.298\times10^{-6}$;
+a component-split velocity-acceleration Taylor screen reaches only
+$2.138\times10^{-4}$ at ordinary scale and $9.8175\times10^{-6}$ at tiny
+translational scale;
+a component-mixed pose/velocity Taylor screen reaches only
+$9.987\times10^{-6}$;
+a stage-2-fixed/delta acceleration velocity-shift screen reaches only
+$9.8175\times10^{-6}$;
+a nonfinal terminal velocity/source predictor screen reaches only 0.923466;
+a stage-2 source-to-velocity transport screen reaches $1.251\times10^{-6}$ but
+no span, and an angular-pose combined follow-up reaches only
+$1.296\times10^{-6}$ with no span; the bare
+\nolinkurl{stage02_convex_pose_velocity_0p00_z} row spans locally at
+$1.327\times10^{-15}$ and closes terminal velocity on a bounded trajectory
+smoke, but the three-$h$ smooth orders are only $4.142/2.305$; the nonterminal
+$0p01$ trajectory row leaves terminal velocity at $6.255\times10^{-6}$;
+a Gauss endpoint-pose predictor screen reaches only 0.172659 and shifts the
+remaining family to \nolinkurl{lie_position_u};
+a bilinear
+outer-product follow-up reaches only 0.898720; and a componentwise diagonal
+follow-up reaches only 0.898530.  All likewise have no span.  The next
+technical target is a revised analytical weak-row formula or richer nonlinear
+recurrent history source law inserted into the nonlinear lower-pair h-sweep,
+preserving terminal closure while restoring the expected paper-\tfe{} order.
+
+\end{document}

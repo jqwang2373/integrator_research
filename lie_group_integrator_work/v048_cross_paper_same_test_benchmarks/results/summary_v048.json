@@ -1,0 +1,1310 @@
+{
+  "case_inventory_rows": 17,
+  "closed_loop_coarse_dynamic_order_probe": {
+    "accepted_dynamic_order_count": 0,
+    "default_policy": "coarse_first_no_default_1e-4",
+    "external_superiority_claim": false,
+    "failed_row_count": 1,
+    "failed_rows": [
+      {
+        "h": 0.1,
+        "method": "rA-public-dynamics",
+        "model": "slider_crank",
+        "status": "failed:ValueError:array must not contain infs or NaNs"
+      }
+    ],
+    "interpretation": "This coarse probe uses h=0.1|0.05|0.025 to test the user's large-step diagnostic idea without running default 1e-4 rows. It is not promoted to accepted dynamic order because the local closed-loop method row is still the kinematic FullVA plus reaction reconstruction policy.",
+    "local_acceleration_evidence_rows": 2,
+    "local_method_count": 2,
+    "local_position_floor_rows": 2,
+    "local_velocity_evidence_rows": 2,
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "next_gate": "Add a true local dynamic trajectory/order row for four_link and slider_crank, or prove a reviewer-defensible residual-to-error acceptance theorem for the kinematic/reaction row.",
+    "ok_row_count": 11,
+    "policy": "ra2021_closed_loop_coarse_dynamic_order_probe_no_default_1e-4",
+    "public_failed_row_count": 1,
+    "public_method_count": 2,
+    "reference_h": 0.0125,
+    "row_count": 12,
+    "same_test_campaign_status": "not_run",
+    "schema": "closed-loop-coarse-dynamic-order-probe-v1",
+    "step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "t_end": 0.2,
+    "work_summary_row_count": 4
+  },
+  "closed_loop_dynamic_error_floor_audit": {
+    "accepted_dynamic_order_count": 0,
+    "default_policy": "coarse_first_no_default_1e-4",
+    "external_superiority_claim": false,
+    "interpretation": "The selected-window rows show velocity and acceleration errors far below the public rA dynamics row and near-roundoff local dynamics residuals, but the position column is reference-floor dominated. This audit therefore narrows the blocker without accepting dynamic order or external superiority.",
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "position_floor_blocker_count": 2,
+    "ratio_threshold": 0.0001,
+    "residual_threshold": 1e-12,
+    "row_count": 2,
+    "same_test_campaign_status": "not_run",
+    "schema": "closed-loop-dynamic-error-floor-audit-v1",
+    "selected_reference_h": 0.001,
+    "selected_step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "selected_t_end": 0.2,
+    "velocity_acceleration_evidence_count": 2
+  },
+  "closed_loop_residual_to_error_theorem_obligations": {
+    "accepted_dynamic_order_count": 0,
+    "accepted_residual_to_error_theorem": false,
+    "blocking_obligation_count": 7,
+    "current_local_row_kind": "kinematic_fullva_plus_reaction_reconstruction",
+    "default_policy": "coarse_first_no_default_1e-4",
+    "external_superiority_claim": false,
+    "interpretation": "The residual-to-error proof route is not closed. Current artifacts provide useful surrogate and floor diagnostics, but they do not prove a residual-to-trajectory-error bound and do not promote four_link/slider_crank to accepted dynamic-order rows.",
+    "local_acceleration_evidence_rows": 2,
+    "local_velocity_evidence_rows": 2,
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "obligation_count": 7,
+    "position_floor_blocker_count": 2,
+    "required_next_artifacts": [
+      "local_closed_loop_dynamic_dae_runner_or_identity_proof",
+      "three_step_residual_rate_or_symbolic_defect_proof",
+      "closed_loop_dae_stability_bound",
+      "non_floor_limited_estimator_calibration",
+      "non_floor_limited_closed_loop_error_rows",
+      "accepted_coarse_dynamic_order_rows_or_repaired_public_baseline",
+      "cmame_residual_to_error_theorem_section"
+    ],
+    "schema": "closed-loop-residual-to-error-theorem-obligations-v1",
+    "status_counts": {
+      "campaign_exists_but_not_accepted": 1,
+      "missing": 2,
+      "not_satisfied": 2,
+      "partial_but_position_floor_blocked": 1,
+      "partial_evidence_not_rate_proof": 1
+    },
+    "strict_public_policy_1e-4_required": false,
+    "submission_ready": false,
+    "true_dynamic_local_rows_available": 0
+  },
+  "closed_loop_true_dynamic_row_feasibility_audit": {
+    "accepted_dynamic_order_count": 0,
+    "coarse_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "current_local_row_kind": "kinematic_fullva_plus_reaction_reconstruction",
+    "current_local_setup_mode": "kinematics",
+    "current_public_baseline_kind": "rA_public_dynamics",
+    "default_policy": "coarse_first_no_default_1e-4",
+    "external_superiority_claim": false,
+    "interpretation": "The current source and artifacts prove that four_link/slider_crank local rows are kinematic/reaction rows. They should not be counted as accepted dynamic order rows until a true dynamic DAE trajectory row or residual-to-error theorem is added.",
+    "method_order_theorem": {
+      "accepted_method": "Gauss6/FullVA",
+      "applies_to": "true smooth dynamic trajectory row, not kinematic/reaction replay",
+      "global_order": 6
+    },
+    "missing_dynamic_order_models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "reference_h": 0.0125,
+    "required_next_implementation": "local_closed_loop_dynamic_dae_gauss6_fullva_runner_or_residual_to_error_theorem",
+    "row_count": 2,
+    "schema": "closed-loop-true-dynamic-row-feasibility-audit-v1",
+    "source_identity_checks": {
+      "local_dynamic_fullva_runner_exists": false,
+      "local_setup_system_dynamics_path_exists": false,
+      "v047_local_runner_reconstructs_reactions_after_kinematics": true,
+      "v047_local_runner_setup_mode_is_kinematics": true,
+      "v048_closed_loop_runner_uses_local_kinematic_fullva": true,
+      "v048_public_baseline_uses_public_dynamics": true
+    },
+    "strict_public_policy_1e-4_required": false,
+    "submission_ready": false,
+    "true_dynamic_local_rows_available": 0
+  },
+  "double_pendulum_coarse_same_window_work_precision_summary": {
+    "full_external_campaign_completed": false,
+    "methods": [
+      "Gauss6/FullVA-public-horizon-double-coarse",
+      "rA-public-dynamics-coarse",
+      "reps-public-dynamics-coarse"
+    ],
+    "notes": "Coarse same-window double-pendulum order/time summary; no external superiority claim.",
+    "ok_row_count": 3,
+    "policy": "ra2021_double_pendulum_coarse_same_window_work_precision_summary",
+    "row_count": 3,
+    "selected_reference_h": 0.0125,
+    "selected_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "selected_t_end": 3.0
+  },
+  "external_superiority_claim": false,
+  "gauss6_closed_loop_same_window_work_precision_summary": {
+    "methods": [
+      "Gauss6/FullVA-local-closed-loop",
+      "rA-public-dynamics"
+    ],
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "notes": "Summarizes selected same-window final-error/work rows for manuscript tables.",
+    "ok_row_count": 4,
+    "policy": "ra2021_selected_closed_loop_same_window_work_precision_summary",
+    "row_count": 4
+  },
+  "gauss6_fullva_closed_loop_external": {
+    "full_external_campaign_completed": false,
+    "models": {
+      "four_link": {
+        "acc_observed_order": -0.8827673731814941,
+        "lambda_observed_order": -0.4372345589580693,
+        "max_acceleration_constraint_norm": 1.0523719661889688e-14,
+        "max_condition_number": 116.90799442611528,
+        "max_dynamics_residual_norm": 1.3382220299057966e-13,
+        "max_multiplier_norm": 429.46224502251886,
+        "max_newton_iterations": 5,
+        "max_position_constraint_norm": 6.744334469734575e-15,
+        "max_rot_dynamics_residual": 8.930311021856365e-14,
+        "max_so3_fro": 1.4226258339522945e-15,
+        "max_step_correction_norm": 0.19852317438493233,
+        "max_trans_dynamics_residual": 9.966612523090772e-14,
+        "max_velocity_constraint_norm": 2.9790718040763107e-15,
+        "min_singular_value": 0.07920367194897227,
+        "ok_row_count": 3,
+        "pos_observed_order": -0.07219495466758187,
+        "reference_h": 0.001,
+        "row_count": 3,
+        "status": "accepted_closed_loop_kinematic_reaction",
+        "step_sizes": [
+          0.02,
+          0.01,
+          0.005
+        ],
+        "t_end": 0.2,
+        "total_newton_iterations": 293,
+        "vel_observed_order": 0.01923707390731925
+      },
+      "slider_crank": {
+        "acc_observed_order": -0.7680264501201074,
+        "lambda_observed_order": -0.7214717479243589,
+        "max_acceleration_constraint_norm": 1.203953082306135e-15,
+        "max_condition_number": 43.656759083309396,
+        "max_dynamics_residual_norm": 6.492405015887445e-15,
+        "max_multiplier_norm": 34.3115288622432,
+        "max_newton_iterations": 5,
+        "max_position_constraint_norm": 8.990438838642807e-16,
+        "max_rot_dynamics_residual": 2.518798158677653e-15,
+        "max_so3_fro": 1.452909404699806e-15,
+        "max_step_correction_norm": 0.1380586138921662,
+        "max_trans_dynamics_residual": 6.1487194431201424e-15,
+        "max_velocity_constraint_norm": 4.757700031969948e-16,
+        "min_singular_value": 0.07246063816883577,
+        "ok_row_count": 3,
+        "pos_observed_order": -0.316134107749755,
+        "reference_h": 0.001,
+        "row_count": 3,
+        "status": "accepted_closed_loop_kinematic_reaction",
+        "step_sizes": [
+          0.02,
+          0.01,
+          0.005
+        ],
+        "t_end": 0.2,
+        "total_newton_iterations": 304,
+        "vel_observed_order": -0.144753308597488
+      }
+    },
+    "notes": "Selected 2021 closed-loop external rows using the accepted local kinematic FullVA solve and reaction reconstruction for four_link and slider_crank. These rows verify constraint, SO(3), and Newton-Euler residuals on the public mechanisms, but are not dynamic order or work-superiority rows.",
+    "ok_row_count": 6,
+    "planned_row_count": 0,
+    "policy": "gauss6_fullva_selected_closed_loop_kinematic_reaction_not_full_campaign",
+    "row_count": 6,
+    "run_mode": "gauss6_fullva_closed_loop_2021_pilot",
+    "run_model": true,
+    "selected_models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "selected_t_end": 0.2
+  },
+  "gauss6_fullva_closed_loop_same_window_comparison": {
+    "full_external_campaign_completed": false,
+    "models": {
+      "four_link": {
+        "methods": {
+          "Gauss6/FullVA-local-closed-loop": {
+            "acc_observed_order": -4.5346340602117376e-07,
+            "ok_row_count": 3,
+            "pos_observed_order": -3.880643270931346e-07,
+            "row_count": 3,
+            "step_sizes": [
+              0.02,
+              0.01,
+              0.005
+            ],
+            "vel_observed_order": -7.102369821113325e-07
+          },
+          "rA-public-dynamics": {
+            "acc_observed_order": 1.0984052242054554,
+            "ok_row_count": 3,
+            "pos_observed_order": 3.9599718734769676,
+            "row_count": 3,
+            "step_sizes": [
+              0.02,
+              0.01,
+              0.005
+            ],
+            "vel_observed_order": 1.0526168857360827
+          }
+        },
+        "reference_h": 0.001,
+        "reference_method": "rA-public-kinematics",
+        "t_end": 0.2
+      },
+      "slider_crank": {
+        "methods": {
+          "Gauss6/FullVA-local-closed-loop": {
+            "acc_observed_order": 2.1604789298488292e-10,
+            "ok_row_count": 3,
+            "pos_observed_order": 2.6593319920084468e-15,
+            "row_count": 3,
+            "step_sizes": [
+              0.02,
+              0.01,
+              0.005
+            ],
+            "vel_observed_order": 2.6697646021638326e-15
+          },
+          "rA-public-dynamics": {
+            "acc_observed_order": 1.1025746410260142,
+            "ok_row_count": 3,
+            "pos_observed_order": -0.2977863013967957,
+            "row_count": 3,
+            "step_sizes": [
+              0.02,
+              0.01,
+              0.005
+            ],
+            "vel_observed_order": 1.09006095434296
+          }
+        },
+        "reference_h": 0.001,
+        "reference_method": "rA-public-kinematics",
+        "t_end": 0.2
+      }
+    },
+    "notes": "Selected same-window comparison on 2021 public closed-loop mechanisms. Both methods use the same public kinematic reference, T, h-sweep, and final position/velocity/acceleration error columns. The Gauss6/FullVA row is the accepted local kinematic/reaction residual policy for fully constrained driven closed loops, so this is not the full public T=3 dynamic order/work campaign.",
+    "ok_row_count": 12,
+    "planned_row_count": 0,
+    "policy": "ra2021_selected_closed_loop_same_window_comparison_not_full_campaign",
+    "row_count": 12,
+    "run_model": true,
+    "selected_models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "selected_t_end": 0.2
+  },
+  "gauss6_fullva_closed_loop_same_window_comparison_completed": true,
+  "gauss6_fullva_closed_loop_selected_rows_completed": true,
+  "gauss6_fullva_external": {
+    "full_external_campaign_completed": false,
+    "ok_row_count": 3,
+    "omega_observed_order": 6.024495447150834,
+    "orientation_observed_order": 6.054727277825099,
+    "planned_row_count": 0,
+    "policy": "gauss6_fullva_selected_single_pendulum_pilot_not_full_campaign",
+    "position_observed_order": 6.073158387849618,
+    "public_reference_acc_final_linf": 6.970384269777696e-10,
+    "public_reference_pos_final_linf": 3.7243141903786636e-10,
+    "public_reference_vel_final_linf": 2.0123724908671647e-10,
+    "row_count": 3,
+    "run_mode": "gauss6_fullva_single_pilot",
+    "run_model": true,
+    "selected_models": [
+      "single_pendulum"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.2,
+      0.1,
+      0.05
+    ],
+    "selected_t_end": 0.2,
+    "velocity_observed_order": 6.032877878607191
+  },
+  "gauss6_fullva_external_rows_completed": false,
+  "gauss6_fullva_public_horizon_closed_loop": {
+    "full_external_campaign_completed": false,
+    "models": {
+      "four_link": {
+        "acc_observed_order": -0.097843407559531,
+        "lambda_observed_order": -0.1790342483171709,
+        "max_acceleration_constraint_norm": 8.892879497013688e-14,
+        "max_condition_number": 172.4937224254233,
+        "max_dynamics_residual_norm": 5.13566050004952e-13,
+        "max_multiplier_norm": 1186.510628539554,
+        "max_newton_iterations": 5,
+        "max_position_constraint_norm": 1.0697391722293072e-14,
+        "max_rot_dynamics_residual": 4.911738742042228e-13,
+        "max_so3_fro": 2.176161324292205e-15,
+        "max_step_correction_norm": 0.15625706212830193,
+        "max_trans_dynamics_residual": 2.325196142269019e-13,
+        "max_velocity_constraint_norm": 6.533977194262462e-15,
+        "min_singular_value": 0.05371351003831429,
+        "ok_row_count": 3,
+        "pos_observed_order": -0.051948066934359965,
+        "reference_h": 0.001,
+        "row_count": 3,
+        "status": "accepted_closed_loop_kinematic_reaction",
+        "step_sizes": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "t_end": 3.0,
+        "total_newton_iterations": 103294,
+        "vel_observed_order": -0.058252784535717014
+      },
+      "slider_crank": {
+        "acc_observed_order": -0.009374718006418327,
+        "lambda_observed_order": -0.0010670647563429856,
+        "max_acceleration_constraint_norm": 3.2364715017335313e-15,
+        "max_condition_number": 79.15045672261711,
+        "max_dynamics_residual_norm": 1.1128295471227436e-14,
+        "max_multiplier_norm": 34.31579612833576,
+        "max_newton_iterations": 5,
+        "max_position_constraint_norm": 1.025118072615563e-15,
+        "max_rot_dynamics_residual": 5.507065105733154e-15,
+        "max_so3_fro": 1.8302363042561805e-15,
+        "max_step_correction_norm": 0.08870229469519654,
+        "max_trans_dynamics_residual": 1.0814284316092424e-14,
+        "max_velocity_constraint_norm": 5.243532695265803e-16,
+        "min_singular_value": 0.037460733161224204,
+        "ok_row_count": 3,
+        "pos_observed_order": -0.09452811811002404,
+        "reference_h": 0.001,
+        "row_count": 3,
+        "status": "accepted_closed_loop_kinematic_reaction",
+        "step_sizes": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "t_end": 3.0,
+        "total_newton_iterations": 103332,
+        "vel_observed_order": -0.11092437480817983
+      }
+    },
+    "notes": "Public-horizon 2021 closed-loop tranche using the accepted local kinematic FullVA solve and reaction reconstruction on the public four_link/slider_crank mechanisms. These rows use the 2021 public time window and public h policy when selected, but they remain constraint/reaction residual rows rather than dynamic order/work-superiority rows.",
+    "ok_row_count": 6,
+    "planned_row_count": 0,
+    "policy": "gauss6_fullva_public_horizon_closed_loop_kinematic_reaction_not_full_campaign",
+    "public_closed_loop_step_trios_completed": true,
+    "public_policy_time_window": true,
+    "public_step_size_required_count": 6,
+    "public_step_size_rows_completed": 6,
+    "row_count": 6,
+    "run_mode": "gauss6_fullva_public_horizon_closed_loop_2021_tranche",
+    "run_model": true,
+    "selected_models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.01,
+      0.001,
+      0.0001
+    ],
+    "selected_t_end": 3.0
+  },
+  "gauss6_fullva_public_horizon_double_coarse": {
+    "full_external_campaign_completed": false,
+    "max_endpoint_constraint_norm": 1.130576891811472e-05,
+    "max_endpoint_velocity_constraint_norm": 0.0003533593220590677,
+    "notes": "Gauss6/FullVA double-pendulum coarse public-horizon pilot using the local v029 double-revolute FullVA self-reference at T=3. The h values are intentionally coarser than the 2021 public h=[1e-2,1e-3,1e-4] policy, so this is an order/work feasibility tranche rather than a completed public-policy superiority row.",
+    "ok_row_count": 3,
+    "planned_row_count": 0,
+    "policy": "gauss6_fullva_public_horizon_double_coarse_not_full_campaign",
+    "pos_observed_order": 7.9506178035038175,
+    "public_double_step_trio_completed": false,
+    "public_policy_h_required_count": 3,
+    "public_policy_h_rows_completed": 0,
+    "public_policy_time_window": true,
+    "reference_runtime_sec": 97.50035542901605,
+    "reference_status": "ok",
+    "row_count": 3,
+    "run_mode": "gauss6_fullva_public_horizon_double_coarse",
+    "run_model": true,
+    "selected_models": [
+      "double_pendulum"
+    ],
+    "selected_reference_h": 0.0125,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "selected_t_end": 3.0,
+    "total_newton_iterations": 861,
+    "vel_observed_order": 7.041570696587532
+  },
+  "gauss6_fullva_public_horizon_single": {
+    "full_external_campaign_completed": false,
+    "notes": "Gauss6/FullVA single-pendulum tranche on the 2021 public-code time horizon. Rows count toward the exact public-policy single-pendulum campaign only when T=3, reference_h=1e-3, and h is one of [1e-2, 1e-3, 1e-4]. This is still not a full external campaign until all three public h rows and the remaining source suites are complete.",
+    "ok_row_count": 3,
+    "omega_observed_order": 2.7178459328049804,
+    "orientation_observed_order": -0.03599445915563391,
+    "planned_row_count": 0,
+    "policy": "gauss6_fullva_public_horizon_single_pendulum_tranche_not_full_campaign",
+    "position_observed_order": -0.1181769239059881,
+    "public_policy_time_window": true,
+    "public_reference_acc_final_linf": 3.7330583069206114e-11,
+    "public_reference_pos_final_linf": 7.036815574679167e-12,
+    "public_reference_vel_final_linf": 2.88891133237712e-12,
+    "public_single_step_trio_completed": true,
+    "public_step_size_required_count": 3,
+    "public_step_size_rows_completed": 3,
+    "row_count": 3,
+    "run_mode": "gauss6_fullva_public_horizon_single_pendulum",
+    "run_model": true,
+    "selected_models": [
+      "single_pendulum"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.01,
+      0.001,
+      0.0001
+    ],
+    "selected_t_end": 3.0,
+    "velocity_observed_order": 2.5561902805560694
+  },
+  "gauss6_fullva_public_horizon_single_coarse": {
+    "coarse_same_window_policy": true,
+    "full_external_campaign_completed": false,
+    "notes": "Coarse same-window Gauss6/FullVA single-pendulum rows; no default h=1e-4 execution.",
+    "ok_row_count": 3,
+    "omega_observed_order": 1.6776718859354993,
+    "orientation_observed_order": 6.044501519598248,
+    "planned_row_count": 0,
+    "policy": "gauss6_fullva_public_horizon_single_coarse_not_full_campaign",
+    "position_observed_order": 6.053684405777728,
+    "public_policy_h_rows_completed": 0,
+    "public_policy_time_window": false,
+    "public_reference_acc_final_linf": 2.9641333831875727e-09,
+    "public_reference_pos_final_linf": 1.184735198833664e-09,
+    "public_reference_vel_final_linf": 4.868047076556081e-10,
+    "public_single_step_trio_completed": false,
+    "public_step_size_required_count": 3,
+    "public_step_size_rows_completed": 0,
+    "row_count": 3,
+    "run_mode": "gauss6_fullva_public_horizon_single_coarse",
+    "run_model": true,
+    "selected_models": [
+      "single_pendulum"
+    ],
+    "selected_reference_h": 0.0125,
+    "selected_rows_completed": true,
+    "selected_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "selected_t_end": 3.0,
+    "velocity_observed_order": 2.951208401952261
+  },
+  "gauss6_fullva_selected_rows_completed": true,
+  "hi2022_halfimplicit": {
+    "full_hi2022_campaign_completed": false,
+    "groups": {
+      "rA:double_pendulum": {
+        "acc_final_linf_order": 1.0297228063046953,
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 1.123957116981209,
+        "reference_execution_path": "public_run_function",
+        "reference_mode": "dynamics",
+        "reference_policy": "bounded_rA_dynamics_self_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 1.1239813314737117
+      },
+      "rA:four_link": {
+        "acc_final_linf_order": 0.9953344933750605,
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 0.03355709792926145,
+        "reference_execution_path": "state_history_replay",
+        "reference_mode": "kinematics",
+        "reference_policy": "bounded_rA_kinematics_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 1.0027928353008617
+      },
+      "rA:single_pendulum": {
+        "acc_final_linf_order": 1.1969438542189952,
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": -0.043731420625176765,
+        "reference_execution_path": "public_run_function",
+        "reference_mode": "kinematics",
+        "reference_policy": "bounded_rA_kinematics_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.9624172752429121
+      },
+      "rA:slider_crank": {
+        "acc_final_linf_order": 1.0252595066278818,
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": -1.2991009293997535,
+        "reference_execution_path": "state_history_replay",
+        "reference_mode": "kinematics",
+        "reference_policy": "bounded_rA_kinematics_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.9949911045605496
+      },
+      "rA_half:double_pendulum": {
+        "acc_final_linf_order": -1.112786767029119,
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": -1.1021219021188444,
+        "reference_execution_path": "public_run_function",
+        "reference_mode": "dynamics",
+        "reference_policy": "bounded_rA_dynamics_self_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": -1.1822478983424192
+      },
+      "rA_half:four_link": {
+        "acc_final_linf_order": 0.9953344905378425,
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": -0.010766580774816426,
+        "reference_execution_path": "state_history_replay",
+        "reference_mode": "kinematics",
+        "reference_policy": "bounded_rA_kinematics_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 1.0027928352635627
+      },
+      "rA_half:single_pendulum": {
+        "acc_final_linf_order": 1.1969438543206277,
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 0.04731843706903703,
+        "reference_execution_path": "public_run_function",
+        "reference_mode": "kinematics",
+        "reference_policy": "bounded_rA_kinematics_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.9624172752417138
+      },
+      "rA_half:slider_crank": {
+        "acc_final_linf_order": 1.0252593648411867,
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 2.0177265428090894,
+        "reference_execution_path": "state_history_replay",
+        "reference_mode": "kinematics",
+        "reference_policy": "bounded_rA_kinematics_reference",
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.9949911043547698
+      }
+    },
+    "notes": "Rebuilt from existing hi2022_halfimplicit_rows.csv after a summary write interruption.",
+    "ok_row_count": 24,
+    "planned_row_count": 0,
+    "policy": "hi2022_bounded_four_example_pilot_not_full_campaign",
+    "row_count": 24,
+    "run_mode": "hi2022_bounded_pilot",
+    "run_public_code": true,
+    "selected_forms": [
+      "rA",
+      "rA_half"
+    ],
+    "selected_groups": [
+      "rA:single_pendulum",
+      "rA:double_pendulum",
+      "rA:four_link",
+      "rA:slider_crank",
+      "rA_half:single_pendulum",
+      "rA_half:double_pendulum",
+      "rA_half:four_link",
+      "rA_half:slider_crank"
+    ],
+    "selected_models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "selected_step_trio_group_count": 8,
+    "selected_step_trio_required_group_count": 8,
+    "selected_t_end": 0.1
+  },
+  "hi2022_halfimplicit_rows_completed": true,
+  "last_reuse_existing_results_runtime_sec": 143.6474764070008,
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "ra2021_double_coarse_shards_merged": 3,
+  "ra2021_double_pendulum_coarse_order": {
+    "full_external_campaign_completed": false,
+    "groups": {
+      "rA:double_pendulum": {
+        "acc_final_linf_order": 0.6287833208122398,
+        "coarse_same_window_policy": true,
+        "ok_row_count": 3,
+        "pos_final_linf_order": 0.7034101022306767,
+        "reference_runtime_sec": 4.297105732024647,
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.7536836036608507
+      },
+      "reps:double_pendulum": {
+        "acc_final_linf_order": 0.6287833208114768,
+        "coarse_same_window_policy": true,
+        "ok_row_count": 3,
+        "pos_final_linf_order": 0.7034101022306838,
+        "reference_runtime_sec": 4.53305345098488,
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.7536836036608627
+      },
+      "rp:double_pendulum": {
+        "acc_final_linf_order": null,
+        "coarse_same_window_policy": true,
+        "ok_row_count": 0,
+        "pos_final_linf_order": null,
+        "reference_runtime_sec": 4.698613562970422,
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": false,
+        "vel_final_linf_order": null
+      }
+    },
+    "notes": "Coarse same-window public rA/rp/reps double-pendulum order rows using T=3, h=0.1|0.05|0.025, and reference h=0.0125. This is not the public h=1e-4 policy.",
+    "ok_row_count": 6,
+    "planned_row_count": 0,
+    "policy": "ra2021_double_pendulum_coarse_same_window_policy_not_full_campaign",
+    "row_count": 9,
+    "run_mode": "rebuilt_ra2021_double_pendulum_coarse_order",
+    "run_public_code": true,
+    "selected_forms": [
+      "rA",
+      "rp",
+      "reps"
+    ],
+    "selected_groups": [
+      "rA:double_pendulum",
+      "rp:double_pendulum",
+      "reps:double_pendulum"
+    ],
+    "selected_reference_h": 0.0125,
+    "selected_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "selected_step_trio_group_count": 2,
+    "selected_step_trio_required_group_count": 3,
+    "selected_t_end": 3.0,
+    "selected_tolerance": null
+  },
+  "ra2021_double_pendulum_order": {
+    "full_ra2021_double_order_completed": true,
+    "groups": {
+      "rA:double_pendulum": {
+        "acc_final_linf_order": 0.7005413952557344,
+        "ok_row_count": 3,
+        "pos_final_linf_order": 0.7747856508530623,
+        "public_double_order_policy": true,
+        "reference_runtime_sec": 24.549607365974225,
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.8163101023269093
+      },
+      "reps:double_pendulum": {
+        "acc_final_linf_order": 0.7005413938294779,
+        "ok_row_count": 3,
+        "pos_final_linf_order": 0.7747856508456538,
+        "public_double_order_policy": true,
+        "reference_runtime_sec": 36.26180465298239,
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.8163101023204018
+      },
+      "rp:double_pendulum": {
+        "acc_final_linf_order": 0.6565151357574509,
+        "ok_row_count": 3,
+        "pos_final_linf_order": 1.0346023219718774,
+        "public_double_order_policy": true,
+        "reference_runtime_sec": 49.050309346057475,
+        "reference_status": "ok",
+        "row_count": 3,
+        "selected_step_trio_completed": true,
+        "vel_final_linf_order": 0.7773828487208763
+      }
+    },
+    "notes": "2021 public double_pendulum dynamic self-reference order row. The public order_analysis.py script does not include double_pendulum because the model has no kinematics mode; this row compares public dynamics final states against a finer public-dynamics reference, not against a kinematic reference.",
+    "ok_row_count": 9,
+    "planned_row_count": 0,
+    "policy": "ra2021_double_pendulum_dynamic_self_reference_order_policy",
+    "public_double_order_policy": true,
+    "row_count": 9,
+    "run_mode": "ra2021_double_pendulum_dynamic_self_reference_order",
+    "run_public_code": true,
+    "selected_forms": [
+      "rA",
+      "rp",
+      "reps"
+    ],
+    "selected_groups": [
+      "rA:double_pendulum",
+      "rp:double_pendulum",
+      "reps:double_pendulum"
+    ],
+    "selected_reference_h": 0.0001,
+    "selected_step_sizes": [
+      0.01,
+      0.002,
+      0.001
+    ],
+    "selected_step_trio_group_count": 3,
+    "selected_step_trio_required_group_count": 3,
+    "selected_t_end": 3.0,
+    "selected_tolerance": null
+  },
+  "ra2021_order": {
+    "full_ra2021_order_completed": true,
+    "groups": {
+      "rA:four_link": {
+        "acc_final_linf_order": 1.0051758877381616,
+        "avg_iterations_at_reference_h": 1.9756666666666667,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 0.9766249113247828,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 4.717688028002158,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 4.421862978953868,
+        "vel_final_linf_order": 1.0016222254755835
+      },
+      "rA:single_pendulum": {
+        "acc_final_linf_order": 1.0027887029339355,
+        "avg_iterations_at_reference_h": 1.8803333333333334,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 0.0008722601828519869,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 3.879169518011622,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 1.726168008055538,
+        "vel_final_linf_order": 0.5094722680857251
+      },
+      "rA:slider_crank": {
+        "acc_final_linf_order": 1.0043600367197179,
+        "avg_iterations_at_reference_h": 1.3093333333333332,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 1.6469188244155306,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 5.628287633997388,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 3.684065966983326,
+        "vel_final_linf_order": 0.9938330613258344
+      },
+      "reps:four_link": {
+        "acc_final_linf_order": 1.02268468896797,
+        "avg_iterations_at_reference_h": 11.796666666666667,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 1.8816949479423908,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 5.709835106972605,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 24.79783359298017,
+        "vel_final_linf_order": 0.9973649354308334
+      },
+      "reps:single_pendulum": {
+        "acc_final_linf_order": 1.002788702938896,
+        "avg_iterations_at_reference_h": 1.8803333333333334,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 0.0008652489143497589,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 1.807708655949682,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 2.6188654230209067,
+        "vel_final_linf_order": 0.5094722680857433
+      },
+      "reps:slider_crank": {
+        "acc_final_linf_order": 1.004399536669546,
+        "avg_iterations_at_reference_h": 1.475,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 2.2296985669514147,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 6.5666301100282,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 7.762554882094264,
+        "vel_final_linf_order": 0.9946964322183303
+      },
+      "rp:four_link": {
+        "acc_final_linf_order": 1.020352285236925,
+        "avg_iterations_at_reference_h": 2.1386666666666665,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 2.245428529392324,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 7.979502948001027,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 9.718519861926325,
+        "vel_final_linf_order": 0.9973651480888853
+      },
+      "rp:single_pendulum": {
+        "acc_final_linf_order": 1.0014363007171743,
+        "avg_iterations_at_reference_h": 1.9073333333333333,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 0.0006867393565007863,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 2.872915398911573,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 3.7053539670305327,
+        "vel_final_linf_order": 0.5007704718367582
+      },
+      "rp:slider_crank": {
+        "acc_final_linf_order": 1.0043696776423787,
+        "avg_iterations_at_reference_h": 1.1406666666666667,
+        "ok_row_count": 3,
+        "planned_row_count": 0,
+        "pos_final_linf_order": 2.3161453583183964,
+        "public_step_trio_completed": true,
+        "reference_runtime_sec": 10.788527806987986,
+        "reference_status": "ok",
+        "row_count": 3,
+        "runtime_sec_at_reference_h": 8.35868602595292,
+        "vel_final_linf_order": 0.994696393156036
+      }
+    },
+    "notes": "Rebuilt from existing ra2021_order_rows.csv after a summary write interruption.",
+    "ok_row_count": 27,
+    "planned_row_count": 0,
+    "policy": "ra2021_public_order_policy",
+    "public_step_trio_group_count": 9,
+    "public_step_trio_required_group_count": 9,
+    "row_count": 27,
+    "run_mode": "full_ra2021_order",
+    "run_public_code": true,
+    "selected_forms": [
+      "rA",
+      "rp",
+      "reps"
+    ],
+    "selected_groups": [
+      "rA:single_pendulum",
+      "rA:four_link",
+      "rA:slider_crank",
+      "rp:single_pendulum",
+      "rp:four_link",
+      "rp:slider_crank",
+      "reps:single_pendulum",
+      "reps:four_link",
+      "reps:slider_crank"
+    ],
+    "selected_models": [
+      "single_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "selected_reference_h": 0.001,
+    "selected_step_sizes": [
+      0.01,
+      0.001,
+      0.0001
+    ],
+    "selected_t_end": 3.0
+  },
+  "ra2021_public_order_work_summary": {
+    "notes": "Summarizes public baseline error-order-work rows for manuscript tables.",
+    "ok_row_count": 9,
+    "policy": "ra2021_public_order_work_summary",
+    "public_step_trio_group_count": 9,
+    "row_count": 9,
+    "selected_reference_h": 0.001,
+    "selected_t_end": 3.0
+  },
+  "ra2021_public_timing": {
+    "full_ra2021_timing_completed": true,
+    "groups": {
+      "rA:double_pendulum": {
+        "avg_iterations": 1.772,
+        "max_iterations": 3.0,
+        "public_timing_policy": true,
+        "runtime_sec": 2.700848160078749,
+        "status": "ok"
+      },
+      "rA:four_link": {
+        "avg_iterations": 1.9756666666666667,
+        "max_iterations": 4.0,
+        "public_timing_policy": true,
+        "runtime_sec": 5.903306939988397,
+        "status": "ok"
+      },
+      "rA:single_pendulum": {
+        "avg_iterations": 1.8803333333333334,
+        "max_iterations": 2.0,
+        "public_timing_policy": true,
+        "runtime_sec": 9.89467491605319,
+        "status": "ok"
+      },
+      "rA:slider_crank": {
+        "avg_iterations": 1.3093333333333332,
+        "max_iterations": 2.0,
+        "public_timing_policy": true,
+        "runtime_sec": 5.182220738031901,
+        "status": "ok"
+      },
+      "reps:double_pendulum": {
+        "avg_iterations": 1.772,
+        "max_iterations": 3.0,
+        "public_timing_policy": true,
+        "runtime_sec": 4.902654498000629,
+        "status": "ok"
+      },
+      "reps:four_link": {
+        "avg_iterations": 11.796666666666667,
+        "max_iterations": 31.0,
+        "public_timing_policy": true,
+        "runtime_sec": 31.92214892397169,
+        "status": "ok"
+      },
+      "reps:single_pendulum": {
+        "avg_iterations": 1.8803333333333334,
+        "max_iterations": 2.0,
+        "public_timing_policy": true,
+        "runtime_sec": 2.953751645050943,
+        "status": "ok"
+      },
+      "reps:slider_crank": {
+        "avg_iterations": 1.475,
+        "max_iterations": 5.0,
+        "public_timing_policy": true,
+        "runtime_sec": 9.306522367987782,
+        "status": "ok"
+      },
+      "rp:double_pendulum": {
+        "avg_iterations": 1.8826666666666667,
+        "max_iterations": 3.0,
+        "public_timing_policy": true,
+        "runtime_sec": 6.321827861014754,
+        "status": "ok"
+      },
+      "rp:four_link": {
+        "avg_iterations": 2.1386666666666665,
+        "max_iterations": 4.0,
+        "public_timing_policy": true,
+        "runtime_sec": 11.622613813029602,
+        "status": "ok"
+      },
+      "rp:single_pendulum": {
+        "avg_iterations": 1.9073333333333333,
+        "max_iterations": 2.0,
+        "public_timing_policy": true,
+        "runtime_sec": 4.109216463053599,
+        "status": "ok"
+      },
+      "rp:slider_crank": {
+        "avg_iterations": 1.1406666666666667,
+        "max_iterations": 3.0,
+        "public_timing_policy": true,
+        "runtime_sec": 10.070111277978867,
+        "status": "ok"
+      }
+    },
+    "mode": "dynamics",
+    "notes": "2021 public-code timing/iteration row matching time.py: T=3, h=1e-3, dynamics mode, and no explicit --tol so the public dynamics default tolerance is used. This fills the public four-example performance ledger, including double_pendulum, whose public order-analysis script has no kinematic-reference order row.",
+    "ok_row_count": 12,
+    "planned_row_count": 0,
+    "policy": "ra2021_public_timing_iteration_policy_not_order_rows",
+    "public_timing_policy": true,
+    "public_timing_required_count": 12,
+    "public_timing_rows_completed": 12,
+    "row_count": 12,
+    "run_mode": "ra2021_public_timing_iteration",
+    "run_public_code": true,
+    "selected_forms": [
+      "rA",
+      "rp",
+      "reps"
+    ],
+    "selected_groups": [
+      "rA:single_pendulum",
+      "rA:double_pendulum",
+      "rA:four_link",
+      "rA:slider_crank",
+      "rp:single_pendulum",
+      "rp:double_pendulum",
+      "rp:four_link",
+      "rp:slider_crank",
+      "reps:single_pendulum",
+      "reps:double_pendulum",
+      "reps:four_link",
+      "reps:slider_crank"
+    ],
+    "selected_h": 0.001,
+    "selected_models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "selected_rows_completed": true,
+    "selected_t_end": 3.0,
+    "selected_tolerance": null
+  },
+  "ra2021_single_pendulum_coarse_order": {
+    "coarse_same_window_policy": true,
+    "full_external_campaign_completed": false,
+    "full_ra2021_order_completed": false,
+    "groups": {
+      "rA:single_pendulum": {
+        "acc_final_linf_order": 2.0703764779305294,
+        "completed": false,
+        "pos_final_linf_order": 1.2935249923518318e-05,
+        "public_step_trio_completed": false,
+        "reference_status": "ok",
+        "step_sizes": [
+          0.1,
+          0.05,
+          0.025
+        ],
+        "vel_final_linf_order": 1.2112827155787522
+      },
+      "reps:single_pendulum": {
+        "acc_final_linf_order": 2.070376477930596,
+        "completed": false,
+        "pos_final_linf_order": 1.1318371986421942e-05,
+        "public_step_trio_completed": false,
+        "reference_status": "ok",
+        "step_sizes": [
+          0.1,
+          0.05,
+          0.025
+        ],
+        "vel_final_linf_order": 1.2112827155787473
+      },
+      "rp:single_pendulum": {
+        "acc_final_linf_order": 2.0463396589486225,
+        "completed": false,
+        "pos_final_linf_order": 2.8547475125053592e-05,
+        "public_step_trio_completed": false,
+        "reference_status": "ok",
+        "step_sizes": [
+          0.1,
+          0.05,
+          0.025
+        ],
+        "vel_final_linf_order": 1.0479039687095881
+      }
+    },
+    "notes": "Coarse same-window single-pendulum public rows; no default h=1e-4 execution.",
+    "ok_row_count": 9,
+    "planned_row_count": 0,
+    "policy": "ra2021_single_pendulum_coarse_same_window_policy_not_full_campaign",
+    "public_step_trio_group_count": 0,
+    "public_step_trio_required_group_count": 9,
+    "row_count": 9,
+    "run_public_code": true,
+    "selected_forms": [
+      "rA",
+      "rp",
+      "reps"
+    ],
+    "selected_groups": [
+      "rA:single_pendulum",
+      "rp:single_pendulum",
+      "reps:single_pendulum"
+    ],
+    "selected_models": [
+      "single_pendulum"
+    ],
+    "selected_reference_h": 0.0125,
+    "selected_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "selected_step_trio_group_count": 3,
+    "selected_step_trio_required_group_count": 3,
+    "selected_t_end": 3.0
+  },
+  "run_mode": "full_ra2021_order",
+  "runtime_patches": [],
+  "runtime_sec": null,
+  "same_test_campaign_status": "not_run",
+  "sbel_commit": "4a49529b55a7d984d9388e724760842f9a24b0f6",
+  "sbel_root": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/external/sbel-reproducibility",
+  "schema": "v048-cross-paper-benchmark-harness-v1",
+  "single_pendulum_coarse_same_window_work_precision_summary": {
+    "default_policy": "coarse_first_no_default_1e-4",
+    "external_superiority_claim": false,
+    "full_external_campaign_completed": false,
+    "methods": [
+      "Gauss6/FullVA-public-horizon-single-coarse",
+      "rA-public-dynamics-coarse",
+      "reps-public-dynamics-coarse",
+      "rp-public-dynamics-coarse"
+    ],
+    "notes": "Coarse same-window single-pendulum order/time summary; no external superiority claim.",
+    "ok_row_count": 4,
+    "policy": "ra2021_single_pendulum_coarse_same_window_work_precision_summary",
+    "row_count": 4,
+    "selected_reference_h": 0.0125,
+    "selected_step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "selected_t_end": 3.0
+  },
+  "summary_rebuilt_from_existing_csv": true,
+  "velocity_partitioning_code_search": {
+    "easychair_visible_repository_reference": "https://github.com/uwsbel/public-metadata/tree/master/2021/ASME/rA-formulation",
+    "method_identity_resolved": true,
+    "public_web_search_status": "no_distinct_repo_found",
+    "relevant_code_path_resolved": false,
+    "resolved_method_alias": {
+      "alias": "vp2024_lie_group_ode_partitioning",
+      "implemented_as": "vp2024_coordinate_partitioning_rA"
+    },
+    "row_count": 18,
+    "searched_refs": [
+      "origin/master",
+      "origin/user/aaron/msd"
+    ],
+    "searched_repositories": [
+      {
+        "commit": "4a49529b55a7d984d9388e724760842f9a24b0f6",
+        "exact_velocity_partitioning_path_hits": 0,
+        "mechanism_candidate_2024_path_hits": 54,
+        "mechanism_candidate_roots": "2024/MNODE-code",
+        "repository": "sbel-reproducibility",
+        "root": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/external/sbel-reproducibility",
+        "searched_refs": "origin/master,origin/user/aaron/msd",
+        "tree_path_count": 4047
+      },
+      {
+        "commit": "4a49529b55a7d984d9388e724760842f9a24b0f6",
+        "exact_velocity_partitioning_path_hits": 0,
+        "mechanism_candidate_2024_path_hits": 54,
+        "mechanism_candidate_roots": "2024/MNODE-code",
+        "repository": "public-metadata",
+        "root": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/external/public-metadata",
+        "searched_refs": "origin/master,origin/user/aaron/msd",
+        "tree_path_count": 4047
+      }
+    ],
+    "status": "not_resolved_in_local_sbel_or_public_metadata_tree"
+  },
+  "velocity_partitioning_code_status": "not_resolved_in_local_sbel_or_public_metadata_tree",
+  "version": "v048_cross_paper_same_test_benchmarks"
+}

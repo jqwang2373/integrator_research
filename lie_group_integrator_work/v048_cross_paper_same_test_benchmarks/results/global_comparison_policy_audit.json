@@ -1,0 +1,18 @@
+{
+  "claim_boundary": "The fixed-grid common-reference matrix is a bounded diagnostic. The all-example forensic audit blocks paper-level direct error superiority until source-policy reproduction, velocity/output mapping, original TFE setup, and VP code-path issues are closed.",
+  "common_reference_apples_to_apples_rows": 44,
+  "common_reference_direct_error_superiority_claim": true,
+  "common_reference_total_rows": 44,
+  "direct_error_rows_allowed_for_paper": 0,
+  "direct_error_vs_local_comparable_rows": 40,
+  "external_superiority_claim": false,
+  "failed_requirements": [],
+  "mixed_policy_direct_error_vs_local_comparable_rows": 0,
+  "paper_direct_error_superiority_claim_allowed": false,
+  "passed_count": 14,
+  "public_code_fixed_grid_replay": true,
+  "reasonable_apples_to_apples_claims": true,
+  "row_count": 14,
+  "schema": "global-comparison-policy-audit-v1",
+  "source_policy_reproduction": false
+}

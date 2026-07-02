@@ -1,0 +1,21 @@
+{
+  "check": "v032 JVP vs dense Jacobian-vector product",
+  "rows": [
+    {
+      "case": "double_revolute_smooth",
+      "dense_jv_norm": 82.14431461759972,
+      "diff_norm": 1.4808100327392428e-14,
+      "dimension": 138,
+      "max_abs_error": 7.105427357601002e-15,
+      "relative_error": 1.8026932717531907e-16
+    },
+    {
+      "case": "double_revolute_sharp",
+      "dense_jv_norm": 102.2049300056027,
+      "diff_norm": 5.348685788693553e-14,
+      "dimension": 138,
+      "max_abs_error": 4.263256414560601e-14,
+      "relative_error": 5.233295290550414e-16
+    }
+  ]
+}

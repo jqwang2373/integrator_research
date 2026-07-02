@@ -1,0 +1,164 @@
+{
+  "experiment": {
+    "cached_pattern": {
+      "colors": 11,
+      "density": 0.030560806553245116,
+      "nnz": 582
+    },
+    "cached_pattern_build_sec": 0.05662565800594166,
+    "cases": {
+      "double_revolute_sharp": {
+        "cached_relation_to_validation_dense": {
+          "candidate_colors": 11,
+          "candidate_nnz": 582,
+          "extra_vs_reference": 0,
+          "missing_vs_reference": 0,
+          "reference_colors": 11,
+          "reference_nnz": 582
+        },
+        "runs": {
+          "cached_jvp_pruned": {
+            "avg_jacobian_eval_sec": 0.00047998788680783227,
+            "avg_linear_solve_sec": 0.00015182758828527048,
+            "max_endpoint_constraint_norm": 3.598309939835776e-14,
+            "max_endpoint_velocity_constraint_norm": 1.0719550277841447e-11,
+            "max_linear_residual_norm": 2.174298080693486e-14,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 1.1933513528566256e-13,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "pattern_build_sec": 0.05662565800594166,
+            "runtime_sec": 0.06792489800136536,
+            "status": "ok",
+            "steps": 6,
+            "total_jacobian_assemblies": 19,
+            "total_jacobian_eval_sec": 0.009119769849348813,
+            "total_linear_solve_sec": 0.0028847241774201393,
+            "total_linear_solves": 19,
+            "total_newton_iterations": 25,
+            "total_residual_eval_sec": 0.008780723088420928
+          },
+          "dense_jacfwd_csr": {
+            "avg_jacobian_eval_sec": 0.0019317733117771383,
+            "avg_linear_solve_sec": 0.0002488569956959078,
+            "max_endpoint_constraint_norm": 3.598309939835776e-14,
+            "max_endpoint_velocity_constraint_norm": 1.0719550277841447e-11,
+            "max_linear_residual_norm": 2.174298080693486e-14,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 1.1933513528566256e-13,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "pattern_build_sec": 0.0,
+            "runtime_sec": 0.10136510198935866,
+            "status": "ok",
+            "steps": 6,
+            "total_jacobian_assemblies": 19,
+            "total_jacobian_eval_sec": 0.03670369292376563,
+            "total_linear_solve_sec": 0.0047282829182222486,
+            "total_linear_solves": 19,
+            "total_newton_iterations": 25,
+            "total_residual_eval_sec": 0.012970281997695565
+          }
+        },
+        "stribeck_velocity": 0.05,
+        "validation_dense_pattern": {
+          "colors": 11,
+          "density": 0.030560806553245116,
+          "nnz": 582
+        },
+        "validation_dense_pattern_build_sec": 2.0429141190252267,
+        "validation_t_final": 0.12
+      },
+      "double_revolute_smooth": {
+        "cached_relation_to_validation_dense": {
+          "candidate_colors": 11,
+          "candidate_nnz": 582,
+          "extra_vs_reference": 0,
+          "missing_vs_reference": 0,
+          "reference_colors": 11,
+          "reference_nnz": 582
+        },
+        "runs": {
+          "cached_jvp_pruned": {
+            "avg_jacobian_eval_sec": 0.0004930013318597856,
+            "avg_linear_solve_sec": 0.00015184106369916763,
+            "max_endpoint_constraint_norm": 3.708286170450947e-14,
+            "max_endpoint_velocity_constraint_norm": 5.789998834916922e-13,
+            "max_linear_residual_norm": 2.7634352164620176e-14,
+            "max_quaternion_unit_error": 1.1102230246251565e-16,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 8.295567718337104e-13,
+            "omega_error_vs_dense": 1.2412670766236366e-16,
+            "orientation_error_vs_dense_rad": 2.3040787627404448e-51,
+            "pattern_build_sec": 0.05662565800594166,
+            "runtime_sec": 0.06482632900588214,
+            "status": "ok",
+            "steps": 6,
+            "total_jacobian_assemblies": 18,
+            "total_jacobian_eval_sec": 0.008874023973476142,
+            "total_linear_solve_sec": 0.0027331391465850174,
+            "total_linear_solves": 18,
+            "total_newton_iterations": 24,
+            "total_residual_eval_sec": 0.007540693157352507
+          },
+          "dense_jacfwd_csr": {
+            "avg_jacobian_eval_sec": 0.0015919625455151415,
+            "avg_linear_solve_sec": 0.00029717665812414553,
+            "max_endpoint_constraint_norm": 3.708286170450947e-14,
+            "max_endpoint_velocity_constraint_norm": 5.789710264985481e-13,
+            "max_linear_residual_norm": 3.030630105215535e-14,
+            "max_quaternion_unit_error": 1.1102230246251565e-16,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 8.287100676457588e-13,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "pattern_build_sec": 0.0,
+            "runtime_sec": 0.09669941500760615,
+            "status": "ok",
+            "steps": 6,
+            "total_jacobian_assemblies": 18,
+            "total_jacobian_eval_sec": 0.028655325819272548,
+            "total_linear_solve_sec": 0.00534917984623462,
+            "total_linear_solves": 18,
+            "total_newton_iterations": 24,
+            "total_residual_eval_sec": 0.02152831689454615
+          }
+        },
+        "stribeck_velocity": 0.5,
+        "validation_dense_pattern": {
+          "colors": 11,
+          "density": 0.030560806553245116,
+          "nnz": 582
+        },
+        "validation_dense_pattern_build_sec": 1.733405106002465,
+        "validation_t_final": 0.12
+      }
+    },
+    "discovery_case": "double_revolute_smooth",
+    "discovery_t_final": 0.06,
+    "h": 0.02,
+    "validation_t_final": 0.12
+  },
+  "jax": "0.10.1",
+  "model": {
+    "cases": {
+      "double_revolute_sharp": 0.05,
+      "double_revolute_smooth": 0.5
+    },
+    "discovery_case": "double_revolute_smooth",
+    "h": 0.02,
+    "method": "double_revolute_gauss6_fullva",
+    "pattern_atol": 1e-14,
+    "t_discovery": 0.06,
+    "t_validate": 0.12
+  },
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 15.58154648001073,
+  "solver_parent": "v037_jvp_pruned_symbolic_pattern",
+  "source_version": "v029_double_revolute_pivotva_dae",
+  "version": "v038_pattern_cache_reuse"
+}

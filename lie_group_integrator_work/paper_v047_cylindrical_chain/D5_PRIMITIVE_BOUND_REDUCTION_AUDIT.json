@@ -1,0 +1,2999 @@
+{
+  "claim_boundary": {
+    "allowed_now": "D5 Taylor terms are reduced to primitive stage-bound obligations; P_tube compact constants are closed",
+    "close_condition": "Primitive/Taylor PC2 route closes only after every primitive obligation has a uniform O(h^7) proof and the implication is applied to every listed Taylor subterm.",
+    "forbidden_now": [
+      "primitive/Taylor PC2 route closure",
+      "all primitive bounds proved",
+      "Taylor term bounds certified",
+      "O(h^7) dynamic-row proof closure",
+      "submission-ready proof"
+    ]
+  },
+  "conditional_row_level_corollaries": {
+    "smooth_force_torque_lift": {
+      "actual_taylor_bounds_proved": 0,
+      "flat_tex_present": true,
+      "label": "cor:d5-smooth-force-row-bound-under-lifts",
+      "main_tex_present": true,
+      "pc2_closed": false,
+      "primitive_closed": false,
+      "primitive_inputs_assumed": [
+        "P_state_lift",
+        "P_multiplier_lift"
+      ],
+      "term_rows_conditionally_bound_under_lifts": 72,
+      "uses_d4_direct_route_smoothness_as_rate_proof": false
+    }
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{cor:d5-smooth-force-row-bound-under-lifts}",
+      "primitive-bound reduction",
+      "six primitive obligations",
+      "compact-tube constants primitive is discharged below",
+      "Row-level smooth force/torque/friction Taylor bound under",
+      "Thus the \\(72\\) smooth force, torque, and regularized-friction Taylor",
+      "does not turn the D4 direct-route smoothness certificate into a primitive-rate proof",
+      "no induced Taylor bounds are certified on the primitive/Taylor route"
+    ]
+  },
+  "pc2_closed": false,
+  "pc2_closed_scope": "false only for the separate primitive/Taylor PC2 route; active direct PC2 residual-bridge slot is closed separately",
+  "primitive_obligations": [
+    {
+      "id": "P_state_lift",
+      "proved": false,
+      "statement": "stage pose, translational velocity, and angular velocity lift errors are O(h^7)",
+      "term_rows_using_obligation": 126
+    },
+    {
+      "id": "P_acceleration_lift",
+      "proved": false,
+      "statement": "stage translational and angular acceleration lift errors are O(h^7)",
+      "term_rows_using_obligation": 36
+    },
+    {
+      "id": "P_multiplier_lift",
+      "proved": false,
+      "statement": "stage lower-pair multiplier lift errors are O(h^7)",
+      "term_rows_using_obligation": 72
+    },
+    {
+      "id": "P_geometry_lift",
+      "proved": false,
+      "statement": "dynamic-row force and torque Jacobian lift errors are O(h^7)",
+      "term_rows_using_obligation": 36
+    },
+    {
+      "id": "P_gyroscopic_lift",
+      "proved": false,
+      "statement": "body-frame gyroscopic bilinear lift errors are O(h^7)",
+      "term_rows_using_obligation": 18
+    },
+    {
+      "id": "P_uniform_tube_constants",
+      "proof_source": "Lemma~\\ref{lem:d5-compact-tube-constants}",
+      "proved": true,
+      "statement": "all reduction constants are uniform on the compact smooth proof tube",
+      "term_rows_using_obligation": 162
+    }
+  ],
+  "primitive_route_pc2_closed": false,
+  "primitive_route_proof_gap_closed": false,
+  "proof_gap_closed": false,
+  "proof_gap_closed_scope": "false only for the separate primitive/Taylor proof gap; active direct PC2 residual-bridge proof-gap slot is closed separately",
+  "read_only": true,
+  "reduction_rows": [
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 24,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 24,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 24,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 24,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 25,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 25,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 25,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 25,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 26,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 26,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 26,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 26,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 27,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 27,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 27,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 27,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 27,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 28,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 28,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 28,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 28,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 28,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 29,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 29,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 29,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 29,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 29,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 30,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 30,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 30,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 30,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 31,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 31,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 31,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 31,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 32,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 32,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 32,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 32,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 33,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 33,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 33,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 33,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 33,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 34,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 34,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 34,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 34,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 34,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 35,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 35,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 35,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 35,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 35,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 0,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 68,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 68,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 68,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 68,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 69,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 69,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 69,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 69,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 70,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 70,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 70,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 70,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 71,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 71,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 71,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 71,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 71,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 72,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 72,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 72,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 72,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 72,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 73,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 73,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 73,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 73,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 73,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 74,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 74,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 74,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 74,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 75,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 75,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 75,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 75,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 76,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 76,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 76,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 76,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 77,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 77,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 77,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 77,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 77,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 78,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 78,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 78,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 78,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 78,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 79,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 79,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 79,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 79,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 79,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 1,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 112,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 112,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 112,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 112,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 113,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 113,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 113,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 113,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 114,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 114,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 114,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 114,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 115,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 115,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 115,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 115,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 115,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 116,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 116,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 116,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 116,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 116,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 117,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 117,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 117,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 117,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 117,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 118,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 118,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 118,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 118,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 119,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 119,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 119,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 119,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 120,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_acceleration_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 120,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_external_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 120,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_multiplier_force_lift"
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 120,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "T_friction_force_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 121,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 121,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 121,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 121,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "x",
+      "global_row": 121,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 122,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 122,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 122,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 122,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "y",
+      "global_row": 122,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 123,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_acceleration_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "acceleration_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_angular_acceleration_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 123,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_gyroscopic_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "gyroscopic_bilinear_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_gyroscopic_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 123,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_external_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 123,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_geometry_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "multiplier_geometry_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_multiplier_torque_lift"
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "certifies_theorem_now": false,
+      "component": "z",
+      "global_row": 123,
+      "primitive_bounds_proved": false,
+      "primitive_obligations": [
+        "P_state_lift",
+        "P_multiplier_lift",
+        "P_uniform_tube_constants"
+      ],
+      "reduction_group": "smooth_force_torque_lift",
+      "reduction_rule_recorded": true,
+      "stage": 2,
+      "term_bound_proved": false,
+      "term_id": "R_friction_torque_lift"
+    }
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-primitive-bound-reduction-audit-v1",
+  "source_consistency": {
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+    "readiness_direct_route_pc2_closed": true,
+    "readiness_primitive_route_closed": false,
+    "readiness_primitive_taylor_closed_rows": 0,
+    "term_budget_pc2_closed": false,
+    "term_budget_schema": "d5-taylor-term-budget-audit-v1"
+  },
+  "status": "primitive_reduction_recorded_pc2_open",
+  "submission_ready": false,
+  "summary": {
+    "acceleration_lift_terms": 36,
+    "gyroscopic_bilinear_lift_terms": 18,
+    "multiplier_geometry_lift_terms": 36,
+    "open_primitive_obligations": 5,
+    "p_tube_closed": true,
+    "primitive_obligation_count": 6,
+    "primitive_obligations_proved": 1,
+    "smooth_force_torque_lift_terms": 72,
+    "term_bounds_proved": 0,
+    "term_rows": 162,
+    "term_rows_with_reduction_rule": 162
+  },
+  "term_bound_closure_claimed": false
+}

@@ -1,0 +1,22 @@
+{
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "full_external_campaign_completed": false,
+  "methods": [
+    "Gauss6/FullVA-public-horizon-single-coarse",
+    "rA-public-dynamics-coarse",
+    "reps-public-dynamics-coarse",
+    "rp-public-dynamics-coarse"
+  ],
+  "notes": "Coarse same-window single-pendulum order/time summary; no external superiority claim.",
+  "ok_row_count": 4,
+  "policy": "ra2021_single_pendulum_coarse_same_window_work_precision_summary",
+  "row_count": 4,
+  "selected_reference_h": 0.0125,
+  "selected_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "selected_t_end": 3.0
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "dynamic_superiority_claim": false,
+  "interpretation": "This gate promotes the existing selected-window closed-loop comparison into a residual-to-error surrogate artifact. It is useful for planning and manuscript tables, but it does not convert local kinematic/reaction residual rows into accepted dynamic order/work superiority.",
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "row_count": 2,
+  "same_test_campaign_status": "not_run",
+  "schema": "closed-loop-surrogate-dynamic-gate-v1",
+  "selected_reference_h": 0.001,
+  "selected_step_sizes": [
+    0.02,
+    0.01,
+    0.005
+  ],
+  "selected_t_end": 0.2,
+  "surrogate_available_count": 2
+}

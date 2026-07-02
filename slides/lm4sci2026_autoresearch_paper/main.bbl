@@ -1,0 +1,104 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Boiko et~al.(2023)Boiko, MacKnight, Kline, and
+  Gomes]{Boiko2023Coscientist}
+Daniil~A. Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes.
+\newblock Autonomous chemical research with large language models.
+\newblock \emph{Nature}, 624\penalty0 (7992):\penalty0 570--578, 2023.
+\newblock \doi{10.1038/s41586-023-06792-0}.
+
+\bibitem[Bran et~al.(2024)Bran, Cox, Schilter, Baldassari, White, and
+  Schwaller]{Bran2024ChemCrow}
+Andres~M. Bran, Sam Cox, Oliver Schilter, Carlo Baldassari, Andrew~D. White,
+  and Philippe Schwaller.
+\newblock Augmenting large language models with chemistry tools.
+\newblock \emph{Nature Machine Intelligence}, 6\penalty0 (5):\penalty0
+  525--535, 2024.
+\newblock \doi{10.1038/s42256-024-00832-8}.
+
+\bibitem[Hairer and Wanner(1996)]{Hairer1996SolvingII}
+Ernst Hairer and Gerhard Wanner.
+\newblock \emph{Solving Ordinary Differential Equations II: Stiff and
+  Differential-Algebraic Problems}.
+\newblock Springer, 2 edition, 1996.
+\newblock \doi{10.1007/978-3-642-05221-7}.
+
+\bibitem[King et~al.(2009)King, Rowland, Oliver, Young, Aubrey, Byrne, Liakata,
+  Markham, Pir, Soldatova, Sparkes, Whelan, and
+  Clare]{King2009AutomationScience}
+Ross~D. King, Jem Rowland, Stephen~G. Oliver, Michael Young, Wayne Aubrey, Emma
+  Byrne, Maria Liakata, Magdalena Markham, Pinar Pir, Larisa~N. Soldatova,
+  Andrew Sparkes, Kenneth~E. Whelan, and Amanda Clare.
+\newblock The automation of science.
+\newblock \emph{Science}, 324\penalty0 (5923):\penalty0 85--89, 2009.
+\newblock \doi{10.1126/science.1165620}.
+
+\bibitem[{LM4Sci Organizers}(2026)]{LM4Sci2026CFP}
+{LM4Sci Organizers}.
+\newblock Lm4sci 2.0: The second workshop on language models for scientific
+  discovery -- call for papers, 2026.
+\newblock URL \url{https://lm4sci.github.io/docs/2026/call-for-papers}.
+\newblock Accessed 2026-06-29.
+
+\bibitem[Lu et~al.(2024)Lu, Lu, Lange, Foerster, Clune, and
+  Ha]{Lu2024AIScientist}
+Chris Lu, Cong Lu, Robert~Tjarko Lange, Jakob Foerster, Jeff Clune, and David
+  Ha.
+\newblock The ai scientist: Towards fully automated open-ended scientific
+  discovery, 2024.
+\newblock URL \url{https://arxiv.org/abs/2408.06292}.
+
+\bibitem[Munthe-Kaas(1998)]{MuntheKaas1998RK}
+Hans~Z. Munthe-Kaas.
+\newblock Runge--kutta methods on lie groups.
+\newblock \emph{BIT Numerical Mathematics}, 38\penalty0 (1):\penalty0 92--111,
+  1998.
+\newblock \doi{10.1007/BF02510919}.
+
+\bibitem[Romera-Paredes et~al.(2024)Romera-Paredes, Barekatain, Novikov, Balog,
+  Kumar, Dupont, Ruiz, Ellenberg, Wang, Fawzi, Kohli, and
+  Fawzi]{RomeraParedes2024FunSearch}
+Bernardino Romera-Paredes, Mohammadamin Barekatain, Alexander Novikov, Matej
+  Balog, M.~Pawan Kumar, Emilien Dupont, Francisco J.~R. Ruiz, Jordan~S.
+  Ellenberg, Pengming Wang, Omar Fawzi, Pushmeet Kohli, and Alhussein Fawzi.
+\newblock Mathematical discoveries from program search with large language
+  models.
+\newblock \emph{Nature}, 625\penalty0 (7995):\penalty0 468--475, 2024.
+\newblock \doi{10.1038/s41586-023-06924-6}.
+
+\bibitem[Schick et~al.(2023)Schick, Dwivedi-Yu, Dess{\`i}, Raileanu, Lomeli,
+  Hambro, Zettlemoyer, Cancedda, and Scialom]{Schick2023Toolformer}
+Timo Schick, Jane Dwivedi-Yu, Roberto Dess{\`i}, Roberta Raileanu, Maria
+  Lomeli, Eric Hambro, Luke Zettlemoyer, Nicola Cancedda, and Thomas Scialom.
+\newblock Toolformer: Language models can teach themselves to use tools.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, pages 68539--68551, 2023.
+
+\bibitem[Wang et~al.(2023)Wang, Fu, Du, Gao, Huang, Liu, Chandak, Liu,
+  Van~Katwyk, Deac, Anandkumar, Bergen, Gomes, Ho, Kohli, Lasenby, Leskovec,
+  Liu, Manrai, Marks, Ramsundar, Song, Sun, Tang, Velickovic, Welling, Zhang,
+  Coley, Bengio, and Zitnik]{Wang2023AIScience}
+Hanchen Wang, Tianfan Fu, Yuanqi Du, Wenhao Gao, Kexin Huang, Ziming Liu, Payal
+  Chandak, Shengchao Liu, Peter Van~Katwyk, Andreea Deac, Anima Anandkumar,
+  Karianne Bergen, Carla~P. Gomes, Shirley Ho, Pushmeet Kohli, Joan Lasenby,
+  Jure Leskovec, Tie-Yan Liu, Arjun Manrai, Debora Marks, Bharath Ramsundar,
+  Le~Song, Jimeng Sun, Jian Tang, Petar Velickovic, Max Welling, Linfeng Zhang,
+  Connor~W. Coley, Yoshua Bengio, and Marinka Zitnik.
+\newblock Scientific discovery in the age of artificial intelligence.
+\newblock \emph{Nature}, 620\penalty0 (7972):\penalty0 47--60, 2023.
+\newblock \doi{10.1038/s41586-023-06221-2}.
+
+\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao]{Yao2023ReAct}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan,
+  and Yuan Cao.
+\newblock React: Synergizing reasoning and acting in language models.
+\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock URL \url{https://openreview.net/forum?id=WE_vluYUL-X}.
+
+\end{thebibliography}

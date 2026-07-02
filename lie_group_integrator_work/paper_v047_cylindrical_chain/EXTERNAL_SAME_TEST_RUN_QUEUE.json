@@ -1,0 +1,194 @@
+{
+  "schema": "external-same-test-run-queue-v1",
+  "status": "coarse_first_parallel_queue_ready_not_run",
+  "submission_ready": false,
+  "accepted_method": "Gauss6/FullVA",
+  "source_cases": "CROSS_PAPER_BENCHMARK_CASES.json",
+  "same_test_campaign_status": "not_run",
+  "external_superiority_claim": false,
+  "local_dynamic_order_boundary": {
+    "local_evidence_coverage_examples_count": 4,
+    "local_evidence_coverage_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "accepted_method_dynamic_order_examples_count": 2,
+    "accepted_method_dynamic_order_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "mechanism_coverage_examples_count": 2,
+    "mechanism_coverage_examples": [
+      "four_link",
+      "slider_crank"
+    ],
+    "local_dynamic_order_closed_examples_count": 2,
+    "local_dynamic_order_closed_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "method_side_order_gate_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "closed_loop_true_dynamic_order_examples": [
+      "four_link",
+      "slider_crank"
+    ],
+    "accepted_source_policy_dynamic_order_examples_count": 0,
+    "external_superiority_claim": false
+  },
+  "execution_policy": {
+    "read_only_queue": true,
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "coarse_step_sizes": [0.1, 0.05, 0.025],
+    "coarse_reference_h": 0.0125,
+    "strict_public_policy_1e-4": "opt_in_only",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "coverage_counts": {
+    "external_source_count": 4,
+    "required_case_count": 17,
+    "queue_batch_count": 4,
+    "parallel_ready_batch_count": 2,
+    "not_ready_batch_count": 2,
+    "parallel_shard_count_without_default_1e-4": 20,
+    "source_policy_1e-4_opt_in_batch_count": 1,
+    "code_path_unresolved_batch_count": 1
+  },
+  "batch_queue": [
+    {
+      "batch_id": "ra2021_coarse_same_window_order_time",
+      "source_id": "ra2021_taves_kissel_negrut",
+      "priority": 1,
+      "queue_status": "parallel_ready_existing_interfaces",
+      "models": ["single_pendulum", "double_pendulum", "four_link", "slider_crank"],
+      "public_forms": ["rA", "rp", "reps"],
+      "step_sizes": [0.1, 0.05, 0.025],
+      "reference_h": 0.0125,
+      "time_horizon": 3.0,
+      "metrics": [
+        "position_error",
+        "velocity_error",
+        "observed_order",
+        "runtime",
+        "average_newton_iterations",
+        "constraint_drift"
+      ],
+      "parallel_shard_count": 12,
+      "can_parallelize": true,
+      "source_policy_1e-4_required": false,
+      "current_evidence": [
+        "../v048_cross_paper_same_test_benchmarks/results/single_pendulum_coarse_same_window_work_precision_summary.csv",
+        "../v048_cross_paper_same_test_benchmarks/results/double_pendulum_coarse_same_window_work_precision_summary.csv",
+        "../v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order.json",
+        "../v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision.json",
+        "../v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_strict_common_reference.json"
+      ],
+      "current_reading_after_reconciliation": {
+        "public_baseline_order_groups_completed": "12/12",
+        "public_timing_rows_completed": "12/12",
+        "local_evidence_coverage_examples": "4/4",
+        "accepted_method_dynamic_order_examples": "2/4",
+        "mechanism_coverage_examples": "2/4",
+        "local_dynamic_order_examples": "2/4",
+        "source_policy_external_dynamic_order_examples": "0/4",
+        "remaining_gap": "source-policy external same-test rows or explicit suite demotions; do not rerun completed public baselines by default"
+      },
+      "next_action": "do not rerun completed 2021 public baselines by default; close source-policy external rows or explicitly demote suites before any external-superiority claim"
+    },
+    {
+      "batch_id": "hi2022_halfimplicit_full_policy_decision",
+      "source_id": "hi2022_fang_kissel_zhang_negrut",
+      "priority": 2,
+      "queue_status": "parallel_ready_after_policy_selection",
+      "models": ["single_pendulum", "double_pendulum", "four_link", "slider_crank"],
+      "public_forms": ["rA_half", "rA"],
+      "step_sizes": "match_2022_full_T8_policy_or_report_demotion",
+      "reference_h": "match_2022_policy",
+      "time_horizon": 8.0,
+      "metrics": [
+        "position_error",
+        "velocity_error",
+        "observed_order",
+        "runtime",
+        "average_newton_iterations",
+        "energy_or_constraint_drift"
+      ],
+      "parallel_shard_count": 8,
+      "can_parallelize": true,
+      "source_policy_1e-4_required": false,
+      "current_evidence": [
+        "../v048_cross_paper_same_test_benchmarks/results/hi2022_halfimplicit_rows.csv"
+      ],
+      "next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim"
+    },
+    {
+      "batch_id": "tfe2026_original_pendulum_encoding",
+      "source_id": "tfe2026_chaturvedi_sandu_sandu",
+      "priority": 3,
+      "queue_status": "not_ready_source_setup_encoding_required",
+      "models": ["rigid_pendulum"],
+      "baseline_methods": ["TFE_m1", "TFE_m2", "TFE_m3", "Newmark_beta", "trapezoidal"],
+      "cases": ["no_joint_friction", "joint_friction"],
+      "step_sizes": "match_source_paper",
+      "reference_h": "match_source_paper_reference_solution",
+      "metrics": [
+        "position_error",
+        "velocity_error",
+        "observed_order",
+        "newton_iterations",
+        "cost",
+        "large_step_stability",
+        "friction_response"
+      ],
+      "parallel_shard_count": 0,
+      "can_parallelize": false,
+      "source_policy_1e-4_required": "unknown_until_source_policy_encoded",
+      "current_evidence": ["../../s11044-026-10153-w.pdf"],
+      "next_action": "resolve the source-policy DAE runner, Brown-McPhee source-code-equivalent friction law, full T=10 endpoint/output policy, and accepted work rows before running"
+    },
+    {
+      "batch_id": "vp2024_velocity_partitioning_code_resolution",
+      "source_id": "vp2024_kissel_bakke_negrut",
+      "priority": 4,
+      "queue_status": "not_ready_code_path_unresolved",
+      "models": ["single_pendulum", "double_pendulum", "four_link", "slider_crank"],
+      "baseline_methods": [
+        "velocity_partitioning_lie_group_ode",
+        "coordinate_partitioning_euler_parameter"
+      ],
+      "step_sizes": "unavailable_until_code_path_resolved",
+      "reference_h": "unavailable_until_code_path_resolved",
+      "metrics": ["observed_order", "runtime", "performance_comparison"],
+      "parallel_shard_count": 0,
+      "can_parallelize": false,
+      "source_policy_1e-4_required": false,
+      "current_evidence": [
+        "../v048_cross_paper_same_test_benchmarks/results/velocity_partitioning_code_search.csv"
+      ],
+      "next_action": "resolve public code path or explicitly demote this suite from the external-superiority claim"
+    }
+  ],
+  "acceptance_rules": {
+    "order_and_time_required": true,
+    "same_test_setup_required": true,
+    "common_reference_or_declared_reference_policy_required": true,
+    "residual_only_rows_do_not_count_as_dynamic_order": true,
+    "full_external_superiority_requires_all_included_suites_closed": true,
+    "suite_demotions_must_be_stated_in_manuscript": true
+  },
+  "forbidden_claims": [
+    "external_superiority_claim_true",
+    "same_test_campaign_status_complete",
+    "default_1e-4_required_true",
+    "run_v047_invoked_true",
+    "residual_only_rows_count_as_dynamic_order_true",
+    "submission_ready_true"
+  ]
+}

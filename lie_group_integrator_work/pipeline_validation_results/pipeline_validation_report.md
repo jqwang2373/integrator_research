@@ -1,0 +1,2509 @@
+# Pipeline Validation Report
+
+- status: PASS
+- checks run: 4954
+- versions inventoried: 48
+- result files checked: 695
+- CSV/PNG/JSON checked: 286/202/113
+- current version: v047
+- v047 ASME gate: four_asme_method_rows_accepted_projection_sharp_sparse_caveats
+- v047 sharp ultra status: ultra_high_order_recovered
+- v047 TFE readiness counts: {'missing': 1, 'partial': 38, 'satisfied': 31}
+- remaining caveats: sparse_speed_quantified, full_tfe_stage_replacement_missing, sharp_friction_coarse_order_reduction_ultra_recovered
+
+## Objective Completion Boundary
+
+```text
+objective_completion_boundary=not_complete_submission_standard_open
+objective_complete=False
+submission_ready=False
+can_mark_goal_complete=False
+blocking_ids=OC4,OC6,OC12
+source_policy_closed_ratio=0/40
+blocker_open_by_id={'OC12': True, 'OC4': True, 'OC6': True}
+blocker_closure_allowed_by_id={'OC12': False, 'OC4': False, 'OC6': False}
+exact_b4_opt_in_required_for_execution=True
+safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+run_v047_invoked=False
+heavy_numerical_run_invoked=False
+v048_runner_invoked=False
+validator_pass_means_not_complete=True
+```
+
+## Current Pipeline Gate Validator
+
+```text
+current_pipeline_gate=PASS
+asme_gate_status=four_asme_method_rows_accepted_projection_sharp_sparse_caveats
+asme_models=double_pendulum,four_link,single_pendulum,slider_crank
+asme_all_four_models_accepted=True
+sharp_ultra_status=ultra_high_order_recovered
+tfe_readiness=satisfied:31,partial:38,missing:1
+remaining_caveats=sparse_speed_quantified,full_tfe_stage_replacement_missing,sharp_friction_coarse_order_reduction_ultra_recovered
+full_tfe_stage_replacement=False
+source_policy_execution_invoked=False
+run_v047_invoked=False
+submission_ready=False
+```
+
+## v047 Validator
+
+```text
+v047 output validation: PASS
+checks_run=162327
+result_files=292
+csv_files=147
+png_files=120
+asme_models=double_pendulum,four_link,single_pendulum,slider_crank
+remaining_caveats=sparse_speed_quantified,full_tfe_stage_replacement_missing,sharp_friction_coarse_order_reduction_ultra_recovered
+```
+
+## Minimal Four-ASME Validator
+
+```text
+v047 minimal four-ASME validation: PASS
+asme_gate_status=four_asme_method_rows_accepted_projection_sharp_sparse_caveats
+models=double_pendulum,four_link,single_pendulum,slider_crank
+single_absolute_min_order=6.024
+double_method_min_order=6.089
+closed_loop_max_constraint_norm=1.052e-14
+closed_loop_reaction_max_dynamics_residual=1.338e-13
+full_tfe_stage_replacement=False
+remaining_caveat=full_tfe_stage_replacement_missing_outside_four_example_gate
+```
+
+## Full-TFE Gap Validator
+
+```text
+v047 full-TFE gap validation: PASS
+asme_gate_status=four_asme_method_rows_accepted_projection_sharp_sparse_caveats
+terminal_closed=True
+order_closure_intersection_present=False
+accepted_candidate_count=0
+row_space_compression_rows=36
+row_space_spans=0
+row_space_coefficient_derivative_spans=36
+row_space_coefficient_derivative_value_spans=24
+bounded_requirement_rows=7
+bounded_requirement_target_free_formula_spans=0
+bounded_requirement_oracle_spans=36
+bounded_requirement_practical_cap_spans=12
+stage2_dictionary_rows=12
+stage2_dictionary_spans=8
+stage2_dictionary_combined_spans=2
+stage2_coefficient_rows=60
+stage2_coefficient_spans=0
+stage2_coefficient_best_residual=5.596e-01
+stage2_coefficient_best_law=closure_delta_norm_weights
+stage2_state_coefficient_rows=36
+stage2_state_coefficient_spans=0
+stage2_state_coefficient_best_residual=5.908e-01
+stage2_state_coefficient_best_law=inverse_closure_delta_norm_weights_derivative
+four_history_source_law_rows=4
+four_history_source_law_terminal_closed=0
+four_history_source_law_smooth_order=2
+four_history_source_law_best_terminal_velocity=2.950e-07
+four_history_source_law_best_order=5.342
+weak_row_structure_spans=0
+best_row_space_residual=7.378e-01
+best_row_space_coefficient_derivative_residual=8.915e-16
+best_nonfinal_residual=9.815e-01
+full_tfe_stage_replacement=False
+next_repair_target=derive a revised analytical weak-row formula or nonlinear recurrent history source law for the independent lower-pair closure
+```
+
+## Full-TFE Repair Spec Validator
+
+```text
+v047 full-TFE repair spec validation: PASS
+stage_row_budget=132
+paper_row_families=6
+source_consistency_rows=16
+target_closure_rows=8
+velocity_stage_rows=24
+bounded_requirement_rows=7
+bounded_requirement_target_free_formula_spans=0
+stage2_dictionary_rows=12
+stage2_dictionary_spans=8
+stage2_dictionary_combined_spans=2
+stage2_coefficient_rows=60
+stage2_coefficient_spans=0
+stage2_coefficient_best_residual=5.596e-01
+stage2_coefficient_best_law=closure_delta_norm_weights
+stage2_state_coefficient_rows=36
+stage2_state_coefficient_spans=0
+stage2_state_coefficient_best_residual=5.908e-01
+stage2_state_coefficient_best_law=inverse_closure_delta_norm_weights_derivative
+four_history_source_law_rows=4
+four_history_source_law_terminal_closed=0
+four_history_source_law_smooth_order=2
+four_history_source_law_best_terminal_velocity=2.950e-07
+four_history_source_law_best_order=5.342
+candidate_scaffold_present=True
+candidate_jax_callables_present=True
+candidate_step_integrator_present=True
+full_tfe_stage_replacement=False
+next_repair_target=derive a revised analytical weak-row formula or nonlinear recurrent history source law for the independent lower-pair closure
+```
+
+## Implementation Fidelity Certificate Validator
+
+```text
+implementation_fidelity_certificate=PASS
+accepted_residual=residual_cylindrical_chain
+accepted_jacobian=R_JAC_jacfwd_argnums0
+stage_rows=132
+dynamic_row_oracle_gate=checked
+block_functional_crosscheck=checked
+partial_formula_row_count=96
+full_formula_row_count=132
+formula_row_ad_jacobian_oracle=PASS
+formula_row_ad_jacobian_probe_count=3
+full_tfe_stage_replacement=False
+```
+
+## Implementation Path Audit Validator
+
+```text
+implementation_path_audit=PASS
+accepted_residual=residual_cylindrical_chain
+accepted_jacobian=R_JAC_jacfwd_argnums0
+implementation_path_check_for_132_row_residual=True
+stage_rows=132
+runtime_formula_row_oracle_complete=True
+runtime_ad_oracle_complete=True
+independent_symbolic_row_oracle_complete=False
+stage_residual_O_h7_implementation_defect_proved_by_this_static_path_audit=False
+eta_h_O_h7_solver_policy_evidence=False
+default_1e-4=False
+run_v047_invoked=False
+v048_runner_invoked=False
+submission_ready=False
+```
+
+## B4 Source-Policy Row Closure-Readiness Ledger Validator
+
+```text
+B4 source-policy row closure-readiness ledger validation: PASS
+external_rows=40/40
+source_policy_closed=0/40
+attempted_not_reproducible=20
+still_requiring_execution_or_promotion=20
+rows_with_launch_command_refs=20
+ready_not_ready_suites=2/2
+b4_can_close_now=False
+b7_can_close_now=False
+```
+
+## Source-Policy Row Closure Ledger Validator
+
+```text
+source-policy row closure ledger validation: PASS
+flagged_rows=15
+examples=single_pendulum,double_pendulum,four_link,slider_crank
+rows_source_policy_closed=0
+rows_external_superiority_ready=0
+parallel_ready_shards_without_default_1e_4=20
+b2_b4_can_close_now=False/False
+```
+
+## TFE DAE Runner Contract Gap Audit Validator
+
+```text
+TFE DAE runner contract gap audit validation: PASS
+status=dae_runner_contract_gap_open_not_source_policy
+missing_contract_blocks=6
+candidate_backed_non_equivalent_runner_blocks=3
+source_policy_rows_completed=0
+```
+
+## TFE Runner Contract Preflight Certificate Validator
+
+```text
+TFE runner contract preflight certificate validation: PASS
+entrypoints=3/3
+candidate_backed=3/3
+source_policy_rows_completed=0
+execution_blocks=4
+source_policy_equivalent=False/False
+```
+
+## B4 Source-Policy Work/Precision Execution Plan Validator
+
+```text
+b4 source-policy work/precision execution plan validation: PASS
+source_policy_rows_closed=0
+source_policy_rows_total=40
+open_blockers_after_plan=
+ready_to_launch_after_explicit_opt_in_count=2
+not_ready_lane_count=2
+b4_can_close_now=False
+b7_can_close_now=False
+```
+
+## B4 Source-Policy Post-Execution Audit Validator
+
+```text
+b4 source-policy post-execution audit validation: PASS
+verified_authorized_execution_recorded=False
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+existing_ready_command_artifacts_present=True
+source_policy_rows_closed=0/40
+b4_can_close_now=False
+b7_can_close_now=False
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+```
+
+## B4 Existing-Artifact Promotion Audit Validator
+
+```text
+b4 existing-artifact promotion audit validation: PASS
+candidate_items=8
+promotion_ready_without_new_execution=0
+source_policy_rows_closed_by_existing_artifacts=0/40
+b4_can_close_now=False
+b7_can_close_now=False
+```
+
+## External Source-Policy Closure Manifest Validator
+
+```text
+external source-policy closure manifest validation: PASS
+performance_rows=32/48
+strict_external_error_claim_rows=0
+external_superiority_claim_allowed=False
+b2_b4_can_close_now=False/False
+```
+
+## B6 Four-Example Local Evidence Validator
+
+```text
+B6 four-example local evidence validation: PASS
+local_rows=12
+self_contained_examples=single_pendulum,double_pendulum,four_link,slider_crank
+replay_only_examples=none
+source_policy_external_rows=0/40
+direct_pc2_proof_gap_closed=True
+schema_compat_global_proof_key_retained=True
+submission_ready=False
+```
+
+## CMAME Runner-Centered Reproducibility Audit Validator
+
+```text
+cmame runner-centered reproducibility audit validation: PASS
+runner_centered_package_ready=False
+candidate_python=1/180
+existing_runner_source_lines=12085
+b6_local_evidence_rows=12
+source_policy_closed=0/40
+source_policy_handoff=source_policy_execution_handoff_ready_not_authorized_not_run/False/True
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+row_provenance=40/40/0
+```
+
+## CMAME Narrowed Reproducibility Package Audit Validator
+
+```text
+CMAME narrowed reproducibility package audit validation: PASS
+narrowed_claim_reproducibility_package_ready=True
+full_source_policy_runner_package_ready=False
+source_policy_rows=0/40
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+```
+
+## CMAME Narrowed Repro Code Archive Validator
+
+```text
+CMAME narrowed repro code archive validation: PASS
+archive=cmame_narrowed_repro_code_archive.zip
+entries=99
+python_files_lines=26/6154
+source_policy_external_rows=0/40
+full_source_policy_runner_package_ready=False
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+submission_ready=False
+```
+
+## CMAME Reproducibility Package Manifest Validator
+
+```text
+cmame reproducibility package manifest validation: PASS
+status=not_ready_self_contained_runner_centered_package_missing_source_policy
+candidate_files=141/141
+source_policy_closed=0/40
+source_policy_execution_handoff_driver=run_b4_source_policy_after_opt_in.sh
+source_policy_execution_handoff_driver_requires_exact_approval=True
+source_policy_execution_handoff_driver_does_not_authorize_execution=True
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+tfe_runner=False
+tfe_runner_contract_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/3/0/4
+oc12_archive_tfe_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/3/0/4
+oc12_archive_action_boundary=4/1/False/False/True/13/20
+oc6_reopen_latest_external_probe=2026-06-21/9/0/0/4/False/False
+oc12_archive_source_policy_execution_invoked=False
+oc12_archive_safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+oc12_archive_opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+minimal_package_ready=False
+```
+
+## B6 Closed-Loop Self-Contained Extraction Audit Validator
+
+```text
+B6 closed-loop self-contained extraction audit validation: PASS
+self_contained_runner_ready=True
+target_symbol_count=33
+target_symbol_lines=756
+source_policy_closed=0/40
+```
+
+## CMAME Self-Contained Runner Extraction Plan Validator
+
+```text
+cmame self-contained runner extraction plan validation: PASS
+self_contained_runner_ready=False
+local_accepted_rows_self_contained_runner_ready=True
+full_source_policy_self_contained_runner_ready=False
+target_symbol_count=38
+target_symbol_lines=2359
+b6_local_evidence_rows=12
+source_policy_closed=0/40
+```
+
+## CMAME Minimal Reproducibility Candidate Validator
+
+```text
+cmame minimal reproducibility candidate validation: PASS
+candidate_files=10
+candidate_python_lines=180
+source_policy_closed=0/40
+direct_pc2_proof_gap_closed=True
+schema_compat_legacy_key_retained=True
+submission_ready=False
+```
+
+## CMAME Closed-Loop Local Runner Candidate Validator
+
+```text
+CMAME closed-loop local runner candidate validation: PASS
+status=closed_loop_local_runner_candidate_passed_compact
+runner_passed=True
+candidate_python=10/1962
+closed_loop_local_rows=6
+```
+
+## CMAME Local Accepted-Row Runner Companion Validator
+
+```text
+CMAME local accepted-row runner companion validation: PASS
+status=local_accepted_runner_companion_ready_source_policy_package_open
+local_rows=12
+candidate_python_lines=150
+source_policy_closed=0/40
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+submission_ready=False
+```
+
+## CMAME P1 Local-Runner Extraction Audit Validator
+
+```text
+cmame P1 local-runner extraction audit validation: PASS
+p1_local_single_double_ready=True
+p1_single_runner_candidate_ready=True
+p1_double_runner_candidate_ready=True
+p1_regenerated_candidate_rows=6/6
+v047_source_python_lines=69264
+v047_primary_recursive_internal_dependency_count=24
+v047_primary_recursive_internal_dependency_lines=460
+```
+
+## CMAME P1 Single Runner Candidate Validator
+
+```text
+cmame_p1_single_runner_candidate=PASS
+position_order=6.013317
+velocity_order=6.006882
+p1_single_only_ready=True
+p1_complete=False
+source_policy_external_superiority_allowed=False
+local_runner_proof_gap_closed=False
+```
+
+## CMAME P1 Double Runner Candidate Validator
+
+```text
+cmame_p1_double_runner_candidate=PASS
+position_order=6.010712
+velocity_order=6.009705
+p1_double_only_ready=True
+p1_complete=False
+imports_v047_v048_or_v029=False
+source_policy_external_superiority_allowed=False
+local_runner_proof_gap_closed=False
+```
+
+## CMAME Runner-Adapter Candidate Validator
+
+```text
+cmame runner-adapter candidate validation: PASS
+candidate_python_lines=313
+runner_adapter_present=True
+self_contained_simulation_runner=False
+source_policy_closed=0/40
+submission_ready=False
+```
+
+## CMAME Narrowed Repro Bundle Validator
+
+```text
+cmame narrowed repro bundle validation: PASS
+source_policy_external_rows=0/40
+full_source_policy_runner_package_ready=False
+submission_ready=False
+```
+
+## CMAME Submission Integrity Audit Validator
+
+```text
+cmame_submission_integrity_audit=PASS
+local_integrity_passed=True
+citation_keys=28/28
+dangling_citation_keys=0
+orphan_bibitems=0
+doi_metadata_verified=16/16
+non_doi_metadata_verified=12/12
+non_doi_reference_count=0
+external_reference_web_verification_complete=True
+manifest_boundary_matches_archive_gap=True
+manifest_source_policy_execution_invoked=False
+oc6_reopen_latest_external_probe=2026-06-21/9/0/0/4/False/False
+submission_ready=False
+```
+
+## Reference Metadata Audit Validator
+
+```text
+reference metadata audit validation: PASS
+doi_metadata_verified=16/16
+non_doi_metadata_verified=12/12
+non_doi_reference_count=0
+external_reference_web_verification_complete=True
+```
+
+## Result-to-Manuscript Traceability Audit Validator
+
+```text
+result-to-manuscript traceability validation: PASS
+velocity_cells_checked=44/44
+main_tex_pdf_cells=44/44
+flat_tex_pdf_cells=44/44
+source_policy_reproduction_closed=False
+external_superiority_claim_allowed=False
+submission_ready=False
+```
+
+## CMAME Figure-Set Audit Validator
+
+```text
+cmame figure-set audit validation: PASS
+figures=13/13
+figure12_all_method_matrix_integrated=True
+figure13_work_precision_compendium_integrated=True
+b7_closed=True
+```
+
+## CMAME Scalability Boundary Audit Validator
+
+```text
+cmame scalability boundary audit validation: PASS
+b7_closed=False
+residual_dimension=132
+n_body_chain_sweep_present=False
+```
+
+## CMAME Claim-Hygiene Audit Validator
+
+```text
+cmame claim-hygiene audit validation: PASS
+status=pass
+allowed_claim=conditional_formal_order_comparison
+forbidden_hits=0
+submission_ready=False
+```
+
+## CMAME PDF Style Review Audit Validator
+
+```text
+CMAME PDF style review audit validation: PASS
+reference_figures=18
+manuscript_figures=13
+source_policy_rows_closed=0/40
+```
+
+## CMAME Review-Agent Validator
+
+```text
+cmame review-agent validation: PASS
+submission_standard_met=False
+decision=do_not_submit_global
+narrowed_claim_subcheck_disposition=bounded_subcheck_satisfied_not_global_submit
+legacy_narrowed_submission_standard_met=True
+legacy_narrowed_claim_decision=submit_under_narrowed_claim
+open_blockers=OC4,OC6,OC12
+open_blocker_ids=OC4,OC6,OC12
+evidence_summary=0/40/0/4/False/narrowed_repro_ready_full_source_policy_package_blocked
+tfe_runner_contract_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/0/4
+oc12_archive_tfe_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/3/0/4
+oc12_archive_action_boundary=4/1/False/False/True/13/20
+oc6_reopen_latest_external_probe=2026-06-21/9/0/0/4/False/False
+oc12_archive_safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+oc12_archive_opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+common_reference_traceability=44/44
+source_policy_apples_to_apples_external=0/40
+global_comparison_policy=14/14
+source_policy_triage=15
+```
+
+## CMAME Narrowed-Claim Closure Policy Audit Validator
+
+```text
+CMAME narrowed-claim closure policy audit validation: PASS
+narrowed_claim_evidence_supported=True
+current_gate_can_close_now=True
+source_policy_rows=0/40
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+```
+
+## Paper Core-to-Manuscript Audit Validator
+
+```text
+paper core to manuscript audit validation: PASS
+paper_core_traceability_closed=True
+main_tex_pdf_core_values_present=True
+flat_tex_pdf_core_present=True
+experiments_launched=False
+```
+
+## All-Examples Result Sanity Audit Validator
+
+```text
+all-examples result sanity audit validation: PASS
+cells=44/44
+examples=single_pendulum,double_pendulum,four_link,slider_crank
+flagged_nonlocal_rows=15
+external_superiority_allowed=False
+```
+
+## All-Method Example Claim-Disposition Audit Validator
+
+```text
+all-method claim-disposition audit validation: PASS
+nonlocal_cells=40/40
+local_velocity_order_wins=40/40
+local_finest_velocity_error_wins=40/40
+nonlocal_source_policy_closed_rows=0/40
+nonlocal_source_policy_open_rows=40/40
+flagged_nonlocal_rows=15/40
+source_policy_superiority_claim_allowed=False
+```
+
+## Paper Numerical Result Matrix Validator
+
+```text
+paper numerical result matrix validation: PASS
+rows=44/44
+examples=single_pendulum,double_pendulum,four_link,slider_crank
+methods=11
+source_policy_external_superiority_allowed=False
+paper_direct_error_superiority_allowed=False
+```
+
+## Common-Reference Order Recomputation Audit Validator
+
+```text
+common-reference order recomputation audit validation: PASS
+cells=44/44
+raw_rows=132
+mismatches=0
+external_superiority_allowed=False
+```
+
+## Comparison Objective Closure Reconciliation Audit Validator
+
+```text
+comparison objective closure reconciliation audit validation: PASS
+comparison_matrix_closed=True
+common_reference_claim_allowed=True
+paper_direct_error_superiority_claim_allowed=False
+source_policy_superiority_claim_allowed=False
+direct_nonlocal_order_wins=40/40
+direct_nonlocal_error_wins=40/40
+```
+
+## Paper Core Result Consolidation Validator
+
+```text
+paper core result consolidation validation: PASS
+four_example_local_order=4/4
+common_reference_order_error_wins=40/40,40/40
+closed_loop_coarse_dynamics_candidates=2/2
+experiments_launched=False
+```
+
+## Proof Closure Manifest Validator
+
+```text
+proof closure manifest validation: PASS
+direct_pc2_proof_gap_closed=True
+certified_non_dynamic_rows=96
+direct_dynamic_zero_rows=36
+close_requirements_satisfied=4/4
+unsatisfied_close_requirements=0
+residual_to_error_blocking_obligations=7
+remaining_gate_direct_pc2_proof_gap_closed=True
+remaining_gate_eta_h_theorem_condition_retained=True
+```
+
+## Proof Claim Traceability Audit Validator
+
+```text
+proof claim traceability audit validation: PASS
+proof_labels_present=True
+theorem_traceability=True
+unsatisfied_close_requirements=0
+active_direct_newton_euler_open_obligations=0
+symbolic_primitive_newton_euler_open_obligations=1
+direct_pc2_proof_gap_closed=True
+legacy_proof_gap_closed=True
+remaining_gate_traceability_claims_mapped=True
+remaining_gate_eta_h_theorem_condition_retained=True
+submission_ready=False
+```
+
+## Proof Remaining-Work Manifest Validator
+
+```text
+proof remaining-work manifest validation: PASS
+unsatisfied_close_requirements=0
+open_dynamic_rows=36
+newton_euler_row_obligation_links=180
+direct_pc2_proof_gap_closed=True
+legacy_proof_gap_closed=True
+active_b1_b3_proof_blockers_remaining=False
+residual_to_error_blocking_obligations=7
+submission_ready=False
+```
+
+## B1 AD-Expanded Symbolic Oracle Closure Certificate Validator
+
+```text
+b1_ad_expanded_symbolic_oracle_closure_certificate=PASS
+closed_derivative_cells=4752/4752
+ad_expanded_symbolic_oracle_closure=True
+submission_ready=False
+```
+
+## B1 Symbolic Row Oracle Closure Certificate Validator
+
+```text
+b1_symbolic_row_oracle_closure_certificate=PASS
+closed_symbolic_rows=36
+remaining_b1_required_item=AD_expanded_symbolic_oracle_closure
+```
+
+## B3 Direct Proof Review Audit Validator
+
+```text
+b3_direct_proof_review_audit=PASS
+b3_direct_proof_review_passed=True
+b3_can_close_from_proof_review=True
+submission_ready=False
+```
+
+## CMAME Strict Proof Audit Validator
+
+```text
+cmame_strict_proof_audit=PASS
+strict_conditional_residual_bridge_proof_present=True
+b3_closed=True
+b1_closed=True
+submission_ready=False
+```
+
+## CMAME Strict Proof Policy Reconciliation Audit Validator
+
+```text
+cmame_strict_proof_policy_reconciliation_audit=PASS
+terminology_reconciled=True
+direct_route_closed=True
+primitive_route_closed=False
+primitive_actual_open_taylor_terms=0/162
+submission_ready=False
+```
+
+## CMAME Proof-Style Audit Validator
+
+```text
+cmame_proof_style_audit=PASS
+reference_pdf_checked=True
+newton_euler_obligation_table=True
+newton_euler_obligations=6
+direct_pc2_proof_gap_closed=True
+legacy_proof_gap_closed=True
+b3_closed=True
+b1_closed=True
+b1_open=False
+submission_ready=False
+```
+
+## Kinematic Row Defect Certificate Validator
+
+```text
+kinematic_row_defect_certificate=PASS
+accepted_method=Gauss6/FullVA
+accepted_residual=residual_cylindrical_chain
+certified_row_count=96
+excluded_row_family=newton_euler_weak_balance
+partial_stage_defect_certificate=True
+stage_residual_O_h7_implementation_defect_proved=False
+dynamic_symbolic_oracle_complete=False
+full_tfe_stage_replacement=False
+default_1e-4=False
+run_v047_invoked=False
+v048_runner_invoked=False
+submission_ready=False
+```
+
+## Newton-Euler Virtual-Work Wrench Audit Validator
+
+```text
+newton_euler_virtual_work_wrench_audit=PASS
+checked_rows=36
+template_virtual_work_identity_proved=True
+row_expanded_virtual_work_identity_proved=True
+multiplier_wrench_consistency_closed=True
+full_row_expanded_virtual_work_identity_proved=True
+local_d3_audit_proof_gap_closed=False
+```
+
+## Newton-Euler Symbolic Target Audit Validator
+
+```text
+newton_euler_symbolic_target_audit=PASS
+row_count=36
+translational_rotational_rows=18/18
+symbolic_target_inventory_complete=True
+obligation_coverage_matrix_complete=True
+row_obligation_links=180
+stage_residual_O_h7_implementation_defect_proved=False
+dynamic_symbolic_oracle_complete=False
+submission_ready=False
+```
+
+## Newton-Euler Symbolic Defect Certificate Validator
+
+```text
+newton_euler_symbolic_defect_certificate=PASS
+certificate_complete=False
+row_slots=36
+symbolic_expanded_rows=36
+runtime_mapped_rows=36
+certified_rows=0
+proof_gap_closed=False
+```
+
+## Newton-Euler Row-Ordering Scaling AD Audit Validator
+
+```text
+newton_euler_row_ordering_scaling_ad_audit=PASS
+symbolic_runtime_row_equivalence_closed=True
+dynamic_rows=36
+stage_residual_O_h7_implementation_defect_proved=False
+local_d6_audit_proof_gap_closed=False
+```
+
+## Newton-Euler Dynamic Row Closure Contract Validator
+
+```text
+newton_euler_dynamic_row_closure_contract=PASS
+rows=36
+rows_with_full_runtime_traceability=36
+rows_with_direct_pc2_input_closure=36
+unsatisfied_close_requirements=none
+direct_pc2_proof_gap_closed=True
+legacy_proof_gap_closed=True
+```
+
+## Newton-Euler Defect Obligation Gate Validator
+
+```text
+newton_euler_defect_obligation_gate=PASS
+accepted_method=Gauss6/FullVA
+accepted_residual=residual_cylindrical_chain
+row_family=newton_euler_weak_balance
+dynamic_row_count=36
+translational_balance_rows=18
+rotational_balance_rows=18
+symbolic_primitive_open_obligation_count=1
+active_direct_pc2_closed=True
+closed_obligation_count=5
+newton_euler_symbolic_defect_certificate_complete=False
+symbolic_primitive_stage_residual_O_h7_certificate_complete=False
+dynamic_symbolic_oracle_complete=False
+full_tfe_stage_replacement=False
+default_1e-4=False
+run_v047_invoked=False
+v048_runner_invoked=False
+submission_ready=False
+```
+
+## Newton-Euler Balance Identity Audit Validator
+
+```text
+newton_euler_balance_identity_audit=PASS
+translational_balance_identity_closed=True
+rotational_balance_identity_closed=True
+balance_identity_closed_rows=36
+stage_residual_O_h7_implementation_defect_proved=False
+```
+
+## Newton-Euler AD-Expanded Row Oracle Audit Validator
+
+```text
+newton_euler_ad_expanded_row_oracle_audit=PASS
+ad_expanded_rows=36
+ad_columns_per_row=132
+dynamic_symbolic_oracle_complete=False
+```
+
+## Smooth Force Lift Certificate Validator
+
+```text
+smooth_force_lift_certificate=PASS
+source_structure_checked=True
+smooth_force_lift_consistency_closed=True
+global_C7_tube_derivative_bound_proved=True
+proof_gap_closed=False
+submission_ready=False
+```
+
+## B2 Source-Policy Remaining-Work Manifest Validator
+
+```text
+b2 source-policy remaining-work manifest validation: PASS
+active_flagged_rows=0
+demoted_flagged_rows=15
+source_policy_closed_rows=0
+b2_remaining_requirements=0
+closure_execution_plan=b2-source-policy-closure-execution-plan-v1
+all_active_suites_ready_to_launch=True
+external_superiority_claim_allowed=False
+```
+
+## Source-Policy Closure Triage Validator
+
+```text
+source-policy closure triage validation: PASS
+flagged_rows=15
+flagged_examples=single_pendulum,double_pendulum,four_link,slider_crank
+action_counts=5/4/3/3
+b2_b4_can_close_now=False/False
+heavy_numerical_run_invoked=False
+```
+
+## All-Examples Source-Policy Audit Validator
+
+```text
+all-examples source-policy audit validation: PASS
+flagged_rows=15
+flagged_raw_rows=45
+flagged_examples=single_pendulum,double_pendulum,four_link,slider_crank
+suite_counts=5/4/3/3
+b2_b4_can_close_now=False/False
+heavy_numerical_run_invoked=False
+```
+
+## Four-Example Source-Policy Dashboard Validator
+
+```text
+four-example source-policy dashboard validation: PASS
+examples=single_pendulum,double_pendulum,four_link,slider_crank
+local_evidence_coverage_examples=4/4
+accepted_method_dynamic_order_examples=2/4
+source_policy_dynamic_order_examples=0/4
+common_reference_nonlocal_order_error_wins=40/40,40/40
+```
+
+## External Baseline Source-Policy Diagnosis Validator
+
+```text
+external baseline source-policy diagnosis validation: PASS
+flagged_rows=15
+position_aligned_velocity_mismatch=10
+same_test_campaign_status=not_run
+external_superiority_allowed=False
+```
+
+## External Case Evidence Reconciliation Validator
+
+```text
+external case evidence reconciliation validation: PASS
+bounded_evidence_suites=ra2021_absolute_coordinate,hi2022_half_implicit
+not_ready_or_demote_suites=tfe2026_original_pendulum,vp2024_velocity_partitioning
+case_inventory_status_counts=not_run:16,code_path_unresolved:1
+ra2021_public_baseline_groups=12/12
+local_source_policy_dynamic_order_examples=0/4
+source_policy_rows_closed=0/15
+external_superiority_ready_rows=0/15
+```
+
+## External Same-Test Acceptance Sheet Validator
+
+```text
+external_same_test_acceptance_sheet=PASS
+same_test_campaign_status=not_run
+accepted_external_dynamic_order_examples=0
+local_evidence_coverage_examples=4/4
+accepted_method_dynamic_order_examples=2/4
+mechanism_coverage_examples=2/4
+source_policy_dynamic_order_examples=0/4
+parallel_shard_count_without_default_1e-4=20
+default_1e-4=False
+heavy_numerical_run_invoked=False
+external_superiority_claim=False
+submission_ready=False
+```
+
+## External Suite Demotion Ledger Validator
+
+```text
+external suite demotion ledger validation: PASS
+demoted_suites=4
+vp2024_demoted=True
+hi2022_demoted=True
+ra2021_demoted=True
+tfe2026_demoted=True
+active_source_policy_flagged_rows_after_demotions=0
+default_1e-4=False
+run_v047_invoked=False
+```
+
+## External Suite Disposition Audit Validator
+
+```text
+external suite disposition audit validation: PASS
+suites=4
+accepted_external_superiority_suite_count=0
+parallel_ready_shards_without_default_1e_4=20
+b2_can_close_now=False
+b4_can_close_now=False
+```
+
+## External Superiority Claim-Demotion Audit Validator
+
+```text
+external superiority claim-demotion audit validation: PASS
+route_b_ready=True
+route_b_promoted_to_blocker_gate=True
+b2_b4_gate_closed_by_this_artifact=False
+b2_gate_closed_by_route_b_claim_demotion=True
+b4_gate_closed_by_route_b_claim_demotion=False
+source_policy_execution_rows_closed=0/40
+external_superiority_claim_allowed_after_route=False
+run_v047_invoked=False
+```
+
+## B4/B7 Non-Superiority Route Audit Validator
+
+```text
+B4/B7 non-superiority route audit validation: PASS
+route_b_closes_b2_b4_b7=True/False/False
+b4_b7_closed_by_non_superiority_route=False
+b4_b7_closed_by_narrowed_claim_policy=True
+b4_still_open=False
+b7_still_open=False
+source_policy_rows_closed=0/40
+verified_authorized_execution_recorded=False
+existing_ready_command_artifacts_present=True
+verified_execution_promoted_rows=0/40
+run_v047_invoked=False
+```
+
+## Source-Policy Local Candidate Gap Audit Validator
+
+```text
+source-policy local candidate gap audit validation: PASS
+active_source_policy_suites=0
+source_policy_closed=0/40
+accepted_source_policy_dynamic_order_examples=0
+external_superiority_claim_allowed=False
+```
+
+## RA2021 Source Identity Audit Validator
+
+```text
+RA2021 source identity audit validation: PASS
+output_mapping_verified=True
+time_grid_policy_extracted=True
+source_policy_rows_closed=0
+```
+
+## RA2021 Double Source-Policy Low-Order Diagnosis Validator
+
+```text
+RA2021 double source-policy low-order diagnosis validation: PASS
+rows_complete=True
+aggregate_order_acceptance_satisfied=False
+fine_pair_floor_limited=True
+source_policy_rows_promoted=0
+```
+
+## RA2021 Source-Policy Row Audit Validator
+
+```text
+RA2021 source-policy row audit validation: PASS
+active_b2_flagged_rows=0
+public_order_groups=12/12
+public_timing_rows=12/12
+source_policy_reproduction_rows=0/12
+can_close_ra2021_b2_requirement_now=False
+```
+
+## HI2022 Policy Decision Audit Validator
+
+```text
+hi2022_policy_decision_audit=PASS
+bounded_rows=24/24
+bounded_groups=8/8
+full_T8_policy_completed=False
+accepted_for_external_superiority=False
+local_evidence_coverage_examples=4/4
+accepted_method_dynamic_order_examples=2/4
+mechanism_coverage_examples=2/4
+source_policy_dynamic_order_examples=0/4
+default_1e-4_required=False
+run_v047_invoked=False
+```
+
+## HI2022 Source-Policy Row Audit Validator
+
+```text
+HI2022 source-policy row audit validation: PASS
+active_b2_flagged_rows=3
+active_after_demotion=0
+demoted_b2_flagged_rows=3
+bounded_rows=24/24
+bounded_groups=8/8
+t8_coarse_rows=18/24
+t8_coarse_complete_groups=4/8
+full_T8_policy_completed=False
+source_policy_reproduction_rows=0/3
+can_close_hi2022_b2_requirement_now=False
+```
+
+## HI2022 rA Half Double Source-Policy Failure Diagnosis Validator
+
+```text
+HI2022 rA_half double source-policy failure diagnosis validation: PASS
+rows_ok_failed_total=1/2/3
+newton_failure_count=2
+source_policy_rows_promoted=0
+```
+
+## HI2022 rA Half Double Repair-Attempt Certificate Validator
+
+```text
+HI2022 rA_half double repair-attempt certificate validation: PASS
+target_group=rA_half:double_pendulum
+combined_target_ok_failed=1/2
+source_policy_rows_promoted=0
+external_superiority_ready=False
+```
+
+## HI2022 T8 Tolerance-Repair Audit Validator
+
+```text
+HI2022 T8 tolerance-repair audit validation: PASS
+combined_best_rows=19/24
+combined_best_complete_groups=4/8
+source_policy_reproduction_closed=False
+external_superiority_claim_allowed=False
+```
+
+## VP2024 Code-Path Disposition Audit Validator
+
+```text
+VP2024 code-path disposition audit validation: PASS
+examples=single_pendulum,double_pendulum,four_link,slider_crank
+source_policy_code_path_unresolved_rows=4/4
+unable_to_reproduce_rows=4/4
+common_reference_vp_proxy_local_order_wins=4/4
+common_reference_vp_proxy_local_error_wins=4/4
+large_step_local_error_wins=1/4_noncontrolling
+distinct_public_vp_code_path_found=False
+```
+
+## VP2024 Public-Code Recheck Validator
+
+```text
+VP2024 public-code recheck validation: PASS
+tree_total_paths=4487
+keyword_path_hit_count=0
+source_policy_rows_closed=0/4
+```
+
+## TFE Source-Policy Spec Validator
+
+```text
+TFE source-policy spec validation: PASS
+status=source_policy_extracted_candidate_scaffold_present_source_policy_open
+source_reference_h=1e-4
+source_policy_rows_completed=0
+external_superiority_claim=False
+```
+
+## TFE Source-Pendulum Model Audit Validator
+
+```text
+TFE source-pendulum model audit validation: PASS
+source_pendulum_parameter_model_implemented=True
+frictionless_rhs_smoke_implemented=True
+source_error_norm_and_output_policy_encoded=True
+brown_mcphee_candidate_friction_law_encoded=True
+absolute_coordinate_dae_residual_smoke_implemented=True
+source_output_time_integration_smoke_implemented=True
+source_reference_solution_policy_smoke_implemented=True
+source_reference_solution_policy_full_T10_probe_implemented=True
+source_comparator_candidate_runners_implemented=True
+tfe_m1_m2_m3_candidate_runner_smoke_implemented=True
+source_policy_method_runner_contract_present=True
+source_policy_tfe_newmark_trapezoidal_method_runners_implemented=False
+gauss6_fullva_source_pendulum_candidate_smoke_implemented=True
+gauss6_fullva_absolute_coordinate_source_policy_runner_implemented=False
+source_policy_gauss6_fullva_absolute_coordinate_dae_runner_contract_present=True
+source_policy_gauss6_fullva_absolute_coordinate_dae_runner_implemented=False
+gauss6_fullva_on_source_pendulum_implemented=True
+gauss6_fullva_source_pendulum_candidate_rows=2
+gauss6_fullva_source_pendulum_candidate_source_policy_rows_completed=0
+source_pendulum_same_test_work_precision_implemented=True
+source_pendulum_same_test_work_precision_metric_rows=18
+absolute_coordinate_planar_lift_trajectory_probe_implemented=True
+absolute_coordinate_planar_lift_trajectory_probe_rows=12
+absolute_coordinate_planar_lift_trajectory_probe_source_policy_rows_completed=0
+source_policy_absolute_coordinate_dae_runner_contract_present=True
+source_policy_absolute_coordinate_dae_runner_implemented=False
+dae_trajectory_bridge_contract_implemented=True
+dae_trajectory_bridge_contract_rows=12
+dae_trajectory_bridge_contract_source_policy_rows_completed=0
+tfe_appendix_b_coefficient_certificate_checked=True
+bounded_source_policy_runner_smoke_implemented=True
+active_tfe_b2_candidate_row_smoke_implemented=True
+active_tfe_b2_full_T10_coarse_candidate_probe_implemented=True
+active_tfe_b2_source_reference_full_T10_candidate_probe_implemented=True
+tfe_m3_full_T10_coarse_formula_probe_implemented=True
+pendulum_dae_runner_implemented=False
+source_policy_rows_completed=0
+```
+
+## TFE Source-Policy Row Audit Validator
+
+```text
+TFE source-policy row audit validation: PASS
+active_b2_flagged_rows=0
+source_policy_spec_extracted=True
+source_error_norm_and_output_policy_encoded=True
+brown_mcphee_candidate_friction_law_encoded=True
+brown_mcphee_published_formula_structure_encoded=True
+brown_mcphee_source_code_equivalent_law=False
+absolute_coordinate_dae_residual_smoke_implemented=True
+absolute_coordinate_planar_lift_trajectory_probe_implemented=True
+absolute_coordinate_planar_lift_trajectory_probe_rows=12
+source_output_time_integration_smoke_implemented=True
+source_reference_solution_policy_smoke_implemented=True
+source_reference_solution_policy_full_T10_probe_completed=True
+source_comparator_candidate_runners_implemented=True
+tfe_m1_m2_m3_candidate_runner_smoke_implemented=True
+gauss6_fullva_source_pendulum_candidate_smoke_implemented=True
+gauss6_fullva_dae_candidate_contract_implemented=True
+gauss6_fullva_absolute_coordinate_source_policy_runner_implemented=False
+tfe_appendix_b_coefficient_certificate_checked=True
+bounded_source_policy_runner_smoke_implemented=True
+active_tfe_b2_candidate_row_smoke_implemented=True
+active_tfe_b2_full_T10_coarse_candidate_probe_implemented=True
+active_tfe_b2_source_reference_full_T10_candidate_probe_implemented=True
+tfe_m3_full_T10_coarse_formula_probe_implemented=True
+pendulum_dae_runner_implemented=False
+source_policy_reproduction_rows=0/4
+can_close_tfe_b2_requirement_now=False
+```
+
+## TFE Source-Grid Compatibility Audit Validator
+
+```text
+TFE source grid compatibility audit validation: PASS
+rows=6
+integer_step_compatible_rows=2
+integer_step_incompatible_rows=4
+endpoint_compatible_rows_source_endpoint_convention_resolved=2
+source_grid_policy_resolved_for_full_T10=False
+source_policy_rows_completed=0
+```
+
+## TFE Brown-McPhee Source-Code Equivalence Certificate Validator
+
+```text
+TFE Brown-McPhee source-code-equivalence certificate validation: PASS
+status=negative_source_code_equivalence_certificate_not_source_policy
+brown_mcphee_source_code_equivalent_law=False
+source_policy_rows_completed=0
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+can_close_now=False
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+```
+
+## TFE Full-T10 Endpoint-Policy Closure Certificate Validator
+
+```text
+TFE full-T10 endpoint-policy closure certificate validation: PASS
+status=negative_full_T10_endpoint_policy_certificate_not_source_policy
+source_grid_policy_resolved_for_full_T10=False
+source_policy_rows_completed=0
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+can_close_now=False
+```
+
+## TFE Endpoint Policy Boundary Certificate Validator
+
+```text
+TFE endpoint policy boundary certificate validation: PASS
+rows=6
+exact_overrun_rows=2/4
+source_policy_rows_completed=0
+```
+
+## TFE Algorithm-Literal Endpoint Probe Validator
+
+```text
+TFE algorithm-literal endpoint probe validation: PASS
+methods=4
+metric_rows=12
+terminal_overrun_rows=12
+source_policy_rows_completed=0
+```
+
+## TFE Algorithm-Literal Work/Precision Audit Validator
+
+```text
+TFE algorithm-literal work/precision audit validation: PASS
+methods=4
+raw_rows=12
+summary_rows=4
+terminal_overrun_rows=12
+source_policy_rows_completed=0
+```
+
+## TFE B4/B7 Source-Policy Demotion Audit Validator
+
+```text
+TFE B4/B7 source-policy demotion audit validation: PASS
+tfe_rows_demoted=16/16
+source_policy_rows_closed_by_demotion=0
+b4_b7_can_close_from_tfe_demotion=False/False
+```
+
+## TFE Brown-McPhee Source-Law Boundary Audit Validator
+
+```text
+TFE Brown-McPhee source-law boundary audit validation: PASS
+status=source_formula_structure_encoded_surrogate_not_source_code_equivalent
+source_policy_rows_promoted=0
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+brown_mcphee_source_code_equivalent_law=False
+```
+
+## TFE Endpoint-Policy Sensitivity Audit Validator
+
+```text
+TFE endpoint-policy sensitivity audit validation: PASS
+summary_rows=16
+raw_rows=48
+source_policy_rows_completed=0
+external_superiority_claim_allowed=False
+```
+
+## TFE Full-T10 Absolute DAE-Lift Summary Validator
+
+```text
+TFE full-T10 absolute DAE-lift summary validation: PASS
+rows=4
+metric_step_rows=12/2800
+source_policy_rows_completed=0
+```
+
+## TFE Full-T10 Coarse Candidate Summary Validator
+
+```text
+TFE full-T10 coarse candidate summary validation: PASS
+rows=4
+finite_residual_ok=4/4
+source_policy_rows_completed=0
+```
+
+## TFE Public-Code Recheck 20260613 Validator
+
+```text
+TFE public-code recheck validation: PASS
+github_repository_search_total_count=0
+source_policy_rows_closed=0/16
+attempted_not_reproducible_rows=16
+```
+
+## TFE Source-Policy Self-Reproduction Attempt Validator
+
+```text
+TFE self-reproduction attempt certificate validation: PASS
+attempted_not_reproducible_rows=16/16
+unable_to_reproduce_rows=16/16
+public_code_recheck_status=public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible
+reopen_condition=new_public_or_source_code_equivalent_tfe_implementation_artifact
+source_policy_execution_preflight_status=terminal_no_public_code_self_reproduction_attempted_not_promoted
+public_code_refresh_latest_positive_artifact_rows=0
+source_policy_closed=0/16
+source_policy_closed_rows=0
+external_superiority_ready_rows=0
+submission_ready=False
+```
+
+## Source-Policy Self-Reproduction Attempt Audit Validator
+
+```text
+Source-policy self-reproduction attempt audit validation: PASS
+attempted_not_reproducible_rows=20/20
+source_policy_closed_rows=0
+external_superiority_ready_rows=0
+```
+
+## RA/HI Source-Policy Output Inventory Validator
+
+```text
+RA/HI source-policy output inventory validation: PASS
+commands=13
+outputs=13/13
+summaries=8/8
+csv_data_rows=54
+source_policy_closed=0
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+```
+
+## RA/HI Source-Policy Closeout Checklist Validator
+
+```text
+RA/HI source-policy closeout checklist validation: PASS
+rows=20
+ra_hi=12/8
+ready_commands=13
+source_policy_closed=0/20
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+```
+
+## RA/HI Source-Policy Promotion Blocker Matrix Validator
+
+```text
+RA/HI source-policy promotion blocker matrix validation: PASS
+rows=20
+source_policy_closed=0/20
+source_policy_closed_alias=False
+not_promoted=20
+attempted_not_reproducible=0
+command_mapped_output_present=20/20
+source_policy_execution_allowed_now=False
+source_policy_execution_invoked=False
+```
+
+## RA/HI Source-Policy Post-Execution Attempt Certificate Validator
+
+```text
+RA/HI post-execution attempt certificate validation: PASS
+rows=20
+source_policy_rows_promoted=0
+external_superiority_ready_rows=0
+source_policy_closed=0/40
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+run_v047_invoked=False
+submission_ready=False
+```
+
+## B4 Source-Policy Execution Opt-In Packet Validator
+
+```text
+B4 source-policy execution opt-in packet validation: PASS
+ready_command_count=13
+ready_command_mapped_external_rows=20/40
+unaddressed_external_rows=0
+attempted_not_reproducible_rows=20
+source_policy_closed_now=0/40
+commands_not_run_by_packet=True
+exact_approval_statement=present
+guarded_execution_driver_path=run_b4_source_policy_after_opt_in.sh
+driver_requires_exact_approval=True
+driver_does_not_authorize_execution=True
+execution_invoked_by_packet=False
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+```
+
+## B4 Source-Policy Guarded Driver Validator
+
+```text
+B4 guarded execution driver validation: PASS
+exact_approval_guard=True
+driver_command_count=13
+ra_allow_source_policy_1e_4_commands=5
+hi_execute_commands=8
+commands_match_opt_in_packet=True
+run_v047_invoked=False
+execution_invoked_by_validator=False
+```
+
+## B4 Guarded Driver Refusal Boundary Audit Validator
+
+```text
+B4 guarded driver refusal boundary audit validation: PASS
+b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False
+no_opt_in_refusal_proved_static=True
+wrong_approval_refusal_proved_static=True
+refusal_exit_code=2
+pre_guard_command_count=0
+post_guard_source_policy_command_count=13
+driver_invoked_by_audit=False
+source_policy_execution_invoked=False
+submission_ready=False
+```
+
+## B4 Source-Policy Execution Handoff Package Validator
+
+```text
+B4 source-policy execution handoff package validation: PASS
+source_policy_closed=0/40
+terminal_unable_to_reproduce_rows=20
+ready_command_count=13
+opt_in_required_command_count=13
+opt_in_required_mapped_external_rows=20
+execution_authorized=False
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+exact_approval_statement=present
+guarded_execution_driver=run_b4_source_policy_after_opt_in.sh
+driver_requires_exact_approval=True
+command_preflight_freeze=PASS
+expected_output_schema_audit=PASS
+submission_ready=False
+```
+
+## B4 Source-Policy Command Preflight Freeze Validator
+
+```text
+b4 source-policy command preflight freeze validation: PASS
+ready_command_count=13
+unique_mapped_ra_hi_rows=20
+expected_artifacts=21/21
+commands_executed_by_freeze=False
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+source_policy_closed=0/40
+```
+
+## B4 Source-Policy Expected Output Schema Audit Validator
+
+```text
+b4 expected-output schema audit validation: PASS commands=13/13 artifacts=21/21 csv_json_parseable=13/8 source_policy_rows_closed=0
+```
+
+## B4 Expected-Output Promotion-Readiness Blocker Audit Validator
+
+```text
+b4 expected-output promotion-readiness blocker audit validation: PASS schema_ready=13/13 promotion_ready=0 unique_rows=20 source_policy_rows_closed=0
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+```
+
+## OC6 Source-Equivalent Reopen-Readiness Audit Validator
+
+```text
+OC6 source-equivalent reopen-readiness audit validation: PASS rows=20 unable=20 source_equivalent=0 source_policy_closed=0 closure_decision=remain_open_no_positive_source_equivalent_artifact oc6_blocker_id=OC6 oc6_blocker_status=partial oc6_closure_decision=remain_open_no_positive_source_equivalent_artifact oc6_closure_allowed_now=False reopen_condition=suite_specific_source_equivalent_reopen_conditions artifact_found=False latest_external_probe=2026-06-21/9/0/0/4/False/False latest_external_probe_boundary=0/0/4/False/False
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+```
+
+## OC6 External Source-Artifact Recheck 20260621 Validator
+
+```text
+OC6 external source-artifact recheck 20260621 validation: PASS
+queries=10
+positive_public_code_artifact_rows=0
+source_code_equivalent_artifact_rows=0
+source_policy_rows_closed_by_recheck=0
+source_policy_reopen_triggered=False
+global_absence_proved=False
+submission_ready=False
+```
+
+## OC6 TFE Publisher Artifact Availability 20260621 Validator
+
+```text
+OC6 TFE publisher artifact availability audit validation: PASS
+official_article_checked=True
+data_availability_statement=Data availability No datasets were generated or analysed during the current study.
+source_artifact_signal_count=0
+positive_public_code_artifact_rows=0
+source_code_equivalent_artifact_rows=0
+source_policy_rows_closed_by_publisher_audit=0
+source_policy_reopen_triggered=False
+global_absence_proved=False
+submission_ready=False
+```
+
+## OC6 TFE Source-Equivalent Artifact Request Packet 20260621 Validator
+
+```text
+OC6 TFE source-equivalent artifact request packet validation: PASS
+status=request_packet_ready_not_sent_no_source_policy_closure
+request_ready=True
+request_sent=False
+corresponding_author_email=ekanshchat96@vt.edu
+author_contact_email_count=3
+requested_artifact_count=7
+source_policy_rows_closed_by_packet=0
+source_policy_reopen_triggered=False
+global_absence_proved=False
+submission_ready=False
+oc6_tfe_source_equivalent_artifact_request_packet_20260621=ready_not_sent/7/0/False/False
+```
+
+## Full Source-Policy Row Provenance Audit Validator
+
+```text
+full source-policy row provenance audit validation: PASS
+rows=40
+provenance_preflight=40/40
+source_policy_closed=0/40
+source_policy_rows_promoted=0
+terminal_unable_to_reproduce_rows=20
+attempted_not_reproducible_rows=20
+promotion_ready_rows=0
+closure_decision=remain_open_ready_for_authorized_execution_not_executed_not_promoted
+oc4_blocker_id=OC4
+oc4_blocker_status=open
+oc4_closure_decision=remain_open_ready_for_authorized_execution_not_executed_not_promoted
+oc4_closure_allowed_now=False
+oc4_blocker_open=True
+ready_commands_mapped_rows=13/20
+traceability_unique_traced_declared_mismatch=20/32/32/0
+```
+
+## Full Source-Policy Runner Archive Gap Validator
+
+```text
+full source-policy runner archive gap audit validation: PASS
+source_policy_closed=0/40
+source_policy_rows_promoted=0
+attempted_not_reproducible_rows=20
+terminal_unable_to_reproduce_rows=20
+oc6_reopen_latest_external_probe=2026-06-21/9/0/0/4/False/False
+oc6_external_source_artifact_recheck_20260621=2026-06-21/10/0/0/0/False/False
+oc6_tfe_publisher_artifact_availability_20260621=2026-06-21/True/0/0/0/0/False/False
+oc6_tfe_source_equivalent_artifact_request_packet_20260621=True/False/7/0/False/False
+ra_hi_rows_requiring_authorized_closeout_or_new_artifact=20
+opt_in_required_command_count=13
+opt_in_required_mapped_external_rows=20
+safe_next_actions_without_b4_opt_in=4
+opt_in_required_actions=1
+safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+source_policy_execution_allowed_now=False
+exact_b4_opt_in_required_for_execution=True
+source_policy_execution_invoked=False
+driver_does_not_authorize_execution=True
+expected_output_schema_audit=PASS
+b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False
+tfe_runner_contract_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/0/4
+full_archive_ready_now=False
+full_source_policy_runner_package_ready=False
+oc12_closure_decision=remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+oc12_blocker_open=True
+current_archive_usable_as_full_source_policy_runner_archive=False
+safe_current_use=narrowed_claim_replay_and_audit_provenance_only
+primary_submission_package_allowed=False
+oc12_archive_use_full_usable_primary_allowed=narrowed_claim_replay_and_audit_provenance_only/False/False
+oc12_dependency_blockers_closure_allowed=OC4,OC6/False
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+submission_ready=False
+```
+
+## Objective Completion Audit Validator
+
+```text
+objective completion audit validation: PASS
+status=not_complete_submission_standard_open
+objective_complete=False
+source_policy_rows=0/40
+satisfied_partial_open=9/2/1
+blocking_open=3
+blocking_ids=OC4,OC6,OC12
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready
+blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+run_v047_invoked=False
+heavy_numerical_run_invoked=False
+v048_runner_invoked=False
+oc4_aliases=OC4/open/True/remain_open_ready_for_authorized_execution_not_executed_not_promoted/False/13/20/20/32/32/0
+oc4_evidence_files=6
+oc4_row_provenance=40/40/0/40/0
+oc4_provenance_handoff=source_policy_execution_handoff_ready_not_authorized_not_run/False/True
+b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False
+oc6_evidence_files=9
+oc6_aliases=OC6/partial/True/remain_open_no_positive_source_equivalent_artifact/False/suite_specific_source_equivalent_reopen_conditions/2026-06-21/9/0/0/4/False/False
+oc6_candidate_backed_non_equivalent_runner_blocks=3
+oc6_latest_external_probe=2026-06-21/9/0/0/4/False/False
+oc6_external_source_artifact_recheck_20260621=2026-06-21/10/0/0/0/False/False
+oc6_tfe_publisher_artifact_availability_20260621=2026-06-21/True/0/0/0/0/False/False
+oc6_tfe_source_equivalent_artifact_request_packet_20260621=True/False/7/0/False/False
+oc6_runner_contract_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/3/0/4
+oc6_tfe_self_reproduction=attempted_not_reproducible_not_promoted/0/16
+oc6_public_code_recheck_status=public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible
+oc6_public_code_refresh=20/11/0/0/20
+oc12_aliases=OC12/partial/True/remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready/False/False/narrowed_claim_replay_and_audit_provenance_only/False
+oc12_archive_tfe_preflight=contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/3/0/4
+oc12_archive_action_boundary=4/1/False/False/True/13/20
+oc12_archive_can_use_current_archive_as_full_source_policy_runner_archive=False
+oc12_archive_safe_current_use=narrowed_claim_replay_and_audit_provenance_only
+oc12_archive_safe_action_ids=rebuild_read_only_audit_chain,rerun_read_only_validators,keep_narrowed_archive_provenance_only,monitor_reopen_conditions
+oc12_archive_opt_in_action_ids=authorized_b4_ra_hi_source_policy_execution
+```
+
+## Source-Policy Public-Code Refresh 20260620 Validator
+
+```text
+Source-policy public-code refresh 20260620 validation: PASS
+rows=20
+current_queries=11
+positive_public_code_artifact_rows=0
+latest_external_probe=2026-06-21/9/0/0/4/False/False
+source_policy_closed=0
+source_policy_closed_ratio=0/20
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+submission_ready=False
+```
+
+## Source-Policy Reopen-Condition Monitor Validator
+
+```text
+source-policy reopen-condition monitor validation: PASS
+rows=20
+unable_to_reproduce_rows=20
+positive_public_code_artifact_rows=0
+local_positive_reopen_artifact_rows=0
+source_policy_reopen_triggered=False
+source_policy_closed=0/20
+source_policy_closed_bool=False
+source_policy_closed_ratio=0/20
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+local_scan_digest=f31cbb9cb18b03c9ecfd5aad29ea57e7262efa616c87ddd10a9f0796403cd208
+monitor_evidence_digest=839ff14d373484025bcfa046dc7bfa9a4992514e33f8aff544be01429becc0df
+latest_external_probe=2026-06-21/9/0/0/4/False/False
+submission_ready=False
+```
+
+## Source-Policy Reopen-Condition Monitor 20260621 Delta Validator
+
+```text
+source-policy reopen-condition 20260621 delta validation: PASS
+rows=20
+unable_to_reproduce_rows=20
+oc6_external_recheck=2026-06-21/10/0/0/0/False/False
+positive_public_code_artifact_rows=0
+source_code_equivalent_artifact_rows=0
+source_policy_reopen_triggered=False
+source_policy_closed=0/20
+source_policy_closed_bool=False
+source_policy_closed_ratio=0/20
+global_absence_proved=False
+source_policy_execution_invoked=False
+source_policy_execution_allowed_now=False
+combined_monitor_digest=e0312e6bf3159a0e24d25ecc1703e4632a746ccadf9ae7c7ec1b79ae8c4b2a6a
+submission_ready=False
+```
+
+## v048 Validator
+
+```text
+v048 validation: PASS
+run_mode=full_ra2021_order
+same_test_campaign_status=not_run
+case_inventory_rows=17
+ra2021_order_rows=27
+ra2021_ok_rows=27
+ra2021_planned_rows=0
+ra2021_public_step_trio_groups=9/9
+ra2021_selected_groups=rA:single_pendulum,rA:four_link,rA:slider_crank,rp:single_pendulum,rp:four_link,rp:slider_crank,reps:single_pendulum,reps:four_link,reps:slider_crank
+ra2021_public_order_work_summary_rows=9
+ra2021_double_order_rows=9/9
+ra2021_double_order_groups=3/3
+ra2021_double_coarse_rows=6/9
+ra2021_double_coarse_groups=2/3
+double_coarse_work_precision_rows=3
+ra2021_single_coarse_rows=9/9
+gauss6_single_coarse_rows=3/3
+single_coarse_work_precision_rows=4
+closed_loop_surrogate_rows=2
+closed_loop_surrogate_accepted_dynamic_order=0
+closed_loop_floor_audit_rows=2
+closed_loop_floor_audit_velocity_acceleration_evidence=2
+closed_loop_floor_audit_accepted_dynamic_order=0
+closed_loop_coarse_probe_rows=11/12
+closed_loop_coarse_probe_accepted_dynamic_order=0
+closed_loop_stage_residual_audit_rows=6/6
+closed_loop_stage_residual_audit_max=5.506706e-14
+closed_loop_stage_residual_audit_accepted_dynamic_order=0
+closed_loop_one_step_smoke_rows=2/2
+closed_loop_one_step_smoke_max_endpoint_pos_error=4.411215e-08
+closed_loop_one_step_smoke_accepted_dynamic_order=0
+closed_loop_newton_stage_smoke_rows=2/2
+closed_loop_newton_stage_smoke_max_initial=4.306133e+01
+closed_loop_newton_stage_smoke_max_final=1.790026e-13
+closed_loop_newton_stage_smoke_stage_oracle_used=False
+closed_loop_newton_stage_smoke_accepted_dynamic_order=0
+closed_loop_newton_coarse_order_rows=6/6
+closed_loop_newton_coarse_order_accepted_dynamic_order=2
+closed_loop_public_work_precision_rows=24/24
+closed_loop_public_work_precision_available=2/2
+closed_loop_strict_common_reference_rows=24/24
+closed_loop_strict_common_reference_available=2/2
+closed_loop_strict_common_reference_gap=0
+coarse_first_ready_examples=2/4
+coarse_first_dynamic_order_missing=0
+coarse_first_public_work_precision_available=2
+coarse_first_public_work_precision_missing=0
+coarse_first_strict_common_reference_available=2
+coarse_first_strict_common_reference_gap=0
+coarse_first_strict_common_reference_figure_available=True
+ra2021_public_timing_rows=12/12
+ra2021_public_timing_policy_rows=12/12
+gauss6_fullva_selected_rows=3/3
+gauss6_fullva_selected_rows_completed=True
+gauss6_public_horizon_single_rows=3/3
+gauss6_public_horizon_single_public_h_rows=3/3
+gauss6_public_horizon_double_coarse_rows=3/3
+gauss6_public_horizon_closed_loop_rows=6/6
+gauss6_public_horizon_closed_loop_public_h_rows=6/6
+gauss6_closed_loop_same_window_rows=12/12
+gauss6_same_window_work_precision_rows=4
+hi2022_halfimplicit_rows=24/24
+hi2022_selected_forms=rA,rA_half
+velocity_partitioning_code_status=not_resolved_in_local_sbel_or_public_metadata_tree
+tfe_m3_four_link_common_reference_orders=-1.4203191799256139e+01/-1.0559564362751539e+01/-7.1686247693267289e+00
+baseline_coverage_matrix=11/13
+baseline_required_methods_resolved=13/13
+baseline_scope_excluded=tfe2026_TFE_m3_GL
+baseline_coverage_unresolved=
+common_reference_error_wins=40/40
+apples_to_apples_rows=44/44
+apples_to_apples_nonlocal=40
+global_comparison_policy=14/14
+mixed_policy_direct_error_rows=0
+public_code_fixed_grid_replay=True
+source_policy_reproduction=False
+objective_closure_complete=True
+objective_closure_requirements=13/13
+external_superiority_claim=False
+```
+
+## v048 Four-Example Matrix Validator
+
+```text
+four-example performance matrix validation: PASS
+rows=48
+completed=32
+partial=0
+external_superiority_claim=False
+```
+
+## v048 Coarse-First Readiness Validator
+
+```text
+coarse-first external readiness gate validation: PASS
+rows=4
+coarse_same_window_ready=2/4
+local_true_dynamic_order=2
+public_work_precision_available=2
+public_work_precision_missing=0
+strict_common_reference_available=2
+strict_common_reference_gap=0
+strict_common_reference_figure_available=True
+closed_loop_floor_audit=2
+dynamic_order_missing=0
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop Surrogate Validator
+
+```text
+closed-loop surrogate dynamic gate validation: PASS
+rows=2
+surrogate_available=2
+accepted_dynamic_order=0
+dynamic_superiority_claim=False
+```
+
+## v048 Closed-Loop Floor-Audit Validator
+
+```text
+closed-loop dynamic error floor audit validation: PASS
+rows=2
+velocity_acceleration_evidence=2
+position_floor_blockers=2
+accepted_dynamic_order=0
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop Coarse Dynamic-Order Probe Validator
+
+```text
+closed-loop coarse dynamic-order probe validation: PASS
+rows=11/12
+work_summary_rows=4
+local_velocity_evidence=2/2
+local_acceleration_evidence=2/2
+local_position_floor_rows=2/2
+accepted_dynamic_order=0
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop Dynamic-Order Closure Contract Validator
+
+```text
+closed-loop dynamic-order closure contract validation: PASS
+missing_dynamic_order_models=none
+accepted_dynamic_order=2
+true_dynamic_local_rows=2
+public_work_precision_available=2
+public_work_precision_missing=0
+strict_common_reference_available=2
+strict_common_reference_gap=0
+strict_common_reference_figure_available=True
+theorem_order=6
+default_1e-4=False
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop True-Dynamic-Row Feasibility Audit Validator
+
+```text
+closed-loop true dynamic-row feasibility audit validation: PASS
+missing_dynamic_order_models=four_link,slider_crank
+true_dynamic_local_rows=0
+accepted_dynamic_order=0
+local_row_kind=kinematic_fullva_plus_reaction_reconstruction
+required_next=local_dynamic_dae_runner_or_residual_to_error_theorem
+default_1e-4=False
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop True-Dynamic Residual Scaffold Validator
+
+```text
+closed-loop true dynamic residual scaffold validation: PASS
+stage_unknown_dim=72
+total_unknown_dim=216
+square_total_system=True
+local_runner_implemented=False
+default_1e-4=False
+accepted_dynamic_order=0
+```
+
+## v048 Closed-Loop True-Dynamic Stage Residual Audit Validator
+
+```text
+closed-loop true dynamic stage residual audit validation: PASS
+rows_ok=6/6
+max_stage_residual_inf=5.506706e-14
+stage_residual_evaluator_implemented=True
+trajectory_stepper_implemented=False
+default_1e-4=False
+accepted_dynamic_order=0
+```
+
+## v048 Closed-Loop True-Dynamic One-Step Smoke Validator
+
+```text
+closed-loop true dynamic one-step smoke validation: PASS
+rows_ok=2/2
+max_stage_residual_inf=1.545430e-13
+max_endpoint_pos_error_inf=4.411215e-08
+trajectory_stepper_executed=True
+convergence_sweep_run=False
+default_1e-4=False
+accepted_dynamic_order=0
+```
+
+## v048 Closed-Loop True-Dynamic Newton Stage Smoke Validator
+
+```text
+closed-loop true dynamic Newton stage smoke validation: PASS
+rows_ok=2/2
+max_initial_stage_residual_inf=4.306133e+01
+max_stage_residual_inf=1.790026e-13
+stage_oracle_used=False
+trajectory_stepper_executed=True
+convergence_sweep_run=False
+default_1e-4=False
+accepted_dynamic_order=0
+```
+
+## v048 Closed-Loop True-Dynamic Newton Coarse Order Validator
+
+```text
+closed-loop true dynamic Newton coarse order validation: PASS
+rows_ok=6/6
+accepted_dynamic_order=2
+four_link_orders=5.955/5.955/6.085/5.971
+slider_crank_orders=6.164/6.159/7.341/6.426
+stage_oracle_used=False
+convergence_sweep_run=True
+default_1e-4=False
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop True-Dynamic Public Work/Precision Validator
+
+```text
+closed-loop true dynamic public work/precision validation: PASS
+rows_ok=24/24
+public_work_precision_available=2/2
+public_work_precision_missing=0
+local_true_dynamic_order=2
+strict_common_reference_error_columns=False
+default_1e-4=False
+external_superiority_claim=False
+```
+
+## v048 Closed-Loop True-Dynamic Strict Common-Reference Validator
+
+```text
+closed-loop true dynamic strict common-reference validation: PASS
+rows_ok=24/24
+strict_common_reference_available=2/2
+strict_common_reference_gap=0
+figure=closed_loop_true_dynamic_strict_common_reference_work_precision.png
+default_1e-4=False
+external_superiority_claim=False
+```
+
+## v048 Residual-to-Error Theorem Obligation Validator
+
+```text
+closed-loop residual-to-error theorem obligations validation: PASS
+obligations=7
+blocking_obligations=7
+accepted_residual_to_error_theorem=False
+accepted_dynamic_order=0
+true_dynamic_local_rows=0
+default_1e-4=False
+external_superiority_claim=False
+```
+
+## v048 Single-Pendulum Coarse Validator
+
+```text
+single-pendulum coarse same-window validation: PASS
+public_rows=9/9
+local_rows=3/3
+work_precision_rows=4/4
+gauss6_pos_order=6.054
+external_superiority_claim=False
+```
+
+## Paper Claim Validator
+
+```text
+v047 paper claim validation: PASS
+asme_gate_status=four_asme_method_rows_accepted_projection_sharp_sparse_caveats
+smooth_projected_orders=7.161/7.066
+full_tfe_stage_replacement=False
+claim_ledger_checked=True
+claim_boundary_json_checked=True
+claim_boundary_asme_acceptance_checked=True
+claim_boundary_full_tfe_gap_checked=True
+claim_boundary_terminology_checked=True
+claim_boundary_order_conventions_checked=True
+claim_boundary_remaining_caveats_checked=True
+current_pipeline_contract_checked=True
+tfe_terminology_checked=True
+figures_checked=25
+pdf_size_bytes=3377325
+```
+
+## Proof Evidence Matrix Validator
+
+```text
+v047 proof evidence matrix validation: PASS
+accepted_method=Gauss6/FullVA
+accepted_method_order=6
+smooth_projected_orders=7.161/7.066
+comparator_expected_order=5
+order_acceptance_gate=PASS
+dynamic_row_oracle_gate=PASS
+block_functional_crosscheck=PASS
+partial_formula_row_count=96
+full_formula_row_count=132
+formula_row_ad_jacobian_oracle=PASS
+formula_row_ad_jacobian_probe_count=3
+proof_numerical_scale_audit=PASS
+proof_solver_scale_audit=PASS
+finite_run_error_scale_supports_order_six=True
+summary_level_solver_residuals_recorded=True
+scaled_tolerance_sweep_recorded=False
+eta_h_O_h7_solver_policy_evidence=False
+local_closed_loop_dynamic_order_candidates=2
+external_dynamic_order_accepted=False
+asme_models=double_pendulum,four_link,single_pendulum,slider_crank
+full_tfe_stage_replacement=False
+```
+
+## Proof Solver-Scale Audit Validator
+
+```text
+proof_solver_scale_audit=PASS
+summary_level_solver_residuals_recorded=True
+scaled_tolerance_sweep_recorded=False
+smooth_projected_reference_residual=2.800514e-13
+smooth_reference_eta_over_reference_h7=3584.657363
+finite_scaled_tolerance_trajectory_probe_recorded=True
+finite_tolerance_regime_sweep_recorded=True
+finite_h_scaled_tolerance_sweep_recorded=True
+eta_h_O_h7_solver_policy_evidence=False
+fixed_tolerance_runs_are_asymptotic_proof=False
+default_1e-4=False
+run_v047_invoked=False
+submission_ready=False
+```
+
+## Order Acceptance Gate Validator
+
+```text
+v047 order acceptance gate validation: PASS
+accepted_method=Gauss6/FullVA
+accepted_method_order=6
+comparator_expected_order=5
+smooth_projected_orders=7.161/7.066
+observed_order_interpretation=not_seventh_order_claim
+single_absolute_min_order=6.024
+double_method_min_order=6.089
+accepted_dynamic_order_examples=single_pendulum,double_pendulum
+coverage_only_examples=four_link,slider_crank
+local_closed_loop_dynamic_order_candidates=2
+four_link_true_dynamic_primary_orders=5.955/5.955/6.085/5.971
+slider_crank_true_dynamic_primary_orders=6.164/6.159/7.341/6.426
+external_dynamic_order_accepted=False
+coarse_probe_steps=0.1,0.05,0.025
+default_1e-4=False
+```
+
+## CMAME Submission Validator
+
+```text
+v047 CMAME submission validation: PASS
+journal=Computer Methods in Applied Mechanics and Engineering
+document_class=elsarticle
+recommended_pdf=main_cmame.pdf
+accepted_method=Gauss6/FullVA
+accepted_method_order=6
+source_paper_m3_expected_order=5
+asme_models=double_pendulum,four_link,single_pendulum,slider_crank
+full_tfe_stage_replacement=False
+submission_ready_under_narrowed_claim=True
+full_source_policy_submission_ready=False
+manifest_boundary_matches_archive_gap=True
+manifest_action_boundary=4/1/False/True/13/20
+oc6_reopen_latest_external_probe=2026-06-21/9/0/0/4/False/False
+mechanical_preflight_passed=True
+quality_review_passed_under_narrowed_claim=True
+run_v047_invoked=False
+```
+
+## Submission Artifact Manifest Boundary Sync Validator
+
+```text
+submission artifact manifest boundary sync validation: PASS
+source_policy_execution_invoked=False
+oc4_expected_output_schema_command_traceability_tuple=13/13/8/5/13/8/False/False
+blocking_ids=OC4,OC6,OC12
+```
+
+## CMAME Blocker-Closure Gate Validator
+
+```text
+cmame_blocker_closure_gate=PASS
+open_narrowed_claim_blockers=0
+closed_blockers=B1,B2,B3,B4,B5,B6,B7,B8
+submission_ready_under_narrowed_claim=True
+narrowed_claim_alias_warning=validator_only_not_global_submission_ready
+full_source_policy_submission_ready=False
+mechanical_preflight_passed=True
+quality_review_passed_under_narrowed_claim=True
+same_test_campaign_status=not_run
+external_superiority_claim=False
+comparison_matrix_closed=True
+common_reference_examples=single_pendulum,double_pendulum,four_link,slider_crank
+common_reference_cells=44
+raw_rows_recomputed=132
+summary_mismatches=0
+direct_nonlocal_order_wins=40/40
+direct_nonlocal_error_wins=40/40
+all_method_claim_disposition_cells=44
+all_method_claim_disposition_nonlocal_cells=40
+all_method_source_policy_closed_open=0/40
+all_method_strict_external_error_claim_rows=0
+figure_set_audit=13/13
+figure12_all_method_matrix_integrated=True
+figure13_work_precision_compendium_integrated=True
+source_policy_flagged_rows=15
+source_policy_velocity_mismatch_rows=10
+source_policy_superiority_claim_allowed=False
+b2_b4_can_close_now=False
+default_1e-4=False
+accepted_external_dynamic_order_examples=0
+parallel_shard_count_without_default_1e-4=20
+partial_formula_row_count=96
+partial_kinematic_stage_defect_certificate_checked=True
+partial_kinematic_stage_defect_rows=96
+newton_euler_defect_obligation_gate_checked=True
+active_direct_newton_euler_open_obligation_count=0
+newton_euler_symbolic_primitive_open_obligation_count=1
+newton_euler_symbolic_primitive_open_obligation_scope=symbolic_primitive_certificate_route_not_active_direct_pc2
+newton_euler_defect_closed_obligation_count=5
+newton_euler_symbolic_target_audit_checked=True
+newton_euler_symbolic_target_rows=36
+newton_euler_symbolic_target_translational_rotational_rows=18/18
+newton_euler_symbolic_defect_certificate_complete=False
+full_formula_row_count=132
+formula_row_ad_jacobian_oracle=PASS
+formula_row_ad_jacobian_probe_count=3
+summary_level_solver_residuals_recorded=True
+scaled_tolerance_sweep_recorded=False
+main_body_machine_token_count=0
+artifact_macro_confined_to_appendix=True
+appendix_artifact_macro_count=0
+coarse_first_ready_examples=2/4
+local_evidence_coverage_examples=4/4
+accepted_method_dynamic_order_examples=single_pendulum,double_pendulum
+source_policy_dynamic_order_examples=0/4
+accepted_dynamic_order_examples=single_pendulum,double_pendulum
+coverage_only_examples=four_link,slider_crank
+local_closed_loop_dynamic_order_candidates=2
+four_link_true_dynamic_primary_orders=5.955/5.955/6.085/5.971
+slider_crank_true_dynamic_primary_orders=6.164/6.159/7.341/6.426
+strict_common_reference_available_examples=four_link,slider_crank
+strict_common_reference_gap_examples=none
+strict_common_reference_figure_integrated_in_manuscript=True
+```
+
+## CMAME External-Baseline Gate Validator
+
+```text
+cmame_external_baseline_gate=PASS
+same_test_campaign_status=not_run
+external_superiority_claim=False
+comparison_matrix_closed=True
+common_reference_examples=single_pendulum,double_pendulum,four_link,slider_crank
+common_reference_cells=44
+raw_rows_recomputed=132
+summary_mismatches=0
+direct_nonlocal_order_wins=40/40
+direct_nonlocal_error_wins=40/40
+original_paper_velocity_error_wins=16/16
+kissel_negrut_velocity_error_wins=24/24
+source_policy_flagged_rows=15
+source_policy_velocity_mismatch_rows=10
+source_policy_superiority_claim_allowed=False
+b2_b4_can_close_now=False
+default_1e-4=False
+true_dynamic_row_plan=plan_only_not_run
+true_dynamic_row_plan_rows=24
+external_same_test_run_queue=PASS
+external_same_test_acceptance_sheet=PASS
+parallel_shard_count_without_default_1e-4=20
+local_evidence_coverage_examples=4/4
+accepted_method_dynamic_order_examples=2/4
+mechanism_coverage_examples=2/4
+source_policy_dynamic_order_examples=0/4
+accepted_external_dynamic_order_examples=0
+true_dynamic_interface_audit=setup_level_interface_verified_no_trajectory_run
+true_dynamic_interface_dynamic_setup_ok=2/2
+true_dynamic_residual_scaffold=residual_layout_specified_runner_not_implemented
+true_dynamic_residual_scaffold_dims=72/216
+true_dynamic_stage_residual_audit=stage_residual_evaluator_verified_stepper_not_implemented
+true_dynamic_stage_residual_audit_rows=6/6
+true_dynamic_one_step_smoke=one_step_smoke_passed_order_rows_not_run
+true_dynamic_one_step_smoke_rows=2/2
+true_dynamic_newton_stage_smoke=non_oracle_stage_newton_smoke_passed_order_rows_not_run
+true_dynamic_newton_stage_smoke_rows=2/2
+true_dynamic_newton_coarse_order=coarse_true_dynamic_order_candidates_available_not_external_superiority
+true_dynamic_newton_coarse_order_rows=6/6
+true_dynamic_public_work_precision=same_window_public_work_precision_available_reference_caveat_not_external_superiority
+true_dynamic_public_work_precision_rows=24/24
+true_dynamic_strict_common_reference=strict_common_reference_error_columns_available_not_external_superiority
+true_dynamic_strict_common_reference_rows=24/24
+closed_loop_mechanism_coverage_examples=four_link,slider_crank
+public_work_precision_available_examples=four_link,slider_crank
+public_work_precision_missing_examples=none
+strict_common_reference_available_examples=four_link,slider_crank
+strict_common_reference_gap_examples=none
+strict_common_reference_figure_available=True
+strict_common_reference_figure_integrated_in_manuscript=True
+coarse_first_order_time_examples=single_pendulum,double_pendulum
+surrogate_only_examples=none
+accepted_external_dynamic_order_examples=none
+closed_loop_residual_to_error_accepted=False
+submission_ready=False
+```
+
+## External Same-Test Run Queue Validator
+
+```text
+external_same_test_run_queue=PASS
+required_case_count=17
+parallel_ready_batch_count=2
+parallel_shard_count_without_default_1e-4=20
+local_evidence_coverage_examples=4/4
+accepted_method_dynamic_order_examples=2/4
+mechanism_coverage_examples=2/4
+source_policy_dynamic_order_examples=0/4
+ra2021_parallel_shards=12
+hi2022_parallel_shards=8
+tfe2026_encoding_required=True
+vp2024_code_path_unresolved=True
+default_1e-4=False
+run_v047_invoked=False
+v048_runner_invoked=False
+external_superiority_claim=False
+submission_ready=False
+```
+
+## CMAME Proof-Contract Gate Validator
+
+```text
+cmame_proof_contract_gate=PASS
+submission_ready_scope=theorem_level_global_proof_contract_not_narrowed_claim_package_decision
+proof_contract_gate_scope=conditional_theorem_contract_with_eta_h_and_residual_to_error_boundaries
+proof_mode=conditional_consistency_transfer
+accepted_method=Gauss6/FullVA
+accepted_method_order=6
+accepted_one_step_stability_required=True
+accepted_endpoint_closure_local_right_inverse_required=True
+endpoint_closure_perturbation_constant_formula=C_E=4*M_E^ri*C_{E,raw}
+local_global_reduced_grid_constant_formula=C_red=C_loc*Gamma_s(T)
+qv_reporting_constant_formula=C_qv=C_{\mathcal R}*C_red
+accepted_newton_residual_strong_local_inverse_required=True
+newton_eta_h_scaled_endpoint_bound_formula=C_N*c_eta*h^7
+newton_tolerance_policy=eta_h_tube<=c_eta*h^7
+partial_formula_row_oracle_96_rows_checked=True
+full_formula_row_oracle_132_rows_checked=True
+partial_kinematic_stage_defect_certificate_checked=True
+partial_kinematic_stage_defect_rows_checked=96
+newton_euler_defect_obligation_gate_checked=True
+active_direct_newton_euler_open_obligation_count=0
+newton_euler_symbolic_primitive_open_obligation_count=1
+newton_euler_symbolic_primitive_open_obligation_scope=symbolic_primitive_certificate_route_not_active_direct_pc2
+newton_euler_defect_closed_obligation_count=5
+newton_euler_symbolic_defect_certificate_complete=False
+formula_row_ad_jacobian_oracle_checked=True
+formula_row_ad_jacobian_probe_count=3
+newton_euler_formula_oracle_complete=True
+finite_run_numerical_scale_audit_checked=True
+finite_run_error_scale_supports_order_six=True
+solver_scale_audit_checked=True
+summary_level_solver_residuals_recorded=True
+scaled_tolerance_sweep_recorded=False
+eta_h_O_h7_solver_policy_evidence=False
+proof_conditions_decomposed=True
+one_step_perturbation_shortcut_assumed=False
+dynamic_symbolic_oracle_complete=False
+stage_residual_O_h7_implementation_defect_proved=True
+fixed_tolerance_runs_are_asymptotic_proof=False
+accepted_residual_to_error_theorem=False
+accepted_dynamic_order_by_residual_to_error=0
+submission_ready=False
+```
+
+## CMAME Visual-Legibility Audit Validator
+
+```text
+cmame_visual_legibility_audit=PASS
+b5_status=closed
+open_blockers=7
+closed_blockers=B5
+figure2_dimensions=2028x1759
+default_1e-4=False
+submission_ready=False
+```
+
+## CMAME Related-Work Audit Validator
+
+```text
+cmame_related_work_audit=PASS
+b8_status=closed
+open_narrowed_claim_blockers=0
+closed_narrowed_claim_blockers=B1,B2,B3,B4,B5,B6,B7,B8
+related_work_clusters=6
+added_reference_count=8
+default_1e-4=False
+submission_ready=False
+```
+
+## CMAME Prose-Residue Audit Validator
+
+```text
+cmame_prose_residue_audit=PASS
+main_body_machine_token_count=0
+flat_main_body_machine_token_count=0
+artifact_macro_confined_to_appendix=True
+appendix_artifact_macro_count=0
+default_1e-4=False
+run_v047_invoked=False
+submission_ready=False
+b6_closed=True
+```
+
+## Dynamic Row Oracle Gate Validator
+
+```text
+dynamic_row_oracle_gate=PASS
+accepted_residual=residual_cylindrical_chain
+accepted_jacobian=R_JAC_jacfwd_argnums0
+residual_shape=132
+jacobian_shape=132x132
+row_family_count=6
+partial_formula_row_oracle=PASS
+partial_formula_row_count=96
+max_formula_row_mismatch=0.000000e+00
+full_formula_row_oracle=PASS
+full_formula_row_count=132
+max_full_formula_row_mismatch=0.000000e+00
+formula_row_ad_jacobian_oracle=PASS
+formula_row_ad_jacobian_probe_count=3
+max_formula_row_jacobian_mismatch=3.330669e-16
+partial_kinematic_stage_defect_certificate_checked=True
+partial_kinematic_stage_defect_rows=96
+runtime_residual_norm=5.588917e+01
+runtime_jacobian_norm=1.678276e+01
+block_functional_crosscheck=PASS
+max_block_functional_mismatch=1.387779e-17
+symbolic_oracle_complete=False
+block_functional_symbolic_oracle=False
+runtime_symbolic_lane_stage_residual_O_h7_implementation_defect_proved=False
+full_tfe_stage_replacement=False
+```
+
+## Submission Bundle Validator
+
+```text
+v047 submission bundle validation: PASS
+recommended_pdf=main_cmame.pdf
+cmame_document_class=elsarticle
+accepted_method=Gauss6/FullVA
+smooth_projected_orders=7.161/7.066
+comparator_expected_order=5
+asme_models=double_pendulum,four_link,single_pendulum,slider_crank
+full_tfe_stage_replacement=False
+submission_ready=False
+mechanical_preflight_passed=True
+quality_review_passed=False
+proof_solver_scale_audit_validator=checked
+default_1e-4=False
+run_v047_invoked=False
+```
+
+## Source-Paper Comparison Validator
+
+```text
+v047 source-paper comparison validation: PASS
+source_pdf_found=True
+source_paper_m3_expected_order=5
+accepted_method=Gauss6/FullVA
+accepted_method_order=6
+smooth_projected_orders=7.161/7.066
+full_tfe_stage_replacement=False
+```
+
+## Paper LaTeX Log Validator
+
+```text
+paper_latex_log=PASS
+logs_checked=main.log:0,main_concise.log:0,main_cmame.log:0,cmame_submission_flat/main_cmame_submission.log:0
+missing_logs=none
+warning_patterns=Overfull,LaTeX Warning,Package .*Warning,pdfTeX warning
+warning_lines=0
+run_v047_invoked=False
+submission_ready=False
+```
+
+## Documentation Boundary Validators
+
+```text
+documentation_boundary_validators=checked
+validation_quickstart_doc=PASS
+validation_quickstart_doc_checks=212
+current_pipeline_contract_doc=PASS
+current_pipeline_contract_doc_checks=99
+better_integrator_boundary_docs=PASS
+better_integrator_boundary_docs_checks=63
+tfe_terminology_docs=PASS
+tfe_terminology_docs_checks=29
+pipeline_count_docs=PASS
+pipeline_count_docs_checks=5
+global_blocker_matrix_docs=PASS
+global_blocker_matrix_docs_checks=40
+no_claim_regression_wording=PASS
+no_claim_regression_wording_checks=180
+live_inventory=48/695/286/202/113
+blocker_open_by_id=OC4:True,OC6:True,OC12:True
+source_policy_execution_invoked=False
+run_v047_invoked=False
+submission_ready=False
+```

@@ -1,0 +1,217 @@
+{
+  "b2_b4_gate_closed_by_this_artifact": false,
+  "b2_gate_closed_by_route_b_claim_demotion": true,
+  "b4_gate_closed_by_route_b_claim_demotion": false,
+  "claim_after_route": "formal_order_and_common_reference_diagnostics_only",
+  "current_blocker_status": {
+    "B2": "closed",
+    "B4": "closed",
+    "b2_required_to_close_before_route_b": [],
+    "b4_required_to_close_before_route_b": []
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "explicit_1e_4_opt_in_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim_allowed_after_route": false,
+  "external_superiority_ready_rows": 0,
+  "forbidden_claims": [
+    "complete_source_paper_residual_reproduction",
+    "source_policy_external_superiority",
+    "paper_level_direct_error_superiority_against_external_methods",
+    "accepted_independent_full_tfe_stage_replacement",
+    "RA2021_same_policy_Gauss6_external_superiority_without_promoted_rows",
+    "TFE_original_pendulum_external_superiority_without_source_equivalent_runner"
+  ],
+  "paper_direct_error_superiority_claim_allowed": false,
+  "retained_claims": {
+    "accepted_method": "Gauss6/FullVA",
+    "accepted_method_order": 6,
+    "all_method_cells": 44,
+    "all_method_error_wins": null,
+    "all_method_order_wins": null,
+    "common_reference_cells": 44,
+    "common_reference_claim_allowed": true,
+    "direct_nonlocal_error_comparisons": 40,
+    "direct_nonlocal_error_wins": 40,
+    "direct_nonlocal_order_comparisons": 40,
+    "direct_nonlocal_order_wins": 40,
+    "formal_comparator": "m=3 Gauss-Lobatto",
+    "formal_comparator_expected_order": 5,
+    "formal_comparator_role": "comparator_not_accepted_method",
+    "formal_order_claim_retained": true,
+    "paper_matrix_direct_error_wins": 40,
+    "paper_matrix_direct_order_wins": 40,
+    "raw_rows_recomputed": 132
+  },
+  "route": "claim_demotion",
+  "route_b_application_contract": {
+    "application_step_count": 6,
+    "application_steps": [
+      {
+        "current_evidence": "main and flat TeX contain the non-superiority and 0/40 source-policy boundary",
+        "id": "RB1_manuscript_claim_boundary_synchronized",
+        "required_for_promotion": "keep the abstract, claim-boundary section, and flat submission source synchronized",
+        "satisfied": true
+      },
+      {
+        "current_evidence": "source-policy rows closed/external-superiority-ready remain 0/0",
+        "id": "RB2_no_source_policy_rows_promoted_to_wins",
+        "required_for_promotion": "do not convert common-reference rows into source-policy wins",
+        "satisfied": true
+      },
+      {
+        "current_evidence": "currently demoted suites are ['hi2022_half_implicit', 'ra2021_absolute_coordinate', 'tfe2026_original_pendulum', 'vp2024_velocity_partitioning']",
+        "id": "RB3_all_external_suites_demoted_in_suite_ledger",
+        "required_for_promotion": "keep all external suites in the explicit demotion ledger unless a new source-policy evidence route is opened",
+        "satisfied": true
+      },
+      {
+        "current_evidence": "active flagged rows/suites are 0/{}",
+        "id": "RB4_b2_remaining_manifest_has_no_active_external_rows",
+        "required_for_promotion": "keep B2 active rows at zero; reopen only with new public/source-code-equivalent evidence or an authorized source-policy execution route",
+        "satisfied": true
+      },
+      {
+        "current_evidence": "B2/B4 statuses are closed/closed; Route B closes the external-superiority claim gate only; B4 is closed separately by the narrowed-claim policy, with source-policy work/precision retained as future work",
+        "id": "RB5_blocker_gate_and_validators_synchronized",
+        "required_for_promotion": "keep CMAME_BLOCKER_CLOSURE_GATE and read-only validators synchronized with Route B claim demotion",
+        "satisfied": true
+      },
+      {
+        "current_evidence": "review/objective/PDF-style reports read source-policy rows as demoted diagnostics and do not list them as the first closeout gate",
+        "id": "RB6_downstream_reports_synchronized",
+        "required_for_promotion": "regenerate review agent, objective audit, PDF-style audit, reproducibility manifests, and package validators after any future claim-boundary edit",
+        "satisfied": true
+      }
+    ],
+    "currently_satisfied_steps": 6,
+    "purpose": "prevent partial flag flips from converting claim demotion into an inconsistent blocker closure",
+    "ready_to_promote_to_blocker_gate_now": true,
+    "required_artifact_updates_before_promotion": [
+      "EXTERNAL_SUITE_DEMOTION_LEDGER must keep VP2024, HI2022, RA2021, and TFE demoted if Route B is chosen",
+      "B2_SOURCE_POLICY_REMAINING_WORK_MANIFEST must report zero active external source-policy rows after demotion",
+      "CMAME_BLOCKER_CLOSURE_GATE and its validator must encode Route B as the B2 closure policy, not source-policy execution",
+      "CMAME_EXTERNAL_BASELINE_GATE, source-policy closure manifests, and all-example audits must keep source-policy rows closed at 0/40",
+      "CMAME_REVIEW_AGENT_REPORT, OBJECTIVE_COMPLETION_AUDIT, PDF-style audit, and reproducibility manifests must be regenerated",
+      "The manuscript and flat submission must keep external superiority, direct error superiority, and full TFE replacement as non-claims"
+    ],
+    "route_a_execution_contract_retained": true,
+    "route_b_demotion_contract_creates_numerical_wins": false,
+    "safe_to_flip_gate_flags_without_other_edits": false,
+    "schema": "route-b-application-contract-v1",
+    "unsatisfied_step_count": 0,
+    "unsatisfied_steps": []
+  },
+  "route_b_promoted_to_blocker_gate": true,
+  "route_b_promotion_effect": {
+    "common_reference_diagnostics_retained": true,
+    "demoted_suites_after_route": [
+      "hi2022_half_implicit",
+      "ra2021_absolute_coordinate",
+      "tfe2026_original_pendulum",
+      "vp2024_velocity_partitioning"
+    ],
+    "external_superiority_claim_allowed_after_route": false,
+    "formal_order_claim_retained": true,
+    "mechanism": "demote_external_superiority_claim_instead_of_executing_missing_source_policy_rows",
+    "requires_blocker_gate_synchronization": false,
+    "requires_default_1e_4": false,
+    "requires_manuscript_claim_boundary_synchronization": true,
+    "requires_new_numerical_runs": false,
+    "source_policy_execution_rows_closed_after_route": 0,
+    "source_policy_execution_total_rows": 40
+  },
+  "route_b_ready": true,
+  "schema": "external-superiority-claim-demotion-audit-v1",
+  "source_files": {
+    "all_method_claim_disposition": "ALL_METHOD_EXAMPLE_CLAIM_DISPOSITION_AUDIT.json",
+    "b2_remaining_work": "B2_SOURCE_POLICY_REMAINING_WORK_MANIFEST.json",
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "claim_boundary": "CLAIM_BOUNDARY.json",
+    "comparison_reconciliation": "COMPARISON_OBJECTIVE_CLOSURE_RECONCILIATION_AUDIT.json",
+    "external_suite_demotion": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+    "paper_numerical_result_matrix": "PAPER_NUMERICAL_RESULT_MATRIX.json",
+    "ra2021_source_identity": "RA2021_SOURCE_IDENTITY_AUDIT.json",
+    "source_policy_row_ledger": "SOURCE_POLICY_ROW_CLOSURE_LEDGER.json",
+    "tfe_source_pendulum_model_audit": "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+    "tfe_source_policy_row_audit": "TFE_SOURCE_POLICY_ROW_AUDIT.json",
+    "tfe_source_policy_spec": "TFE_SOURCE_POLICY_SPEC.json"
+  },
+  "source_policy_execution_rows_closed": 0,
+  "source_policy_execution_total_rows": 40,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_flagged_rows": 15,
+  "source_policy_reproduction_closed": false,
+  "status": "route_b_applied_to_claim_boundary_no_external_superiority",
+  "submission_ready": false,
+  "suite_demotions": {
+    "additional_demotions_needed_for_route_b": [],
+    "b2_remaining_work_active_suite_counts_before_route_b": {},
+    "b2_remaining_work_demoted_suite_counts_before_route_b": {
+      "hi2022_half_implicit": 3,
+      "ra2021_absolute_coordinate": 5,
+      "tfe2026_original_pendulum": 4,
+      "vp2024_velocity_partitioning": 3
+    },
+    "currently_demoted_suites": [
+      "hi2022_half_implicit",
+      "ra2021_absolute_coordinate",
+      "tfe2026_original_pendulum",
+      "vp2024_velocity_partitioning"
+    ],
+    "decisions": [
+      {
+        "evidence": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "retain_common_reference_diagnostics": true,
+        "route_b_decision": "already_demoted_from_external_superiority_scope",
+        "source_policy_execution_rows_closed": 0,
+        "suite_id": "vp2024_velocity_partitioning"
+      },
+      {
+        "evidence": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "retain_common_reference_diagnostics": true,
+        "route_b_decision": "already_demoted_from_external_superiority_scope",
+        "source_policy_execution_rows_closed": 0,
+        "suite_id": "hi2022_half_implicit"
+      },
+      {
+        "active_b2_flagged_rows": null,
+        "public_order_groups_completed": 12,
+        "public_timing_rows_completed": 12,
+        "remaining_requirement_if_execution_route_used": "ra2021_public_code_same_test_rows",
+        "retain_common_reference_diagnostics": true,
+        "retain_public_baseline_diagnostics": true,
+        "route_b_decision": "already_demoted_from_external_superiority_scope",
+        "source_output_mapping_verified": true,
+        "source_policy_execution_rows_closed": 0,
+        "source_time_grid_policy_extracted": true,
+        "suite_id": "ra2021_absolute_coordinate"
+      },
+      {
+        "active_b2_flagged_rows": null,
+        "candidate_full_T10_probe_finite_rows": 4,
+        "candidate_full_T10_probe_implemented": true,
+        "candidate_full_T10_probe_residual_ok_rows": 4,
+        "remaining_requirement_if_execution_route_used": "original_tfe_pendulum_error_order_work_rows",
+        "retain_common_reference_diagnostics": true,
+        "retain_formal_order_comparator": true,
+        "route_b_decision": "already_demoted_from_external_superiority_scope",
+        "source_policy_execution_rows_closed": 0,
+        "source_policy_runner_implemented": false,
+        "source_reference_h": 0.0001,
+        "suite_id": "tfe2026_original_pendulum"
+      }
+    ],
+    "full_demotion_scope_after_route_b": [
+      "hi2022_half_implicit",
+      "ra2021_absolute_coordinate",
+      "tfe2026_original_pendulum",
+      "vp2024_velocity_partitioning"
+    ]
+  }
+}

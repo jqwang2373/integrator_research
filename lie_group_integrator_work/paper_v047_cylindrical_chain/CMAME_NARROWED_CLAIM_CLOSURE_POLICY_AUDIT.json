@@ -1,0 +1,202 @@
+{
+  "blocker_closure_allowed_by_id": {
+    "OC12": false,
+    "OC4": false,
+    "OC6": false
+  },
+  "blocker_closure_decision_by_id": {
+    "OC12": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+    "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
+    "OC6": "remain_open_no_positive_source_equivalent_artifact"
+  },
+  "blocker_open_by_id": {
+    "OC12": true,
+    "OC4": true,
+    "OC6": true
+  },
+  "closure_decision": {
+    "close_b4_b7_now": true,
+    "close_b6_now": true,
+    "current_contract_applied": true,
+    "reason": "The narrowed evidence set is internally supported and the active B4/B7/B6 contracts have been reclassified for the current formal-order/common-reference diagnostic submission. Source-policy work/precision and external-superiority claims remain excluded future work with zero promoted rows."
+  },
+  "closure_feasibility_under_policy_change": {
+    "b4_close_if_narrowed_policy_adopted": true,
+    "b6_close_after_final_prose_review_refresh": true,
+    "b7_close_if_diagnostic_figure_scope_adopted": true,
+    "blocker_gate_reclassification_required": false,
+    "final_pdf_style_review_refresh_required": false,
+    "heavy_or_b4_execution_required": false,
+    "reproducibility_manifest_refresh_required": false,
+    "review_agent_refresh_required": false,
+    "source_policy_row_promotion_required": false,
+    "submission_bundle_refresh_required": false
+  },
+  "current_contract_state": {
+    "b4_paper_submission_can_close_now": true,
+    "b4_source_policy_publication_grade_work_precision_open": true,
+    "b4_status": "closed",
+    "b6_closure_allowed_now": true,
+    "b6_final_prose_pass_ready": true,
+    "b6_status": "closed",
+    "b7_closed_by_figure_set_audit": true,
+    "b7_status": "closed",
+    "blocker_gate_status": "closed_narrowed_claim_subcheck_global_submission_open",
+    "figure_audit_b7_closed": true,
+    "figure_preflight_b7_closure_allowed_now": true,
+    "figure_preflight_status": "b7_narrowed_diagnostic_common_reference_figure_scope_closed",
+    "global_open_blockers": [
+      "OC4",
+      "OC6",
+      "OC12"
+    ],
+    "narrowed_claim_open_blocker_count": 0,
+    "non_superiority_route_closes_b4_b7": [
+      false,
+      false
+    ],
+    "open_blocker_count": 0,
+    "pdf_style_blocking_finding_ids": [],
+    "pdf_style_decision": "submit_under_narrowed_claim"
+  },
+  "current_gate_can_close_now": true,
+  "current_gate_open_blockers": [],
+  "current_narrowed_gate_open_blockers": [],
+  "downstream_updates_completed_for_closure": [
+    "B4 reclassified as narrowed formal-order/common-reference numerical evidence with source-policy work/precision explicitly excluded",
+    "B7 reclassified as publication-grade diagnostic/common-reference figure set",
+    "B6 prose residue refreshed under the narrowed B4/B7 boundary",
+    "PDF-style review refreshed against the narrowed claim boundary",
+    "review-agent report, blocker-closure gate, and reproducibility manifest refreshed"
+  ],
+  "evidence_support": {
+    "actual_taylor_bounds_proved": 0,
+    "all_figures_available": true,
+    "all_figures_integrated_main_flat": true,
+    "all_legible_dimensions": true,
+    "all_pdf_captions_present": true,
+    "b4_post_execution_b4_can_close_now": false,
+    "b4_post_execution_b7_can_close_now": false,
+    "b4_post_execution_execution_record_scope": "no_verified_current_authorized_execution_record_existing_artifacts_only",
+    "b4_post_execution_existing_ready_command_artifacts_present": true,
+    "b4_post_execution_source_policy_rows_closed": 0,
+    "b4_post_execution_source_policy_rows_total": 40,
+    "b4_post_execution_status": "existing_outputs_present_no_verified_authorized_execution_no_source_policy_rows_promoted",
+    "b4_post_execution_verified_authorized_execution_recorded": false,
+    "claim_after_route": "formal_order_and_common_reference_diagnostics_only",
+    "claim_boundary_status": "accepted_as_formal_order_alternative_not_external_superiority",
+    "claim_hygiene_status": "pass",
+    "common_reference_error_comparisons": 40,
+    "common_reference_error_wins": 40,
+    "common_reference_order_comparisons": 40,
+    "common_reference_order_wins": 40,
+    "direct_residual_bridge_active_standard_name": "strict_direct_residual_bridge_submission_standard",
+    "direct_residual_bridge_submission_standard_satisfied": true,
+    "direct_residual_bridge_submission_standard_scope": "closed_by_direct_residual_bridge_kantorovich_route_primitive_taylor_conditional_schema_open",
+    "expected_figure_count": 13,
+    "external_superiority_claim_allowed": false,
+    "figure_count": 13,
+    "figure_set_supports_common_reference_diagnostics_only": true,
+    "matrix_raw_rows": 132,
+    "matrix_rows": 44,
+    "open_taylor_bound_terms": 162,
+    "primitive_taylor_route_closed": false,
+    "primitive_taylor_schema_blocker_summary": "0/162 Taylor bounds certified; five primitive lift/bilinear antecedents remain open",
+    "primitive_taylor_schema_current_instance_available": false,
+    "proof_gap_closed": true,
+    "prose_appendix_artifact_macro_count": 0,
+    "prose_flat_appendix_artifact_macro_count": 0,
+    "prose_flat_main_body_machine_token_count": 0,
+    "prose_main_body_machine_token_count": 0,
+    "route_b_ready": true,
+    "source_policy_reproduction": false,
+    "stage_residual_O_h7_implementation_defect_proved": true,
+    "strict_external_error_claim_allowed_rows": 0,
+    "traceability_closed": true,
+    "traceability_flat_pdf_velocity_cells": 44,
+    "traceability_main_pdf_velocity_cells": 44,
+    "traceability_source_policy_closed_nonlocal_rows": 0,
+    "traceability_velocity_cells_checked": 44
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "full_source_policy_submission_ready": false,
+  "global_open_blockers": [
+    "OC4",
+    "OC6",
+    "OC12"
+  ],
+  "legacy_submission_ready_under_narrowed_claim": true,
+  "narrowed_claim_alias_warning": "validator-only compatibility aliases; do not read legacy_submission_ready_under_narrowed_claim or submission_ready_under_narrowed_claim as global submission readiness",
+  "narrowed_claim_evidence_supported": true,
+  "objective_blocker_closure_allowed_by_id": {
+    "OC12": false,
+    "OC4": false,
+    "OC6": false
+  },
+  "objective_blocker_closure_decision_by_id": {
+    "OC12": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+    "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
+    "OC6": "remain_open_no_positive_source_equivalent_artifact"
+  },
+  "objective_blocker_matrix_status": "global_objective_blockers_remain_open",
+  "objective_blocker_open_by_id": {
+    "OC12": true,
+    "OC4": true,
+    "OC6": true
+  },
+  "objective_blocking_ids": [
+    "OC4",
+    "OC6",
+    "OC12"
+  ],
+  "objective_source_policy_closed_ratio": "0/40",
+  "policy_scope": {
+    "accepted_claims": [
+      "strict_conditional_formal_order_claim",
+      "common_reference_order_error_diagnostics",
+      "diagnostic_work_precision_panels_not_source_policy_superiority",
+      "reader_facing_claim_boundary_and_limitations"
+    ],
+    "default_1e_4_required": false,
+    "excluded_claims": [
+      "external_superiority_claim",
+      "source_policy_work_precision_claim",
+      "source_paper_reproduction_claim",
+      "strict_external_error_superiority_claim",
+      "full_tfe_replacement_claim",
+      "seventh_order_theorem"
+    ],
+    "external_superiority_claim_allowed": false,
+    "route_id": "no_source_policy_work_precision_publication_claim",
+    "source_policy_rows_closed_must_remain": 0,
+    "source_policy_rows_total": 40
+  },
+  "read_only": true,
+  "required_downstream_updates_before_closure": [],
+  "schema": "cmame-narrowed-claim-closure-policy-audit-v1",
+  "source_files": {
+    "b4_post_execution": "B4_SOURCE_POLICY_POST_EXECUTION_AUDIT.json",
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "claim_boundary": "CLAIM_BOUNDARY.json",
+    "claim_demotion": "EXTERNAL_SUPERIORITY_CLAIM_DEMOTION_AUDIT.json",
+    "claim_hygiene": "CMAME_CLAIM_HYGIENE_AUDIT.json",
+    "figure_set": "CMAME_FIGURE_SET_AUDIT.json",
+    "non_superiority_route": "B4_B7_NON_SUPERIORITY_ROUTE_AUDIT.json",
+    "objective_completion": "OBJECTIVE_COMPLETION_AUDIT.json",
+    "paper_numerical_matrix": "PAPER_NUMERICAL_RESULT_MATRIX.json",
+    "pdf_style_review": "CMAME_PDF_STYLE_REVIEW_AUDIT.json",
+    "proof_closure": "PROOF_CLOSURE_MANIFEST.json",
+    "prose_residue": "CMAME_PROSE_RESIDUE_AUDIT.json",
+    "traceability": "RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json"
+  },
+  "status": "narrowed_claim_route_applied_current_gate_reclassified",
+  "submission_ready": false,
+  "submission_ready_under_narrowed_claim": true,
+  "validators_that_currently_reject_direct_flip": []
+}

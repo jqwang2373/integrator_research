@@ -1,0 +1,674 @@
+{
+  "active_flagged_row_count": 0,
+  "active_suite_counts": {},
+  "b2_can_close_now": true,
+  "b2_closed_by_demotion": [
+    "vp2024_code_resolution_or_demotion",
+    "hi2022_public_code_same_test_rows",
+    "ra2021_public_code_same_test_rows",
+    "original_tfe_pendulum_error_order_work_rows"
+  ],
+  "b2_remaining_requirements": [],
+  "b4_can_close_now": false,
+  "claim_policy": {
+    "common_reference_claim_allowed": true,
+    "demoted_rows_do_not_count_as_numerical_wins": true,
+    "paper_must_report_remaining_active_suites": true,
+    "source_policy_rows_must_be_closed_or_demoted_before_external_superiority": true
+  },
+  "closure_execution_plan": {
+    "active_suite_lane_count": 0,
+    "all_active_suites_ready_to_launch": true,
+    "default_1e_4_required": false,
+    "demoted_suite_lanes": [
+      {
+        "completed_public_order_groups": 12,
+        "completed_public_timing_rows": 12,
+        "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "demotion_evidence": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "plan_only_closes_b2_subrequirement": true,
+        "source_policy_1e_4_opt_in_required": false,
+        "status": "route_b_demoted_keep_public_baseline_and_common_reference_diagnostics",
+        "suite_id": "ra2021_absolute_coordinate"
+      },
+      {
+        "completed_bounded_rows": 24,
+        "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "demotion_evidence": "HI2022_T8_TOLERANCE_REPAIR_AUDIT.json",
+        "plan_only_closes_b2_subrequirement": true,
+        "source_policy_1e_4_opt_in_required": false,
+        "source_policy_t_end": 8.0,
+        "status": "demoted_after_incomplete_full_T8_source_policy_evidence",
+        "suite_id": "hi2022_half_implicit"
+      },
+      {
+        "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "demotion_evidence": "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json",
+        "plan_only_closes_b2_subrequirement": true,
+        "self_reproduction_attempt_status": "attempted_not_reproducible_not_promoted",
+        "self_reproduction_attempted": true,
+        "source_policy_1e_4_opt_in_required": false,
+        "source_policy_t_end": 10.0,
+        "source_reference_h": 0.0001,
+        "status": "attempted_not_reproducible_not_promoted_keep_formula_comparator_and_candidate_diagnostics",
+        "suite_id": "tfe2026_original_pendulum"
+      },
+      {
+        "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+        "demotion_evidence": "VP2024_CODE_PATH_DISPOSITION_AUDIT.json",
+        "plan_only_closes_b2_subrequirement": true,
+        "self_reproduction_attempt_status": "unable_to_reproduce_not_promoted",
+        "self_reproduction_attempted": true,
+        "source_policy_1e_4_opt_in_required": false,
+        "status": "attempted_not_reproducible_not_promoted_keep_proxy_diagnostic",
+        "suite_id": "vp2024_velocity_partitioning"
+      }
+    ],
+    "external_superiority_claim_allowed_after_plan_only": false,
+    "heavy_numerical_run_invoked": false,
+    "parallel_ready_shards_without_default_1e_4": 20,
+    "read_only_plan": true,
+    "route_a_inactive_reference_lanes": [
+      {
+        "completed_public_order_groups": 12,
+        "completed_public_timing_rows": 12,
+        "plan_only_closes_b2": false,
+        "ready_to_launch": true,
+        "remaining_blockers": [
+          "promote_or_rerun_local_Gauss6_FullVA_same_policy_dynamic_order_rows",
+          "bind_error_norm_output_policy_to_source_policy_order_rows",
+          "tie_runtime_Newton_policy_to_accepted_source_policy_order_rows",
+          "produce_rerun_or_independent_verification_artifact"
+        ],
+        "representative_commands": [
+          "../.venv_sbel/bin/python run_v048.py --full-ra2021-order --allow-source-policy-1e-4",
+          "../.venv_sbel/bin/python run_v048.py --reuse-existing-results --gauss6-public-single --gauss6-public-step-sizes 1e-2,1e-3,1e-4 --allow-source-policy-1e-4",
+          "../.venv_sbel/bin/python run_ra2021_double_order_shard.py --form rA --allow-source-policy-1e-4",
+          "../.venv_sbel/bin/python run_public_closed_loop_shard.py --model four_link --step-sizes 1e-2,1e-3,1e-4 --allow-source-policy-1e-4"
+        ],
+        "same_test_acceptance_contract": {
+          "acceptance_tests": [
+            "all four examples have promoted local Gauss6/FullVA rows or an explicit suite demotion",
+            "the promoted rows use the required horizon, h grid, reference, output norm, and solver policy",
+            "runtime/Newton metrics are tied to the same rows used for the order/error table",
+            "floor-limited or residual-only rows are not promoted to external superiority"
+          ],
+          "accepted_rows_closed_now": 0,
+          "baseline_methods": [
+            "ra2021_rA",
+            "ra2021_rp",
+            "ra2021_reps"
+          ],
+          "cases": [
+            "single_pendulum",
+            "double_pendulum",
+            "four_link",
+            "slider_crank"
+          ],
+          "contract_id": "ra2021-source-policy-dynamic-order-work-contract",
+          "horizon_policy": "use the RA2021 public-code horizon and output grid for each model; active dynamic-order promotion target is T=3",
+          "local_method_under_test": "Gauss6/FullVA",
+          "plan_only_closes_b2": false,
+          "required_error_policy": "bind errors to the source output variables body.r/body.dr/body.ddr and the same norm/output grid used by the accepted source-policy row",
+          "required_reference_policy": {
+            "closed_loop": "source-public T=3 output policy; not the bounded T=0.1 local true-dynamic row",
+            "double_pendulum": "h_ref=1e-4 source-policy self-reference",
+            "single_pendulum": "source-public final output policy; current local candidate uses h_ref=1e-3 and is floor limited"
+          },
+          "required_solver_policy": "record the nonlinear tolerance, failure policy, and Newton cap for every accepted row",
+          "required_step_policy": {
+            "double_pendulum": [
+              0.01,
+              0.002,
+              0.001
+            ],
+            "four_link": "T=3 true-dynamic source-policy row or explicit suite demotion",
+            "single_pendulum": [
+              0.01,
+              0.001,
+              0.0001
+            ],
+            "slider_crank": "T=3 true-dynamic source-policy row or explicit suite demotion"
+          },
+          "required_work_metrics": [
+            "wall_time_sec",
+            "total_newton_iterations",
+            "jacobian_or_colored_derivative_time_sec",
+            "linear_solve_time_sec_if_available"
+          ]
+        },
+        "source_identity_audit": "RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "source_output_mapping_verified": true,
+        "source_policy_1e_4_opt_in_required": true,
+        "source_policy_reproduction_rows_closed": 0,
+        "source_time_grid_policy_extracted": true,
+        "status": "public_baseline_rows_complete_promotion_blocked",
+        "suite_id": "ra2021_absolute_coordinate"
+      },
+      {
+        "candidate_full_T10_probe_finite_rows": 4,
+        "candidate_full_T10_probe_implemented": true,
+        "candidate_full_T10_probe_residual_ok_rows": 4,
+        "candidate_scaffold_present": true,
+        "candidate_source_policy_rows_closed": 0,
+        "plan_only_closes_b2": false,
+        "public_code_available": false,
+        "ready_to_launch": false,
+        "remaining_blockers": [
+          "no_distinct_public_tfe_code_artifact_found",
+          "paper_spec_proxy_self_reproduction_not_source_policy_equivalent",
+          "keep_tfe_attempted_not_reproducible_until_new_source_code_equivalent_artifact_appears"
+        ],
+        "representative_commands": [],
+        "same_test_acceptance_contract": {
+          "acceptance_tests": [
+            "no source-policy row is promoted from the paper-spec/proxy reconstruction",
+            "a future promotion would require a new source-code-equivalent public or author artifact",
+            "any future source-equivalent artifact would need the friction law, endpoint/output policy, reference, error norm, and work metrics bound to the same rows",
+            "candidate coarse or formula-only rows remain diagnostic and are not external-superiority evidence"
+          ],
+          "accepted_rows_closed_now": 0,
+          "baseline_methods": [
+            "TFE_m1",
+            "TFE_m2",
+            "TFE_m3",
+            "Newmark_beta",
+            "trapezoidal"
+          ],
+          "cases": [
+            "frictionless_pendulum",
+            "frictional_revolute_joint_pendulum"
+          ],
+          "contract_id": "tfe-source-pendulum-order-work-contract",
+          "horizon_policy": "T=10 source pendulum horizon with the source endpoint/output convention",
+          "local_method_under_test": "Gauss6/FullVA on the source pendulum DAE",
+          "plan_only_closes_b2": false,
+          "required_error_policy": "source coordinate and velocity error norms on the resolved source output grid",
+          "required_friction_policy": "Brown-McPhee friction must be source-code-equivalent; the current published-formula surrogate is a candidate only",
+          "required_reference_policy": "h_ref=1e-4 full-horizon source reference, not the current h_ref=0.0125 coarse candidate probe",
+          "required_solver_policy": "match or explicitly justify source nonlinear tolerance and iteration policy before row promotion",
+          "required_step_policy": "source-paper h grids for the no-friction and friction rows, with h_ref=1e-4 reference for exact reproduction",
+          "required_work_metrics": [
+            "wall_time_sec",
+            "newton_iterations",
+            "jacobian_time_sec",
+            "source_reference_time_sec"
+          ]
+        },
+        "self_reproduction_attempt_audit": "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json",
+        "self_reproduction_attempt_status": "attempted_not_reproducible_not_promoted",
+        "self_reproduction_attempted": true,
+        "source_policy_1e_4_opt_in_required": null,
+        "source_policy_t_end": 10.0,
+        "source_reference_h": 0.0001,
+        "status": "nonpublic_code_attempted_not_reproducible_not_launch_ready",
+        "suite_id": "tfe2026_original_pendulum"
+      }
+    ],
+    "run_v047_invoked": false,
+    "same_test_acceptance_contract_version": "same-test-source-policy-contract-v1",
+    "same_test_contract_closes_rows": false,
+    "schema": "b2-source-policy-closure-execution-plan-v1",
+    "source_policy_1e_4_requires_explicit_flag": true,
+    "suite_lanes": [],
+    "v048_runner_invoked": false
+  },
+  "demoted_flagged_row_count": 15,
+  "demoted_suite_counts": {
+    "hi2022_half_implicit": 3,
+    "ra2021_absolute_coordinate": 5,
+    "tfe2026_original_pendulum": 4,
+    "vp2024_velocity_partitioning": 3
+  },
+  "demoted_suites": [
+    "hi2022_half_implicit",
+    "ra2021_absolute_coordinate",
+    "tfe2026_original_pendulum",
+    "vp2024_velocity_partitioning"
+  ],
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "parallel_ready_shards_without_default_1e_4": 20,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim_allowed": false,
+  "external_superiority_ready_rows": 0,
+  "remaining_active_suites": [],
+  "route_b_b2_claim_boundary_synchronized": true,
+  "route_b_b2_closure_ready_pending_gate_sync": false,
+  "route_b_b4_claim_boundary_synchronized": true,
+  "route_b_b4_closure_ready_pending_gate_sync": false,
+  "row_count": 15,
+  "rows": [
+    {
+      "action": "demoted_after_incomplete_full_T8_source_policy_evidence",
+      "active_b2_requirement": false,
+      "b2_requirement": "hi2022_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "four_link",
+      "external_superiority_ready": false,
+      "method": "hi2022_rA",
+      "required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "row_index": 1,
+      "source_policy_closed": false,
+      "status": "closed_by_explicit_source_policy_demotion",
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "action": "demoted_after_incomplete_full_T8_source_policy_evidence",
+      "active_b2_requirement": false,
+      "b2_requirement": "hi2022_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "double_pendulum",
+      "external_superiority_ready": false,
+      "method": "hi2022_rA_half",
+      "required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "row_index": 2,
+      "source_policy_closed": false,
+      "status": "closed_by_explicit_source_policy_demotion",
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "action": "demoted_after_incomplete_full_T8_source_policy_evidence",
+      "active_b2_requirement": false,
+      "b2_requirement": "hi2022_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "four_link",
+      "external_superiority_ready": false,
+      "method": "hi2022_rA_half",
+      "required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "row_index": 3,
+      "source_policy_closed": false,
+      "status": "closed_by_explicit_source_policy_demotion",
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "action": "route_b_demoted_keep_public_baseline_and_common_reference_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "ra2021_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "ra2021_rA",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "row_index": 4,
+      "source_policy_closed": false,
+      "status": "closed_by_route_b_external_superiority_demotion",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "action": "route_b_demoted_keep_public_baseline_and_common_reference_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "ra2021_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "four_link",
+      "external_superiority_ready": false,
+      "method": "ra2021_rA",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "row_index": 5,
+      "source_policy_closed": false,
+      "status": "closed_by_route_b_external_superiority_demotion",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "action": "route_b_demoted_keep_public_baseline_and_common_reference_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "ra2021_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "ra2021_reps",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "row_index": 6,
+      "source_policy_closed": false,
+      "status": "closed_by_route_b_external_superiority_demotion",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "action": "route_b_demoted_keep_public_baseline_and_common_reference_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "ra2021_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "ra2021_rp",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "row_index": 7,
+      "source_policy_closed": false,
+      "status": "closed_by_route_b_external_superiority_demotion",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "action": "route_b_demoted_keep_public_baseline_and_common_reference_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "ra2021_public_code_same_test_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "double_pendulum",
+      "external_superiority_ready": false,
+      "method": "ra2021_rp",
+      "required_evidence": [
+        "local Gauss6 FullVA row under the same RA2021 source time-grid and dynamic policy",
+        "error norm and output policy bound to source-policy order rows",
+        "runtime/Newton-iteration policy tied to accepted source-policy order rows",
+        "rerun or independent verification artifact"
+      ],
+      "resolved_evidence": [
+        "source public code path and setup identity verified by RA2021_SOURCE_IDENTITY_AUDIT.json",
+        "body.r/body.dr/body.ddr output mapping verified from source",
+        "public endpoint time-grid convention extracted from source"
+      ],
+      "row_index": 8,
+      "source_policy_closed": false,
+      "status": "closed_by_route_b_external_superiority_demotion",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_formula_comparator_and_candidate_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "original_tfe_pendulum_error_order_work_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "tfe2026_Newmark_beta",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "row_index": 9,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_formula_comparator_and_candidate_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "original_tfe_pendulum_error_order_work_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "tfe2026_TFE_m1",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "row_index": 10,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_formula_comparator_and_candidate_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "original_tfe_pendulum_error_order_work_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "tfe2026_TFE_m2",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "row_index": 11,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_formula_comparator_and_candidate_diagnostics",
+      "active_b2_requirement": false,
+      "b2_requirement": "original_tfe_pendulum_error_order_work_rows",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "tfe2026_trapezoidal",
+      "required_evidence": [
+        "source-code-equivalent Brown--McPhee friction law, including transition velocity and coupling policy",
+        "monolithic absolute-coordinate source-policy DAE runner for frictionless and frictional cases",
+        "TFE/Newmark/trapezoidal and Gauss6/FullVA method runners under the same source reference/output policy",
+        "full T=10 endpoint/output policy for endpoint-incompatible published h rows",
+        "accepted work-precision row table binding error/order, runtime, and work metrics"
+      ],
+      "row_index": 12,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_proxy_diagnostic",
+      "active_b2_requirement": false,
+      "b2_requirement": "vp2024_code_resolution_or_demotion",
+      "demoted_from_external_superiority_scope": true,
+      "example": "single_pendulum",
+      "external_superiority_ready": false,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "required_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "row_index": 13,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_proxy_diagnostic",
+      "active_b2_requirement": false,
+      "b2_requirement": "vp2024_code_resolution_or_demotion",
+      "demoted_from_external_superiority_scope": true,
+      "example": "four_link",
+      "external_superiority_ready": false,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "required_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "row_index": 14,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "vp2024_velocity_partitioning"
+    },
+    {
+      "action": "attempted_not_reproducible_not_promoted_keep_proxy_diagnostic",
+      "active_b2_requirement": false,
+      "b2_requirement": "vp2024_code_resolution_or_demotion",
+      "demoted_from_external_superiority_scope": true,
+      "example": "slider_crank",
+      "external_superiority_ready": false,
+      "method": "vp2024_coordinate_partitioning_rA",
+      "required_evidence": [
+        "public velocity-partitioning code path",
+        "method identity separate from coordinate-partitioning proxy",
+        "source step-size/reference policy",
+        "order/runtime output policy",
+        "resolved rerun artifact or explicit suite demotion"
+      ],
+      "row_index": 15,
+      "source_policy_closed": false,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "vp2024_velocity_partitioning"
+    }
+  ],
+  "schema": "b2-source-policy-remaining-work-manifest-v1",
+  "source_files": {
+    "cmame_blocker_closure_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "external_case_evidence_reconciliation": "EXTERNAL_CASE_EVIDENCE_RECONCILIATION.json",
+    "external_same_test_run_queue": "EXTERNAL_SAME_TEST_RUN_QUEUE.json",
+    "external_suite_demotion_ledger": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+    "hi2022_policy_decision_audit": "HI2022_POLICY_DECISION_AUDIT.json",
+    "ra2021_source_identity_audit": "RA2021_SOURCE_IDENTITY_AUDIT.json",
+    "source_policy_row_closure_ledger": "SOURCE_POLICY_ROW_CLOSURE_LEDGER.json",
+    "source_policy_self_reproduction_attempt_audit": "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json",
+    "tfe_source_pendulum_model_audit": "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+    "tfe_source_policy_spec": "TFE_SOURCE_POLICY_SPEC.json",
+    "vp2024_code_path_disposition_audit": "VP2024_CODE_PATH_DISPOSITION_AUDIT.json"
+  },
+  "source_policy_closed_rows": 0,
+  "source_policy_external_superiority_allowed": false,
+  "status": "route_b_all_external_suites_demoted_no_active_external_superiority_rows",
+  "submission_ready": false,
+  "suite_counts": {
+    "hi2022_half_implicit": 3,
+    "ra2021_absolute_coordinate": 5,
+    "tfe2026_original_pendulum": 4,
+    "vp2024_velocity_partitioning": 3
+  },
+  "suite_summaries": [
+    {
+      "active_flagged_rows": 0,
+      "b2_requirement": "ra2021_public_code_same_test_rows",
+      "can_parallelize": true,
+      "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+      "demoted_flagged_rows": 5,
+      "flagged_rows": 5,
+      "next_action": "keep as bounded public-code/common-reference diagnostic outside external-superiority scope",
+      "parallel_shard_count": 12,
+      "public_baseline_order_groups_completed": 12,
+      "public_baseline_order_groups_required": 12,
+      "public_timing_rows_completed": 12,
+      "public_timing_rows_required": 12,
+      "queue_batch": "ra2021_coarse_same_window_order_time",
+      "source_identity_audit": "RA2021_SOURCE_IDENTITY_AUDIT.json",
+      "source_identity_audit_status": "source_output_time_grid_policy_extracted_promotion_still_open",
+      "source_output_mapping_verified": true,
+      "source_policy_reproduction_rows_closed_by_identity_audit": 0,
+      "source_time_grid_policy_extracted": true,
+      "status": "closed_by_route_b_external_superiority_demotion",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "accepted_for_external_superiority": false,
+      "active_flagged_rows": 0,
+      "b2_requirement": "hi2022_public_code_same_test_rows",
+      "bounded_T0p1_rows": 24,
+      "bounded_T0p1_rows_ok": 24,
+      "can_parallelize": false,
+      "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+      "demoted_flagged_rows": 3,
+      "flagged_rows": 3,
+      "full_T8_policy_completed": false,
+      "next_action": "keep as bounded diagnostic only after incomplete T=8 source-policy evidence",
+      "parallel_shard_count": 8,
+      "queue_batch": "hi2022_halfimplicit_full_policy_decision",
+      "status": "closed_by_explicit_source_policy_demotion",
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "active_flagged_rows": 0,
+      "b2_requirement": "original_tfe_pendulum_error_order_work_rows",
+      "can_parallelize": false,
+      "candidate_full_T10_probe_finite_rows": 4,
+      "candidate_full_T10_probe_implemented": true,
+      "candidate_full_T10_probe_residual_ok_rows": 4,
+      "candidate_full_T10_probe_source_policy_rows": 0,
+      "candidate_scaffold_present": true,
+      "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+      "demoted_flagged_rows": 4,
+      "flagged_rows": 4,
+      "next_action": "keep as formal-order comparator and candidate diagnostic outside external-superiority scope",
+      "parallel_shard_count": 0,
+      "queue_batch": "tfe2026_original_pendulum_encoding",
+      "runner_implemented": false,
+      "source_policy_rows_completed": 0,
+      "source_policy_spec_extracted": true,
+      "source_reference_h": 0.0001,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "tfe2026_original_pendulum"
+    },
+    {
+      "active_flagged_rows": 0,
+      "b2_requirement": "vp2024_code_resolution_or_demotion",
+      "can_parallelize": false,
+      "code_path_resolved": false,
+      "demoted_by": "EXTERNAL_SUITE_DEMOTION_LEDGER.json",
+      "demoted_flagged_rows": 3,
+      "demoted_source_policy_rows": 4,
+      "final_nonpublic_code_disposition": "unable_to_reproduce_not_promoted",
+      "flagged_rows": 3,
+      "full_source_policy_rows": 4,
+      "next_action": "keep proxy evidence diagnostic; full VP source-policy rows are unable-to-reproduce/not-promoted until a new source-code-equivalent artifact appears",
+      "parallel_shard_count": 0,
+      "queue_batch": "vp2024_velocity_partitioning_code_resolution",
+      "self_reproduction_attempted_rows": 4,
+      "source_policy_code_path_unresolved_rows": 4,
+      "status": "closed_by_attempted_not_reproducible_route_b_external_superiority_demotion",
+      "suite_id": "vp2024_velocity_partitioning",
+      "unable_to_reproduce_rows": 4
+    }
+  ]
+}

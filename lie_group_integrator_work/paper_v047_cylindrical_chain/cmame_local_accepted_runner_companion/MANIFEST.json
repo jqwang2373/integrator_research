@@ -1,0 +1,86 @@
+{
+  "candidate_file_count": 2,
+  "candidate_python_file_count": 1,
+  "candidate_python_line_count": 150,
+  "copies_runner_source": false,
+  "exact_b4_opt_in_required_for_execution": true,
+  "files": [
+    {
+      "bytes": 1353,
+      "path": "README.md",
+      "role": "companion_readme",
+      "sha256": "35e0e736030ff73ee4cc2d41535e50cda95877fec0ca06c5bc9c47e9efc8515e"
+    },
+    {
+      "bytes": 6291,
+      "path": "scripts/run_local_accepted_runner_companion.py",
+      "python_lines": 150,
+      "role": "local_accepted_runner_launcher",
+      "sha256": "8e3d7dadb75513773de4dfe3bb32c3e79883485333a3133b792dcaa131bca463"
+    }
+  ],
+  "full_source_policy_runner_package_ready": false,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "launcher_passed": true,
+  "local_accepted_rows_runner_available": true,
+  "local_rows": 12,
+  "minimal_replay_boundary_preserved": true,
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "package_dir": "cmame_local_accepted_runner_companion",
+  "replay_only_examples": [],
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "reviewer_facing_python_file_limit": 12,
+  "reviewer_facing_python_line_limit": 2000,
+  "runner_commands": [
+    "cmame_minimal_reproducibility_candidate/scripts/replay_paper_matrix.py",
+    "cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+    "cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+    "cmame_closed_loop_local_runner_candidate/scripts/run_closed_loop_fullva_candidate.py"
+  ],
+  "runner_summaries": {
+    "closed_loop_models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "closed_loop_rows": 6,
+    "double_pendulum_rows": 3,
+    "double_position_order": 6.01071161969125,
+    "single_pendulum_rows": 3,
+    "single_position_order": 6.013317461143006
+  },
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "schema": "cmame-local-accepted-runner-companion-v1",
+  "self_contained_examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "source_policy_closed_rows": 0,
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_handoff": {
+    "commands_not_run_by_handoff": true,
+    "driver_does_not_authorize_execution": true,
+    "driver_requires_exact_approval": true,
+    "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "execution_authorized": false,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+    "terminal_unable_to_reproduce_rows": 20
+  },
+  "source_policy_execution_invoked": false,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_total_rows": 40,
+  "status": "local_accepted_runner_companion_ready_source_policy_package_open",
+  "submission_ready": false,
+  "uses_existing_self_contained_runner_candidates": true
+}

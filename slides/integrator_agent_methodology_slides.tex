@@ -1,0 +1,477 @@
+\documentclass[aspectratio=169,10pt]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+
+\graphicspath{{../lie_group_integrator_work/paper_v047_cylindrical_chain/figures/}}
+
+\definecolor{UWRed}{HTML}{C00000}
+\definecolor{DarkText}{HTML}{222222}
+\definecolor{MutedText}{HTML}{666666}
+\definecolor{LightBG}{HTML}{F4F5F7}
+\definecolor{MidLine}{HTML}{D9DDE3}
+\definecolor{BlueAccent}{HTML}{4472C4}
+\definecolor{GreenAccent}{HTML}{2E7D32}
+\definecolor{OrangeAccent}{HTML}{ED7D31}
+\definecolor{PurpleAccent}{HTML}{7A4EA3}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}{\color{UWRed}\rule{0.6ex}{0.6ex}}
+\setbeamertemplate{frametitle}{%
+  \vspace{0.25cm}
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.62cm,rightskip=0.62cm]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+  \vspace{-0.05cm}
+  {\color{UWRed}\hspace{0.62cm}\rule{0.86\paperwidth}{0.6pt}}
+}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,leftskip=0.62cm]{footline}%
+      \scriptsize\color{MutedText}06/09/2026
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.34\paperwidth,ht=2.5ex,dp=1ex,center]{footline}%
+      \scriptsize\color{MutedText}University of Wisconsin - Madison
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.33\paperwidth,ht=2.5ex,dp=1ex,rightskip=0.62cm plus1fil]{footline}%
+      \scriptsize\color{MutedText}\insertframenumber
+    \end{beamercolorbox}%
+  }%
+}
+
+\setbeamercolor{normal text}{fg=DarkText,bg=white}
+\setbeamercolor{frametitle}{fg=DarkText,bg=white}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Large}
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{size=\normalsize}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\smallnote}[1]{\vspace{0.12cm}{\scriptsize\color{MutedText}#1}}
+\newcommand{\tightfig}[2]{\includegraphics[width=#1,height=#2,keepaspectratio]}
+\newcommand{\panel}[2]{%
+  \begingroup
+  \setlength{\fboxsep}{0.16cm}%
+  \colorbox{LightBG}{\begin{minipage}{#1}#2\end{minipage}}%
+  \endgroup
+}
+\newcommand{\colorpanel}[3]{%
+  \begingroup
+  \setlength{\fboxsep}{0.16cm}%
+  \colorbox{#1}{\begin{minipage}{#2}#3\end{minipage}}%
+  \endgroup
+}
+\newcommand{\badge}[2]{\colorbox{#1}{\strut\hspace{0.35em}\color{white}\bfseries #2\hspace{0.35em}}}
+
+\title{Building an Auto-Research Agent\\for Integrator Research}
+\subtitle{Verifier sandboxes, proof gates, and numerical test ladders for Lie-group multibody DAE methods}
+\author{Jingquan Wang\\Simulation-Based Engineering Laboratory}
+\institute{University of Wisconsin - Madison}
+\date{06/09/2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \vspace*{0.25cm}
+  \hspace*{0.62cm}{\color{UWRed}\rule{0.09cm}{1.35cm}}\hspace{0.35cm}
+  \begin{minipage}[t]{0.82\paperwidth}
+    {\usebeamerfont{title}Building an Auto-Research Agent for Integrator Research\par}
+    \vspace{0.15cm}
+    {\color{MutedText}Verifier sandboxes, proof gates, and numerical test ladders for Lie-group multibody DAE methods\par}
+    \vspace{0.20cm}
+    {\small Jingquan Wang \quad|\quad Simulation-Based Engineering Laboratory \quad|\quad University of Wisconsin - Madison}
+    \hfill{\small\color{UWRed}\bfseries 06/09/2026}
+  \end{minipage}
+
+  \vspace{0.18cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.27\paperheight}{method_stage_architecture.png}
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.27\paperheight}{convergence.png}
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.27\paperheight}{asme_lower_pair_graph_bridge.png}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.08cm}
+  \centering
+  \tightfig{0.78\linewidth}{0.15\paperheight}{claim_boundary_limitations.png}
+\end{frame}
+
+\begin{frame}{Why this matters in our lab}
+  \centering
+  {\large Many people are attacking the same hard object:}
+
+  \vspace{0.25cm}
+  \colorpanel{LightBG}{0.55\linewidth}{\centering\Large\bfseries defensible multibody\\time integration}
+
+  \vspace{0.35cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.19\textwidth}
+      \panel{\linewidth}{\centering\color{BlueAccent}\bfseries Lie groups\\\scriptsize SO(3), SE(3), charts}
+    \end{column}
+    \begin{column}{0.19\textwidth}
+      \panel{\linewidth}{\centering\color{GreenAccent}\bfseries DAE mechanisms\\\scriptsize joints, drivers, reactions}
+    \end{column}
+    \begin{column}{0.19\textwidth}
+      \panel{\linewidth}{\centering\color{OrangeAccent}\bfseries friction/contact\\\scriptsize smooth vs nonsmooth tests}
+    \end{column}
+    \begin{column}{0.19\textwidth}
+      \panel{\linewidth}{\centering\color{PurpleAccent}\bfseries sparse solvers\\\scriptsize AD, coloring, Newton}
+    \end{column}
+    \begin{column}{0.19\textwidth}
+      \panel{\linewidth}{\centering\color{UWRed}\bfseries papers\\\scriptsize benchmarks, claims, refs}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+  \colorpanel{LightBG}{0.92\linewidth}{\centering
+  Agent purpose: keep method identity, examples, proof status, and paper claims synchronized across this shared evidence space.}
+\end{frame}
+
+\begin{frame}{Reference landscape drives the verifier design}
+  \scriptsize
+  \begin{tabularx}{\linewidth}{>{\bfseries\color{UWRed}}p{0.18\linewidth}Y Y}
+    \toprule
+    stream & references & agent obligation \\
+    \midrule
+    index-3 DAE & Hairer-Wanner; Gear-Leimkuhler-Gupta & check $\Phi$, $\Phi_q v$, $\Phi_q a$, and multipliers \\
+    Lie-group time integration & Munthe-Kaas; Bruls-Cardona-Arnold; Wieloch-Arnold & preserve rotation geometry and method identity \\
+    time finite elements & Borri-Atluri; Hughes-Hulbert; Chaturvedi-Sandu-Sandu & separate source residual reproduction from local method claims \\
+    SBEL baselines & Taves-Kissel-Negrut; Kissel-Negrut-Taves; Fang et al. & make external rows comparable under explicit policy \\
+    friction/contact & Brown-McPhee; Stewart-Trinkle; Anitescu-Potra & separate smooth order from nonsmooth diagnostics \\
+    \bottomrule
+  \end{tabularx}
+\end{frame}
+
+\begin{frame}{Why v001 had to become v048}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \scriptsize
+      \begin{tabularx}{\linewidth}{>{\bfseries\color{UWRed}}p{0.22\linewidth}Y}
+        v001-005 & SO(3) order \\
+        v006-013 & DAE closure \\
+        v014-022 & friction smoothness boundary \\
+        v023-029 & FullVA from endpoint consistency failures \\
+        v030-045 & sparse scaling and colored AD \\
+        v046-048 & ASME examples, proof ledger, external same-test policy \\
+      \end{tabularx}
+
+      \vspace{0.35cm}
+      \panel{\linewidth}{\bfseries Evolution rule.\par
+      Each version exists because the previous verifier found a missing gate. The agent is a blocker-driven research controller, not a generic code loop.}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.70\paperheight}{all_method_result_matrix.png}
+      \smallnote{Evidence matrix used to keep version status and claim status aligned.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{The agent we need}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.24\textwidth}
+      \panel{\linewidth}{\centering\color{UWRed}\bfseries MethodSpec\\\scriptsize what one-step map is claimed}
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \panel{\linewidth}{\centering\color{BlueAccent}\bfseries ProblemSpec\\\scriptsize mechanisms and parameters}
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \panel{\linewidth}{\centering\color{GreenAccent}\bfseries EvidenceSpec\\\scriptsize CSV, JSON, plots, validators}
+    \end{column}
+    \begin{column}{0.24\textwidth}
+      \panel{\linewidth}{\centering\color{OrangeAccent}\bfseries ClaimSpec\\\scriptsize accepted, diagnostic, open, forbidden}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.65cm}
+  \centering
+  \badge{UWRed}{generate}\quad
+  {\color{UWRed}\bfseries >}\quad
+  \badge{BlueAccent}{sandbox}\quad
+  {\color{BlueAccent}\bfseries >}\quad
+  \badge{GreenAccent}{prove}\quad
+  {\color{GreenAccent}\bfseries >}\quad
+  \badge{OrangeAccent}{test}\quad
+  {\color{OrangeAccent}\bfseries >}\quad
+  \badge{DarkText}{write}
+
+  \vspace{0.75cm}
+  \colorpanel{LightBG}{0.85\linewidth}{\centering
+  Human role: choose the research direction. Agent role: enforce gates before claims move.}
+\end{frame}
+
+\begin{frame}{Method object: the agent cannot verify a moving target}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.30\textwidth}
+      \panel{\linewidth}{
+      {\color{UWRed}\Large\bfseries For v047}\par\vspace{0.25cm}
+      \begin{itemize}
+        \item 3 Gauss stages
+        \item 132 FullVA rows
+        \item position, velocity, acceleration constraints
+        \item endpoint closure audited separately
+        \item solver tolerance is a theorem gate
+      \end{itemize}
+      \vspace{0.15cm}
+      {\color{OrangeAccent}\bfseries Non-claim:} full source-paper TFE replacement unless its own residual gate closes.}
+    \end{column}
+    \begin{column}{0.68\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.70\paperheight}{method_stage_architecture.png}
+      \smallnote{The method architecture is also the verifier target.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Verifier sandbox: constrain what the agent can run}
+  \begin{tabularx}{\linewidth}{>{\bfseries\color{UWRed}}p{0.11\linewidth}p{0.27\linewidth}Y}
+    \toprule
+    level & sandbox & allowed question \\
+    \midrule
+    L0 & read-only validators & Do current paper, package, proof, and claim artifacts agree? \\
+    L1 & target audit & Can one bounded hypothesis falsify this local gap? \\
+    L2 & full generator & After method-code changes, do version-wide artifacts regenerate consistently? \\
+    L3 & external source-policy & Under public same-test policy and opt-in, do external rows close? \\
+    \bottomrule
+  \end{tabularx}
+
+  \vspace{0.65cm}
+  \colorpanel{LightBG}{0.92\linewidth}{\centering
+  Promotion rule: outputs move upward only when the lower sandbox cannot answer the claim question.}
+\end{frame}
+
+\begin{frame}{Proof sandbox: only gated facts enter the theorem}
+  \scriptsize
+  \begin{tabularx}{\linewidth}{>{\bfseries\color{UWRed}}p{0.08\linewidth}Y}
+    \toprule
+    ID & obligation \\
+    \midrule
+    P1 & smooth chart and FullVA lift \\
+    P2 & regular stage Jacobian and compact branch \\
+    P3 & implemented residual defect $O(h^7)$ \\
+    P4 & endpoint closure perturbation $O(h^7)$ \\
+    P5 & Newton-Euler dynamic rows discharged \\
+    P6 & solver residual $\eta_h \le c h^7$ \\
+    P7 & residual-to-error theorem for surrogate rows \\
+    \bottomrule
+  \end{tabularx}
+
+  \vspace{0.35cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \panel{\linewidth}{{\color{GreenAccent}\bfseries Accepted lane}\par
+      direct residual bridge; AD row identity; Newton-Euler substitution; conditional sixth-order claim}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \panel{\linewidth}{{\color{OrangeAccent}\bfseries Diagnostic lane}\par
+      fixed tolerance logs; primitive Taylor fragments; external source-policy rows; residual-only rows}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.25cm}
+  \centering{\color{UWRed}\bfseries The ledger tells the agent what not to say.}
+\end{frame}
+
+\begin{frame}{Numerical ladder: examples expose different failure modes}
+  \centering
+  \begin{tabular}{>{\bfseries\color{white}}c p{0.55\linewidth}}
+    \colorbox{UWRed}{\strut 6} & external same-test \\
+    \colorbox{OrangeAccent}{\strut 5} & ASME mechanisms \\
+    \colorbox{BlueAccent}{\strut 4} & friction regimes \\
+    \colorbox{GreenAccent}{\strut 3} & constrained DAE \\
+    \colorbox{PurpleAccent}{\strut 2} & smooth mechanics \\
+    \colorbox{DarkText}{\strut 1} & SO(3) kinematics \\
+  \end{tabular}
+
+  \vspace{0.55cm}
+  \panel{0.86\linewidth}{\centering
+  Acceptance evidence: at least three $h$ values, pinned reference policy, CSV/JSON/plot trail, and claim role.}
+\end{frame}
+
+\begin{frame}{Case evidence: smooth order verifier}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.64\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.70\paperheight}{convergence.png}
+      \smallnote{v047 smooth cylindrical-chain convergence.}
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \panel{\linewidth}{
+      {\color{UWRed}\Large\bfseries Accepted local method claim}\par\vspace{0.25cm}
+      \begin{itemize}
+        \item Gauss6 / FullVA
+        \item conditional sixth-order path
+        \item observed slopes about 7.16 / 7.07
+        \item not an external superiority claim
+      \end{itemize}
+      \vspace{0.15cm}
+      {\color{OrangeAccent}\bfseries Boundary:} preserve this wording exactly.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Mechanism verifier: ASME lower-pair examples}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.70\paperheight}{asme_lower_pair_graph_bridge.png}
+      \smallnote{Lower-pair graph bridge.}
+    \end{column}
+    \begin{column}{0.51\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.31\paperheight}{asme_closed_loop_kinematic_fullva.png}\\[0.2cm]
+      \tightfig{\linewidth}{0.31\paperheight}{closed_loop_true_dynamic_order.png}
+      \smallnote{Closed-loop kinematic coverage and dynamic-order staging.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Endpoint closure is its own sandbox}
+  \centering
+  \tightfig{0.95\linewidth}{0.40\paperheight}{endpoint_kkt_closure.png}
+
+  \vspace{0.35cm}
+  \colorpanel{LightBG}{0.92\linewidth}{
+  {\color{OrangeAccent}\bfseries Why it matters.}
+  A projection can make constraints look clean while changing the one-step map.
+  The agent cannot hide that inside an order claim.}
+\end{frame}
+
+\begin{frame}{Caveats are first-class evidence}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.46\paperheight}{friction_smoothness_sweep.png}
+      \smallnote{Friction smoothness boundary.}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.46\paperheight}{sparse_speed_gap.png}
+      \smallnote{Sparse correctness versus sparse speed.}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.35cm}
+  \panel{0.92\linewidth}{
+  {\color{UWRed}\bfseries Agent behavior.}
+  Do not delete caveats. Promote smooth-order evidence, and demote sharp-friction and runtime caveats to their correct claim lanes.}
+\end{frame}
+
+\begin{frame}{Search strategy: negative results guide the next verifier}
+  \centering
+  \tightfig{0.95\linewidth}{0.31\paperheight}{order_closure_blend.png}
+
+  \vspace{0.2cm}
+  \tightfig{0.95\linewidth}{0.31\paperheight}{velocity_compression.png}
+
+  \smallnote{Terminal closure, source freedom, order preservation, span, rank, and residual are recorded separately.}
+\end{frame}
+
+\begin{frame}{External comparison remains bounded}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.49\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.45\paperheight}{strict_common_reference_work_precision.png}
+      \smallnote{Common-reference work/precision.}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.45\paperheight}{tfe_algorithm_literal_work_precision.png}
+      \smallnote{Literal TFE algorithm diagnostics.}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.35cm}
+  \colorpanel{LightBG}{0.92\linewidth}{
+  {\color{UWRed}\bfseries Boundary.}
+  v048 provides same-test scaffolds, but source-policy external superiority remains false until strict public campaigns close.}
+\end{frame}
+
+\begin{frame}{Claim state machine}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.63\textwidth}
+      \centering
+      \tightfig{\linewidth}{0.70\paperheight}{claim_boundary_limitations.png}
+    \end{column}
+    \begin{column}{0.34\textwidth}
+      \badge{DarkText}{hypothesis}\\[0.25cm]
+      \badge{BlueAccent}{diagnostic}\\[0.25cm]
+      \badge{GreenAccent}{accepted}\\[0.25cm]
+      \badge{OrangeAccent}{open}\\[0.25cm]
+      \badge{UWRed}{forbidden}
+
+      \vspace{0.55cm}
+      \panel{\linewidth}{A claim can move backward when a validator exposes stale prose or unfair policy.}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{How to build this agent for our integrator work}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.32\textwidth}
+      \panel{\linewidth}{\badge{UWRed}{1}\quad\bfseries encode MethodSpec}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \panel{\linewidth}{\badge{BlueAccent}{2}\quad\bfseries pin ProblemSpec}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \panel{\linewidth}{\badge{GreenAccent}{3}\quad\bfseries choose sandbox level}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.45cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.32\textwidth}
+      \panel{\linewidth}{\badge{OrangeAccent}{4}\quad\bfseries run numerical ladder}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \panel{\linewidth}{\badge{DarkText}{5}\quad\bfseries update proof ledger}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \panel{\linewidth}{\badge{UWRed}{6}\quad\bfseries gate paper claims}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.75cm}
+  \colorpanel{LightBG}{0.88\linewidth}{\centering
+  Good autonomy here means fewer unverified claims, not fewer human research decisions.}
+\end{frame}
+
+\begin{frame}{References used by the agent design}
+  \scriptsize
+  \begin{tabularx}{\linewidth}{>{\bfseries\color{UWRed}}p{0.20\linewidth}Y}
+    \toprule
+    DAE / Lie groups &
+    Hairer \& Wanner 1996; Gear, Leimkuhler \& Gupta 1985; Munthe-Kaas 1998/1999; Bruls, Cardona \& Arnold 2012; Wieloch \& Arnold 2021. \\
+    \midrule
+    TFE / higher order &
+    Chaturvedi, Sandu \& Sandu 2026, doi:10.1007/s11044-026-10153-w; Kim \& Reddy 2017; Borri \& Atluri 1988; Hughes \& Hulbert 1988; Bauchau 2024. \\
+    \midrule
+    SBEL baselines &
+    Taves, Kissel \& Negrut 2020; Kissel, Negrut \& Taves 2021/2022; Fang et al. 2023; Kissel, Bakke \& Negrut 2024. \\
+    \midrule
+    Friction/contact &
+    Brown \& McPhee 2016; Stewart \& Trinkle 1996; Anitescu \& Potra 1997; Tasora \& Anitescu 2011. \\
+    \midrule
+    Local artifacts &
+    main\_cmame.tex bibliography; REFERENCE\_METADATA\_AUDIT.md/json; CURRENT\_PIPELINE\_CONTRACT.md; ORDER\_PROOF\_LEDGER.md; summary\_v047.json; v048 same-test scaffolds. \\
+    \bottomrule
+  \end{tabularx}
+
+  \vspace{0.35cm}
+  \smallnote{Reference metadata audit status: 28 references; 16/16 DOI rows verified; 12/12 local non-DOI rows verified.}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,5 @@
+paper_method,source_method,expected_order,t_final,reference_h,comparison_h,velocity_order_text,coordinate_order_text,finest_h,finest_velocity_error,finest_coordinate_error,max_newton_residual_norm,source_policy_row_completed,accepted_use
+tfe2026_Newmark_beta,Newmark_beta,2,10.0,0.0125,"[0.1, 0.05, 0.025]","1.991, 1.998","2.028, 2.007",0.025,0.004641850782248991,0.0019561639512457596,9.964575016662981e-13,False,full_T10_coarse_candidate_probe_not_source_policy
+tfe2026_TFE_m1,TFE_m1,1,10.0,0.0125,"[0.1, 0.05, 0.025]","1.276, -0.077","2.623, 5.795",0.025,0.006800503489656107,5.225571554889896e-05,9.086065233532281e-13,False,full_T10_coarse_candidate_probe_not_source_policy
+tfe2026_TFE_m2,TFE_m2,3,10.0,0.0125,"[0.1, 0.05, 0.025]","2.927, 2.952","2.694, 2.824",0.025,2.3747224864312244e-06,3.346023156325373e-07,3.3458397372908554e-11,False,full_T10_coarse_candidate_probe_not_source_policy
+tfe2026_trapezoidal,trapezoidal,2,10.0,0.0125,"[0.1, 0.05, 0.025]","1.993, 1.998","2.021, 2.005",0.025,0.003558196030236882,0.0015041501361783283,9.774845057279062e-13,False,full_T10_coarse_candidate_probe_not_source_policy

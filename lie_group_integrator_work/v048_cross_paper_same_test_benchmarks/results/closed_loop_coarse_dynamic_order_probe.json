@@ -1,0 +1,39 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "failed_row_count": 1,
+  "failed_rows": [
+    {
+      "h": 0.1,
+      "method": "rA-public-dynamics",
+      "model": "slider_crank",
+      "status": "failed:ValueError:array must not contain infs or NaNs"
+    }
+  ],
+  "interpretation": "This coarse probe uses h=0.1|0.05|0.025 to test the user's large-step diagnostic idea without running default 1e-4 rows. It is not promoted to accepted dynamic order because the local closed-loop method row is still the kinematic FullVA plus reaction reconstruction policy.",
+  "local_acceleration_evidence_rows": 2,
+  "local_method_count": 2,
+  "local_position_floor_rows": 2,
+  "local_velocity_evidence_rows": 2,
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "next_gate": "Add a true local dynamic trajectory/order row for four_link and slider_crank, or prove a reviewer-defensible residual-to-error acceptance theorem for the kinematic/reaction row.",
+  "ok_row_count": 11,
+  "policy": "ra2021_closed_loop_coarse_dynamic_order_probe_no_default_1e-4",
+  "public_failed_row_count": 1,
+  "public_method_count": 2,
+  "reference_h": 0.0125,
+  "row_count": 12,
+  "same_test_campaign_status": "not_run",
+  "schema": "closed-loop-coarse-dynamic-order-probe-v1",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "t_end": 0.2,
+  "work_summary_row_count": 4
+}

@@ -1,0 +1,80 @@
+{
+  "accepted_dynamic_order_count": 2,
+  "closure_paths": {
+    "broader_external_suite_closure": "required_for_external_superiority",
+    "public_work_precision_rows": "available_with_reference_caveat",
+    "publication_quality_figure_integration": "required_for_external_superiority",
+    "residual_to_error_theorem": "alternative_not_required_for_local_order",
+    "strict_common_reference_error_columns": "available_not_external_superiority",
+    "true_dynamic_trajectory_rows": "closed_by_non_oracle_newton_coarse_order"
+  },
+  "coarse_first_dynamic_order_missing": 0,
+  "coarse_first_public_work_precision_available": 2,
+  "coarse_first_public_work_precision_missing": 0,
+  "coarse_first_ready_examples": 2,
+  "coarse_first_strict_common_reference_available": 2,
+  "coarse_first_strict_common_reference_figure_available": true,
+  "coarse_first_strict_common_reference_gap": 0,
+  "coarse_probe_ok_rows": 11,
+  "coarse_probe_public_failed_rows": 1,
+  "coarse_probe_row_count": 12,
+  "coarse_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "convergence_sweep_run": true,
+  "current_proxy_artifacts": [
+    "closed_loop_surrogate_dynamic_gate.csv",
+    "closed_loop_dynamic_error_floor_audit.csv",
+    "closed_loop_coarse_dynamic_order_probe_rows.csv",
+    "closed_loop_coarse_dynamic_order_probe_work_precision_summary.csv",
+    "closed_loop_true_dynamic_newton_coarse_order_rows.csv",
+    "closed_loop_true_dynamic_public_work_precision_rows.csv",
+    "closed_loop_true_dynamic_public_work_precision_summary.csv",
+    "closed_loop_true_dynamic_public_work_precision.json",
+    "closed_loop_true_dynamic_strict_common_reference_rows.csv",
+    "closed_loop_true_dynamic_strict_common_reference_summary.csv",
+    "closed_loop_true_dynamic_strict_common_reference.json",
+    "closed_loop_true_dynamic_strict_common_reference_work_precision.png"
+  ],
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "full_tfe_stage_replacement_required_for_this_gate": false,
+  "interpretation": "The order of a true smooth Gauss6/FullVA dynamic trajectory row is theorem-backed as six. The new non-oracle Newton coarse-order rows close the local four_link/slider_crank dynamic-order gap. Same-window public work/precision rows and strict common-reference error columns are now available, but external superiority remains open until publication-quality figure integration and broader external-suite decisions are added.",
+  "method_order_theorem": {
+    "accepted_method": "Gauss6/FullVA",
+    "finite_run_min_position_velocity_order_to_accept": 5.0,
+    "global_order": 6,
+    "requires_non_floor_limited_position_velocity_errors": true
+  },
+  "missing_dynamic_order_models": [],
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "public_work_precision_available_count": 2,
+  "public_work_precision_available_models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "public_work_precision_missing_count": 0,
+  "public_work_precision_missing_models": [],
+  "reference_h": 0.0125,
+  "schema": "closed-loop-dynamic-order-closure-contract-v1",
+  "stage_oracle_used": false,
+  "strict_common_reference_available_count": 2,
+  "strict_common_reference_available_models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "strict_common_reference_error_columns": true,
+  "strict_common_reference_figure_available": true,
+  "strict_common_reference_gap_count": 0,
+  "strict_common_reference_gap_models": [],
+  "strict_public_policy_1e-4_required": false,
+  "submission_ready": false,
+  "t_end": 0.1,
+  "true_dynamic_local_row_count": 6,
+  "true_dynamic_local_rows_available": 2
+}

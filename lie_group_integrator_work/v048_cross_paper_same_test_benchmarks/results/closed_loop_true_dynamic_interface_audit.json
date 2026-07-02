@@ -1,0 +1,30 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "do_step_called": false,
+  "dynamic_setup_ok_count": 2,
+  "dynamic_setup_required_count": 2,
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "The real public/v046 dynamic setup interfaces are available for both closed-loop models. The missing implementation is the local Gauss6/FullVA dynamic DAE stepper, not another 1e-4 public-policy run.",
+  "kinematic_setup_ok_count": 2,
+  "local_gauss6_dynamic_runner_exists": false,
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "modes": [
+    "kinematics",
+    "dynamics"
+  ],
+  "public_do_dynamics_step_available": true,
+  "public_dynamic_setup_available": true,
+  "required_next_runner": "local_closed_loop_dynamic_dae_gauss6_fullva_runner",
+  "row_count": 4,
+  "row_plan_count": 24,
+  "row_plan_schema": "closed-loop-true-dynamic-local-row-plan-v1",
+  "schema": "closed-loop-true-dynamic-interface-audit-v1",
+  "status": "setup_level_interface_verified_no_trajectory_run",
+  "strict_public_policy_1e-4_required": false
+}

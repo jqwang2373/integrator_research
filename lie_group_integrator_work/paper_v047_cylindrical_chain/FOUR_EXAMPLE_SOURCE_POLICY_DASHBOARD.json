@@ -1,0 +1,178 @@
+{
+  "accepted_method_dynamic_order_example_count": 2,
+  "accepted_method_dynamic_order_examples": [
+    "single_pendulum",
+    "double_pendulum"
+  ],
+  "accepted_source_policy_dynamic_order_examples": 0,
+  "all_four_examples_checked": true,
+  "closed_loop_coarse_dynamics_diagnostic_example_names": [
+    "four_link",
+    "slider_crank"
+  ],
+  "closed_loop_coarse_dynamics_diagnostic_examples": 2,
+  "closed_loop_true_dynamic_order_artifact": "v048_cross_paper_same_test_benchmarks/results/closed_loop_dynamic_order_closure_contract.json",
+  "closed_loop_true_dynamic_order_closed_example_names": [
+    "four_link",
+    "slider_crank"
+  ],
+  "closed_loop_true_dynamic_order_closed_examples": 2,
+  "closed_loop_true_dynamic_reference_h": 0.0125,
+  "closed_loop_true_dynamic_rows": 6,
+  "closed_loop_true_dynamic_stage_oracle_used": false,
+  "closed_loop_true_dynamic_step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "common_reference_cells": 44,
+  "common_reference_local_error_wins": 40,
+  "common_reference_local_order_wins": 40,
+  "common_reference_nonlocal_cells": 40,
+  "default_1e_4_required": false,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "The bounded common-reference matrix covers all four examples and all runnable methods. It supports the finite-grid common-reference order/error diagnostic. Separately, all four examples now have local evidence coverage: single/double from accepted method-side dynamic-order rows and four/slider from non-oracle closed-loop coarse-dynamics diagnostic rows. This still does not close source-policy external dynamic-order evidence for any of the four examples and does not allow an external-superiority claim.",
+  "local_dynamic_order_closed_example_names": [
+    "single_pendulum",
+    "double_pendulum"
+  ],
+  "local_dynamic_order_closed_examples": 2,
+  "local_dynamic_order_status": "accepted_method_dynamic_order_2_of_4_source_policy_external_open",
+  "local_evidence_coverage_example_names": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "local_evidence_coverage_examples": 4,
+  "local_evidence_coverage_status": "all_four_examples_local_evidence_present_source_policy_dynamic_order_open",
+  "mechanism_coverage_example_count": 2,
+  "mechanism_coverage_examples": [
+    "four_link",
+    "slider_crank"
+  ],
+  "method_side_order_gate_examples": [
+    "single_pendulum",
+    "double_pendulum"
+  ],
+  "nonlocal_source_policy_closed_rows": 0,
+  "paper_direct_error_superiority_allowed": false,
+  "row_count": 4,
+  "rows": [
+    {
+      "accepted_internal_role": "accepted_dynamic_order_example",
+      "accepted_source_policy_dynamic_order": false,
+      "closed_loop_coarse_dynamics_diagnostic": false,
+      "common_reference_local_error_wins": 10,
+      "common_reference_local_order_wins": 10,
+      "common_reference_nonlocal_rows": 10,
+      "example": "single_pendulum",
+      "local_dynamic_order_accepted": true,
+      "local_dynamic_order_artifact": "ORDER_ACCEPTANCE_GATE.json",
+      "local_dynamic_order_layer": "method_side_order_gate",
+      "local_dynamic_order_min_primary_order": 6.024,
+      "local_dynamic_order_primary_orders": {},
+      "local_dynamic_order_scope": "absolute_coordinate_driven_fullva_residual",
+      "local_finest_position_error": 3.3233240878418187e-14,
+      "local_finest_velocity_error": 1.1551877762897842e-12,
+      "local_position_order": 6.012803915752966,
+      "local_velocity_order": 5.801328578195651,
+      "mechanism_coverage_candidate": false,
+      "nonlocal_source_policy_closed_rows": 0,
+      "nonlocal_source_policy_flagged_rows": 10,
+      "nonlocal_strict_external_error_claim_rows": 0,
+      "source_policy_status": "single public-policy rows completed but reference-floor limited; not accepted external dynamic order"
+    },
+    {
+      "accepted_internal_role": "accepted_dynamic_order_example",
+      "accepted_source_policy_dynamic_order": false,
+      "closed_loop_coarse_dynamics_diagnostic": false,
+      "common_reference_local_error_wins": 10,
+      "common_reference_local_order_wins": 10,
+      "common_reference_nonlocal_rows": 10,
+      "example": "double_pendulum",
+      "local_dynamic_order_accepted": true,
+      "local_dynamic_order_artifact": "ORDER_ACCEPTANCE_GATE.json",
+      "local_dynamic_order_layer": "method_side_order_gate",
+      "local_dynamic_order_min_primary_order": 6.089,
+      "local_dynamic_order_primary_orders": {},
+      "local_dynamic_order_scope": "double_revolute_gauss6_fullva_local_self_reference",
+      "local_finest_position_error": 3.099742684753437e-13,
+      "local_finest_velocity_error": 2.34558900080728e-13,
+      "local_position_order": 6.01071161969125,
+      "local_velocity_order": 6.009704989719966,
+      "mechanism_coverage_candidate": false,
+      "nonlocal_source_policy_closed_rows": 0,
+      "nonlocal_source_policy_flagged_rows": 10,
+      "nonlocal_strict_external_error_claim_rows": 0,
+      "source_policy_status": "gauss6_fullva_public_horizon_double_coarse_not_full_campaign; not the public policy dynamic-order campaign"
+    },
+    {
+      "accepted_internal_role": "coverage_only_example",
+      "accepted_source_policy_dynamic_order": false,
+      "closed_loop_coarse_dynamics_diagnostic": true,
+      "common_reference_local_error_wins": 10,
+      "common_reference_local_order_wins": 10,
+      "common_reference_nonlocal_rows": 10,
+      "example": "four_link",
+      "local_dynamic_order_accepted": false,
+      "local_dynamic_order_artifact": "v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order.json",
+      "local_dynamic_order_layer": "closed_loop_coarse_dynamics_diagnostic",
+      "local_dynamic_order_min_primary_order": 5.954897911118808,
+      "local_dynamic_order_primary_orders": {
+        "omega": 5.971421238692113,
+        "orientation": 5.955195227478643,
+        "position": 5.954897911118808,
+        "velocity": 6.08481873098771
+      },
+      "local_dynamic_order_scope": "mechanism_coverage_coarse_dynamics_diagnostic_not_dynamic_order",
+      "local_finest_position_error": 2.2888357875672227e-12,
+      "local_finest_velocity_error": 1.092770318678049e-11,
+      "local_position_order": 5.954897911118808,
+      "local_velocity_order": 6.08481873098771,
+      "mechanism_coverage_candidate": true,
+      "nonlocal_source_policy_closed_rows": 0,
+      "nonlocal_source_policy_flagged_rows": 10,
+      "nonlocal_strict_external_error_claim_rows": 0,
+      "source_policy_status": "source-policy public-horizon rows completed as kinematic_reaction_residual_not_true_dynamic_order; separate closed-loop coarse-dynamics diagnostic rows are available, but not accepted as external source-policy dynamic order"
+    },
+    {
+      "accepted_internal_role": "coverage_only_example",
+      "accepted_source_policy_dynamic_order": false,
+      "closed_loop_coarse_dynamics_diagnostic": true,
+      "common_reference_local_error_wins": 10,
+      "common_reference_local_order_wins": 10,
+      "common_reference_nonlocal_rows": 10,
+      "example": "slider_crank",
+      "local_dynamic_order_accepted": false,
+      "local_dynamic_order_artifact": "v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order.json",
+      "local_dynamic_order_layer": "closed_loop_coarse_dynamics_diagnostic",
+      "local_dynamic_order_min_primary_order": 6.158979924383225,
+      "local_dynamic_order_primary_orders": {
+        "omega": 6.4255003113652025,
+        "orientation": 6.158979924383225,
+        "position": 6.163689642514354,
+        "velocity": 7.340914510263872
+      },
+      "local_dynamic_order_scope": "mechanism_coverage_coarse_dynamics_diagnostic_not_dynamic_order",
+      "local_finest_position_error": 8.583161958952701e-12,
+      "local_finest_velocity_error": 9.188851068930859e-12,
+      "local_position_order": 6.163689642514354,
+      "local_velocity_order": 7.340914510263872,
+      "mechanism_coverage_candidate": true,
+      "nonlocal_source_policy_closed_rows": 0,
+      "nonlocal_source_policy_flagged_rows": 10,
+      "nonlocal_strict_external_error_claim_rows": 0,
+      "source_policy_status": "source-policy public-horizon rows completed as kinematic_reaction_residual_not_true_dynamic_order; separate closed-loop coarse-dynamics diagnostic rows are available, but not accepted as external source-policy dynamic order"
+    }
+  ],
+  "schema": "four-example-source-policy-dashboard-v1",
+  "source_policy_external_superiority_allowed": false,
+  "status": "all_four_examples_checked_source_policy_dynamic_order_open"
+}

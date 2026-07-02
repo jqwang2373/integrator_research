@@ -1,0 +1,28 @@
+{
+  "h_values": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "local_rows": 6,
+  "model_orders": {
+    "four_link": {
+      "position_order": 5.95489791111881,
+      "velocity_order": 6.084818730987717
+    },
+    "slider_crank": {
+      "position_order": 6.163689642514361,
+      "velocity_order": 7.340914510263877
+    }
+  },
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "proof_gap_closed_by_adapter": false,
+  "schema": "cmame-closed-loop-local-rows-replay-v1",
+  "self_contained_simulation_runner": false,
+  "source_policy_external_superiority_allowed": false,
+  "status": "closed_loop_local_rows_replay_checked_not_self_contained_runner",
+  "submission_ready": false
+}

@@ -1,0 +1,346 @@
+{
+  "accepted_source_policy_dynamic_order_examples": 0,
+  "active_b2_flagged_rows": 0,
+  "active_row_requirements": {
+    "all_rows_source_policy_closed": true,
+    "by_suite_counts": {},
+    "external_superiority_ready_rows": 0,
+    "row_count": 0,
+    "rows": [],
+    "source_policy_1e_4_required_values": []
+  },
+  "active_source_policy_suites": 0,
+  "closure_gaps": [
+    {
+      "gap": "single pendulum has source-grid candidate rows, but double-pendulum and closed-loop examples are not accepted source-policy dynamic-order/work rows",
+      "next_action": "run or demote the remaining RA2021 local same-policy dynamic rows after resolving velocity/output mapping and floor policy",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "gap": "demoted after bounded T=0.1 evidence plus incomplete T=8 coarse/tolerance-repair source-policy evidence",
+      "next_action": "keep HI2022 in bounded diagnostic/related-work scope only unless a new source-policy campaign is explicitly requested",
+      "suite_id": "hi2022_half_implicit"
+    },
+    {
+      "gap": "public TFE source code is absent and the available paper-spec/proxy reconstruction is not source-policy equivalent",
+      "next_action": "keep TFE rows attempted-not-reproducible/not-promoted unless a new source-code-equivalent public or author artifact appears",
+      "suite_id": "tfe2026_original_pendulum"
+    }
+  ],
+  "common_reference_claim_allowed": true,
+  "demoted_flagged_rows": 15,
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim_allowed": false,
+  "local_dynamic_order_example_names": [
+    "single_pendulum",
+    "double_pendulum"
+  ],
+  "local_dynamic_order_examples": 2,
+  "row_ledger_flagged_rows": 15,
+  "row_ledger_source_policy_closed_rows": 0,
+  "schema": "source-policy-local-candidate-gap-audit-v1",
+  "source_files": {
+    "comparison_reconciliation": "COMPARISON_OBJECTIVE_CLOSURE_RECONCILIATION_AUDIT.json",
+    "gauss6_public_closed_loop": "../v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_closed_loop_rows.csv",
+    "gauss6_public_double_coarse": "../v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_double_coarse_rows.csv",
+    "gauss6_public_single": "../v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_single_rows.csv",
+    "hi2022_bounded": "../v048_cross_paper_same_test_benchmarks/results/hi2022_halfimplicit_rows.csv",
+    "hi2022_t8_coarse": "../v048_cross_paper_same_test_benchmarks/results/hi2022_T8_coarse_model_shards",
+    "tfe_endpoint_sensitivity": "TFE_ENDPOINT_POLICY_SENSITIVITY_AUDIT.json",
+    "tfe_grid_audit": "TFE_SOURCE_GRID_COMPATIBILITY_AUDIT.json",
+    "tfe_model_audit": "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+    "tfe_self_reproduction_attempt": "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json"
+  },
+  "source_policy_closed_rows": 0,
+  "source_policy_dynamic_order_examples": 0,
+  "source_policy_superiority_claim_allowed": false,
+  "source_policy_total_rows": 40,
+  "status": "local_candidate_gap_open_source_policy_not_closed",
+  "submission_ready": false,
+  "suite_summaries": [
+    {
+      "accepted_source_policy_dynamic_order_examples": 0,
+      "closed_loop_public_horizon_candidates": {
+        "four_link": {
+          "dynamic_order_work_row": false,
+          "finest_max_dynamics_residual_norm": 3.4116205648596903e-13,
+          "h_values": [
+            0.0001,
+            0.001,
+            0.01
+          ],
+          "kinematic_reaction_residual_row": true,
+          "ok_row_count": 3,
+          "public_policy_h_rows": 3,
+          "reference_h_values": [
+            0.001
+          ],
+          "row_count": 3,
+          "t_end_values": [
+            3.0
+          ]
+        },
+        "slider_crank": {
+          "dynamic_order_work_row": false,
+          "finest_max_dynamics_residual_norm": 6.804061957651242e-15,
+          "h_values": [
+            0.0001,
+            0.001,
+            0.01
+          ],
+          "kinematic_reaction_residual_row": true,
+          "ok_row_count": 3,
+          "public_policy_h_rows": 3,
+          "reference_h_values": [
+            0.001
+          ],
+          "row_count": 3,
+          "t_end_values": [
+            3.0
+          ]
+        }
+      },
+      "closed_loop_true_dynamic_coarse_candidates": {
+        "accepted_dynamic_order_count": 2,
+        "default_1e-4_required": false,
+        "default_policy": "coarse_first_no_default_1e-4",
+        "external_superiority_claim": false,
+        "interpretation": "coarse true-dynamic local order evidence for four_link and slider_crank; not a source-paper default-policy reproduction",
+        "model_summaries": {
+          "four_link": {
+            "acc_observed_order": 0.9946688781585981,
+            "acc_pairwise_orders": [
+              0.9961107666464891,
+              0.9932269896707093
+            ],
+            "accepted_dynamic_order_candidate": true,
+            "min_primary_order": 5.954897911118808,
+            "model": "four_link",
+            "ok_row_count": 3,
+            "omega_observed_order": 5.971421238692113,
+            "omega_pairwise_orders": [
+              5.952393048903772,
+              5.990449428480467
+            ],
+            "orientation_observed_order": 5.955195227478643,
+            "orientation_pairwise_orders": [
+              5.9284406017290845,
+              5.981949853228209
+            ],
+            "pos_observed_order": 5.954897911118808,
+            "pos_pairwise_orders": [
+              5.9284650083635375,
+              5.981330813874087
+            ],
+            "row_count": 3,
+            "vel_observed_order": 6.08481873098771,
+            "vel_pairwise_orders": [
+              6.109887157774682,
+              6.059750304200757
+            ]
+          },
+          "slider_crank": {
+            "acc_observed_order": 1.0541648128408896,
+            "acc_pairwise_orders": [
+              1.06501938837506,
+              1.0433102373067216
+            ],
+            "accepted_dynamic_order_candidate": true,
+            "min_primary_order": 6.158979924383225,
+            "model": "slider_crank",
+            "ok_row_count": 3,
+            "omega_observed_order": 6.4255003113652025,
+            "omega_pairwise_orders": [
+              6.8197319430335614,
+              6.031268679696851
+            ],
+            "orientation_observed_order": 6.158979924383225,
+            "orientation_pairwise_orders": [
+              6.259953041842458,
+              6.0580068069239985
+            ],
+            "pos_observed_order": 6.163689642514354,
+            "pos_pairwise_orders": [
+              6.267368018553522,
+              6.060011266475198
+            ],
+            "row_count": 3,
+            "vel_observed_order": 7.340914510263872,
+            "vel_pairwise_orders": [
+              7.933579951829301,
+              6.748249068698456
+            ]
+          }
+        },
+        "models": [
+          "four_link",
+          "slider_crank"
+        ],
+        "ok_row_count": 6,
+        "row_count": 6,
+        "stage_oracle_used": false,
+        "status": "coarse_true_dynamic_order_candidates_available_not_external_superiority",
+        "step_sizes": [
+          0.1,
+          0.05,
+          0.025
+        ],
+        "strict_public_policy_1e-4_required": false,
+        "t_end": 0.1
+      },
+      "closed_loop_true_dynamic_public_work_precision": {
+        "default_1e-4_required": false,
+        "default_policy": "coarse_first_no_default_1e-4",
+        "external_superiority_claim": false,
+        "interpretation": "same-window public work/precision rows exist, but the reference-family caveat keeps this out of strict external-superiority scope",
+        "ok_row_count": 24,
+        "public_work_precision_available_count": 2,
+        "public_work_precision_missing_count": 0,
+        "reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+        "row_count": 24,
+        "status": "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
+        "strict_common_reference_error_columns": false,
+        "strict_public_policy_1e-4_required": false
+      },
+      "coarse_first_external_readiness": {
+        "coarse_same_window_ready_count": 2,
+        "default_policy": "coarse_first_no_default_1e-4",
+        "dynamic_order_missing_count": 0,
+        "external_superiority_claim": false,
+        "local_true_dynamic_order_available_count": 2,
+        "public_work_precision_available_count": 2,
+        "same_test_campaign_status": "not_run",
+        "strict_common_reference_available_count": 2,
+        "strict_common_reference_figure_available": true,
+        "strict_common_reference_gap_count": 0,
+        "submission_ready": false
+      },
+      "double_pendulum_public_horizon_candidate": {
+        "accepted_source_policy_dynamic_order": false,
+        "blocking_reason": "public horizon is present, but h/reference policy is coarse and local-self-reference, not the public source-policy grid",
+        "finest_velocity_error": 1.6883527464983672e-08,
+        "h_values": [
+          0.025,
+          0.05,
+          0.1
+        ],
+        "ok_row_count": 3,
+        "public_policy_h_rows": 0,
+        "public_policy_time_window_rows": 3,
+        "reference_h_values": [
+          0.0125
+        ],
+        "row_count": 3,
+        "source_policy_candidate_grid_present": false,
+        "t_end_values": [
+          3.0
+        ],
+        "velocity_order": 7.041570696587532
+      },
+      "external_superiority_ready": false,
+      "public_baseline_order_groups": "9/9",
+      "public_baseline_timing_rows": "12/12",
+      "single_pendulum_public_policy_candidate": {
+        "accepted_source_policy_dynamic_order": false,
+        "blocking_reason": "near-roundoff/floor-limited public-policy tranche; not enough to close all four RA2021 source-policy examples",
+        "finest_velocity_error": 2.9996574304705472e-15,
+        "h_values": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "ok_row_count": 3,
+        "public_policy_h_rows": 3,
+        "public_policy_time_window_rows": 3,
+        "reference_h_values": [
+          0.001
+        ],
+        "row_count": 3,
+        "source_policy_candidate_grid_present": true,
+        "t_end_values": [
+          3.0
+        ],
+        "velocity_order": 2.5561902805560694
+      },
+      "source_policy_closed_rows": 0,
+      "status": "local_candidate_rows_present_but_not_source_policy_closed",
+      "suite_id": "ra2021_absolute_coordinate"
+    },
+    {
+      "accepted_source_policy_dynamic_order_examples": 0,
+      "blocking_reason": "T=8 coarse rows are useful stability/failure evidence, but only 4/8 form-model groups are complete and the source-policy h/reference contract is not met",
+      "bounded_T0p1_h_values": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "bounded_T0p1_reference_h_values": [
+        0.001
+      ],
+      "bounded_T0p1_rows": "24/24",
+      "external_superiority_ready": false,
+      "full_T8_source_policy_completed": false,
+      "source_policy_closed_rows": 0,
+      "status": "bounded_and_T8_coarse_evidence_present_but_full_source_policy_open",
+      "suite_id": "hi2022_half_implicit",
+      "t8_coarse_h_values": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "t8_coarse_reference_h_values": [
+        0.0125
+      ],
+      "t8_coarse_rows": "18/24",
+      "t8_complete_group_count": 4,
+      "t8_complete_groups": [
+        "rA:double_pendulum",
+        "rA:four_link",
+        "rA:single_pendulum",
+        "rA_half:single_pendulum"
+      ],
+      "t8_failed_or_partial_groups": [
+        "rA:slider_crank",
+        "rA_half:double_pendulum",
+        "rA_half:four_link",
+        "rA_half:slider_crank"
+      ],
+      "t8_group_count": 8
+    },
+    {
+      "accepted_source_policy_dynamic_order_examples": 0,
+      "blocking_reason": "no distinct public TFE code artifact was found; paper-spec/proxy self-reproduction is not source-policy equivalent, so these rows stay attempted-not-reproducible and not promoted",
+      "bounded_source_policy_runner_full_T10": false,
+      "bounded_source_policy_runner_rows": 4,
+      "brown_mcphee_friction_law_implemented": false,
+      "endpoint_incompatible_rows_requiring_source_policy": 4,
+      "endpoint_sensitivity_raw_rows": 48,
+      "endpoint_sensitivity_source_policy_rows_completed": 0,
+      "exact_T_compatible_endpoint_grid_rows_resolved": 2,
+      "external_superiority_ready": false,
+      "integer_step_compatible_rows": 2,
+      "integer_step_incompatible_rows": 4,
+      "pendulum_dae_runner_implemented": false,
+      "public_code_available": false,
+      "self_reproduction_attempt_audit": "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json",
+      "self_reproduction_attempt_status": "attempted_not_reproducible_not_promoted",
+      "self_reproduction_attempted": true,
+      "source_comparator_candidate_runners_implemented": true,
+      "source_grid_policy_resolved_for_exact_T_compatible_rows": true,
+      "source_grid_policy_resolved_for_full_T10": false,
+      "source_parameter_model_implemented": true,
+      "source_policy_closed_rows": 0,
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_rows_completed": 0,
+      "status": "nonpublic_code_attempted_not_reproducible_not_promoted",
+      "suite_id": "tfe2026_original_pendulum",
+      "tfe_m1_m2_m3_candidate_runner_smoke_implemented": true
+    }
+  ]
+}

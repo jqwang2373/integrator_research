@@ -1,0 +1,49 @@
+{
+  "alias_resolved_methods": [
+    "vp2024_lie_group_ode_partitioning"
+  ],
+  "all_method_example_cells_checked": 44,
+  "b2_b4_reconciliation": {
+    "comparison_matrix_component_closed": true,
+    "paper_submission_b2_b4_can_close_now": false,
+    "reason": "finite-grid common-reference order/error diagnostics are assembled, but source-paper default-policy reproduction and paper-level direct error superiority remain non-claims under the current CMAME blocker contract",
+    "source_suite_policy_component_open": true
+  },
+  "common_reference_cells": 44,
+  "common_reference_claim_allowed": true,
+  "comparison_matrix_closed": true,
+  "direct_nonlocal_finest_velocity_error_comparisons": 40,
+  "direct_nonlocal_finest_velocity_error_wins": 40,
+  "direct_nonlocal_velocity_order_comparisons": 40,
+  "direct_nonlocal_velocity_order_wins": 40,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "kissel_negrut_velocity_error_comparisons": 24,
+  "kissel_negrut_velocity_error_wins": 24,
+  "original_paper_velocity_error_comparisons": 16,
+  "original_paper_velocity_error_wins": 16,
+  "paper_direct_error_superiority_claim_allowed": false,
+  "paper_wording_contract": {
+    "allowed": "finite-grid common-reference order/error diagnostic against accepted runnable rows",
+    "forbidden": "paper-level direct error superiority, source-paper default-policy superiority, or complete source-policy reproduction"
+  },
+  "raw_rows_recomputed": 132,
+  "required_method_labels_resolved": true,
+  "schema": "comparison-objective-closure-reconciliation-v1",
+  "scope_excluded_methods": [
+    "tfe2026_TFE_m3_GL"
+  ],
+  "source_policy_flagged_rows": 15,
+  "source_policy_reproduction_open": true,
+  "source_policy_superiority_claim_allowed": false,
+  "source_policy_velocity_mismatch_rows": 10,
+  "source_unresolved_methods": [],
+  "status": "common_reference_objective_closed_source_policy_reproduction_open",
+  "strict_external_error_claim_allowed_rows": 0,
+  "submission_ready": false,
+  "summary_mismatches": 0
+}

@@ -1,0 +1,698 @@
+{
+  "axis_plane_margin_certificate": {
+    "axis_torque_compact_axis_margin_proved": true,
+    "certificate_recorded": true,
+    "chart_transversality_statement": "The accepted lower-pair chart is restricted to the regular axis-torque coordinate patch; m_j(z)=0 would make the two axis-torque multiplier columns lose rank and leave that patch.",
+    "chi_axis_symbol": "chi_axis",
+    "compactness_argument": "Each m_j is continuous on the compact proof tube K. Since regularity excludes m_j=0 on the accepted branch, shrinking K inside the same chart if necessary gives chi_axis=min_K min_j m_j>0.",
+    "margin_function": "m_j(z)=|(R_j(z) a_j).n_j|",
+    "proved": true,
+    "regularity_source": "Assumption ass:regularity gives a constant-rank active lower-pair constraint Jacobian and a smooth accepted lower-pair chart on the proof branch.",
+    "singular_identity": "sigma_min(C(a,R,B))=|(R a).(b0 x b1)|",
+    "uses_direct_substitution_as_proof": false,
+    "uses_finite_probe_as_proof": false,
+    "uses_stage_residual_defect": false
+  },
+  "case": "cylindrical_smooth",
+  "claim_boundary": {
+    "allowed_now": "the PL2 multiplier-column uniform inf-sup subproof is proved symbolically on the accepted compact lower-pair chart",
+    "close_condition": "P_lambda closes only after PL4 propagates the independent state and acceleration lifts through the closed PL2 inf-sup estimate to an O(h^7) multiplier lift rate.",
+    "forbidden_now": [
+      "P_lambda primitive closure",
+      "multiplier lift-rate proof",
+      "D5 Taylor term certification through P_lambda",
+      "primitive/Taylor PC2 route closure"
+    ]
+  },
+  "compact_tube_reduction": {
+    "closes_pl2": true,
+    "compactness_argument": "On a compact proof tube K, the accepted multiplier-column map B(z,h)=D_lambda R_dyn(z,h) is continuous in the stage state, multiplier, and h. If a symbolic lower bound sigma_min(B(z,h)) >= gamma > 0 is proved for every (z,h) in K x (0,h0], then the PL2 inf-sup constant is gamma. Equivalently, continuity plus compactness turns a pointwise positive symbolic transversality margin into a uniform constant.",
+    "conditional_uniform_inf_sup_if_symbolic_margin": true,
+    "finite_probe_sufficient_for_symbolic_margin": false,
+    "open_symbolic_premises": [],
+    "proved_symbolic_premises": [
+      "normal-force lower singular-value margin",
+      "smooth-friction orthogonal perturbation does not reduce the normal-force margin",
+      "translational action-reaction lower bound",
+      "compact-tube axis-plane margin chi_axis > 0 for the axis-torque blocks",
+      "rotational action-reaction lower bound",
+      "block-triangular full-block reduction"
+    ],
+    "reduction_recorded": true,
+    "remaining_gap": "PL2 is closed as a uniform compact-tube inf-sup theorem. The remaining P_lambda gap is PL4 multiplier-rate propagation, not a finite-probe or axis-plane margin gap.",
+    "required_symbolic_premises": [
+      "normal-force column map has a compact-tube lower singular-value margin (proved by symbolic structure certificate)",
+      "axis-torque column map has a compact-tube lower singular-value margin (proved by axis-plane margin certificate)",
+      "smooth friction normal-load derivative terms are an orthogonal rank-one update that cannot reduce the normal-force margin (proved)",
+      "action-reaction block topology keeps the direct-sum margin after assembling the full stage block (proved)"
+    ],
+    "symbolic_margin_premise_proved": true,
+    "uses_direct_substitution_as_proof": false,
+    "uses_stage_residual_defect": false
+  },
+  "conditional_pl2_implication": {
+    "closed_uniform_inputs": [
+      "compact-tube lower bound for the axis-torque sensitivity blocks",
+      "compact-tube axis-plane margin chi_axis > 0 in the fixed lower-pair bases",
+      "instantiation of the recorded full-block lower-bound formula with tube constants"
+    ],
+    "finite_probe_sufficient_for_uniform_proof": false,
+    "if_uniform_transversality_margin_proved": "the stage-local triangular action-reaction topology plus positive normal-force and axis-torque geometric margins imply a uniform lower bound for D_lambda R_dyn on the compact tube",
+    "required_missing_uniform_inputs": []
+  },
+  "finite_stage_margin_probe_recorded": true,
+  "h_values": [
+    0.04,
+    0.02,
+    0.01
+  ],
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "PL2 geometric-margin diagnostic",
+      "\\label{lem:d5-p-lambda-pl2-symbolic-structure}",
+      "PL2 multiplier-column symbolic structure",
+      "normal-force and smooth-friction subblock",
+      "axis-plane margin",
+      "\\label{lem:d5-p-lambda-pl2-axis-plane-margin}",
+      "PL2 axis-plane margin on the accepted compact tube",
+      "\\label{lem:d5-p-lambda-pl2-compact-reduction}",
+      "PL2 compact-tube reduction",
+      "These finite margins identify the geometric proof target",
+      "not a uniform compact-tube inf-sup proof",
+      "PL2 is closed as a uniform inf-sup subproof",
+      "the PC2 route both remain open"
+    ]
+  },
+  "multiplier_lift_rate_proved": false,
+  "one_step_stage_newton_invoked": true,
+  "pc2_closed": false,
+  "pl2_geometric_margin_route_recorded": true,
+  "pl2_uniform_inf_sup_bound_proved": true,
+  "primitive_closed": false,
+  "proof_gap_closed": false,
+  "read_only": true,
+  "rows": [
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7020298007914434,
+        "full_column_rank": true,
+        "max_singular_value": 1.6699462555042197,
+        "min_singular_value": 0.6180339887498949,
+        "rank": 8,
+        "rank_tolerance": 4.449630678593638e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.767677997703359,
+        "full_column_rank": true,
+        "max_singular_value": 1.7003961798230476,
+        "min_singular_value": 0.614376448862205,
+        "rank": 8,
+        "rank_tolerance": 4.530765575578093e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 1.0292829673060734e-14,
+      "h": 0.04,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.6180339887498945,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498945,
+        "min_singular_value": 0.6180339887498948,
+        "rank": 4,
+        "rank_tolerance": 2.155654306723457e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 0,
+      "translational_normal_subblock": {
+        "condition_number": 2.6138934527486164,
+        "full_column_rank": true,
+        "max_singular_value": 1.6699462555042197,
+        "min_singular_value": 0.6388731161739598,
+        "rank": 4,
+        "rank_tolerance": 2.224815339296819e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7047167662797333,
+        "full_column_rank": true,
+        "max_singular_value": 1.6716068915025803,
+        "min_singular_value": 0.6180339887498947,
+        "rank": 8,
+        "rank_tolerance": 4.454055501763801e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.768407003256445,
+        "full_column_rank": true,
+        "max_singular_value": 1.7022094263081708,
+        "min_singular_value": 0.6148696431940396,
+        "rank": 8,
+        "rank_tolerance": 4.535597034771144e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 1.0292829673060734e-14,
+      "h": 0.04,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.6180339887498922,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498931,
+        "min_singular_value": 0.6180339887498948,
+        "rank": 4,
+        "rank_tolerance": 2.1556543067234554e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 1,
+      "translational_normal_subblock": {
+        "condition_number": 2.620945385453576,
+        "full_column_rank": true,
+        "max_singular_value": 1.6716068915025808,
+        "min_singular_value": 0.6377877619198447,
+        "rank": 4,
+        "rank_tolerance": 2.2270277508819014e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7032121224518297,
+        "full_column_rank": true,
+        "max_singular_value": 1.6706769704731435,
+        "min_singular_value": 0.618033988748848,
+        "rank": 8,
+        "rank_tolerance": 4.451577694392688e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.764085370181227,
+        "full_column_rank": true,
+        "max_singular_value": 1.7013830522491875,
+        "min_singular_value": 0.6155320203216575,
+        "rank": 8,
+        "rank_tolerance": 4.5333951319537765e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 1.0292829673060734e-14,
+      "h": 0.04,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.61803398874272,
+        "full_column_rank": true,
+        "max_singular_value": 1.61803398874272,
+        "min_singular_value": 0.618033988748848,
+        "rank": 4,
+        "rank_tolerance": 2.1556543067138988e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 2,
+      "translational_normal_subblock": {
+        "condition_number": 2.630843261143622,
+        "full_column_rank": true,
+        "max_singular_value": 1.6706769704731437,
+        "min_singular_value": 0.6350347795888471,
+        "rank": 4,
+        "rank_tolerance": 2.2257888471963442e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7013169206775993,
+        "full_column_rank": true,
+        "max_singular_value": 1.6695056713639609,
+        "min_singular_value": 0.6180339887498951,
+        "rank": 8,
+        "rank_tolerance": 4.448456726617318e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.767202046406062,
+        "full_column_rank": true,
+        "max_singular_value": 1.699925918789817,
+        "min_singular_value": 0.6143121789742881,
+        "rank": 8,
+        "rank_tolerance": 4.529512548474069e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 9.238506732914585e-15,
+      "h": 0.02,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.618033988749894,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498951,
+        "min_singular_value": 0.6180339887498951,
+        "rank": 4,
+        "rank_tolerance": 2.155654306723458e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 0,
+      "translational_normal_subblock": {
+        "condition_number": 2.6130098143789415,
+        "full_column_rank": true,
+        "max_singular_value": 1.6695056713639616,
+        "min_singular_value": 0.6389205513798534,
+        "rank": 4,
+        "rank_tolerance": 2.22422836330866e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7034213733967154,
+        "full_column_rank": true,
+        "max_singular_value": 1.6708062946720903,
+        "min_singular_value": 0.6180339887498947,
+        "rank": 8,
+        "rank_tolerance": 4.451922283280637e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.7684488685813617,
+        "full_column_rank": true,
+        "max_singular_value": 1.7013193222875467,
+        "min_singular_value": 0.6145388277152306,
+        "rank": 8,
+        "rank_tolerance": 4.533225321223924e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 9.238506732914585e-15,
+      "h": 0.02,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.6180339887498945,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498947,
+        "min_singular_value": 0.6180339887498949,
+        "rank": 4,
+        "rank_tolerance": 2.1556543067234574e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 1,
+      "translational_normal_subblock": {
+        "condition_number": 2.616170287219395,
+        "full_column_rank": true,
+        "max_singular_value": 1.6708062946720903,
+        "min_singular_value": 0.6386458491767033,
+        "rank": 4,
+        "rank_tolerance": 2.2259611416403185e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7045682919627203,
+        "full_column_rank": true,
+        "max_singular_value": 1.6715151293282107,
+        "min_singular_value": 0.618033988749895,
+        "rank": 8,
+        "rank_tolerance": 4.453810998214742e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.7685875479219106,
+        "full_column_rank": true,
+        "max_singular_value": 1.702099799918735,
+        "min_singular_value": 0.614789949913747,
+        "rank": 8,
+        "rank_tolerance": 4.535304931391164e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 9.238506732914585e-15,
+      "h": 0.02,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.618033988749893,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498947,
+        "min_singular_value": 0.6180339887498952,
+        "rank": 4,
+        "rank_tolerance": 2.1556543067234574e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 2,
+      "translational_normal_subblock": {
+        "condition_number": 2.6197827321424114,
+        "full_column_rank": true,
+        "max_singular_value": 1.6715151293282107,
+        "min_singular_value": 0.6380357839679611,
+        "rank": 4,
+        "rank_tolerance": 2.226905499107371e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.700929714036042,
+        "full_column_rank": true,
+        "max_singular_value": 1.6692663644988075,
+        "min_singular_value": 0.6180339887498947,
+        "rank": 8,
+        "rank_tolerance": 4.447819085037372e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.7669300215651544,
+        "full_column_rank": true,
+        "max_singular_value": 1.6996708494393984,
+        "min_singular_value": 0.6142803888036007,
+        "rank": 8,
+        "rank_tolerance": 4.528832907196363e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 1.2213250127267018e-14,
+      "h": 0.01,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.618033988749894,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498951,
+        "min_singular_value": 0.6180339887498951,
+        "rank": 4,
+        "rank_tolerance": 2.155654306723458e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 0,
+      "translational_normal_subblock": {
+        "condition_number": 2.612577105042342,
+        "full_column_rank": true,
+        "max_singular_value": 1.6692663644988075,
+        "min_singular_value": 0.6389347748922242,
+        "rank": 4,
+        "rank_tolerance": 2.223909542518686e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.7021732501236615,
+        "full_column_rank": true,
+        "max_singular_value": 1.6700349120671938,
+        "min_singular_value": 0.6180339887498948,
+        "rank": 8,
+        "rank_tolerance": 4.4498669071316335e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.7677684884954554,
+        "full_column_rank": true,
+        "max_singular_value": 1.700490973047785,
+        "min_singular_value": 0.6143906111064091,
+        "rank": 8,
+        "rank_tolerance": 4.53101815546773e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 1.2213250127267018e-14,
+      "h": 0.01,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.6180339887498936,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498947,
+        "min_singular_value": 0.6180339887498951,
+        "rank": 4,
+        "rank_tolerance": 2.1556543067234574e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 1,
+      "translational_normal_subblock": {
+        "condition_number": 2.6140895835821185,
+        "full_column_rank": true,
+        "max_singular_value": 1.6700349120671942,
+        "min_singular_value": 0.6388590974677789,
+        "rank": 4,
+        "rank_tolerance": 2.224933453565817e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    },
+    {
+      "case": "cylindrical_smooth",
+      "direct_sum_subblock": {
+        "condition_number": 2.703174811954194,
+        "full_column_rank": true,
+        "max_singular_value": 1.6706539113202983,
+        "min_singular_value": 0.6180339887498952,
+        "rank": 8,
+        "rank_tolerance": 4.451516252466887e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "full_dynamic_lambda_block": {
+        "condition_number": 2.7683352913773347,
+        "full_column_rank": true,
+        "max_singular_value": 1.701154937361429,
+        "min_singular_value": 0.614504660132787,
+        "rank": 8,
+        "rank_tolerance": 4.532787311792218e-15,
+        "shape": [
+          12,
+          8
+        ]
+      },
+      "gauss_stage_residual_norm": 1.2213250127267018e-14,
+      "h": 0.01,
+      "rotational_axis_torque_subblock": {
+        "condition_number": 2.618033988749894,
+        "full_column_rank": true,
+        "max_singular_value": 1.6180339887498947,
+        "min_singular_value": 0.618033988749895,
+        "rank": 4,
+        "rank_tolerance": 2.1556543067234574e-15,
+        "shape": [
+          6,
+          4
+        ]
+      },
+      "stage": 2,
+      "translational_normal_subblock": {
+        "condition_number": 2.6156865516852967,
+        "full_column_rank": true,
+        "max_singular_value": 1.6706539113202983,
+        "min_singular_value": 0.6387057005144174,
+        "rank": 4,
+        "rank_tolerance": 2.2257581262334436e-15,
+        "shape": [
+          6,
+          4
+        ]
+      }
+    }
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-p-lambda-pl2-geometric-margin-audit-v1",
+  "source_consistency": {
+    "p_lambda_d3_closed": true,
+    "p_lambda_d3_schema": "d5-p-lambda-d3-noncircularity-audit-v1",
+    "p_lambda_inf_sup_probe_full_column_rank_all": true,
+    "p_lambda_inf_sup_probe_schema": "d5-p-lambda-inf-sup-probe-v1",
+    "p_lambda_inf_sup_probe_uniform_constant_proved": false,
+    "p_lambda_interface_closed": true,
+    "p_lambda_interface_schema": "d5-p-lambda-interface-audit-v1",
+    "p_tube_closed": true,
+    "p_tube_schema": "d5-p-tube-constants-audit-v1",
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_pc2_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+    "run_v047_path": "v047_cylindrical_chain_pipeline/run_v047.py",
+    "runtime_row_dimension": 132
+  },
+  "source_trace": {
+    "complete": true,
+    "tokens": {
+      "axis_torque = eta_prox[0] * jnp.cross": true,
+      "dist_axis_torque = eta_dist[0] * jnp.cross": true,
+      "dyn.extend([trans, rot])": true,
+      "eta_dist = st[\"lambda\"][1, 2:4]": true,
+      "eta_prox = st[\"lambda\"][body, 2:4]": true,
+      "force = force - joint_force[1]": true,
+      "friction = brown_mcphee_scalar_jax": true,
+      "normal_force = lam[0] * joint_basis[joint, 0] + lam[1] * joint_basis[joint, 1]": true,
+      "trans = masses[body] * st[\"a\"][body]": true
+    }
+  },
+  "stage_count": 3,
+  "status": "pl2_uniform_inf_sup_bound_proved_p_lambda_rate_open",
+  "submission_ready": false,
+  "summary": {
+    "axis_torque_compact_axis_margin_proved": true,
+    "axis_torque_margin_formula_recorded": true,
+    "compact_tube_reduction_recorded": true,
+    "finite_direct_sum_rank_all": true,
+    "finite_full_stage_rank_all": true,
+    "finite_rotational_axis_torque_rank_all": true,
+    "finite_translational_normal_rank_all": true,
+    "full_dynamic_lambda_lower_bound_conditional": false,
+    "full_dynamic_lambda_lower_bound_proved": true,
+    "min_direct_sum_singular": 0.618033988748848,
+    "min_full_dynamic_lambda_singular": 0.6142803888036007,
+    "min_rotational_axis_torque_singular": 0.618033988748848,
+    "min_translational_normal_singular": 0.6350347795888471,
+    "normal_force_margin_proved": true,
+    "pc2_closed": false,
+    "pl2_uniform_inf_sup_bound_proved": true,
+    "probe_stage_rows": 9,
+    "rotational_axis_torque_lower_bound_conditional": false,
+    "rotational_axis_torque_lower_bound_proved": true,
+    "smooth_friction_orthogonal_perturbation_proved": true,
+    "symbolic_margin_premise_proved": true,
+    "symbolic_structure_certificate_recorded": true,
+    "translational_normal_subblock_lower_bound_proved": true,
+    "translational_normal_subblock_symbolic_lower_bound": 0.6180339887498949
+  },
+  "symbolic_structure_certificate": {
+    "axis_torque_subblock": {
+      "compact_axis_plane_margin_proved": true,
+      "compact_axis_plane_margin_required": true,
+      "formula_recorded": true,
+      "margin_source": "axis_plane_margin_certificate",
+      "required_margin": "chi_axis = inf_K |(R a).n_B| > 0 for the proximal axis-torque maps",
+      "single_joint_formula": "For C(a,R,B)=[a x R^T b0, a x R^T b1] and n_B=b0 x b1, C^T C = I - c c^T with c_i=(R a).b_i, so sigma_min(C)=|(R a).n_B|."
+    },
+    "certificate_recorded": true,
+    "full_dynamic_lambda_block": {
+      "bound_formula": "With translational lower bound gamma_T, rotational torque lower bound gamma_R, and normal-to-rotational coupling norm beta_N, the full block lower bound is (gamma_T^-2 + gamma_R^-2 + beta_N^2 gamma_T^-2 gamma_R^-2)^(-1/2).",
+      "closes_pl2": true,
+      "conditional_bound_recorded": false,
+      "lower_bound_proved": true,
+      "lower_bound_symbol": "gamma_PL2=(gamma_T^-2 + gamma_R^-2 + beta_N^2 gamma_T^-2 gamma_R^-2)^(-1/2)",
+      "normal_to_rotational_coupling_upper_bound_from_p_tube": true,
+      "rotational_lower_bound_proved": true,
+      "rotational_lower_bound_requires_axis_margin": false,
+      "translational_lower_bound_proved": true
+    },
+    "normal_force_and_friction_subblock": {
+      "basis_assumption": "The two normal basis vectors b0,b1 are orthonormal and orthogonal to the cylindrical axis a on the accepted lower-pair chart.",
+      "friction_derivative_can_reduce_rank": false,
+      "gram_identity": "(B + a c^T)^T(B + a c^T) = I + c c^T",
+      "jacobian_formula": "D_{lambda_N}(B lambda_N + f(v,||B lambda_N||) a) = B + a c^T",
+      "joint_subblock_sigma_min_lower_bound": 1.0,
+      "proved": true,
+      "smooth_friction_orthogonal_perturbation_proved": true
+    },
+    "remaining_gap": "The normal-force, smooth-friction, axis-plane margin, and full dynamic-lambda inf-sup parts are closed symbolically. P_lambda still needs the PL4 multiplier-rate propagation from state and acceleration lifts before the primitive/Taylor route can close.",
+    "rotational_action_reaction_subblock": {
+      "bound_formula": "If proximal axis-torque blocks have sigma_min >= chi_axis and the distal coupling has norm <= beta_D on K, then the rotational torque block has a lower bound (2/chi_axis^2 + beta_D^2/chi_axis^4)^(-1/2).",
+      "compact_axis_plane_margin_proved": true,
+      "conditional_bound_recorded": false,
+      "distal_coupling_upper_bound_from_p_tube": true,
+      "lower_bound_proved": true,
+      "lower_bound_symbol": "gamma_R=(2/chi_axis^2 + beta_D^2/chi_axis^4)^(-1/2)"
+    },
+    "translational_action_reaction_subblock": {
+      "assembly": "[[-A0, A1], [0, -A1]]",
+      "proof_inequality": "For u=A0 x and v=A1 y with ||A_j z|| >= ||z||, ||-u+v||^2 + ||v||^2 >= ((3-sqrt(5))/2)(||u||^2+||v||^2).",
+      "proved": true,
+      "sigma_min_lower_bound": 0.6180339887498949
+    },
+    "uses_direct_substitution_as_proof": false,
+    "uses_finite_probe_as_proof": false,
+    "uses_stage_residual_defect": false
+  },
+  "symbolic_transversality_over_compact_tube_proved": true,
+  "term_bounds_proved": 0,
+  "uniform_compact_tube_margin_proved": true
+}

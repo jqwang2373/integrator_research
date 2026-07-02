@@ -1,0 +1,263 @@
+{
+  "medium_time": {
+    "methods": {
+      "absolute_gauss_lie4_acc_projected": {
+        "0.05": {
+          "max_endpoint_constraint_norm": 0.0,
+          "max_endpoint_velocity_constraint_norm": 0.0,
+          "max_energy_relative_error": 1.4946732277438074e-07,
+          "max_lambda_norm": 58.29977612728207,
+          "max_stage_constraint_norm": 3.2664727895544647e-15,
+          "max_stage_force_residual_norm": 1.6346344111649587e-13,
+          "max_stage_torque_residual_norm": 9.307692559621302e-12,
+          "runtime_sec": 30.67148774600355,
+          "total_newton_iterations": 1593
+        },
+        "0.1": {
+          "max_endpoint_constraint_norm": 0.0,
+          "max_endpoint_velocity_constraint_norm": 0.0,
+          "max_energy_relative_error": 2.432182069280622e-06,
+          "max_lambda_norm": 58.27202038600893,
+          "max_stage_constraint_norm": 2.3055512673781017e-16,
+          "max_stage_force_residual_norm": 7.105427357601002e-15,
+          "max_stage_torque_residual_norm": 6.206339262076585e-15,
+          "runtime_sec": 15.404161382000893,
+          "total_newton_iterations": 800
+        }
+      },
+      "absolute_gauss_lie4_endpoint": {
+        "0.05": {
+          "max_endpoint_constraint_norm": 1.3003746363612952e-14,
+          "max_endpoint_velocity_constraint_norm": 3.555258820784248e-13,
+          "max_energy_relative_error": 1.4946732179058736e-07,
+          "max_lambda_norm": 58.29977612728208,
+          "max_stage_constraint_norm": 3.2993254823783446e-15,
+          "max_stage_force_residual_norm": 1.8923828802177707e-13,
+          "max_stage_torque_residual_norm": 9.298382894074672e-12,
+          "runtime_sec": 46.62860564602306,
+          "total_newton_iterations": 1593
+        },
+        "0.1": {
+          "max_endpoint_constraint_norm": 2.3263411494723067e-16,
+          "max_endpoint_velocity_constraint_norm": 8.491573300505515e-16,
+          "max_energy_relative_error": 2.432182069280622e-06,
+          "max_lambda_norm": 58.27202038600889,
+          "max_stage_constraint_norm": 2.2887833992611187e-16,
+          "max_stage_force_residual_norm": 7.105427357601002e-15,
+          "max_stage_torque_residual_norm": 7.54951975628031e-15,
+          "runtime_sec": 21.80934622400673,
+          "total_newton_iterations": 800
+        }
+      },
+      "reduced_rkmk4": {
+        "0.05": {
+          "max_endpoint_constraint_norm": 0.0,
+          "max_endpoint_velocity_constraint_norm": 0.0,
+          "max_energy_relative_error": 5.526616108769932e-05,
+          "max_lambda_norm": 0.0,
+          "max_stage_constraint_norm": 0.0,
+          "max_stage_force_residual_norm": 0.0,
+          "max_stage_torque_residual_norm": 0.0,
+          "runtime_sec": 0.1918187169940211,
+          "total_newton_iterations": 0
+        },
+        "0.1": {
+          "max_endpoint_constraint_norm": 0.0,
+          "max_endpoint_velocity_constraint_norm": 0.0,
+          "max_energy_relative_error": 0.001737072549543899,
+          "max_lambda_norm": 0.0,
+          "max_stage_constraint_norm": 0.0,
+          "max_stage_force_residual_norm": 0.0,
+          "max_stage_torque_residual_norm": 0.0,
+          "runtime_sec": 0.08784181997179985,
+          "total_newton_iterations": 0
+        }
+      }
+    },
+    "step_sizes": [
+      0.1,
+      0.05
+    ],
+    "t_final": 20.0
+  },
+  "model": {
+    "J_com_diag": [
+      0.18,
+      0.32,
+      0.41
+    ],
+    "constraint": "r + R s = 0",
+    "endpoint_unknowns": "u_end, r_end, v_end, omega_end",
+    "gravity": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "initial_energy": -21.6674382153954,
+    "mass": 4.0,
+    "s_com_to_pivot": [
+      0.0,
+      0.0,
+      0.75
+    ],
+    "stage_unknowns": "u_i, r_i, v_i, omega_i, a_i, alpha_i, lambda_i for i=1,2"
+  },
+  "numpy": "2.4.6",
+  "order": {
+    "methods": {
+      "absolute_gauss_lie4_acc_projected": {
+        "endpoint_constraint_observed_order": NaN,
+        "energy_observed_order": 3.9307019175718816,
+        "omega_observed_order": 3.9756064237467643,
+        "orientation_observed_order": 3.9702604192377247,
+        "runs": {
+          "0.05": {
+            "max_endpoint_constraint_norm": 0.0,
+            "max_endpoint_velocity_constraint_norm": 0.0,
+            "max_energy_relative_error": 1.4869748183468884e-07,
+            "max_lambda_norm": 57.31468942481218,
+            "max_stage_constraint_norm": 2.482534153247273e-16,
+            "max_stage_force_residual_norm": 7.105427357601002e-15,
+            "max_stage_torque_residual_norm": 5.621737507960615e-15,
+            "omega_l2_error": 1.9708004582376408e-05,
+            "orientation_error_rad": 6.279029870813046e-06,
+            "runtime_sec": 3.3143196580349468,
+            "total_newton_iterations": 160
+          },
+          "0.1": {
+            "max_endpoint_constraint_norm": 0.0,
+            "max_endpoint_velocity_constraint_norm": 0.0,
+            "max_energy_relative_error": 2.432182069280622e-06,
+            "max_lambda_norm": 57.21129082047551,
+            "max_stage_constraint_norm": 1.2719202621569003e-16,
+            "max_stage_force_residual_norm": 7.105427357601002e-15,
+            "max_stage_torque_residual_norm": 6.206339262076585e-15,
+            "omega_l2_error": 0.00031318400568962514,
+            "orientation_error_rad": 9.968225582562197e-05,
+            "runtime_sec": 1.6910634399973787,
+            "total_newton_iterations": 80
+          },
+          "0.2": {
+            "max_endpoint_constraint_norm": 0.0,
+            "max_endpoint_velocity_constraint_norm": 0.0,
+            "max_energy_relative_error": 3.457976012365209e-05,
+            "max_lambda_norm": 56.58879632246294,
+            "max_stage_constraint_norm": 7.248404575000198e-16,
+            "max_stage_force_residual_norm": 1.30836851243432e-14,
+            "max_stage_torque_residual_norm": 6.824487366998964e-13,
+            "omega_l2_error": 0.0048774881572985354,
+            "orientation_error_rad": 0.0015425082754796113,
+            "runtime_sec": 0.8707408060436137,
+            "total_newton_iterations": 40
+          }
+        }
+      },
+      "absolute_gauss_lie4_endpoint": {
+        "endpoint_constraint_observed_order": NaN,
+        "energy_observed_order": 3.930701918343354,
+        "omega_observed_order": 3.975606423725513,
+        "orientation_observed_order": 3.970260419253598,
+        "runs": {
+          "0.05": {
+            "max_endpoint_constraint_norm": 1.2719202621569003e-16,
+            "max_endpoint_velocity_constraint_norm": 4.577566798522237e-16,
+            "max_energy_relative_error": 1.4869748167072327e-07,
+            "max_lambda_norm": 57.31468942481218,
+            "max_stage_constraint_norm": 2.2929868617541516e-16,
+            "max_stage_force_residual_norm": 7.105427357601002e-15,
+            "max_stage_torque_residual_norm": 8.455981070181983e-15,
+            "omega_l2_error": 1.970800458293844e-05,
+            "orientation_error_rad": 6.279029870681472e-06,
+            "runtime_sec": 4.856380748969968,
+            "total_newton_iterations": 160
+          },
+          "0.1": {
+            "max_endpoint_constraint_norm": 2.3263411494723067e-16,
+            "max_endpoint_velocity_constraint_norm": 3.5950234537557046e-16,
+            "max_energy_relative_error": 2.432182069280622e-06,
+            "max_lambda_norm": 57.21129082047551,
+            "max_stage_constraint_norm": 2.2887833992611187e-16,
+            "max_stage_force_residual_norm": 7.105427357601002e-15,
+            "max_stage_torque_residual_norm": 5.3362936375102066e-15,
+            "omega_l2_error": 0.0003131840056891435,
+            "orientation_error_rad": 9.96822558257208e-05,
+            "runtime_sec": 2.263071228051558,
+            "total_newton_iterations": 80
+          },
+          "0.2": {
+            "max_endpoint_constraint_norm": 4.6944886580573075e-15,
+            "max_endpoint_velocity_constraint_norm": 2.2652604510615083e-13,
+            "max_energy_relative_error": 3.457976012250433e-05,
+            "max_lambda_norm": 56.58879632246297,
+            "max_stage_constraint_norm": 6.855121490028353e-16,
+            "max_stage_force_residual_norm": 1.3293037379376718e-14,
+            "max_stage_torque_residual_norm": 6.747014046197993e-13,
+            "omega_l2_error": 0.004877488157293941,
+            "orientation_error_rad": 0.00154250827548123,
+            "runtime_sec": 1.3032308170222677,
+            "total_newton_iterations": 40
+          }
+        }
+      },
+      "reduced_rkmk4": {
+        "endpoint_constraint_observed_order": NaN,
+        "energy_observed_order": 4.9197138014142325,
+        "omega_observed_order": 3.908275609812939,
+        "orientation_observed_order": 4.14496721139424,
+        "runs": {
+          "0.05": {
+            "max_endpoint_constraint_norm": 0.0,
+            "max_endpoint_velocity_constraint_norm": 0.0,
+            "max_energy_relative_error": 6.504868333979448e-06,
+            "max_lambda_norm": 0.0,
+            "max_stage_constraint_norm": 0.0,
+            "max_stage_force_residual_norm": 0.0,
+            "max_stage_torque_residual_norm": 0.0,
+            "omega_l2_error": 0.00011700450040823649,
+            "orientation_error_rad": 3.682259479088848e-05,
+            "runtime_sec": 0.014886509976349771,
+            "total_newton_iterations": 0
+          },
+          "0.1": {
+            "max_endpoint_constraint_norm": 0.0,
+            "max_endpoint_velocity_constraint_norm": 0.0,
+            "max_energy_relative_error": 0.00020229390249839837,
+            "max_lambda_norm": 0.0,
+            "max_stage_constraint_norm": 0.0,
+            "max_stage_force_residual_norm": 0.0,
+            "max_stage_torque_residual_norm": 0.0,
+            "omega_l2_error": 0.001791389954938227,
+            "orientation_error_rad": 0.0006427290011349774,
+            "runtime_sec": 0.00699268002063036,
+            "total_newton_iterations": 0
+          },
+          "0.2": {
+            "max_endpoint_constraint_norm": 0.0,
+            "max_endpoint_velocity_constraint_norm": 0.0,
+            "max_energy_relative_error": 0.005959383840465483,
+            "max_lambda_norm": 0.0,
+            "max_stage_constraint_norm": 0.0,
+            "max_stage_force_residual_norm": 0.0,
+            "max_stage_torque_residual_norm": 0.0,
+            "omega_l2_error": 0.026376608077207767,
+            "orientation_error_rad": 0.011524797737581126,
+            "runtime_sec": 0.004987192980479449,
+            "total_newton_iterations": 0
+          }
+        }
+      }
+    },
+    "reference_h": 1.52587890625e-05,
+    "reference_method": "reduced_rkmk4",
+    "step_sizes": [
+      0.2,
+      0.1,
+      0.05
+    ],
+    "t_final": 2.0
+  },
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 181.20439837500453,
+  "version": "v008_endpoint_constrained_dae"
+}

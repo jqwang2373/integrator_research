@@ -1,0 +1,165 @@
+{
+  "certifies_induced_taylor_bounds": false,
+  "certifies_primitive_taylor_route": false,
+  "certifies_strict_taylor_subproof": true,
+  "claim_boundary": {
+    "allowed_now": "The full-residual direct route supplies a non-circular PS3 input corollary for P_state under the existing conditional proof boundary.",
+    "close_condition_for_primitive_route": "The primitive route still requires independent P_state/P_acc/P_lambda lift proofs before P_geom/P_gyro and the 162 Taylor subterms can close.",
+    "forbidden_now": [
+      "primitive/Taylor route closed",
+      "162 induced Taylor subterms certified",
+      "B1 independent implementation oracle closed",
+      "submission-ready proof"
+    ]
+  },
+  "direct_residual_bridge_proof_gap_closed": true,
+  "direct_route_certificate": {
+    "conditional_conversion_rate": "O(h^7)",
+    "direct_route_h_weighted_acceleration_input_closed": true,
+    "direct_route_ps3_input_closed": true,
+    "direct_route_residual_remainder_mode": "zero residual remainder after direct substitution of the smooth Gauss FullVA lift",
+    "direct_route_state_lift_rate_closed": true,
+    "dynamic_rows_from_direct_substitution": 36,
+    "full_132_row_residual_route_closed": true,
+    "full_stage_rows": 132,
+    "h_acceleration_obstruction_bypassed": true,
+    "h_acceleration_obstruction_source": "d5-p-state-ps3-h-acc-input-obstruction-audit-v1",
+    "non_dynamic_rows_from_kinematic_certificate": 96,
+    "primitive_162_subterm_taylor_lane_certified": false,
+    "stage_residual_perturbation_applied": true,
+    "stage_residual_perturbation_source": "Lemma stage-residual-defect plus PROOF_CLOSURE_MANIFEST PC2 direct-substitution route",
+    "state_estimate_used": "||delta S|| <= C_PS2 (||delta N_h^nd|| + h ||delta A||)"
+  },
+  "direct_route_p_state_corollary_closed": true,
+  "manuscript_link": {
+    "feedback_nonclosure_flat_tex_present": true,
+    "feedback_nonclosure_label": "lem:d5-p-state-direct-feedback-nonclosure",
+    "feedback_nonclosure_main_tex_present": true,
+    "feedback_nonclosure_tokens": [
+      "\\label{lem:d5-p-state-direct-feedback-nonclosure}",
+      "No direct-route feedback into primitive \\(P_{\\mathrm{state}}\\)",
+      "theorem-route corollary, not an admissible primitive-route input",
+      "\\(126\\) \\(P_{\\mathrm{state}}\\)-dependent",
+      "\\(0/162\\) primitive Taylor inventory unchanged"
+    ],
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-p-state-ps3-full-residual-route",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps3-full-residual-route}",
+      "Direct-route state-block corollary; not primitive",
+      "full 132-row residual",
+      "h\\|\\delta A\\|=O(h^7)",
+      "does not use velocity collocation",
+      "does not certify the primitive/Taylor route"
+    ]
+  },
+  "multiplier_reaction_output_order_claimed": false,
+  "non_circularity": {
+    "uses_finite_probe_as_proof": false,
+    "uses_p_acc_lift_as_input": false,
+    "uses_p_lambda_lift_as_input": false,
+    "uses_p_state_actual_ps3_as_input": false,
+    "uses_residual_to_error_promotion": false,
+    "uses_velocity_collocation_h_inverse_route": false,
+    "why_non_circular": "The proof first evaluates the full residual at the smooth Gauss lift. Only after the 132-row residual perturbation criterion is available does it read off the weighted state and acceleration components."
+  },
+  "p_state_primitive_closed_by_primitive_route": false,
+  "pc2_closed_by_referenced_manifest": true,
+  "plan_id": "P_state",
+  "primitive_id": "P_state_lift",
+  "primitive_route_boundary": {
+    "induced_taylor_bounds_proved": 0,
+    "not_used_to_close_primitive_taylor_route": true,
+    "open_primitive_route_obligations_retained": [
+      "P_state primitive-route closure",
+      "P_acc unweighted acceleration lift",
+      "P_lambda uniform inf-sup and multiplier-rate propagation",
+      "P_geom conditional downstream bound",
+      "P_gyro conditional downstream bound"
+    ],
+    "reason": "The primitive/Taylor route is an alternative stronger route that must derive its primitive lift bounds before using them to certify the 162 D5 Taylor subterms. This certificate is a direct-route corollary of the already closed PC2 direct-substitution route, so it cannot be recycled as an independent primitive-route proof."
+  },
+  "primitive_route_closed": false,
+  "primitive_route_pc2_closed": false,
+  "primitive_taylor_route_closed": false,
+  "proof_gap_closed": true,
+  "proof_gap_closed_scope": "direct_residual_bridge_ps3_corollary_only",
+  "read_only": true,
+  "reference_proof_style": {
+    "features_checked": {
+      "appendix_b_coefficients": true,
+      "dae_order_reduction_reported": true,
+      "expected_order_convention": true,
+      "m3_fifth_order_appendix": true
+    },
+    "source_text": "../../s11044-026-10153-w.txt",
+    "style_adopted": [
+      "separate expected formula order from DAE/order-reduction evidence",
+      "prove local algebraic expansion or row identity before using numerical convergence evidence",
+      "state the compact-tube derivative bounds and the theorem boundary explicitly"
+    ]
+  },
+  "residual_to_error_route_closed": false,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps3-full-residual-route-certificate-v1",
+  "source_consistency": {
+    "aggregate_ps2_inverse_closed": true,
+    "aggregate_schema": "d5-p-state-ps2-aggregate-promotion-audit-v1",
+    "conditional_conversion_closed": true,
+    "conditional_schema": "d5-p-state-ps3-conditional-conversion-audit-v1",
+    "direct_certificate_closed": true,
+    "direct_schema": "d5-dynamic-direct-substitution-certificate-v1",
+    "evidence_direct_dynamic_zero_rows": 36,
+    "h_acc_full_dynamic_residual_route_closed_before_certificate": false,
+    "h_acc_obstruction_schema": "d5-p-state-ps3-h-acc-input-obstruction-audit-v1",
+    "h_acc_recommended_route": "full_132_row_dynamic_residual_route",
+    "h_acc_residual_only_input_sufficient": false,
+    "kinematic_schema": "kinematic-row-defect-certificate-v1",
+    "proof_manifest_dynamic_symbolic_oracle_complete": false,
+    "proof_manifest_pc2_closed_by_direct_substitution": true,
+    "proof_manifest_primitive_lift_route_closed": false,
+    "proof_manifest_stage_residual_O_h7": true,
+    "proof_manifest_status": "pc2_closed_by_direct_residual_bridge_global_boundary_retained"
+  },
+  "status": "full_residual_route_certificate_closed_primitive_route_boundary_retained",
+  "strict_proof_steps": [
+    {
+      "closed": true,
+      "evidence": "KINEMATIC_ROW_DEFECT_CERTIFICATE",
+      "id": "FR1",
+      "statement": "The 96 non-dynamic rows have O(h^7) residual on the smooth lifted Gauss stage."
+    },
+    {
+      "closed": true,
+      "evidence": "D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE",
+      "id": "FR2",
+      "statement": "The 36 Newton-Euler rows have zero direct-route residual remainder by direct substitution."
+    },
+    {
+      "closed": true,
+      "evidence": "PROOF_CLOSURE_MANIFEST",
+      "id": "FR3",
+      "statement": "The full 132-row residual therefore satisfies the O(h^7) stage-residual perturbation hypothesis."
+    },
+    {
+      "closed": true,
+      "evidence": "D5_P_STATE_PS2_AGGREGATE_PROMOTION_AUDIT and D5_P_STATE_PS3_CONDITIONAL_CONVERSION_AUDIT",
+      "id": "FR4",
+      "statement": "The aggregate PS2 estimate converts the full-route bound into ||delta S||=O(h^7) and h||delta A||=O(h^7)."
+    }
+  ],
+  "submission_ready": false,
+  "summary": {
+    "direct_route_h_weighted_acceleration_input_closed": true,
+    "direct_route_ps3_input_closed": true,
+    "direct_route_state_lift_rate_closed": true,
+    "full_residual_route_certificate_closed": true,
+    "p_state_primitive_closed_by_primitive_route": false,
+    "primitive_route_closed": false,
+    "primitive_route_induced_taylor_bounds_proved": 0,
+    "strict_proof_steps_closed": 4,
+    "strict_proof_steps_total": 4,
+    "submission_ready": false
+  }
+}

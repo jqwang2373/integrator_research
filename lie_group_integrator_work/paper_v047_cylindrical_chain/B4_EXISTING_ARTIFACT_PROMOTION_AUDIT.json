@@ -1,0 +1,200 @@
+{
+  "b4_can_close_now": false,
+  "b4_closing_item_count": 0,
+  "b7_can_close_now": false,
+  "b7_closing_item_count": 0,
+  "candidate_item_count": 8,
+  "heavy_numerical_run_invoked": false,
+  "next_required_action": "run or explicitly demote source-policy work/precision lanes; current artifacts remain diagnostic, incomplete, mixed-policy, or below acceptance",
+  "promotion_items": [
+    {
+      "artifact_status": "all_public_baseline_source_policy_shards_completed_not_promoted",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "needs matching Gauss6/FullVA local source-policy rows",
+        "needs runtime/Newton metrics tied to promoted local rows",
+        "needs full RA2021 suite source-policy work/precision figure before B4/B7 closure"
+      ],
+      "existing_rows": 9,
+      "id": "ra2021_public_baseline_shards",
+      "promotion_ready_without_new_execution": false,
+      "source": "ra2021_executed_shard_evidence",
+      "source_policy_rows_closed_by_this_artifact": 0
+    },
+    {
+      "artifact_status": "partial_local_source_policy_evidence_single_complete_closed_loop_residual_only_not_promoted",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "single-pendulum local rows need matching accepted RA2021 baseline work/error rows in the same figure policy",
+        "four-link and slider-crank shards are kinematic reaction/residual rows, not dynamic order/work-superiority rows",
+        "closed-loop source-policy step trios are now complete but remain residual/kinematic rows rather than dynamic work/precision rows",
+        "legacy h=1e-3/1e-4 shards remain recorded as reference-nesting diagnostics, not promotion evidence",
+        "all promoted work/precision curves must bind error/order and runtime/Newton metrics from the same accepted rows"
+      ],
+      "existing_rows": 9,
+      "id": "gauss6_public_horizon_local_rows",
+      "promotion_ready_without_new_execution": false,
+      "source": "gauss6_local_source_policy_evidence",
+      "source_policy_rows_closed_by_this_artifact": 0
+    },
+    {
+      "artifact_status": "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "same-window public work/precision rows are available for four-link and slider-crank",
+        "local and public error columns use different reference families",
+        "bounded T=0.1 diagnostic rows are not the RA2021 T=3 source-policy dynamic-order rows",
+        "source-policy figures still need promoted rows with one reference/output/runtime policy"
+      ],
+      "existing_rows": 24,
+      "id": "ra2021_closed_loop_same_window_work_precision",
+      "promotion_ready_without_new_execution": false,
+      "source": "ra2021_closed_loop_same_window_public_work_precision_evidence",
+      "source_policy_rows_closed_by_this_artifact": 0
+    },
+    {
+      "artifact_status": "executed_order_below_acceptance_not_promoted",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "source-policy rows are complete but not yet independently rerun",
+        "observed source-policy order is below sixth-order acceptance (pos=2.148, vel=2.463)",
+        "error norm/output mapping not yet bound to accepted source-policy rows",
+        "runtime/Newton-iteration policy not yet tied to accepted source-policy rows",
+        "independent rerun or verification artifact not yet produced"
+      ],
+      "existing_rows": 3,
+      "id": "ra2021_double_local_source_policy_candidate",
+      "promotion_ready_without_new_execution": false,
+      "source": "ra2021_double_local_source_policy_candidate_evidence",
+      "source_policy_rows_closed_by_this_artifact": 0
+    },
+    {
+      "artifact_status": "selected_candidate_matrix_partially_executed_not_promoted",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "full HI2022 public step grid is not selected or not completed",
+        "runtime and error/order rows are not yet bound into a publication-grade full-policy figure",
+        "selected coarse trio is not the full encoded HI2022 public step family",
+        "work/precision figure rows are not promoted from this isolated shard"
+      ],
+      "existing_rows": 24,
+      "id": "hi2022_full_t8_selected_candidate",
+      "promotion_ready_without_new_execution": false,
+      "source": "hi2022_full_t8_source_policy_candidate_evidence",
+      "source_policy_rows_closed_by_this_artifact": 0
+    },
+    {
+      "artifact_status": "demote_hi2022_from_b4_b7_source_policy_figures",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "HI2022 full T=8 public grid remains incomplete",
+        "HI2022 selected-candidate matrix has 7/8 completed coarse-trio shards; remaining partial/missing shards are ['rA_half:double_pendulum']",
+        "current HI2022 T=8 evidence is demoted from B4/B7 source-policy figures",
+        "HI2022 contributes zero accepted source-policy work/precision rows"
+      ],
+      "existing_rows": 24,
+      "id": "hi2022_b4_b7_figure_scope_demotion",
+      "promotion_ready_without_new_execution": false,
+      "source": "hi2022_b4_b7_figure_scope_demotion_evidence",
+      "source_policy_rows_closed_by_this_artifact": 0
+    },
+    {
+      "artifact_status": "preflight_ready_runner_equivalence_open",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "brown_mcphee_source_code_equivalent_law_open",
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+        "full_T10_source_grid_endpoint_policy_open",
+        "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+      ],
+      "can_promote_any_tfe_source_policy_row_now": false,
+      "execution_block_count": 4,
+      "existing_rows": 18,
+      "id": "tfe_same_test_and_runner_preflight",
+      "promotion_ready_without_new_execution": false,
+      "ready_to_execute_source_policy_now": false,
+      "source": "tfe_source_policy_runner_equivalence_preflight_evidence",
+      "source_policy_execution_preflight_boundary": {
+        "can_promote_any_tfe_source_policy_row_now": false,
+        "current_route": "no_public_code_self_reproduction_attempted_unable_to_reproduce_not_promoted",
+        "execution_block_count": 4,
+        "execution_blocks": [
+          "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+          "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+          "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+          "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+        ],
+        "explicit_user_opt_in_required": false,
+        "heavy_numerical_run_invoked": false,
+        "nonheavy_blocks_dispositioned_by_demotion": true,
+        "nonheavy_demotion_does_not_close_source_policy": true,
+        "opt_in_required_for": [],
+        "ready_to_execute_source_policy_now": false,
+        "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+        "reviewer_facing_decision": "no_public_code_self_reproduction_attempted_unable_to_reproduce_not_promoted",
+        "run_v047_invoked": false,
+        "runner_contracts_required_before_execution": [
+          "monolithic_absolute_coordinate_DAE_time_integrator",
+          "TFE_m1_m2_m3_Newmark_beta_trapezoidal_source_policy_method_runners",
+          "Gauss6_FullVA_absolute_coordinate_source_policy_DAE_runner",
+          "accepted_T10_source_policy_work_precision_rows"
+        ],
+        "schema": "tfe-source-policy-execution-preflight-v1",
+        "source": "TFE_DAE_RUNNER_CONTRACT_GAP_AUDIT.json::source_policy_execution_preflight",
+        "source_policy_rows_completed": 0,
+        "status": "terminal_no_public_code_self_reproduction_attempted_not_promoted",
+        "v048_runner_invoked": false
+      },
+      "source_policy_rows_closed_by_this_artifact": 0,
+      "terminal_reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact"
+    },
+    {
+      "artifact_status": "public_code_rechecked_no_distinct_vp2024_path_attempted_not_reproducible",
+      "b4_can_close_from_this_artifact": false,
+      "b7_can_close_from_this_artifact": false,
+      "blocking_reasons": [
+        "distinct_public_vp2024_code_path_not_found",
+        "coordinate_partitioning_proxy_is_not_source_policy_reproduction",
+        "external_superiority_claim_not_allowed_for_vp2024_proxy"
+      ],
+      "existing_rows": 4,
+      "id": "vp2024_common_reference_proxy_and_public_recheck",
+      "promotion_ready_without_new_execution": false,
+      "source": "vp2024_code_path_disposition_and_public_recheck",
+      "source_policy_rows_closed_by_this_artifact": 0
+    }
+  ],
+  "promotion_ready_without_new_execution_count": 0,
+  "public_code_refresh_source_policy_rows_closed": 0,
+  "public_code_refresh_status": "public_code_refresh_no_new_source_artifact_nonpublic_rows_remain_unable_to_reproduce",
+  "public_code_refresh_unable_to_reproduce_rows": 20,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "b4-existing-artifact-promotion-audit-v1",
+  "source_files": [
+    "B4_SOURCE_POLICY_WORK_PRECISION_EXECUTION_PLAN.json",
+    "TFE_DAE_RUNNER_CONTRACT_GAP_AUDIT.json",
+    "VP2024_CODE_PATH_DISPOSITION_AUDIT.json",
+    "VP2024_PUBLIC_CODE_RECHECK_20260613.json",
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260614.json"
+  ],
+  "source_plan": "B4_SOURCE_POLICY_WORK_PRECISION_EXECUTION_PLAN.json",
+  "source_policy_rows_closed_by_existing_artifacts": 0,
+  "source_policy_rows_total": 40,
+  "status": "no_existing_artifact_promotable_without_new_source_policy_execution",
+  "tfe_execution_preflight_can_promote_now": false,
+  "tfe_execution_preflight_execution_block_count": 4,
+  "tfe_execution_preflight_ready_now": false,
+  "tfe_execution_preflight_reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+  "tfe_execution_preflight_status": "terminal_no_public_code_self_reproduction_attempted_not_promoted",
+  "v048_runner_invoked": false
+}

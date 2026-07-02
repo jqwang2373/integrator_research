@@ -1,0 +1,107 @@
+{
+  "acceleration_pair_orders": [
+    1.0203148605658712,
+    1.0100160556065236
+  ],
+  "avg_iteration_values": [
+    8.6975,
+    6.85375,
+    5.686875
+  ],
+  "b4_can_close_from_this_evidence": false,
+  "b7_can_close_from_this_evidence": false,
+  "builder_invoked_heavy_numerical_run": false,
+  "canonical_hi2022_output_untouched_by_writer": true,
+  "canonical_v048_main_invoked": false,
+  "counts_as_b4_accepted_source_policy_rows": false,
+  "counts_as_complete_work_precision_curve": false,
+  "counts_as_executed_full_T8_candidate": true,
+  "counts_as_full_public_grid_source_policy": false,
+  "estimated_candidate_steps": [
+    400,
+    800,
+    1600
+  ],
+  "estimated_reference_steps": 8000,
+  "execute_requested": true,
+  "execution_phase": "candidate",
+  "form": "rA_half",
+  "full_T8_policy_completed": false,
+  "full_public_grid_selected": false,
+  "h_values": [
+    0.02,
+    0.01,
+    0.005
+  ],
+  "heavy_numerical_run_invoked": true,
+  "isolated_rows_output": "hi2022_full_t8_source_policy_candidate_rA_half_four_link_rows.csv",
+  "max_iteration_values": [
+    13.0,
+    10.0,
+    8.0
+  ],
+  "model": "four_link",
+  "ok_row_count": 3,
+  "planned_row_count": 0,
+  "position_pair_orders": [
+    0.01814734671025952,
+    -0.022994418841639917
+  ],
+  "promotion_blockers": [
+    "full HI2022 public step grid is not selected or not completed",
+    "work/precision figure rows are not promoted from this isolated shard",
+    "runtime and error/order rows are not yet bound into a publication-grade full-policy figure",
+    "selected coarse trio is not the full encoded HI2022 public step family"
+  ],
+  "promotion_ready": false,
+  "raw_group_summary": {
+    "acc_final_linf_order": 1.0151654580861988,
+    "completed": false,
+    "ok_row_count": 3,
+    "planned_row_count": 0,
+    "pos_final_linf_order": -0.002423536065686307,
+    "reference_execution_path": "state_history_replay",
+    "reference_mode": "kinematics",
+    "reference_policy": "bounded_rA_kinematics_reference",
+    "reference_runtime_sec": 16.809752425993793,
+    "reference_status": "ok",
+    "row_count": 3,
+    "selected_step_trio_completed": true,
+    "step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "vel_final_linf_order": 1.0022561639998182
+  },
+  "reference_execution_path": "state_history_replay",
+  "reference_runtime_sec": 16.809752425993793,
+  "reference_status": "ok",
+  "row_count": 3,
+  "runtime_sec_values": [
+    0.8733523009577766,
+    1.3845398660050705,
+    2.356148340040818
+  ],
+  "schema": "hi2022-full-t8-source-policy-candidate-v1",
+  "selected_coarse_trio": true,
+  "selected_reference_h": 0.001,
+  "selected_step_sizes": [
+    0.02,
+    0.01,
+    0.005
+  ],
+  "selected_step_trio_completed": true,
+  "selected_t_end": 8.0,
+  "source_policy_1e_4_included": false,
+  "source_policy_candidate_rows_completed": 3,
+  "source_policy_reference_h_selected": true,
+  "source_policy_reproduction_rows_promoted": 0,
+  "source_policy_rows_closed_by_this_evidence": 0,
+  "source_policy_time_window_selected": true,
+  "status": "executed_full_T8_selected_coarse_trio_not_promoted",
+  "velocity_pair_orders": [
+    1.002952997656428,
+    1.0015593303432058
+  ]
+}

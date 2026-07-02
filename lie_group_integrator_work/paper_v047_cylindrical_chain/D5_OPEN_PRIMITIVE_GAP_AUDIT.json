@@ -1,0 +1,607 @@
+{
+  "anti_circularity_gate": {
+    "dynamic_residual_defect_disallowed_as_input": true,
+    "finite_numerical_slopes_disallowed_as_symbolic_pc2_closure": true,
+    "residual_identity_alone_disallowed_as_variable_lift_proof": true,
+    "stage_residual_perturbation_lemma_disallowed_as_input": true
+  },
+  "claim_boundary": {
+    "allowed_now": "the five open primitive proof interfaces are explicitly recorded, and the P_lambda PL4, P_geom, and P_gyro conditional reductions are recorded with their open lift dependencies",
+    "close_condition": "Primitive/Taylor PC2 lane closes only after the open P_state and P_acc interfaces have independent uniform proofs, P_lambda is instantiated with those inputs, P_geom and P_gyro receive their required lift inputs, and the induced D5 Taylor subterm bounds are certified.",
+    "forbidden_now": [
+      "P_acc closure",
+      "P_lambda closure",
+      "P_geom closure",
+      "P_gyro closure",
+      "primitive/Taylor PC2 route closure",
+      "unconditional sixth-order theorem"
+    ]
+  },
+  "conditional_closure_proposition": {
+    "blocks_direct_route_promotion": true,
+    "flat_tex_present": true,
+    "keeps_root_lifts_open": true,
+    "keeps_zero_actual_bounds": true,
+    "main_tex_present": true,
+    "records_sufficiency_only": true,
+    "tokens": [
+      "\\label{lem:d5-primitive-obligation-implication}",
+      "Conditional primitive Taylor implication criterion (non-closure)",
+      "same compact tube",
+      "five primitive obligations",
+      "zero actual primitive-route Taylor subterm bounds out of the 162",
+      "R_{\\mathrm{dyn}}(Z_G)=O(h^7)",
+      "not a closure certificate",
+      "not an accepted primitive-route closure",
+      "not invoked by Theorem",
+      "No inverse projection from the aggregate",
+      "Actual primitive-route Taylor subterm bounds are not established until"
+    ]
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{tab:d5-open-primitive-proof-interfaces}",
+      "Retained primitive proof interfaces for D5",
+      "\\(P_{\\mathrm{acc}}\\)",
+      "\\(P_{\\lambda}\\)",
+      "\\(P_{\\mathrm{geom}}\\)",
+      "\\(P_{\\mathrm{gyro}}\\)",
+      "None of the five retained primitive rows is allowed to use",
+      "\\label{lem:d5-p-acc-independence}",
+      "\\label{lem:d5-p-lambda-interface}",
+      "\\label{lem:d5-p-lambda-pl2-axis-plane-margin}",
+      "\\label{lem:d5-p-lambda-d3-noncircularity}",
+      "\\label{lem:d5-p-lambda-pl4-rate-propagation}",
+      "\\label{lem:d5-geom-chart-reduction}",
+      "\\label{lem:d5-gyro-bilinear-reduction}"
+    ]
+  },
+  "open_plan_ids": [
+    "P_state",
+    "P_acc",
+    "P_lambda",
+    "P_geom",
+    "P_gyro"
+  ],
+  "open_primitive_count": 5,
+  "open_primitive_interfaces": [
+    {
+      "conditional_reduction_closed": false,
+      "finite_diagnostic": null,
+      "forbidden_shortcuts": [
+        "do not use Lemma stage-residual-defect as an input",
+        "do not assume the D5 dynamic residual defect rate",
+        "do not infer variable-lift rates from residual identity alone"
+      ],
+      "future_subproofs": [
+        "Define the non-dynamic stage map in the accepted Lie chart.",
+        "Prove a local inverse or inf-sup bound for the non-dynamic stage map.",
+        "Convert the 96-row certificate into O(h^7) pose and velocity lift rates.",
+        "Keep the argument independent of the D5 dynamic residual theorem."
+      ],
+      "future_subproofs_closed": 3,
+      "induced_taylor_bounds_proved": 0,
+      "lemma_interface": "stage pose, translational velocity, and angular velocity lifts are O(h^7)",
+      "missing_proof": "connect the smooth reduced Gauss stage variables to the accepted Lie-chart pose and velocity variables with uniform O(h^7) lift bounds",
+      "noncircularity_diagnostic": null,
+      "open_dependencies": [
+        "PS3 actual state lift conversion after conditional implication"
+      ],
+      "pa2_weighted_inverse_diagnostic": null,
+      "pl2_geometric_margin_diagnostic": null,
+      "pl4_rate_propagation_diagnostic": null,
+      "plan_id": "P_state",
+      "primitive_closed": false,
+      "primitive_id": "P_state_lift",
+      "ps2_aggregate_promotion_diagnostic": {
+        "aggregate_promotion_recorded": true,
+        "aggregate_weighted_ps2_inverse_certified": true,
+        "p_state_closed": false,
+        "pc2_closed": false,
+        "ps2_closed": true,
+        "ps3_actual_conversion_closed": false,
+        "uniform_ps2_constant_certified": true
+      },
+      "ps2_lie_chart_diagnostic": {
+        "full_nonlinear_mean_value_binding_certified": false,
+        "lie_chart_binding_recorded": true,
+        "pc2_closed": false,
+        "ps2_closed": false,
+        "remaining_binding_gap_count": 2,
+        "so3_chart_norm_equivalence_certified": true
+      },
+      "ps2_nonlinear_binding_diagnostic": {
+        "full_mean_value_binding_certified": true,
+        "full_ps2_certified": false,
+        "nonlinear_binding_recorded": true,
+        "pc2_closed": false,
+        "ps2_closed": false,
+        "remaining_promotion_gap_count": 1,
+        "rotational_mean_value_binding_certified": true
+      },
+      "ps2_row_injection_diagnostic": {
+        "full_nonlinear_mean_value_binding_certified": false,
+        "pc2_closed": false,
+        "ps2_closed": false,
+        "remaining_binding_gap_count": 1,
+        "row_injection_certified": true,
+        "row_injection_recorded": true,
+        "unweighted_scaling_certified": true
+      },
+      "term_rows_using_obligation": 126
+    },
+    {
+      "conditional_reduction_closed": false,
+      "finite_diagnostic": null,
+      "forbidden_shortcuts": [
+        "do not use Lemma stage-residual-defect as an input",
+        "do not assume the D5 dynamic residual defect rate",
+        "do not infer variable-lift rates from residual identity alone"
+      ],
+      "future_subproofs": [
+        "Define accepted acceleration variable and D5 acceleration-lift row map.",
+        "Prove that velocity-collocation perturbations imply O(h^7) acceleration lift rates.",
+        "Show lower-pair acceleration rows do not rely on the dynamic-balance defect.",
+        "Bind translational and angular acceleration variables to the manuscript residual ordering."
+      ],
+      "future_subproofs_closed": 3,
+      "induced_taylor_bounds_proved": 0,
+      "lemma_interface": "stage translational and angular acceleration lifts are O(h^7)",
+      "missing_proof": "differentiate the smooth lift in the accepted variables and show the stage acceleration variables inherit the O(h^7) lift error",
+      "noncircularity_diagnostic": null,
+      "open_dependencies": [
+        "PA2 velocity-collocation-to-acceleration lift proof"
+      ],
+      "pa2_weighted_inverse_diagnostic": {
+        "finite_probe_full_column_rank_all": true,
+        "max_unweighted_acceleration_projection_constant": 100.00000000000063,
+        "max_weighted_h_acceleration_projection_constant": 1.0000000000000056,
+        "pa2_closed": false,
+        "pa2_weighted_inverse_probe_recorded": true,
+        "pc2_closed": false,
+        "unweighted_acceleration_uniform_control_proved": false,
+        "weighted_h_acceleration_control_recorded": true
+      },
+      "pl2_geometric_margin_diagnostic": null,
+      "pl4_rate_propagation_diagnostic": null,
+      "plan_id": "P_acc",
+      "primitive_closed": false,
+      "primitive_id": "P_acceleration_lift",
+      "ps2_aggregate_promotion_diagnostic": null,
+      "ps2_lie_chart_diagnostic": null,
+      "ps2_nonlinear_binding_diagnostic": null,
+      "ps2_row_injection_diagnostic": null,
+      "term_rows_using_obligation": 36
+    },
+    {
+      "conditional_reduction_closed": false,
+      "finite_diagnostic": {
+        "finite_probe_full_column_rank_all": true,
+        "max_condition_number_across_probes": 2.7707407702069617,
+        "min_singular_value_across_probes": 0.6142803888036007,
+        "p_lambda_inf_sup_probe_recorded": true,
+        "pc2_closed": false,
+        "uniform_constant_proved": false
+      },
+      "forbidden_shortcuts": [
+        "do not use Lemma stage-residual-defect as an input",
+        "do not assume the D5 dynamic residual defect rate",
+        "do not infer variable-lift rates from residual identity alone"
+      ],
+      "future_subproofs": [
+        "Write the stage KKT/Newton-Euler linearization with multiplier columns exposed.",
+        "Prove a uniform multiplier inf-sup bound on the compact proof tube.",
+        "Use D3 wrench consistency without assuming the D5 dynamic residual rate.",
+        "Propagate the state and acceleration lift bounds to O(h^7) multiplier rates."
+      ],
+      "future_subproofs_closed": 4,
+      "induced_taylor_bounds_proved": 0,
+      "lemma_interface": "lower-pair multiplier lifts are O(h^7)",
+      "missing_proof": "use the regular KKT or constrained Newton-Euler linearization to bound multiplier lift error uniformly across all stages and joints",
+      "noncircularity_diagnostic": {
+        "d3_identity_does_not_assume_dynamic_defect_rate": true,
+        "d3_identity_is_algebraic_mapping": true,
+        "d3_identity_not_used_as_multiplier_rate": true,
+        "pc2_closed": false,
+        "pl3_d3_noncircularity_closed": true
+      },
+      "open_dependencies": [
+        "P_state actual state lift O(h^7)",
+        "P_acc unweighted acceleration lift O(h^7)"
+      ],
+      "pa2_weighted_inverse_diagnostic": null,
+      "pl2_geometric_margin_diagnostic": {
+        "axis_plane_margin_certificate_recorded": true,
+        "axis_torque_compact_axis_margin_proved": true,
+        "compact_tube_reduction_closes_pl2": true,
+        "compact_tube_reduction_recorded": true,
+        "finite_full_stage_rank_all": true,
+        "finite_probe_sufficient_for_symbolic_margin": false,
+        "finite_rotational_axis_torque_rank_all": true,
+        "finite_translational_normal_rank_all": true,
+        "normal_force_margin_proved": true,
+        "pc2_closed": false,
+        "pl2_geometric_margin_route_recorded": true,
+        "pl2_uniform_inf_sup_bound_proved": true,
+        "smooth_friction_orthogonal_perturbation_proved": true,
+        "symbolic_margin_premise_proved": true,
+        "symbolic_structure_certificate_recorded": true,
+        "translational_normal_subblock_lower_bound_proved": true,
+        "uniform_compact_tube_margin_proved": true
+      },
+      "pl4_rate_propagation_diagnostic": {
+        "actual_acceleration_lift_input_closed": false,
+        "actual_state_lift_input_closed": false,
+        "conditional_multiplier_lift_rate_proved": true,
+        "multiplier_lift_rate_proved": false,
+        "pc2_closed": false,
+        "pl4_lift_propagation_closed": true,
+        "term_bounds_proved": 0,
+        "uses_d3_as_rate_proof": false,
+        "uses_d5_dynamic_residual_defect": false,
+        "uses_direct_substitution_as_proof": false,
+        "uses_finite_probe_as_proof": false,
+        "uses_first_order_taylor_with_quadratic_remainder": true,
+        "uses_stage_residual_defect": false
+      },
+      "plan_id": "P_lambda",
+      "primitive_closed": false,
+      "primitive_id": "P_multiplier_lift",
+      "ps2_aggregate_promotion_diagnostic": null,
+      "ps2_lie_chart_diagnostic": null,
+      "ps2_nonlinear_binding_diagnostic": null,
+      "ps2_row_injection_diagnostic": null,
+      "term_rows_using_obligation": 72
+    },
+    {
+      "conditional_reduction_closed": true,
+      "finite_diagnostic": null,
+      "forbidden_shortcuts": [
+        "do not use Lemma stage-residual-defect as an input",
+        "do not assume the D5 dynamic residual defect rate",
+        "do not infer variable-lift rates from residual identity alone"
+      ],
+      "future_subproofs": [
+        "Expand force, torque, moment-arm, and constraint-Jacobian geometry in the accepted chart.",
+        "Apply compact-tube derivative constants plus state and multiplier lift rates.",
+        "Check row ordering, scaling, and AD columns against the expanded geometry terms.",
+        "Certify the induced O(h^7) geometry contribution for every dynamic component row."
+      ],
+      "future_subproofs_closed": 3,
+      "induced_taylor_bounds_proved": 0,
+      "lemma_interface": "dynamic-row force and torque Jacobian geometry lifts are O(h^7)",
+      "missing_proof": "combine the closed chart reduction with the still-open P_state pose lift and P_lambda multiplier lift and certify the induced geometry row terms",
+      "noncircularity_diagnostic": null,
+      "open_dependencies": [
+        "P_state pose lift O(h^7)",
+        "P_lambda multiplier lift O(h^7)"
+      ],
+      "pa2_weighted_inverse_diagnostic": null,
+      "pl2_geometric_margin_diagnostic": null,
+      "pl4_rate_propagation_diagnostic": null,
+      "plan_id": "P_geom",
+      "primitive_closed": false,
+      "primitive_id": "P_geometry_lift",
+      "ps2_aggregate_promotion_diagnostic": null,
+      "ps2_lie_chart_diagnostic": null,
+      "ps2_nonlinear_binding_diagnostic": null,
+      "ps2_row_injection_diagnostic": null,
+      "term_rows_using_obligation": 36
+    },
+    {
+      "conditional_reduction_closed": true,
+      "finite_diagnostic": null,
+      "forbidden_shortcuts": [
+        "do not use Lemma stage-residual-defect as an input",
+        "do not assume the D5 dynamic residual defect rate",
+        "do not infer variable-lift rates from residual identity alone"
+      ],
+      "future_subproofs": [
+        "Use constant body inertia and compact angular-velocity bounds.",
+        "Apply a bilinear difference estimate to omega x J omega.",
+        "Bind the estimate to the 18 rotational Newton-Euler rows."
+      ],
+      "future_subproofs_closed": 3,
+      "induced_taylor_bounds_proved": 0,
+      "lemma_interface": "body-frame gyroscopic bilinear lift is O(h^7)",
+      "missing_proof": "combine the closed bilinear reduction with the still-open P_state angular-velocity lift and certify the induced gyroscopic row terms",
+      "noncircularity_diagnostic": null,
+      "open_dependencies": [
+        "P_state angular-velocity lift O(h^7)"
+      ],
+      "pa2_weighted_inverse_diagnostic": null,
+      "pl2_geometric_margin_diagnostic": null,
+      "pl4_rate_propagation_diagnostic": null,
+      "plan_id": "P_gyro",
+      "primitive_closed": false,
+      "primitive_id": "P_gyroscopic_lift",
+      "ps2_aggregate_promotion_diagnostic": null,
+      "ps2_lie_chart_diagnostic": null,
+      "ps2_nonlinear_binding_diagnostic": null,
+      "ps2_row_injection_diagnostic": null,
+      "term_rows_using_obligation": 18
+    }
+  ],
+  "pc2_closed": false,
+  "pc2_closed_scope": "false only for the separate primitive/Taylor PC2 route; active direct PC2 residual-bridge slot is closed separately",
+  "primitive_bounds_closed_count": 1,
+  "primitive_dependency_graph": {
+    "closure_sequence": [
+      "P_state",
+      "P_acc",
+      "P_lambda",
+      "P_geom",
+      "P_gyro"
+    ],
+    "conditional_downstream_primitives": [
+      "P_geom",
+      "P_gyro"
+    ],
+    "conditional_downstream_term_row_total": 54,
+    "conditional_downstream_term_rows": {
+      "P_geom": 36,
+      "P_gyro": 18
+    },
+    "dependency_edges": [
+      {
+        "reason": "multiplier-rate proof propagates state lift errors through the constrained Newton-Euler linearization",
+        "source": "P_state",
+        "target": "P_lambda"
+      },
+      {
+        "reason": "multiplier-rate proof propagates acceleration lift errors through the constrained Newton-Euler linearization",
+        "source": "P_acc",
+        "target": "P_lambda"
+      },
+      {
+        "reason": "accepted-chart multiplier geometry reduction needs the pose lift",
+        "source": "P_state",
+        "target": "P_geom"
+      },
+      {
+        "reason": "accepted-chart multiplier geometry reduction needs the multiplier lift",
+        "source": "P_lambda",
+        "target": "P_geom"
+      },
+      {
+        "reason": "gyroscopic bilinear reduction needs the angular-velocity lift",
+        "source": "P_state",
+        "target": "P_gyro"
+      }
+    ],
+    "does_not_certify_taylor_bounds": true,
+    "graph_recorded": true,
+    "minimal_next_subproofs": [
+      {
+        "blocking_detail": "independent h-weighted acceleration input remains open",
+        "next_subproof": "PS3 actual state-lift instantiation",
+        "primitive": "P_state"
+      },
+      {
+        "blocking_detail": "current evidence controls h times acceleration, not the unweighted acceleration error",
+        "next_subproof": "PA2 unweighted acceleration lift",
+        "primitive": "P_acc"
+      },
+      {
+        "blocking_detail": "PL4 conditional propagation is closed, but the actual state and unweighted acceleration lift inputs remain open",
+        "next_subproof": "instantiate PL4 with P_state/P_acc lift inputs",
+        "primitive": "P_lambda"
+      }
+    ],
+    "pc2_closes_only_after_all_open_primitives_close": true,
+    "root_dependent_primitives": [
+      "P_lambda"
+    ],
+    "root_dependent_term_row_total": 72,
+    "root_dependent_term_rows": {
+      "P_lambda": 72
+    },
+    "root_lift_primitives": [
+      "P_state",
+      "P_acc"
+    ],
+    "root_lift_term_row_total": 162,
+    "root_lift_term_rows": {
+      "P_acc": 36,
+      "P_state": 126
+    }
+  },
+  "primitive_route_pc2_closed": false,
+  "primitive_route_proof_gap_closed": false,
+  "proof_gap_closed": false,
+  "proof_gap_closed_scope": "false only for the separate primitive/Taylor proof gap; active direct PC2 residual-bridge proof-gap slot is closed separately",
+  "read_only": true,
+  "reader_facing_blocker_ledger": {
+    "does_not_promote_direct_route": true,
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "preserves_primitive_route_open_token": true,
+    "preserves_zero_actual_bounds": true,
+    "tokens": [
+      "\\label{tab:d5-primitive-blocker-ledger}",
+      "D5 primitive/Taylor retained-interface map",
+      "specification, not a premise of Theorem",
+      "no actual D5 primitive Taylor bound from this route is invoked by the theorem",
+      "This separate primitive-route lemma is a conditional finite implication",
+      "The direct full-residual route corollary does not close the primitive route",
+      "Unweighted \\(O(h^7)\\) acceleration lift",
+      "\\(h\\|\\delta A\\|=O(h^7)\\)",
+      "Geometry reduction alone is not an actual term closure",
+      "Bilinear reduction alone is not an actual term closure"
+    ]
+  },
+  "run_v047_invoked": false,
+  "schema": "d5-open-primitive-gap-audit-v1",
+  "source_consistency": {
+    "p_acc_independence_closed": true,
+    "p_acc_independence_pc2_closed": false,
+    "p_acc_independence_primitive_closed": false,
+    "p_acc_independence_schema": "d5-p-acc-independence-audit-v1",
+    "p_acc_map_definition_closed": true,
+    "p_acc_map_definition_pc2_closed": false,
+    "p_acc_map_definition_primitive_closed": false,
+    "p_acc_map_definition_schema": "d5-p-acc-map-definition-audit-v1",
+    "p_acc_pa2_weighted_inverse_pa2_closed": false,
+    "p_acc_pa2_weighted_inverse_pc2_closed": false,
+    "p_acc_pa2_weighted_inverse_recorded": true,
+    "p_acc_pa2_weighted_inverse_schema": "d5-p-acc-pa2-weighted-inverse-audit-v1",
+    "p_acc_pa2_weighted_inverse_unweighted_closed": false,
+    "p_acc_row_binding_closed": true,
+    "p_acc_row_binding_pc2_closed": false,
+    "p_acc_row_binding_primitive_closed": false,
+    "p_acc_row_binding_schema": "d5-p-acc-row-binding-audit-v1",
+    "p_geom_chart_reduction_closed": true,
+    "p_geom_open_dependencies": [
+      "P_state pose lift O(h^7)",
+      "P_lambda multiplier lift O(h^7)"
+    ],
+    "p_geom_primitive_closed": false,
+    "p_geom_reduction_schema": "d5-p-geom-chart-reduction-audit-v1",
+    "p_gyro_algebraic_reduction_closed": true,
+    "p_gyro_open_dependencies": [
+      "P_state angular-velocity lift O(h^7)"
+    ],
+    "p_gyro_primitive_closed": false,
+    "p_gyro_reduction_schema": "d5-p-gyro-bilinear-reduction-audit-v1",
+    "p_lambda_d3_noncircularity_closed": true,
+    "p_lambda_d3_noncircularity_pc2_closed": false,
+    "p_lambda_d3_noncircularity_primitive_closed": false,
+    "p_lambda_d3_noncircularity_schema": "d5-p-lambda-d3-noncircularity-audit-v1",
+    "p_lambda_inf_sup_probe_full_column_rank_all": true,
+    "p_lambda_inf_sup_probe_pc2_closed": false,
+    "p_lambda_inf_sup_probe_recorded": true,
+    "p_lambda_inf_sup_probe_schema": "d5-p-lambda-inf-sup-probe-v1",
+    "p_lambda_inf_sup_probe_uniform_constant_proved": false,
+    "p_lambda_interface_closed": true,
+    "p_lambda_interface_pc2_closed": false,
+    "p_lambda_interface_primitive_closed": false,
+    "p_lambda_interface_schema": "d5-p-lambda-interface-audit-v1",
+    "p_lambda_pl2_geometric_margin_axis_plane_margin_certificate_recorded": true,
+    "p_lambda_pl2_geometric_margin_axis_torque_compact_axis_margin_proved": true,
+    "p_lambda_pl2_geometric_margin_compact_tube_reduction_closes_pl2": true,
+    "p_lambda_pl2_geometric_margin_compact_tube_reduction_recorded": true,
+    "p_lambda_pl2_geometric_margin_finite_probe_sufficient_for_symbolic_margin": false,
+    "p_lambda_pl2_geometric_margin_normal_force_margin_proved": true,
+    "p_lambda_pl2_geometric_margin_pc2_closed": false,
+    "p_lambda_pl2_geometric_margin_pl2_closed": true,
+    "p_lambda_pl2_geometric_margin_recorded": true,
+    "p_lambda_pl2_geometric_margin_schema": "d5-p-lambda-pl2-geometric-margin-audit-v1",
+    "p_lambda_pl2_geometric_margin_smooth_friction_orthogonal_perturbation_proved": true,
+    "p_lambda_pl2_geometric_margin_symbolic_margin_premise_proved": true,
+    "p_lambda_pl2_geometric_margin_symbolic_structure_certificate_recorded": true,
+    "p_lambda_pl4_acceleration_input_closed": false,
+    "p_lambda_pl4_actual_multiplier_rate": false,
+    "p_lambda_pl4_conditional_multiplier_rate": true,
+    "p_lambda_pl4_pc2_closed": false,
+    "p_lambda_pl4_primitive_closed": false,
+    "p_lambda_pl4_rate_propagation_closed": true,
+    "p_lambda_pl4_rate_propagation_schema": "d5-p-lambda-pl4-rate-propagation-audit-v1",
+    "p_lambda_pl4_state_input_closed": false,
+    "p_state_anticircularity_closed": true,
+    "p_state_gap_closed": false,
+    "p_state_gap_schema": "d5-p-state-lift-gap-audit-v1",
+    "p_state_map_definition_closed": true,
+    "p_state_ps2_aggregate_inverse_or_infsup_closed": true,
+    "p_state_ps2_aggregate_pc2_closed": false,
+    "p_state_ps2_aggregate_primitive_closed": false,
+    "p_state_ps2_aggregate_promotion_recorded": true,
+    "p_state_ps2_aggregate_ps3_actual_conversion_closed": false,
+    "p_state_ps2_aggregate_schema": "d5-p-state-ps2-aggregate-promotion-audit-v1",
+    "p_state_ps2_aggregate_uniform_constant_certified": true,
+    "p_state_ps2_aggregate_weighted_inverse_certified": true,
+    "p_state_ps2_inverse_or_infsup_closed": true,
+    "p_state_ps2_kinematic_block_pc2_closed": false,
+    "p_state_ps2_kinematic_block_recorded": true,
+    "p_state_ps2_kinematic_block_schema": "d5-p-state-ps2-kinematic-block-certificate-v1",
+    "p_state_ps2_kinematic_full_nonlinear_ps2_certified": false,
+    "p_state_ps2_kinematic_subblock_bound_certified": true,
+    "p_state_ps2_lie_chart_binding_recorded": true,
+    "p_state_ps2_lie_chart_binding_schema": "d5-p-state-ps2-lie-chart-binding-audit-v1",
+    "p_state_ps2_lie_chart_full_mean_value_binding": false,
+    "p_state_ps2_lie_chart_pc2_closed": false,
+    "p_state_ps2_lie_chart_so3_norm_equivalence": true,
+    "p_state_ps2_linearization_probe_full_column_rank_all": true,
+    "p_state_ps2_linearization_probe_pc2_closed": false,
+    "p_state_ps2_linearization_probe_recorded": true,
+    "p_state_ps2_linearization_probe_uniform_constant_proved": false,
+    "p_state_ps2_nonlinear_binding_recorded": true,
+    "p_state_ps2_nonlinear_binding_schema": "d5-p-state-ps2-nonlinear-binding-audit-v1",
+    "p_state_ps2_nonlinear_full_mean_value_binding": true,
+    "p_state_ps2_nonlinear_full_ps2": false,
+    "p_state_ps2_nonlinear_pc2_closed": false,
+    "p_state_ps2_nonlinear_rotational_mean_value": true,
+    "p_state_ps2_row_injection_certified": true,
+    "p_state_ps2_row_injection_full_mean_value_binding": false,
+    "p_state_ps2_row_injection_pc2_closed": false,
+    "p_state_ps2_row_injection_recorded": true,
+    "p_state_ps2_row_injection_schema": "d5-p-state-ps2-row-injection-audit-v1",
+    "p_state_ps2_row_injection_unweighted_scaling": true,
+    "p_state_ps2_weighted_target_spec_closed": true,
+    "p_state_ps3_actual_conversion_closed": false,
+    "p_state_ps3_actual_gap_h_input_closed": false,
+    "p_state_ps3_actual_gap_inputs_closed": 2,
+    "p_state_ps3_actual_gap_inputs_total": 4,
+    "p_state_ps3_actual_gap_pc2_closed": false,
+    "p_state_ps3_actual_gap_recorded": true,
+    "p_state_ps3_actual_gap_schema": "d5-p-state-ps3-actual-instantiation-gap-audit-v1",
+    "p_state_ps3_conditional_conversion_closed": true,
+    "p_state_ps3_full_route_certificate_closed": true,
+    "p_state_ps3_full_route_h_acc_input_closed": true,
+    "p_state_ps3_full_route_primitive_induced_bounds": 0,
+    "p_state_ps3_full_route_primitive_route_closed": false,
+    "p_state_ps3_full_route_ps3_input_closed": true,
+    "p_state_ps3_full_route_schema": "d5-p-state-ps3-full-residual-route-certificate-v1",
+    "p_state_ps3_full_route_state_lift_rate_closed": true,
+    "p_state_ps3_full_route_strict_steps_closed": 4,
+    "p_state_ps3_full_route_strict_steps_total": 4,
+    "primitive_plan_open_count": 5,
+    "primitive_plan_pc2_closed": false,
+    "primitive_plan_schema": "d5-primitive-obligation-closure-plan-v1",
+    "proof_manifest_direct_route_gap_closed": true,
+    "proof_manifest_pc2_closed": true,
+    "proof_manifest_proof_gap_closed": true,
+    "proof_manifest_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open"
+  },
+  "status": "open_primitive_gaps_recorded_primitive_taylor_pc2_open",
+  "submission_ready": false,
+  "summary": {
+    "conditional_downstream_primitives": [
+      "P_geom",
+      "P_gyro"
+    ],
+    "conditional_downstream_term_row_total": 54,
+    "conditional_reductions_closed": 2,
+    "dependency_edge_count": 5,
+    "future_subproofs_closed": 16,
+    "induced_taylor_bounds_proved": 0,
+    "open_primitive_count": 5,
+    "p_state_direct_full_residual_route_recorded": true,
+    "p_state_direct_route_h_weighted_acceleration_input_closed": true,
+    "p_state_direct_route_ps3_input_closed": true,
+    "p_state_direct_route_state_lift_rate_closed": true,
+    "p_state_direct_route_strict_proof_steps_closed": 4,
+    "p_state_direct_route_strict_proof_steps_total": 4,
+    "p_state_primitive_route_closed_by_direct_corollary": false,
+    "p_state_primitive_route_induced_bounds_by_direct_corollary": 0,
+    "primitive_dependency_graph_recorded": true,
+    "root_dependent_primitives": [
+      "P_lambda"
+    ],
+    "root_dependent_term_row_total": 72,
+    "root_lift_primitives": [
+      "P_state",
+      "P_acc"
+    ],
+    "root_lift_term_row_total": 162,
+    "term_rows_with_open_primitives": {
+      "P_acc": 36,
+      "P_geom": 36,
+      "P_gyro": 18,
+      "P_lambda": 72,
+      "P_state": 126
+    },
+    "total_future_subproofs": 19
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "completed_row_count": 32,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "external_superiority_claim": false,
+  "interpretation": "This matrix is a coverage and performance ledger. It records completed and partial rows, but it does not claim external-method superiority until every required method/example cell uses the same source policy or a documented policy distinction.",
+  "not_complete_row_count": 16,
+  "partial_row_count": 0,
+  "row_count": 48,
+  "same_test_campaign_status": "not_run",
+  "schema": "four-example-method-performance-matrix-v1"
+}

@@ -1,0 +1,658 @@
+{
+  "all_figures_available": true,
+  "all_figures_integrated_main_flat": true,
+  "all_legible_dimensions": true,
+  "all_pdf_captions_present": true,
+  "b7_closed": true,
+  "b7_closure_readiness_preflight": {
+    "b7_closure_allowed_now": true,
+    "closed_precondition_count": 13,
+    "closed_preconditions": [
+      {
+        "evidence": "CMAME_FIGURE_SET_AUDIT.json",
+        "id": "figure_inventory_complete",
+        "status": true
+      },
+      {
+        "evidence": "figures/ and cmame_submission_flat/",
+        "id": "main_flat_figure_files_available",
+        "status": true
+      },
+      {
+        "evidence": "main_cmame.tex and flat submission source",
+        "id": "main_flat_tex_integration_present",
+        "status": true
+      },
+      {
+        "evidence": "main_cmame.txt and flat PDF text",
+        "id": "main_flat_pdf_captions_present",
+        "status": true
+      },
+      {
+        "evidence": "PNG dimensions",
+        "id": "legible_figure_dimensions_present",
+        "status": true
+      },
+      {
+        "evidence": "Figure 8",
+        "id": "limitation_explanation_figure_integrated",
+        "status": true
+      },
+      {
+        "evidence": "Figure 9",
+        "id": "coarse_baseline_work_precision_figure_integrated",
+        "status": true
+      },
+      {
+        "evidence": "Figure 12",
+        "id": "all_method_result_matrix_integrated",
+        "status": true
+      },
+      {
+        "evidence": "Figure 13",
+        "id": "work_precision_compendium_integrated",
+        "status": true
+      },
+      {
+        "evidence": "claim_boundary",
+        "id": "read_only_no_heavy_no_default_1e4_policy_recorded",
+        "status": true
+      },
+      {
+        "evidence": "CMAME_NARROWED_CLAIM_CLOSURE_POLICY_AUDIT.json",
+        "id": "narrowed_claim_policy_evidence_supported",
+        "status": true
+      },
+      {
+        "evidence": "claim_boundary",
+        "id": "source_policy_work_precision_claim_excluded_from_current_b7_scope",
+        "status": true
+      },
+      {
+        "evidence": "claim_boundary",
+        "id": "external_superiority_claim_forbidden_in_current_figure_scope",
+        "status": true
+      }
+    ],
+    "default_1e-4_required": false,
+    "future_source_policy_reintroduction_dependencies": [
+      {
+        "id": "b4_source_policy_work_precision_rows_closed",
+        "reason": "source-policy rows remain 0/40; retained only for future source-policy reintroduction",
+        "status": "excluded_from_current_scope"
+      },
+      {
+        "id": "full_source_policy_baseline_comparison_figures",
+        "reason": "current figures are accepted as common-reference diagnostics under the narrowed claim, not source-policy baseline comparisons",
+        "status": "excluded_from_current_scope"
+      },
+      {
+        "id": "clean_source_policy_work_precision_figures",
+        "reason": "Figure 13 remains a diagnostic compendium; clean source-policy curves are outside the current publication claim",
+        "status": "excluded_from_current_scope"
+      }
+    ],
+    "heavy_numerical_run_invoked": false,
+    "narrowed_claim_policy_evidence_supported": true,
+    "open_dependencies": [],
+    "open_dependency_count": 0,
+    "post_close_actions": [
+      "keep source-policy work/precision rows excluded from the current publication claim",
+      "recheck figure captions against the narrowed accepted claim boundary",
+      "refresh PDF-style review, blocker gate, review agent, and submission bundle after any figure-scope edit"
+    ],
+    "run_v047_invoked": false,
+    "schema": "cmame-b7-closure-readiness-preflight-v1",
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_ready_for_b7": false,
+    "source_policy_rows_required_for_current_b7": false,
+    "source_policy_rows_total": 40,
+    "status": "b7_narrowed_diagnostic_common_reference_figure_scope_closed"
+  },
+  "blocker": "B7",
+  "claim_boundary": {
+    "current_figure_scope": "narrowed_common_reference_diagnostic_publication_scope",
+    "default_1e-4_required": false,
+    "external_superiority_claim_allowed": false,
+    "figure_set_supports_common_reference_diagnostics_only": true,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "source_policy_rows_promoted": 0,
+    "source_policy_rows_total": 40,
+    "source_policy_work_precision_claim_excluded": true
+  },
+  "excluded_future_source_policy_requirements": [
+    "full_source_policy_baseline_comparison_figures",
+    "complete_work_precision_curves_for_external_source_suites"
+  ],
+  "expected_figure_count": 13,
+  "figure12_all_method_matrix_integrated": true,
+  "figure13_work_precision_compendium_integrated": true,
+  "figure_count": 13,
+  "figures": [
+    {
+      "caption_token": "Convergence and work/precision evidence",
+      "flat": "cmame_submission_flat/Figure_1_convergence.png",
+      "flat_dimensions": [
+        2256,
+        1804
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 420270,
+      "flat_tex": "Figure_1_convergence.png",
+      "flat_tex_includes": true,
+      "main": "figures/convergence.png",
+      "main_dimensions": [
+        2256,
+        1804
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 420269,
+      "main_tex": "figures/convergence.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 1,
+      "role": "accepted-path convergence and work/precision"
+    },
+    {
+      "caption_token": "Coordinate-oriented mechanism schematics",
+      "flat": "cmame_submission_flat/Figure_2_asme_lower_pair_graph_bridge.png",
+      "flat_dimensions": [
+        2028,
+        1759
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 314656,
+      "flat_tex": "Figure_2_asme_lower_pair_graph_bridge.png",
+      "flat_tex_includes": true,
+      "main": "figures/asme_lower_pair_graph_bridge.png",
+      "main_dimensions": [
+        2028,
+        1759
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 314656,
+      "main_tex": "figures/asme_lower_pair_graph_bridge.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 2,
+      "role": "mechanism schematic"
+    },
+    {
+      "caption_token": "Closed-loop kinematic FullVA mechanism-coverage evidence",
+      "flat": "cmame_submission_flat/Figure_3_asme_closed_loop_kinematic_fullva.png",
+      "flat_dimensions": [
+        1980,
+        756
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 122026,
+      "flat_tex": "Figure_3_asme_closed_loop_kinematic_fullva.png",
+      "flat_tex_includes": true,
+      "main": "figures/asme_closed_loop_kinematic_fullva.png",
+      "main_dimensions": [
+        1980,
+        756
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 122026,
+      "main_tex": "figures/asme_closed_loop_kinematic_fullva.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 3,
+      "role": "closed-loop kinematic evidence"
+    },
+    {
+      "caption_token": "Order/closure blend diagnostic",
+      "flat": "cmame_submission_flat/Figure_4_order_closure_blend.png",
+      "flat_dimensions": [
+        2844,
+        756
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 187804,
+      "flat_tex": "Figure_4_order_closure_blend.png",
+      "flat_tex_includes": true,
+      "main": "figures/order_closure_blend.png",
+      "main_dimensions": [
+        2844,
+        756
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 187804,
+      "main_tex": "figures/order_closure_blend.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 4,
+      "role": "full-TFE non-claim diagnostic"
+    },
+    {
+      "caption_token": "Velocity-compression diagnostic",
+      "flat": "cmame_submission_flat/Figure_5_velocity_compression.png",
+      "flat_dimensions": [
+        2970,
+        827
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 116411,
+      "flat_tex": "Figure_5_velocity_compression.png",
+      "flat_tex_includes": true,
+      "main": "figures/velocity_compression.png",
+      "main_dimensions": [
+        2970,
+        827
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 116411,
+      "main_tex": "figures/velocity_compression.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 5,
+      "role": "velocity-compression diagnostic"
+    },
+    {
+      "caption_token": "Sparse backend speed-gap diagnostic",
+      "flat": "cmame_submission_flat/Figure_6_sparse_speed_gap.png",
+      "flat_dimensions": [
+        1944,
+        720
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 61504,
+      "flat_tex": "Figure_6_sparse_speed_gap.png",
+      "flat_tex_includes": true,
+      "main": "figures/sparse_speed_gap.png",
+      "main_dimensions": [
+        1944,
+        720
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 61504,
+      "main_tex": "figures/sparse_speed_gap.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 6,
+      "role": "sparse backend caveat"
+    },
+    {
+      "caption_token": "Strict common-reference work/precision rows",
+      "flat": "cmame_submission_flat/Figure_7_strict_common_reference_work_precision.png",
+      "flat_dimensions": [
+        1793,
+        767
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 93809,
+      "flat_tex": "Figure_7_strict_common_reference_work_precision.png",
+      "flat_tex_includes": true,
+      "main": "figures/strict_common_reference_work_precision.png",
+      "main_dimensions": [
+        1793,
+        767
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 93809,
+      "main_tex": "figures/strict_common_reference_work_precision.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 7,
+      "role": "strict common-reference work/precision"
+    },
+    {
+      "caption_token": "Claim-boundary and limitation map",
+      "flat": "cmame_submission_flat/Figure_8_claim_boundary_limitations.png",
+      "flat_dimensions": [
+        2301,
+        1804
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 537845,
+      "flat_tex": "Figure_8_claim_boundary_limitations.png",
+      "flat_tex_includes": true,
+      "main": "figures/claim_boundary_limitations.png",
+      "main_dimensions": [
+        2287,
+        1804
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 537142,
+      "main_tex": "figures/claim_boundary_limitations.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 8,
+      "role": "limitation explanation"
+    },
+    {
+      "caption_token": "Coarse-first baseline and work/precision diagnostics",
+      "flat": "cmame_submission_flat/Figure_9_coarse_baseline_work_precision.png",
+      "flat_dimensions": [
+        2539,
+        1939
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 246741,
+      "flat_tex": "Figure_9_coarse_baseline_work_precision.png",
+      "flat_tex_includes": true,
+      "main": "figures/coarse_baseline_work_precision.png",
+      "main_dimensions": [
+        2539,
+        1939
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 246884,
+      "main_tex": "figures/coarse_baseline_work_precision.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 9,
+      "role": "coarse-first baseline/work-precision"
+    },
+    {
+      "caption_token": "Closed-loop coarse-window trajectory diagnostics",
+      "flat": "cmame_submission_flat/Figure_10_closed_loop_true_dynamic_order.png",
+      "flat_dimensions": [
+        2374,
+        1804
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 500095,
+      "flat_tex": "Figure_10_closed_loop_true_dynamic_order.png",
+      "flat_tex_includes": true,
+      "main": "figures/closed_loop_true_dynamic_order.png",
+      "main_dimensions": [
+        2374,
+        1804
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 500095,
+      "main_tex": "figures/closed_loop_true_dynamic_order.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 10,
+      "role": "closed-loop coarse dynamics diagnostics"
+    },
+    {
+      "caption_token": "Accepted Gauss6/FullVA one-step architecture",
+      "flat": "cmame_submission_flat/Figure_11_method_stage_architecture.png",
+      "flat_dimensions": [
+        2509,
+        1504
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 260562,
+      "flat_tex": "Figure_11_method_stage_architecture.png",
+      "flat_tex_includes": true,
+      "main": "figures/method_stage_architecture.png",
+      "main_dimensions": [
+        2509,
+        1504
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 260562,
+      "main_tex": "figures/method_stage_architecture.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 11,
+      "role": "method-stage architecture"
+    },
+    {
+      "caption_token": "All-method common-reference result matrix",
+      "flat": "cmame_submission_flat/Figure_12_all_method_result_matrix.png",
+      "flat_dimensions": [
+        2524,
+        2044
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 386784,
+      "flat_tex": "Figure_12_all_method_result_matrix.png",
+      "flat_tex_includes": true,
+      "main": "figures/all_method_result_matrix.png",
+      "main_dimensions": [
+        2524,
+        2044
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 386779,
+      "main_tex": "figures/all_method_result_matrix.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 12,
+      "role": "all-method all-example result matrix"
+    },
+    {
+      "caption_token": "Work/precision compendium for fair candidate diagnostics",
+      "flat": "cmame_submission_flat/Figure_13_work_precision_compendium.png",
+      "flat_dimensions": [
+        3272,
+        1939
+      ],
+      "flat_exists": true,
+      "flat_pdf_caption_present": true,
+      "flat_size_bytes": 518833,
+      "flat_tex": "Figure_13_work_precision_compendium.png",
+      "flat_tex_includes": true,
+      "main": "figures/work_precision_compendium.png",
+      "main_dimensions": [
+        3271,
+        1939
+      ],
+      "main_exists": true,
+      "main_pdf_caption_present": true,
+      "main_size_bytes": 518645,
+      "main_tex": "figures/work_precision_compendium.png",
+      "main_tex_includes": true,
+      "meets_minimum_pixel_area": true,
+      "number": 13,
+      "role": "work/precision compendium"
+    }
+  ],
+  "post_b4_figure_scope_plan": {
+    "action_counts": {
+      "rebuild_from_promoted_source_policy_rows": 2,
+      "refresh_claim_boundary_overlay_or_caption": 2,
+      "retain_after_caption_recheck": 9
+    },
+    "b7_closure_allowed_by_this_plan_now": false,
+    "blocking_source_policy_rebuild_figures": [
+      9,
+      13
+    ],
+    "claim_boundary_refresh_figures_after_b4": [
+      8,
+      12
+    ],
+    "current_b7_scope_closed_without_source_policy_rebuild": true,
+    "no_new_figure_count_required_now": true,
+    "ready_command_coverage_boundary": {
+      "execution_invoked_by_packet": false,
+      "not_ready_lanes_after_ready_commands": [
+        "tfe_source_policy_work_precision",
+        "vp2024_source_code_path_work_precision"
+      ],
+      "not_ready_suites_after_ready_commands": [],
+      "ready_command_count": 13,
+      "ready_command_mapped_external_rows": 20,
+      "ready_commands_alone_can_close_b4": false,
+      "ready_commands_alone_can_close_b7": false,
+      "ready_lanes_after_explicit_opt_in": [
+        "ra2021_source_policy_work_precision",
+        "hi2022_full_T8_work_precision"
+      ],
+      "remaining_gap_program_status": "remaining_0_rows_programmed_no_execution_invoked",
+      "remaining_gap_rows_demoted_related_work_proxy_for_current_claim": 0,
+      "remaining_gap_rows_requiring_new_runner_or_code_path": 0,
+      "schema": "cmame-b7-ready-command-coverage-boundary-v1",
+      "source_policy_rows_total": 40,
+      "status": "ready_commands_cover_half_source_policy_rows_future_source_policy_reintroduction_only",
+      "unaddressed_external_rows_after_ready_commands": 0
+    },
+    "required_b4_evidence_before_closure": [
+      "promoted source-policy row table with accepted provenance for work/precision rows",
+      "same-run error/order and work metrics for every promoted source-policy figure row",
+      "ready-command coverage is not enough: 20/40 rows remain without executable source-policy commands",
+      "demotion labels for TFE and VP2024 rows that remain without runner/code-path closure",
+      "caption/claim-boundary refresh after B4 promotion validators pass"
+    ],
+    "retain_after_caption_recheck_figures": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      10,
+      11
+    ],
+    "rows": [
+      {
+        "current_caption_token": "Convergence and work/precision evidence",
+        "number": 1,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "accepted local convergence/work-precision evidence remains part of the local-method claim",
+        "role": "accepted-path convergence and work/precision",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Coordinate-oriented mechanism schematics",
+        "number": 2,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "mechanism schematic is independent of external source-policy rows",
+        "role": "mechanism schematic",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Closed-loop kinematic FullVA mechanism-coverage evidence",
+        "number": 3,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "closed-loop kinematic FullVA evidence is independent of external source-policy rows",
+        "role": "closed-loop kinematic evidence",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Order/closure blend diagnostic",
+        "number": 4,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "full-TFE non-claim diagnostic remains a limitation figure",
+        "role": "full-TFE non-claim diagnostic",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Velocity-compression diagnostic",
+        "number": 5,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "velocity-compression diagnostic remains a method-boundary figure",
+        "role": "velocity-compression diagnostic",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Sparse backend speed-gap diagnostic",
+        "number": 6,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "sparse backend caveat remains independent of source-policy rows",
+        "role": "sparse backend caveat",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Strict common-reference work/precision rows",
+        "number": 7,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "strict common-reference work/precision rows remain diagnostic and must not be promoted to source-policy closure",
+        "role": "strict common-reference work/precision",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Claim-boundary and limitation map",
+        "number": 8,
+        "post_b4_action": "refresh_claim_boundary_overlay_or_caption",
+        "reason": "claim-boundary figure should reflect the final B4/B7 source-policy row status after promotion",
+        "role": "limitation explanation",
+        "source_policy_dependent": true
+      },
+      {
+        "current_caption_token": "Coarse-first baseline and work/precision diagnostics",
+        "number": 9,
+        "post_b4_action": "rebuild_from_promoted_source_policy_rows",
+        "reason": "current coarse-baseline panel is diagnostic; B7 needs accepted source-policy baseline comparison rows",
+        "role": "coarse-first baseline/work-precision",
+        "source_policy_dependent": true
+      },
+      {
+        "current_caption_token": "Closed-loop coarse-window trajectory diagnostics",
+        "number": 10,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "closed-loop coarse dynamics evidence remains a local-method diagnostic figure",
+        "role": "closed-loop coarse dynamics diagnostics",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "Accepted Gauss6/FullVA one-step architecture",
+        "number": 11,
+        "post_b4_action": "retain_after_caption_recheck",
+        "reason": "method-stage architecture is independent of external source-policy rows",
+        "role": "method-stage architecture",
+        "source_policy_dependent": false
+      },
+      {
+        "current_caption_token": "All-method common-reference result matrix",
+        "number": 12,
+        "post_b4_action": "refresh_claim_boundary_overlay_or_caption",
+        "reason": "all-method matrix should keep any post-B4 promoted/demoted row status synchronized",
+        "role": "all-method all-example result matrix",
+        "source_policy_dependent": true
+      },
+      {
+        "current_caption_token": "Work/precision compendium for fair candidate diagnostics",
+        "number": 13,
+        "post_b4_action": "rebuild_from_promoted_source_policy_rows",
+        "reason": "current compendium is diagnostic; clean source-policy work/precision curves require promoted B4 rows",
+        "role": "work/precision compendium",
+        "source_policy_dependent": true
+      }
+    ],
+    "schema": "cmame-b7-post-b4-figure-scope-plan-v1",
+    "source_policy_dependent_figure_count": 4,
+    "source_policy_rows_closed_now": 0,
+    "source_policy_rows_required_before_rebuild": 40,
+    "status": "post_b4_source_policy_reintroduction_plan_ready_current_b7_closed"
+  },
+  "publication_progress": [
+    "mechanism_schematic_present",
+    "method_stage_architecture_present",
+    "accepted_path_convergence_work_precision_present",
+    "limitation_explanation_present",
+    "coarse_first_baseline_work_precision_present",
+    "closed_loop_true_dynamic_order_present",
+    "all_method_all_example_result_matrix_present",
+    "work_precision_compendium_present"
+  ],
+  "schema": "cmame-figure-set-audit-v1",
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_total": 40,
+  "status": "b7_figure_set_closed_narrowed_common_reference_diagnostic_scope",
+  "still_open_requirements": [],
+  "submission_ready": false
+}

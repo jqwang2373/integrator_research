@@ -1,0 +1,31 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_1e-4_required": false,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "interpretation": "The square closed-loop FullVA dynamic stage residual evaluator is implemented and verified at Gauss6 stage states. Endpoint advancement and trajectory order rows remain open.",
+  "max_stage_residual_inf": 5.5067062021407764e-14,
+  "method": "Gauss6/FullVA",
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "ok_row_count": 6,
+  "required_symbols_implemented": [
+    "pack_closed_loop_fullva_stage_vector",
+    "unpack_closed_loop_fullva_stage_vector",
+    "closed_loop_fullva_stage_residual"
+  ],
+  "row_count": 6,
+  "schema": "closed-loop-true-dynamic-stage-residual-audit-v1",
+  "simulate_runner_implemented": false,
+  "stage_count_per_model": 3,
+  "stage_residual_dim": 72,
+  "stage_residual_evaluator_implemented": true,
+  "stage_unknown_dim": 72,
+  "status": "stage_residual_evaluator_verified_stepper_not_implemented",
+  "strict_public_policy_1e-4_required": false,
+  "trajectory_stepper_executed": false,
+  "trajectory_stepper_implemented": false
+}

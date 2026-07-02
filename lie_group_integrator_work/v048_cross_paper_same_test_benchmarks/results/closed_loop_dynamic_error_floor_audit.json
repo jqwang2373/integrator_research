@@ -1,0 +1,24 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "interpretation": "The selected-window rows show velocity and acceleration errors far below the public rA dynamics row and near-roundoff local dynamics residuals, but the position column is reference-floor dominated. This audit therefore narrows the blocker without accepting dynamic order or external superiority.",
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "position_floor_blocker_count": 2,
+  "ratio_threshold": 0.0001,
+  "residual_threshold": 1e-12,
+  "row_count": 2,
+  "same_test_campaign_status": "not_run",
+  "schema": "closed-loop-dynamic-error-floor-audit-v1",
+  "selected_reference_h": 0.001,
+  "selected_step_sizes": [
+    0.02,
+    0.01,
+    0.005
+  ],
+  "selected_t_end": 0.2,
+  "velocity_acceleration_evidence_count": 2
+}

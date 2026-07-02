@@ -1,0 +1,206 @@
+{
+  "case": "cylindrical_smooth",
+  "claim_boundary": {
+    "allowed_now": "finite solved-stage probes show the weighted PS2 operator has full column rank at h=0.04, 0.02, and 0.01 for the smooth cylindrical-chain case",
+    "close_condition": "PS2 closes only after a uniform compact-tube inverse or inf-sup proof bounds the weighted operator independently of the finite diagnostic h-values.",
+    "forbidden_now": [
+      "uniform PS2 inverse or inf-sup theorem",
+      "P_state lift-rate proof",
+      "D5 Taylor term certification through P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "h_values": [
+    0.04,
+    0.02,
+    0.01
+  ],
+  "one_step_stage_newton_invoked": true,
+  "operator_definition": {
+    "acceleration_block": "A=(a,alpha) over three Gauss stages and two bodies",
+    "lambda_columns_excluded": true,
+    "map": "(delta S, delta A) -> (D N_h^nd[delta S, delta A], h delta A)",
+    "non_dynamic_rows": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "state_block": "S=(r,eta,v,omega) over three Gauss stages and two bodies"
+  },
+  "p_state_lift_rate_proved": false,
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "probes": [
+    {
+      "acceleration_column_count": 36,
+      "acceleration_column_families": [
+        "translation_acceleration_a",
+        "angular_acceleration_alpha"
+      ],
+      "case": "cylindrical_smooth",
+      "condition_number": 362.7290422635366,
+      "domain_column_count": 108,
+      "finite_state_projection_constant": 2.0194700009526936,
+      "friction_smoothness_velocity": 0.5,
+      "full_column_rank": true,
+      "gauss_stage_jacobian_max_condition": 3945.982227930529,
+      "gauss_stage_jacobian_min_rank": 132,
+      "gauss_stage_newton_iterations": 6,
+      "gauss_stage_residual_norm": 1.0292829673060734e-14,
+      "h": 0.04,
+      "max_singular_value": 14.50403728957033,
+      "min_singular_value": 0.03998587264769549,
+      "non_dynamic_jacobian_rank": 96,
+      "non_dynamic_row_count": 96,
+      "non_dynamic_row_families": [
+        "translational_position_weak_defect",
+        "rotational_lie_position_weak_defect",
+        "translational_velocity_weak_defect",
+        "angular_velocity_weak_defect",
+        "lower_pair_index3_weak_constraints"
+      ],
+      "rank_tolerance": 4.251117063310347e-13,
+      "state_column_count": 72,
+      "state_column_families": [
+        "translation_position_r",
+        "lie_position_u",
+        "translation_velocity_v",
+        "angular_velocity_w"
+      ],
+      "weighted_operator_rank": 108,
+      "weighted_operator_shape": [
+        132,
+        108
+      ]
+    },
+    {
+      "acceleration_column_count": 36,
+      "acceleration_column_families": [
+        "translation_acceleration_a",
+        "angular_acceleration_alpha"
+      ],
+      "case": "cylindrical_smooth",
+      "condition_number": 723.4843411616006,
+      "domain_column_count": 108,
+      "finite_state_projection_constant": 2.007889290259502,
+      "friction_smoothness_velocity": 0.5,
+      "full_column_rank": true,
+      "gauss_stage_jacobian_max_condition": 3933.7344665173896,
+      "gauss_stage_jacobian_min_rank": 132,
+      "gauss_stage_newton_iterations": 6,
+      "gauss_stage_residual_norm": 9.238506732914585e-15,
+      "h": 0.02,
+      "max_singular_value": 14.468413786021543,
+      "min_singular_value": 0.019998240408066848,
+      "non_dynamic_jacobian_rank": 96,
+      "non_dynamic_row_count": 96,
+      "non_dynamic_row_families": [
+        "translational_position_weak_defect",
+        "rotational_lie_position_weak_defect",
+        "translational_velocity_weak_defect",
+        "angular_velocity_weak_defect",
+        "lower_pair_index3_weak_constraints"
+      ],
+      "rank_tolerance": 4.2406758543719194e-13,
+      "state_column_count": 72,
+      "state_column_families": [
+        "translation_position_r",
+        "lie_position_u",
+        "translation_velocity_v",
+        "angular_velocity_w"
+      ],
+      "weighted_operator_rank": 108,
+      "weighted_operator_shape": [
+        132,
+        108
+      ]
+    },
+    {
+      "acceleration_column_count": 36,
+      "acceleration_column_families": [
+        "translation_acceleration_a",
+        "angular_acceleration_alpha"
+      ],
+      "case": "cylindrical_smooth",
+      "condition_number": 1446.2488274759571,
+      "domain_column_count": 108,
+      "finite_state_projection_constant": 2.0055934526401247,
+      "friction_smoothness_velocity": 0.5,
+      "full_column_rank": true,
+      "gauss_stage_jacobian_max_condition": 3928.297944579685,
+      "gauss_stage_jacobian_min_rank": 132,
+      "gauss_stage_newton_iterations": 6,
+      "gauss_stage_residual_norm": 1.2213250127267018e-14,
+      "h": 0.01,
+      "max_singular_value": 14.462170456956997,
+      "min_singular_value": 0.009999780246803636,
+      "non_dynamic_jacobian_rank": 96,
+      "non_dynamic_row_count": 96,
+      "non_dynamic_row_families": [
+        "translational_position_weak_defect",
+        "rotational_lie_position_weak_defect",
+        "translational_velocity_weak_defect",
+        "angular_velocity_weak_defect",
+        "lower_pair_index3_weak_constraints"
+      ],
+      "rank_tolerance": 4.238845941624988e-13,
+      "state_column_count": 72,
+      "state_column_families": [
+        "translation_position_r",
+        "lie_position_u",
+        "translation_velocity_v",
+        "angular_velocity_w"
+      ],
+      "weighted_operator_rank": 108,
+      "weighted_operator_shape": [
+        132,
+        108
+      ]
+    }
+  ],
+  "proof_gap_closed": false,
+  "ps2_inverse_or_infsup_closed": false,
+  "ps2_weighted_linearization_probe_recorded": true,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-linearization-probe-v1",
+  "source_consistency": {
+    "dynamic_oracle_runtime_columns": 132,
+    "dynamic_oracle_runtime_rows": 132,
+    "dynamic_oracle_schema": "dynamic-row-oracle-gate-v2",
+    "ps2_target_acc_dim": 36,
+    "ps2_target_infsup_closed": false,
+    "ps2_target_row_dim": 96,
+    "ps2_target_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "ps2_target_spec_closed": true,
+    "ps2_target_state_dim": 72,
+    "run_v047_path": "v047_cylindrical_chain_pipeline/run_v047.py",
+    "runtime_row_dimension": 132
+  },
+  "status": "finite_ps2_weighted_linearization_probe_recorded_ps2_open",
+  "submission_ready": false,
+  "summary": {
+    "auxiliary_acceleration_dimension": 36,
+    "domain_dimension": 108,
+    "finite_probe_full_column_rank_all": true,
+    "max_condition_number_across_probes": 1446.2488274759571,
+    "max_finite_state_projection_constant": 2.0194700009526936,
+    "max_gauss_stage_residual_norm": 1.2213250127267018e-14,
+    "max_weighted_operator_rank": 108,
+    "min_singular_value_across_probes": 0.009999780246803636,
+    "min_weighted_operator_rank": 108,
+    "non_dynamic_row_dimension": 96,
+    "probe_count": 3,
+    "ps2_inverse_or_infsup_closed": false,
+    "ps2_weighted_target_spec_closed": true,
+    "state_block_dimension": 72,
+    "weighted_operator_shape": [
+      132,
+      108
+    ]
+  },
+  "uniform_constant_proved": false
+}

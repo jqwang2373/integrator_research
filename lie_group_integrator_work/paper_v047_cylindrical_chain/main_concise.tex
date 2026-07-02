@@ -1,0 +1,449 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\emergencystretch=4em
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\method}{Gauss6\slash FullVA}
+\newcommand{\tfe}{TFE}
+\newcommand{\artifact}[1]{\nolinkurl{#1}}
+\newcommand{\figpath}{figures}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\paperfig}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{#1}{%
+      \includegraphics[width=0.92\linewidth]{#1}%
+    }{%
+      \fbox{\parbox{0.88\linewidth}{Missing figure: \nolinkurl{#1}}}%
+    }
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\title{A Conditional Sixth-Order Lie-Group FullVA Integrator for Lower-Pair Mechanisms}
+\author{Jingquan Wang}
+\date{v047 concise artifact-backed draft}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This concise draft states only the accepted v047 paper claim.  The production
+integrator is the \method{} one-step map, a conditional sixth-order Gauss
+collocation FullVA method on a Lie-group lower-pair formulation.  On the smooth
+cylindrical-chain benchmark it records observed position and velocity orders
+7.161 and 7.066.  The same artifact contract accepts four ASME-style examples:
+single pendulum, double pendulum, four link, and slider crank.  The local
+paper-style $m=3$ Gauss--Lobatto temporal finite-element target used as the
+paper-facing comparator has expected order five.  Therefore the accepted
+result is a conditional formal-order comparison: the accepted \method{} path
+has a conditional order-six theorem on the selected smooth branch, the local
+paper-style target is order five, and the four examples provide separated
+method-side evidence roles rather than a single undifferentiated validation
+claim.
+
+The draft deliberately does not claim a complete reproduction of the source
+paper's \tfe{} nonlinear residual.  In this repository, independent full-\tfe{}
+replacement means replacing all 132 Gauss/FullVA stage rows by paper-derived
+\tfe{} weak rows inside Newton, without endpoint source data, terminal-row
+replacement, projection, or a target-direction oracle.  That stronger gate
+remains open as \nolinkurl{full_tfe_stage_replacement=false}.
+\end{abstract}
+
+\section{Accepted Claim}
+
+The v047 evidence supports a narrow and useful statement: \method{} is a
+conditional sixth-order method compared with the local paper-style $m=3$
+Gauss--Lobatto \tfe{} formula target under the current artifact scope.  The
+claim is not that every row of the source paper's full \tfe{} residual has been reproduced in the
+nonlinear solver.  This distinction keeps the paper aligned with the actual
+validation evidence.
+
+\begin{table}[htbp]
+\centering
+\caption{Concise claim boundary.}
+\label{tab:claim-boundary}
+\begin{tabular}{P{0.27\linewidth}P{0.59\linewidth}}
+\toprule
+Item & Current status \\
+\midrule
+Accepted method &
+\method{}, a conditional sixth-order Gauss collocation/FullVA one-step map on
+the selected smooth branch. \\
+Observed smooth order &
+Position/velocity orders 7.161/7.066 over
+$h=\{0.04,0.02,0.01\}$ against $h=0.005$. \\
+Comparator &
+Local paper-style $m=3$ Gauss--Lobatto \tfe{} formula target with expected
+order five. \\
+Four-example gate &
+Single and double pendula provide dynamic-order evidence; four link and slider
+crank provide lower-pair mechanism-coverage diagnostics. \\
+Open reproduction gate &
+\nolinkurl{full_tfe_stage_replacement=false}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Integrator}
+
+Let $x_n=(q_n,v_n,a_n)$ denote the endpoint position, velocity, and
+acceleration variables, with orientations represented on the local Lie-group
+chart used by the v047 solver.  The accepted one-step map is
+\begin{equation}
+  x_{n+1}=\Psi_h^{\mathrm{G6FVA}}(x_n),
+\end{equation}
+where the stage variables $Z$ solve the 132-row nonlinear system
+\begin{equation}
+  R_{\mathrm{G6FVA}}(q_n,v_n,a_n,Z;h)=0.
+\end{equation}
+The lower-pair constraints enter at position, velocity, and acceleration
+levels,
+\begin{equation}
+  \Phi(q)=0,\qquad
+  \Phi_q(q)v=0,\qquad
+  \Phi_q(q)a+\dot{\Phi}_q(q,v)v=0.
+\end{equation}
+The endpoint is reconstructed by Gauss collocation quadrature and the local
+Lie-group retraction.  Endpoint velocity closure is audited by the generated
+KKT/projection artifacts.  This closure is part of the accepted Gauss/FullVA
+evidence path; it is not an accepted independent full-\tfe{} replacement.
+
+\begin{table}[htbp]
+\centering
+\caption{Operational definition of the accepted one-step map.}
+\label{tab:algorithm}
+\begin{tabular}{P{0.16\linewidth}P{0.70\linewidth}}
+\toprule
+Step & Operation \\
+\midrule
+1 &
+Assemble cylindrical lower-pair constraints and FullVA stage variables for
+state $x_n$ and step size $h$. \\
+2 &
+Solve the square 132-row \method{} residual to the Newton tolerance recorded in
+the CSV/JSON artifacts. \\
+3 &
+Recover the endpoint by the Gauss quadrature and Lie-group retraction used by
+the v047 trajectory code. \\
+4 &
+Audit endpoint constraint and velocity closure with the KKT/projection
+diagnostics. \\
+5 &
+Record residuals, constraints, observed orders, figures, and validator-visible
+summary fields. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Proof Sketch}
+
+\begin{assumption}[Accepted-path regularity]
+\label{ass:regularity}
+On the selected smooth branch, the compact-tube regularity, endpoint map,
+implementation binding, and scaled nonlinear residual condition
+\(\eta_h^{\rm tube}\le c_\eta h^7\) hold.  The implemented 132-row FullVA
+residual bridge is the direct route used by the strict proof: the 96
+non-dynamic rows supply the row-local \(O(h^7)\) input, and the 36
+Newton--Euler rows close by direct substitution on the lifted Gauss stage.
+\end{assumption}
+
+\begin{theorem}[Order of the accepted \method{} map]
+\label{thm:g6fullva-order}
+Under Assumption~\ref{ass:regularity}, read as the retained accepted-branch
+compact-tube/P6 solver-envelope interface together with the P4/P5 direct
+\(96+36\) residual bridge, the accepted \method{} one-step map has local
+defect \(O(h^7)\) and reduced-chart/reported position--velocity grid error
+\(O(h^6)\) on fixed smooth time intervals for reported grids satisfying the
+predeclared branch, endpoint, proof-norm, and
+\(\eta_h^{\rm tube}\le c_\eta h^7\) conditions.  For driven rows, the
+time-indexed residual, Gauss stage times, endpoint map, and proof norm are
+fixed on the same transition slice before constants or diagnostics are used.
+This is a conditional
+order-six statement for the accepted branch-selected map only; it retains P6
+as a theorem-level solver-envelope condition, does not prove a P7
+residual-to-error transfer, and does not use source-policy rows or the optional
+primitive/Taylor route.  Equivalently, the theorem asserts only the local defect
+$O(h^7)$ and same-initial-state global error $O(h^6)$ under these retained
+interfaces and only for this reduced/reporting grid scope.
+\end{theorem}
+
+\begin{proof}
+The strict CMAME proof route is not a generic inheritance statement.  The
+classical three-stage Gauss local defect is inserted into the implemented
+FullVA residual on the selected branch.  The direct 132-row bridge gives an
+\(O(h^7)\) residual defect on the lifted Gauss stage; endpoint closure and the
+scaled inexact-Newton residual add \(O(h^7)\) perturbations under the retained
+compact-tube hypotheses.  The standard local-to-global transfer for the
+accepted branch then gives the \(O(h^6)\) grid estimate on the same reported
+grid.  The proof follows the constrained Lie-group BDF proof order only as an
+ordering discipline: the discrete object is fixed first, the smooth branch is
+inserted next, the local defect is proved for that object, and the global
+recurrence is used only afterward.  No BDF local-error, hidden-constraint,
+multiplier-history, or multistep stability estimate is imported.  The solver
+bound remains a retained P6 envelope fixed before the run,
+and the P7 residual-to-error interface remains open.  Residual-only mechanism
+rows, source-policy rows, and the separate primitive/Taylor route are not used
+as theorem inputs and cannot be spliced into the direct bridge.
+\end{proof}
+
+\begin{lemma}[Order of the local paper-style \tfe{} target]
+\label{lem:tfe-target-order}
+The proof-level order target for the $m=3$ Gauss--Lobatto paper-style
+\tfe{} formula used in this manuscript is five.
+\end{lemma}
+
+\begin{proof}
+The source-paper family is compared through the temporal finite-element
+formula-order convention $p_{\mathrm{TFE}}(m)=2m-1$.  Substituting $m=3$
+gives $p_{\mathrm{TFE}}(3)=5$.  This is distinct from the source paper's
+reported DAE pendulum order reduction.
+\end{proof}
+
+\begin{theorem}[Accepted formal-order comparison theorem]
+\label{thm:formal-order}
+Under Assumption~\ref{ass:regularity} and the current v047 artifact contract,
+the \method{} path is accepted as a conditional sixth-order method relative
+to the local paper-style $m=3$ Gauss--Lobatto \tfe{} formula target with
+expected order five.
+\end{theorem}
+
+\begin{proof}
+Theorem~\ref{thm:g6fullva-order} gives the conditional order-six method claim
+for the accepted \method{} path through the direct 132-row residual bridge.
+Lemma~\ref{lem:tfe-target-order} gives the fifth-order local paper-style
+comparator.  The generated h-sweep records
+observed smooth position/velocity orders 7.161/7.066, which are above that
+target.  The read-only four-example validator accepts single pendulum, double
+pendulum, four link, and slider crank on the same method path.  Therefore the
+formal-order comparison is accepted inside the artifact scope.  The theorem
+excludes complete source-paper residual reproduction because the
+machine-readable boundary still records
+\texttt{full\_tfe\_stage\_\allowbreak replacement=false}.
+% validator token: full_tfe_stage_replacement=false
+\end{proof}
+
+\begin{corollary}[What is not proved]
+The theorem does not prove that the implemented nonlinear stage residual is the
+complete source-paper \tfe{} residual.
+\end{corollary}
+
+\begin{proof}
+The accepted method path solves $R_{\mathrm{G6FVA}}=0$.  A full source-paper
+\tfe{} reproduction claim would require an accepted residual
+$R_{\tfe{}}=0$ using paper-derived weak rows for all 132 stage rows inside
+Newton, with the same rank, residual, endpoint, and h-sweep checks.  That gate
+is explicitly open.
+\end{proof}
+
+\begin{table}[htbp]
+\centering
+\caption{Proof obligations and artifact evidence for
+Theorem~\ref{thm:formal-order}.}
+\label{tab:proof-evidence}
+\begin{tabular}{P{0.29\linewidth}P{0.53\linewidth}}
+\toprule
+Proof obligation & Current artifact evidence \\
+\midrule
+Accepted one-step map &
+\artifact{CLAIM_BOUNDARY.json} and \artifact{summary_v047.json} record the
+\method{} 132-row stage-residual boundary. \\
+Sixth-order smooth behavior &
+\artifact{cylindrical_chain_convergence.csv} records smooth
+position/velocity orders 7.161/7.066 over $h=[0.04,0.02,0.01]$ against
+\artifact{reference_h=0.005}. \\
+Comparator order &
+\artifact{SOURCE_PAPER_COMPARISON.md} records the local $m=3$
+Gauss--Lobatto \tfe{} expected order $2m-1=5$. \\
+Four-example support &
+\artifact{validate_four_asme_minimal.py} accepts single pendulum, double
+pendulum, four link, and slider crank. \\
+Non-claim boundary &
+\artifact{PROOF_EVIDENCE_MATRIX.md} and the submission validators preserve
+\artifact{full_tfe_stage_replacement=false}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Numerical Evidence}
+
+The generated convergence artifacts use $h=\{0.04,0.02,0.01\}$ and an
+$h=0.005$ reference.  Table~\ref{tab:orders} reports the headline order
+evidence.
+
+\begin{table}[htbp]
+\centering
+\caption{Observed orders for the accepted \method{} path.}
+\label{tab:orders}
+\begin{tabular}{P{0.25\linewidth}P{0.22\linewidth}P{0.20\linewidth}P{0.20\linewidth}}
+\toprule
+Case & Step sizes & Position order & Velocity order \\
+\midrule
+Smooth cylindrical chain & $0.04,0.02,0.01$ & 7.161 & 7.066 \\
+Sharp Brown--McPhee case & $0.04,0.02,0.01$ & 1.894 & 2.683 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/convergence.png}
+{Convergence of the accepted \method{} path.  The smooth branch is the
+paper-facing high-order evidence; the sharp branch is reported as a practical
+coarse-regime caveat.}
+{fig:convergence}
+
+The sharp case does not contradict the smooth formal-order comparison.  It is
+reported as a practical caveat: coarse sharp-friction steps are order-reduced,
+while deeper fixed refinement recovers high order at increased cost.
+
+\section{Four ASME-Style Examples}
+
+The same method-side gate accepts the four examples listed in
+Table~\ref{tab:asme}.  The single and double pendulum rows provide order-based
+method evidence.  The four-link and slider-crank rows provide closed-loop
+kinematic FullVA solves and reaction-dynamics checks.
+
+\begin{table}[htbp]
+\centering
+\caption{Four-example evidence summary.}
+\label{tab:asme}
+\begin{tabular}{P{0.22\linewidth}P{0.27\linewidth}P{0.37\linewidth}}
+\toprule
+Example & Accepted evidence & Headline value \\
+\midrule
+Single pendulum &
+Driven absolute-coordinate FullVA residual &
+Minimum observed order 6.024; max stage residual $3.664\times10^{-12}$. \\
+Double pendulum &
+Method-side FullVA reference policy &
+Minimum orientation/angular-velocity order 6.089; endpoint constraints below
+$8.323\times10^{-12}$. \\
+Four link &
+Closed-loop kinematic FullVA and reaction dynamics &
+Max constraint norm $1.052\times10^{-14}$; max dynamics residual
+$1.338\times10^{-13}$. \\
+Slider crank &
+Closed-loop kinematic FullVA and reaction dynamics &
+Max constraint norm $1.204\times10^{-15}$; max dynamics residual
+$6.492\times10^{-15}$. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/asme_lower_pair_graph_bridge.png}
+{Lower-pair graph bridge used to keep the four ASME-style examples under the
+same validation vocabulary.}
+{fig:asme-graph}
+
+\paperfig{\figpath/asme_closed_loop_kinematic_fullva.png}
+{Closed-loop kinematic FullVA evidence for the four-link and slider-crank
+examples.}
+{fig:closed-loop}
+
+\section{Comparator and Boundary}
+
+The comparator is intentionally local: the encoded $m=3$ Gauss--Lobatto \tfe{}
+formula target has expected order five.  It is sufficient for the paper-facing
+formal-order comparison because the accepted method has a conditional
+order-six theorem and the evidence package includes four separated example
+roles.  It is not the same as an accepted
+implementation of every source-paper residual row.
+
+The source-paper order convention used by the local comparator is
+\begin{equation}
+  p_{\mathrm{TFE}}(m)=2m-1.
+\end{equation}
+Thus the local $m=3$ Gauss--Lobatto \tfe{} target used here has
+$p_{\mathrm{TFE}}(3)=5$.  The accepted \method{} path has method-order claim
+six and observed smooth orders 7.161/7.066.  The positive comparison is
+therefore order-six \method{} versus an order-five paper-style target.  The
+comparison does not assert that the source paper contains this repository's
+132-row \method{} residual, nor that this repository has accepted a full
+source-paper \tfe{} residual substitution.  The standalone comparison note
+\artifact{SOURCE_PAPER_COMPARISON.md} records this boundary.
+
+The example-level order boundary is recorded separately in
+\artifact{ORDER_ACCEPTANCE_GATE.md}.  It keeps \artifact{single_pendulum} and
+\artifact{double_pendulum} as accepted dynamic order rows and keeps
+\artifact{four_link} and \artifact{slider_crank} as mechanism-coverage rows
+that are not accepted external dynamic-order rows.  The same gate records the
+\artifact{coarse_first_no_default_1e-4} execution policy.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparator versus open reproduction gate.}
+\label{tab:comparator}
+\begin{tabular}{P{0.27\linewidth}P{0.57\linewidth}}
+\toprule
+Object & Role \\
+\midrule
+Local $m=3$ Lobatto-\tfe{} formula target &
+Order-five comparator for the formal-order comparison. \\
+Accepted \method{} path &
+Conditional order-six method path used for the paper's positive claim. \\
+Independent full-\tfe{} replacement &
+Open stronger reproduction target requiring paper-derived rows inside Newton
+for all 132 stage rows. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Limitations}
+
+Three caveats remain explicit in the claim boundary.
+\begin{itemize}
+  \item Sparse AD structure is correct and quantified, but dense
+  \artifact{jacfwd} is still faster in the current wall-clock evidence.
+  \item Independent full-\tfe{} stage replacement is not accepted:
+  \nolinkurl{full_tfe_stage_replacement=false}.
+  \item The sharp-friction coarse regime is order-reduced, although deeper
+  fixed refinement recovers high order at practical cost.
+\end{itemize}
+These limitations do not invalidate the narrower formal-order comparison.
+They define future engineering and reproduction work.
+
+\section{Reproducibility Contract}
+
+The concise paper is checked from existing artifacts.  Routine validation does
+not require the full \artifact{run_v047.py} generator.  The relevant read-only
+commands are:
+\begin{verbatim}
+../.venv_sbel/bin/python validate_concise_paper.py
+../.venv_sbel/bin/python validate_source_paper_comparison.py
+../.venv_sbel/bin/python validate_order_acceptance_gate.py
+../.venv_sbel/bin/python validate_paper_package.py
+../.venv_sbel/bin/python ../validate_pipeline_outputs.py
+\end{verbatim}
+The machine-readable claim boundary is \artifact{CLAIM_BOUNDARY.json}; the
+top-level current-state boundary is \artifact{CURRENT_PIPELINE_CONTRACT.md}.
+
+\section{Conclusion}
+
+The accepted v047 result is simple when the diagnostic replacement work is
+kept separate from the method claim.  The \method{} path follows the
+conditional sixth-order Lie-group FullVA theorem, records smooth observed
+orders 7.161/7.066, and provides four-example method-side coverage.  Against
+the local order-five paper-style \tfe{} comparator, this supports the
+formal-order comparison.  Complete source-paper \tfe{} residual replacement
+remains future work.
+
+\end{document}

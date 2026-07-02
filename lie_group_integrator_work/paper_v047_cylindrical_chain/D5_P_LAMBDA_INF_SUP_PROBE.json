@@ -1,0 +1,167 @@
+{
+  "case": "cylindrical_smooth",
+  "claim_boundary": {
+    "allowed_now": "finite solved-stage probes show D_lambda R_dyn has full column rank at h=0.04, 0.02, and 0.01 for the smooth cylindrical-chain case",
+    "close_condition": "PL2 closes only after a uniform compact-tube inf-sup proof bounds the multiplier-column operator independently of the finite diagnostic h-values.",
+    "forbidden_now": [
+      "uniform P_lambda inf-sup theorem",
+      "multiplier lift-rate proof",
+      "D5 Taylor term certification through P_lambda",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "h_values": [
+    0.04,
+    0.02,
+    0.01
+  ],
+  "multiplier_lift_rate_proved": false,
+  "one_step_stage_newton_invoked": true,
+  "operator_definition": {
+    "columns": "24 lower-pair multiplier variables over three stages and two joints",
+    "dynamic_rows": [
+      "newton_euler_weak_balance"
+    ],
+    "lambda_columns": [
+      "lower_pair_lambda"
+    ],
+    "map": "delta lambda -> D_lambda R_dyn[delta lambda]",
+    "rows": "36 Newton-Euler weak-balance residual rows"
+  },
+  "p_lambda_inf_sup_probe_recorded": true,
+  "pc2_closed": false,
+  "pl2_uniform_inf_sup_bound_proved": false,
+  "primitive_closed": false,
+  "probes": [
+    {
+      "case": "cylindrical_smooth",
+      "condition_number": 2.770629358369089,
+      "dynamic_row_count": 36,
+      "dynamic_row_families": [
+        "newton_euler_weak_balance"
+      ],
+      "finite_multiplier_recovery_constant": 1.62766655826725,
+      "friction_smoothness_velocity": 0.5,
+      "full_column_rank": true,
+      "gauss_stage_jacobian_max_condition": 3945.982227930529,
+      "gauss_stage_jacobian_min_rank": 132,
+      "gauss_stage_newton_iterations": 6,
+      "gauss_stage_residual_norm": 1.0292829673060734e-14,
+      "h": 0.04,
+      "lambda_column_count": 24,
+      "lambda_column_families": [
+        "lower_pair_lambda"
+      ],
+      "max_singular_value": 1.7022094263081704,
+      "min_singular_value": 0.614376448862205,
+      "operator_rank": 24,
+      "operator_shape": [
+        36,
+        24
+      ],
+      "rank_tolerance": 1.3606791104313428e-14
+    },
+    {
+      "case": "cylindrical_smooth",
+      "condition_number": 2.7707407702069617,
+      "dynamic_row_count": 36,
+      "dynamic_row_families": [
+        "newton_euler_weak_balance"
+      ],
+      "finite_multiplier_recovery_constant": 1.627836846193889,
+      "friction_smoothness_velocity": 0.5,
+      "full_column_rank": true,
+      "gauss_stage_jacobian_max_condition": 3933.7344665173896,
+      "gauss_stage_jacobian_min_rank": 132,
+      "gauss_stage_newton_iterations": 6,
+      "gauss_stage_residual_norm": 9.238506732914585e-15,
+      "h": 0.02,
+      "lambda_column_count": 24,
+      "lambda_column_families": [
+        "lower_pair_lambda"
+      ],
+      "max_singular_value": 1.7020997999187355,
+      "min_singular_value": 0.6143121789742879,
+      "operator_rank": 24,
+      "operator_shape": [
+        36,
+        24
+      ],
+      "rank_tolerance": 1.3605914794173497e-14
+    },
+    {
+      "case": "cylindrical_smooth",
+      "condition_number": 2.769345999592584,
+      "dynamic_row_count": 36,
+      "dynamic_row_families": [
+        "newton_euler_weak_balance"
+      ],
+      "finite_multiplier_recovery_constant": 1.6279210898261678,
+      "friction_smoothness_velocity": 0.5,
+      "full_column_rank": true,
+      "gauss_stage_jacobian_max_condition": 3928.297944579685,
+      "gauss_stage_jacobian_min_rank": 132,
+      "gauss_stage_newton_iterations": 6,
+      "gauss_stage_residual_norm": 1.2213250127267018e-14,
+      "h": 0.01,
+      "lambda_column_count": 24,
+      "lambda_column_families": [
+        "lower_pair_lambda"
+      ],
+      "max_singular_value": 1.701154937361429,
+      "min_singular_value": 0.6142803888036007,
+      "operator_rank": 24,
+      "operator_shape": [
+        36,
+        24
+      ],
+      "rank_tolerance": 1.3598361935376655e-14
+    }
+  ],
+  "proof_gap_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-lambda-inf-sup-probe-v1",
+  "source_consistency": {
+    "d3_link_closed": true,
+    "d3_multiplier_wrench_consistency_closed": true,
+    "d3_stage_residual_defect_proved": false,
+    "d3_wrench_schema": "newton-euler-virtual-work-wrench-audit-v1",
+    "dynamic_oracle_runtime_columns": 132,
+    "dynamic_oracle_runtime_rows": 132,
+    "dynamic_oracle_schema": "dynamic-row-oracle-gate-v2",
+    "p_lambda_interface_closed": true,
+    "p_lambda_interface_pc2_closed": false,
+    "p_lambda_interface_primitive_closed": false,
+    "p_lambda_interface_schema": "d5-p-lambda-interface-audit-v1",
+    "p_lambda_term_rows_using_obligation": 72,
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "run_v047_path": "v047_cylindrical_chain_pipeline/run_v047.py",
+    "runtime_row_dimension": 132
+  },
+  "status": "finite_p_lambda_inf_sup_probe_recorded_uniform_constant_not_proved",
+  "submission_ready": false,
+  "summary": {
+    "d3_multiplier_wrench_consistency_closed": true,
+    "dynamic_row_dimension": 36,
+    "finite_probe_full_column_rank_all": true,
+    "lambda_column_dimension": 24,
+    "max_condition_number_across_probes": 2.7707407702069617,
+    "max_finite_multiplier_recovery_constant": 1.6279210898261678,
+    "max_gauss_stage_residual_norm": 1.2213250127267018e-14,
+    "max_operator_rank": 24,
+    "min_operator_rank": 24,
+    "min_singular_value_across_probes": 0.6142803888036007,
+    "operator_shape": [
+      36,
+      24
+    ],
+    "p_lambda_interface_closed": true,
+    "pl2_uniform_inf_sup_bound_proved": false,
+    "probe_count": 3
+  },
+  "term_bounds_proved": 0,
+  "uniform_constant_proved": false
+}

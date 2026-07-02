@@ -1,0 +1,133 @@
+{
+  "anti_circularity_gate": {
+    "dynamic_residual_defect_disallowed_as_input": true,
+    "map_definition_is_not_inverse_bound": true,
+    "map_definition_is_not_state_lift_rate": true,
+    "stage_residual_perturbation_lemma_disallowed_as_input": true
+  },
+  "claim_boundary": {
+    "allowed_now": "P_state PS1 is closed: the non-dynamic stage map is defined and bound to the 96 certified non-dynamic row families.",
+    "close_condition": "P_state closes only after PS2 proves a uniform inverse or inf-sup bound, PS3 converts the 96-row certificate into O(h^7) state lift rates; PS4 anti-circularity is closed separately by D5_P_STATE_ANTICIRCULARITY_AUDIT.",
+    "forbidden_now": [
+      "P_state primitive closure",
+      "local inverse or inf-sup closure",
+      "state lift O(h^7) proved",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "unconditional sixth-order theorem"
+    ]
+  },
+  "closed_subproofs": [
+    "PS1_non_dynamic_stage_map_domain_codomain_defined"
+  ],
+  "local_inverse_or_inf_sup_proved": false,
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-map-definition}",
+      "\\mathcal N_h^{\\mathrm{nd}}",
+      "S=(r_i,\\eta_i,v_i,\\omega_i)",
+      "does not assert a bounded inverse",
+      "closes only the PS1 map-definition subproof"
+    ]
+  },
+  "map_definition": {
+    "auxiliary_block": [
+      "a_i",
+      "alpha_i"
+    ],
+    "codomain": "R^96",
+    "excluded_block": [
+      "lambda_i"
+    ],
+    "map_name": "N_h^nd",
+    "purpose": "Define the non-dynamic chart map whose inverse or inf-sup bound would later convert the 96-row residual certificate into P_state lift rates.",
+    "row_families": [
+      {
+        "family": "translational_position_weak_defect",
+        "included_in_kinematic_certificate": true,
+        "rows": 18
+      },
+      {
+        "family": "rotational_lie_position_weak_defect",
+        "included_in_kinematic_certificate": true,
+        "rows": 18
+      },
+      {
+        "family": "translational_velocity_weak_defect",
+        "included_in_kinematic_certificate": true,
+        "rows": 18
+      },
+      {
+        "family": "angular_velocity_weak_defect",
+        "included_in_kinematic_certificate": true,
+        "rows": 18
+      },
+      {
+        "family": "lower_pair_index3_weak_constraints",
+        "included_in_kinematic_certificate": true,
+        "rows": 24
+      }
+    ],
+    "state_block": [
+      "r_i",
+      "eta_i",
+      "v_i",
+      "omega_i"
+    ],
+    "total_rows": 96
+  },
+  "open_subproofs": [
+    "PS2_local_inverse_or_inf_sup_bound",
+    "PS3_residual_certificate_to_state_lift_rate"
+  ],
+  "p_state_term_rows_in_budget": 126,
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps1_map_definition_closed": true,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-map-definition-audit-v1",
+  "source_consistency": {
+    "excluded_dynamic_family": "newton_euler_weak_balance",
+    "excluded_dynamic_rows": 36,
+    "kinematic_certificate_families": [
+      "translational_position_weak_defect",
+      "rotational_lie_position_weak_defect",
+      "translational_velocity_weak_defect",
+      "angular_velocity_weak_defect",
+      "lower_pair_index3_weak_constraints"
+    ],
+    "kinematic_certificate_rows": 96,
+    "kinematic_certificate_schema": "kinematic-row-defect-certificate-v1",
+    "kinematic_certificate_status": "partial_96_row_proof_certificate_not_submission_ready",
+    "p_state_anticircularity_closed": true,
+    "p_state_anticircularity_pc2_closed": false,
+    "p_state_anticircularity_schema": "d5-p-state-anticircularity-audit-v1",
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "term_budget_pc2_closed": false,
+    "term_budget_schema": "d5-taylor-term-budget-audit-v1"
+  },
+  "state_lift_rate_proved": false,
+  "status": "p_state_map_definition_closed_lift_open",
+  "submission_ready": false,
+  "summary": {
+    "aggregate_p_state_subproofs_closed_after_ps4": 2,
+    "closed_subproof_count": 1,
+    "kinematic_certificate_rows": 96,
+    "non_dynamic_map_rows": 96,
+    "open_subproof_count": 2,
+    "p_state_term_rows_in_budget": 126,
+    "pc2_closed": false,
+    "ps4_anticircularity_closed_elsewhere": true,
+    "required_subproof_count": 4,
+    "state_lift_rate_proved": false,
+    "term_rows_using_p_state": 126
+  },
+  "term_bounds_proved": 0,
+  "term_rows_using_p_state": 126
+}

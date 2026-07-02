@@ -1,0 +1,14 @@
+requirement,status,evidence,interpretation
+four_named_examples_present,pass,coarse_four_example_order_summary.json; common_reference_error_summary.json,"single, double, four-link, and slider-crank examples are all present for the local method and common-reference audit"
+shared_coarse_step_sizes,pass,coarse_four_example_order_summary.json; common_reference_error_summary.json,"all accepted comparison rows use h = 0.1, 0.05, 0.025"
+coarse_reference_policy,pass,coarse_four_example_order_summary.json; common_reference_error_summary.json,the comparison uses reference h = 0.0125 rather than default 1e-4
+apples_to_apples_policy_audit,pass,apples_to_apples_policy_audit.json,all four examples and all accepted methods pass the shared h-grid/reference/norm audit; public-code rows use fixed-grid replay
+global_comparison_policy_audit,pass,global_comparison_policy_audit.json,all claim-bearing comparison artifacts pass the global apples-to-apples/claim-boundary audit
+required_methods_resolved,pass,baseline_coverage_matrix.json,"all required method labels are accepted, alias-resolved, or source-backed scope-excluded"
+vp_alias_resolved,pass,vp_method_identity_audit.json,VP Lie-group ODE partitioning is treated as the implemented coordinate-partitioning wrapper
+tfe_m3_scope_excluded,pass,tfe_m3_scope_exclusion_audit.json,"TFE(m=3) four-link is a source-backed excluded stress row, not a required accepted baseline"
+direct_common_reference_error_wins,pass,common_reference_error_summary.json,local method has lower finest-step velocity error on all 40 direct common-reference nonlocal comparisons
+direct_common_reference_order_wins,pass,common_reference_error_summary.json,local method has higher velocity order on all 40 direct common-reference nonlocal comparisons
+original_paper_error_wins,pass,common_reference_error_summary.json,local method has lower finest-step velocity error than accepted original-paper baseline rows
+kissel_negrut_error_wins,pass,common_reference_error_summary.json,local method has lower finest-step velocity error than accepted Kissel/Negrut-family baseline rows
+order_and_error_tables_written,pass,results directory,raw/summary CSVs and order/error figures are present

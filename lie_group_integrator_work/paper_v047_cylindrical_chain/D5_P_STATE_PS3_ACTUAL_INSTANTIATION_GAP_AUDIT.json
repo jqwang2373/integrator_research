@@ -1,0 +1,112 @@
+{
+  "actual_ps3_input_instantiation_closed": false,
+  "certifies_dynamic_row_defect": false,
+  "certifies_induced_taylor_bounds": false,
+  "circularity_diagnostic": {
+    "acceleration_formula": "delta_A = h^{-1} (A_G^{-1} \\otimes I) (delta_V - rho_V)",
+    "current_unweighted_acceleration_rate": "O(h^6)",
+    "finite_probe_is_proof": false,
+    "finite_probe_residual_only_nullity_range": [
+      12,
+      12
+    ],
+    "finite_weighted_h_probe_recorded": true,
+    "finite_weighted_h_probe_uniform_ps3_input": false,
+    "h_acceleration_input_obstruction_recorded": true,
+    "residual_only_input_sufficient_for_h_acceleration": false,
+    "velocity_collocation_formula": "delta_V - h (A_G \\otimes I) delta_A = rho_V",
+    "why_not_ps3_input": "The O(h^6) acceleration rate obtained from velocity collocation uses delta_V, a component of the P_state perturbation.  Supplying it as a PS3 input would make the P_state lift proof circular."
+  },
+  "claim_boundary": {
+    "allowed_now": "The actual PS3 blocker is narrowed to a non-circular h-weighted acceleration-input instantiation and combined PS3 ledger.",
+    "close_condition": "Actual PS3 closes only after an independent, non-circular h-weighted acceleration input is supplied and combined with aggregate PS2 and the 96-row non-dynamic residual certificate in a PS3 instantiation ledger.",
+    "forbidden_now": [
+      "actual PS3 state lift proved",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "h-acceleration obstruction promoted to closure",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "input_requirements": [
+    {
+      "closed": true,
+      "evidence": "D5_P_STATE_PS2_AGGREGATE_PROMOTION_AUDIT",
+      "id": "PS3-I1",
+      "statement": "Aggregate weighted PS2 inverse on the compact proof tube."
+    },
+    {
+      "closed": true,
+      "evidence": "KINEMATIC_ROW_DEFECT_CERTIFICATE",
+      "id": "PS3-I2",
+      "statement": "Non-dynamic residual defect source for the 96 certified rows."
+    },
+    {
+      "closed": false,
+      "evidence": "D5_P_STATE_PS3_H_ACC_INPUT_OBSTRUCTION_AUDIT records the residual-only and circularity obstruction",
+      "id": "PS3-I3",
+      "statement": "Independent h-weighted acceleration input for PS3 that does not use the state-lift variable being solved for."
+    },
+    {
+      "closed": false,
+      "evidence": "this audit records the missing ledger",
+      "id": "PS3-I4",
+      "statement": "A single non-circular PS3 instantiation ledger combining I1-I3."
+    }
+  ],
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps3_actual_state_lift_conversion_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps3-actual-instantiation-gap-audit-v1",
+  "source_consistency": {
+    "aggregate_p_state_closed": false,
+    "aggregate_pc2_closed": false,
+    "aggregate_ps2_closed": true,
+    "aggregate_schema": "d5-p-state-ps2-aggregate-promotion-audit-v1",
+    "h_acc_obstruction_actual_ps3_closed": false,
+    "h_acc_obstruction_finite_probe_is_proof": false,
+    "h_acc_obstruction_independent_h_input_closed": false,
+    "h_acc_obstruction_pc2_closed": false,
+    "h_acc_obstruction_recorded": true,
+    "h_acc_obstruction_residual_only_input_sufficient": false,
+    "h_acc_obstruction_schema": "d5-p-state-ps3-h-acc-input-obstruction-audit-v1",
+    "kinematic_certified_rows": 96,
+    "kinematic_excluded_rows": 36,
+    "kinematic_schema": "kinematic-row-defect-certificate-v1",
+    "p_acc_obstruction_schema": "d5-p-acc-lift-obstruction-audit-v1",
+    "p_acc_pa2_closed": false,
+    "p_acc_pc2_closed": false,
+    "p_acc_primitive_closed": false,
+    "p_acc_weighted_h_control_recorded": true,
+    "p_acc_weighted_schema": "d5-p-acc-pa2-weighted-inverse-audit-v1",
+    "p_acc_weighted_unweighted_uniform_control_proved": false,
+    "ps3_conditional_actual_inputs_closed": false,
+    "ps3_conditional_actual_ps3_closed": false,
+    "ps3_conditional_closed": true,
+    "ps3_conditional_ps2_dependency_satisfied": true,
+    "ps3_conditional_schema": "d5-p-state-ps3-conditional-conversion-audit-v1"
+  },
+  "status": "ps3_actual_instantiation_gap_recorded_actual_ps3_open",
+  "submission_ready": false,
+  "summary": {
+    "finite_probe_residual_only_nullity_max": 12,
+    "finite_probe_residual_only_nullity_min": 12,
+    "h_acceleration_input_obstruction_recorded": true,
+    "independent_h_weighted_acceleration_input_closed": false,
+    "induced_taylor_bounds_proved": 0,
+    "input_requirements_closed": 2,
+    "input_requirements_total": 4,
+    "non_circular_ps3_instantiation_closed": false,
+    "non_dynamic_residual_certificate_available": true,
+    "pc2_closed": false,
+    "primitive_closed": false,
+    "ps2_dependency_satisfied_by_aggregate": true,
+    "ps3_actual_state_lift_conversion_closed": false,
+    "residual_only_h_acceleration_input_sufficient": false
+  }
+}

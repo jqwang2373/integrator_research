@@ -1,0 +1,96 @@
+{
+  "audit_mode": "read_only_text_scan_existing_artifacts",
+  "checks": {
+    "proof_forbidden_hit_count": 0,
+    "proof_forbidden_hits": [],
+    "proof_required_missing": [],
+    "proof_required_missing_count": 0,
+    "required_missing": [],
+    "required_missing_count": 0,
+    "submission_forbidden_hit_count": 0,
+    "submission_forbidden_hits": [],
+    "support_forbidden_hit_count": 0,
+    "support_forbidden_hits": []
+  },
+  "claim_boundary": {
+    "accepted_method": "Gauss6/FullVA",
+    "accepted_method_order": 6,
+    "allowed_claim": "conditional_formal_order_comparison",
+    "comparator": "local paper-style m=3 Gauss-Lobatto TFE formula target",
+    "comparator_expected_order": 5,
+    "not_allowed": [
+      "source_policy_superiority",
+      "external_same_test_superiority",
+      "complete_source_paper_residual_reproduction",
+      "independent_full_tfe_stage_replacement",
+      "seventh_order_theorem",
+      "unconditional_order_theorem_without_interfaces",
+      "closed_eta_h_solver_policy_evidence",
+      "fixed_tolerance_as_asymptotic_proof",
+      "accepted_residual_to_error_transfer_theorem",
+      "source_policy_full_tfe_package_readiness"
+    ]
+  },
+  "default_1e_4_required": false,
+  "external_superiority_claim": false,
+  "heavy_numerical_run_invoked": false,
+  "run_v047_invoked": false,
+  "schema": "cmame-claim-hygiene-audit-v1",
+  "scope": {
+    "forbidden_proof_overclaim_tokens": [
+      "unconditional sixth-order theorem",
+      "P6 solver-policy condition closed",
+      "fixed-tolerance runs prove asymptotic",
+      "residual-to-error transfer theorem is closed",
+      "P7 residual-to-error theorem closed",
+      "source-policy/full-TFE package ready=true"
+    ],
+    "forbidden_submission_tokens": [
+      "Accepted comparative integrator theorem",
+      "accepted external superiority",
+      "source-policy superiority claim allowed",
+      "full external same-test campaign passed",
+      "submission ready=true",
+      "then validates the resulting one-step map",
+      "It validates the accepted Gauss collocation FullVA residual"
+    ],
+    "forbidden_support_tokens": [
+      "Accepted comparative integrator theorem",
+      "accepted better-integrator theorem",
+      "The theorem proves only the comparative integrator claim"
+    ],
+    "required_proof_boundary_tokens": [
+      "conditional order-six theorem",
+      "does not claim an unconditional",
+      "does not close P6",
+      "P7 residual-to-error promotion",
+      "fixed-tolerance asymptotic proof"
+    ],
+    "required_submission_tokens": [
+      "Conditional order comparison",
+      "narrow order-comparison sense",
+      "does not compare error constants",
+      "not a complete source-paper temporal",
+      "All-example source-policy status for the flagged baseline rows",
+      "These rows remain",
+      "not promoted to a CMAME paper-level"
+    ],
+    "submission_text_files": [
+      "main_cmame.tex",
+      "cmame_submission_flat/main_cmame_submission.tex",
+      "main_cmame.txt",
+      "cmame_submission_flat/main_cmame_submission.txt"
+    ],
+    "support_text_files": [
+      "README.md",
+      "REVIEWER_CHECKLIST.md",
+      "PAPER_CLAIM_LEDGER.md",
+      "COVER_LETTER.md",
+      "SUBMISSION_PACKET.md",
+      "CURRENT_STATUS_CN.md"
+    ]
+  },
+  "source_policy_superiority_claim_allowed": false,
+  "status": "pass",
+  "submission_ready": false
+}

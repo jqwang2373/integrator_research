@@ -1,0 +1,16 @@
+{
+  "claim": "This larger-step audit is diagnostic evidence for the VP coordinate-partitioning comparison. It is not a replacement for the full 13-method coarse matrix.",
+  "comparable_examples": 4,
+  "local_finest_velocity_error_wins": 1,
+  "local_velocity_order_wins": 4,
+  "raw_row_count": 24,
+  "reference_h": 0.01875,
+  "schema": "large-step-vp-local-order-audit-v1",
+  "step_sizes": [
+    0.15,
+    0.075,
+    0.0375
+  ],
+  "summary_row_count": 8,
+  "t_end": 0.15
+}

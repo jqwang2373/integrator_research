@@ -1,0 +1,56 @@
+{
+  "full_external_campaign_completed": false,
+  "models": {
+    "four_link": {
+      "acc_observed_order": -0.097843407559531,
+      "lambda_observed_order": -0.1790342483171709,
+      "max_acceleration_constraint_norm": 8.892879497013688e-14,
+      "max_condition_number": 172.4937224254233,
+      "max_dynamics_residual_norm": 5.13566050004952e-13,
+      "max_multiplier_norm": 1186.510628539554,
+      "max_newton_iterations": 5,
+      "max_position_constraint_norm": 1.0697391722293072e-14,
+      "max_rot_dynamics_residual": 4.911738742042228e-13,
+      "max_so3_fro": 2.176161324292205e-15,
+      "max_step_correction_norm": 0.15625706212830193,
+      "max_trans_dynamics_residual": 2.325196142269019e-13,
+      "max_velocity_constraint_norm": 6.533977194262462e-15,
+      "min_singular_value": 0.05371351003831429,
+      "ok_row_count": 3,
+      "pos_observed_order": -0.051948066934359965,
+      "reference_h": 0.001,
+      "row_count": 3,
+      "status": "accepted_closed_loop_kinematic_reaction",
+      "step_sizes": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "t_end": 3.0,
+      "total_newton_iterations": 103294,
+      "vel_observed_order": -0.058252784535717014
+    }
+  },
+  "notes": "Public-horizon 2021 closed-loop tranche using the accepted local kinematic FullVA solve and reaction reconstruction on the public four_link/slider_crank mechanisms. These rows use the 2021 public time window and public h policy when selected, but they remain constraint/reaction residual rows rather than dynamic order/work-superiority rows.",
+  "ok_row_count": 3,
+  "planned_row_count": 0,
+  "policy": "gauss6_fullva_public_horizon_closed_loop_kinematic_reaction_not_full_campaign",
+  "public_closed_loop_step_trios_completed": true,
+  "public_policy_time_window": true,
+  "public_step_size_required_count": 3,
+  "public_step_size_rows_completed": 3,
+  "row_count": 3,
+  "run_mode": "gauss6_fullva_public_horizon_closed_loop_2021_tranche_shard",
+  "run_model": true,
+  "selected_models": [
+    "four_link"
+  ],
+  "selected_reference_h": 0.001,
+  "selected_rows_completed": true,
+  "selected_step_sizes": [
+    0.01,
+    0.001,
+    0.0001
+  ],
+  "selected_t_end": 3.0
+}

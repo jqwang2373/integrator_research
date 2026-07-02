@@ -1,0 +1,7 @@
+Highlights
+
+- Conditional sixth-order FullVA proof uses a direct 132-row 96+36 bridge.
+- Smooth cylindrical-chain tests record position/velocity orders 7.161/7.066.
+- Four ASME-style mechanisms test pendulum order and closed-loop coverage.
+- The paper-style m=3 TFE comparator has expected order five.
+- Full source-paper TFE stage replacement remains an explicit non-claim.

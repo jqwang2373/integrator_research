@@ -1,0 +1,79 @@
+{
+  "accepted_dynamic_order_count": 2,
+  "heavy_numerical_run_invoked": false,
+  "imports_v046_v047_v048": false,
+  "model_summaries": {
+    "four_link": {
+      "accepted_dynamic_order_candidate": true,
+      "min_primary_order": 5.954897911118808,
+      "model": "four_link",
+      "ok_row_count": 3,
+      "omega_observed_order": 5.971421238692113,
+      "omega_pairwise_orders": [
+        5.952393048903772,
+        5.990449428480467
+      ],
+      "orientation_observed_order": 5.955195227478643,
+      "orientation_pairwise_orders": [
+        5.9284406017290845,
+        5.981949853228209
+      ],
+      "pos_observed_order": 5.954897911118808,
+      "pos_pairwise_orders": [
+        5.9284650083635375,
+        5.981330813874087
+      ],
+      "row_count": 3,
+      "vel_observed_order": 6.08481873098771,
+      "vel_pairwise_orders": [
+        6.109887157774682,
+        6.059750304200757
+      ]
+    },
+    "slider_crank": {
+      "accepted_dynamic_order_candidate": true,
+      "min_primary_order": 6.1589759629934155,
+      "model": "slider_crank",
+      "ok_row_count": 3,
+      "omega_observed_order": 6.425500310886128,
+      "omega_pairwise_orders": [
+        6.819731942075421,
+        6.031268679696851
+      ],
+      "orientation_observed_order": 6.1589759629934155,
+      "orientation_pairwise_orders": [
+        6.2599529229360815,
+        6.057999003050764
+      ],
+      "pos_observed_order": 6.163687310333313,
+      "pos_pairwise_orders": [
+        6.267367949536301,
+        6.060006671130337
+      ],
+      "row_count": 3,
+      "vel_observed_order": 7.3409196849286005,
+      "vel_pairwise_orders": [
+        7.9335800477079195,
+        6.748259322149295
+      ]
+    }
+  },
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "ok_row_count": 6,
+  "row_count": 6,
+  "run_v047_invoked": false,
+  "run_v048_invoked": false,
+  "schema": "cmame-closed-loop-local-runner-candidate-summary-v1",
+  "self_contained_simulation_runner": true,
+  "source_policy_external_superiority_allowed": false,
+  "status": "closed_loop_self_contained_candidate_rows_passed_not_source_policy",
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "submission_ready": false
+}

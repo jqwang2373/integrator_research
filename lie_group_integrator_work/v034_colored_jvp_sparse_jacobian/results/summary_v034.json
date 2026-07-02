@@ -1,0 +1,184 @@
+{
+  "experiment": {
+    "cases": {
+      "double_revolute_sharp": {
+        "method": "double_revolute_gauss6_fullva",
+        "pattern": {
+          "color_sizes": [
+            9,
+            14,
+            16,
+            24,
+            17,
+            14,
+            14,
+            15,
+            9,
+            3,
+            3
+          ],
+          "colors": 11,
+          "density": 0.030560806553245116,
+          "nnz": 582
+        },
+        "runs": {
+          "colored_jvp_csr": {
+            "avg_colored_jvp_calls": 11.0,
+            "avg_jacobian_eval_sec": 0.02053914749994874,
+            "avg_linear_solve_sec": 0.0003993774007540196,
+            "max_colored_dense_diff_norm": 9.090279413851974e-15,
+            "max_colored_dense_relative_error": 1.0034249549601851e-16,
+            "max_endpoint_constraint_norm": 3.135436704378369e-14,
+            "max_endpoint_velocity_constraint_norm": 1.0538297283127725e-11,
+            "max_linear_residual_norm": 1.6535771273813367e-14,
+            "max_pattern_missing_abs": 2.3071050465189315e-16,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 1.1933513528566256e-13,
+            "omega_error_vs_dense": 2.7755575615628914e-17,
+            "orientation_error_vs_dense_rad": 1.7496297977277327e-65,
+            "runtime_sec": 0.4322148589999415,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 10,
+            "total_jacobian_eval_sec": 0.2053914749994874,
+            "total_linear_solve_sec": 0.003993774007540196,
+            "total_linear_solves": 10,
+            "total_newton_iterations": 13,
+            "total_residual_eval_sec": 0.010300927911885083
+          },
+          "dense_jacfwd_csr": {
+            "avg_colored_jvp_calls": 0.0,
+            "avg_jacobian_eval_sec": 0.001984224299667403,
+            "avg_linear_solve_sec": 0.00026348119718022645,
+            "max_colored_dense_diff_norm": 0.0,
+            "max_colored_dense_relative_error": 0.0,
+            "max_endpoint_constraint_norm": 3.135436704378369e-14,
+            "max_endpoint_velocity_constraint_norm": 1.0538297283127725e-11,
+            "max_linear_residual_norm": 1.680833253394542e-14,
+            "max_pattern_missing_abs": 0.0,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 1.1933513528566256e-13,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "runtime_sec": 0.06231051101349294,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 10,
+            "total_jacobian_eval_sec": 0.01984224299667403,
+            "total_linear_solve_sec": 0.0026348119718022645,
+            "total_linear_solves": 10,
+            "total_newton_iterations": 13,
+            "total_residual_eval_sec": 0.009281254082452506
+          }
+        },
+        "stribeck_velocity": 0.05
+      },
+      "double_revolute_smooth": {
+        "method": "double_revolute_gauss6_fullva",
+        "pattern": {
+          "color_sizes": [
+            9,
+            14,
+            16,
+            24,
+            17,
+            14,
+            14,
+            15,
+            9,
+            3,
+            3
+          ],
+          "colors": 11,
+          "density": 0.030560806553245116,
+          "nnz": 582
+        },
+        "runs": {
+          "colored_jvp_csr": {
+            "avg_colored_jvp_calls": 11.0,
+            "avg_jacobian_eval_sec": 0.023107156448531896,
+            "avg_linear_solve_sec": 0.000975809435153173,
+            "max_colored_dense_diff_norm": 1.7569966157487655e-16,
+            "max_colored_dense_relative_error": 1.9323290068803218e-18,
+            "max_endpoint_constraint_norm": 2.1257310251576976e-14,
+            "max_endpoint_velocity_constraint_norm": 5.789998834916922e-13,
+            "max_linear_residual_norm": 1.8481627838958534e-14,
+            "max_pattern_missing_abs": 1.5777152473028564e-16,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 8.295567718337104e-13,
+            "omega_error_vs_dense": 1.1102230246251565e-16,
+            "orientation_error_vs_dense_rad": 8.299418480399206e-54,
+            "runtime_sec": 0.4284192289924249,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 9,
+            "total_jacobian_eval_sec": 0.20796440803678706,
+            "total_linear_solve_sec": 0.008782284916378558,
+            "total_linear_solves": 9,
+            "total_newton_iterations": 12,
+            "total_residual_eval_sec": 0.019445724959950894
+          },
+          "dense_jacfwd_csr": {
+            "avg_colored_jvp_calls": 0.0,
+            "avg_jacobian_eval_sec": 0.004267595443201976,
+            "avg_linear_solve_sec": 0.002183015102572325,
+            "max_colored_dense_diff_norm": 0.0,
+            "max_colored_dense_relative_error": 0.0,
+            "max_endpoint_constraint_norm": 2.1257310251576976e-14,
+            "max_endpoint_velocity_constraint_norm": 5.789710264985481e-13,
+            "max_linear_residual_norm": 1.847209616114424e-14,
+            "max_pattern_missing_abs": 0.0,
+            "max_quaternion_unit_error": 0.0,
+            "max_stage_axis_acceleration_constraint_norm": 0.0,
+            "max_stage_pivot_acceleration_constraint_norm": 8.287100676457588e-13,
+            "omega_error_vs_dense": 0.0,
+            "orientation_error_vs_dense_rad": 0.0,
+            "runtime_sec": 0.09276729903649539,
+            "status": "ok",
+            "steps": 3,
+            "total_jacobian_assemblies": 9,
+            "total_jacobian_eval_sec": 0.03840835898881778,
+            "total_linear_solve_sec": 0.019647135923150927,
+            "total_linear_solves": 9,
+            "total_newton_iterations": 12,
+            "total_residual_eval_sec": 0.008519315044395626
+          }
+        },
+        "stribeck_velocity": 0.5
+      }
+    },
+    "h": 0.02,
+    "t_final": 0.06
+  },
+  "jax": "0.10.1",
+  "model": {
+    "cases": {
+      "double_revolute_sharp": 0.05,
+      "double_revolute_smooth": 0.5
+    },
+    "h": 0.02,
+    "method": "double_revolute_gauss6_fullva",
+    "pattern_atol": 1e-14,
+    "solvers": [
+      "dense_jacfwd_csr",
+      "colored_jvp_csr"
+    ],
+    "sparsity_atol": 1e-12,
+    "t_final": 0.06
+  },
+  "negative_parents": [
+    "v032_matrix_free_newton_krylov",
+    "v033_lagged_sparse_newton"
+  ],
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 15.507381102012005,
+  "scipy": "1.17.1",
+  "solver_parent": "v031_sparse_newton_double_revolute",
+  "source_version": "v029_double_revolute_pivotva_dae",
+  "version": "v034_colored_jvp_sparse_jacobian"
+}

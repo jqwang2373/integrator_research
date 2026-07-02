@@ -1,0 +1,296 @@
+      A Conditional Sixth-Order Lie-Group FullVA Integrator for
+                       Lower-Pair Mechanisms
+                                             Jingquan Wang
+
+                                  v047 concise artifact-backed draft
+
+
+                                                 Abstract
+          This concise draft states only the accepted v047 paper claim. The production integrator is
+      the Gauss6/FullVA one-step map, a conditional sixth-order Gauss collocation FullVA method
+      on a Lie-group lower-pair formulation. On the smooth cylindrical-chain benchmark it records
+      observed position and velocity orders 7.161 and 7.066. The same artifact contract accepts four
+      ASME-style examples: single pendulum, double pendulum, four link, and slider crank. The
+      local paper-style m = 3 Gauss–Lobatto temporal finite-element target used as the paper-facing
+      comparator has expected order five. Therefore the accepted result is a conditional formal-
+      order comparison: the accepted Gauss6/FullVA path has a conditional order-six theorem on the
+      selected smooth branch, the local paper-style target is order five, and the four examples provide
+      separated method-side evidence roles rather than a single undifferentiated validation claim.
+          The draft deliberately does not claim a complete reproduction of the source paper’s TFE
+      nonlinear residual. In this repository, independent full-TFE replacement means replacing all 132
+      Gauss/FullVA stage rows by paper-derived TFE weak rows inside Newton, without endpoint
+      source data, terminal-row replacement, projection, or a target-direction oracle. That stronger
+      gate remains open as full_tfe_stage_replacement=false.
+
+
+1    Accepted Claim
+The v047 evidence supports a narrow and useful statement: Gauss6/FullVA is a conditional sixth-
+order method compared with the local paper-style m = 3 Gauss–Lobatto TFE formula target under
+the current artifact scope. The claim is not that every row of the source paper’s full TFE residual
+has been reproduced in the nonlinear solver. This distinction keeps the paper aligned with the
+actual validation evidence.
+
+
+2    Integrator
+Let xn = (qn , vn , an ) denote the endpoint position, velocity, and acceleration variables, with orien-
+tations represented on the local Lie-group chart used by the v047 solver. The accepted one-step
+map is
+                                          xn+1 = ΨG6FVA
+                                                    h     (xn ),                                     (1)
+where the stage variables Z solve the 132-row nonlinear system
+
+                                      RG6FVA (qn , vn , an , Z; h) = 0.                                   (2)
+
+The lower-pair constraints enter at position, velocity, and acceleration levels,
+
+                        Φ(q) = 0,       Φq (q)v = 0,       Φq (q)a + Φ̇q (q, v)v = 0.                     (3)
+
+                                                       1
+                                Table 1: Concise claim boundary.
+     Item                           Current status
+     Accepted method                Gauss6/FullVA, a conditional sixth-order Gauss
+                                    collocation/FullVA one-step map on the selected smooth
+                                    branch.
+     Observed smooth order          Position/velocity orders 7.161/7.066 over
+                                    h = {0.04, 0.02, 0.01} against h = 0.005.
+     Comparator                     Local paper-style m = 3 Gauss–Lobatto TFE formula
+                                    target with expected order five.
+     Four-example gate              Single and double pendula provide dynamic-order
+                                    evidence; four link and slider crank provide lower-pair
+                                    mechanism-coverage diagnostics.
+     Open reproduction gate         full_tfe_stage_replacement=false.
+
+
+The endpoint is reconstructed by Gauss collocation quadrature and the local Lie-group retraction.
+Endpoint velocity closure is audited by the generated KKT/projection artifacts. This closure is
+part of the accepted Gauss/FullVA evidence path; it is not an accepted independent full-TFE
+replacement.
+
+                  Table 2: Operational definition of the accepted one-step map.
+     Step               Operation
+     1                  Assemble cylindrical lower-pair constraints and FullVA stage
+                        variables for state xn and step size h.
+     2                  Solve the square 132-row Gauss6/FullVA residual to the Newton
+                        tolerance recorded in the CSV/JSON artifacts.
+     3                  Recover the endpoint by the Gauss quadrature and Lie-group
+                        retraction used by the v047 trajectory code.
+     4                  Audit endpoint constraint and velocity closure with the
+                        KKT/projection diagnostics.
+     5                  Record residuals, constraints, observed orders, figures, and
+                        validator-visible summary fields.
+
+
+
+3    Proof Sketch
+Assumption 1 (Accepted-path regularity). On the selected smooth branch, the compact-tube regu-
+larity, endpoint map, implementation binding, and scaled nonlinear residual condition ηhtube ≤ cη h7
+hold. The implemented 132-row FullVA residual bridge is the direct route used by the strict proof:
+the 96 non-dynamic rows supply the row-local O(h7 ) input, and the 36 Newton–Euler rows close by
+direct substitution on the lifted Gauss stage.
+
+Theorem 1 (Order of the accepted Gauss6/FullVA map). Under Assumption 1, read as the re-
+tained accepted-branch compact-tube/P6 solver-envelope interface together with the P4/P5 direct
+96 + 36 residual bridge, the accepted Gauss6/FullVA one-step map has local defect O(h7 ) and
+
+
+                                                 2
+reduced-chart/reported position–velocity grid error O(h6 ) on fixed smooth time intervals for re-
+ported grids satisfying the predeclared branch, endpoint, proof-norm, and ηhtube ≤ cη h7 conditions.
+For driven rows, the time-indexed residual, Gauss stage times, endpoint map, and proof norm are
+fixed on the same transition slice before constants or diagnostics are used. This is a conditional
+order-six statement for the accepted branch-selected map only; it retains P6 as a theorem-level
+solver-envelope condition, does not prove a P7 residual-to-error transfer, and does not use source-
+policy rows or the optional primitive/Taylor route. Equivalently, the theorem asserts only the local
+defect O(h7 ) and same-initial-state global error O(h6 ) under these retained interfaces and only for
+this reduced/reporting grid scope.
+Proof. The strict CMAME proof route is not a generic inheritance statement. The classical three-
+stage Gauss local defect is inserted into the implemented FullVA residual on the selected branch.
+The direct 132-row bridge gives an O(h7 ) residual defect on the lifted Gauss stage; endpoint closure
+and the scaled inexact-Newton residual add O(h7 ) perturbations under the retained compact-
+tube hypotheses. The standard local-to-global transfer for the accepted branch then gives the
+O(h6 ) grid estimate on the same reported grid. The proof follows the constrained Lie-group BDF
+proof order only as an ordering discipline: the discrete object is fixed first, the smooth branch
+is inserted next, the local defect is proved for that object, and the global recurrence is used only
+afterward. No BDF local-error, hidden-constraint, multiplier-history, or multistep stability estimate
+is imported. The solver bound remains a retained P6 envelope fixed before the run, and the P7
+residual-to-error interface remains open. Residual-only mechanism rows, source-policy rows, and
+the separate primitive/Taylor route are not used as theorem inputs and cannot be spliced into the
+direct bridge.
+Lemma 1 (Order of the local paper-style TFE target). The proof-level order target for the m = 3
+Gauss–Lobatto paper-style TFE formula used in this manuscript is five.
+Proof. The source-paper family is compared through the temporal finite-element formula-order
+convention pTFE (m) = 2m − 1. Substituting m = 3 gives pTFE (3) = 5. This is distinct from the
+source paper’s reported DAE pendulum order reduction.
+Theorem 2 (Accepted formal-order comparison theorem). Under Assumption 1 and the current
+v047 artifact contract, the Gauss6/FullVA path is accepted as a conditional sixth-order method
+relative to the local paper-style m = 3 Gauss–Lobatto TFE formula target with expected order five.
+Proof. Theorem 1 gives the conditional order-six method claim for the accepted Gauss6/FullVA
+path through the direct 132-row residual bridge. Lemma 1 gives the fifth-order local paper-style
+comparator. The generated h-sweep records observed smooth position/velocity orders 7.161/7.066,
+which are above that target. The read-only four-example validator accepts single pendulum,
+double pendulum, four link, and slider crank on the same method path. Therefore the formal-
+order comparison is accepted inside the artifact scope. The theorem excludes complete source-
+paper residual reproduction because the machine-readable boundary still records full tfe stage
+replacement=false.
+Corollary 1 (What is not proved). The theorem does not prove that the implemented nonlinear
+stage residual is the complete source-paper TFE residual.
+Proof. The accepted method path solves RG6FVA = 0. A full source-paper TFE reproduction claim
+would require an accepted residual RT F E = 0 using paper-derived weak rows for all 132 stage rows
+inside Newton, with the same rank, residual, endpoint, and h-sweep checks. That gate is explicitly
+open.
+
+
+                                                 3
+                    Table 3: Proof obligations and artifact evidence for Theorem 2.
+           Proof obligation                Current artifact evidence
+           Accepted one-step map           CLAIM_BOUNDARY.json and summary_v047.json
+                                           record the Gauss6/FullVA 132-row stage-residual
+                                           boundary.
+           Sixth-order smooth              cylindrical_chain_convergence.csv records
+           behavior                        smooth position/velocity orders 7.161/7.066 over
+                                           h = [0.04, 0.02, 0.01] against reference_h=0.005.
+           Comparator order                SOURCE_PAPER_COMPARISON.md records the local
+                                           m = 3 Gauss–Lobatto TFE expected order
+                                           2m − 1 = 5.
+           Four-example support            validate_four_asme_minimal.py accepts single
+                                           pendulum, double pendulum, four link, and slider
+                                           crank.
+           Non-claim boundary              PROOF_EVIDENCE_MATRIX.md and the submission
+                                           validators preserve
+                                           full_tfe_stage_replacement=false.
+
+
+4     Numerical Evidence
+The generated convergence artifacts use h = {0.04, 0.02, 0.01} and an h = 0.005 reference. Table 4
+reports the headline order evidence.
+
+                    Table 4: Observed orders for the accepted Gauss6/FullVA path.
+    Case                          Step sizes              Position order       Velocity order
+    Smooth cylindrical            0.04, 0.02, 0.01        7.161                7.066
+    chain
+    Sharp Brown–McPhee            0.04, 0.02, 0.01        1.894                2.683
+    case
+
+    The sharp case does not contradict the smooth formal-order comparison. It is reported as
+a practical caveat: coarse sharp-friction steps are order-reduced, while deeper fixed refinement
+recovers high order at increased cost.
+
+
+5     Four ASME-Style Examples
+The same method-side gate accepts the four examples listed in Table 5. The single and double
+pendulum rows provide order-based method evidence. The four-link and slider-crank rows provide
+closed-loop kinematic FullVA solves and reaction-dynamics checks.
+
+
+6     Comparator and Boundary
+The comparator is intentionally local: the encoded m = 3 Gauss–Lobatto TFE formula target
+has expected order five. It is sufficient for the paper-facing formal-order comparison because the
+
+
+                                                     4
+Figure 1: Convergence of the accepted Gauss6/FullVA path. The smooth branch is the paper-facing
+high-order evidence; the sharp branch is reported as a practical coarse-regime caveat.
+
+
+
+                           Table 5: Four-example evidence summary.
+    Example                Accepted evidence           Headline value
+    Single pendulum        Driven                      Minimum observed order 6.024;
+                           absolute-coordinate         max stage residual 3.664 × 10−12 .
+                           FullVA residual
+    Double pendulum        Method-side FullVA          Minimum
+                           reference policy            orientation/angular-velocity order
+                                                       6.089; endpoint constraints below
+                                                       8.323 × 10−12 .
+    Four link              Closed-loop kinematic       Max constraint norm 1.052 × 10−14 ;
+                           FullVA and reaction         max dynamics residual
+                           dynamics                    1.338 × 10−13 .
+    Slider crank           Closed-loop kinematic       Max constraint norm 1.204 × 10−15 ;
+                           FullVA and reaction         max dynamics residual
+                           dynamics                    6.492 × 10−15 .
+
+
+
+                                               5
+Figure 2: Lower-pair graph bridge used to keep the four ASME-style examples under the same
+validation vocabulary.
+
+
+
+
+  Figure 3: Closed-loop kinematic FullVA evidence for the four-link and slider-crank examples.
+
+
+                                               6
+accepted method has a conditional order-six theorem and the evidence package includes four sep-
+arated example roles. It is not the same as an accepted implementation of every source-paper
+residual row.
+    The source-paper order convention used by the local comparator is
+
+                                        pTFE (m) = 2m − 1.                                       (4)
+
+Thus the local m = 3 Gauss–Lobatto TFE target used here has pTFE (3) = 5. The accepted
+Gauss6/FullVA path has method-order claim six and observed smooth orders 7.161/7.066. The
+positive comparison is therefore order-six Gauss6/FullVA versus an order-five paper-style target.
+The comparison does not assert that the source paper contains this repository’s 132-row Gauss6/
+FullVA residual, nor that this repository has accepted a full source-paper TFE residual substitution.
+The standalone comparison note SOURCE_PAPER_COMPARISON.md records this boundary.
+    The example-level order boundary is recorded separately in ORDER_ACCEPTANCE_GATE.md. It
+keeps single_pendulum and double_pendulum as accepted dynamic order rows and keeps four_
+link and slider_crank as mechanism-coverage rows that are not accepted external dynamic-order
+rows. The same gate records the coarse_first_no_default_1e-4 execution policy.
+
+                       Table 6: Comparator versus open reproduction gate.
+       Object                       Role
+       Local m = 3 Lobatto-TFE      Order-five comparator for the formal-order comparison.
+       formula target
+       Accepted Gauss6/FullVA       Conditional order-six method path used for the paper’s
+       path                         positive claim.
+       Independent full-TFE         Open stronger reproduction target requiring
+       replacement                  paper-derived rows inside Newton for all 132 stage rows.
+
+
+
+7    Limitations
+Three caveats remain explicit in the claim boundary.
+
+    • Sparse AD structure is correct and quantified, but dense jacfwd is still faster in the current
+      wall-clock evidence.
+
+    • Independent full-TFE stage replacement is not accepted: full_tfe_stage_replacement=
+      false.
+
+    • The sharp-friction coarse regime is order-reduced, although deeper fixed refinement recovers
+      high order at practical cost.
+
+These limitations do not invalidate the narrower formal-order comparison. They define future
+engineering and reproduction work.
+
+
+8    Reproducibility Contract
+The concise paper is checked from existing artifacts. Routine validation does not require the full
+run_v047.py generator. The relevant read-only commands are:
+
+                                                 7
+../.venv_sbel/bin/python validate_concise_paper.py
+../.venv_sbel/bin/python validate_source_paper_comparison.py
+../.venv_sbel/bin/python validate_order_acceptance_gate.py
+../.venv_sbel/bin/python validate_paper_package.py
+../.venv_sbel/bin/python ../validate_pipeline_outputs.py
+
+The machine-readable claim boundary is CLAIM_BOUNDARY.json; the top-level current-state bound-
+ary is CURRENT_PIPELINE_CONTRACT.md.
+
+
+9   Conclusion
+The accepted v047 result is simple when the diagnostic replacement work is kept separate from
+the method claim. The Gauss6/FullVA path follows the conditional sixth-order Lie-group FullVA
+theorem, records smooth observed orders 7.161/7.066, and provides four-example method-side cov-
+erage. Against the local order-five paper-style TFE comparator, this supports the formal-order
+comparison. Complete source-paper TFE residual replacement remains future work.
+
+
+
+
+                                              8
+

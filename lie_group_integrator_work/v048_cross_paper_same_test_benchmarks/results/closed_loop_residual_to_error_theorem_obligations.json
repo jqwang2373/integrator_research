@@ -1,0 +1,37 @@
+{
+  "accepted_dynamic_order_count": 0,
+  "accepted_residual_to_error_theorem": false,
+  "blocking_obligation_count": 7,
+  "current_local_row_kind": "kinematic_fullva_plus_reaction_reconstruction",
+  "default_policy": "coarse_first_no_default_1e-4",
+  "external_superiority_claim": false,
+  "interpretation": "The residual-to-error proof route is not closed. Current artifacts provide useful surrogate and floor diagnostics, but they do not prove a residual-to-trajectory-error bound and do not promote four_link/slider_crank to accepted dynamic-order rows.",
+  "local_acceleration_evidence_rows": 2,
+  "local_velocity_evidence_rows": 2,
+  "models": [
+    "four_link",
+    "slider_crank"
+  ],
+  "obligation_count": 7,
+  "position_floor_blocker_count": 2,
+  "required_next_artifacts": [
+    "local_closed_loop_dynamic_dae_runner_or_identity_proof",
+    "three_step_residual_rate_or_symbolic_defect_proof",
+    "closed_loop_dae_stability_bound",
+    "non_floor_limited_estimator_calibration",
+    "non_floor_limited_closed_loop_error_rows",
+    "accepted_coarse_dynamic_order_rows_or_repaired_public_baseline",
+    "cmame_residual_to_error_theorem_section"
+  ],
+  "schema": "closed-loop-residual-to-error-theorem-obligations-v1",
+  "status_counts": {
+    "campaign_exists_but_not_accepted": 1,
+    "missing": 2,
+    "not_satisfied": 2,
+    "partial_but_position_floor_blocked": 1,
+    "partial_evidence_not_rate_proof": 1
+  },
+  "strict_public_policy_1e-4_required": false,
+  "submission_ready": false,
+  "true_dynamic_local_rows_available": 0
+}

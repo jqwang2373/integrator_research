@@ -1,0 +1,92 @@
+{
+  "analytic_template": {
+    "input_norm": "||(delta R_q, delta R_v, h delta a)||_2",
+    "inverse_form": [
+      "delta v = delta R_v + A_G (h delta a)",
+      "delta q = delta R_q + h A_G delta R_v + h A_G^2 (h delta a)"
+    ],
+    "output_norm": "||(delta q, delta v)||_2",
+    "residual_form": [
+      "delta R_q = delta q - h A_G delta v",
+      "delta R_v = delta v - h A_G delta a"
+    ],
+    "uniform_for_h_interval": "0 < h <= 0.04"
+  },
+  "certifies_dynamic_row_defect": false,
+  "certifies_full_nonlinear_ps2": false,
+  "certifies_induced_taylor_bounds": false,
+  "certifies_uniform_euclidean_kinematic_subblock_bound": true,
+  "claim_boundary": {
+    "allowed_now": "The Euclidean Gauss kinematic subblock has a reproducible h-uniform weighted state estimate for h<=0.04.",
+    "close_condition": "Promote this subblock certificate to PS2 closure only after the rotational Lie-chart norm equivalence, nonlinear mean-value binding, and 72-to-96 row injection/scaling are written as uniform compact-tube estimates.",
+    "forbidden_now": [
+      "full nonlinear PS2 closure",
+      "PS3 state lift conversion",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "constants": {
+    "gauss_matrix_2_norm": 0.6628545492278942,
+    "gauss_matrix_square_2_norm": 0.2909838691557753,
+    "h_max": 0.04,
+    "kinematic_inverse_template_2_norm_at_h_max": 1.20027766085596,
+    "simple_triangle_bound": 1.9603183460152618
+  },
+  "dimensions": {
+    "auxiliary_acceleration_dimension": 36,
+    "bodies": 2,
+    "kinematic_row_dimension": 72,
+    "lower_pair_surplus_rows_not_needed_for_subblock": 24,
+    "non_dynamic_row_dimension": 96,
+    "scalar_channel_state_dim": 6,
+    "scalar_channel_weighted_input_dim": 9,
+    "stages": 3,
+    "state_block_dimension": 72
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-p-state-ps2-kinematic-block",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps2-kinematic-block}",
+      "Kinematic-block certificate for the weighted PS2 route",
+      "72 kinematic rows already provide a concrete analytic subblock",
+      "24 lower-pair rows are surplus",
+      "does not by itself close PS2"
+    ]
+  },
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps2_inverse_or_infsup_closed": false,
+  "ps2_kinematic_block_certificate_recorded": true,
+  "ps3_state_lift_conversion_closed": false,
+  "read_only": true,
+  "remaining_binding_gaps": [
+    "bind the implemented rotational Lie-chart residual rows to this Euclidean triangular template through compact-tube dexp norm-equivalence constants",
+    "turn the linear subblock estimate into a nonlinear compact-tube mean-value estimate for the accepted non-dynamic map",
+    "record the full-row ordering/scaling injection from the 72 kinematic rows into the 96-row non-dynamic residual norm"
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-kinematic-block-certificate-v1",
+  "source_consistency": {
+    "p_state_anticircularity_closed": true,
+    "p_state_anticircularity_schema": "d5-p-state-anticircularity-audit-v1",
+    "p_state_gap_closed": false,
+    "p_state_gap_schema": "d5-p-state-lift-gap-audit-v1",
+    "p_state_map_definition_closed": true,
+    "p_state_map_schema": "d5-p-state-map-definition-audit-v1",
+    "p_tube_closed": true,
+    "p_tube_schema": "d5-p-tube-constants-audit-v1",
+    "ps2_target_infsup_closed": false,
+    "ps2_target_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "ps2_target_spec_closed": true
+  },
+  "status": "ps2_kinematic_block_certificate_recorded_binding_gap_open",
+  "submission_ready": false
+}

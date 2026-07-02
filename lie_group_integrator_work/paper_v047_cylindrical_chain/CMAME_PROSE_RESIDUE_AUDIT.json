@@ -1,0 +1,269 @@
+{
+  "schema": "cmame-prose-residue-audit-v1",
+  "status": "main_body_machine_tokens_removed_reproducibility_appendix_compacted_b6_closed_under_narrowed_policy",
+  "submission_ready": false,
+  "blocker": "B6",
+  "execution_policy": {
+    "read_only_audit": true,
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false
+  },
+  "scope": {
+    "main_body_region": "after end{frontmatter} and before appendix",
+    "appendix_region": "after appendix",
+    "checked_sources": [
+      "main_cmame.tex",
+      "cmame_submission_flat/main_cmame_submission.tex"
+    ]
+  },
+  "main_body_forbidden_token_counts": {
+    "artifact_macro": 0,
+    ".json": 0,
+    ".md": 0,
+    ".csv": 0,
+    ".py": 0,
+    "submission_ready": 0,
+    "same_test_campaign_status": 0,
+    "external_superiority_claim": 0,
+    "default_1e-4": 0,
+    "run_v047": 0,
+    "PASS": 0,
+    "FAIL": 0
+  },
+  "main_body_machine_token_count": 0,
+  "flat_main_body_forbidden_token_counts": {
+    "artifact_macro": 0,
+    ".json": 0,
+    ".md": 0,
+    ".csv": 0,
+    ".py": 0,
+    "submission_ready": 0,
+    "same_test_campaign_status": 0,
+    "external_superiority_claim": 0,
+    "default_1e-4": 0,
+    "run_v047": 0,
+    "PASS": 0,
+    "FAIL": 0
+  },
+  "flat_main_body_machine_token_count": 0,
+  "appendix_evidence": {
+    "artifact_macro_count": 0,
+    "flat_artifact_macro_count": 0,
+    "validator_table_present": true,
+    "artifact_contract_table_present": true,
+    "algorithm_source_map_table_present": true,
+    "all_example_review_traceability_table_present": true,
+    "all_example_review_artifacts_present": true,
+    "reproducibility_appendix_compacted": true,
+    "reproducibility_appendix_label": "sec:repro-appendix"
+  },
+  "claim_boundary": {
+    "main_argument_body_machine_token_free": true,
+    "artifact_filenames_confined_to_appendix": true,
+    "reader_facing_claim_language_preserved": true,
+    "b6_closed": true,
+    "closure_basis": "The main body is machine-token free, the reproducibility appendix is compacted, and the final prose scope has been refreshed against the narrowed B4/B7 claim boundary that excludes source-policy work/precision and external-superiority claims."
+  },
+  "proof_reader_facing_cleanup": {
+    "status": "proof_main_body_narrative_rewritten_without_changing_theorem_boundary",
+    "checked_sources": [
+      "main_cmame.tex",
+      "cmame_submission_flat/main_cmame_submission.tex"
+    ],
+    "edited_region": "conditional order argument / Newton-Euler dynamic-row proof narrative",
+    "reader_facing_improvements": [
+      "row identity is now stated as the implementation question linking the manuscript residual to the solved residual",
+      "finite row/Jacobian probes are explicitly described as implementation consistency evidence rather than symbolic proof",
+      "the D5 direct-substitution route is described through mathematical sub-obligations and row-local substitution of Z_G",
+      "the source-paper temporal finite-element replacement non-claim is preserved"
+    ],
+    "strict_proof_boundary_preserved": true,
+    "b1_b3_closure_claim_unchanged": true,
+    "b6_closed_by_this_cleanup": false
+  },
+  "proof_prose_relocation_pass": {
+    "status": "finite_solver_probe_details_relocated_from_proof_boundary_b6_closed_under_narrowed_policy",
+    "checked_sources": [
+      "main_cmame.tex",
+      "cmame_submission_flat/main_cmame_submission.tex"
+    ],
+    "edited_region": "conditional order theorem boundary before thm:g6fullva-order",
+    "removed_from_proof_boundary_tokens": [
+      "maximum final residual divided by $h^7$ equal to",
+      "all 12 policy rows converge",
+      "position/velocity order floor 6.946/6.608"
+    ],
+    "retained_reader_facing_boundary_tokens": [
+      "Those probes are finite solver-policy diagnostics only",
+      "they are not proof inputs",
+      "not a substitute for the explicit \\(\\eta_h^{\\rm tube}\\le c_\\eta h^7\\) theorem condition"
+    ],
+    "detailed_solver_evidence_retained_elsewhere": true,
+    "strict_proof_boundary_preserved": true,
+    "b6_closed_by_this_pass": false,
+    "final_prose_scope_closed_by_narrowed_policy": true
+  },
+  "post_baseline_final_prose_dependency": {
+    "dependency_audit": "B4_SOURCE_POLICY_WORK_PRECISION_EXECUTION_PLAN.json",
+    "b4_plan_status": "execution_plan_ready_b4_b7_remain_open",
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "source_policy_rows_closed_after_plan": 0,
+    "source_policy_rows_total": 40,
+    "ready_command_dependency_boundary": {
+      "schema": "cmame-b6-b4-ready-command-dependency-boundary-v1",
+      "status": "ready_commands_cover_half_source_policy_rows_future_source_policy_only_final_prose_not_deferred",
+      "opt_in_packet": "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json",
+      "ready_command_count": 13,
+      "ready_command_mapped_external_rows": 20,
+      "unaddressed_external_rows_after_ready_commands": 0,
+      "source_policy_rows_closed_now": 0,
+      "source_policy_rows_total": 40,
+      "ready_lanes_after_explicit_opt_in": [
+        "ra2021_source_policy_work_precision",
+        "hi2022_full_T8_work_precision"
+      ],
+      "not_ready_lanes_after_ready_commands": [
+        "tfe_source_policy_work_precision",
+        "vp2024_source_code_path_work_precision"
+      ],
+      "remaining_gap_rows_requiring_new_runner_or_code_path": 0,
+      "remaining_gap_rows_demoted_related_work_proxy_for_current_claim": 0,
+      "ready_commands_alone_can_close_b4": false,
+      "ready_commands_alone_can_close_b7": false,
+      "ready_commands_alone_can_enable_b6_final_prose_pass": false,
+      "execution_invoked_by_packet": false,
+      "final_prose_scope_still_depends_on_unaddressed_rows": false,
+      "final_prose_pass_enabled_by_narrowed_policy": true
+    },
+    "post_execution_dependency_boundary": {
+      "schema": "cmame-b6-b4-post-execution-dependency-boundary-v1",
+      "status": "existing_artifacts_present_no_verified_authorized_execution_zero_promoted_rows_source_policy_excluded_final_prose_enabled",
+      "post_execution_audit": "B4_SOURCE_POLICY_POST_EXECUTION_AUDIT.json",
+      "approved_driver_execution_recorded": false,
+      "verified_authorized_execution_recorded": false,
+      "existing_ready_command_artifacts_present": true,
+      "execution_record_scope": "no_verified_current_authorized_execution_record_existing_artifacts_only",
+      "all_expected_outputs_exist_now": true,
+      "source_policy_rows_promoted_after_driver": 0,
+      "source_policy_rows_total": 40,
+      "b4_can_close_now": false,
+      "b7_can_close_now": false,
+      "same_guarded_driver_rerun_recommended": false,
+      "final_prose_scope_still_depends_on_zero_promoted_rows": false,
+      "final_prose_pass_enabled_by_post_execution": false,
+      "final_prose_pass_enabled_by_narrowed_policy": true
+    },
+    "narrowed_claim_policy_boundary": {
+      "policy_audit": "CMAME_NARROWED_CLAIM_CLOSURE_POLICY_AUDIT.json",
+      "route_audit": "B4_B7_NON_SUPERIORITY_ROUTE_AUDIT.json",
+      "figure_set_audit": "CMAME_FIGURE_SET_AUDIT.json",
+      "narrowed_claim_evidence_supported": true,
+      "b4_b7_closed_by_narrowed_claim_policy": true,
+      "b7_closed_by_figure_set_audit": true,
+      "source_policy_row_promotion_required": false,
+      "source_policy_work_precision_claim_excluded": true,
+      "external_superiority_claim_allowed": false
+    },
+    "hi2022_b4_b7_figure_scope_demotion_status": "demote_hi2022_from_b4_b7_source_policy_figures",
+    "hi2022_source_policy_rows_closed_by_hi2022": 0,
+    "hi2022_counts_as_clean_work_precision_figure": false,
+    "final_prose_pass_ready": true,
+    "remaining_dependency": [],
+    "b6_closure_allowed_now": true
+  },
+  "b6_closure_readiness_preflight": {
+    "schema": "cmame-b6-closure-readiness-preflight-v1",
+    "status": "b6_final_prose_pass_closed_under_narrowed_b4_b7_scope",
+    "closed_precondition_count": 11,
+    "open_dependency_count": 0,
+    "b6_closure_allowed_now": true,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "default_1e-4_required": false,
+    "closed_preconditions": [
+      {
+        "id": "main_body_machine_tokens_removed",
+        "status": true,
+        "evidence": "main_cmame.tex"
+      },
+      {
+        "id": "flat_main_body_machine_tokens_removed",
+        "status": true,
+        "evidence": "cmame_submission_flat/main_cmame_submission.tex"
+      },
+      {
+        "id": "reproducibility_appendix_compacted",
+        "status": true,
+        "evidence": "CMAME_PROSE_RESIDUE_AUDIT.md"
+      },
+      {
+        "id": "artifact_filenames_confined_to_reproducibility_material",
+        "status": true,
+        "evidence": "sec:repro-appendix"
+      },
+      {
+        "id": "algorithm_source_map_table_present",
+        "status": true,
+        "evidence": "tab:algorithm-source-map"
+      },
+      {
+        "id": "all_example_review_traceability_table_present",
+        "status": true,
+        "evidence": "tab:all-example-review-artifacts"
+      },
+      {
+        "id": "read_only_no_default_1e4_no_run_v047_policy_recorded",
+        "status": true,
+        "evidence": "execution_policy"
+      },
+      {
+        "id": "reader_facing_claim_language_preserved",
+        "status": true,
+        "evidence": "claim_boundary"
+      },
+      {
+        "id": "b4_closed_under_narrowed_claim_policy",
+        "status": true,
+        "evidence": "B4_B7_NON_SUPERIORITY_ROUTE_AUDIT.json"
+      },
+      {
+        "id": "b7_closed_under_narrowed_diagnostic_figure_scope",
+        "status": true,
+        "evidence": "CMAME_FIGURE_SET_AUDIT.json"
+      },
+      {
+        "id": "source_policy_work_precision_claim_excluded",
+        "status": true,
+        "evidence": "CMAME_NARROWED_CLAIM_CLOSURE_POLICY_AUDIT.json"
+      }
+    ],
+    "open_dependencies": [],
+    "excluded_future_source_policy_dependencies": [
+      {
+        "id": "b4_source_policy_work_precision_closure",
+        "status": "excluded_from_current_claim",
+        "reason": "source-policy work/precision rows remain 0/40 and are not part of the narrowed submission claim"
+      },
+      {
+        "id": "b7_source_policy_work_precision_figure_rebuild",
+        "status": "excluded_from_current_claim",
+        "reason": "clean source-policy work/precision figures are a future reintroduction path, not a current B6 prose dependency"
+      }
+    ],
+    "post_close_actions": [
+      "recount main-body and flat-source machine tokens after the final prose pass",
+      "refresh submission packet, review agent, PDF-style audit, and reproducibility manifest after any claim-scope edit"
+    ]
+  },
+  "forbidden_claims": [
+    "submission_ready_true",
+    "default_1e-4_required_true",
+    "run_v047_invoked_true",
+    "main_body_machine_tokens_allowed_true",
+    "source_policy_rows_promoted_true",
+    "external_superiority_claim_allowed_true"
+  ]
+}

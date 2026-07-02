@@ -1,0 +1,90 @@
+{
+  "certifies_compact_tube_lipschitz_bound": true,
+  "certifies_dynamic_row_defect": false,
+  "certifies_full_nonlinear_mean_value_binding": true,
+  "certifies_full_nonlinear_ps2": false,
+  "certifies_induced_taylor_bounds": false,
+  "certifies_rotational_lie_row_mean_value_binding": true,
+  "certifies_small_step_absorption": true,
+  "claim_boundary": {
+    "allowed_now": "The nonlinear rotational Lie-collocation row is bound to the weighted PS2 kinematic template by a compact-tube mean-value estimate and small-step absorption.",
+    "close_condition": "The aggregate PS2 target can be promoted only after this component certificate is combined in the P_state lift-gap ledger with the kinematic-block, Lie-chart, and row-injection certificates.",
+    "forbidden_now": [
+      "aggregate weighted PS2 inverse promoted",
+      "PS3 actual state lift conversion",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "compact_tube_constants": {
+    "absorption_condition": "h ||A_G||_2 L_F <= 1/2 after shrinking the asymptotic step threshold",
+    "chart_radius": 0.5,
+    "finite_lipschitz_constant_name": "L_F",
+    "finite_lipschitz_map": "F(eta, omega) = J_r(eta)^(-1) omega",
+    "gauss_matrix_2_norm": 0.6628545492279,
+    "right_jacobian_inverse_smooth_on_tube": true
+  },
+  "dimensions": {
+    "angular_acceleration_coordinates": 18,
+    "angular_velocity_collocation_rows": 18,
+    "rotational_lie_collocation_rows": 18,
+    "state_rotational_coordinates": 36
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-p-state-ps2-nonlinear-binding",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps2-nonlinear-binding}",
+      "Nonlinear rotational-row binding for the weighted PS2 route",
+      "F(\\eta,\\omega)=J_r(\\eta)^{-1}\\omega",
+      "compact-tube mean-value estimate",
+      "small-step absorption",
+      "does not by itself promote the aggregate PS2 inverse"
+    ]
+  },
+  "mean_value_statement": {
+    "absorbed_rotational_bound": "||Delta eta|| + ||Delta omega|| <= C_rot (||Delta R_eta|| + ||Delta R_omega|| + h ||Delta alpha||)",
+    "difference_bound": "||Delta F|| <= L_F (||Delta eta|| + ||Delta omega||) on the compact tube",
+    "row": "R_eta_i = eta_i - h sum_j A_ij J_r(eta_j)^(-1) omega_j",
+    "uses_dynamic_rows": false,
+    "uses_stage_residual_lemma": false
+  },
+  "p_state_ps2_nonlinear_binding_recorded": true,
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "ps2_inverse_or_infsup_closed": false,
+  "read_only": true,
+  "remaining_promotion_gaps": [
+    "promote the component nonlinear binding together with the kinematic-block, Lie-chart, and row-injection certificates into the aggregate weighted PS2 inverse constant"
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-nonlinear-binding-audit-v1",
+  "source_consistency": {
+    "kinematic_block_bound_certified": true,
+    "kinematic_block_full_ps2": false,
+    "kinematic_block_schema": "d5-p-state-ps2-kinematic-block-certificate-v1",
+    "lie_chart_full_mean_value_binding": false,
+    "lie_chart_schema": "d5-p-state-ps2-lie-chart-binding-audit-v1",
+    "lie_chart_so3_norm_equivalence": true,
+    "p_state_map_definition_closed": true,
+    "p_state_map_schema": "d5-p-state-map-definition-audit-v1",
+    "p_tube_closed": true,
+    "p_tube_pc2_closed": false,
+    "p_tube_schema": "d5-p-tube-constants-audit-v1",
+    "ps2_target_infsup_closed": false,
+    "ps2_target_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "ps2_target_spec_closed": true,
+    "row_injection_certified": true,
+    "row_injection_full_ps2": false,
+    "row_injection_schema": "d5-p-state-ps2-row-injection-audit-v1",
+    "row_injection_unweighted_scaling": true
+  },
+  "status": "ps2_nonlinear_rotational_binding_closed_full_ps2_promotion_open",
+  "submission_ready": false
+}

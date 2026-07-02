@@ -1,0 +1,73 @@
+{
+  "accepted_runnable_methods": 11,
+  "alias_resolved_methods": [
+    "vp2024_lie_group_ode_partitioning"
+  ],
+  "apples_to_apples_nonlocal_comparisons": 40,
+  "apples_to_apples_policy_row_count": 44,
+  "apples_to_apples_policy_safe_rows": 44,
+  "claim": "The active comparison objective is complete for the required method matrix: all required labels are accepted/alias-resolved/source-backed excluded; all four examples use the coarse h trio under explicit row-level and global apples-to-apples policy audits; public-code baselines are fixed-grid replayed rather than source-policy reproduced; mixed-policy direct error claims are blocked; and the local method wins all direct common-reference velocity-error and velocity-order comparisons against accepted original-paper and Kissel/Negrut-family rows.",
+  "direct_error_comparable_rows": 40,
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "failed_requirements": [],
+  "global_comparison_policy_passed": true,
+  "global_comparison_policy_passed_count": 13,
+  "global_comparison_policy_row_count": 13,
+  "kissel_negrut_velocity_error_comparisons": 24,
+  "kissel_negrut_velocity_error_wins": 24,
+  "local_finest_velocity_error_comparisons": 40,
+  "local_finest_velocity_error_wins": 40,
+  "local_method": "local_Gauss6_FullVA",
+  "local_orders": {
+    "double_pendulum": {
+      "acc_order": "nan",
+      "finest_vel_error": "2.3455890008072799e-13",
+      "pos_order": "6.0107116196912500e+00",
+      "vel_order": "6.0097049897199657e+00"
+    },
+    "four_link": {
+      "acc_order": "9.9466887815859806e-01",
+      "finest_vel_error": "1.0927703186780491e-11",
+      "pos_order": "5.9548979111188078e+00",
+      "vel_order": "6.0848187309877098e+00"
+    },
+    "single_pendulum": {
+      "acc_order": "5.0559023369543672e+00",
+      "finest_vel_error": "1.1551877762897842e-12",
+      "pos_order": "6.0128039157529658e+00",
+      "vel_order": "5.8013285781956512e+00"
+    },
+    "slider_crank": {
+      "acc_order": "1.0541648128408896e+00",
+      "finest_vel_error": "9.1888510689308589e-12",
+      "pos_order": "6.1636896425143544e+00",
+      "vel_order": "7.3409145102638718e+00"
+    }
+  },
+  "local_velocity_order_comparisons": 40,
+  "local_velocity_order_wins": 40,
+  "mixed_policy_direct_error_vs_local_comparable_rows": 0,
+  "objective_complete": true,
+  "original_paper_velocity_error_comparisons": 16,
+  "original_paper_velocity_error_wins": 16,
+  "passed_count": 13,
+  "public_code_fixed_grid_replay": true,
+  "reference_h": 0.0125,
+  "required_methods_resolved": true,
+  "row_count": 13,
+  "schema": "objective-closure-audit-v1",
+  "scope_excluded_methods": [
+    "tfe2026_TFE_m3_GL"
+  ],
+  "source_policy_reproduction": false,
+  "step_sizes": [
+    0.1,
+    0.05,
+    0.025
+  ]
+}

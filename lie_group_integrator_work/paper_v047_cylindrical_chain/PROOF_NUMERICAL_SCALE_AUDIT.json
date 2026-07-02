@@ -1,0 +1,61 @@
+{
+  "schema": "proof-numerical-scale-audit-v1",
+  "status": "finite_run_global_scale_diagnostic_not_asymptotic_solver_proof",
+  "submission_ready": false,
+  "accepted_method": "Gauss6/FullVA",
+  "source_csv": "../v047_cylindrical_chain_pipeline/results/cylindrical_chain_convergence.csv",
+  "case": "cylindrical_smooth",
+  "endpoint_modes": ["projected_velocity", "raw_endpoint"],
+  "h_values": [0.04, 0.02, 0.01],
+  "reference_h": 0.005,
+  "execution_policy": {
+    "read_only_audit": true,
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false
+  },
+  "smooth_projected_velocity_global_orders": {
+    "position_error_fit": 7.160828003417387,
+    "velocity_error_fit": 7.066182539651858,
+    "position_error_pair_orders": [6.582225761662462, 7.739430245172312],
+    "velocity_error_pair_orders": [8.413628400185232, 5.718736679118482]
+  },
+  "endpoint_global_closure_orders": {
+    "raw_endpoint_position_constraint_fit": 5.985100758394371,
+    "raw_endpoint_velocity_constraint_fit": 6.072290794930567,
+    "projected_velocity_position_constraint_fit": 5.985109706299316,
+    "projected_velocity_constraint_interpretation": "roundoff-limited after projection; do not fit as solver-tolerance proof"
+  },
+  "global_h6_scale_ratios": {
+    "projected_position_error_over_h6": [43.00081482394556, 28.721642129670443, 8.601785083254413],
+    "projected_velocity_error_over_h6": [2459.1612968083577, 461.5433184630342, 560.894478179553],
+    "raw_position_constraint_over_h6": [0.001436306128294646, 0.001433077272191527, 0.0014662811475967602],
+    "raw_velocity_constraint_over_h6": [0.0330637492139094, 0.03022601889413138, 0.029910846414046365]
+  },
+  "proof_boundary": {
+    "local_defect_order_required": 7,
+    "global_error_order_supported": 6,
+    "finite_run_error_scale_supports_order_six": true,
+    "endpoint_global_closure_scale_supports_local_h7_budget": true,
+    "endpoint_functional_is_velocity_kkt_not_raw_position_monitor": true,
+    "raw_position_endpoint_defect_is_diagnostic_monitor": true,
+    "finite_endpoint_diagnostics_do_not_discharge_endpoint_p2": true,
+    "newton_residual_norm_recorded": false,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "fixed_tolerance_runs_are_asymptotic_proof": false,
+    "stage_residual_O_h7_implementation_defect_proved_by_this_audit": false,
+    "dynamic_symbolic_oracle_complete": false,
+    "external_superiority_claim": false
+  },
+  "forbidden_claims": [
+    "proof_unconditional",
+    "eta_h_O_h7_solver_policy_evidence_true",
+    "fixed_tolerance_runs_are_asymptotic_proof_true",
+    "stage_residual_O_h7_implementation_defect_proved_by_this_audit_true",
+    "dynamic_symbolic_oracle_complete_true",
+    "external_superiority_claim_true",
+    "default_1e-4_required_true",
+    "submission_ready_true"
+  ]
+}

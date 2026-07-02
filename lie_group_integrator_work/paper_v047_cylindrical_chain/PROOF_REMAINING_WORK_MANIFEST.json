@@ -1,0 +1,264 @@
+{
+  "ad_expanded_symbolic_oracle_closure": true,
+  "b1_symbolic_oracle_remaining": false,
+  "b3_closed_by_direct_route": true,
+  "blocker_status": {
+    "B1": {
+      "required_to_close": [],
+      "status": "closed"
+    },
+    "B3": {
+      "required_to_close": [],
+      "status": "closed"
+    }
+  },
+  "claim_policy": {
+    "allowed_now": [
+      "direct-route O(h^7) proof closure for B3",
+      "independent B1 residual-row symbolic oracle closure for 36 Newton-Euler rows",
+      "AD-expanded B1 symbolic oracle closure for 4752 derivative cells",
+      "finite solver-policy probes as supporting evidence",
+      "96 non-dynamic row certificate plus 36-row Newton-Euler target inventory",
+      "AD-expanded runtime/formula binding coverage as supporting traceability"
+    ],
+    "forbidden_now": [
+      "dynamic symbolic oracle complete",
+      "eta_h solver policy proved by finite probes",
+      "global submission-ready proof/package readiness outside the narrowed-claim decision",
+      "symbolic-certificate route O(h^7) proof"
+    ]
+  },
+  "direct_pc2_proof_gap_closed": true,
+  "dynamic_symbolic_oracle_complete": false,
+  "eta_h_O_h7_solver_policy_evidence": false,
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "next_required_artifacts": [
+    "no remaining B1/B3 proof-blocker artifact is required by this manifest",
+    "keep validate_newton_euler_symbolic_defect_certificate.py passing without overclaiming O(h^7) via the symbolic-certificate route",
+    "retain narrowed-claim B4/B6/B7 closure while keeping the global source-policy, eta_h, and residual-to-error boundaries explicit"
+  ],
+  "proof_gap_closed": true,
+  "proof_gap_closed_reading_rule": "The schema-only compatibility boolean proof_gap_closed is a schema-compatible shorthand for direct_pc2_proof_gap_closed under the active direct PC2 residual-bridge/Kantorovich route. It does not close the primitive/Taylor route, P6 solver-policy evidence, P7 residual-to-error promotion, source-policy readiness, or full-TFE replacement.",
+  "proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+  "readiness_boundary": {
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ],
+    "narrowed_claim_b4_b6_b7_statuses": {
+      "B4": "closed",
+      "B6": "closed",
+      "B7": "closed"
+    },
+    "proof_remaining_work_manifest_scope": "B1_B3_closed_remaining_global_submission_gates"
+  },
+  "remaining_gate_scope": {
+    "active_b1_b3_proof_blockers_remaining": false,
+    "b4_b6_b7_closed_elsewhere_under_narrowed_claim": true,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "eta_h_theorem_condition_retained": true,
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ],
+    "narrowed_claim_b4_b6_b7_statuses": {
+      "B4": "closed",
+      "B6": "closed",
+      "B7": "closed"
+    },
+    "residual_to_error_blocking_obligations": 7,
+    "residual_to_error_route_promoted": false
+  },
+  "schema": "proof-remaining-work-manifest-v1",
+  "schema_compatibility": {
+    "legacy_key": "proof_gap_closed",
+    "legacy_key_retained_for_schema_compatibility": true,
+    "preferred_key": "direct_pc2_proof_gap_closed"
+  },
+  "source_files": {
+    "b1_ad_expanded_symbolic_oracle_closure_certificate": "B1_AD_EXPANDED_SYMBOLIC_ORACLE_CLOSURE_CERTIFICATE.json",
+    "b1_symbolic_row_oracle_closure_certificate": "B1_SYMBOLIC_ROW_ORACLE_CLOSURE_CERTIFICATE.json",
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "newton_euler_ad_expanded_row_oracle_audit": "NEWTON_EULER_AD_EXPANDED_ROW_ORACLE_AUDIT.json",
+    "newton_euler_symbolic_defect_certificate": "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.json",
+    "newton_euler_symbolic_target_audit": "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json",
+    "proof_claim_traceability": "PROOF_CLAIM_TRACEABILITY_AUDIT.json",
+    "proof_closure_manifest": "PROOF_CLOSURE_MANIFEST.json",
+    "proof_solver_scale_audit": "PROOF_SOLVER_SCALE_AUDIT.json"
+  },
+  "stage_residual_O_h7_direct_route_proved": true,
+  "stage_residual_O_h7_implementation_defect_proved": true,
+  "stage_residual_O_h7_symbolic_certificate_proved": false,
+  "status": "proof_b1_b3_closed_submission_gates_remaining",
+  "submission_ready": false,
+  "submission_ready_scope": "proof_remaining_work_global_boundary_not_narrowed_claim_package_decision",
+  "summary": {
+    "b1_ad_expanded_symbolic_oracle_closed_cells": 4752,
+    "b1_ad_expanded_symbolic_oracle_closed_rows": 36,
+    "b1_ad_expanded_symbolic_oracle_closure": true,
+    "b1_ad_expanded_symbolic_oracle_columns_per_row": 132,
+    "b1_ad_expanded_symbolic_oracle_dynamic_symbolic_oracle_complete": false,
+    "b1_independent_symbolic_row_oracle_closed": true,
+    "b1_independent_symbolic_row_oracle_closed_rows": 36,
+    "b1_runtime_row_binding_checked_rows": 36,
+    "b1_source_template_symbolic_identity_rows": 36,
+    "certified_non_dynamic_rows": 96,
+    "close_requirement_count": 4,
+    "finite_h_scaled_tolerance_sweep_recorded": true,
+    "finite_h_scaled_tolerance_sweep_rows": 8,
+    "finite_h_scaled_tolerance_sweep_steps": 60,
+    "finite_h_scaled_tolerance_sweep_velocity_order_floor": 6.608089993735075,
+    "finite_scaled_tolerance_probe_ok_rows": 4,
+    "finite_scaled_tolerance_probe_total_rows": 4,
+    "finite_scaled_tolerance_trajectory_probe_ok_rows": 4,
+    "finite_scaled_tolerance_trajectory_probe_steps": 30,
+    "finite_scaled_tolerance_trajectory_probe_total_rows": 4,
+    "newton_euler_ad_expanded_row_oracle_checked": true,
+    "newton_euler_ad_expanded_row_oracle_columns_per_row": 132,
+    "newton_euler_ad_expanded_row_oracle_rows": 36,
+    "newton_euler_ad_expanded_symbolic_oracle_closure": false,
+    "newton_euler_open_obligations": 1,
+    "newton_euler_rotational_rows": 18,
+    "newton_euler_row_obligation_links": 180,
+    "newton_euler_rows_with_complete_obligation_sets": 36,
+    "newton_euler_symbolic_defect_certificate_body0_wrench_rows": 18,
+    "newton_euler_symbolic_defect_certificate_body1_wrench_rows": 18,
+    "newton_euler_symbolic_defect_certificate_body_specific_wrench_checked": true,
+    "newton_euler_symbolic_defect_certificate_body_specific_wrench_rows": 36,
+    "newton_euler_symbolic_defect_certificate_c1_row_expansion_closed": true,
+    "newton_euler_symbolic_defect_certificate_certified_rows": 0,
+    "newton_euler_symbolic_defect_certificate_complete": false,
+    "newton_euler_symbolic_defect_certificate_expanded_rows": 36,
+    "newton_euler_symbolic_defect_certificate_open_rows": 36,
+    "newton_euler_symbolic_defect_certificate_present": true,
+    "newton_euler_symbolic_defect_certificate_runtime_expression_checked_rows": 36,
+    "newton_euler_symbolic_defect_certificate_runtime_expression_structure_checked": true,
+    "newton_euler_symbolic_defect_certificate_runtime_template_instantiation_checked": true,
+    "newton_euler_symbolic_defect_certificate_runtime_template_instantiation_checked_rows": 36,
+    "newton_euler_symbolic_target_rows": 36,
+    "newton_euler_translational_rows": 18,
+    "open_dynamic_rows": 36,
+    "satisfied_close_requirement_count": 4,
+    "scaled_tolerance_sweep_recorded": false,
+    "unsatisfied_close_requirement_count": 0,
+    "unsatisfied_close_requirement_ids": []
+  },
+  "work_lanes": [
+    {
+      "blockers": [
+        "B1",
+        "B3"
+      ],
+      "closes_now": true,
+      "closes_requirement": "PC1",
+      "current_evidence": [
+        "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json gives the 36 row targets",
+        "NEWTON_EULER_BALANCE_IDENTITY_AUDIT.json closes D1/D2 source-level balance identities for all 36 dynamic rows",
+        "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.json verifies the implemented source-expression structure for all 36 dynamic rows",
+        "NEWTON_EULER_ROW_ORDERING_SCALING_AD_AUDIT.json closes D6 row ordering, residual scaling, and AD binding",
+        "obligation coverage matrix is complete; D5 remains the only Newton-Euler open proof obligation"
+      ],
+      "lane_id": "PC1_symbolic_row_oracle",
+      "required_to_close": [
+        "no remaining PC1-specific work; keep the D1/D2 balance-identity audit and validators in sync"
+      ],
+      "row_obligation_links": 180,
+      "rows": 36,
+      "satisfaction_mode": "D1/D2 balance identities closed by NEWTON_EULER_BALANCE_IDENTITY_AUDIT",
+      "status": "closed_balance_identity_source_oracle"
+    },
+    {
+      "blockers": [
+        "B3"
+      ],
+      "closes_now": true,
+      "closes_requirement": "PC2",
+      "current_evidence": [
+        "96 non-dynamic rows are certified",
+        "36 Newton-Euler rows are direct-route row-defect closed by the D5 direct-substitution certificate",
+        "PROOF_CLOSURE_MANIFEST records all close requirements satisfied"
+      ],
+      "lane_id": "PC2_direct_dynamic_O_h7_defect_certificate",
+      "required_to_close": [
+        "keep D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE.json and PROOF_CLOSURE_MANIFEST.json synchronized",
+        "do not reuse this direct-route closure as an AD-expanded symbolic oracle closure"
+      ],
+      "rows": 36,
+      "satisfaction_mode": "D5 direct-substitution route closes the O(h^7) dynamic-defect proof, but not B1 symbolic oracle closure",
+      "status": "closed_by_direct_substitution_route"
+    },
+    {
+      "blockers": [
+        "B1"
+      ],
+      "closes_now": true,
+      "closes_requirement": "B1_symbolic_oracle",
+      "current_evidence": [
+        "B1_SYMBOLIC_ROW_ORACLE_CLOSURE_CERTIFICATE.json closes the independent residual-row symbolic oracle item for 36/36 rows",
+        "B1_AD_EXPANDED_SYMBOLIC_ORACLE_CLOSURE_CERTIFICATE.json differentiates the closed residual identities columnwise and closes 4752/4752 AD-expanded derivative cells",
+        "NEWTON_EULER_AD_EXPANDED_ROW_ORACLE_AUDIT.json covers 36 rows with 132 AD columns per row",
+        "the runtime-binding audit records ad_expanded_symbolic_oracle_closure=false because it is not the symbolic closure certificate",
+        "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.json records pc1_symbolic_row_oracle_closed=true only at the source/balance-identity layer"
+      ],
+      "lane_id": "B1_AD_expanded_symbolic_oracle",
+      "required_to_close": [
+        "no remaining B1 AD-expanded symbolic-oracle work; keep the chain-rule certificate and validators in sync",
+        "keep NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.json from overclaiming O(h^7) proof through this lane"
+      ],
+      "rows": 36,
+      "satisfaction_mode": "closed residual row identities differentiated columnwise on the smooth proof tube",
+      "status": "closed_by_residual_identity_chain_rule_certificate"
+    },
+    {
+      "blockers": [
+        "B3"
+      ],
+      "closes_now": true,
+      "closes_requirement": "PC3",
+      "current_evidence": [
+        "finite one-step scaled-tolerance probe has 4/4 ok rows",
+        "finite short-trajectory scaled-tolerance probe has 4/4 ok rows and 30 steps",
+        "finite tolerance-regime sweep records 8 h-scaled rows and 60 h-scaled trajectory steps",
+        "theorem_level_scaled_tolerance_sweep_recorded remains false"
+      ],
+      "lane_id": "PC3_solver_eta_policy",
+      "required_to_close": [
+        "keep eta_h <= c_eta h^7 as an explicit theorem condition, or",
+        "run a theorem-level scaled trajectory sweep with accepted reporting scope"
+      ],
+      "rows": 4,
+      "satisfaction_mode": "explicit_theorem_condition_retained_not_empirical_solver_evidence",
+      "status": "condition_retained_not_empirical_closure"
+    },
+    {
+      "blockers": [
+        "B3",
+        "B4"
+      ],
+      "closes_now": "nonpromotion_only",
+      "closes_requirement": "PC4",
+      "current_evidence": [
+        "four_link and slider_crank remain coverage-only examples for residual-to-error route"
+      ],
+      "lane_id": "PC4_residual_to_error_boundary",
+      "nonpromotion_boundary_retained": true,
+      "required_to_close": [
+        "do not promote four-link/slider-crank residual rows to dynamic-order claims",
+        "only close this route with a residual-to-error theorem or keep coverage-only labeling"
+      ],
+      "residual_to_error_closed": false,
+      "residual_to_error_route_promoted": false,
+      "rows": 7,
+      "satisfaction_mode": "nonpromotion_boundary_retained_residual_to_error_theorem_open",
+      "status": "nonpromotion_boundary_retained"
+    }
+  ]
+}

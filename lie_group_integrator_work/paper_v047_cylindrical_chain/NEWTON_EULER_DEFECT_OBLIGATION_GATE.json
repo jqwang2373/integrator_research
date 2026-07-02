@@ -1,0 +1,123 @@
+{
+  "accepted_method": "Gauss6/FullVA",
+  "accepted_residual": "residual_cylindrical_chain",
+  "closed_obligations": [
+    {
+      "closed_scope": "source-level equality between each implemented translational dynamic row and the accepted weak linear-momentum balance; the active direct D5 route is closed, while the symbolic/primitive certificate route remains open",
+      "closure_evidence": "NEWTON_EULER_BALANCE_IDENTITY_AUDIT.md/json",
+      "id": "translational_balance_identity",
+      "row_count": 18,
+      "status": "closed"
+    },
+    {
+      "closed_scope": "source-level equality between each implemented rotational dynamic row and the accepted body-frame angular-momentum balance; the active direct D5 route is closed, while the symbolic/primitive certificate route remains open",
+      "closure_evidence": "NEWTON_EULER_BALANCE_IDENTITY_AUDIT.md/json",
+      "id": "rotational_balance_identity",
+      "row_count": 18,
+      "status": "closed"
+    },
+    {
+      "closed_scope": "row-expanded lower-pair multiplier virtual-work identity for the implemented cylindrical-chain force and axis-torque sites",
+      "closure_evidence": "NEWTON_EULER_VIRTUAL_WORK_WRENCH_AUDIT.md/json",
+      "id": "multiplier_wrench_consistency",
+      "row_count": 36,
+      "status": "closed"
+    },
+    {
+      "closed_scope": "smooth Brown-McPhee force/friction and regularized normal-load lift are C7 with bounded derivatives on the accepted compact smooth proof tube",
+      "closure_evidence": "SMOOTH_FORCE_LIFT_CERTIFICATE.md/json",
+      "id": "smooth_force_lift_consistency",
+      "row_count": 36,
+      "status": "closed"
+    },
+    {
+      "closed_scope": "independent row-ordering, residual-scaling, and accepted AD-binding equivalence for the 36 implemented Newton-Euler dynamic rows",
+      "closure_evidence": "NEWTON_EULER_ROW_ORDERING_SCALING_AD_AUDIT.md/json",
+      "id": "symbolic_runtime_row_equivalence",
+      "row_count": 36,
+      "status": "closed"
+    }
+  ],
+  "closure_state": {
+    "active_direct_dynamic_zero_residual_rows": 36,
+    "active_direct_forbidden_shortcuts_used": 0,
+    "active_direct_pc2_closed": true,
+    "active_direct_stage_residual_O_h7_implementation_defect_proved": true,
+    "balance_identity_audit_complete": true,
+    "closed_obligation_count": 5,
+    "closed_obligation_ids": [
+      "translational_balance_identity",
+      "rotational_balance_identity",
+      "multiplier_wrench_consistency",
+      "smooth_force_lift_consistency",
+      "symbolic_runtime_row_equivalence"
+    ],
+    "dynamic_symbolic_oracle_complete": false,
+    "full_tfe_stage_replacement": false,
+    "newton_euler_symbolic_defect_certificate_complete": false,
+    "open_obligation_count": 1,
+    "open_obligation_scope": "symbolic_primitive_certificate_route_not_active_direct_pc2",
+    "stage_residual_O_h7_implementation_defect_proved": false,
+    "stage_residual_O_h7_implementation_defect_proved_scope": "symbolic_primitive_certificate_route_only",
+    "symbolic_target_inventory_complete": true
+  },
+  "execution_policy": {
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "forbidden_claims": [
+    "newton_euler_symbolic_defect_certificate_complete_true",
+    "symbolic_primitive_stage_residual_O_h7_certificate_complete_true",
+    "dynamic_symbolic_oracle_complete_true",
+    "full_tfe_stage_replacement_true",
+    "external_superiority_claim_true",
+    "submission_ready_true",
+    "default_1e-4_required_true"
+  ],
+  "open_obligations": [
+    {
+      "id": "gauss_stage_dynamic_defect_rate",
+      "required_proof": "primitive/Taylor or global symbolic-certificate route for the dynamic-row residual; the active direct D5 substitution route is recorded separately and is closed",
+      "row_count": 36,
+      "status": "symbolic_primitive_route_open"
+    }
+  ],
+  "proof_scope": {
+    "body_count": 2,
+    "dynamic_row_count": 36,
+    "kinematic_certificate_rows_already_certified": 96,
+    "rotational_balance_rows": 18,
+    "row_family": "newton_euler_weak_balance",
+    "rows_per_body_stage": 6,
+    "stage_count": 3,
+    "total_runtime_rows": 132,
+    "translational_balance_rows": 18
+  },
+  "schema": "newton-euler-defect-obligation-gate-v1",
+  "source_files": {
+    "blocker_gate": "CMAME_BLOCKER_CLOSURE_GATE.json",
+    "d5_dynamic_direct_substitution_certificate": "D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE.json",
+    "dynamic_oracle": "DYNAMIC_ROW_ORACLE_GATE.json",
+    "kinematic_row_defect_certificate": "KINEMATIC_ROW_DEFECT_CERTIFICATE.json",
+    "newton_euler_balance_identity_audit": "NEWTON_EULER_BALANCE_IDENTITY_AUDIT.json",
+    "newton_euler_symbolic_target_audit": "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json",
+    "proof_contract_gate": "CMAME_PROOF_CONTRACT_GATE.json"
+  },
+  "status": "d5_symbolic_primitive_route_open_active_direct_pc2_closed_not_submission_ready",
+  "submission_ready": false,
+  "supporting_runtime_oracles": {
+    "balance_identity_audit_checked": true,
+    "balance_identity_closed_rows": 36,
+    "formula_row_ad_jacobian_oracle_checked": true,
+    "formula_row_ad_jacobian_probe_count": 3,
+    "full_formula_row_oracle_132_rows_checked": true,
+    "newton_euler_formula_oracle_complete": true,
+    "partial_kinematic_stage_defect_certificate_checked": true,
+    "partial_kinematic_stage_defect_rows_checked": 96,
+    "symbolic_target_audit_checked": true,
+    "symbolic_target_audit_rows": 36,
+    "symbolic_target_audit_translational_rotational_rows": "18/18"
+  }
+}

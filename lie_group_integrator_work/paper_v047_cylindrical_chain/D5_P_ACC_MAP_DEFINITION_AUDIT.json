@@ -1,0 +1,128 @@
+{
+  "acceleration_lift_rate_proved": false,
+  "angular_acceleration_rows": 18,
+  "anti_circularity_gate": {
+    "dynamic_balance_disallowed_as_acceleration_lift_proof": true,
+    "map_definition_is_not_acceleration_lift_rate": true,
+    "stage_residual_perturbation_lemma_disallowed_as_input": true,
+    "velocity_collocation_rate_not_assumed": true
+  },
+  "claim_boundary": {
+    "allowed_now": "P_acc PA1 is closed: the accepted acceleration map is defined and bound to the 36 acceleration-lift Taylor rows.",
+    "close_condition": "P_acc closes only after velocity-collocation and smooth-lift arguments prove O(h^7) translational and angular acceleration lift rates in the accepted row ordering, independently of the dynamic balance defect.",
+    "forbidden_now": [
+      "P_acc primitive closure",
+      "acceleration lift O(h^7) proved",
+      "velocity-collocation implication proved",
+      "Taylor term bounds certified from P_acc",
+      "primitive/Taylor PC2 route closure",
+      "unconditional sixth-order theorem"
+    ]
+  },
+  "closed_subproofs": [
+    "PA1_acceleration_variable_and_row_map_defined"
+  ],
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-acc-map-definition}",
+      "\\mathcal A_h^{\\mathrm{acc}}",
+      "A=(a_i,\\alpha_i)",
+      "closes only the PA1 map-definition subproof",
+      "does not prove an acceleration lift rate"
+    ]
+  },
+  "map_definition": {
+    "acceleration_block": [
+      "a_i",
+      "alpha_i"
+    ],
+    "codomain": "R^36",
+    "map_name": "A_h^acc",
+    "purpose": "Bind accepted translational and angular stage acceleration variables to the D5 acceleration-lift Taylor rows before any lift-rate proof.",
+    "row_terms": [
+      "T_acceleration_lift",
+      "R_angular_acceleration_lift"
+    ],
+    "stage_body_pairs": 6,
+    "total_rows": 36
+  },
+  "open_subproofs": [
+    "PA2_velocity_collocation_to_acceleration_lift",
+    "PA3_lower_pair_acceleration_independence_from_dynamic_balance",
+    "PA4_binding_to_residual_ordering_and_D5_terms"
+  ],
+  "pa1_map_definition_closed": true,
+  "pc2_closed": false,
+  "primitive_closed": false,
+  "primitive_id": "P_acceleration_lift",
+  "proof_gap_closed": false,
+  "read_only": true,
+  "row_ids": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123
+  ],
+  "run_v047_invoked": false,
+  "schema": "d5-p-acc-map-definition-audit-v1",
+  "source_consistency": {
+    "angular_rows": 18,
+    "primitive_reduction_pc2_closed": false,
+    "primitive_reduction_schema": "d5-primitive-bound-reduction-audit-v1",
+    "term_budget_pc2_closed": false,
+    "term_budget_schema": "d5-taylor-term-budget-audit-v1",
+    "term_rows": 36,
+    "translational_rows": 18
+  },
+  "status": "p_acc_map_definition_closed_lift_open",
+  "submission_ready": false,
+  "summary": {
+    "acceleration_lift_rate_proved": false,
+    "angular_acceleration_rows": 18,
+    "closed_subproof_count": 1,
+    "open_subproof_count": 3,
+    "pc2_closed": false,
+    "required_subproof_count": 4,
+    "term_rows_conditionally_mapped": 36,
+    "term_rows_using_p_acc": 36,
+    "translational_acceleration_rows": 18
+  },
+  "term_bounds_proved": 0,
+  "term_rows_conditionally_mapped": 36,
+  "term_rows_using_p_acc": 36,
+  "translational_acceleration_rows": 18
+}

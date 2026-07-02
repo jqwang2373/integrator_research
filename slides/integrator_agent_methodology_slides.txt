@@ -1,0 +1,322 @@
+Building an Auto-Research Agent for Integra-
+tor Research
+Verifier sandboxes, proof gates, and numerical test ladders for Lie-group multibody DAE
+methods
+Jingquan Wang    |   Simulation-Based Engineering Laboratory      |    University of Wisconsin -
+Madison                                                                              06/09/2026
+
+
+
+
+                                                      order verifier
+                                                                                   mechanism gate
+                method object
+Why this matters in our lab
+
+
+                           Many people are attacking the same hard object:
+
+                                        defensible multibody
+                                          time integration
+       Lie groups                DAE                 friction/contact         sparse solvers             papers
+    SO(3), SE(3), charts                             smooth vs nonsmooth     AD, coloring, Newton   benchmarks, claims,
+                              mechanisms                    tests                                         refs
+                               joints, drivers,
+                                  reactions
+
+
+
+             Agent purpose: keep method identity, examples, proof status, and paper claims
+                            synchronized across this shared evidence space.
+
+
+06/09/2026                                    University of Wisconsin - Madison     2
+Reference landscape drives the verifier design
+
+
+
+                           references                                    agent obligation
+    stream
+                           Hairer-Wanner; Gear-Leimkuhler-Gupta          check Φ, Φq v , Φq a, and multipliers
+    index-3 DAE
+                           Munthe-Kaas; Bruls-Cardona-Arnold;            preserve rotation geometry and method
+    Lie-group time inte-   Wieloch-Arnold                                identity
+    gration
+                           Borri-Atluri; Hughes-Hulbert;                 separate source residual reproduction from
+    time finite elements   Chaturvedi-Sandu-Sandu                        local method claims
+                           Taves-Kissel-Negrut; Kissel-Negrut-Taves;     make external rows comparable under
+    SBEL baselines         Fang et al.                                   explicit policy
+                           Brown-McPhee; Stewart-Trinkle;                separate smooth order from nonsmooth
+    friction/contact       Anitescu-Potra                                diagnostics
+
+
+
+
+06/09/2026                                 University of Wisconsin - Madison      3
+Why v001 had to become v048
+
+                   SO(3) order
+    v001-005
+                   DAE closure
+    v006-013
+                   friction smoothness boundary
+    v014-022
+                   FullVA from endpoint consistency
+    v023-029       failures
+                   sparse scaling and colored AD
+    v030-045
+                   ASME examples, proof ledger, external
+    v046-048       same-test policy
+
+
+   Evolution rule.
+   Each version exists because the previous verifier found a
+   missing gate. The agent is a blocker-driven research con-
+   troller, not a generic code loop.
+
+
+
+
+                                                               Evidence matrix used to keep version status and claim
+
+                                                                                  status aligned.
+06/09/2026                                 University of Wisconsin - Madison      4
+The agent we need
+
+
+
+        MethodSpec                ProblemSpec                 EvidenceSpec                     ClaimSpec
+       what one-step map is   mechanisms and parameters   CSV, JSON, plots, validators   accepted, diagnostic, open,
+             claimed                                                                             forbidden
+
+
+
+
+              generate        >    sandbox       >        prove      >      test         >     write
+
+
+
+             Human role: choose the research direction. Agent role: enforce gates before
+                                           claims move.
+
+
+
+
+06/09/2026                             University of Wisconsin - Madison      5
+Method object: the agent cannot verify a moving target
+
+
+   For v047
+         3 Gauss stages
+         132 FullVA rows
+         position, velocity,
+         acceleration constraints
+         endpoint closure
+         audited separately
+         solver tolerance is a
+         theorem gate
+   Non-claim:    full source-
+   paper TFE replacement un-
+   less its own residual gate                  The method architecture is also the verifier target.
+   closes.
+06/09/2026                          University of Wisconsin - Madison        6
+Verifier sandbox: constrain what the agent can run
+
+
+                sandbox                           allowed question
+    level
+                read-only validators              Do current paper, package, proof, and claim
+    L0                                            artifacts agree?
+                target audit                      Can one bounded hypothesis falsify this local gap?
+    L1
+                full generator                    After method-code changes, do version-wide
+    L2                                            artifacts regenerate consistently?
+                external source-policy            Under public same-test policy and opt-in, do
+    L3                                            external rows close?
+
+
+    Promotion rule: outputs move upward only when the lower sandbox cannot answer the
+                                     claim question.
+
+06/09/2026                             University of Wisconsin - Madison   7
+Proof sandbox: only gated facts enter the theorem
+
+                 obligation
+    ID
+                 smooth chart and FullVA lift
+    P1
+                 regular stage Jacobian and compact branch
+    P2
+                 implemented residual defect O(h7 )
+    P3
+                 endpoint closure perturbation O(h7 )
+    P4
+                 Newton-Euler dynamic rows discharged
+    P5
+                 solver residual ηh ≤ ch7
+    P6
+                 residual-to-error theorem for surrogate rows
+    P7
+
+
+   Accepted lane                                                    Diagnostic lane
+   direct residual bridge; AD row identity; Newton-Euler substi-    fixed tolerance logs; primitive Taylor fragments; external
+   tution; conditional sixth-order claim                            source-policy rows; residual-only rows
+
+                                            The ledger tells the agent what not to say.
+
+
+06/09/2026                                      University of Wisconsin - Madison         8
+Numerical ladder: examples expose different failure modes
+
+
+                   6    external same-test
+                   5    ASME mechanisms
+                   4    friction regimes
+                   3    constrained DAE
+                   2    smooth mechanics
+                   1    SO(3) kinematics
+
+
+             Acceptance evidence: at least three h values, pinned reference policy,
+                            CSV/JSON/plot trail, and claim role.
+
+
+06/09/2026                        University of Wisconsin - Madison   9
+Case evidence: smooth order verifier
+
+
+                                                                         Accepted     local
+                                                                         method claim
+                                                                               Gauss6 / FullVA
+                                                                               conditional sixth-order path
+                                                                               observed slopes about 7.16
+                                                                               / 7.07
+                                                                               not an external superiority
+                                                                               claim
+                                                                         Boundary: preserve this word-
+                                                                         ing exactly.
+
+                                                               v047
+
+06/09/2026                            convergence.
+             smooth cylindrical-chainUniversity of Wisconsin - Madison    10
+Mechanism verifier: ASME lower-pair examples
+
+
+
+
+                                                                                         Closed-loop kinematic
+             Lower-pair graph bridge.
+                                                                   coverage and dynamic-order staging.
+
+06/09/2026                              University of Wisconsin - Madison     11
+Endpoint closure is its own sandbox
+
+
+
+
+      Why it matters. A projection can make constraints look clean while changing the one-
+      step map. The agent cannot hide that inside an order claim.
+
+
+
+06/09/2026                         University of Wisconsin - Madison   12
+Caveats are first-class evidence
+
+
+
+
+             Friction smoothness boundary.                           Sparse correctness versus sparse speed.
+
+
+
+   Agent behavior. Do not delete caveats. Promote smooth-order evidence, and demote
+   sharp-friction and runtime caveats to their correct claim lanes.
+
+
+
+06/09/2026                               University of Wisconsin - Madison       13
+Search strategy: negative results guide the next verifier
+
+
+
+
+             Terminal closure, source freedom, order preservation, span, rank, and residual are recorded separately.
+
+06/09/2026                                     University of Wisconsin - Madison        14
+External comparison remains bounded
+
+
+
+
+             Common-reference work/precision.                           Literal TFE algorithm diagnostics.
+
+
+   Boundary. v048 provides same-test scaffolds, but source-policy external superiority re-
+   mains false until strict public campaigns close.
+
+
+
+06/09/2026                                University of Wisconsin - Madison      15
+Claim state machine
+
+
+                                                          hypothesis
+
+                                                          diagnostic
+
+                                                          accepted
+
+                                                          open
+
+                                                          forbidden
+
+
+                                                          A claim can move backward
+                                                          when a validator exposes stale
+                                                          prose or unfair policy.
+06/09/2026            University of Wisconsin - Madison     16
+How to build this agent for our integrator work
+
+
+
+
+      1      encode MethodSpec       2      pin ProblemSpec              3   choose sandbox level
+
+
+      4      run numerical ladder    5      update proof ledger          6   gate paper claims
+
+
+
+      Good autonomy here means fewer unverified claims, not fewer human research
+                                     decisions.
+
+
+
+
+06/09/2026                          University of Wisconsin - Madison   17
+References used by the agent design
+
+
+
+                               Hairer & Wanner 1996; Gear, Leimkuhler & Gupta 1985; Munthe-Kaas 1998/1999; Bruls,
+    DAE / Lie groups           Cardona & Arnold 2012; Wieloch & Arnold 2021.
+                               Chaturvedi, Sandu & Sandu 2026, doi:10.1007/s11044-026-10153-w; Kim & Reddy 2017;
+    TFE / higher order         Borri & Atluri 1988; Hughes & Hulbert 1988; Bauchau 2024.
+                               Taves, Kissel & Negrut 2020; Kissel, Negrut & Taves 2021/2022; Fang et al. 2023; Kissel,
+    SBEL baselines             Bakke & Negrut 2024.
+                               Brown & McPhee 2016; Stewart & Trinkle 1996; Anitescu & Potra 1997; Tasora &
+    Friction/contact           Anitescu 2011.
+                               main_cmame.tex bibliography; REFERENCE_METADATA_AUDIT.md/json;
+    Local artifacts            CURRENT_PIPELINE_CONTRACT.md; ORDER_PROOF_LEDGER.md;
+                               summary_v047.json; v048 same-test scaffolds.
+
+
+  Reference metadata audit status: 28 references; 16/16 DOI rows verified; 12/12 local non-DOI rows verified.
+
+
+
+
+06/09/2026                                   University of Wisconsin - Madison       18
+

@@ -1,0 +1,1026 @@
+{
+  "claim_policy": {
+    "allowed_now": [
+      "D3 virtual-work sign skeleton checked for all 36 Newton-Euler rows",
+      "template-level lower-pair virtual-work identity checked",
+      "row-expanded lower-pair multiplier-wrench consistency checked for the implemented cylindrical-chain site ordering",
+      "body0/body1 proximal and distal multiplier force/torque signs are traceable",
+      "the dynamic theorem remains conditional on the remaining dynamic symbolic-equivalence and O(h^7) proof obligations"
+    ],
+    "forbidden_now": [
+      "dynamic_symbolic_oracle_complete",
+      "stage_residual_O_h7_implementation_defect_proved",
+      "proof_gap_closed",
+      "submission_ready"
+    ]
+  },
+  "dynamic_symbolic_oracle_complete": false,
+  "full_row_expanded_virtual_work_identity_proved": true,
+  "identity_skeleton": {
+    "force_sites": [
+      "joint 0 acts on body 0 with +F0",
+      "joint 1 acts on body 1 with +F1",
+      "joint 1 acts on body 0 with -F1"
+    ],
+    "joint_force_definitions": [
+      "F0 = lambda_0,0 b_0,0 + lambda_0,1 b_0,1 + rho_0 e_0",
+      "F1 = lambda_1,0 b_1,0 + lambda_1,1 b_1,1 + rho_1 e_1"
+    ],
+    "scope": "records the expected virtual-work sign skeleton for force and axis-multiplier wrench transfer; the template and row-expanded Phi_q^T lambda identities are checked by the symbolic identity audits, while the full dynamic-row O(h^7) defect certificate remains open",
+    "torque_sites": [
+      "body 0 proximal moment: s_prev0 x R0^T F0",
+      "body 1 proximal moment: s_prev1 x R1^T F1",
+      "body 0 distal moment: s_next0 x R0^T(-F1)",
+      "body 0 joint-1 distal axis multiplier enters with the residual sign +dist_axis_torque, matching a target-torque contribution -eta1"
+    ]
+  },
+  "multiplier_wrench_consistency_closed": true,
+  "proof_gap_closed": false,
+  "proof_gap_closed_scope": "local_d3_virtual_work_audit_only; this audit is an input to the later direct D5/PC2 closure and does not by itself close the dynamic O(h^7) defect",
+  "row_audit": [
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 24,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 25,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 26,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 27,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 28,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 29,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 30,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 31,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 32,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 33,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 34,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 35,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 0,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 68,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 69,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 70,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 71,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 72,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 73,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 74,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 75,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 76,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 77,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 78,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 79,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 1,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 112,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 113,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 0,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_force_plus",
+        "joint1_parent_body0_force_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 114,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - (F0 - F1)",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 115,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 116,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 0,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint0_child_body0_moment_plus",
+        "joint1_parent_body0_moment_minus",
+        "joint0_child_body0_axis_torque_plus",
+        "joint1_parent_body0_axis_torque_minus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 117,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - distal_torque - axis_torque + dist_axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 118,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 119,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "translational_newton_balance",
+      "body": 1,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_force_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 120,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "ma - mg - f_ext - F1",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "x",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 121,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "y",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 122,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    },
+    {
+      "balance_block": "rotational_euler_balance",
+      "body": 1,
+      "component": "z",
+      "expected_virtual_work_sites": [
+        "joint1_child_body1_moment_plus",
+        "joint1_child_body1_axis_torque_plus"
+      ],
+      "full_row_expanded_virtual_work_identity_proved": true,
+      "global_row": 123,
+      "multiplier_wrench_consistency_closed": true,
+      "residual_sign_template": "I - tau_ext - prox_torque - axis_torque",
+      "row_expanded_virtual_work_identity_proved": true,
+      "stage": 2,
+      "stage_residual_O_h7_implementation_defect_proved": false,
+      "template_virtual_work_identity_proved": true,
+      "virtual_work_sign_skeleton_checked": true
+    }
+  ],
+  "row_expanded_virtual_work_identity_audit": {
+    "axis_identity_count": 3,
+    "checked": true,
+    "identities": [
+      {
+        "body_sign": 1,
+        "direct_virtual_work_scalar": "joint0_child_body0_point_Fb0*joint0_child_body0_point_dtheta1*joint0_child_body0_point_s2 - joint0_child_body0_point_Fb0*joint0_child_body0_point_dtheta2*joint0_child_body0_point_s1 - joint0_child_body0_point_Fb1*joint0_child_body0_point_dtheta0*joint0_child_body0_point_s2 + joint0_child_body0_point_Fb1*joint0_child_body0_point_dtheta2*joint0_child_body0_point_s0 + joint0_child_body0_point_Fb2*joint0_child_body0_point_dtheta0*joint0_child_body0_point_s1 - joint0_child_body0_point_Fb2*joint0_child_body0_point_dtheta1*joint0_child_body0_point_s0 + joint0_child_body0_point_Fw0*joint0_child_body0_point_dr0 + joint0_child_body0_point_Fw1*joint0_child_body0_point_dr1 + joint0_child_body0_point_Fw2*joint0_child_body0_point_dr2",
+        "generalized_wrench_scalar": "joint0_child_body0_point_Fb0*joint0_child_body0_point_dtheta1*joint0_child_body0_point_s2 - joint0_child_body0_point_Fb0*joint0_child_body0_point_dtheta2*joint0_child_body0_point_s1 - joint0_child_body0_point_Fb1*joint0_child_body0_point_dtheta0*joint0_child_body0_point_s2 + joint0_child_body0_point_Fb1*joint0_child_body0_point_dtheta2*joint0_child_body0_point_s0 + joint0_child_body0_point_Fb2*joint0_child_body0_point_dtheta0*joint0_child_body0_point_s1 - joint0_child_body0_point_Fb2*joint0_child_body0_point_dtheta1*joint0_child_body0_point_s0 + joint0_child_body0_point_Fw0*joint0_child_body0_point_dr0 + joint0_child_body0_point_Fw1*joint0_child_body0_point_dr1 + joint0_child_body0_point_Fw2*joint0_child_body0_point_dr2",
+        "id": "joint0_child_body0_point",
+        "proved": true,
+        "scope": "row-expanded point-row identity for the two normal multiplier rows: sigma F dot delta r + sigma R^T F dot (delta_theta x s) equals delta r dot sigma F + delta_theta dot (s x sigma R^T F)",
+        "simplified_difference": "0",
+        "site_kind": "point_multiplier_pair"
+      },
+      {
+        "body_sign": 1,
+        "direct_virtual_work_scalar": "joint1_child_body1_point_Fb0*joint1_child_body1_point_dtheta1*joint1_child_body1_point_s2 - joint1_child_body1_point_Fb0*joint1_child_body1_point_dtheta2*joint1_child_body1_point_s1 - joint1_child_body1_point_Fb1*joint1_child_body1_point_dtheta0*joint1_child_body1_point_s2 + joint1_child_body1_point_Fb1*joint1_child_body1_point_dtheta2*joint1_child_body1_point_s0 + joint1_child_body1_point_Fb2*joint1_child_body1_point_dtheta0*joint1_child_body1_point_s1 - joint1_child_body1_point_Fb2*joint1_child_body1_point_dtheta1*joint1_child_body1_point_s0 + joint1_child_body1_point_Fw0*joint1_child_body1_point_dr0 + joint1_child_body1_point_Fw1*joint1_child_body1_point_dr1 + joint1_child_body1_point_Fw2*joint1_child_body1_point_dr2",
+        "generalized_wrench_scalar": "joint1_child_body1_point_Fb0*joint1_child_body1_point_dtheta1*joint1_child_body1_point_s2 - joint1_child_body1_point_Fb0*joint1_child_body1_point_dtheta2*joint1_child_body1_point_s1 - joint1_child_body1_point_Fb1*joint1_child_body1_point_dtheta0*joint1_child_body1_point_s2 + joint1_child_body1_point_Fb1*joint1_child_body1_point_dtheta2*joint1_child_body1_point_s0 + joint1_child_body1_point_Fb2*joint1_child_body1_point_dtheta0*joint1_child_body1_point_s1 - joint1_child_body1_point_Fb2*joint1_child_body1_point_dtheta1*joint1_child_body1_point_s0 + joint1_child_body1_point_Fw0*joint1_child_body1_point_dr0 + joint1_child_body1_point_Fw1*joint1_child_body1_point_dr1 + joint1_child_body1_point_Fw2*joint1_child_body1_point_dr2",
+        "id": "joint1_child_body1_point",
+        "proved": true,
+        "scope": "row-expanded point-row identity for the two normal multiplier rows: sigma F dot delta r + sigma R^T F dot (delta_theta x s) equals delta r dot sigma F + delta_theta dot (s x sigma R^T F)",
+        "simplified_difference": "0",
+        "site_kind": "point_multiplier_pair"
+      },
+      {
+        "body_sign": -1,
+        "direct_virtual_work_scalar": "-joint1_parent_body0_point_Fb0*joint1_parent_body0_point_dtheta1*joint1_parent_body0_point_s2 + joint1_parent_body0_point_Fb0*joint1_parent_body0_point_dtheta2*joint1_parent_body0_point_s1 + joint1_parent_body0_point_Fb1*joint1_parent_body0_point_dtheta0*joint1_parent_body0_point_s2 - joint1_parent_body0_point_Fb1*joint1_parent_body0_point_dtheta2*joint1_parent_body0_point_s0 - joint1_parent_body0_point_Fb2*joint1_parent_body0_point_dtheta0*joint1_parent_body0_point_s1 + joint1_parent_body0_point_Fb2*joint1_parent_body0_point_dtheta1*joint1_parent_body0_point_s0 - joint1_parent_body0_point_Fw0*joint1_parent_body0_point_dr0 - joint1_parent_body0_point_Fw1*joint1_parent_body0_point_dr1 - joint1_parent_body0_point_Fw2*joint1_parent_body0_point_dr2",
+        "generalized_wrench_scalar": "-joint1_parent_body0_point_Fb0*joint1_parent_body0_point_dtheta1*joint1_parent_body0_point_s2 + joint1_parent_body0_point_Fb0*joint1_parent_body0_point_dtheta2*joint1_parent_body0_point_s1 + joint1_parent_body0_point_Fb1*joint1_parent_body0_point_dtheta0*joint1_parent_body0_point_s2 - joint1_parent_body0_point_Fb1*joint1_parent_body0_point_dtheta2*joint1_parent_body0_point_s0 - joint1_parent_body0_point_Fb2*joint1_parent_body0_point_dtheta0*joint1_parent_body0_point_s1 + joint1_parent_body0_point_Fb2*joint1_parent_body0_point_dtheta1*joint1_parent_body0_point_s0 - joint1_parent_body0_point_Fw0*joint1_parent_body0_point_dr0 - joint1_parent_body0_point_Fw1*joint1_parent_body0_point_dr1 - joint1_parent_body0_point_Fw2*joint1_parent_body0_point_dr2",
+        "id": "joint1_parent_body0_point",
+        "proved": true,
+        "scope": "row-expanded point-row identity for the two normal multiplier rows: sigma F dot delta r + sigma R^T F dot (delta_theta x s) equals delta r dot sigma F + delta_theta dot (s x sigma R^T F)",
+        "simplified_difference": "0",
+        "site_kind": "point_multiplier_pair"
+      },
+      {
+        "body_sign": 1,
+        "direct_virtual_work_scalar": "-joint0_child_body0_axis_B0*joint0_child_body0_axis_axis1*joint0_child_body0_axis_dtheta2 + joint0_child_body0_axis_B0*joint0_child_body0_axis_axis2*joint0_child_body0_axis_dtheta1 + joint0_child_body0_axis_B1*joint0_child_body0_axis_axis0*joint0_child_body0_axis_dtheta2 - joint0_child_body0_axis_B1*joint0_child_body0_axis_axis2*joint0_child_body0_axis_dtheta0 - joint0_child_body0_axis_B2*joint0_child_body0_axis_axis0*joint0_child_body0_axis_dtheta1 + joint0_child_body0_axis_B2*joint0_child_body0_axis_axis1*joint0_child_body0_axis_dtheta0",
+        "generalized_wrench_scalar": "-joint0_child_body0_axis_B0*joint0_child_body0_axis_axis1*joint0_child_body0_axis_dtheta2 + joint0_child_body0_axis_B0*joint0_child_body0_axis_axis2*joint0_child_body0_axis_dtheta1 + joint0_child_body0_axis_B1*joint0_child_body0_axis_axis0*joint0_child_body0_axis_dtheta2 - joint0_child_body0_axis_B1*joint0_child_body0_axis_axis2*joint0_child_body0_axis_dtheta0 - joint0_child_body0_axis_B2*joint0_child_body0_axis_axis0*joint0_child_body0_axis_dtheta1 + joint0_child_body0_axis_B2*joint0_child_body0_axis_axis1*joint0_child_body0_axis_dtheta0",
+        "id": "joint0_child_body0_axis",
+        "proved": true,
+        "scope": "row-expanded axis-row identity for the two orientation multiplier rows: sigma B dot (delta_theta x a) equals delta_theta dot (a x sigma B)",
+        "simplified_difference": "0",
+        "site_kind": "axis_multiplier_pair"
+      },
+      {
+        "body_sign": 1,
+        "direct_virtual_work_scalar": "-joint1_child_body1_axis_B0*joint1_child_body1_axis_axis1*joint1_child_body1_axis_dtheta2 + joint1_child_body1_axis_B0*joint1_child_body1_axis_axis2*joint1_child_body1_axis_dtheta1 + joint1_child_body1_axis_B1*joint1_child_body1_axis_axis0*joint1_child_body1_axis_dtheta2 - joint1_child_body1_axis_B1*joint1_child_body1_axis_axis2*joint1_child_body1_axis_dtheta0 - joint1_child_body1_axis_B2*joint1_child_body1_axis_axis0*joint1_child_body1_axis_dtheta1 + joint1_child_body1_axis_B2*joint1_child_body1_axis_axis1*joint1_child_body1_axis_dtheta0",
+        "generalized_wrench_scalar": "-joint1_child_body1_axis_B0*joint1_child_body1_axis_axis1*joint1_child_body1_axis_dtheta2 + joint1_child_body1_axis_B0*joint1_child_body1_axis_axis2*joint1_child_body1_axis_dtheta1 + joint1_child_body1_axis_B1*joint1_child_body1_axis_axis0*joint1_child_body1_axis_dtheta2 - joint1_child_body1_axis_B1*joint1_child_body1_axis_axis2*joint1_child_body1_axis_dtheta0 - joint1_child_body1_axis_B2*joint1_child_body1_axis_axis0*joint1_child_body1_axis_dtheta1 + joint1_child_body1_axis_B2*joint1_child_body1_axis_axis1*joint1_child_body1_axis_dtheta0",
+        "id": "joint1_child_body1_axis",
+        "proved": true,
+        "scope": "row-expanded axis-row identity for the two orientation multiplier rows: sigma B dot (delta_theta x a) equals delta_theta dot (a x sigma B)",
+        "simplified_difference": "0",
+        "site_kind": "axis_multiplier_pair"
+      },
+      {
+        "body_sign": -1,
+        "direct_virtual_work_scalar": "joint1_parent_body0_axis_B0*joint1_parent_body0_axis_axis1*joint1_parent_body0_axis_dtheta2 - joint1_parent_body0_axis_B0*joint1_parent_body0_axis_axis2*joint1_parent_body0_axis_dtheta1 - joint1_parent_body0_axis_B1*joint1_parent_body0_axis_axis0*joint1_parent_body0_axis_dtheta2 + joint1_parent_body0_axis_B1*joint1_parent_body0_axis_axis2*joint1_parent_body0_axis_dtheta0 + joint1_parent_body0_axis_B2*joint1_parent_body0_axis_axis0*joint1_parent_body0_axis_dtheta1 - joint1_parent_body0_axis_B2*joint1_parent_body0_axis_axis1*joint1_parent_body0_axis_dtheta0",
+        "generalized_wrench_scalar": "joint1_parent_body0_axis_B0*joint1_parent_body0_axis_axis1*joint1_parent_body0_axis_dtheta2 - joint1_parent_body0_axis_B0*joint1_parent_body0_axis_axis2*joint1_parent_body0_axis_dtheta1 - joint1_parent_body0_axis_B1*joint1_parent_body0_axis_axis0*joint1_parent_body0_axis_dtheta2 + joint1_parent_body0_axis_B1*joint1_parent_body0_axis_axis2*joint1_parent_body0_axis_dtheta0 + joint1_parent_body0_axis_B2*joint1_parent_body0_axis_axis0*joint1_parent_body0_axis_dtheta1 - joint1_parent_body0_axis_B2*joint1_parent_body0_axis_axis1*joint1_parent_body0_axis_dtheta0",
+        "id": "joint1_parent_body0_axis",
+        "proved": true,
+        "scope": "row-expanded axis-row identity for the two orientation multiplier rows: sigma B dot (delta_theta x a) equals delta_theta dot (a x sigma B)",
+        "simplified_difference": "0",
+        "site_kind": "axis_multiplier_pair"
+      }
+    ],
+    "identity_count": 6,
+    "implemented_order_sites": [
+      "joint0 child body0 point force and proximal moment",
+      "joint1 child body1 point force and proximal moment",
+      "joint1 parent body0 point force and distal moment",
+      "joint0 child body0 axis torque",
+      "joint1 child body1 axis torque",
+      "joint1 parent body0 distal axis torque"
+    ],
+    "point_identity_count": 3,
+    "proved_identity_count": 6,
+    "scope": "D3 row-expanded lower-pair multiplier virtual-work identity for the implemented two-body cylindrical-chain site ordering.  It proves the multiplier part of Phi_q^T lambda matches the implemented body-force and body-torque signs.  It does not include Brown-McPhee friction, the inertial Newton-Euler balance terms, smooth C7 force-lift bounds, or the O(h^7) dynamic-row defect proof."
+  },
+  "row_expanded_virtual_work_identity_proved": true,
+  "runtime_source_audit": {
+    "checks": {
+      "body0_distal_axis_torque_uses_joint1_eta": true,
+      "body0_distal_force_subtracted": true,
+      "body0_distal_moment_arm_uses_negative_joint1_force": true,
+      "body_force_initialized_from_local_joint": true,
+      "proximal_axis_torque_uses_positive_eta": true,
+      "proximal_moment_arm_uses_positive_joint_force": true,
+      "rotational_residual_sign_pattern": true
+    },
+    "residual_function_found": true,
+    "residual_function_lineno": 4909,
+    "scope": "AST-backed source-sign audit for lower-pair multiplier force and torque placements in the Newton-Euler rows; this is a runtime-source sign check paired with the template identity audit, not an O(h^7) defect certificate",
+    "sign_skeleton_source_checked": true,
+    "source_expressions": {
+      "axis_torque": "axis_torque = eta_prox[0] * jnp.cross(axis_prev[body], R[body].T @ joint_basis[body, 0]) axis_torque += eta_prox[1] * jnp.cross(axis_prev[body], R[body].T @ joint_basis[body, 1])",
+      "dist_axis_torque": "dist_axis_torque = eta_dist[0] * jnp.cross(axis_next[0], R[0].T @ joint_basis[1, 0]) dist_axis_torque += eta_dist[1] * jnp.cross(axis_next[0], R[0].T @ joint_basis[1, 1])",
+      "distal_torque": "distal_torque = jnp.cross(s_next[0], R[0].T @ (-joint_force[1]))",
+      "force_assignments": [
+        "force = joint_force[body]",
+        "force = force - joint_force[1]"
+      ],
+      "prox_torque": "prox_torque = jnp.cross(s_prev[body], R[body].T @ joint_force[body])",
+      "rot": "rot = ( Js[body] @ st[\"alpha\"][body] + jnp.cross(st[\"w\"][body], Js[body] @ st[\"w\"][body]) - prox_torque - distal_torque - axis_torque + dist_axis_torque - external_torques_body[body] )"
+    },
+    "source_file": "v047_cylindrical_chain_pipeline/run_v047.py"
+  },
+  "schema": "newton-euler-virtual-work-wrench-audit-v1",
+  "site_summaries": [
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        24,
+        25,
+        26,
+        68,
+        69,
+        70,
+        112,
+        113,
+        114
+      ],
+      "runtime_term": "joint_force[0] on body0",
+      "site": "joint0_child_body0_force_plus",
+      "virtual_work_term": "+F0 dot delta r0"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        30,
+        31,
+        32,
+        74,
+        75,
+        76,
+        118,
+        119,
+        120
+      ],
+      "runtime_term": "joint_force[1] on body1",
+      "site": "joint1_child_body1_force_plus",
+      "virtual_work_term": "+F1 dot delta r1"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        24,
+        25,
+        26,
+        68,
+        69,
+        70,
+        112,
+        113,
+        114
+      ],
+      "runtime_term": "-joint_force[1] on body0",
+      "site": "joint1_parent_body0_force_minus",
+      "virtual_work_term": "-F1 dot delta r0"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        27,
+        28,
+        29,
+        71,
+        72,
+        73,
+        115,
+        116,
+        117
+      ],
+      "runtime_term": "prox_torque on body0",
+      "site": "joint0_child_body0_moment_plus",
+      "virtual_work_term": "+(s_prev0 x R0^T F0) dot delta theta0"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        33,
+        34,
+        35,
+        77,
+        78,
+        79,
+        121,
+        122,
+        123
+      ],
+      "runtime_term": "prox_torque on body1",
+      "site": "joint1_child_body1_moment_plus",
+      "virtual_work_term": "+(s_prev1 x R1^T F1) dot delta theta1"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        27,
+        28,
+        29,
+        71,
+        72,
+        73,
+        115,
+        116,
+        117
+      ],
+      "runtime_term": "distal_torque on body0",
+      "site": "joint1_parent_body0_moment_minus",
+      "virtual_work_term": "+(s_next0 x R0^T(-F1)) dot delta theta0"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        27,
+        28,
+        29,
+        71,
+        72,
+        73,
+        115,
+        116,
+        117
+      ],
+      "runtime_term": "axis_torque on body0",
+      "site": "joint0_child_body0_axis_torque_plus",
+      "virtual_work_term": "+eta0 axis-constraint virtual rotation on body0"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        33,
+        34,
+        35,
+        77,
+        78,
+        79,
+        121,
+        122,
+        123
+      ],
+      "runtime_term": "axis_torque on body1",
+      "site": "joint1_child_body1_axis_torque_plus",
+      "virtual_work_term": "+eta1 axis-constraint virtual rotation on body1"
+    },
+    {
+      "checked": true,
+      "covered_rows": 9,
+      "global_rows": [
+        27,
+        28,
+        29,
+        71,
+        72,
+        73,
+        115,
+        116,
+        117
+      ],
+      "runtime_term": "dist_axis_torque appears with plus sign in residual after target-torque sign convention",
+      "site": "joint1_parent_body0_axis_torque_minus",
+      "virtual_work_term": "-eta1 axis-constraint virtual rotation on body0"
+    }
+  ],
+  "source_files": {
+    "newton_euler_symbolic_target_audit": "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json",
+    "runtime_source": "v047_cylindrical_chain_pipeline/run_v047.py"
+  },
+  "stage_residual_O_h7_implementation_defect_proved": false,
+  "status": "d3_row_expanded_virtual_work_identity_checked_dynamic_defect_open",
+  "submission_ready": false,
+  "summary": {
+    "body0_rows_checked": 18,
+    "body1_rows_checked": 18,
+    "checked_rows": 36,
+    "full_row_expanded_virtual_work_identity_proved": true,
+    "multiplier_wrench_consistency_closed": true,
+    "rotational_row_count": 18,
+    "row_count": 36,
+    "row_expanded_axis_identity_count": 3,
+    "row_expanded_identity_count": 6,
+    "row_expanded_identity_count_proved": 6,
+    "row_expanded_point_identity_count": 3,
+    "row_expanded_virtual_work_identity_proved": true,
+    "row_expanded_virtual_work_identity_rows": 36,
+    "site_count": 9,
+    "site_count_checked": 9,
+    "template_identity_count": 2,
+    "template_identity_count_proved": 2,
+    "template_virtual_work_identity_proved": true,
+    "template_virtual_work_identity_rows": 36,
+    "translational_row_count": 18,
+    "virtual_work_sign_skeleton_checked": true
+  },
+  "template_virtual_work_identity_audit": {
+    "checked": true,
+    "identities": [
+      {
+        "generalized_torque_scalar": "a0*dtheta1*s2 - a0*dtheta2*s1 - a1*dtheta0*s2 + a1*dtheta2*s0 + a2*dtheta0*s1 - a2*dtheta1*s0",
+        "id": "point_or_axis_child_body",
+        "proved": true,
+        "scope": "generic body-frame triple-product identity: a dot (delta_theta x s) = delta_theta dot (s x a); the parent row uses a replaced by -a",
+        "simplified_difference": "0",
+        "virtual_work_scalar": "a0*dtheta1*s2 - a0*dtheta2*s1 - a1*dtheta0*s2 + a1*dtheta2*s0 + a2*dtheta0*s1 - a2*dtheta1*s0"
+      },
+      {
+        "generalized_torque_scalar": "-a0*dtheta1*s2 + a0*dtheta2*s1 + a1*dtheta0*s2 - a1*dtheta2*s0 - a2*dtheta0*s1 + a2*dtheta1*s0",
+        "id": "point_or_axis_parent_body",
+        "proved": true,
+        "scope": "generic body-frame triple-product identity: a dot (delta_theta x s) = delta_theta dot (s x a); the parent row uses a replaced by -a",
+        "simplified_difference": "0",
+        "virtual_work_scalar": "-a0*dtheta1*s2 + a0*dtheta2*s1 + a1*dtheta0*s2 - a1*dtheta2*s0 - a2*dtheta0*s1 + a2*dtheta1*s0"
+      }
+    ],
+    "identity_count": 2,
+    "proved_identity_count": 2,
+    "scope": "template-level virtual-work identity for the point and axis lower-pair multiplier terms; it does not prove row-expanded runtime equivalence, stage ordering/scaling equivalence, or the O(h^7) dynamic-row defect",
+    "template_statement": "For each lower-pair point row b dot (x_child-x_parent) and axis row b dot (R_child a_child - R_parent a_parent), multiplication by the corresponding lambda component produces the same body-frame force and moment-arm/axis-torque terms used by the Newton-Euler residual."
+  },
+  "template_virtual_work_identity_proved": true
+}

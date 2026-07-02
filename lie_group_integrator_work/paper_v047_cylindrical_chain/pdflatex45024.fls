@@ -1,0 +1,5 @@
+PWD C:/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/lie_group_integrator_work/paper_v047_cylindrical_chain
+INPUT c:/texlive/2025/texmf.cnf
+INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT main_cmame.tex

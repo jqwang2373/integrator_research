@@ -1,0 +1,356 @@
+{
+  "euler_top_invariants": {
+    "inertia_diag": [
+      1.0,
+      2.0,
+      3.5
+    ],
+    "methods": {
+      "gauss_lie4": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": 3.31799160645334e-15,
+          "max_energy_relative_error": 4.533235790529939e-15,
+          "max_orthogonality_fro": 1.4436537274386552e-14,
+          "max_spatial_momentum_vector_error": 5.85435643690499e-07,
+          "runtime_sec": 3.640739484981168,
+          "total_newton_iterations": 6000
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": 3.5391910468835624e-15,
+          "max_energy_relative_error": 6.38010963111621e-15,
+          "max_orthogonality_fro": 1.4375022113168683e-14,
+          "max_spatial_momentum_vector_error": 9.346586400596307e-06,
+          "runtime_sec": 1.7950082210008986,
+          "total_newton_iterations": 3000
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": 8.560418344649617e-13,
+          "max_energy_relative_error": 1.7410983388072396e-12,
+          "max_orthogonality_fro": 8.640038664694525e-15,
+          "max_spatial_momentum_vector_error": 0.000148293018846969,
+          "runtime_sec": 1.0226962739834562,
+          "total_newton_iterations": 1645
+        }
+      },
+      "lie_midpoint": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": 4.8663876894648985e-15,
+          "max_energy_relative_error": 8.059085849831002e-15,
+          "max_orthogonality_fro": 9.23432661008702e-15,
+          "max_spatial_momentum_vector_error": 0.0028171085935399525,
+          "runtime_sec": 1.087654878036119,
+          "total_newton_iterations": 6000
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": 1.504156194925514e-14,
+          "max_energy_relative_error": 3.190054815558105e-14,
+          "max_orthogonality_fro": 5.837460385145157e-15,
+          "max_spatial_momentum_vector_error": 0.011271511960194876,
+          "runtime_sec": 0.5615419480018318,
+          "total_newton_iterations": 3000
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": 6.006007206561405e-12,
+          "max_energy_relative_error": 8.702973229708126e-12,
+          "max_orthogonality_fro": 3.370787152882065e-15,
+          "max_spatial_momentum_vector_error": 0.044917709209545936,
+          "runtime_sec": 0.337318523961585,
+          "total_newton_iterations": 1899
+        }
+      },
+      "lie_midpoint_yoshida4": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": 1.1059972021511132e-14,
+          "max_energy_relative_error": 2.0147714624577507e-14,
+          "max_orthogonality_fro": 1.5056177965744966e-14,
+          "max_spatial_momentum_vector_error": 2.691575044339596e-05,
+          "runtime_sec": 3.149371999024879,
+          "total_newton_iterations": 18000
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": 8.002995754765456e-12,
+          "max_energy_relative_error": 1.6195236708101016e-11,
+          "max_orthogonality_fro": 1.3576663067938076e-14,
+          "max_spatial_momentum_vector_error": 0.00041920139903947265,
+          "runtime_sec": 1.6080729399691336,
+          "total_newton_iterations": 9000
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": 2.8755927255928946e-15,
+          "max_energy_relative_error": 5.372723899887335e-15,
+          "max_orthogonality_fro": 7.667949859024555e-15,
+          "max_spatial_momentum_vector_error": 0.006059126410096654,
+          "runtime_sec": 1.1138851579744369,
+          "total_newton_iterations": 6000
+        }
+      },
+      "rkmk4": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": 3.3451533139501774e-07,
+          "max_energy_relative_error": 1.1485343547889053e-06,
+          "max_orthogonality_fro": 1.2434769215650106e-14,
+          "max_spatial_momentum_vector_error": 2.25079595479897e-06,
+          "runtime_sec": 0.4125692659872584,
+          "total_newton_iterations": 0
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": 1.0136033706736374e-05,
+          "max_energy_relative_error": 3.5732275483869206e-05,
+          "max_orthogonality_fro": 8.766018730630196e-15,
+          "max_spatial_momentum_vector_error": 4.926945812580817e-05,
+          "runtime_sec": 0.19907575601246208,
+          "total_newton_iterations": 0
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": 0.0003122086714076929,
+          "max_energy_relative_error": 0.0011156450804440598,
+          "max_orthogonality_fro": 6.1926438809957646e-15,
+          "max_spatial_momentum_vector_error": 0.0013240080256885077,
+          "runtime_sec": 0.08946724503766745,
+          "total_newton_iterations": 0
+        }
+      }
+    },
+    "t_final": 100.0,
+    "w0": [
+      0.9,
+      0.35,
+      1.1
+    ]
+  },
+  "euler_top_order": {
+    "inertia_diag": [
+      1.0,
+      2.0,
+      3.5
+    ],
+    "methods": {
+      "gauss_lie4": {
+        "omega_observed_order": 3.9893743902105663,
+        "orientation_observed_order": 3.986624167176859,
+        "runs": {
+          "0.05": {
+            "max_body_momentum_norm_relative_error": 1.3271966425813359e-15,
+            "max_energy_relative_error": 2.350566706200709e-15,
+            "max_spatial_momentum_vector_error": 5.269425293212259e-07,
+            "omega_l2_error": 5.631071360757856e-07,
+            "orientation_error_rad": 5.51925590919081e-07,
+            "runtime_sec": 0.3957279600435868,
+            "total_newton_iterations": 600
+          },
+          "0.1": {
+            "max_body_momentum_norm_relative_error": 8.847977617208906e-16,
+            "max_energy_relative_error": 1.3431809749718338e-15,
+            "max_spatial_momentum_vector_error": 8.412590630886272e-06,
+            "omega_l2_error": 8.999823639972846e-06,
+            "orientation_error_rad": 8.818641042600608e-06,
+            "runtime_sec": 0.20477622200269252,
+            "total_newton_iterations": 300
+          },
+          "0.2": {
+            "max_body_momentum_norm_relative_error": 9.644295602757708e-14,
+            "max_energy_relative_error": 1.9157118655535779e-13,
+            "max_spatial_momentum_vector_error": 0.0001334244039654344,
+            "omega_l2_error": 0.00014336563887565044,
+            "orientation_error_rad": 0.00014032131299478629,
+            "runtime_sec": 0.14013282803352922,
+            "total_newton_iterations": 164
+          },
+          "0.4": {
+            "max_body_momentum_norm_relative_error": 4.423988808604453e-16,
+            "max_energy_relative_error": 6.715904874859169e-16,
+            "max_spatial_momentum_vector_error": 0.002061027177715804,
+            "omega_l2_error": 0.0022538509415192557,
+            "orientation_error_rad": 0.002195927810969832,
+            "runtime_sec": 0.07089150900719687,
+            "total_newton_iterations": 100
+          }
+        }
+      },
+      "lie_midpoint": {
+        "omega_observed_order": 1.9761160995215978,
+        "orientation_observed_order": 1.9597564715375668,
+        "runs": {
+          "0.05": {
+            "max_body_momentum_norm_relative_error": 1.3271966425813359e-15,
+            "max_energy_relative_error": 2.0147714624577505e-15,
+            "max_spatial_momentum_vector_error": 0.0023595085745052894,
+            "omega_l2_error": 0.006051375820428811,
+            "orientation_error_rad": 0.004002499045621689,
+            "runtime_sec": 0.1111573230009526,
+            "total_newton_iterations": 600
+          },
+          "0.1": {
+            "max_body_momentum_norm_relative_error": 2.8755927255928946e-15,
+            "max_energy_relative_error": 7.051700118602127e-15,
+            "max_spatial_momentum_vector_error": 0.009412378286804307,
+            "omega_l2_error": 0.024149105477862483,
+            "orientation_error_rad": 0.015947003501913016,
+            "runtime_sec": 0.05195253400597721,
+            "total_newton_iterations": 300
+          },
+          "0.2": {
+            "max_body_momentum_norm_relative_error": 9.522635910521085e-13,
+            "max_energy_relative_error": 1.5196413755587584e-12,
+            "max_spatial_momentum_vector_error": 0.037189577986204286,
+            "omega_l2_error": 0.09568296169755941,
+            "orientation_error_rad": 0.06277320269573072,
+            "runtime_sec": 0.029164011997636408,
+            "total_newton_iterations": 190
+          },
+          "0.4": {
+            "max_body_momentum_norm_relative_error": 6.635983212906679e-16,
+            "max_energy_relative_error": 1.3431809749718338e-15,
+            "max_spatial_momentum_vector_error": 0.14310263484071262,
+            "omega_l2_error": 0.3676577074109399,
+            "orientation_error_rad": 0.23466650848455095,
+            "runtime_sec": 0.015810291981324553,
+            "total_newton_iterations": 100
+          }
+        }
+      },
+      "lie_midpoint_yoshida4": {
+        "omega_observed_order": 3.873581199202993,
+        "orientation_observed_order": 3.8417277266595935,
+        "runs": {
+          "0.05": {
+            "max_body_momentum_norm_relative_error": 2.2119944043022264e-15,
+            "max_energy_relative_error": 4.701133412401418e-15,
+            "max_spatial_momentum_vector_error": 2.2860965998219446e-05,
+            "omega_l2_error": 2.5607600186417246e-05,
+            "orientation_error_rad": 2.3060911575686744e-05,
+            "runtime_sec": 0.3318576579913497,
+            "total_newton_iterations": 1800
+          },
+          "0.1": {
+            "max_body_momentum_norm_relative_error": 9.447428100774809e-13,
+            "max_energy_relative_error": 2.3707144208252867e-12,
+            "max_spatial_momentum_vector_error": 0.0003561035227771667,
+            "omega_l2_error": 0.000403766726194043,
+            "orientation_error_rad": 0.0003622642011140153,
+            "runtime_sec": 0.14701352204428986,
+            "total_newton_iterations": 900
+          },
+          "0.2": {
+            "max_body_momentum_norm_relative_error": 6.635983212906679e-16,
+            "max_energy_relative_error": 1.0073857312288753e-15,
+            "max_spatial_momentum_vector_error": 0.005132995638772437,
+            "omega_l2_error": 0.006104701301368448,
+            "orientation_error_rad": 0.00539937390309913,
+            "runtime_sec": 0.10127911396557465,
+            "total_newton_iterations": 600
+          },
+          "0.4": {
+            "max_body_momentum_norm_relative_error": 1.561668049437372e-13,
+            "max_energy_relative_error": 4.093344021226663e-13,
+            "max_spatial_momentum_vector_error": 0.05758074363542859,
+            "omega_l2_error": 0.07981258093237781,
+            "orientation_error_rad": 0.06709467891779347,
+            "runtime_sec": 0.04699799499940127,
+            "total_newton_iterations": 300
+          }
+        }
+      },
+      "rkmk4": {
+        "omega_observed_order": 4.013708950329297,
+        "orientation_observed_order": 4.260324661295897,
+        "runs": {
+          "0.05": {
+            "max_body_momentum_norm_relative_error": 6.299785390788671e-08,
+            "max_energy_relative_error": 1.626847101476869e-07,
+            "max_spatial_momentum_vector_error": 1.555674018071202e-06,
+            "omega_l2_error": 3.5737485700499593e-06,
+            "orientation_error_rad": 2.2323708472933413e-06,
+            "runtime_sec": 0.031084179994650185,
+            "total_newton_iterations": 0
+          },
+          "0.1": {
+            "max_body_momentum_norm_relative_error": 1.4679951850622745e-06,
+            "max_energy_relative_error": 4.260526882438326e-06,
+            "max_spatial_momentum_vector_error": 2.5160112497413016e-05,
+            "omega_l2_error": 5.7615386812205886e-05,
+            "orientation_error_rad": 3.947577014670744e-05,
+            "runtime_sec": 0.016390578995924443,
+            "total_newton_iterations": 0
+          },
+          "0.2": {
+            "max_body_momentum_norm_relative_error": 3.801857037557082e-05,
+            "max_energy_relative_error": 0.00012070205657129871,
+            "max_spatial_momentum_vector_error": 0.0004150821852015272,
+            "omega_l2_error": 0.0009331392083701857,
+            "orientation_error_rad": 0.000756874221803654,
+            "runtime_sec": 0.00816125504206866,
+            "total_newton_iterations": 0
+          },
+          "0.4": {
+            "max_body_momentum_norm_relative_error": 0.0010444214852340366,
+            "max_energy_relative_error": 0.003506267075067901,
+            "max_spatial_momentum_vector_error": 0.007169148302709864,
+            "omega_l2_error": 0.015047948711923161,
+            "orientation_error_rad": 0.01570918626971566,
+            "runtime_sec": 0.004539032990578562,
+            "total_newton_iterations": 0
+          }
+        }
+      }
+    },
+    "reference_h": 0.00030517578125,
+    "reference_method": "rkmk4",
+    "step_sizes": [
+      0.4,
+      0.2,
+      0.1,
+      0.05
+    ],
+    "t_final": 10.0,
+    "w0": [
+      0.9,
+      0.35,
+      1.1
+    ]
+  },
+  "kinematic_order": {
+    "methods": {
+      "cf4": {
+        "coarsest_error_rad": 2.0143716235061503e-06,
+        "finest_error_rad": 3.001153297760009e-11,
+        "observed_order": 4.007682530733415
+      },
+      "exp_midpoint": {
+        "coarsest_error_rad": 0.005045850138540451,
+        "finest_error_rad": 1.9728148153287e-05,
+        "observed_order": 1.9997095892254122
+      },
+      "lie_euler": {
+        "coarsest_error_rad": 0.23648972417283246,
+        "finest_error_rad": 0.014874309817420595,
+        "observed_order": 0.9978279798905029
+      },
+      "matrix_rk4": {
+        "coarsest_error_rad": 4.638961584036071e-05,
+        "finest_error_rad": 7.398569525519498e-10,
+        "observed_order": 3.985739727287916
+      },
+      "rkmk4": {
+        "coarsest_error_rad": 1.1103167089065323e-05,
+        "finest_error_rad": 1.781324683950057e-10,
+        "observed_order": 3.983812708137407
+      }
+    },
+    "reference_h": 0.0001220703125,
+    "reference_method": "rkmk4",
+    "step_sizes": [
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625
+    ],
+    "t_final": 4.0
+  },
+  "numpy": "2.4.6",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.11.9",
+  "runtime_sec": 31.735711653949693,
+  "version": "v005_gauss_lie4"
+}

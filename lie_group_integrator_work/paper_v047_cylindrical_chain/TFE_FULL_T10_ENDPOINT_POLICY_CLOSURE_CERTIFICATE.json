@@ -1,0 +1,179 @@
+{
+  "algorithm_literal_endpoint_policy": "fixed_h_until_tn_ge_tfinal",
+  "algorithm_literal_overrun_bound_proved": true,
+  "b4_source_policy_execution_invoked": false,
+  "can_close_now": false,
+  "certificate_available": true,
+  "certificate_kind": "current_package_negative_full_T10_endpoint_policy_certificate",
+  "closure_decision": {
+    "can_certify_full_T10_endpoint_policy_now": false,
+    "can_close_full_T10_source_grid_endpoint_policy_now": false,
+    "can_promote_tfe_source_policy_rows_now": false,
+    "reason": "The current package proves only the fixed-h algorithm-literal overrun bound and resolves the exact-T-compatible subset. Four published h rows do not divide T=10; the source text does not identify the error/output sampling convention for those noninteger T/h rows. This certificate therefore records a negative full-T10 endpoint-policy closure decision and leaves source-policy rows at zero."
+  },
+  "diagnostic_endpoint_sensitivity": {
+    "max_terminal_time_offset_abs": 0.008000000000000895,
+    "paper_method_count": 4,
+    "paper_methods": [
+      "tfe2026_Newmark_beta",
+      "tfe2026_TFE_m1",
+      "tfe2026_TFE_m2",
+      "tfe2026_trapezoidal"
+    ],
+    "policies": [
+      "adjust_h_to_hit_T_exactly",
+      "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "floor_horizon",
+      "integer_steps_plus_final_partial_step"
+    ],
+    "policy_count": 4,
+    "raw_row_count": 48,
+    "source_policy_rows_completed": 0,
+    "status": "diagnostic_endpoint_policy_sensitivity_not_source_policy",
+    "summary_row_count": 16
+  },
+  "endpoint_boundary_certificate": {
+    "accepted_use": "endpoint_policy_boundary_proof_not_source_policy",
+    "algorithm_literal_exact_T_row_count": 2,
+    "algorithm_literal_overrun_row_count": 4,
+    "endpoint_incompatible_rows_demoted_from_source_policy": 4,
+    "not_proved": [
+      "source-code-equivalent endpoint/output sampling for noninteger T/h rows",
+      "exact-T source-policy error sampling equivalence",
+      "source-policy method-runner equivalence",
+      "B4/B7 source-policy closure"
+    ],
+    "source_grid_policy_resolved_for_full_T10": false,
+    "source_policy_exact_T_error_sampling_equivalent": false,
+    "source_policy_method_runner_equivalent": false,
+    "source_policy_rows_completed": 0,
+    "status": "endpoint_policy_literal_overrun_bound_proved_source_policy_open"
+  },
+  "endpoint_grid_subclosure": {
+    "boundary": "Only rows whose published h divides T=10 exactly are endpoint-grid resolved. Rows whose published h does not divide T=10 remain demoted from source-policy promotion until the source endpoint/output sampling convention is established; no source-policy reproduction row is closed by this audit.",
+    "endpoint_incompatible_rows_demoted_from_source_policy": 4,
+    "endpoint_incompatible_rows_require_source_endpoint_policy": 4,
+    "source_grid_policy_resolved_for_full_T10": false,
+    "source_policy_rows_completed": 0
+  },
+  "exact_b4_opt_in_required_for_execution": true,
+  "external_superiority_claim_allowed": false,
+  "grid_boundary": {
+    "endpoint_compatible_rows_source_endpoint_convention_resolved": 2,
+    "endpoint_incompatible_rows_demoted_from_source_policy": 4,
+    "endpoint_incompatible_rows_require_source_endpoint_policy": 4,
+    "integer_step_compatible_rows": 2,
+    "integer_step_incompatible_rows": 4,
+    "row_count": 6,
+    "source_endpoint_compatible_row_ids": [
+      "frictional_pendulum:h=0.008",
+      "frictional_pendulum:h=0.2"
+    ],
+    "source_endpoint_incompatible_row_ids": [
+      "frictionless_pendulum:h=0.003",
+      "frictionless_pendulum:h=0.006",
+      "frictionless_pendulum:h=0.012",
+      "frictional_pendulum:h=0.003"
+    ],
+    "source_grid_policy_resolved_for_exact_T_compatible_rows": true,
+    "source_grid_policy_resolved_for_full_T10": false
+  },
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked": false,
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "nonheavy_contract_block_closed": false,
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "positive_full_T10_endpoint_policy_certified": false,
+  "read_only": true,
+  "required_to_promote_full_T10_rows": [
+    "verify the source paper/source code endpoint convention for h values that do not divide T=10",
+    "identify whether Algorithm 1's fixed-h loop uses overrun, interpolation, adjusted h, or a final partial step for reported errors",
+    "record whether the accepted convention keeps published h, exact T, or both",
+    "keep endpoint-incompatible rows demoted from the source-policy row set unless that convention is source-confirmed",
+    "rerun the TFE m=1/m=2/Newmark/trapezoidal rows with the verified convention",
+    "keep source_policy_rows_completed at zero until the convention and method runner are source-equivalent"
+  ],
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "row_audit_gap_status": {
+    "can_resolve_without_heavy_run": true,
+    "first_required_artifact": "full T=10 endpoint/output sampling policy for endpoint-incompatible h rows",
+    "gap_id": "full_T10_source_grid_endpoint_policy_open",
+    "gap_status": "open"
+  },
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "safe_actions_without_b4_opt_in": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "schema": "tfe-full-t10-endpoint-policy-closure-certificate-v1",
+  "source_endpoint_convention_resolved_for_error_sampling": false,
+  "source_files": {
+    "endpoint_policy_boundary_certificate": "TFE_ENDPOINT_POLICY_BOUNDARY_CERTIFICATE.json",
+    "endpoint_policy_sensitivity_audit": "TFE_ENDPOINT_POLICY_SENSITIVITY_AUDIT.json",
+    "source_grid_compatibility_audit": "TFE_SOURCE_GRID_COMPATIBILITY_AUDIT.json",
+    "source_policy_row_audit": "TFE_SOURCE_POLICY_ROW_AUDIT.json"
+  },
+  "source_grid_policy_resolved_for_full_T10": false,
+  "source_policy_exact_T_error_sampling_equivalent": false,
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_rows_completed": 0,
+  "source_text_evidence": {
+    "algorithm_literal_constant_h_until_tn_ge_tfinal": true,
+    "anchor_count": 9,
+    "source_endpoint_convention_resolved_for_error_sampling": false,
+    "source_text_available": true,
+    "source_text_confirms_adjusted_h_for_exact_T": false,
+    "source_text_confirms_floor_or_nearest_endpoint_sampling": false,
+    "source_text_confirms_interpolation_to_exact_T": false,
+    "source_text_confirms_partial_final_step": false
+  },
+  "status": "negative_full_T10_endpoint_policy_certificate_not_source_policy",
+  "submission_ready": false,
+  "v048_runner_invoked": false
+}

@@ -1,0 +1,101 @@
+{
+  "aggregate_estimate": {
+    "constant_name": "C_PS2",
+    "constant_type": "uniform compact-tube constant after shrinking h0",
+    "kinematic_inverse_template_norm_at_h_max": 1.20027766085596,
+    "lower_pair_rows_role": "surplus rows; ignored by selector but included in dominating N_h^nd norm",
+    "rotational_absorption_condition": "h ||A_G||_2 L_F <= 1/2",
+    "selector_norm": 1.0,
+    "statement": "||delta S|| <= C_PS2 (||delta N_h^nd|| + h ||delta A||)"
+  },
+  "certifies_aggregate_weighted_ps2_inverse": true,
+  "certifies_dynamic_row_defect": false,
+  "certifies_induced_taylor_bounds": false,
+  "certifies_uniform_ps2_constant": true,
+  "claim_boundary": {
+    "allowed_now": "The aggregate weighted PS2 inverse/inf-sup target is closed.",
+    "close_condition": "P_state closes only after the closed PS2 estimate is combined with the non-dynamic residual O(h^7) certificate and the h-weighted acceleration input in an actual PS3 instantiation ledger.",
+    "forbidden_now": [
+      "actual PS3 state lift instantiated",
+      "P_state primitive closure",
+      "Taylor term bounds certified from P_state",
+      "primitive/Taylor PC2 route closure",
+      "submission-ready proof"
+    ]
+  },
+  "component_certificates": {
+    "finite_probe_full_column_rank_all": true,
+    "finite_probe_used_as_theorem_input": false,
+    "kinematic_subblock_bound_certified": true,
+    "nonlinear_full_mean_value_certified": true,
+    "nonlinear_rotational_mean_value_certified": true,
+    "row_injection_certified": true,
+    "row_injection_selector_norm": 1.0,
+    "so3_chart_norm_equivalence_certified": true,
+    "weighted_target_spec_closed": true
+  },
+  "dimensions": {
+    "auxiliary_acceleration_dimension": 36,
+    "kinematic_row_dimension": 72,
+    "lower_pair_surplus_rows": 24,
+    "non_dynamic_row_dimension": 96,
+    "state_block_dimension": 72
+  },
+  "manuscript_link": {
+    "flat_tex_present": true,
+    "lemma_label": "lem:d5-p-state-ps2-aggregate-promotion",
+    "main_tex_present": true,
+    "tokens": [
+      "\\label{lem:d5-p-state-ps2-aggregate-promotion}",
+      "Aggregate weighted PS2 promotion for",
+      "\\|\\delta S\\|\\le C_{\\mathrm{PS2}}",
+      "72-to-96 selector has norm one",
+      "uniform weighted PS2 inverse",
+      "does not instantiate PS3"
+    ]
+  },
+  "p_state_ps2_aggregate_promotion_recorded": true,
+  "pc2_closed": false,
+  "plan_id": "P_state",
+  "primitive_closed": false,
+  "primitive_id": "P_state_lift",
+  "proof_gap_closed": false,
+  "proof_route": [
+    "Use the weighted PS2 target dimensions for S, A, and N_h^nd.",
+    "Use the translational and angular-velocity Gauss triangular inverse for the 72 kinematic rows.",
+    "Use SO(3) chart norm equivalence to measure rotational perturbations in Euclidean coordinates.",
+    "Use compact-tube mean-value plus small-step absorption for the implemented rotational Lie row.",
+    "Use the norm-one 72-to-96 selector to replace the kinematic residual by the full non-dynamic residual.",
+    "Combine constants into one h-independent compact-tube C_PS2."
+  ],
+  "ps2_inverse_or_infsup_closed": true,
+  "ps3_actual_state_lift_conversion_closed": false,
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "d5-p-state-ps2-aggregate-promotion-audit-v1",
+  "source_consistency": {
+    "kinematic_full_ps2": false,
+    "kinematic_schema": "d5-p-state-ps2-kinematic-block-certificate-v1",
+    "kinematic_subblock_bound": true,
+    "lie_chart_full_ps2": false,
+    "lie_chart_schema": "d5-p-state-ps2-lie-chart-binding-audit-v1",
+    "lie_chart_so3_norm_equivalence": true,
+    "nonlinear_binding_recorded": true,
+    "nonlinear_full_mean_value_binding": true,
+    "nonlinear_full_ps2": false,
+    "nonlinear_schema": "d5-p-state-ps2-nonlinear-binding-audit-v1",
+    "probe_full_column_rank_all": true,
+    "probe_schema": "d5-p-state-ps2-linearization-probe-v1",
+    "probe_uniform_constant_proved": false,
+    "row_injection_certified": true,
+    "row_injection_full_ps2": false,
+    "row_injection_scaling": true,
+    "row_injection_schema": "d5-p-state-ps2-row-injection-audit-v1",
+    "target_infsup_closed_before_promotion": false,
+    "target_schema": "d5-p-state-ps2-weighted-target-audit-v1",
+    "target_spec_closed": true
+  },
+  "state_lift_rate_proved": false,
+  "status": "ps2_aggregate_weighted_inverse_closed_pstate_open",
+  "submission_ready": false
+}

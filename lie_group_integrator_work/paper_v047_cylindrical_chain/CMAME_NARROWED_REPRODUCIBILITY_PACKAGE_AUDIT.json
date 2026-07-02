@@ -1,0 +1,126 @@
+{
+  "closed_loop_runner_candidate": {
+    "candidate_python_line_count": 1962,
+    "closed_loop_local_rows": 6,
+    "closed_loop_models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "runner_passed": true,
+    "self_contained_simulation_runner": true,
+    "status": "closed_loop_local_runner_candidate_passed_compact"
+  },
+  "exact_b4_opt_in_required_for_execution": true,
+  "full_source_policy_runner_package_ready": false,
+  "global_submission_standard_met": false,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "human_runnable_local_evidence": {
+    "four_example_self_contained_simulation_ready": true,
+    "local_rows": 12,
+    "replay_only_examples": [],
+    "runner_passed": true,
+    "self_contained_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ]
+  },
+  "local_accepted_runner_companion": {
+    "candidate_python_line_count": 150,
+    "full_source_policy_runner_package_ready": false,
+    "launcher_passed": true,
+    "local_rows": 12,
+    "runner_commands": [
+      "cmame_minimal_reproducibility_candidate/scripts/replay_paper_matrix.py",
+      "cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+      "cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+      "cmame_closed_loop_local_runner_candidate/scripts/run_closed_loop_fullva_candidate.py"
+    ],
+    "status": "local_accepted_runner_companion_ready_source_policy_package_open"
+  },
+  "minimal_replay_package": {
+    "candidate_file_count": 10,
+    "candidate_python_file_count": 1,
+    "candidate_python_line_count": 180,
+    "read_only_replay_package": true,
+    "runner_centered": false,
+    "status": "candidate_replay_package_built_not_submission_ready"
+  },
+  "narrowed_claim_decision": "submit_under_narrowed_claim",
+  "narrowed_claim_reproducibility_package_ready": true,
+  "narrowed_claim_submission_standard_met": true,
+  "narrowed_repro_bundle": {
+    "entrypoint": "scripts/run_narrowed_repro_bundle.py",
+    "full_source_policy_runner_package_ready": false,
+    "manifest_status": "narrowed_repro_bundle_ready_replay_plus_local_runners_source_policy_open",
+    "report": "results/narrowed_repro_bundle_report.md",
+    "run_v047_invoked": false,
+    "run_v048_invoked": false,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_total": 40,
+    "submission_ready": false,
+    "summary_status": "pass"
+  },
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "p1_runner_candidates": {
+    "double_ready": true,
+    "missing_rows": 0,
+    "regenerated_rows": 6,
+    "required_rows": 6,
+    "single_ready": true
+  },
+  "package_boundary": {
+    "accepted_use": "reviewer_facing_narrowed_claim_reproducibility_package",
+    "full_source_policy_deferred_until_rows_close": true,
+    "local_runners_are_existing_self_contained_candidates": true,
+    "minimal_replay_boundary_preserved": true,
+    "not_a_source_policy_runner_archive": true,
+    "source_policy_rows_closed_now": 0,
+    "source_policy_rows_required_for_full_package": 40
+  },
+  "read_only": true,
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "schema": "cmame-narrowed-reproducibility-package-audit-v1",
+  "source_files": {
+    "b4_source_policy_execution_handoff_package": "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.json",
+    "b6_local_evidence": "B6_FOUR_EXAMPLE_LOCAL_EVIDENCE_SUMMARY.json",
+    "closed_loop_runner_candidate": "CMAME_CLOSED_LOOP_LOCAL_RUNNER_CANDIDATE_MANIFEST.json",
+    "local_runner_companion": "CMAME_LOCAL_ACCEPTED_RUNNER_COMPANION_MANIFEST.json",
+    "minimal_replay_manifest": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json",
+    "narrowed_repro_bundle_manifest": "cmame_narrowed_repro_bundle/MANIFEST.json",
+    "narrowed_repro_bundle_summary": "cmame_narrowed_repro_bundle/results/narrowed_repro_bundle_summary.json",
+    "p1_local_runner_audit": "CMAME_P1_LOCAL_RUNNER_EXTRACTION_AUDIT.json",
+    "review_agent": "CMAME_REVIEW_AGENT_REPORT.json",
+    "runner_centered_audit": "CMAME_RUNNER_CENTERED_REPRODUCIBILITY_AUDIT.json",
+    "self_contained_extraction_plan": "CMAME_SELF_CONTAINED_RUNNER_EXTRACTION_PLAN.json"
+  },
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_handoff": {
+    "commands_not_run_by_handoff": true,
+    "driver_does_not_authorize_execution": true,
+    "driver_requires_exact_approval": true,
+    "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "execution_authorized": false,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+    "terminal_unable_to_reproduce_rows": 20
+  },
+  "source_policy_execution_invoked": false,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_total": 40,
+  "status": "narrowed_claim_reproducibility_package_ready_full_source_policy_open",
+  "submission_ready": false,
+  "submission_standard_scope": "global_submission_standard"
+}

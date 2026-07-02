@@ -1,0 +1,1439 @@
+                                      Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+
+                                                   Contents lists available at ScienceDirect
+
+                                     Journal of Computational and Applied
+                                                  Mathematics
+                                             journal homepage: www.elsevier.com/locate/cam
+
+
+
+
+BDF integrators for constrained mechanical systems on
+Lie groups
+                            ∗
+Victoria Wieloch , Martin Arnold
+Martin Luther University Halle-Wittenberg, Institute of Mathematics, Germany
+
+
+
+article                info                        a b s t r a c t
+
+Article history:                                   Multistep methods of BDF type are the method-of-choice in several industrial multi-
+Received 1 February 2019                           body system simulation packages. In the present paper, BDF is applied to constrained
+Received in revised form 28 August 2019            systems in nonlinear configuration spaces with Lie group structure that allows, e.g.,
+                                                   a representation of multibody systems with large rotations without singularities. The
+MSC:
+00-01                                              k-step Lie group integrator BLieDF avoids order reduction by a slightly perturbed
+99-00                                              argument of the exponential map for representing the nonlinearity of the numerical
+                                                   flow in the configuration space without any time-consuming re-parametrization.
+Keywords:                                              This integrator is compared with multistep methods on Lie groups suggested by
+Lie group integrator
+                                                   Faltinsen, Marthinsen and Munthe-Kaas (2001) and the advantages of the novel BLieDF
+BDF
+                                                   integrator are shown.
+DAE
+                                                                                                         © 2019 Published by Elsevier B.V.
+
+
+
+
+1. Introduction
+
+   In industrial simulation packages, the BDF method with step size and order control is the most common integrator
+for multibody systems [1]. The BDF method was first introduced as an implicit multistep method of order p = k for
+ordinary differential equations by Curtiss and Hirschfelder [2]. BDF became famous for solving stiff differential equations
+by the work of Gear [3]. In the present paper these BDF integrators are applied to multibody systems with large rotations
+that are described without singularities by considering differential equations on manifolds with Lie group structure. The
+corresponding equations of motion form a differential–algebraic equation (DAE) of index 3.
+   Integrators for configuration spaces with Lie group structure have been considered by several authors. Crouch and
+Grossmann [4] investigated the numerical integration of ordinary differential equations on manifolds with explicit
+formulas for 3rd order multistep and Runge–Kutta methods by approximations directly in the Lie group G using several
+combinations of the exponential map. To reduce the number of exponential maps, Munthe-Kaas [5,6] uses approximations
+in the Lie algebra for Runge–Kutta methods on Lie groups. To obtain the high order in these Lie group formulations he
+solves the kinematic equations on the Lie group by an ODE that acts on the corresponding Lie algebra and therefore
+Lie brackets are involved. Celledoni, Marthinsen and Owren [7] tried to avoid Lie brackets and use a lower number of
+exponentials than Crouch and Grossmann [4] for the Runge–Kutta methods. It depends on the problem whether less
+exponential maps or less Lie brackets are computationally more efficient.
+   The aim of the present paper is to use only one exponential per time step and to reduce the number of Lie brackets for
+BDF Lie group integrators. Therefore ideas of Brüls and Cardona [8] are considered who have shown how to avoid time-
+consuming re-parametrizations of the manifold in generalized-α time integration. They reformulate the generalized-α
+
+  ∗ Corresponding author.
+    E-mail addresses: victoria.wieloch@mathematik.uni-halle.de (V. Wieloch), martin.arnold@mathematik.uni-halle.de (M. Arnold).
+
+https://doi.org/10.1016/j.cam.2019.112517
+0377-0427/© 2019 Published by Elsevier B.V.
+2                            V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+method in terms of solution increments and combine linear updates of these increments with the exponential map to
+update the configuration variables such that the Lie group structure of the (nonlinear) configuration space is respected. In
+the present paper, an increment representation of BDF methods is used to get the BDF Lie group integrator BLieDF that has
+a small number of Lie brackets and evaluates only one exponential per time step. This integrator is applied to constrained
+mechanical systems that are described by Lie group differential–algebraic equations of index 3 for fixed step-sizes and
+convergence with order p = k in all solution components is shown (for 2 ≤ k ≤ 4).
+   In the unconstrained case, the application of multistep methods to differential equations on Lie groups has been
+considered by Faltinsen, Marthinsen and Munthe-Kaas [9], who use strategies of Munthe-Kaas [5,6]. In the present paper,
+this method is extended to Lie group DAEs of index 3 and denoted as Munthe-Kaas BDF Lie group integrator. In this
+method, local coordinates and re-parametrizations of the manifold are evaluated before every time step to handle the
+inherent nonlinearity of the Lie group formulations.
+   In terms of computing time the novel approach BLieDF to BDF time integration on Lie groups is clearly superior to
+existing multistep Lie group methods and has the potential to be implemented in industrial multibody system simulation
+software.
+   The paper is organized as follows. In Section 2, the BDF methods for ordinary differential equations are introduced, as
+well as some basics from Lie group theory. The BLieDF Lie group integrator for unconstrained and constrained mechanical
+systems is explained in Section 3. The next section considers the Munthe-Kaas BDF Lie group integrator. Section 5
+compares both approaches for 2 ≤ k ≤ 4. Afterwards the convergence with order p = k is proved for 2 ≤ k ≤ 4 for the
+BLieDF integrator for unconstrained (Section 6.1) and constrained (Section 6.2) mechanical systems. The final section is
+devoted to numerical tests for the Heavy top benchmark in the Lie group formulations R3 × SO(3) and SE(3).
+
+2. Basic concepts
+
+2.1. Increment representation of BDF
+
+   BDF methods were originally proposed by Curtiss and Hirschfelder [2] for the time integration of first order ODEs. For
+the application to second order ODEs
+
+      q̈(t) = a(t , q(t), q̇(t))
+
+with q : [t0 , te ] → RN , a : [t0 , te ] × RN × RN → RN , the equivalent first order system
+
+      q̇(t) = v(t),                                                                                                              (1a)
+       v̇(t) = a(t , q(t), v(t))                                                                                                 (1b)
+
+with new variables v : [t0 , te ] → RN is considered. For fixed step size h, the time step tn → tn+1 = tn + h of a k-step BDF
+discretization for the partitioned system (1) is given by
+             k
+       1∑
+                 αi qn+1−i = vn+1 ,                                                                                              (2a)
+       h
+           i=0
+             k
+       1∑
+                 αi vn+1−i = a(tn+1 , qn+1 , vn+1 )                                                                              (2b)
+       h
+           i=0
+
+with known variables qn+1−i , vn+1−i , (i = 1, . . . , k). Eq. (2) defines solutions qn+1 and vn+1 . The method is initialized by
+starting values qi ≈ q(ti ) and vi ≈ v(ti ), (i = 0, . . . , k − 1). The algorithmic parameters αi , (i = 0, 1, . . . , k) satisfy the
+order conditions
+      k                      k
+      ∑                      ∑           (k − i)l
+             αi = 0 and             αi              = l, (l = 1, . . . , k).                                                      (3)
+                                          kl−1
+       i=0                    i=0
+
+For 2 ≤ k ≤ 4 these parameters are given by
+                         3                              1
+      k = 2 : α0 =           , α1 = −2, α2 =                ,
+                         2                              2
+                         11                                 3           1
+      k = 3 : α0 =            , α1 = −3, α2 =                   , α3 = − ,
+                          6                                 2          3
+                         25                                            4       1
+      k = 4 : α0 =            , α1 = −4, α2 = 3, α3 = − , α4 =                     .
+                         12                                            3       4
+In [10] it is shown, that method (2) for 1 ≤ k ≤ 6 has an order of convergence p = k and is zero-stable. The method is
+A-stable for k ≤ 2 and A(α )-stable for 3 ≤ k ≤ 6.
+                                        V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517      3
+
+
+   In the context of multibody system dynamics, the variables q, v and a represent position, velocity and acceleration
+variables, respectively. The partitioned system (1) summarizes the kinematic equations (1a) and the dynamical equations
+(1b). These dynamical equations result from the equilibrium conditions
+
+      M(q(t))v̇(t) + g(t , q(t), v(t)) = 0                                                                                               (4)
+
+for forces and moments by left multiplication with the inverse of the symmetric, positive definite mass matrix M(q) ∈
+RN ×N :
+      a(t , q(t), v(t)) := (M(q(t)))−1 (−g(t , q(t), v(t))).                                                                             (5)
+
+The vector valued function g : [t0 , te ] × RN × RN → RN in the equilibrium conditions (4) denotes a force vector. As before,
+the function a(t , q, v) represents the accelerations.
+   The main interest of the present paper is in model equations in nonlinear configuration spaces with Lie group structure.
+As seen in Section 2.2, the equilibrium conditions (4) and the dynamical equations (1b) keep their structure also in this
+more general setting but the kinematic equations (1a) get a substantially more complex form. For this framework, it is
+useful to rewrite the BDF discretization (2a) for the position coordinates q in the increment form
+             k
+        1∑
+                  γi dqn+1−i = vn+1                                                                                                      (6)
+        h
+            i=1
+
+with the one-step update qn+1 = qn + dqn and vectors
+
+      dqn+1−i := qn+2−i − qn+1−i , (i = 2, . . . , k),
+
+that are considered to be given in time step tn → tn+1 . Since
+             k                                  k
+        1∑                                 1∑
+                  αi qn+1−i =                        γi dqn+1−i ,
+        h                                  h
+            i=0                                i=1
+
+the new parameters are defined by
+                  i−1
+                  ∑
+      γi :=             αj , (i = 1, . . . , k),
+                  j=0
+
+where
+                                    3                1
+      k = 2 : γ1 =                      , γ2 = − ,
+                                    2                2
+                                    11                   7          1
+      k = 3 : γ1 =                       , γ2 = − , γ3 =                ,
+                                     6                   6          3
+                                    25                   23             13           1
+      k = 4 : γ1 =                       , γ2 = −             , γ3 =         , γ4 = − .
+                                    12                   12             12           4
+All in all, a k-step BDF integrator for (1) may be written in the form
+
+                                            qn+1 = qn + dqn ,                                                                           (7a)
+                            k
+                    1∑
+                                    γi dqn+1−i = vn+1 ,                                                                                 (7b)
+                    h
+                         i=1
+                                k
+                        1∑
+      M(qn+1 )                          αi vn+1−i = −g(tn+1 , qn+1 , vn+1 ).                                                            (7c)
+                        h
+                            i=0
+
+For practical implementations, it is not efficient to calculate in (5) the inverse of matrix M(qn+1 ). Therefore Eq. (2b) is
+multiplied with the mass matrix M(qn+1 ) resulting in the equivalent equation (7c).
+
+2.2. Multibody systems: Configuration spaces with Lie group structure
+
+    To describe a rigid body with large rotations in 3D spaces, a representation without singularities is not possible by
+coordinates in a linear space. Therefore the position coordinates q in (1) must be coordinates of a nonlinear configuration
+space with e.g. a Lie group structure.
+    A Lie group G is a differentiable manifold with neutral element e, a differentiable group operation ◦ : G × G → G and a
+differentiable inverse mapping q ↦ → q−1 (q ◦ q−1 = e). Following [11], the focus is on matrix Lie groups, which are defined
+as subgroups of the general linear group GL(nG ). See [12] for a more general introduction to Lie group theory.
+4                          V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+    The configuration of a multibody system at time t can be characterized by the position coordinates q(t) : [t0 , te ] →
+G that describe position and orientation of all bodies in the system. As already discussed in [8,13], a continuously
+differentiable function q(t) with q(t0 ) ∈ G will remain in a Lie group G if and only if its time derivative q̇(t) is in the
+tangent space Tq G at the point q = q(t) : q̇(t) ∈ Tq(t) G, (t ≥ t0 ). The tangent space at the neutral element e defines the
+Lie algebra g := Te G. As a linear space, it is isomorphic to a finite dimensional linear space RN with an invertible linear
+mapping (˜ •) : RN → g, v ↦→ ṽ.
+    The group structure of G makes it possible to represent the elements of Tq G at any q ∈ G by the elements ṽ of the
+Lie algebra: The left translation Lq : G → G, y ↦ → Lq (y) := q ◦ y defines a bijection in G. Its derivative DLq (y) at y = e
+represents the corresponding bijection between the tangent spaces g := Te G and Tq G, i.e.,
+
+      Tq G = {DLq (e) · ṽ : ṽ ∈ g} = {DLq (e) · ṽ : v ∈ RN }.
+In this framework, the kinematic equations are given by [8]
+
+      q̇(t) = DLq (e) · ṽ(t)                                                                                                    (8)
+with velocity coordinates v : [t0 , te ] → R .          N
+
+    The exponential map exp : g → G maps the Lie algebra g to the Lie group G. In a neighbourhood of t = tm , the solution
+of the kinematic equations (8) is given by
+
+      q(t) = q(tm ) ◦ exp(Ω̃m (t − tm )), t ∈ R                                                                                  (9)
+with Ω̃m (t) ∈ g solving the initial value problem
+       ˙ m (t) = dexp
+      Ω̃
+                       −1
+                             ṽ(t), Ω̃m (0) = 0                                                                                 (10)
+                     −Ω̃ (t)m
+
+           1
+with dexp−
+         Ω̃
+             denoting the inverse of the trivialized derivative dexpΩ̃ of the exponential map, see [11, Theorem IV.7.1]. In
+a neighbourhood of Ω̃ = 0, this inverse is given by
+                     ∑ Bk
+      dexp−
+          Ω̃
+            1
+              ṽ =              adkΩ̃ (ṽ), (ṽ ∈ g),                                                                           (11)
+                           k!
+                     k≥0
+
+see [11,14]. The expansion (11) involves the Bernoulli numbers Bk and the adjoint operator adΩ̃ ṽ = [Ω̃, ṽ] with ad0Ω̃ ṽ = ṽ
+and adkΩ̃ ṽ = adΩ̃ (adkΩ̃−1 ṽ) for k ≥ 1 and the Lie bracket [·, ·] : g × g → g which is a bilinear skew symmetric operation
+on g, that would vanish when the Lie group G is replaced by a linear configuration space. The solution of (10) can be
+calculated by the Magnus expansion [14] and approximated for t = tm + h by (see [15])
+                                 h2            h3            h4 ...       h3                     4
+      Ω̃m (h) = hṽ(tm ) +            ˙ m) +
+                                      ṽ(t          ¨ m) +
+                                                    ṽ(t        ṽ(tm ) +              ˙ m )] + h [ṽ(tm ), ṽ(t
+                                                                             [ṽ(tm ), ṽ(t                 ¨ m )] + O(h5 ),    (12)
+                                 2             6             24           12                    24
+h → 0. For a more detailed discussion on Lie groups in multibody dynamics see [13,15,16].
+
+3. BLieDF
+
+3.1. BLieDF integrator for unconstrained mechanical systems
+
+   For unconstrained mechanical systems on Lie groups, the equation q̇ = v in (1) needs to be replaced by the kinematic
+equations (8). With acceleration vector (5), the equations of motion become
+
+               q̇(t) = DLq(t) (e) · ṽ(t),                                                                                     (13a)
+      M(q(t))v̇(t) = −g(t , q(t), v(t))                                                                                        (13b)
+                                                                                  N
+with position coordinates q(t) ∈ G, velocity coordinates v(t) ∈ R , positive definite, symmetric mass matrix M(q(t)) and
+force vector g(t , q(t), v(t)).
+    Following the strategy of Brüls and Cardona [8], the traditional update of configuration variables in the kinematic
+equations is substituted by updates of solution increments. Eq. (9) with m = n and t = tn+1 = tn + h, shows that
+Ω̃n (h) ∈ g is the analogue to the solution increment dqn ∈ RN in (7a):
+
+      q(tn+1 ) = q(tn ) ◦ exp Ω̃n (h) .
+                                      (    )
+
+Therefore the update of the configuration variables in time step tn → tn+1 is defined by
+                           ( (n) )
+      qn+1 = qn ◦ exp ω̃0
+                                (n)
+with approximations ω̃i     ≈ Ω̃n ((1 − i)h) for i = 0, . . . , k. For local truncation error analysis the weighted sum
+∑k
+     γ Ω̃
+  i=1 i n+1−i (h) is considered, see (7b):
+                                      V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517                                  5
+
+
+Lemma 1. If v(t) is k-times continuously differentiable and k ≤ 4 then
+            k
+      1∑                                                               h2
+                 γi Ω̃n+1−i (h) = ṽ(tn+1 ) +                                         ˙ n+1 )] + O(hk ), (h → 0).
+                                                                            [ṽ(tn ), ṽ(t
+      h                                                                12
+           i=1
+
+
+Proof. Taylor expansion for Eq. (12) with m = n + 1 − i leads to
+                                                                                     3
+                                                  ( (              )
+                                                                   )
+                                                      7
+                                                      3  3     1 2
+      Ω̃n+1−i (h) = hṽ(tn ) +          ˙
+                                  − i h ṽ(tn ) +                     ¨ n ) + h [ṽ(tn ), ṽ(t
+                                                        − i + i h3 ṽ(t2                    ˙ n )]
+                               2                      6  2     2                   12
+                                                ...
+                    (                     )              (          )
+                      5      7   3    1                    1     1
+                  +      − i + i2 − i3 h4 ṽ(tn ) +          −                    ¨ n )] + O(h5 ).
+                                                                   i h4 [ṽ(tn ), ṽ(t                                                                            (14)
+                                     8       6            4            6                             8         12
+                                                                                ∑k
+The first two terms of the weighted sum 1h    i=1 γi Ω̃n+1−i (h) are therefore given by
+                          ⎛        ⎞
+       k                k   i−1                  k−1      k              k−1
+      1∑               1∑ ∑                      ∑       ∑               ∑
+         γi hṽ(tn ) =    ⎝     αj ⎠ hṽ(tn ) =       αj       ṽ(tn ) =     αj (k − j)ṽ(tn )
+      h                                  h
+           i=1                                i=1         j=0                            j=0         i=j+1                j=0
+                                      ⎛             ⎞
+                                        k
+                                       ∑
+                                     =⎝   αj (k − j)⎠ ṽ(tn ) = ṽ(tn ),
+                                             j=0
+
+see (3) with l = 1, and by
+            k           (          )
+      1∑                    3
+                 γi                    ˙ n)
+                                − i h2 ṽ(t
+      h                     2
+           i=1
+                            ⎛                                          ⎞         ⎛                                                                      ⎞
+                k−1                 k (                   )                          k−1                            k−1        (                       )
+                ∑                   ∑   3                                            ∑   3                          ∑              k(k + 1)   j(j + 1)
+       =h               αj ⎝                           ˙ n )⎠ = h ⎝
+                                                   − i ṽ(t                                      αj (k − j) −             αj                −             ˙ n)
+                                                                                                                                                        ⎠ ṽ(t
+                                              2                                              2                                         2          2
+                j=0                 i=j+1                                              j=0                          j=0
+                ⎛                                                                                                          ⎞
+                    k                                          k                        k
+                    ∑ 3                               1∑                             1 ∑
+       = h⎝                     αj (k − j) +                        αj (k − j) − (k + )
+                                                                                 2
+                                                                                          αj (k − j)⎠ ṽ(t
+                                                                                                      ˙ n)
+                            2                         2                              2
+                    j=0                                       j=0                                        j=0
+                (                            (                ))
+                    3           1                     1
+       =h               + 2k − k +                                           ˙ n)
+                                                                    ˙ n ) = hṽ(t
+                                                                    ṽ(t
+                    2           2                     2
+if k ≥ 2, see (3). Proceeding in this way, the order conditions (3) finally yield
+            k                                                                    2                   3 ...           2                        3
+      1∑
+                                                       ¨ n ) + h ṽ(tn ) + h [ṽ(tn ), ṽ(t
+                                             ˙ n ) + h ṽ(t
+                 γi Ω̃n+1−i (h) = ṽ(tn ) + hṽ(t                                      ˙ n )] + h [ṽ(tn ), ṽ(t
+                                                                                                            ¨ n )] + O(hk )
+      h                                                                         2                    6              12                       12
+           i=1
+
+for k ≤ 4. The proposition is verified by Taylor expansion of ṽ(tn+1 ) = ṽ(tn + h), taking into account
+      h2                                      3                                 2
+                                          ¨ n )] = h [ṽ(tn ), ṽ(t
+                     ˙ n )] + h [ṽ(tn ), ṽ(t
+           [ṽ(tn ), ṽ(t                                      ˙ n+1 )] + O(h4 ).                                                  ■
+      12                                    12                                 12
+   The Lie bracket [ṽ(tn ), ṽ(t
+                             ˙ n+1 )] in Lemma 1 would vanish if the Lie group G would be replaced by a linear configuration
+space. In the k-step Lie group integrator, it has to be considered by a correction term Lk that needs to fulfil
+                                                                    L1 (v(t); h) = O(h),                                                                         (15a)
+                                                  L2 (v(t), v(t − h); h) = O(h ),                2
+                                                                                                                                                                 (15b)
+                                                                                             2
+                                                                                         h
+                            L3 (v(t), v(t − h), v(t − 2h); h) =                                          ˙ ] + O(h3 ),
+                                                                                                 [ṽ(t), ṽ(t)                                                   (15c)
+                                                                                         12
+                                                                                         h2
+      L4 (v(t), v(t − h), v(t − 2h), v(t − 3h); h) =                                                     ˙ + h)] + O(h4 ),
+                                                                                                 [ṽ(t), ṽ(t                                                    (15d)
+                                                                                         12
+see Lemma 1. The velocity coordinates v are elements of the linear space RN , therefore the classical BDF update (7c) is
+applied. The k-step BLieDF method for (13) in time step tn → tn+1 := tn + h may be written as
+                                                                            ( (n) )
+                                             qn+1 = qn ◦ exp ω̃0                   ,                                                                             (16a)
+                            k
+                    1∑
+                                    γi ω(n
+                                        0
+                                           +1−i)
+                                                 = vn+1 + Lk (vn , vn−1 , . . . , vn−k+1 ; h),                                                                   (16b)
+                    h
+                          i=1
+6                               V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+                          k
+                  1∑
+      M(qn+1 )                 αi vn+1−i = −g(tn+1 , qn+1 , vn+1 )                                                              (16c)
+                  h
+                      i=0
+
+with a suitable correction term Lk that satisfies (15). Using difference approximations
+                      6v(t) − 11v(t − h) + 5v(t − 2h)
+          v̇(t) =                                                           + O(h),
+                                                     h
+                          19
+                           3
+                             v(t)   − 31
+                                       2
+                                         v(t − h) + 13v(t − 2h) − 23
+                                                                  6
+                                                                     v(t − 3h)
+      v̇(t + h) =                                                                             + O(h2 )
+                                                                  h
+with v(t − ih) being substituted by the numerical solutions vn−i for i = 0, 1, 2, 3, the terms
+
+      L1 = L2 := 0,                                                                                                             (17a)
+                          h
+            L̃3 :=             [ṽn , 6ṽn − 11ṽn−1 + 5ṽn−2 ],                                                                (17b)
+                      12
+                       h                19           31                        23
+            L̃4 :=             [ṽn ,        ṽn −        ṽn−1 + 13ṽn−2 −         ṽn−3 ]                                     (17c)
+                      12                3            2                         6
+proved to be useful in practical computations. In future research an optimal choice of the terms Lk will be considered.
+                                            (j)
+   The integrator is initialized by qk−1 , ω0 , vj with
+                                                                  ( (j) )
+      qk−1 ≈ q(tk−1 ), q(tj+1 ) ≈ q(tj ) ◦ exp ω̃0 , (j = 0, . . . , k − 2), vj ≈ v(tj ), (j = 0, . . . , k − 1).
+                                                                                                                                  (j)
+Note, that this initialization requires k − 1 evaluations of the inverse of the exponential map to get approximations ω0 ,
+(j = 0, . . . , k − 2), for the first time step.
+
+3.2. BLieDF integrator for constrained mechanical systems
+
+    The BLieDF integrator (16) is applied to constrained mechanical systems. The equations of motion are given as
+differential–algebraic equations in the index-3 formulation [8,16]
+
+              q̇(t) = DLq(t) (e) · ṽ(t),                                                                                       (18a)
+      M(q(t))v̇(t) = −g(t , q(t), v(t)) − B (q(t))λ(t),       T
+                                                                                                                                (18b)
+                  0 = Φ(q(t))                                                                                                   (18c)
+                                                                                              N
+with position coordinates q(t) ∈ G, velocity coordinates v(t) ∈ R , positive definite, symmetric mass matrix M(q(t)),
+force vector g(t , q(t), v(t)), Lagrange multipliers λ(t) ∈ Rl , l ≤ N linearly independent holonomic constraints (18c) and
+constraint gradients B(q(t)) with
+
+      DΦ(q) · (DLq (e) · w̃) = B(q)w, (w ∈ RN ).                                                                                 (19)
+
+To apply (16) to these equations, the holonomic constraint (18c) and the Lagrange multipliers λ need to be added. The
+k-step BLieDF integrator (16) for constrained mechanical systems in the index-3 formulation (18) is for the time step
+tn → tn+1 := tn + h defined by
+                                                              ( (n) )
+                                        qn+1 = qn ◦ exp ω̃0          ,                                                          (20a)
+                      k
+              1∑
+                              γi ω(n
+                                  0
+                                     +1−i)
+                                           = vn+1 + Lk (vn , vn−1 , . . . , vn−k+1 ; h),                                        (20b)
+              h
+                  i=1
+                          k
+                  1∑
+      M(qn+1 )                 αi vn+1−i = −g(tn+1 , qn+1 , vn+1 ) − BT (qn+1 )λn+1 ,                                           (20c)
+                  h
+                      i=0
+
+                                             0 = Φ(qn+1 ).                                                                      (20d)
+
+4. Munthe-Kaas BDF Lie group integrator
+
+   Faltinsen, Marthinsen and Munthe-Kaas [9] consider linear multistep methods for first order ODEs on Lie groups. In
+linear spaces, these methods coincide with their well known counterparts from classical ODE theory. In the application
+of BDF to the partitioned system (13), they discretize the dynamical equations (13b) by
+                          k
+                  1∑
+      M(qn+1 )                 αi vn+1−i = −g(tn+1 , qn+1 , vn+1 ),
+                  h
+                      i=0
+                                 V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517                                        7
+
+
+see (7c). For the kinematic equation (13a), Faltinsen, Marthinsen and Munthe-Kaas [9] propose to approximate in (10)
+                   1
+the inverse dexp−−ω̃ (ṽ) of the trivialized derivative of the exponential map by
+
+           2 )−ω̃ (ṽ) := ṽ,
+            1
+      (dexp−
+                                                                      1
+      (dexp−1                  −1
+           3 )−ω̃ (ṽ) := (dexp2 )−ω̃ (ṽ) +                              [ω̃, ṽ],
+                                                                      2
+                                                                       1
+      (dexp−1                  −1
+           4 )−ω̃ (ṽ) := (dexp3 )−ω̃ (ṽ) +                                 [ω̃, [ω̃, ṽ]],
+                                                                      12
+see (11). The BDF discretization of this approximation is given by
+             k
+       1∑
+                 αi ω̃(n)
+                      i   = (dexp− 1
+                                 k )−ω̃(n) (ṽn+1 )
+       h                                                0
+           i=0
+
+       (n)
+with ω̃i     denoting the local coordinates of qn+1−i w.r.t. qn in the sense that
+                                      ( (n) )
+      qn+1−i = qn ◦ exp ω̃i                  , (i = 0, 1, . . . , k).                                                                                              (21)
+                                                                       (n)
+The comparison of (21) with (9) shows ω̃ ≈ Ω̃n ((1 − i)h), since qn ≈ q(tn ) and qn+1−i ≈ q(tn+1−i ) for i = 0, 1, . . . , k.
+                                                                       i
+Furthermore Eq. (9) for m = n and Eq. (9) for m = n − 1 result in a neighbourhood of t = tn in
+                        (                       )                                       (                   )
+      q(tn ) ◦ exp Ω̃n (t − tn ) = q(t) = q(tn−1 ) ◦ exp Ω̃n−1 (t − tn−1 )
+
+and therefore
+
+      exp Ω̃n ((1 − i)h) = q(tn )−1 ◦ q(tn−1 ) ◦ exp Ω̃n−1 ((2 − i)h) = exp −Ω̃n−1 (h) ◦ exp Ω̃n−1 ((2 − i)h) .
+             (                        )                                             (                   )        (           )      (                )
+
+                                                                                   (n−1)
+In time step tn → tn+1 , the approximations −ω̃0                                            ≈ −Ω̃n−1 (h) and ω̃(n
+                                                                                                               i−1
+                                                                                                                  −1)
+                                                                                                                      ≈ Ω̃n−1 ((2 − i)h) for i = 1, . . . , k, are known
+                         (n)
+and allow to evaluate ω̃i ≈ Ω̃n ((1 − i)h) with
+             ( (n) )
+                       ≈ exp −ω̃(n−1) )
+                                        ◦ exp ω̃(n
+                                             ( −1) )
+      exp ω̃i                                        , (i = 1, . . . , k).
+                            (
+                                0               i−1
+
+Formally, the product of exponentials is determined by the Baker–Campbell–Hausdorff formula. In the practical imple-
+mentation, this formula is substituted by approximations BCHk , see [9,12]:
+
+      BCH2 (ṽ1 , ṽ2 ) := ṽ1 + ṽ2 ,
+                                                               1
+      BCH3 (ṽ1 , ṽ2 ) := BCH2 (ṽ1 , ṽ2 ) +                     [ṽ1 , ṽ2 ],
+                                                               2
+                                                               1
+      BCH4 (ṽ1 , ṽ2 ) := BCH3 (ṽ1 , ṽ2 ) +                       [ṽ1 − ṽ2 , [ṽ1 , ṽ2 ]].
+                                                               12
+For the resulting k-step Munthe-Kaas BDF Lie group integrator for unconstrained systems (13), time step tn → tn+1 := tn + h
+is given by
+                                                                    ( (n) )
+                                          qn+1 = qn ◦ exp ω̃0              ,                                                                                      (22a)
+                                               (n)
+                                          ω̃         = BCHk −ω̃(n −1)
+                                                                      , ω̃(n −1) )
+                                                                                   , i = 1, . . . , k,
+                                                           (
+                                               i               0          i−1                                                                                     (22b)
+                         k
+                        1∑
+                                      αi ω̃(n)
+                                           i          k )−ω̃(n) (ṽn+1 ),
+                                               = (dexp−1
+                                                                                                                                                                  (22c)
+                        h                                                  0
+                                i=0
+                            k
+                    1∑
+      M(qn+1 )                   αi vn+1−i = −g(tn+1 , qn+1 , vn+1 )                                                                                              (22d)
+                    h
+                        i=0
+
+with starting values
+                                                                           ( (k−1) )
+      qk−1 ≈ q(tk−1 ), q(tk−j ) ≈ q(tk−1 ) ◦ exp ω̃j                                , vj ≈ v(tj ), (j = 0, . . . , k − 1).
+   For the application to constrained systems with equations of motion (18) the equilibrium conditions (22d) are
+substituted by
+                            k
+                    1∑
+      M(qn+1 )                   αi vn+1−i = −g(tn+1 , qn+1 , vn+1 ) − BT (qn+1 )λn+1 ,                                                                           (23a)
+                    h
+                        i=0
+
+                                                0 = Φ(qn+1 ).                                                                                                     (23b)
+8                                      V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+
+
+                                                                          Fig. 1. BLieDF method: Different tangent spaces.
+
+
+
+
+                                           Fig. 2. Munthe-Kaas BDF Lie group method: Re-parametrization into another tangent space.
+
+
+
+
+5. Comparison of the two BDF Lie group integrators for 2 ≤ k ≤ 4
+
+    The BDF Lie group integrators (16) and (22) address the nonlinear structure of the configuration space in different
+                                                                                                                                      (n+1−i)
+ways. In method (16) the increment BDF form (6) is directly applied, so that elements DLqn+1−i (e) ·ω̃0                for i = 1, . . . , k
+from different tangent spaces Tqn+1−i G are used to update the configuration variables, see Fig. 1. The nonlinear structure
+of the configuration space is considered by the correction term Lk in (16b).
+    In contrast, method (22) is based on the classical BDF form (2) to solve for m = n the auxiliary ODE (10) that is defined
+                                              (n−1)
+in a linear space. The numerical solutions ω̃i       ∈ g with DLqn−1 (e) · ω̃(n
+                                                                             i
+                                                                                −1)
+                                                                                    ∈ Tqn−1 G for i = 0, . . . , k − 1 of the previous
+                                  (n)                        (n)
+time step are transformed to ω̃i ∈ g with DLqn (e) · ω̃i ∈ Tqn G for i = 1, . . . , k, see Fig. 2. This re-parametrization
+                                                      1
+by BCHk -formulas and the approximations dexp−      k   reflect the nonlinearity of the configuration space and its Lie group
+structure.
+    The classical BDF discretizations in the velocity coordinates v (Eqs. (16c) and (22d)) are equivalent for both methods
+(16) and (22), as well as their extension to constrained systems.
+    For k = 2, both methods (16) and (22) can be written as
+                                                                                              ( (n) )
+                                                                    qn+1 = qn ◦ exp ω̃0              ,
+                                           (                              )
+                                       1       3           1
+                                                   ω(n)
+                                                    0 − ω(n
+                                                         0
+                                                            −1)
+                                                                              = vn+1 ,
+                                       h       2           2
+                               (                                          )
+                         1         3                           1
+       M(qn+1 )                        vn+1 − 2vn +                vn−1       = −g(tn+1 , qn+1 , vn+1 ).
+                         h         2                           2
+This shows, that the integrators BLieDF (16) and Munthe-Kaas BDF (22) are equivalent for k = 2.
+   For k > 2, the updates (16a), (22a) of the configuration variables and the equilibrium conditions (16c), (22d) are still
+identical for both types of BDF Lie group integrators, but the BDF discretization in (16b) is different from the one in
+(22b)–(22c). For BLieDF with k = 3, the equation
+           (                                                         )
+       1       11        (n)       7       (n−1)       1   (n−2)                         h
+                    ω̃   0     − ω̃        0        + ω̃   0              = ṽn+1 +           [ṽn , 6ṽn − 11ṽn−1 + 5ṽn−2 ]                  (24)
+       h       6                   6                   3                                 12
+is obtained. The corresponding Munthe-Kaas BDF Lie group integrator makes use of
+
+       ω̃(n)
+                 ( (n−1) (n−1) )
+         1 = BCH3 −ω̃ 0 , ω̃0    = 0̃,
+         (n)
+                 ( (n−1) (n−1) )
+       ω̃2 = BCH3 −ω̃0 , ω̃1     = BCH3 −ω̃(n−1)
+                                                 , 0̃ = −ω̃(n−1)
+                                       (             )
+                                           0               0
+                                  V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517      9
+
+
+and
+                                                        1 [ (n−1) (n−1) ]
+                          ω̃(n)     (n−1)
+                            3 = −ω̃ 0     + ω̃(n
+                                               2
+                                                 −1)
+                                                     −     ω̃0 , ω̃2      ,
+        (                    )                          2
+       1 11 (n) 3      1 (n)             1 [            ]
+           ω̃0 + ω̃(n)
+                   2 −  ω̃3 = ṽn+1 +        ω̃(n)
+                                               0 , ṽn+1 ,
+       h        6                2          3                               2
+i.e.
+           (                                                   )
+       1       11                7              1                                    1[                 ]  1 [ (n−1) (n−1) ]
+                     ω̃(n)
+                       0 − ω̃(n
+                             0
+                               −1)
+                                   − ω̃(n
+                                       2
+                                         −1)
+                                                                     = ṽn+1 +            ω̃0(n) , ṽn+1 −    ω̃0 , ω̃2      .    (25)
+       h        6                6              3                                    2                  6h
+The BLieDF integrator (24) only requires the evaluation of one Lie bracket per time step with explicitly given arguments.
+On the other hand the Munthe-Kaas BDF Lie group integrator (25) uses two Lie brackets. One of these Lie brackets must
+                                                (n)
+be evaluated in every Newton step, because ω0 and vn+1 are involved. This is why the first method (24) should be more
+efficient in terms of numerical effort per time step. Techniques for reducing the numerical effort in the evaluation or
+approximation of Lie brackets are discussed, e.g., in [17].
+    For k = 4, the BLieDF discretization (16b) becomes
+            4                                            [                                                        ]
+       1∑                   (n+1−i)                 h                19          31                       23
+                    γi ω̃   0         = ṽn+1 +              ṽn ,        vn −        vn−1 + 13vn−2 −          vn−3 .             (26)
+       h                                            12               3           2                         6
+           i=1
+
+The Munthe-Kaas BDF Lie group discretization (22b)–(22c) is given by
+
+       ω̃(n)
+         1 = 0̃,
+
+       ω̃(n)     (n−1)
+         2 = −ω̃ 0     ,
+                                                    1                     1 [   ]
+       ω̃(n)     (n−1)
+         3 = −ω̃ 0     + ω̃(n
+                           2
+                              −1)
+                                  − A2,n−1 +      ω̃(n
+                                                    0
+                                                      −1)
+                                                          + ω̃ (n−1)
+                                                               2     , A2, n −1   ,
+                                   2         12
+                                   1         1  [                               ]
+      ω̃(n)
+        4 = −ω̃ 0
+                 (n−1)
+                       + ω̃(n
+                           3
+                              −1)
+                                  − A3,n−1 +      ω̃(n
+                                                    0
+                                                      −1)
+                                                          + ω̃(n
+                                                               3
+                                                                 −1)
+                                                                     , A3,n−1
+                                   2         12
+            [            ]
+               (n)   (n)
+with Ai,n := ω̃0 , ω̃i , (i = 2, 3) and
+
+            4
+       1∑                                   1[                  ]   1 [ (n) [ (n)           ]]
+                    αi ω̃(n)
+                         i   = ṽn+1 +            ω̃(n)
+                                                    0   , ṽn+1   +    ω̃ 0 , ω̃ 0 , ṽn +1    ,
+       h                                    2                              12
+           i=0
+
+i.e.
+           (                                               )
+       1       25      23 (n−1)      4 (n−1)       1 (n−1)
+              ω̃(n) −      ω̃     −    ω̃       +   ω̃
+       h 12 0          12 0          3 2           4 3
+                      [                              ]]
+                    1    (n)          1 [
+                                            (n)             1 [ (n−1)                     ]
+       = ṽn+1 +       ω̃0 , ṽn+1 +      ω̃0 , ṽn+1 +        ω̃0    + ω̃(n
+                                                                          2
+                                                                             −1)
+                                                                                 , A2,n−1
+                             2                      6                                9h
+                                                     1 [                                  ] 1        1
+                                                −              ω̃(n
+                                                                 0
+                                                                    −1)
+                                                                        + ω̃(n
+                                                                            3
+                                                                              −1)
+                                                                                  , A3,n−1 − A2,n−1 + A3,n−1 .    (27)
+                                48h                           2h          8h
+BLieDF with k = 4 may be implemented with the evaluation of one Lie bracket per time step, see (26). The numerical
+effort of the Munthe-Kaas BDF Lie group method (27) is substantially larger since at least six Lie brackets have to be
+                                                                                         (n)
+evaluated and additional updates may be necessary in every Newton step since vn+1 and ω0 are involved (as for k = 3).
+
+6. Convergence analysis
+
+   The convergence of multistep methods for differential equations on manifolds is discussed in [9] and proves for
+k ≤ 6 the convergence of Munthe-Kaas BDF Lie group integrators with order p = k (in the unconstrained case). In
+the present section the convergence of fixed step size BLieDF for unconstrained systems is studied in Section 6.1 and for
+the constrained case in Section 6.2. The convergence of Munthe-Kaas BDF Lie group integrators for constrained systems
+may be studied in a similar way and will be discussed in full detail in future work. The convergence analysis for variable
+step size implementations is substantially more complex and requires additional considerations, for example stability
+conditions [18].
+
+6.1. Convergence analysis for BLieDF: Unconstrained systems
+
+   To prove the convergence of a multistep method in linear spaces, the method has to be consistent and zero-stable,
+see [10]. For consistency, the local truncation error is defined by inserting the analytical solution into the numerical
+10                             V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+method. For Eq. (16c) the local truncation errors lvn are given by
+                           k
+                      1∑
+      M(q(tn+1 ))               αi v(tn+1−i ) = −g(tn+1 , q(tn+1 ), v(tn+1 )) + lvn ,                                             (28)
+                      h
+                          i=0
+
+and correspond to the ones in linear spaces. Therefore, lvn = O(hk ), see [10]. Inserting the analytical solution Ωn+1−i (h) ≈
+ω(n
+ 0
+    +1−i)
+          into (16a), Eq. (9) for m = n and t = tn+1 is obtained and therefore there is no local truncation error in this
+equation. Finally the local truncation errors lω
+                                               n in (16b) are defined by
+
+            k
+      1∑
+                 γi Ωn+1−i (h) = v(tn+1 ) + Lk (v(tn ), v(tn−1 ), . . . , v(tn−k+1 ); h) + lωn ,                                  (29)
+      h
+           i=1
+
+       (n+1−i)
+since ω0      ≈ Ωn+1−i (h). Lemma 1 implies lωn = O(hk ) for k ≤ 4 if the correction terms Lk are defined according to (17).
+                                                                                                    q
+   The global error in the configuration variables q ∈ G may be studied conveniently defining ẽn as an element of the
+                                                                   q       ω    N   v    N
+corresponding Lie algebra [19], see also [20]. The global errors ẽn ∈ g, en ∈ R , en ∈ R are defined by
+
+      q(tn ) = qn ◦ exp(ẽqn ), Ωn (h) = ω0 + eω
+                                                    (n)
+                                               n , v(tn ) = vn + en .
+                                                                  v
+                                                                                                                                  (30)
+                                                                                                                        (n)
+The convergence analysis is based on the assumption that the numerical solutions qn and ω0 remain in a neighbourhood
+of size O(h) of the analytical solutions q(tn ) and Ωn (h), respectively. Therefore we suppose that there are positive constants
+h0 , C , so that for all h ∈ (0, h0 ] and all r with t0 + rh ∈ [t0 , te ] the global errors are bounded by
+
+      ∥eqr ∥ + ∥eωr ∥ ≤ C h, ∥evr ∥ ≤ C .                                                                                         (31)
+
+This technical assumption may be verified for BLieDF with 2 ≤ k ≤ 4 using techniques that are similar to the ones in the
+proof of [21, Theorem VII.3.5], see also [20].
+   For the global errors evn the difference of (28) and (16b) yields as in linear spaces
+            k
+      1∑
+                 αi evn+1−i = O(1)(∥eqn+1 ∥ + ∥evn+1 ∥) + O(1)∥lvn ∥ with lvn = O(hk ).                                           (32)
+      h
+           i=0
+                                                          q
+The error recursion for the global errors en differs from the one in linear configuration spaces.
+
+                                         q
+Theorem 1. The global errors en of the BLieDF method (16) satisfy
+            k                          k
+      1∑
+                                                                                 + l with lω = O(hk ).
+                                       ∑                                        ) ω
+                 αi eqn+1−i = O(1)
+                                         ( q               v
+                                          e               + e                                                                  (33)
+                                                  n+1−i                 n+1−i        n         n
+      h
+           i=0                          i=0
+
+
+Proof. Inserting (16a) and (9) for m = n and t = tn+1 into (30), the relation
+                 q                                            (n)
+                     n+1 ◦ q(tn+1 ) = exp −ω̃ 0
+                      1
+      exp(ẽn+1 ) = q−                                                ◦ q−1
+                                                     (              )                    (       )
+                                                                         n ◦ q(tn ) ◦ exp Ω̃n (h)
+
+                      = exp −ω̃(n)   ◦ exp(ẽqn ) ◦ exp Ω̃n (h)
+                           (       )                                (      )
+                               0
+
+                      = exp −Ω̃n (h) + ẽωn ◦ exp(ẽqn ) ◦ exp Ω̃n (h)
+                           (               )                    (      )
+
+holds, see [20]. As a consequence of the Baker–Campbell–Hausdorff formula the estimate
+                                                                    1
+      exp(hṽ1 ) ◦ exp(hṽ2 ) = exp(hṽ1 + hṽ2 +                       [hṽ1 , hṽ2 ] + O(h)∥[hṽ1 , hṽ2 ]∥)                    (34)
+                                                                    2
+for h → 0 with v1 , v2 ∈ RN can be verified [11]. By applying twice Eq. (34), the composition of exponential maps can be
+studied:
+                                                               1
+      exp(ẽn+1 ) = exp −Ω̃n (h) + ẽω                              [Ω̃n (h), ẽqn ] + O(h2 )∥eqn ∥ + O(h)∥eωn ∥ ◦ exp Ω̃n (h)
+                 q                         q
+                                (                                                                               )     (       )
+                                     n + ẽn −
+                                                               2
+                      = exp(ẽqn + ẽωn + [ẽqn , Ω̃n (h)] + O(h2 )∥eqn ∥ + O(h)∥eωn ∥),
+since higher order terms may be estimated by assumption (31), see [20]. If the argument of the exponential map is
+considered, equation
+
+      ẽn+1 = ẽqn + ẽω                                          ω
+       q
+                       n + [ẽn , Ω̃n (h)] + O (h )∥en ∥ + O (h)∥en ∥
+                              q                  2   q
+                                                                                                                                  (35)
+                                              2
+follows with Ω̃n (h) = hṽ(tn ) + O(h ) and
+
+      (I + O(h))eω           q  q       q
+                 n = en+1 − en + O (h)∥en ∥,                                                                                      (36)
+                               V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517                  11
+
+
+i.e., eω
+                          q                  q
+       n = O (1)(∥en+1 ∥ + ∥en ∥). By subtracting (16b) from (29), equation
+
+              k                                           k
+         1∑
+                   γi eωn+1−i = evn+1 + O(h)                     ∥evn+1−i ∥ + lωn
+                                                          ∑
+                                                                                                                                            (37)
+         h
+             i=1                                           i=1
+
+is obtained, because of
+                                                                                                k
+                                                                                                ∑
+      Lk (v(tn ), . . . , v(tn−k+1 ); h) − Lk (vn , . . . , vn−k+1 ; h) = O(h)                          ∥evn+1−i ∥.
+                                                                                                 i=1
+
+All in all the assertion follows with (35), (36) and (37), since
+              k                              k                                       k                          k
+         1∑                            1∑                                       1∑
+                                                                                          γi eωn+1−i + O(1)
+                                                                                                                ∑
+                   αi eqn+1−i =                   γi (eqn+2−i − eqn+1−i ) =                                           ∥eqn+1−i ∥.       ■
+         h                             h                                        h
+             i=0                            i=1                                     i=1                         i=0
+
+   Eqs. (32) and (33) may be summarized to the k-step error recursion
+              k         [ q        ]                k
+         1∑              en+1−i                     ∑        q
+                   αi                  = O(1)             (∥en+1−i ∥ + ∥evn+1−i ∥) + O(hk )
+         h               evn+1−i
+             i=0                                    i=0
+
+for 2 ≤ k ≤ 4. Convergence with order p = k follows from the zero-stability of BDF, see [10, Theorem III.4.5].
+
+
+6.2. Convergence analysis for BLieDF: Constrained systems
+
+   The proof of convergence for the BLieDF method for constrained equations of motion (20) is much more complex. The
+holonomic constraint (18c) and the global errors eλn in the Lagrange multipliers λ must be considered (λ(tn ) = λn + eλn ).
+The special structure of the constrained system results in additional higher order terms in all error estimates. Furthermore
+the first k time steps must be examined separately, which was discussed in [22] in full detail and is omitted in the present
+paper.
+   For linear spaces Lötstedt and Petzold [23] showed the convergence of BDF for DAEs of Hessenberg form. For
+the Lie group integrator, the convergence analysis starts with local error estimates (Theorem 2) and uses difference
+approximations of hidden constraints to account for constraint equations and Lagrange multipliers (Theorem 4). In the
+end, a coupled error recursion is obtained by which the convergence order p = k can be proven.
+
+Theorem 2. The local truncation errors of the k-step BLieDF method (20) fulfil for k ≤ 4
+                                                         ω
+                                                         ln+1 − lωn 
+                                                                     
+      lω
+       n = O (h ), ln = O (h ) and 
+               k    v       k                                        = O(hk ).                                                            (38)
+                                                              h      
+
+Proof.
+
+  (a) As for unconstrained systems the local truncation errors lω    n are defined by (29) and with Lemma 1 the bound
+      ∥lωn ∥ = O(hk ) can be shown. The local truncation errors lvn can be handled as in the unconstrained case and fulfil
+      (38).
+  (b) Let lωn be the local truncation error for the k-step BLieDF method (20) for the time step tn → tn+1 . The proof of
+      Lemma 1 and (29) shows, that this error is given by lω
+                                                           n = − k+1 h v (tn ) + h c(v(tn ), . . . , v
+                                                                    1   k (k)     k                   (k−1)
+                                                                                                            (tn )) + O(hk+1 ) (see [10,
+         Table III.2.1]) with a function c, that consists of Lie brackets. Therefore the assertion follows, because of
+
+                   lω      ω
+                    n+1 − ln
+                                           − k+1 1 hk v(k) (tn+1 ) + hk c(v(tn+1 ), . . . , v(k−1) (tn+1 ))
+                                   =
+                         h                                                  h
+                                           − k+1 1 hk v(k) (tn ) + hk c(v(tn ), . . . , v(k−1) (tn ))
+                                   −                                                                    + O(hk ) = O(hk ).          ■
+                                                                       h
+   A global error recursion for the variables q and v is needed to prove the convergence of BLieDF (20). Equation
+              k
+         1∑
+                   αi evn+1−i = −[M−1 BT ](q(tn+1 ))eλn+1 + O(1)(∥eqn+1 ∥ + ∥evn+1 ∥) + lvn                                                 (39)
+         h
+             i=0
+
+is immediately obtained from (20c), because this equation is defined in the linear space RN . The error recursion in q
+follows similar to the proof of Theorem 1, but here some higher order terms must be considered.
+12                                     V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+                                                     q
+Theorem 3. The global errors en of the BLieDF method (20) satisfy for 2 ≤ k ≤ 4
+               k                                     k                                                      k
+         1∑
+                                                                  γi [ẽqn+1−i , ṽ(tn )] + l̃ωn + O(h)
+                                                     ∑                                                      ∑
+                       αi ẽqn+1−i = ẽvn+1 +                                                                  ∆h e q
+                                                                                                                            
+                                                                                                                             
+                                                                                                                     n+1−i
+         h
+             i=0                                         i=1                                                i=1
+                                                    k
+                                                    ∑              q
+                                      + O(h)              (∥en+1−i ∥ + ∥evn+1−i ∥)                                                                   (40)
+                                                    i=0
+                   q            q          q
+where ∆h en := (en+1 − en )/h.
+
+Proof. The proof starts similar to the proof of Theorem 1 since Eq. (16a) corresponds to (20) and (16b) to (20b). To consider
+the higher order terms, the last step needs to be adapted and with (35), (36) and (37) equation
+               k                                k
+         1∑                               1∑
+                       αi ẽqn+1−i =                 γi (ẽqn+2−i − ẽqn+1−i )
+         h                                h
+             i=0                               i=1
+                                                                   k                                                k
+                                                         1∑
+                                                                        γi [ẽqn+1−i , Ω̃n+1−i (h)] + l̃ωn + O(h)
+                                                                                                                    ∑        q
+                                      = ẽvn+1 +                                                                          (∥en+1−i ∥ + ∥evn+1−i ∥)
+                                                         h
+                                                                  i=1                                               i=1
+                                                         k
+
+                                                                   ∥eωn+1−i ∥.
+                                                         ∑
+                                          + O(1)
+                                                          i=1
+
+is obtained.
+    The assertion follows with Ω̃n+1−i (h) = hṽ(tn ) + O(h2 ), see (14) and
+        ∥eωn+1−i ∥ = O(h) ∆h eqn+1−i  + ∥eqn+1−i ∥ for i = 1, . . . , k,
+                         (                        )
+
+see (36).              ■
+   All in all the convergence of order p = k of the BLieDF integrator (20) for constrained systems (18c) can be proven
+with the following theorem.
+
+Theorem 4. If the global errors er , eω           λ
+                                           v              q
+                                      r , er and er satisfy the technical assumption
+
+        ∥eqr ∥ + ∥eωr ∥ ≤ C h, ∥evr ∥ + ∥eλr ∥ ≤ C .                                                                                                 (41)
+for a constant C > 0, all r with t0 + rh ∈ [t0 , te ] and all h ∈ (0, h0 ] and the starting values q0 , . . . , q2k−1 , v0 , . . . , v2k−1 and
+λ0 , . . . , λ2k−1 satisfy
+        2k−1                                    2k−1
+
+                                                          ∥evi ∥ + ∥eλi ∥ = O(hk ),
+        ∑                                       ∑
+               ∥eqi ∥ = O(hk+1 ),                                                                 max ∥Φ(qi )∥ = O(hk+2 ),                           (42)
+                                                                                                 0≤i≤2k−1
+         i=0                                    i=0
+
+then there are positive constants C , L and h0 independent of n and h, such that for all h ∈ (0, h0 ] and all n ≥ 0 with
+t0 + nh ≤ te − h the following global error bounds hold
+        ∥eqn ∥ + ∥evn ∥ + ∥eλn ∥ ≤ CeL(tn −t0 ) hk
+and the BLieDF integrator (20) has the order of convergence p = k for 2 ≤ k ≤ 4.
+
+Proof. The complete proof is given in report [24], see also the shorter version in the Appendix. The proof of this theorem
+includes the following steps:
+                                                              q
+     (a) An error recursion for ∆h en , which follows directly from (40) is introduced.
+     (b) An error estimate for ∥eλn+1 ∥ must be verified. Therefore the examination of the difference of the holonomic
+         constraints (20d) at different time points is important to get an approximation of
+                            k                                 k
+                       1∑                            1∑
+                                    αi evn+1−i =                       γi (evn+2−i − evn+1−i )
+                       h                             h
+                           i=0                            i=1
+
+         which can be inserted into (39). The details are very technical and include e.g. the result of part (a), the derivatives
+         of the holonomic constraints (20d), the local error estimates (38), as well as the technical assumptions (41).
+         Furthermore this error estimate of ∥eλn+1 ∥ can only be proven for n ≥ 2k − 1 in this way. For the first k time
+         steps (n < 2k) another strategy must be applied which was described in [22].
+     (c) A coupled error recursion is obtained by combining parts (a), (b) and Eqs. (39) and (40) that allows to prove the
+         order of convergence p = k, see also [13]. ■
+                           V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517                               13
+
+
+
+
+Fig. 3. Global errors for the Heavy top benchmark for BDF integrators in Lie group formulation (Upper left plot: Integrator (20) — absolute error in
+q at te . Upper right plot: Integrator (23) — absolute error in q at te . Lower left plot: Integrator (20) — absolute error in λ at te . Lower right plot:
+Integrator (23) — absolute error in λ at te ).
+
+
+
+
+        Fig. 4. Efficiency of the integrators (20) and (22)/(23) for k = 2 in Heavy to benchmark (Left plot: R3 × SO(3). Right plot: SE(3) ).
+
+
+
+
+7. Numerical tests
+
+    The theoretical results should be verified in the numerical tests. Both integrators (20), (22a)–(22c), (23) are compared
+in terms of order of convergence and efficiency. For the computing time the influence of implementation and Lie group
+formulation should be examined. The numerical tests are done for the Heavy top benchmark, see Fig. 5, which is a rotating
+spinning top with its tip fixed at the origin. The Lie group formulations R3 × SO(3) and SE(3) = R3 ⋉ SO(3) with the special
+orthogonal group SO(3) = {R ∈ R3×3 : RT R = I3 , det R = 1} are examined [25]. At first the order of convergence was
+tested for the Heavy top benchmark in the Lie group formulation R3 × SO(3) in Fig. 3. The absolute error at te of position
+coordinate q (upper plots) and Lagrange multipliers λ (lower plots) over the step size h is plotted in double logarithmic
+scale for the BLieDF integrator (left plots) and the Munthe-Kaas BDF Lie group integrator (right plots). The numerical test
+illustrates an order of convergence of size p = k for 2 ≤ k ≤ 4 for both integrators for the solution components q and λ.
+This corresponds to the theoretical examinations in Section 6.
+    For the efficiency both integrators are tested for k = 2 at first. Section 5 shows that there is no difference between the
+two integrators in this case. If implementation aspects have no influence on the computing time, then both integrators
+should have the same behaviour. In Fig. 4 the absolute error at position coordinate q is plotted over the computing time
+14                      V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+
+
+                                                               Fig. 5. Heavy top.
+
+
+
+
+         Fig. 6. Efficiency of the integrators (24) and (25) for k = 3 in Heavy to benchmark (Left plot: R3 × SO(3). Right plot: SE(3) ).
+
+
+
+
+         Fig. 7. Efficiency of the integrators (26) and (27) for k = 4 in Heavy to benchmark (Left plot: R3 × SO(3). Right plot: SE(3) ).
+
+
+
+
+that is needed for all time steps without initialization for the Heavy top benchmark in the Lie group formulations R3 ×SO(3)
+(left plots) and SE(3) (right plots). This test confirms, that there is no difference between the two integrators for k = 2.
+    The three-step integrators (24) and (25) are tested in Fig. 6. The absolute error at position coordinate q is plotted over
+the computing time that is needed for all time steps without the time for initialization for the Heavy top benchmark in
+the Lie group formulations R3 × SO(3) (left plots) and SE(3) (right plots). To reach the same global error the BLieDF method
+needs less computing time than the Munthe-Kaas BDF Lie group integrator regardless of which Lie group formulation is
+used.
+    Similar test results can be observed if the four-step integrators (26) and (27) are used, see Fig. 7.
+    The numerical tests show that the BLieDF integrator was superior to the Munthe-Kaas BDF Lie group integrator
+independent of the Lie group formulation and implementation aspects.
+
+8. Conclusions
+
+   The BLieDF integrator was introduced for unconstrained and constrained mechanical systems in Lie group formulations.
+The equations of motion form ODEs or index-3 DAEs on Lie groups. In both cases, the convergence analysis proves an
+                                 V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517                                                 15
+
+
+order of convergence of p = k for 2 ≤ k ≤ 4 for BLieDF. The novel integrator was compared with an earlier approach of
+Faltinsen, Marthinsen and Munthe-Kaas and it was shown, that for 3 ≤ k ≤ 4 the BLieDF method is more efficient, since
+it calculates less Lie brackets. For k = 2 both integrators are equivalent. The results were confirmed by numerical test
+results for the Heavy top benchmark in the Lie group formulations R3 × SO(3) and SE(3).
+
+
+Appendix. Proof of Theorem 4
+
+                                                             q           q            q
+Lemma A.1. The global errors ∆h en = (en+1 − en )/h of the BLieDF integrator (20) for k ≥ 2 satisfy
+      k                                                k                                               k
+      ∑                                                ∑                                               ∑
+             γi ∆h eqn+1−i = evn+1 −                             γi v̂(tn )eqn+1−i + O(h)                      ∥∆h eqn+1−i ∥
+       i=1                                             i=1                                              i=1
+                                                  k
+
+                                                        (∥en+1−i ∥ + ∥evn+1−i ∥) + lω
+                                                  ∑              q
+                                 + O(h)                                             n                                                                                        (A.1)
+                                                  i=0
+
+                          •) : RN → RN ×N , v ↦→ v̂ that is defined by v̂w
+with the linear operator (ˆ                                            ˜ = [ṽ, w̃] for all w ∈ RN .
+
+Proof. Writing (40) in terms of γi for i = 1, . . . , k, the assertion follows form Theorem 3, since
+      k                              k              q                                              k
+      ∑                              ∑             e                 − eqn+1−i            1∑
+             γi ∆h eqn+1−i =                     γi n+2−i                           =                  αi eqn+1−i .          ■
+                                                                     h                    h
+       i=1                               i=1                                                   i=0
+
+
+Lemma A.2. The global errors eSnλ+1 of the BLieDF integrator (20) for 2 ≤ k ≤ 4 satisfy for n ≥ 2k − 1
+                            (        )                                           ( 2k                                                    2k
+                                                                                                                                                                   )
+                                1
+          eSnλ+1
+                                                                                  ∑                 q
+                                                                                                                                         ∑              q
+      ∥            ∥=O                   max ∥Φ(qr )∥ + O(1)                                  (∥   en+1−i   ∥+∥        evn+1−i    ∥) +          ∥   ∆h en+1−i   ∥ + O(hk )   (A.2)
+                                h2           r
+                                                                                     i=0                                                  i=1
+
+                                                         (• )
+with the notation e(C•) := C(q(tn ))en and S := BM−1 BT .
+
+Proof. By multiplying (39) from the left with B(q(tn+1 )) and rewriting the sum in terms of γi , equation
+      k
+                                                                                (                       k
+                                                                                                                                 )
+                   eBv       Bv
+                    n+2−i − en+1−i
+                                                        eSnλ+1
+      ∑                                                                                q
+                                                                                                        ∑
+             γi                                  =−                  + O(1) ∥         en+1         ∥+          ∥   evn+1−i   ∥ + O(hk )                                      (A.3)
+                            h
+       i=1                                                                                               i=0
+
+follows with Theorem 2. Note, that B(q(tn+1 )) = B(q(tn+1−i )) + O(h) for i = 0, . . . , k.
+                                                                  q
+    Furthermore with (18c) and defining qn,ϑ := q(tn ) ◦ exp(−ϑ en ), the relation
+           k                                      k                                                                    k          ∫ 1
+           ∑                                      ∑                                                                    ∑                                  q
+      −            γj Φ(qn+1−j ) = −                    γj (Φ(qn+1−j,1 ) − Φ(qn+1−j,0 )) =                                   γj          B(qn+1−j,ϑ )en+1−j dϑ
+            j=1                                   j=1                                                                  j=1           0
+
+
+holds, see (19) and [20]. By scaling the difference of this sum for t = tn+2−i and t = tn+1−i by 1h , equation
+           k                                                             k          ∫ 1                            q                                 q
+           ∑            Φ(qn+2−j ) − Φ(qn+1−j )                          ∑                 B(qn+2−j,ϑ )en+2−j − B(qn+1−j,ϑ )en+1−j
+      −            γj                                                =         γj                                                                             dϑ
+                                         h                                           0                                       h
+            j=1                                                          j=1
+
+is valid. Proceeding as in the proof of [20, Lemma 4], see [20, Eq. (27)], we get the estimate
+           k                                                                          k                                  k
+           ∑            Φ(qn+2−j ) − Φ(qn+1−j )                                       ∑                                 (∑
+                   γj                                                                          γj ∆h eqn+1−j + R(q(tn ))   γj eqn+1−j , v(tn )
+                                                                                                                                              )
+      −                                                              = B(q(tn ))
+                                         h
+            j=1                                                                          j=1                                             j=1
+                                                                               k
+                                                                               ∑               q                         q
+                                                                     + O(h)           (∥en+1−j ∥ + ∥∆h en+1−j ∥)                                                             (A.4)
+                                                                                j=1
+
+with a bilinear form R : RN × RN → Rl , that is defined by the derivative of Θ(q, w) := B(q)w with respect to q in the
+sense that
+
+      Dq Θ(q, w) · (DLq (e) · z̃) = R(q)(w, z) forall w, z ∈ RN .
+16                            V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517
+
+
+Taking (A.1) into account, the first term at the right hand side of (A.4) is expressed as
+                   k                                                           k
+
+                                                                                      γj eqn+1−j + B(q(tn ))lωn
+                   ∑                                                           ∑
+       B(q(tn ))         γj ∆h eqn+1−i = eBv
+                                          n+1 − B(q(tn ))v̂(tn )
+                   j=1                                                          j=1
+                                                   ⎛                                            ⎞
+                                                     k                           k
+                                                    ∑                            ∑
+                                            + O(h) ⎝ (∥eqn+1−j ∥ + ∥evn+1−j ∥) +   ∆h eq
+                                                                                             
+                                                                                              ⎠
+                                                                                        n+1−j
+                                                                j=0                                   j=1
+
+resulting in
+                     k                                                                                        k
+                                  Φ(qn+2−j ) − Φ(qn+1−j )
+                                                                       − B(q(tn ))lωn + B(q(tn ))v̂(tn )
+                     ∑                                                                                        ∑
+       eBv
+        n+1 = −              γj                                                                                     γi eqn+1−j
+                                                  h
+                     j=1                                                                                      j=1
+                                                     ⎛                                              ⎞
+                                   k                   k                           k
+                         (∑ q                         ∑                            ∑
+                           γj en+1−j , v(tn ) + O(h) ⎝ (∥eqn+1−j ∥ + ∥evn+1−j ∥) +    ∆h e q     ⎠ .
+                                             )                                                   
+              − R(q(tn ))                                                                   n+1−j                                     (A.5)
+                                  j=1                                          j=0                                      j=1
+
+The difference of Eq. (A.5) for two time steps scaled by 1h amounts to
+
+       eBv       Bv
+                                                                                       lω        ω
+                                        (        )
+        n+2−i − en+1−i                      1                                           n+1−i − ln−i
+                                  =O                  max ∥Φ(qr )∥ − B(q(tn ))                            + O(hk )
+                h                           h2          r                                     h
+                                                            k                                       k
+                                                            ∑                                      (∑
+                                                                    γj ∆h eqn−i+1−j − R(q(tn ))           γj ∆h eqn−i+1−j , v(tn )
+                                                                                                                                  )
+                                  + B(q(tn ))v̂(tn )
+                                                            j=1                                     j=1
+                                            ⎛                                                                    ⎞
+                                                 k                                         k
+                                                 ∑              q
+                                                                                           ∑
+                                                                                             ∆h eq             ⎠ .
+                                                                                                               
+                                  + O(1) ⎝              (∥en+1−j ∥ + ∥evn+1−j         ∥) +                n+1−j                       (A.6)
+                                                  j=0                                       j=1
+
+Lemma A.1 shows for all n with n − i ≥ k
+       k                                     k
+       ∑                                     ∑
+             γj ∆h eqn−i+1−j = O(1)                         q
+                                                       (∥en−i+1−j ∥ + ∥evn−i+1−j ∥) + O(hk ),                                         (A.7)
+       j=1                                       j=0
+
+such that the assertion of the lemma follows from the local error estimate (38) if (A.6) and (A.7) are substituted
+into (A.3). ■
+
+Proof of Theorem 4. If 0 ≤ n < 2k − 1, then the assertion follows from assumptions (42). For n ≥ 2k − 1 a one step
+error recursion can be obtained by combining the estimates (39), (40), (A.1) and (A.2) with (38) to
+       ∥Eyn+1 − Ty Eyn ∥ ≤ O(h) ∥Eyn+1 ∥ + ∥Eyn ∥ + ∥Ezn+1 ∥ + ∥Ezn ∥ + O(hk+1 ),
+                               (                                     )
+
+       ∥Ezn+1 − Tz Ezn ∥ ≤ O(1)(∥Eyn+1 ∥ + h∥Ezn+1 ∥) + O(hk )
+with
+                         q
+                     en
+               ⎡              ⎤
+              ⎢ .. ⎥
+              ⎢ . ⎥                         q
+                                   ⎡           ⎤
+              ⎢ q                    ∆h en−1            [                                                 ]
+              ⎢e                         ..                Tα                                     02k×2k
+                        ⎥
+       Eyn := ⎢ n+1v−2k ⎥ , Ezn := ⎣             , T :=                                                  ⊗ IN , Tz := Tγ ⊗ IN ,
+                        ⎥          ⎢           ⎥
+              ⎢ en ⎥                      .    ⎦ y       02k×2k                                     Tα
+              ⎢ . ⎥                     q
+              ⎣ . ⎦                 ∆h en+1−2k
+                  .
+                   evn+1−2k
+and
+                                            ⎧ α
+                                                  j
+                                            ⎨−
+                                            ⎪         if i = 1, j = 1, . . . , k,
+                                                α
+       Tα = (tijα )i,j=1,...,2k with tijα = 1 0 if i = j + 1, j = 1, . . . , 2k − 1, ,
+                                            ⎪
+                                              0       otherwise
+                                            ⎩
+                                              ⎧ γ
+                                                    j+1
+                                              ⎨−
+                                              ⎪            if i = 1, j = 1, . . . , k − 1,
+              γ                           γ         γ1
+       Tγ = (tij )i,j=1,...,2k−1 with tij =
+                                                1          if i = j + 1, j = 1, . . . , 2k − 2,
+                                                                                                .
+                                              ⎪
+                                                                0          otherwise
+                                              ⎩
+
+Because of (42) and Φ(qr ) = 0 for r ≥ k, see (20d), the term h12 maxr ∥Φ(qr )∥ in (A.2) is O(hk ).
+                           V. Wieloch and M. Arnold / Journal of Computational and Applied Mathematics 387 (2021) 112517                            17
+
+
+   Furthermore, a positive constant L independent of h and n and an appropriate constant M ≥ 0, representing the local
+error terms O(hk ), can be chosen, such that for n ≥ 2k − 1, the coupled error recursion
+       ∥Eyn+1 − Ty Eyn ∥ ≤ Lh(∥Eyn+1 ∥ + ∥Eyn ∥ + ∥Ezn+1 ∥ + ∥Ezn ∥) + hM ,
+       ∥Ezn+1 − Tz Ezn ∥ ≤ L(∥Eyn+1 ∥ + h∥Ezn+1 ∥) + M
+follows. There is a norm ∥.∥y with ∥Ty ∥y = 1 (see [10, Lemma III.4.4]). For k ≤ 6, BDF are zero-stable and the roots
+                                             ∑k
+of the characteristic polynomial pα (ζ ) =    i=0 αi ζ
+                                                       k−i
+                                                           satisfy ζ1 = 1 and |ζi | < 1, (i = 2, . . . , k), see [10]. Because of
+                         ∑k
+det(ζ I2k−1 − Tγ ) = ζ k
+                          i=1 ζ k−i
+                                    /γ 1 and
+                 k                  k                               k
+                 ∑                  ∑                               ∑
+       (ζ − 1)         γi ζ k−i =         γi (ζ k+1−i − ζ k−i ) =         αi ζ k−i = pα (ζ ),
+                 i=1                i=1                             i=0
+
+all eigenvalues of Tγ are inside the unit circle and there exists a norm ∥.∥γ with ∥Tγ ∥γ < 1. With [13, Theorem 4.16] the
+estimates
+                              ∥Eyn ∥ ≤ C eL(tn −t0 ) (∥Ey2k−1 ∥ + h∥Ez2k−1 ∥ + M),
+       ∥Ezn+1 − Tzn+2−2k Ez2k−1 ∥ ≤ C eL(tn −t0 ) (∥Ey2k−1 ∥ + h∥Ez2k−1 ∥ + M)
+are obtained for step size h ∈ (0, h0 ] and tn = t0 + nh, (n ≥ 2k − 1) and positive constants h0 , C , L, that depend on L as
+                                                            y
+well as on the chosen norms. With (42), the estimates ∥E2k−1 ∥ = O(hk ) and ∥Ez2k−1 ∥ = O(hk ) are obtained. Therefore the
+assertion follows for n ≥ 2k − 1 together with Eq. (A.2). ■
+
+References
+
+ [1] Martin Arnold, Bernhard Burgermeister, Claus Führer, Gerhard Hippmann, Georg Rill, Numerical methods in vehicle system dynamics: State of
+     the art and current developments, Veh. Syst. Dynam. 49 (2011) 1159–1207.
+ [2] Charles Francis Curtiss, Joseph Oakland Hirschfelder, Integration of stiff equations, Proc. Natl. Acad. Sci. USA 38 (1952) 235–243.
+ [3] Charles William Gear, Numerical Initial Value Problems in Ordinary Differential Equations, Prentice-Hall, Englewood Cliffs, NJ, 1971.
+ [4] Peter E. Crouch, Robert Grossmann, Numerical integration of ordinary differential equations on manifolds, J. Nonlinear Sci. 3 (1992) 1–33.
+ [5] Hans Munthe-Kaas, Runge-Kutta methods on Lie groups, BIT 38 (1998) 92–111.
+ [6] Hans Munthe-Kaas, High order Runge-Kutta methods on manifolds, Appl. Numer. Math. 29 (1999) 115–127.
+ [7] Elena Celledoni, Arne Marthinsen, Brynjulf Owren, Commutator-free Lie group methods, Future Gener. Comput. Syst. 19 (2003) 341–352.
+ [8] Olivier Brüls, Alberto Cardona, On the use of Lie group time integrators in multibody dynamics, J. Comput. Nonlinear Dynam. 5 (2010) 031002.
+ [9] Stig Faltinsen, Arne Marthinsen, Hans Munthe-Kaas, Multistep methods integrating ordinary differential equations on manifolds, Appl. Numer.
+     Math. 39 (2001) 349–365.
+[10] Ernst Hairer, Syvert Nørsett, Gerhard Wanner, Solving Ordinary Differential Equations. I. Nonstiff Problems, second ed., Springer-Verlag, Berlin
+     Heidelberg New York, 1993.
+[11] Ernst Hairer, Christian Lubich, Gerhard Wanner, Geometric Numerical Integration: Structure-Preserving Algorithms for Ordinary Differential
+     Equations, second ed., Springer-Verlag, Berlin Heidelberg New York, 2006.
+[12] Veeravallis S. Varadarajan, Lie Groups, Lie Algebras, and their Representations, Springer Verlag, New York, Berlin, Heidelberg, Tokyo, 1992.
+[13] Martin Arnold, Alberto Cardona, Olivier Brüls, A Lie algebra approach to Lie group time integration of constrained systems, in: P. Betsch (Ed.),
+     Structure-Preserving Integrators in Nonlinear Structural Dynamics and Flexible Multibody Dynamics, Springer International Publishing, Cham,
+     2016, pp. 91–158.
+[14] Wilhelm Magnus, On the exponential solution of differential equations for a linear operator, Comm. Pure Appl. Math. 7 (1954) 649–673.
+[15] Andreas Müller, Approximation of finite rigid body motions from velocity fields, ZAMM - J. Appl. Math. Mech. / Z. Angew. Math. Mech. 90
+     (2010) 514–521.
+[16] Olivier Brüls, Alberto Cardona, Martin Arnold, Lie group generalized-α time integration of constrained flexible multibody systems, Mech. Mach.
+     Theory 48 (2012) 121–137.
+[17] Hans Munthe-Kaas, Brynjulf Owren, Computations in a free Lie algebra, Philos. Trans. R. Soc. Lond. 357 (1999).
+[18] Victoria Wieloch, Martin Arnold, Stability bounds for step size ratios in variable time step implementations of Newmark integrators, in:
+     Proceedings of ECCOMAS Thematic Conference on Multibody Dynamics, Prague, 2017.
+[19] Jörg Wensch, Extrapolation methods in Lie groups, Numer. Math. 89 (2001) 591–604.
+[20] Martin Arnold, Olivier Brüls, Alberto Cardona, Error analysis of generalized-α Lie group time integration methods for constrained mechanical
+     systems, Numer. Math. 129 (2015) 149–179.
+[21] Ernst Hairer, Gerhard Wanner, Solving Ordinary Differential Equations. II. Stiff and Differential-Algebraic Problems, second ed., Springer-Verlag,
+     Berlin Heidelberg New York, 1996.
+[22] Victoria Wieloch, Martin Arnold, BLieDF2nd - a k-step BDF integrator for constrained mechanical systems on Lie groups, in: Proceedings of the
+     5th Joint International Conference on Multibody System Dynamics, Lisbon, 2018.
+[23] Per Lötstedt, Linda Petzold, Numerical solution of nonlinear differential equations with algebraic constraints i: Convergence results for backward
+     differentiation formulas, Math. Comp. 46 (174) (1986) 491–516.
+[24] Victoria Wieloch, Martin Arnold, Convergence analysis of BLieDF integrators for constrained mechanical systems. Technical report, 2019
+     (in preparation).
+[25] Olivier Brüls, Martin Arnold, Alberto Cardona, Two Lie group formulations for dynamic multibody systems with large rotations, in: Proceedings
+     of the ASME 2011 International Design Engineering Technical Conferences & Computers and Information in Engineering Conference, 2011.
+

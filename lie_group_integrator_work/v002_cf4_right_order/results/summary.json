@@ -1,0 +1,139 @@
+{
+  "euler_top_invariants": {
+    "inertia_diag": [
+      1.0,
+      2.0,
+      3.5
+    ],
+    "methods": {
+      "lie_euler": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": Infinity,
+          "max_energy_relative_error": Infinity,
+          "max_orthogonality_fro": 8.381827356679511e-15,
+          "max_spatial_momentum_vector_error": Infinity,
+          "runtime_sec": 0.16637188498862088,
+          "total_newton_iterations": 0
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": Infinity,
+          "max_energy_relative_error": Infinity,
+          "max_orthogonality_fro": 6.290345273560725e-15,
+          "max_spatial_momentum_vector_error": Infinity,
+          "runtime_sec": 0.07634687196696177,
+          "total_newton_iterations": 0
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": Infinity,
+          "max_energy_relative_error": Infinity,
+          "max_orthogonality_fro": 4.9578045866697726e-15,
+          "max_spatial_momentum_vector_error": Infinity,
+          "runtime_sec": 0.07483448897255585,
+          "total_newton_iterations": 0
+        }
+      },
+      "lie_midpoint": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": 4.8663876894648985e-15,
+          "max_energy_relative_error": 8.059085849831002e-15,
+          "max_orthogonality_fro": 9.23432661008702e-15,
+          "max_spatial_momentum_vector_error": 0.0028171085935399525,
+          "runtime_sec": 1.1548299070564099,
+          "total_newton_iterations": 6000
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": 1.504156194925514e-14,
+          "max_energy_relative_error": 3.190054815558105e-14,
+          "max_orthogonality_fro": 5.837460385145157e-15,
+          "max_spatial_momentum_vector_error": 0.011271511960194876,
+          "runtime_sec": 0.5462868480244651,
+          "total_newton_iterations": 3000
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": 6.006007206561405e-12,
+          "max_energy_relative_error": 8.702973229708126e-12,
+          "max_orthogonality_fro": 3.370787152882065e-15,
+          "max_spatial_momentum_vector_error": 0.044917709209545936,
+          "runtime_sec": 0.37677416001679376,
+          "total_newton_iterations": 1899
+        }
+      },
+      "rkmk4": {
+        "0.05": {
+          "max_body_momentum_norm_relative_error": 3.3451533139501774e-07,
+          "max_energy_relative_error": 1.1485343547889053e-06,
+          "max_orthogonality_fro": 1.2434769215650106e-14,
+          "max_spatial_momentum_vector_error": 2.25079595479897e-06,
+          "runtime_sec": 0.4352229170035571,
+          "total_newton_iterations": 0
+        },
+        "0.1": {
+          "max_body_momentum_norm_relative_error": 1.0136033706736374e-05,
+          "max_energy_relative_error": 3.5732275483869206e-05,
+          "max_orthogonality_fro": 8.766018730630196e-15,
+          "max_spatial_momentum_vector_error": 4.926945812580817e-05,
+          "runtime_sec": 0.31353301904164255,
+          "total_newton_iterations": 0
+        },
+        "0.2": {
+          "max_body_momentum_norm_relative_error": 0.0003122086714076929,
+          "max_energy_relative_error": 0.0011156450804440598,
+          "max_orthogonality_fro": 6.1926438809957646e-15,
+          "max_spatial_momentum_vector_error": 0.0013240080256885077,
+          "runtime_sec": 0.16289099300047383,
+          "total_newton_iterations": 0
+        }
+      }
+    },
+    "t_final": 100.0,
+    "w0": [
+      0.9,
+      0.35,
+      1.1
+    ]
+  },
+  "kinematic_order": {
+    "methods": {
+      "cf4": {
+        "coarsest_error_rad": 2.0143716235061503e-06,
+        "finest_error_rad": 3.001153297760009e-11,
+        "observed_order": 4.007682530733415
+      },
+      "exp_midpoint": {
+        "coarsest_error_rad": 0.005045850138540451,
+        "finest_error_rad": 1.9728148153287e-05,
+        "observed_order": 1.9997095892254122
+      },
+      "lie_euler": {
+        "coarsest_error_rad": 0.23648972417283246,
+        "finest_error_rad": 0.014874309817420595,
+        "observed_order": 0.9978279798905029
+      },
+      "matrix_rk4": {
+        "coarsest_error_rad": 4.638961584036071e-05,
+        "finest_error_rad": 7.398569525519498e-10,
+        "observed_order": 3.985739727287916
+      },
+      "rkmk4": {
+        "coarsest_error_rad": 1.1103167089065323e-05,
+        "finest_error_rad": 1.781324683950057e-10,
+        "observed_order": 3.983812708137407
+      }
+    },
+    "reference_h": 0.0001220703125,
+    "reference_method": "rkmk4",
+    "step_sizes": [
+      0.25,
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625
+    ],
+    "t_final": 4.0
+  },
+  "numpy": "2.4.3",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.12",
+  "runtime_sec": 6.333509784017224,
+  "version": "v002_cf4_right_order"
+}

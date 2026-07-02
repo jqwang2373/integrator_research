@@ -1,0 +1,54 @@
+{
+  "full_external_campaign_completed": false,
+  "models": {
+    "slider_crank": {
+      "acc_observed_order": null,
+      "lambda_observed_order": null,
+      "max_acceleration_constraint_norm": 2.820163168744236e-15,
+      "max_condition_number": 79.1502308093794,
+      "max_dynamics_residual_norm": 1.0070801446241555e-14,
+      "max_multiplier_norm": 34.3157594428702,
+      "max_newton_iterations": 4,
+      "max_position_constraint_norm": 1.0029347078083516e-15,
+      "max_rot_dynamics_residual": 4.8954981920155525e-15,
+      "max_so3_fro": 1.6936790834798267e-15,
+      "max_step_correction_norm": 0.009089244538267902,
+      "max_trans_dynamics_residual": 9.784915608867173e-15,
+      "max_velocity_constraint_norm": 4.7656734233562925e-16,
+      "min_singular_value": 0.03746084520509304,
+      "ok_row_count": 1,
+      "pos_observed_order": null,
+      "reference_h": 0.001,
+      "row_count": 2,
+      "status": "partial_failed",
+      "step_sizes": [
+        0.001,
+        0.0001
+      ],
+      "t_end": 3.0,
+      "total_newton_iterations": 12003,
+      "vel_observed_order": null
+    }
+  },
+  "notes": "Public-horizon 2021 closed-loop tranche using the accepted local kinematic FullVA solve and reaction reconstruction on the public four_link/slider_crank mechanisms. These rows use the 2021 public time window and public h policy when selected, but they remain constraint/reaction residual rows rather than dynamic order/work-superiority rows.",
+  "ok_row_count": 1,
+  "planned_row_count": 0,
+  "policy": "gauss6_fullva_public_horizon_closed_loop_kinematic_reaction_not_full_campaign",
+  "public_closed_loop_step_trios_completed": false,
+  "public_policy_time_window": true,
+  "public_step_size_required_count": 3,
+  "public_step_size_rows_completed": 1,
+  "row_count": 2,
+  "run_mode": "gauss6_fullva_public_horizon_closed_loop_2021_tranche_shard",
+  "run_model": true,
+  "selected_models": [
+    "slider_crank"
+  ],
+  "selected_reference_h": 0.001,
+  "selected_rows_completed": false,
+  "selected_step_sizes": [
+    0.001,
+    0.0001
+  ],
+  "selected_t_end": 3.0
+}

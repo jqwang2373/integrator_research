@@ -1,0 +1,894 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.27)  13 JUN 2026 01:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main_cmame_submission.tex
+(./main_cmame_submission.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(c:/texlive/2025/texmf-dist/tex/latex/elsarticle/elsarticle.cls
+Document Class: elsarticle 2026/01/09, 3.5: Elsevier Ltd
+(c:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(c:/texlive/2025/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count275
+))
+(c:/texlive/2025/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+(c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count276
+)
+\@bls=\dimen148
+
+(c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(c:/texlive/2025/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count277
+\c@section=\count278
+\c@subsection=\count279
+\c@subsubsection=\count280
+\c@paragraph=\count281
+\c@subparagraph=\count282
+\c@figure=\count283
+\c@table=\count284
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen149
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
+)
+\c@tnote=\count285
+\c@fnote=\count286
+\c@cnote=\count287
+\c@ead=\count288
+\c@elsarticle@author=\count289
+\@eadauthor=\toks18
+\c@affn=\count290
+\absbox=\box53
+\elsarticlehighlightsbox=\box54
+\elsarticlegrabsbox=\box55
+\keybox=\box56
+\Columnwidth=\dimen152
+\space@left=\dimen153
+\els@boxa=\box57
+\els@boxb=\box58
+\leftMargin=\dimen154
+\@enLab=\toks19
+\@sep=\skip51
+\@@sep=\skip52
+
+(./main_cmame_submission.spl)
+(c:/texlive/2025/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip53
+\bibsep=\skip54
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count291
+)
+\splwrite=\write3
+\openout3 = `main_cmame_submission.spl'.
+
+\appnamewidth=\dimen155
+)
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen156
+))
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen157
+)
+(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count292
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count293
+\leftroot@=\count294
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count295
+\DOTSCASE@=\count296
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box59
+\strutbox@=\box60
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen158
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count297
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count298
+\dotsspace@=\muskip17
+\c@parentequation=\count299
+\dspbrk@lvl=\count300
+\tag@help=\toks21
+\row@=\count301
+\column@=\count302
+\maxfields@=\count303
+\andhelp@=\toks22
+\eqnshift@=\dimen159
+\alignsep@=\dimen160
+\tagshift@=\dimen161
+\tagwidth@=\dimen162
+\totwidth@=\dimen163
+\lineht@=\dimen164
+\@envbody=\toks23
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
+\dth@everypar=\toks30
+LaTeX Info: Redefining \qed on input line 273.
+)
+(c:/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen165
+\ar@mcellbox=\box61
+\extrarowheight=\dimen166
+\NC@list=\toks31
+\extratabsurround=\skip61
+\backup@length=\skip62
+\ar@cellbox=\box62
+)
+(c:/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen167
+\lightrulewidth=\dimen168
+\cmidrulewidth=\dimen169
+\belowrulesep=\dimen170
+\belowbottomsep=\dimen171
+\aboverulesep=\dimen172
+\abovetopsep=\dimen173
+\cmidrulesep=\dimen174
+\cmidrulekern=\dimen175
+\defaultaddspace=\dimen176
+\@cmidla=\count304
+\@cmidlb=\count305
+\@aboverulesep=\dimen177
+\@belowrulesep=\dimen178
+\@thisruleclass=\count306
+\@lastruleclass=\count307
+\@thisrulewidth=\dimen179
+)
+(c:/texlive/2025/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(c:/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+\c@assumption=\count308
+\c@definition=\count309
+\c@lemma=\count310
+\c@theorem=\count311
+\c@proposition=\count312
+\c@corollary=\count313
+
+(./main_cmame_submission.aux)
+\openout1 = `main_cmame_submission.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+
+(c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count314
+\scratchdimen=\dimen180
+\scratchbox=\box63
+\nofMPsegments=\count315
+\nofMParguments=\count316
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count317
+\MPscratchDim=\dimen181
+\MPnumerator=\count318
+\makeMPintoPDFobject=\count319
+\everyMPtoPDFconversion=\toks33
+) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 69.
+
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 69.
+
+
+(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2]
+Underfull \hbox (badness 1762) in paragraph at lines 143--149
+\T1/cmr/m/n/12 trans-fer on the compact-tube Gauss-predictor branch un-der re-
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 149--152
+[]\T1/cmr/m/n/12 method-side dynamic-order ev-i-dence for the single- and doubl
+e-
+ []
+
+
+Underfull \hbox (badness 3333) in paragraph at lines 149--152
+\T1/cmr/m/n/12 pendulum ex-am-ples, and mechanism-coverage ev-i-dence for the
+ []
+
+[3] [4]
+Underfull \hbox (badness 1184) in paragraph at lines 226--232
+\T1/cmr/m/n/12 cer-tifi-cate, un-der which the 36 Newton--Euler rows van-ish, a
+dds the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--232
+[]\T1/cmr/m/n/12 , and then ap-plies
+ []
+
+[5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+Underfull \hbox (badness 4492) in paragraph at lines 918--928
+[]\T1/cmr/m/n/12 For each $\OML/cmm/m/it/12 h \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/
+12 H[]$\T1/cmr/m/n/12 , first check the accepted-grid con-di-tion
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 918--928
+\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 T[]=h \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 T[]=h\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j ^^T \OML/cmm/m/it/1
+2 "[]$\T1/cmr/m/n/12 . Ac-cepted or-der rows use only
+ []
+
+[19] [20]
+<Figure_11_method_stage_architecture.png, id=90, 604.4181pt x 362.3136pt>
+File: Figure_11_method_stage_architecture.png Graphic file (type png)
+<use Figure_11_method_stage_architecture.png>
+Package pdftex.def Info: Figure_11_method_stage_architecture.png  used on input
+ line 980.
+(pdftex.def)             Requested size: 350.99762pt x 210.40187pt.
+ [21 <./Figure_11_method_stage_architecture.png>]
+Underfull \hbox (badness 1077) in paragraph at lines 1087--1095
+[]\T1/cmr/m/n/12 Consequently the manuscript does not say that Gauss6/FullVA is
+
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 1087--1095
+\T1/cmr/m/n/12 to close on the same bench-mark. The ac-cepted claim is nar-rowe
+r:
+ []
+
+
+Underfull \hbox (badness 3872) in paragraph at lines 1087--1095
+\T1/cmr/m/n/12 Ful-lVA path un-der the re-tained branch-smoothness, residual-de
+fect,
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 1099--1108
+\T1/cmr/m/n/12 mechanism-coverage ev-i-dence for lower-pair ex-am-ples, and di-
+ag-nos-tic
+ []
+
+[22] [23] [24] [25]
+Underfull \hbox (badness 6842) in paragraph at lines 1146--1148
+[]\T1/cmr/m/n/12 Complete source-paper resid-ual re-pro-duc-tion and in-de-pen-
+dent
+ []
+
+[26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
+[41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
+Underfull \hbox (badness 1748) in paragraph at lines 2485--2496
+\T1/cmr/m/n/12 Lemma 40[] then gives the dis-charged pre-perturbation residual-
+defect
+ []
+
+[52] [53]
+Underfull \hbox (badness 1264) in paragraph at lines 2589--2597
+\T1/cmr/m/n/12 is taken for the same tran-si-tion in-dex, same ac-cepted compac
+t-tube
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 2589--2597
+\T1/cmr/m/n/12 per-tur-ba-tion, end-point clo-sure term, and inexact-Newton ter
+m are
+ []
+
+
+Underfull \hbox (badness 4467) in paragraph at lines 2589--2597
+[]\T1/cmr/m/n/12 , dif-fer-ent row scal-ings, or dif-fer-ent
+ []
+
+[54] [55] [56]
+Underfull \hbox (badness 2469) in paragraph at lines 2699--2704
+\T1/cmr/m/n/12 implementation-defect cer-tifi-cate on the lifted Gauss branch i
+s
+ []
+
+[57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 3389--3408
+[]\T1/cmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 3389--3408
+\OML/cmm/m/it/12 h$\T1/cmr/m/n/12 -dependent stop-ping rule can be ap-plied be-
+fore end-point er-ror or
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 3389--3408
+\T1/cmr/m/n/12 the same $\OML/cmm/m/it/12 c[]$ \T1/cmr/m/n/12 bounds the max-i-
+mum se-lected branch resid-ual over all
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 3389--3408
+\T1/cmr/m/n/12 or post-hoc tra-jec-tory er-rors, and it does not as-sume ac-ces
+s to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3389--3408
+[]
+ []
+
+[70] [71] [72] [73]
+Underfull \hbox (badness 1540) in paragraph at lines 3564--3566
+[]\T1/cmr/m/it/12 a reporting-map norm-equivalence con-stant $\OML/cmm/m/it/12 
+C[]$ \T1/cmr/m/it/12 for the dis-played
+ []
+
+[74]
+Underfull \hbox (badness 1629) in paragraph at lines 3618--3643
+\T1/cmr/m/n/12 theorem-interface in-puts rather than stan-dalone dis-charged in
+-ter-faces.
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 3618--3643
+\T1/cmr/m/n/12 Formula-row checks and AD-expanded run-time bind-ing iden-tify t
+he
+ []
+
+
+Underfull \hbox (badness 5302) in paragraph at lines 3618--3643
+\T1/cmr/m/n/12 im-ple-mented direct-route resid-ual/Jacobian path; the AD-expan
+ded
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 3618--3643
+\T1/cmr/m/n/12 implementation-path cer-tifi-cate is closed for that ac-tive rou
+te and is
+ []
+
+[75] [76]
+Underfull \hbox (badness 1168) in paragraph at lines 3764--3773
+[]\T1/cmr/m/n/12 P5 direct-route sat-is-fac-tion rule: the dis-played ev-i-denc
+e is stage-
+ []
+
+
+Underfull \hbox (badness 2318) in paragraph at lines 3764--3773
+\T1/cmr/m/n/12 D5 direct-substitution cer-tifi-cate on the smooth Gauss lift, t
+he 36
+ []
+
+[77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [90] [91]
+[92] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105]
+[106] [107]
+Underfull \hbox (badness 2035) in paragraph at lines 5416--5423
+[]\T1/cmr/bx/n/12 Lemma 25 \T1/cmr/m/n/12 (Ve-loc-i-ty--col-lo-ca-tion ob-struc
+-tion for $\OML/cmm/m/it/12 P[]$\T1/cmr/m/n/12 )\T1/cmr/bx/n/12 . []\T1/cmr/m/i
+t/12 The velocity-
+ []
+
+
+Underfull \hbox (badness 1308) in paragraph at lines 5416--5423
+\T1/cmr/m/it/12 collocation rows alone are in-suf-fi-cient to prove the un-weig
+hted $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$
+
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 5416--5423
+\T1/cmr/m/it/12 and the smooth lifted Gauss stages, let $\OML/cmm/m/it/12 ^^NA$
+ \T1/cmr/m/it/12 de-note the cor-re-spond-ing
+ []
+
+[108] [109] [110] [111] [112]
+Underfull \hbox (badness 2359) in paragraph at lines 5669--5682
+\T1/cmr/m/it/12 in the trans-la-tional and ro-ta-tional Newton--Euler rows. The
+ di-rect
+ []
+
+[113] [114] [115] [116]
+Underfull \hbox (badness 1383) in paragraph at lines 5920--5925
+\T1/cmr/m/it/12 Equation [] com-bines the trans-la-tional, ro-ta-tional, and no
+rmal-to-
+ []
+
+[117] [118] [119] [120] [121]
+Underfull \hbox (badness 2126) in paragraph at lines 6213--6222
+\T1/cmr/m/it/12 Assume fur-ther that these two es-ti-mates are ob-tained with-o
+ut us-ing
+ []
+
+[122] [123] [124] [125] [126] [127] [128] [129] [130] [131] [132] [133]
+[134] [135] [136] [137] [138] [139] [140] [141] [142] [143] [144] [145]
+[146] [147] [148] [149] [150] [151]
+Underfull \hbox (badness 6173) in paragraph at lines 7915--7931
+[]\T1/cmr/m/n/12 Local-to-global trans-fer rule: the trans-fer con-sumes only t
+he
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7915--7931
+\T1/cmr/m/n/12 uni-form branch-selected lo-cal de-fect, the compact-tube sta-bi
+l-
+ []
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 7915--7931
+\T1/cmr/m/n/12 ity scale, and the tube-retention mar-gin be-fore the trans-fer 
+step.
+ []
+
+[152] [153] [154] [155]
+Underfull \hbox (badness 2302) in paragraph at lines 8129--8146
+[]\T1/cmr/m/n/12 Residual-to-error bound-ary: all seven P7 de-pen-dency obli-ga
+-tions
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 8129--8146
+\T1/cmr/m/n/12 only; no mechanism-coverage resid-ual row, closed-loop re-ac-tio
+n ta-ble,
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 8129--8146
+\T1/cmr/m/n/12 error/order ev-i-dence un-til dy-namic resid-ual iden-tity, $\OM
+L/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 h[]\OT1/cmr/m/n/12 )$ \T1/cmr/
+m/n/12 resid-ual
+ []
+
+[156] [157] [158] [159] [160]
+Underfull \hbox (badness 1603) in paragraph at lines 8411--8422
+\T1/cmr/m/n/12 route and the non-active prim-i-tive symbolic-oracle com-ple-tio
+n record
+ []
+
+[161] [162] [163]
+Underfull \hbox (badness 1189) in paragraph at lines 8576--8619
+[]\T1/cmr/bx/n/12 Definition 7 \T1/cmr/m/n/12 (Ac-cepted branch-s-e-lected one-
+step map)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 The ac-cepted
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 8576--8619
+\T1/cmr/m/it/12 it-er-ate on that branch has resid-ual sat-is-fy-ing the compac
+t-tube solver
+ []
+
+[164] [165] [166] [167]
+Underfull \hbox (badness 3219) in paragraph at lines 8684--8695
+[]\T1/cmr/m/n/12 Accepted-map def-i-ni-tion bound-ary: $\OT1/cmr/m/n/12 	[]$ \T
+1/cmr/m/n/12 is a branch-selected
+ []
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 8684--8695
+\T1/cmr/m/n/12 accepted-domain map tied to the Gauss pre-dic-tor, the lo-cal ac
+-
+ []
+
+
+Underfull \hbox (badness 3396) in paragraph at lines 8684--8695
+\T1/cmr/m/n/12 cepted stage root of the im-ple-mented 132-row resid-ual, the fi
+xed
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 8684--8695
+\T1/cmr/m/n/12 proof norm, and the endpoint-output map $\OMS/cmsy/m/n/12 P[] \O
+T1/cmr/m/n/12 = \OMS/cmsy/m/n/12 C[] ^^N E[]$\T1/cmr/m/n/12 . It is
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 8696--8711
+\T1/cmr/m/n/12 end-point map; $\OT1/cmr/m/n/12 	[] = \OMS/cmsy/m/n/12 E[]\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 Z[]\OT1/cmr/m/n/12 )$\T1/cmr/m/n/12 , the end-point
+ re-con-structed from the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8696--8711
+[] \T1/cmr/m/n/12 132-row resid-ual be-fore end-point
+ []
+
+[168] [169] [170] [171] [172] [173] [174] [175]
+Underfull \hbox (badness 1112) in paragraph at lines 9119--9156
+[]\T1/cmr/bx/n/12 Theorem 1 \T1/cmr/m/n/12 (Con-di-tional six-th-order er-ror t
+he-o-rem for the ac-cepted
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 9119--9156
+\T1/cmr/m/it/12 Gauss-predictor branch, re-duced chart, row-scaled im-ple-mente
+d resid-ual
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 9119--9156
+\T1/cmr/m/it/12 boot-strap, implementation-path bind-ing, and the branch-solver
+ en-ve-lope
+ []
+
+[176] [177] [178] [179] [180] [181]
+Underfull \hbox (badness 3449) in paragraph at lines 9395--9425
+\T1/cmr/m/n/12 norm-equivalence con-stant af-ter the ex-plicit resid-ual $\OML/
+cmm/m/it/12 h$\T1/cmr/m/n/12 -factors have
+ []
+
+[182] [183] [184]
+Underfull \hbox (badness 1028) in paragraph at lines 9537--9548
+\T1/cmr/m/n/12 No BLieDF hidden-constraint dif-fer-ence es-ti-mate, mul-ti-plie
+r re-cur-sion,
+ []
+
+[185] [186] [187] [188] [189] [190] [191] [192] [193] [194] [195] [196]
+[197] [198] [199] [200] [201]
+Underfull \hbox (badness 4072) in paragraph at lines 10480--10488
+[]\T1/cmr/m/n/12 The reported-grid con-clu-sion is not an in-ter-po-la-tion sta
+te-ment.
+ []
+
+[202] [203] [204] [205] [206] [207] [208] [209] [210] [211] [212] [213]
+Underfull \hbox (badness 1354) in paragraph at lines 11093--11107
+\T1/cmr/m/n/12 ta-bles, not ac-cepted fair base-line com-par-isons. Run-time va
+l-ues are
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 11093--11107
+\T1/cmr/m/n/12 single-machine recorded tim-ings, and the mech-a-nism rows re-po
+rt the
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 11093--11107
+\T1/cmr/m/n/12 demon-strate closed-loop mech-a-nism cov-er-age and con-sis-tenc
+y of the
+ []
+
+[214]
+<Figure_1_convergence.png, id=722, 543.4704pt x 434.5836pt>
+File: Figure_1_convergence.png Graphic file (type png)
+<use Figure_1_convergence.png>
+Package pdftex.def Info: Figure_1_convergence.png  used on input line 11115.
+(pdftex.def)             Requested size: 350.99762pt x 280.6723pt.
+ [215 <./Figure_1_convergence.png>] [216] [217] [218] [219]
+<Figure_2_asme_lower_pair_graph_bridge.png, id=740, 488.5452pt x 423.7431pt>
+File: Figure_2_asme_lower_pair_graph_bridge.png Graphic file (type png)
+<use Figure_2_asme_lower_pair_graph_bridge.png>
+Package pdftex.def Info: Figure_2_asme_lower_pair_graph_bridge.png  used on inp
+ut line 11347.
+(pdftex.def)             Requested size: 350.99762pt x 304.44174pt.
+<Figure_3_asme_closed_loop_kinematic_fullva.png, id=741, 794.97pt x 303.534pt>
+File: Figure_3_asme_closed_loop_kinematic_fullva.png Graphic file (type png)
+<use Figure_3_asme_closed_loop_kinematic_fullva.png>
+Package pdftex.def Info: Figure_3_asme_closed_loop_kinematic_fullva.png  used o
+n input line 11352.
+(pdftex.def)             Requested size: 350.99762pt x 134.01852pt.
+ [220] [221 <./Figure_2_asme_lower_pair_graph_bridge.png>] [222 <./Figure_3_asm
+e_closed_loop_kinematic_fullva.png>] [223] [224]
+<Figure_4_order_closure_blend.png, id=760, 1141.866pt x 303.534pt>
+File: Figure_4_order_closure_blend.png Graphic file (type png)
+<use Figure_4_order_closure_blend.png>
+Package pdftex.def Info: Figure_4_order_closure_blend.png  used on input line 1
+1568.
+(pdftex.def)             Requested size: 350.99762pt x 93.30257pt.
+<Figure_5_velocity_compression.png, id=761, 1192.455pt x 332.0405pt>
+File: Figure_5_velocity_compression.png Graphic file (type png)
+<use Figure_5_velocity_compression.png>
+Package pdftex.def Info: Figure_5_velocity_compression.png  used on input line 
+11574.
+(pdftex.def)             Requested size: 350.99762pt x 97.73323pt.
+<Figure_6_sparse_speed_gap.png, id=762, 780.516pt x 289.08pt>
+File: Figure_6_sparse_speed_gap.png Graphic file (type png)
+<use Figure_6_sparse_speed_gap.png>
+Package pdftex.def Info: Figure_6_sparse_speed_gap.png  used on input line 1159
+1.
+(pdftex.def)             Requested size: 350.99762pt x 130.00098pt.
+<Figure_7_strict_common_reference_work_precision.png, id=763, 498.38504pt x 213
+.1965pt>
+File: Figure_7_strict_common_reference_work_precision.png Graphic file (type pn
+g)
+<use Figure_7_strict_common_reference_work_precision.png>
+Package pdftex.def Info: Figure_7_strict_common_reference_work_precision.png  u
+sed on input line 11601.
+(pdftex.def)             Requested size: 350.99762pt x 150.14738pt.
+<Figure_8_claim_boundary_limitations.png, id=764, 554.3109pt x 434.5836pt>
+File: Figure_8_claim_boundary_limitations.png Graphic file (type png)
+<use Figure_8_claim_boundary_limitations.png>
+Package pdftex.def Info: Figure_8_claim_boundary_limitations.png  used on input
+ line 11611.
+(pdftex.def)             Requested size: 350.99762pt x 275.19493pt.
+<Figure_9_coarse_baseline_work_precision.png, id=765, 611.6451pt x 467.1051pt>
+File: Figure_9_coarse_baseline_work_precision.png Graphic file (type png)
+<use Figure_9_coarse_baseline_work_precision.png>
+Package pdftex.def Info: Figure_9_coarse_baseline_work_precision.png  used on i
+nput line 11622.
+(pdftex.def)             Requested size: 350.99762pt x 268.05591pt.
+<Figure_10_closed_loop_true_dynamic_order.png, id=766, 571.8966pt x 434.5836pt>
+
+File: Figure_10_closed_loop_true_dynamic_order.png Graphic file (type png)
+<use Figure_10_closed_loop_true_dynamic_order.png>
+Package pdftex.def Info: Figure_10_closed_loop_true_dynamic_order.png  used on 
+input line 11639.
+(pdftex.def)             Requested size: 350.99762pt x 266.72688pt.
+<Figure_12_all_method_result_matrix.png, id=767, 608.0316pt x 492.3996pt>
+File: Figure_12_all_method_result_matrix.png Graphic file (type png)
+<use Figure_12_all_method_result_matrix.png>
+Package pdftex.def Info: Figure_12_all_method_result_matrix.png  used on input 
+line 11649.
+(pdftex.def)             Requested size: 350.99762pt x 284.25458pt.
+<Figure_13_work_precision_compendium.png, id=768, 788.2248pt x 467.1051pt>
+File: Figure_13_work_precision_compendium.png Graphic file (type png)
+<use Figure_13_work_precision_compendium.png>
+Package pdftex.def Info: Figure_13_work_precision_compendium.png  used on input
+ line 11664.
+(pdftex.def)             Requested size: 350.99762pt x 208.00009pt.
+ [225 <./Figure_4_order_closure_blend.png>]
+[226 <./Figure_5_velocity_compression.png> <./Figure_6_sparse_speed_gap.png>]
+[227 <./Figure_7_strict_common_reference_work_precision.png>] [228 <./Figure_8_
+claim_boundary_limitations.png>] [229 <./Figure_9_coarse_baseline_work_precisio
+n.png>] [230 <./Figure_10_closed_loop_true_dynamic_order.png>] [231 <./Figure_1
+2_all_method_result_matrix.png>] [232 <./Figure_13_work_precision_compendium.pn
+g>] [233]
+Underfull \hbox (badness 3849) in paragraph at lines 11763--11775
+\T1/cmr/m/n/12 Gauss6/FullVA dy-namic or-der/work rows un-der the pub-lished
+ []
+
+[234]
+Underfull \hbox (badness 2384) in paragraph at lines 11782--11802
+[]\T1/cmr/m/n/12 This pa-per has pre-sented a mono-lithic Lie-group Gauss6/Full
+VA
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 11782--11802
+\T1/cmr/m/n/12 single- and double-pendulum rows pro-vide method-side dynamic-or
+der
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 11803--11829
+\T1/cmr/m/n/12 per-tur-ba-tion, end-point, and re-tained solver-scale lem-mas t
+hen sup-ply
+ []
+
+[235] [236] [237] [238] [239] [240] [241] [242]
+Underfull \hbox (badness 1082) in paragraph at lines 12256--12263
+\T1/cmr/m/n/12 bounded common-reference di-ag-nos-tics rather than source-polic
+y-closed
+ []
+
+[243] [244] [245] [246] [247] [248] [249] [250] [251]
+Underfull \hbox (badness 5403) in paragraph at lines 12839--12864
+[]\T1/cmr/m/n/12 The El-se-vier source pack-age con-tains the ed-itable $\T1/cm
+tt/m/n/12 elsarticle$
+ []
+
+[252] [253] [254] [255] [256]
+Underfull \hbox (badness 1681) in paragraph at lines 12888--12892
+\T1/cmr/m/n/12 Euler--Lagrange equa-tions with con-straints, Jour-nal of Com-pu
+-ta-
+ []
+
+
+Underfull \hbox (badness 7963) in paragraph at lines 12904--12909
+[]\T1/cmr/m/n/12 O. Bruls, A. Car-dona, M. Arnold, Lie group generalized-
+ []
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 12904--12909
+\T1/cmr/m/n/12 alpha time in-te-gra-tion of con-strained flex-i-ble multi-body 
+sys-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12904--12909
+\T1/cmr/m/n/12 tems, Mech-a-nism and Ma-chine The-ory 48 (2012) 121--137.
+ []
+
+[257]
+Underfull \hbox (badness 10000) in paragraph at lines 12989--12995
+\T1/cmr/m/n/12 2673--2691. doi:10.1002/(SICI)1097-0207(19960815)39:15<2673::AID
+-
+ []
+
+[258]
+Underfull \hbox (badness 2150) in paragraph at lines 12997--13002
+[]\T1/cmr/m/n/12 M. An-itescu, F.A. Po-tra, For-mu-lat-ing dy-namic multi-rigid
+-body
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 12997--13002
+\T1/cmr/m/n/12 con-tact prob-lems with fric-tion as solv-able lin-ear com-ple-m
+en-
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 12997--13002
+\T1/cmr/m/n/12 tar-ity prob-lems, Non-lin-ear Dy-nam-ics 14 (3) (1997) 231--247
+.
+ []
+
+[259] (./main_cmame_submission.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 5472 strings out of 467533
+ 87816 string characters out of 5423668
+ 527756 words of memory out of 5000000
+ 34311 multiletter control sequences out of 15000+600000
+ 650977 words of font info for 101 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,17n,79p,1097b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/
+2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/
+2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/
+texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/20
+25/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/
+fonts/type1/public/cm-super/sfbi1200.pfb><c:/texlive/2025/texmf-dist/fonts/type
+1/public/cm-super/sfbx1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/c
+m-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sf
+it1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb
+><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texli
+ve/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2025/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2025/texmf-dist/f
+onts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1
+/public/cm-super/sfrm1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm
+-super/sfti0700.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sft
+i0800.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+<c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texliv
+e/2025/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb><c:/texlive/2025/tex
+mf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2025/texmf-dist/fo
+nts/type1/public/cm-super/sftt1200.pfb>
+Output written on main_cmame_submission.pdf (259 pages, 4155589 bytes).
+PDF statistics:
+ 1055 PDF objects out of 1200 (max. 8388607)
+ 687 compressed objects within 7 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+

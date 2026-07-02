@@ -1,0 +1,1919 @@
+{
+  "action_boundary": {
+    "exact_b4_opt_in_required_for_execution": true,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "opt_in_action_ids": [
+      "authorized_b4_ra_hi_source_policy_execution"
+    ],
+    "opt_in_required_action_count": 1,
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "safe_action_ids": [
+      "rebuild_read_only_audit_chain",
+      "rerun_read_only_validators",
+      "keep_narrowed_archive_provenance_only",
+      "monitor_reopen_conditions"
+    ],
+    "safe_without_b4_opt_in_count": 4,
+    "source_policy_execution_allowed_now": false
+  },
+  "archive_blocker_opt_in_required_actions_by_id": {
+    "OC12": [
+      {
+        "allowed_without_b4_opt_in": false,
+        "command_count": 13,
+        "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+        "driver_does_not_authorize_execution": true,
+        "driver_requires_exact_approval": true,
+        "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "id": "authorized_b4_ra_hi_source_policy_execution",
+        "mapped_external_rows": 20,
+        "post_execution_promotion_required": true,
+        "requires_exact_user_approval_statement": true
+      }
+    ],
+    "OC4": [
+      {
+        "allowed_without_b4_opt_in": false,
+        "command_count": 13,
+        "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+        "driver_does_not_authorize_execution": true,
+        "driver_requires_exact_approval": true,
+        "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "id": "authorized_b4_ra_hi_source_policy_execution",
+        "mapped_external_rows": 20,
+        "post_execution_promotion_required": true,
+        "requires_exact_user_approval_statement": true
+      }
+    ],
+    "OC6": []
+  },
+  "archive_blocker_required_to_close_by_id": {
+    "OC12": {
+      "action_boundary": {
+        "exact_b4_opt_in_required_for_execution": true,
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "opt_in_action_ids": [
+          "authorized_b4_ra_hi_source_policy_execution"
+        ],
+        "opt_in_required_action_count": 1,
+        "opt_in_required_command_count": 13,
+        "opt_in_required_mapped_external_rows": 20,
+        "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "safe_action_ids": [
+          "rebuild_read_only_audit_chain",
+          "rerun_read_only_validators",
+          "keep_narrowed_archive_provenance_only",
+          "monitor_reopen_conditions"
+        ],
+        "safe_without_b4_opt_in_count": 4,
+        "source_policy_execution_allowed_now": false
+      },
+      "closure_condition": "promote the narrowed replay package to a full source-policy runner archive only after OC4 source-policy rows and OC6 TFE runner boundary are closed",
+      "current_archive_usable_as_full_source_policy_runner_archive": false,
+      "full_source_policy_runner_package_ready": false,
+      "narrowed_repro_code_archive_ready": true,
+      "narrowed_repro_code_archive_submission_ready": false,
+      "remaining_source_policy_rows_to_close": 40,
+      "safe_current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+      "source_policy_closed_ratio": "0/40",
+      "upstream_blockers": [
+        "OC4",
+        "OC6"
+      ]
+    },
+    "OC4": {
+      "authorized_ra_hi_closeout_route": {
+        "execution_allowed_now": false,
+        "execution_invoked": false,
+        "expected_output_schema_command_traceability": {
+          "commands_executed_by_audit": false,
+          "commands_with_existing_expected_output": 13,
+          "commands_with_existing_expected_summary": 8,
+          "commands_with_expected_output_path": 13,
+          "commands_with_expected_summary_path": 8,
+          "commands_with_shell_command": 13,
+          "commands_without_expected_summary_path": 5,
+          "source_policy_execution_invoked": false
+        },
+        "expected_output_schema_command_traceability_tuple": "13/13/8/5/13/8/False/False",
+        "guarded_driver_refusal_boundary_20260621": {
+          "driver_invoked_by_audit": false,
+          "marker": "b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False",
+          "no_opt_in_refusal_proved_static": true,
+          "post_guard_source_policy_command_count": 13,
+          "pre_guard_command_count": 0,
+          "refusal_branch_source_policy_command_count": 0,
+          "refusal_exit_code": 2,
+          "source_policy_execution_invoked": false,
+          "status": "guarded_driver_refusal_boundary_static_proved_not_executed",
+          "submission_ready": false,
+          "wrong_approval_refusal_proved_static": true
+        },
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "opt_in_required_command_count": 13,
+        "opt_in_required_mapped_external_rows": 20,
+        "ready_command_count": 13,
+        "ready_command_mapped_rows": 20,
+        "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "requires_exact_b4_opt_in": true
+      },
+      "closure_condition": "close all 40 source-policy rows or introduce a new promotion artifact accepted by the source-policy ledger",
+      "current_handoff_status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+      "current_source_policy_closed_ratio": "0/40",
+      "promotion_ready_rows": 0,
+      "safe_current_disposition": "keep source-policy rows unpromoted until authorized execution or a new source-policy promotion artifact exists",
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_total": 40
+    },
+    "OC6": {
+      "callable_contract_count": 3,
+      "candidate_backed_contract_count": 3,
+      "candidate_backed_non_equivalent_runner_blocks": [
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing"
+      ],
+      "closure_condition": "provide a source-equivalent TFE/pendulum DAE runner certificate or reopen only on a new public/source-code-equivalent TFE artifact",
+      "contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+      "effective_execution_block_count": 4,
+      "effective_execution_blocks": [
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+        "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+      ],
+      "entrypoint_count": 3,
+      "external_source_artifact_recheck_20260621": {
+        "date": "2026-06-21",
+        "global_absence_proved": false,
+        "positive_public_code_artifact_rows": 0,
+        "query_count": 10,
+        "source_code_equivalent_artifact_rows": 0,
+        "source_policy_reopen_triggered": false,
+        "source_policy_rows_closed_by_recheck": 0,
+        "submission_ready": false
+      },
+      "latest_external_probe": {
+        "access_limited_count": 4,
+        "date": "2026-06-21",
+        "global_absence_proved": false,
+        "positive_public_code_artifact_rows": 0,
+        "probe_count": 9,
+        "reopen_triggered": false,
+        "source_policy_rows_closed": 0
+      },
+      "nonheavy_terminal_blocks": [
+        "brown_mcphee_source_code_equivalent_law_open",
+        "full_T10_source_grid_endpoint_policy_open"
+      ],
+      "publisher_artifact_availability_20260621": {
+        "date": "2026-06-21",
+        "global_absence_proved": false,
+        "official_article_checked": true,
+        "positive_public_code_artifact_rows": 0,
+        "source_artifact_signal_count": 0,
+        "source_code_equivalent_artifact_rows": 0,
+        "source_policy_reopen_triggered": false,
+        "source_policy_rows_closed_by_publisher_audit": 0,
+        "submission_ready": false
+      },
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "safe_current_disposition": "retain terminal unable-to-reproduce disposition; do not promote candidate runners as source-policy equivalent",
+      "source_equivalent_artifact_request_packet_20260621": {
+        "corresponding_author_email": "ekanshchat96@vt.edu",
+        "date_prepared": "2026-06-21",
+        "global_absence_proved": false,
+        "request_ready": true,
+        "request_sent": false,
+        "requested_artifact_count": 7,
+        "source_policy_reopen_triggered": false,
+        "source_policy_rows_closed_by_packet": 0,
+        "status": "request_packet_ready_not_sent_no_source_policy_closure",
+        "submission_ready": false
+      },
+      "source_policy_rows_completed": 0,
+      "tfe_runner_closed": false
+    }
+  },
+  "archive_blocker_safe_next_actions_by_id": {
+    "OC12": [
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rebuild_read_only_audit_chain",
+        "representative_scripts": [
+          "build_full_source_policy_row_provenance_audit.py",
+          "build_full_source_policy_runner_archive_gap_audit.py",
+          "build_objective_completion_audit.py",
+          "cmame_submission_review_agent.py",
+          "build_cmame_reproducibility_package_manifest.py",
+          "sync_submission_artifact_manifest_boundary.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rerun_read_only_validators",
+        "representative_scripts": [
+          "validate_full_source_policy_runner_archive_gap_audit.py",
+          "validate_objective_completion_audit.py",
+          "validate_submission_artifact_manifest_boundary_sync.py",
+          "validate_paper_package.py",
+          "../validate_pipeline_outputs.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "keep_narrowed_archive_provenance_only"
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "monitor_reopen_conditions",
+        "reopen_conditions": {
+          "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+          "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+        }
+      }
+    ],
+    "OC4": [
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rebuild_read_only_audit_chain",
+        "representative_scripts": [
+          "build_full_source_policy_row_provenance_audit.py",
+          "build_full_source_policy_runner_archive_gap_audit.py",
+          "build_objective_completion_audit.py",
+          "cmame_submission_review_agent.py",
+          "build_cmame_reproducibility_package_manifest.py",
+          "sync_submission_artifact_manifest_boundary.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rerun_read_only_validators",
+        "representative_scripts": [
+          "validate_full_source_policy_runner_archive_gap_audit.py",
+          "validate_objective_completion_audit.py",
+          "validate_submission_artifact_manifest_boundary_sync.py",
+          "validate_paper_package.py",
+          "../validate_pipeline_outputs.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "keep_narrowed_archive_provenance_only"
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "monitor_reopen_conditions",
+        "reopen_conditions": {
+          "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+          "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+        }
+      }
+    ],
+    "OC6": [
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rebuild_read_only_audit_chain",
+        "representative_scripts": [
+          "build_full_source_policy_row_provenance_audit.py",
+          "build_full_source_policy_runner_archive_gap_audit.py",
+          "build_objective_completion_audit.py",
+          "cmame_submission_review_agent.py",
+          "build_cmame_reproducibility_package_manifest.py",
+          "sync_submission_artifact_manifest_boundary.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rerun_read_only_validators",
+        "representative_scripts": [
+          "validate_full_source_policy_runner_archive_gap_audit.py",
+          "validate_objective_completion_audit.py",
+          "validate_submission_artifact_manifest_boundary_sync.py",
+          "validate_paper_package.py",
+          "../validate_pipeline_outputs.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "keep_narrowed_archive_provenance_only"
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "monitor_reopen_conditions",
+        "reopen_conditions": {
+          "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+          "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+        }
+      }
+    ]
+  },
+  "archive_closure_matrix": [
+    {
+      "archive_effect": "blocks_full_archive_primary_use",
+      "closure_allowed_now": false,
+      "command_traceability_summary": {
+        "commands_without_traced_rows": [],
+        "declared_mapped_row_reference_total": 32,
+        "declared_vs_traced_mismatch_count": 0,
+        "hi2022_unique_mapped_rows": 8,
+        "promotion_ready_rows": 0,
+        "ra2021_unique_mapped_rows": 12,
+        "ra_hi_unique_row_count": 20,
+        "ra_hi_unique_rows_all_mapped": true,
+        "ready_command_count": 13,
+        "rows_without_command_refs": 20,
+        "rows_without_command_refs_attempted_not_reproducible": 20,
+        "source_policy_closed_rows": 0,
+        "source_policy_disposition": "command_traceability_ready_not_authorized_not_promoted",
+        "terminal_rows_with_command_refs": 0,
+        "traced_command_row_reference_total": 32,
+        "unable_to_reproduce_rows": 0,
+        "unique_mapped_row_count": 20
+      },
+      "current_status": "open",
+      "exact_approval_required": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+      "execution_authorized": false,
+      "id": "OC4_source_policy_reproduction_rows",
+      "objective_blocker": "OC4",
+      "ready_command_count": 13,
+      "ready_command_mapped_external_rows": 20,
+      "required_evidence_to_close": [
+        "authorized RA/HI source-policy closeout under the exact B4 opt-in or a new source-policy promotion artifact",
+        "post-execution promotion validator records source-policy rows as closed",
+        "work/precision rows bind error, order, runtime, Newton, and source-policy labels to the same promoted rows"
+      ],
+      "requirement": "Close apples-to-apples external source-policy reproduction rows before any full source-policy runner archive claim.",
+      "rows_requiring_authorized_closeout_or_new_artifact": 20,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_total": 40,
+      "terminal_unable_to_reproduce_rows": 20
+    },
+    {
+      "archive_effect": "blocks_tfe_rows_from_full_archive_promotion",
+      "can_promote_any_tfe_source_policy_row_now": false,
+      "closure_allowed_now": false,
+      "current_status": "partial_terminal_not_promoted",
+      "effective_execution_contract_block_count": 4,
+      "id": "OC6_tfe_source_policy_runner",
+      "objective_blocker": "OC6",
+      "ready_to_execute_source_policy_now": false,
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "required_evidence_to_close": [
+        "new public or source-code-equivalent TFE implementation artifact",
+        "monolithic absolute-coordinate source-policy DAE runner contract",
+        "TFE m=1/m=2/m=3, Newmark-beta, and trapezoidal source-policy method-runner contracts",
+        "Gauss6/FullVA absolute-coordinate source-pendulum DAE runner contract"
+      ],
+      "requirement": "Keep original TFE pendulum source-policy rows terminal/unpromoted unless a public or source-code-equivalent runner artifact appears.",
+      "runner_contract_preflight_all_non_equivalent": true,
+      "runner_contract_preflight_candidate_backed": "3/3",
+      "runner_contract_preflight_entrypoints": "3/3",
+      "runner_contract_preflight_execution_block_matrix_summary": {
+        "blocks_without_candidate_entrypoint": 1,
+        "can_resolve_without_heavy_run_blocks": 0,
+        "candidate_backed_entrypoint_blocks": 3,
+        "closure_status": "all_source_policy_execution_blocks_open",
+        "execution_block_count": 4,
+        "requires_new_artifact_or_execution_blocks": 4,
+        "source_policy_equivalent_blocks": 0,
+        "source_policy_rows_completed": 0
+      },
+      "runner_contract_preflight_execution_blocks": 4,
+      "runner_contract_preflight_safe_use": "runner_contract_preflight_only_not_source_policy_reproduction",
+      "runner_contract_preflight_source_policy_rows_completed": 0,
+      "runner_contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+      "source_equivalent_request_packet_status": "request_packet_ready_not_sent_no_source_policy_closure",
+      "source_equivalent_request_ready": true,
+      "source_equivalent_request_sent": false,
+      "source_equivalent_requested_artifact_count": 7,
+      "source_policy_rows_completed": 0,
+      "terminal_nonpromoted_contract_block_count": 2
+    },
+    {
+      "archive_effect": "current_archive_is_narrowed_claim_provenance_only",
+      "closure_allowed_now": false,
+      "current_archive_usable_as_full_source_policy_runner_archive": false,
+      "current_status": "partial_narrowed_replay_ready_full_archive_open",
+      "full_source_policy_runner_package_ready": false,
+      "id": "OC12_full_source_policy_runner_archive",
+      "local_runner_centered_candidate_ready": true,
+      "narrowed_reproducibility_package_ready": true,
+      "objective_blocker": "OC12",
+      "primary_submission_package_allowed": false,
+      "required_evidence_to_close": [
+        "OC4 source-policy rows closed",
+        "OC6 TFE source-policy runner boundary closed or remains terminal with an accepted target-scope change",
+        "full source-policy runner archive manifest marked ready",
+        "primary submission package allowed by reproducibility manifest"
+      ],
+      "requirement": "Promote the narrowed/replay package into a full source-policy runner archive only after OC4 and OC6 are closed.",
+      "safe_current_package_use": "narrowed_claim_replay_and_audit_provenance_only",
+      "upstream_blockers": [
+        "OC4",
+        "OC6"
+      ]
+    }
+  ],
+  "attempted_not_reproducible_rows": 20,
+  "b4_command_preflight_freeze": {
+    "command_freeze_sha256": "3d2cc59263f854daf0fa269f39cbf909248b3831397e82fad5423cde21185710",
+    "commands_executed_by_freeze": false,
+    "date_checked": "2026-06-20",
+    "declared_row_reference_total": 32,
+    "declared_vs_traced_mismatch_count": 0,
+    "expected_artifact_count": 21,
+    "expected_artifacts_existing_now": 21,
+    "ready_command_count": 13,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_total": 40,
+    "status": "command_preflight_frozen_not_authorized_not_run_not_promoted",
+    "traced_row_reference_total": 32,
+    "unique_mapped_ra_hi_rows": 20
+  },
+  "b4_expected_output_promotion_readiness_blocker_audit": {
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "command_count": 13,
+    "command_row_reference_total": 32,
+    "commands_with_schema_ready_but_promotion_blocked": 13,
+    "date_checked": "2026-06-20",
+    "promotion_readiness_digest": "5b1bc14cdb569981fd6c3c9b2c2316e0b75ae1868527c14f5b2c6634156dccf2",
+    "promotion_ready_command_count": 0,
+    "promotion_ready_rows": 0,
+    "schema_ready_command_count": 13,
+    "source_policy_rows_closed": 0,
+    "status": "expected_outputs_schema_ready_but_promotion_blocked",
+    "summary_source_policy_rows_closed_total": 0,
+    "summary_source_policy_rows_promoted_total": 0,
+    "unique_mapped_ra_hi_row_count": 20,
+    "unique_mapped_ra_hi_rows_not_promoted": 20
+  },
+  "b4_expected_output_schema_audit": {
+    "artifacts_existing_now": 21,
+    "artifacts_sha256_match_freeze": 21,
+    "command_count": 13,
+    "command_traceability": {
+      "commands_executed_by_audit": false,
+      "commands_with_existing_expected_output": 13,
+      "commands_with_existing_expected_summary": 8,
+      "commands_with_expected_output_path": 13,
+      "commands_with_expected_summary_path": 8,
+      "commands_with_shell_command": 13,
+      "commands_without_expected_summary_path": 5,
+      "source_policy_execution_invoked": false
+    },
+    "commands_executed_by_audit": false,
+    "csv_parseable_artifacts": 13,
+    "date_checked": "2026-06-20",
+    "expected_artifact_count": 21,
+    "expected_output_schema_audit_sha256": "8cd7b033f2ddd2ec85b5ff6394326dc73ac8f8ab33dd55ad82cbbf6df178b0fc",
+    "json_summary_parseable_artifacts": 8,
+    "promotion_ready_rows": 0,
+    "schema_ready_commands": 13,
+    "source_policy_rows_closed": 0,
+    "status": "expected_outputs_schema_ready_not_authorized_not_run_not_promoted"
+  },
+  "b4_expected_output_schema_command_traceability": {
+    "commands_executed_by_audit": false,
+    "commands_with_existing_expected_output": 13,
+    "commands_with_existing_expected_summary": 8,
+    "commands_with_expected_output_path": 13,
+    "commands_with_expected_summary_path": 8,
+    "commands_with_shell_command": 13,
+    "commands_without_expected_summary_path": 5,
+    "source_policy_execution_invoked": false
+  },
+  "b4_guarded_driver_refusal_boundary_audit_20260621": "True/True/2/0/13/False/False",
+  "b4_guarded_driver_refusal_boundary_audit_20260621_summary": {
+    "date_checked": "2026-06-21",
+    "driver_commands_match_packet": true,
+    "driver_invoked_by_audit": false,
+    "hi_execute_command_count": 8,
+    "marker": "b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False",
+    "no_opt_in_refusal_proved_static": true,
+    "post_guard_source_policy_command_count": 13,
+    "pre_guard_command_count": 0,
+    "ra_allow_source_policy_1e_4_command_count": 5,
+    "refusal_branch_source_policy_command_count": 0,
+    "refusal_exit_code": 2,
+    "source_policy_execution_invoked": false,
+    "source_policy_rows_closed_by_audit": 0,
+    "status": "guarded_driver_refusal_boundary_static_proved_not_executed",
+    "submission_ready": false,
+    "wrong_approval_refusal_proved_static": true
+  },
+  "blocker_closure_allowed_by_id": {
+    "OC12": false,
+    "OC4": false,
+    "OC6": false
+  },
+  "blocker_closure_decision_by_id": {
+    "OC12": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+    "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
+    "OC6": "remain_open_no_positive_source_equivalent_artifact"
+  },
+  "blocker_open_by_id": {
+    "OC12": true,
+    "OC4": true,
+    "OC6": true
+  },
+  "blocker_opt_in_required_actions_by_id": {
+    "OC12": [
+      {
+        "allowed_without_b4_opt_in": false,
+        "command_count": 13,
+        "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+        "driver_does_not_authorize_execution": true,
+        "driver_requires_exact_approval": true,
+        "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "id": "authorized_b4_ra_hi_source_policy_execution",
+        "mapped_external_rows": 20,
+        "post_execution_promotion_required": true,
+        "requires_exact_user_approval_statement": true
+      }
+    ],
+    "OC4": [
+      {
+        "allowed_without_b4_opt_in": false,
+        "command_count": 13,
+        "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+        "driver_does_not_authorize_execution": true,
+        "driver_requires_exact_approval": true,
+        "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "id": "authorized_b4_ra_hi_source_policy_execution",
+        "mapped_external_rows": 20,
+        "post_execution_promotion_required": true,
+        "requires_exact_user_approval_statement": true
+      }
+    ],
+    "OC6": []
+  },
+  "blocker_required_to_close_by_id": {
+    "OC12": {
+      "action_boundary": {
+        "exact_b4_opt_in_required_for_execution": true,
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "opt_in_action_ids": [
+          "authorized_b4_ra_hi_source_policy_execution"
+        ],
+        "opt_in_required_action_count": 1,
+        "opt_in_required_command_count": 13,
+        "opt_in_required_mapped_external_rows": 20,
+        "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "safe_action_ids": [
+          "rebuild_read_only_audit_chain",
+          "rerun_read_only_validators",
+          "keep_narrowed_archive_provenance_only",
+          "monitor_reopen_conditions"
+        ],
+        "safe_without_b4_opt_in_count": 4,
+        "source_policy_execution_allowed_now": false
+      },
+      "closure_condition": "promote the narrowed replay package to a full source-policy runner archive only after OC4 source-policy rows and OC6 TFE runner boundary are closed",
+      "current_archive_usable_as_full_source_policy_runner_archive": false,
+      "full_source_policy_runner_package_ready": false,
+      "narrowed_repro_code_archive_ready": true,
+      "narrowed_repro_code_archive_submission_ready": false,
+      "remaining_source_policy_rows_to_close": 40,
+      "safe_current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+      "source_policy_closed_ratio": "0/40",
+      "upstream_blockers": [
+        "OC4",
+        "OC6"
+      ]
+    },
+    "OC4": {
+      "authorized_ra_hi_closeout_route": {
+        "execution_allowed_now": false,
+        "execution_invoked": false,
+        "expected_output_schema_command_traceability": {
+          "commands_executed_by_audit": false,
+          "commands_with_existing_expected_output": 13,
+          "commands_with_existing_expected_summary": 8,
+          "commands_with_expected_output_path": 13,
+          "commands_with_expected_summary_path": 8,
+          "commands_with_shell_command": 13,
+          "commands_without_expected_summary_path": 5,
+          "source_policy_execution_invoked": false
+        },
+        "expected_output_schema_command_traceability_tuple": "13/13/8/5/13/8/False/False",
+        "guarded_driver_refusal_boundary_20260621": {
+          "driver_invoked_by_audit": false,
+          "marker": "b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False",
+          "no_opt_in_refusal_proved_static": true,
+          "post_guard_source_policy_command_count": 13,
+          "pre_guard_command_count": 0,
+          "refusal_branch_source_policy_command_count": 0,
+          "refusal_exit_code": 2,
+          "source_policy_execution_invoked": false,
+          "status": "guarded_driver_refusal_boundary_static_proved_not_executed",
+          "submission_ready": false,
+          "wrong_approval_refusal_proved_static": true
+        },
+        "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+        "opt_in_required_command_count": 13,
+        "opt_in_required_mapped_external_rows": 20,
+        "ready_command_count": 13,
+        "ready_command_mapped_rows": 20,
+        "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+        "requires_exact_b4_opt_in": true
+      },
+      "closure_condition": "close all 40 source-policy rows or introduce a new promotion artifact accepted by the source-policy ledger",
+      "current_handoff_status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+      "current_source_policy_closed_ratio": "0/40",
+      "promotion_ready_rows": 0,
+      "safe_current_disposition": "keep source-policy rows unpromoted until authorized execution or a new source-policy promotion artifact exists",
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_total": 40
+    },
+    "OC6": {
+      "callable_contract_count": 3,
+      "candidate_backed_contract_count": 3,
+      "candidate_backed_non_equivalent_runner_blocks": [
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing"
+      ],
+      "closure_condition": "provide a source-equivalent TFE/pendulum DAE runner certificate or reopen only on a new public/source-code-equivalent TFE artifact",
+      "contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+      "effective_execution_block_count": 4,
+      "effective_execution_blocks": [
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+        "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+      ],
+      "entrypoint_count": 3,
+      "external_source_artifact_recheck_20260621": {
+        "date": "2026-06-21",
+        "global_absence_proved": false,
+        "positive_public_code_artifact_rows": 0,
+        "query_count": 10,
+        "source_code_equivalent_artifact_rows": 0,
+        "source_policy_reopen_triggered": false,
+        "source_policy_rows_closed_by_recheck": 0,
+        "submission_ready": false
+      },
+      "latest_external_probe": {
+        "access_limited_count": 4,
+        "date": "2026-06-21",
+        "global_absence_proved": false,
+        "positive_public_code_artifact_rows": 0,
+        "probe_count": 9,
+        "reopen_triggered": false,
+        "source_policy_rows_closed": 0
+      },
+      "nonheavy_terminal_blocks": [
+        "brown_mcphee_source_code_equivalent_law_open",
+        "full_T10_source_grid_endpoint_policy_open"
+      ],
+      "publisher_artifact_availability_20260621": {
+        "date": "2026-06-21",
+        "global_absence_proved": false,
+        "official_article_checked": true,
+        "positive_public_code_artifact_rows": 0,
+        "source_artifact_signal_count": 0,
+        "source_code_equivalent_artifact_rows": 0,
+        "source_policy_reopen_triggered": false,
+        "source_policy_rows_closed_by_publisher_audit": 0,
+        "submission_ready": false
+      },
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "safe_current_disposition": "retain terminal unable-to-reproduce disposition; do not promote candidate runners as source-policy equivalent",
+      "source_equivalent_artifact_request_packet_20260621": {
+        "corresponding_author_email": "ekanshchat96@vt.edu",
+        "date_prepared": "2026-06-21",
+        "global_absence_proved": false,
+        "request_ready": true,
+        "request_sent": false,
+        "requested_artifact_count": 7,
+        "source_policy_reopen_triggered": false,
+        "source_policy_rows_closed_by_packet": 0,
+        "status": "request_packet_ready_not_sent_no_source_policy_closure",
+        "submission_ready": false
+      },
+      "source_policy_rows_completed": 0,
+      "tfe_runner_closed": false
+    }
+  },
+  "blocker_safe_next_actions_by_id": {
+    "OC12": [
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rebuild_read_only_audit_chain",
+        "representative_scripts": [
+          "build_full_source_policy_row_provenance_audit.py",
+          "build_full_source_policy_runner_archive_gap_audit.py",
+          "build_objective_completion_audit.py",
+          "cmame_submission_review_agent.py",
+          "build_cmame_reproducibility_package_manifest.py",
+          "sync_submission_artifact_manifest_boundary.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rerun_read_only_validators",
+        "representative_scripts": [
+          "validate_full_source_policy_runner_archive_gap_audit.py",
+          "validate_objective_completion_audit.py",
+          "validate_submission_artifact_manifest_boundary_sync.py",
+          "validate_paper_package.py",
+          "../validate_pipeline_outputs.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "keep_narrowed_archive_provenance_only"
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "monitor_reopen_conditions",
+        "reopen_conditions": {
+          "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+          "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+        }
+      }
+    ],
+    "OC4": [
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rebuild_read_only_audit_chain",
+        "representative_scripts": [
+          "build_full_source_policy_row_provenance_audit.py",
+          "build_full_source_policy_runner_archive_gap_audit.py",
+          "build_objective_completion_audit.py",
+          "cmame_submission_review_agent.py",
+          "build_cmame_reproducibility_package_manifest.py",
+          "sync_submission_artifact_manifest_boundary.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rerun_read_only_validators",
+        "representative_scripts": [
+          "validate_full_source_policy_runner_archive_gap_audit.py",
+          "validate_objective_completion_audit.py",
+          "validate_submission_artifact_manifest_boundary_sync.py",
+          "validate_paper_package.py",
+          "../validate_pipeline_outputs.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "keep_narrowed_archive_provenance_only"
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "monitor_reopen_conditions",
+        "reopen_conditions": {
+          "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+          "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+        }
+      }
+    ],
+    "OC6": [
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rebuild_read_only_audit_chain",
+        "representative_scripts": [
+          "build_full_source_policy_row_provenance_audit.py",
+          "build_full_source_policy_runner_archive_gap_audit.py",
+          "build_objective_completion_audit.py",
+          "cmame_submission_review_agent.py",
+          "build_cmame_reproducibility_package_manifest.py",
+          "sync_submission_artifact_manifest_boundary.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "rerun_read_only_validators",
+        "representative_scripts": [
+          "validate_full_source_policy_runner_archive_gap_audit.py",
+          "validate_objective_completion_audit.py",
+          "validate_submission_artifact_manifest_boundary_sync.py",
+          "validate_paper_package.py",
+          "../validate_pipeline_outputs.py"
+        ]
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "keep_narrowed_archive_provenance_only"
+      },
+      {
+        "allowed_without_b4_opt_in": true,
+        "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+        "does_not_execute_source_policy_commands": true,
+        "id": "monitor_reopen_conditions",
+        "reopen_conditions": {
+          "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+          "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+        }
+      }
+    ]
+  },
+  "can_use_current_archive_as_full_source_policy_runner_archive": false,
+  "closure_conditions": {
+    "can_claim_full_source_policy_reproduction_now": false,
+    "can_submit_current_runner_package_as_primary_source_package": false,
+    "can_use_current_archive_as_full_source_policy_runner_archive": false,
+    "expected_output_promotion_blocked_command_count": 13,
+    "expected_output_promotion_ready_command_count": 0,
+    "expected_outputs_schema_ready_but_promotion_blocked": true,
+    "full_archive_ready_now": false,
+    "full_row_provenance_preflight_ready": true,
+    "full_row_provenance_promotion_ready": false,
+    "next_required_action": "Keep the narrowed/replay package as provenance only. A full source-policy runner archive requires OC4 RA/HI closeout through the exact B4 opt-in or a new source-policy promotion artifact, plus OC6 staying terminal/nonpromoted unless new TFE/VP public or source-equivalent code appears.",
+    "oc6_local_positive_reopen_artifact_rows": 0,
+    "oc6_positive_public_code_artifact_rows": 0,
+    "oc6_source_equivalent_candidate_rows": 0,
+    "oc6_source_equivalent_reopen_ready_now": false,
+    "oc6_source_policy_rows_closed": 0,
+    "ra_hi_rows_requiring_authorized_closeout_or_new_artifact": 20,
+    "remaining_source_policy_rows_to_close": 40,
+    "row_provenance_handoff_authorized": false,
+    "row_provenance_handoff_commands_not_run": true,
+    "row_provenance_handoff_driver_does_not_authorize_execution": true,
+    "row_provenance_handoff_driver_requires_exact_approval": true,
+    "source_policy_handoff_authorized_now": false,
+    "source_policy_handoff_ready_now": true,
+    "terminal_unable_to_reproduce_rows": 20,
+    "tfe_runner_contract_preflight_all_non_equivalent": true,
+    "tfe_runner_contract_preflight_candidate_backed": "3/3",
+    "tfe_runner_contract_preflight_entrypoints": "3/3",
+    "tfe_runner_contract_preflight_execution_blocks": 4,
+    "tfe_runner_contract_preflight_safe_use": "runner_contract_preflight_only_not_source_policy_reproduction",
+    "tfe_runner_contract_preflight_source_policy_rows_completed": 0,
+    "tfe_runner_contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+    "tfe_source_policy_preflight_can_promote_now": false,
+    "tfe_source_policy_preflight_effective_execution_block_count": 4,
+    "tfe_source_policy_preflight_execution_block_count": 4,
+    "tfe_source_policy_preflight_ready_now": false,
+    "tfe_source_policy_preflight_reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+    "tfe_source_policy_preflight_requires_opt_in": false,
+    "tfe_source_policy_preflight_terminal_nonpromoted_block_count": 2
+  },
+  "closure_decision": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+  "current_archive_usable_as_full_source_policy_runner_archive": false,
+  "dependency_blockers": [
+    "OC4",
+    "OC6"
+  ],
+  "driver_does_not_authorize_execution": true,
+  "driver_requires_exact_approval": true,
+  "exact_b4_opt_in_required_for_execution": true,
+  "execution_authorized": false,
+  "expected_output_schema_audit": "PASS",
+  "expected_output_schema_audit_status": "expected_outputs_schema_ready_not_authorized_not_run_not_promoted",
+  "expected_output_schema_audit_tuple": "expected_outputs_schema_ready_not_authorized_not_run_not_promoted/13/21/21/13/False/0/0",
+  "full_archive_ready_now": false,
+  "full_source_policy_runner_package_ready": false,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked": false,
+  "local_runner_centered_candidate_ready": true,
+  "narrowed_reproducibility_package_ready": true,
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "allowed_without_b4_opt_in": true,
+      "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "rebuild_read_only_audit_chain",
+      "representative_scripts": [
+        "build_full_source_policy_row_provenance_audit.py",
+        "build_full_source_policy_runner_archive_gap_audit.py",
+        "build_objective_completion_audit.py",
+        "cmame_submission_review_agent.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "sync_submission_artifact_manifest_boundary.py"
+      ]
+    },
+    {
+      "allowed_without_b4_opt_in": true,
+      "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "rerun_read_only_validators",
+      "representative_scripts": [
+        "validate_full_source_policy_runner_archive_gap_audit.py",
+        "validate_objective_completion_audit.py",
+        "validate_submission_artifact_manifest_boundary_sync.py",
+        "validate_paper_package.py",
+        "../validate_pipeline_outputs.py"
+      ]
+    },
+    {
+      "allowed_without_b4_opt_in": true,
+      "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+      "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "keep_narrowed_archive_provenance_only"
+    },
+    {
+      "allowed_without_b4_opt_in": true,
+      "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "monitor_reopen_conditions",
+      "reopen_conditions": {
+        "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+        "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+      }
+    }
+  ],
+  "objective_archive_blocker_boundary": {
+    "archive_closure_status_by_id": {
+      "OC12": "partial_narrowed_replay_ready_full_archive_open",
+      "OC4": "open",
+      "OC6": "partial_terminal_not_promoted"
+    },
+    "archive_effect_by_id": {
+      "OC12": "current_archive_is_narrowed_claim_provenance_only",
+      "OC4": "blocks_full_archive_primary_use",
+      "OC6": "blocks_tfe_rows_from_full_archive_promotion"
+    },
+    "blocker_next_actions_by_id": {
+      "OC12": "promote the partial local runner package to a full source-policy runner archive after OC4/OC6 close",
+      "OC4": "RA/HI can only close through exact B4 opt-in authorized closeout or a new source-policy promotion artifact; TFE/VP remain unable-to-reproduce/not-promoted",
+      "OC6": "keep TFE source-policy terminal/unable-to-reproduce unless a new public or source-code-equivalent TFE implementation artifact appears"
+    },
+    "blocker_opt_in_required_actions_by_id": {
+      "OC12": [
+        {
+          "allowed_without_b4_opt_in": false,
+          "command_count": 13,
+          "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+          "driver_does_not_authorize_execution": true,
+          "driver_requires_exact_approval": true,
+          "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "id": "authorized_b4_ra_hi_source_policy_execution",
+          "mapped_external_rows": 20,
+          "post_execution_promotion_required": true,
+          "requires_exact_user_approval_statement": true
+        }
+      ],
+      "OC4": [
+        {
+          "allowed_without_b4_opt_in": false,
+          "command_count": 13,
+          "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+          "driver_does_not_authorize_execution": true,
+          "driver_requires_exact_approval": true,
+          "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "id": "authorized_b4_ra_hi_source_policy_execution",
+          "mapped_external_rows": 20,
+          "post_execution_promotion_required": true,
+          "requires_exact_user_approval_statement": true
+        }
+      ],
+      "OC6": []
+    },
+    "blocker_required_to_close_by_id": {
+      "OC12": {
+        "action_boundary": {
+          "exact_b4_opt_in_required_for_execution": true,
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "opt_in_action_ids": [
+            "authorized_b4_ra_hi_source_policy_execution"
+          ],
+          "opt_in_required_action_count": 1,
+          "opt_in_required_command_count": 13,
+          "opt_in_required_mapped_external_rows": 20,
+          "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "safe_action_ids": [
+            "rebuild_read_only_audit_chain",
+            "rerun_read_only_validators",
+            "keep_narrowed_archive_provenance_only",
+            "monitor_reopen_conditions"
+          ],
+          "safe_without_b4_opt_in_count": 4,
+          "source_policy_execution_allowed_now": false
+        },
+        "closure_condition": "promote the narrowed replay package to a full source-policy runner archive only after OC4 source-policy rows and OC6 TFE runner boundary are closed",
+        "current_archive_usable_as_full_source_policy_runner_archive": false,
+        "full_source_policy_runner_package_ready": false,
+        "narrowed_repro_code_archive_ready": true,
+        "narrowed_repro_code_archive_submission_ready": false,
+        "remaining_source_policy_rows_to_close": 40,
+        "safe_current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+        "source_policy_closed_ratio": "0/40",
+        "upstream_blockers": [
+          "OC4",
+          "OC6"
+        ]
+      },
+      "OC4": {
+        "authorized_ra_hi_closeout_route": {
+          "execution_allowed_now": false,
+          "execution_invoked": false,
+          "expected_output_schema_command_traceability": {
+            "commands_executed_by_audit": false,
+            "commands_with_existing_expected_output": 13,
+            "commands_with_existing_expected_summary": 8,
+            "commands_with_expected_output_path": 13,
+            "commands_with_expected_summary_path": 8,
+            "commands_with_shell_command": 13,
+            "commands_without_expected_summary_path": 5,
+            "source_policy_execution_invoked": false
+          },
+          "expected_output_schema_command_traceability_tuple": "13/13/8/5/13/8/False/False",
+          "guarded_driver_refusal_boundary_20260621": {
+            "driver_invoked_by_audit": false,
+            "marker": "b4_guarded_driver_refusal_boundary_audit_20260621=True/True/2/0/13/False/False",
+            "no_opt_in_refusal_proved_static": true,
+            "post_guard_source_policy_command_count": 13,
+            "pre_guard_command_count": 0,
+            "refusal_branch_source_policy_command_count": 0,
+            "refusal_exit_code": 2,
+            "source_policy_execution_invoked": false,
+            "status": "guarded_driver_refusal_boundary_static_proved_not_executed",
+            "submission_ready": false,
+            "wrong_approval_refusal_proved_static": true
+          },
+          "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+          "opt_in_required_command_count": 13,
+          "opt_in_required_mapped_external_rows": 20,
+          "ready_command_count": 13,
+          "ready_command_mapped_rows": 20,
+          "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+          "requires_exact_b4_opt_in": true
+        },
+        "closure_condition": "close all 40 source-policy rows or introduce a new promotion artifact accepted by the source-policy ledger",
+        "current_handoff_status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+        "current_source_policy_closed_ratio": "0/40",
+        "promotion_ready_rows": 0,
+        "safe_current_disposition": "keep source-policy rows unpromoted until authorized execution or a new source-policy promotion artifact exists",
+        "source_policy_rows_closed": 0,
+        "source_policy_rows_total": 40
+      },
+      "OC6": {
+        "callable_contract_count": 3,
+        "candidate_backed_contract_count": 3,
+        "candidate_backed_non_equivalent_runner_blocks": [
+          "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+          "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+          "gauss6_fullva_absolute_coordinate_source_policy_runner_missing"
+        ],
+        "closure_condition": "provide a source-equivalent TFE/pendulum DAE runner certificate or reopen only on a new public/source-code-equivalent TFE artifact",
+        "contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+        "effective_execution_block_count": 4,
+        "effective_execution_blocks": [
+          "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+          "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+          "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+          "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+        ],
+        "entrypoint_count": 3,
+        "external_source_artifact_recheck_20260621": {
+          "date": "2026-06-21",
+          "global_absence_proved": false,
+          "positive_public_code_artifact_rows": 0,
+          "query_count": 10,
+          "source_code_equivalent_artifact_rows": 0,
+          "source_policy_reopen_triggered": false,
+          "source_policy_rows_closed_by_recheck": 0,
+          "submission_ready": false
+        },
+        "latest_external_probe": {
+          "access_limited_count": 4,
+          "date": "2026-06-21",
+          "global_absence_proved": false,
+          "positive_public_code_artifact_rows": 0,
+          "probe_count": 9,
+          "reopen_triggered": false,
+          "source_policy_rows_closed": 0
+        },
+        "nonheavy_terminal_blocks": [
+          "brown_mcphee_source_code_equivalent_law_open",
+          "full_T10_source_grid_endpoint_policy_open"
+        ],
+        "publisher_artifact_availability_20260621": {
+          "date": "2026-06-21",
+          "global_absence_proved": false,
+          "official_article_checked": true,
+          "positive_public_code_artifact_rows": 0,
+          "source_artifact_signal_count": 0,
+          "source_code_equivalent_artifact_rows": 0,
+          "source_policy_reopen_triggered": false,
+          "source_policy_rows_closed_by_publisher_audit": 0,
+          "submission_ready": false
+        },
+        "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+        "safe_current_disposition": "retain terminal unable-to-reproduce disposition; do not promote candidate runners as source-policy equivalent",
+        "source_equivalent_artifact_request_packet_20260621": {
+          "corresponding_author_email": "ekanshchat96@vt.edu",
+          "date_prepared": "2026-06-21",
+          "global_absence_proved": false,
+          "request_ready": true,
+          "request_sent": false,
+          "requested_artifact_count": 7,
+          "source_policy_reopen_triggered": false,
+          "source_policy_rows_closed_by_packet": 0,
+          "status": "request_packet_ready_not_sent_no_source_policy_closure",
+          "submission_ready": false
+        },
+        "source_policy_rows_completed": 0,
+        "tfe_runner_closed": false
+      }
+    },
+    "blocker_safe_next_actions_by_id": {
+      "OC12": [
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rebuild_read_only_audit_chain",
+          "representative_scripts": [
+            "build_full_source_policy_row_provenance_audit.py",
+            "build_full_source_policy_runner_archive_gap_audit.py",
+            "build_objective_completion_audit.py",
+            "cmame_submission_review_agent.py",
+            "build_cmame_reproducibility_package_manifest.py",
+            "sync_submission_artifact_manifest_boundary.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rerun_read_only_validators",
+          "representative_scripts": [
+            "validate_full_source_policy_runner_archive_gap_audit.py",
+            "validate_objective_completion_audit.py",
+            "validate_submission_artifact_manifest_boundary_sync.py",
+            "validate_paper_package.py",
+            "../validate_pipeline_outputs.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+          "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "keep_narrowed_archive_provenance_only"
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "monitor_reopen_conditions",
+          "reopen_conditions": {
+            "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+            "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+          }
+        }
+      ],
+      "OC4": [
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rebuild_read_only_audit_chain",
+          "representative_scripts": [
+            "build_full_source_policy_row_provenance_audit.py",
+            "build_full_source_policy_runner_archive_gap_audit.py",
+            "build_objective_completion_audit.py",
+            "cmame_submission_review_agent.py",
+            "build_cmame_reproducibility_package_manifest.py",
+            "sync_submission_artifact_manifest_boundary.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rerun_read_only_validators",
+          "representative_scripts": [
+            "validate_full_source_policy_runner_archive_gap_audit.py",
+            "validate_objective_completion_audit.py",
+            "validate_submission_artifact_manifest_boundary_sync.py",
+            "validate_paper_package.py",
+            "../validate_pipeline_outputs.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+          "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "keep_narrowed_archive_provenance_only"
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "monitor_reopen_conditions",
+          "reopen_conditions": {
+            "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+            "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+          }
+        }
+      ],
+      "OC6": [
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rebuild_read_only_audit_chain",
+          "representative_scripts": [
+            "build_full_source_policy_row_provenance_audit.py",
+            "build_full_source_policy_runner_archive_gap_audit.py",
+            "build_objective_completion_audit.py",
+            "cmame_submission_review_agent.py",
+            "build_cmame_reproducibility_package_manifest.py",
+            "sync_submission_artifact_manifest_boundary.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "rerun_read_only_validators",
+          "representative_scripts": [
+            "validate_full_source_policy_runner_archive_gap_audit.py",
+            "validate_objective_completion_audit.py",
+            "validate_submission_artifact_manifest_boundary_sync.py",
+            "validate_paper_package.py",
+            "../validate_pipeline_outputs.py"
+          ]
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+          "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "keep_narrowed_archive_provenance_only"
+        },
+        {
+          "allowed_without_b4_opt_in": true,
+          "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+          "does_not_execute_source_policy_commands": true,
+          "id": "monitor_reopen_conditions",
+          "reopen_conditions": {
+            "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+            "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+          }
+        }
+      ]
+    },
+    "blocker_status_by_id": {
+      "OC12": "partial",
+      "OC4": "open",
+      "OC6": "partial"
+    },
+    "blocking_ids": [
+      "OC4",
+      "OC6",
+      "OC12"
+    ],
+    "closure_allowed_by_id": {
+      "OC12": false,
+      "OC4": false,
+      "OC6": false
+    },
+    "current_archive_usable_as_full_source_policy_runner_archive": false,
+    "exact_b4_opt_in_required_for_execution": true,
+    "full_archive_ready_now": false,
+    "opt_in_action_ids": [
+      "authorized_b4_ra_hi_source_policy_execution"
+    ],
+    "safe_action_ids": [
+      "rebuild_read_only_audit_chain",
+      "rerun_read_only_validators",
+      "keep_narrowed_archive_provenance_only",
+      "monitor_reopen_conditions"
+    ],
+    "schema": "objective-archive-blocker-boundary-v1",
+    "source_policy_closed_ratio": "0/40",
+    "source_policy_execution_allowed_now": false,
+    "status": "full_archive_blocked_by_objective_blockers"
+  },
+  "objective_blocker_matrix_status": "global_objective_blockers_remain_open",
+  "oc12_archive_tfe_preflight": "contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/0/4",
+  "oc12_blocker_id": "OC12",
+  "oc12_blocker_open": true,
+  "oc12_blocker_status": "partial",
+  "oc12_closure_allowed_now": false,
+  "oc12_closure_decision": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+  "oc12_required_evidence_to_close": [
+    "OC4 source-policy rows closed",
+    "OC6 TFE source-policy runner boundary closed or remains terminal with an accepted target-scope change",
+    "full source-policy runner archive manifest marked ready",
+    "primary submission package allowed by reproducibility manifest"
+  ],
+  "oc6_external_source_artifact_recheck_20260621": "2026-06-21/10/0/0/0/False/False",
+  "oc6_external_source_artifact_recheck_20260621_summary": {
+    "date_checked": "2026-06-21",
+    "global_absence_proved": false,
+    "positive_public_code_artifact_rows": 0,
+    "query_count": 10,
+    "source_code_equivalent_artifact_rows": 0,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed_by_recheck": 0,
+    "status": "no_positive_external_source_artifact_found_reopen_conditions_remain_open",
+    "submission_ready": false
+  },
+  "oc6_reopen_latest_external_probe": "2026-06-21/9/0/0/4/False/False",
+  "oc6_source_equivalent_reopen_readiness_audit": {
+    "candidate_runner_available_rows": 20,
+    "candidate_runner_source_policy_equivalent_rows": 0,
+    "date_checked": "2026-06-20",
+    "latest_external_probe_access_limited_count": 4,
+    "latest_external_probe_count": 9,
+    "latest_external_probe_date_checked": "2026-06-21",
+    "latest_external_probe_global_absence_proved": false,
+    "latest_external_probe_positive_public_code_artifact_rows": 0,
+    "latest_external_probe_rows_by_suite": {
+      "tfe2026_original_pendulum": 5,
+      "vp2024_velocity_partitioning": 4
+    },
+    "latest_external_probe_source_policy_reopen_triggered": false,
+    "latest_external_probe_source_policy_rows_closed": 0,
+    "local_positive_reopen_artifact_rows": 0,
+    "oc6_can_close_now": false,
+    "performs_new_public_code_search": false,
+    "positive_public_code_artifact_rows": 0,
+    "public_code_available_rows": 0,
+    "reopen_readiness_digest": "972fba3d4c20c8d677e2442e6efe924053d22a2b9db82c7e915a711819ebdf47",
+    "row_count": 20,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_promoted": 0,
+    "status": "oc6_reopen_conditions_monitored_no_positive_source_equivalent_artifact",
+    "tfe_rows": 16,
+    "unable_to_reproduce_rows": 20,
+    "vp_rows": 4
+  },
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_access_limited_count": 4,
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_count": 9,
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_date": "2026-06-21",
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_global_absence_proved": false,
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_positive_artifact_rows": 0,
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_reopen_triggered": false,
+  "oc6_source_equivalent_reopen_readiness_latest_external_probe_source_policy_rows_closed": 0,
+  "oc6_tfe_publisher_artifact_availability_20260621": "2026-06-21/True/0/0/0/0/False/False",
+  "oc6_tfe_publisher_artifact_availability_20260621_summary": {
+    "date_checked": "2026-06-21",
+    "global_absence_proved": false,
+    "official_article_checked": true,
+    "positive_public_code_artifact_rows": 0,
+    "source_artifact_signal_count": 0,
+    "source_code_equivalent_artifact_rows": 0,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed_by_publisher_audit": 0,
+    "status": "publisher_article_checked_no_code_or_supplement_source_artifact_found",
+    "submission_ready": false
+  },
+  "oc6_tfe_source_equivalent_artifact_request_packet_20260621": "True/False/7/0/False/False",
+  "oc6_tfe_source_equivalent_artifact_request_packet_20260621_summary": {
+    "corresponding_author_email": "ekanshchat96@vt.edu",
+    "date_prepared": "2026-06-21",
+    "global_absence_proved": false,
+    "request_ready": true,
+    "request_sent": false,
+    "requested_artifact_count": 7,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed_by_packet": 0,
+    "status": "request_packet_ready_not_sent_no_source_policy_closure",
+    "submission_ready": false
+  },
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "opt_in_required_action_count": 1,
+  "opt_in_required_actions": [
+    {
+      "allowed_without_b4_opt_in": false,
+      "command_count": 13,
+      "description": "Run the prepared RA/HI source-policy commands only after the exact B4 approval phrase is supplied, then validate any post-execution promotion before closing source-policy rows.",
+      "driver_does_not_authorize_execution": true,
+      "driver_requires_exact_approval": true,
+      "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+      "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+      "id": "authorized_b4_ra_hi_source_policy_execution",
+      "mapped_external_rows": 20,
+      "post_execution_promotion_required": true,
+      "requires_exact_user_approval_statement": true
+    }
+  ],
+  "opt_in_required_command_count": 13,
+  "opt_in_required_mapped_external_rows": 20,
+  "package_boundary": {
+    "full_source_policy_runner_package_ready": false,
+    "local_runner_centered_candidate_ready": true,
+    "manifest_submission_ready": false,
+    "minimal_reproducible_submission_code_ready": false,
+    "narrowed_repro_code_archive_ready": true,
+    "narrowed_repro_code_archive_submission_ready": false,
+    "narrowed_reproducibility_package_ready": true,
+    "primary_submission_package_allowed": false,
+    "runner_centered_package_ready": false,
+    "safe_current_package_use": "narrowed_claim_replay_and_audit_provenance_only"
+  },
+  "primary_submission_package_allowed": false,
+  "public_code_refresh": {
+    "public_code_available_rows": 0,
+    "row_count": 20,
+    "self_reproduction_attempted_rows": 20,
+    "source_policy_rows_closed": 0,
+    "status": "public_code_refresh_no_new_source_artifact_nonpublic_rows_remain_unable_to_reproduce",
+    "unable_to_reproduce_rows": 20
+  },
+  "public_code_refresh_latest_supplement": {
+    "current_query_count": 11,
+    "date_checked": "2026-06-20",
+    "latest_external_probe_access_limited_count": 4,
+    "latest_external_probe_count": 9,
+    "latest_external_probe_date_checked": "2026-06-21",
+    "latest_external_probe_global_absence_proved": false,
+    "latest_external_probe_positive_public_code_artifact_rows": 0,
+    "latest_external_probe_source_policy_reopen_triggered": false,
+    "latest_external_probe_source_policy_rows_closed": 0,
+    "positive_public_code_artifact_rows": 0,
+    "row_count": 20,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_promoted": 0,
+    "status": "public_code_refresh_20260620_no_positive_new_source_artifact_rows_remain_unable_to_reproduce"
+  },
+  "ra_hi_closeout_boundary": {
+    "command_traceability_summary": {
+      "commands_without_traced_rows": [],
+      "declared_mapped_row_reference_total": 32,
+      "declared_vs_traced_mismatch_count": 0,
+      "hi2022_unique_mapped_rows": 8,
+      "promotion_ready_rows": 0,
+      "ra2021_unique_mapped_rows": 12,
+      "ra_hi_unique_row_count": 20,
+      "ra_hi_unique_rows_all_mapped": true,
+      "ready_command_count": 13,
+      "rows_without_command_refs": 20,
+      "rows_without_command_refs_attempted_not_reproducible": 20,
+      "source_policy_closed_rows": 0,
+      "source_policy_disposition": "command_traceability_ready_not_authorized_not_promoted",
+      "terminal_rows_with_command_refs": 0,
+      "traced_command_row_reference_total": 32,
+      "unable_to_reproduce_rows": 0,
+      "unique_mapped_row_count": 20
+    },
+    "current_evidence_terminal_not_promotable_rows": 20,
+    "execution_handoff_authorized": false,
+    "execution_handoff_commands_not_run": true,
+    "execution_handoff_status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+    "execution_invoked_by_packet": false,
+    "explicit_user_opt_in_required_before_any_command": true,
+    "future_promotion_requires_authorized_execution_or_new_artifact_rows": 20,
+    "handoff_ready_command_batch_count": 2,
+    "handoff_ready_command_count": 13,
+    "handoff_ready_command_mapped_external_rows": 20,
+    "no_public_code_rows_included": 0,
+    "public_source_root_available_rows": 20,
+    "ready_command_count": 13,
+    "ready_command_mapped_external_rows": 20,
+    "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "source_policy_reproduction_complete_rows": 0,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_not_promoted": 20,
+    "status": "ra_hi_public_root_rows_not_promoted_source_policy_open"
+  },
+  "ra_hi_rows_requiring_authorized_closeout_or_new_artifact": 20,
+  "read_only": true,
+  "ready_command_count": 13,
+  "ready_command_mapped_external_rows": 20,
+  "remaining_source_policy_rows_to_close": 40,
+  "reopen_condition_monitor": {
+    "date_checked": "2026-06-20",
+    "local_positive_reopen_artifact_rows": 0,
+    "local_scan_digest": "f31cbb9cb18b03c9ecfd5aad29ea57e7262efa616c87ddd10a9f0796403cd208",
+    "monitor_evidence_digest": "839ff14d373484025bcfa046dc7bfa9a4992514e33f8aff544be01429becc0df",
+    "positive_public_code_artifact_rows": 0,
+    "row_count": 20,
+    "source_artifact_digest_policy": {
+      "excluded_source_files": [
+        "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json"
+      ],
+      "exclusion_reason": "avoids cyclic digest between this monitor and the full archive gap audit that summarizes it",
+      "hashed_source_files": [
+        "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json",
+        "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json"
+      ]
+    },
+    "source_artifact_sha256": {
+      "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json": "e92b91e269ffa830f20f83edcc42d44de8914f9735a6baacddc3f2b1c6163410",
+      "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json": "714b23e83d6219fb0ddaea2e6442983e7b2634d5385ee75b1b9d9fd4cd89a9c3"
+    },
+    "source_policy_closed": false,
+    "source_policy_closed_ratio": "0/20",
+    "source_policy_open": true,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_total": 20,
+    "status": "reopen_conditions_monitored_no_positive_source_artifact_source_policy_open",
+    "terminal_reopen_conditions": {
+      "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+    },
+    "terminal_suite_count": 2,
+    "unable_to_reproduce_rows": 20
+  },
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "row_provenance_action_boundary": {
+    "exact_b4_opt_in_required_for_execution": true,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "opt_in_action_ids": [
+      "authorized_b4_ra_hi_source_policy_execution"
+    ],
+    "opt_in_required_action_count": 1,
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "safe_action_ids": [
+      "rebuild_read_only_audit_chain",
+      "rerun_read_only_validators",
+      "keep_narrowed_archive_provenance_only",
+      "monitor_reopen_conditions"
+    ],
+    "safe_without_b4_opt_in_count": 4,
+    "source_policy_execution_allowed_now": false
+  },
+  "row_provenance_handoff_boundary": {
+    "commands_not_run_by_handoff": true,
+    "driver_does_not_authorize_execution": true,
+    "driver_requires_exact_approval": true,
+    "exact_required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+    "execution_authorized": false,
+    "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+    "opt_in_required_command_count": 13,
+    "opt_in_required_mapped_external_rows": 20,
+    "status": "source_policy_execution_handoff_ready_not_authorized_not_run",
+    "terminal_unable_to_reproduce_rows": 20
+  },
+  "row_provenance_source_policy_execution_invoked": false,
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "safe_current_package_use": "narrowed_claim_replay_and_audit_provenance_only",
+  "safe_current_use": "narrowed_claim_replay_and_audit_provenance_only",
+  "safe_next_actions_without_b4_opt_in": [
+    {
+      "allowed_without_b4_opt_in": true,
+      "description": "Rebuild the read-only provenance, archive-gap, objective, review, runner-centered, manifest, and submission-manifest boundary audits after metadata-only changes.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "rebuild_read_only_audit_chain",
+      "representative_scripts": [
+        "build_full_source_policy_row_provenance_audit.py",
+        "build_full_source_policy_runner_archive_gap_audit.py",
+        "build_objective_completion_audit.py",
+        "cmame_submission_review_agent.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "sync_submission_artifact_manifest_boundary.py"
+      ]
+    },
+    {
+      "allowed_without_b4_opt_in": true,
+      "description": "Run validators that check existing artifacts and execution boundaries, including the package and top-level pipeline validators.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "rerun_read_only_validators",
+      "representative_scripts": [
+        "validate_full_source_policy_runner_archive_gap_audit.py",
+        "validate_objective_completion_audit.py",
+        "validate_submission_artifact_manifest_boundary_sync.py",
+        "validate_paper_package.py",
+        "../validate_pipeline_outputs.py"
+      ]
+    },
+    {
+      "allowed_without_b4_opt_in": true,
+      "current_archive_use": "narrowed_claim_replay_and_audit_provenance_only",
+      "description": "Use the narrowed/replay archive only as provenance for the narrowed claim; do not present it as the full source-policy runner archive.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "keep_narrowed_archive_provenance_only"
+    },
+    {
+      "allowed_without_b4_opt_in": true,
+      "description": "Keep the TFE and VP terminal rows open until new public code, author-provided code, or a source-equivalent implementation artifact appears.",
+      "does_not_execute_source_policy_commands": true,
+      "id": "monitor_reopen_conditions",
+      "reopen_conditions": {
+        "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+        "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+      }
+    }
+  ],
+  "safe_without_b4_opt_in_count": 4,
+  "schema": "full-source-policy-runner-archive-gap-audit-v1",
+  "source_files": [
+    "CMAME_REPRODUCIBILITY_PACKAGE_MANIFEST.json",
+    "CMAME_RUNNER_CENTERED_REPRODUCIBILITY_AUDIT.json",
+    "CMAME_NARROWED_REPRODUCIBILITY_PACKAGE_AUDIT.json",
+    "CMAME_NARROWED_REPRO_CODE_ARCHIVE_MANIFEST.json",
+    "B4_SOURCE_POLICY_ROW_CLOSURE_READINESS_LEDGER.json",
+    "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json",
+    "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.json",
+    "B4_SOURCE_POLICY_COMMAND_PREFLIGHT_FREEZE_20260620.json",
+    "B4_SOURCE_POLICY_EXPECTED_OUTPUT_SCHEMA_AUDIT_20260620.json",
+    "B4_EXPECTED_OUTPUT_PROMOTION_READINESS_BLOCKER_AUDIT_20260620.json",
+    "B4_GUARDED_DRIVER_REFUSAL_BOUNDARY_AUDIT_20260621.json",
+    "OC6_SOURCE_EQUIVALENT_REOPEN_READINESS_AUDIT_20260620.json",
+    "OC6_EXTERNAL_SOURCE_ARTIFACT_RECHECK_20260621.json",
+    "OC6_TFE_PUBLISHER_ARTIFACT_AVAILABILITY_AUDIT_20260621.json",
+    "OC6_TFE_SOURCE_EQUIVALENT_ARTIFACT_REQUEST_PACKET_20260621.json",
+    "FULL_SOURCE_POLICY_ROW_PROVENANCE_AUDIT.json",
+    "RA_HI_SOURCE_POLICY_PROMOTION_BLOCKER_MATRIX.json",
+    "TFE_DAE_RUNNER_CONTRACT_GAP_AUDIT.json",
+    "TFE_RUNNER_CONTRACT_PREFLIGHT_CERTIFICATE.json",
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260614.json",
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json",
+    "SOURCE_POLICY_REOPEN_CONDITION_MONITOR_20260620.json",
+    "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json"
+  ],
+  "source_policy_closed": false,
+  "source_policy_closed_ratio": "0/40",
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_rows": {
+    "attempted_not_reproducible": 20,
+    "closed": 0,
+    "promoted": 0,
+    "provenance_preflight_complete": 40,
+    "provenance_preflight_is_not_promotion": true,
+    "provenance_preflight_total": 40,
+    "rows_with_launch_command_refs": 20,
+    "rows_without_launch_command_refs": 20,
+    "still_requiring_execution_or_promotion": 20,
+    "total": 40,
+    "unable_to_reproduce": 20
+  },
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_promoted": 0,
+  "source_policy_rows_total": 40,
+  "status": "full_source_policy_runner_archive_not_ready_source_policy_open",
+  "submission_ready": false,
+  "terminal_reopen_conditions": {
+    "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+    "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+  },
+  "terminal_unable_to_reproduce_rows": 20,
+  "terminal_unable_to_reproduce_suites": [
+    {
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "row_count": 16,
+      "source_policy_rows_closed": 0,
+      "suite_id": "tfe2026_original_pendulum",
+      "unable_to_reproduce_rows": 16
+    },
+    {
+      "reopen_condition": "new_distinct_public_vp2024_velocity_partitioning_code_path",
+      "row_count": 4,
+      "source_policy_rows_closed": 0,
+      "suite_id": "vp2024_velocity_partitioning",
+      "unable_to_reproduce_rows": 4
+    }
+  ],
+  "tfe_runner_contract_preflight": "contract_entrypoints_callable_candidate_backed_source_policy_open/3/3/3/0/4",
+  "tfe_runner_contract_preflight_boundary": {
+    "all_candidate_rows_finite": true,
+    "all_non_equivalent": true,
+    "all_residual_gates_passed": true,
+    "callable_contract_count": 3,
+    "candidate_backed_contract_count": 3,
+    "entrypoint_count": 3,
+    "external_superiority_claim_allowed": false,
+    "heavy_numerical_run_invoked": false,
+    "monolithic_absolute_coordinate_dae_time_integrator": false,
+    "next_to_close": "Replace candidate-backed contract entrypoints with source-code-equivalent absolute-coordinate DAE and method runners, then execute accepted source-policy rows.",
+    "read_only": true,
+    "run_v047_invoked": false,
+    "safe_current_use": "runner_contract_preflight_only_not_source_policy_reproduction",
+    "schema": "tfe-runner-contract-preflight-certificate-v1",
+    "source_policy_closed": false,
+    "source_policy_dae_runner_equivalent": false,
+    "source_policy_execution_block_count": 4,
+    "source_policy_execution_block_matrix": [
+      {
+        "blocking_scope": "all original-TFE source-policy rows because candidate smokes are not full DAE source-policy executions",
+        "can_resolve_without_heavy_run": false,
+        "candidate_backed": true,
+        "closure_status": "open_candidate_backed_not_source_policy_equivalent",
+        "contract_present": true,
+        "first_required_artifact": "absolute-coordinate T=10 source-policy DAE runner equivalence certificate",
+        "id": "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "implemented": false,
+        "mapped_entrypoint_api": "source_policy_absolute_coordinate_dae_runner",
+        "mapped_entrypoint_id": "absolute_coordinate_dae_runner_contract",
+        "required_runner_contract": "monolithic_absolute_coordinate_DAE_time_integrator",
+        "source_policy_equivalent": false,
+        "source_policy_rows_completed": 0
+      },
+      {
+        "blocking_scope": "method-side source-policy reproduction rows for the original TFE pendulum suite",
+        "can_resolve_without_heavy_run": false,
+        "candidate_backed": true,
+        "closure_status": "open_candidate_backed_not_source_policy_equivalent",
+        "contract_present": true,
+        "first_required_artifact": "TFE m=1/m=2/m=3, Newmark-beta, and trapezoidal source-policy method-runner certificate",
+        "id": "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "implemented": false,
+        "mapped_entrypoint_api": "source_policy_tfe_newmark_trapezoidal_method_runners",
+        "mapped_entrypoint_id": "tfe_newmark_trapezoidal_method_runner_contract",
+        "required_runner_contract": "TFE_m1_m2_m3_Newmark_beta_trapezoidal_source_policy_method_runners",
+        "source_policy_equivalent": false,
+        "source_policy_rows_completed": 0
+      },
+      {
+        "blocking_scope": "local method source-policy comparator rows under the original TFE pendulum policy",
+        "can_resolve_without_heavy_run": false,
+        "candidate_backed": true,
+        "closure_status": "open_candidate_backed_not_source_policy_equivalent",
+        "contract_present": true,
+        "first_required_artifact": "Gauss6/FullVA absolute-coordinate source-pendulum DAE runner certificate",
+        "id": "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+        "implemented": false,
+        "mapped_entrypoint_api": "source_policy_gauss6_fullva_absolute_coordinate_dae_runner",
+        "mapped_entrypoint_id": "gauss6_fullva_absolute_coordinate_dae_runner_contract",
+        "required_runner_contract": "Gauss6_FullVA_absolute_coordinate_source_policy_DAE_runner",
+        "source_policy_equivalent": false,
+        "source_policy_rows_completed": 0
+      },
+      {
+        "blocking_scope": "B4/B7 clean source-policy work/precision figures and external-superiority readiness",
+        "can_resolve_without_heavy_run": false,
+        "candidate_backed": false,
+        "closure_status": "open_no_candidate_entrypoint_work_precision_rows",
+        "contract_present": false,
+        "first_required_artifact": "accepted source-policy work/precision row table binding error, order, runtime, and work metrics",
+        "id": "accepted_source_policy_work_precision_rows_not_executed_or_bound",
+        "implemented": false,
+        "mapped_entrypoint_api": null,
+        "mapped_entrypoint_id": null,
+        "required_runner_contract": "accepted_T10_source_policy_work_precision_rows",
+        "source_policy_equivalent": false,
+        "source_policy_rows_completed": 0
+      }
+    ],
+    "source_policy_execution_block_matrix_summary": {
+      "blocks_without_candidate_entrypoint": 1,
+      "can_resolve_without_heavy_run_blocks": 0,
+      "candidate_backed_entrypoint_blocks": 3,
+      "closure_status": "all_source_policy_execution_blocks_open",
+      "execution_block_count": 4,
+      "requires_new_artifact_or_execution_blocks": 4,
+      "source_policy_equivalent_blocks": 0,
+      "source_policy_rows_completed": 0
+    },
+    "source_policy_execution_blocks": [
+      "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+      "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+      "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+      "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+    ],
+    "source_policy_execution_preflight_status": "terminal_no_public_code_self_reproduction_attempted_not_promoted",
+    "source_policy_method_runner_equivalent": false,
+    "source_policy_rows_completed": 0,
+    "status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+    "submission_ready": false,
+    "tfe_self_reproduction_reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+    "tfe_self_reproduction_status": "attempted_not_reproducible_not_promoted",
+    "v048_runner_invoked": false
+  },
+  "tfe_runner_contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+  "tfe_source_policy_execution_preflight": "terminal_no_public_code_self_reproduction_attempted_not_promoted/False/False/4/False",
+  "tfe_source_policy_execution_preflight_boundary": {
+    "can_promote_any_tfe_source_policy_row_now": false,
+    "contract_block_accounting": {
+      "accounting_disposition": "nonheavy_terminal_demotions_recorded_source_policy_execution_blocks_remain",
+      "effective_source_policy_execution_contract_block_count": 4,
+      "effective_source_policy_execution_contract_blocks": [
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+        "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+      ],
+      "raw_open_contract_block_count": 6,
+      "raw_open_contract_blocks": [
+        "brown_mcphee_source_code_equivalent_law_open",
+        "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+        "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+        "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+        "full_T10_source_grid_endpoint_policy_open",
+        "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+      ],
+      "source_policy_rows_closed_by_accounting": 0,
+      "terminal_nonpromoted_contract_block_count": 2,
+      "terminal_nonpromoted_contract_blocks": [
+        "brown_mcphee_source_code_equivalent_law_open",
+        "full_T10_source_grid_endpoint_policy_open"
+      ]
+    },
+    "current_route": "no_public_code_self_reproduction_attempted_unable_to_reproduce_not_promoted",
+    "effective_missing_contract_block_count": 4,
+    "effective_missing_contract_blocks": [
+      "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+      "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+      "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+      "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+    ],
+    "execution_block_count": 4,
+    "execution_blocks": [
+      "pendulum_absolute_coordinate_source_policy_dae_runner_missing",
+      "tfe_newmark_trapezoidal_source_policy_method_runners_missing",
+      "gauss6_fullva_absolute_coordinate_source_policy_runner_missing",
+      "accepted_source_policy_work_precision_rows_not_executed_or_bound"
+    ],
+    "explicit_user_opt_in_required": false,
+    "heavy_numerical_run_invoked": false,
+    "missing_scope_requires_new_public_or_source_code_equivalent_artifact_to_reopen": true,
+    "missing_scope_requires_new_runner_contract_or_explicit_source_policy_execution": false,
+    "nonheavy_blocks_dispositioned_by_demotion": true,
+    "nonheavy_demotion_does_not_close_source_policy": true,
+    "opt_in_required_for": [],
+    "read_only": true,
+    "ready_to_execute_source_policy_now": false,
+    "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+    "reviewer_facing_decision": "no_public_code_self_reproduction_attempted_unable_to_reproduce_not_promoted",
+    "run_v047_invoked": false,
+    "runner_contracts_required_before_execution": [
+      "monolithic_absolute_coordinate_DAE_time_integrator",
+      "TFE_m1_m2_m3_Newmark_beta_trapezoidal_source_policy_method_runners",
+      "Gauss6_FullVA_absolute_coordinate_source_policy_DAE_runner",
+      "accepted_T10_source_policy_work_precision_rows"
+    ],
+    "schema": "tfe-source-policy-execution-preflight-v1",
+    "source_policy_rows_completed": 0,
+    "status": "terminal_no_public_code_self_reproduction_attempted_not_promoted",
+    "terminal_nonpromoted_contract_block_count": 2,
+    "terminal_nonpromoted_contract_blocks": [
+      "brown_mcphee_source_code_equivalent_law_open",
+      "full_T10_source_grid_endpoint_policy_open"
+    ],
+    "v048_runner_invoked": false
+  },
+  "tfe_source_policy_execution_preflight_status": "terminal_no_public_code_self_reproduction_attempted_not_promoted",
+  "v048_runner_invoked": false
+}

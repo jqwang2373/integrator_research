@@ -1,0 +1,1335 @@
+{
+  "accepted_method": "Gauss6/FullVA",
+  "accepted_residual": "residual_cylindrical_chain",
+  "ad_binding_checks": {
+    "dynamic_family_added": true,
+    "formula_row_ad_jacobian_checked": true,
+    "formula_row_ad_jacobian_max_mismatch_small": true,
+    "formula_row_ad_jacobian_multi_probe_checked": true,
+    "formula_row_ad_jacobian_probe_count": true,
+    "formula_row_ad_jacobian_runtime_binding": true,
+    "formula_row_ad_jacobian_shape": true,
+    "full_formula_row_count": true,
+    "full_formula_row_oracle_checked": true
+  },
+  "closed_scope": "D6 row-ordering, residual-scaling, and accepted AD-binding equivalence for the 36 implemented Newton-Euler dynamic rows. This does not close the D1/D2 linear/angular balance identities and does not prove the D5 O(h^7) dynamic defect.",
+  "dynamic_symbolic_oracle_complete": false,
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "layout_checks": {
+    "all_target_rows_proved": true,
+    "dynamic_family_offset": true,
+    "dynamic_family_total_rows": true,
+    "dynamic_family_width": true,
+    "target_row_count": true
+  },
+  "open_boundaries": [
+    "D1 translational balance identity",
+    "D2 rotational balance identity",
+    "D5 lifted-stage dynamic O(h^7) defect",
+    "PC1/PC2 theorem close requirements"
+  ],
+  "proof_gap_closed": false,
+  "proof_gap_closed_scope": "local_d6_row_ordering_scaling_ad_audit_only; this audit closes implementation layout/AD binding but not the D5 O(h^7) dynamic defect or the full direct D5/PC2 closure artifact",
+  "row_audit": [
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 24,
+      "local_dynamic_offset": 0,
+      "local_row": 24,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "x",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 25,
+      "local_dynamic_offset": 1,
+      "local_row": 25,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "y",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 26,
+      "local_dynamic_offset": 2,
+      "local_row": 26,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "z",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 27,
+      "local_dynamic_offset": 3,
+      "local_row": 27,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "x",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 28,
+      "local_dynamic_offset": 4,
+      "local_row": 28,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "y",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 29,
+      "local_dynamic_offset": 5,
+      "local_row": 29,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "z",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 30,
+      "local_dynamic_offset": 6,
+      "local_row": 30,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "x",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 31,
+      "local_dynamic_offset": 7,
+      "local_row": 31,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "y",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 32,
+      "local_dynamic_offset": 8,
+      "local_row": 32,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "z",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 33,
+      "local_dynamic_offset": 9,
+      "local_row": 33,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "x",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 34,
+      "local_dynamic_offset": 10,
+      "local_row": 34,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "y",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 35,
+      "local_dynamic_offset": 11,
+      "local_row": 35,
+      "proved": true,
+      "stage": 0,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "z",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 0
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 68,
+      "local_dynamic_offset": 0,
+      "local_row": 24,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "x",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 69,
+      "local_dynamic_offset": 1,
+      "local_row": 25,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "y",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 70,
+      "local_dynamic_offset": 2,
+      "local_row": 26,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "z",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 71,
+      "local_dynamic_offset": 3,
+      "local_row": 27,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "x",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 72,
+      "local_dynamic_offset": 4,
+      "local_row": 28,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "y",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 73,
+      "local_dynamic_offset": 5,
+      "local_row": 29,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "z",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 74,
+      "local_dynamic_offset": 6,
+      "local_row": 30,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "x",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 75,
+      "local_dynamic_offset": 7,
+      "local_row": 31,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "y",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 76,
+      "local_dynamic_offset": 8,
+      "local_row": 32,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "z",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 77,
+      "local_dynamic_offset": 9,
+      "local_row": 33,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "x",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 78,
+      "local_dynamic_offset": 10,
+      "local_row": 34,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "y",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 79,
+      "local_dynamic_offset": 11,
+      "local_row": 35,
+      "proved": true,
+      "stage": 1,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "z",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 1
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 112,
+      "local_dynamic_offset": 0,
+      "local_row": 24,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "x",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 113,
+      "local_dynamic_offset": 1,
+      "local_row": 25,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "y",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 114,
+      "local_dynamic_offset": 2,
+      "local_row": 26,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 0,
+        "component": "z",
+        "runtime_source_component": "body0_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 0,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 115,
+      "local_dynamic_offset": 3,
+      "local_row": 27,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "x",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 116,
+      "local_dynamic_offset": 4,
+      "local_row": 28,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "y",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 117,
+      "local_dynamic_offset": 5,
+      "local_row": 29,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 0,
+        "component": "z",
+        "runtime_source_component": "body0_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 3,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 118,
+      "local_dynamic_offset": 6,
+      "local_row": 30,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "x",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 119,
+      "local_dynamic_offset": 7,
+      "local_row": 31,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "y",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 120,
+      "local_dynamic_offset": 8,
+      "local_row": 32,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "translational_newton_balance",
+        "body": 1,
+        "component": "z",
+        "runtime_source_component": "body1_translational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 6,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 121,
+      "local_dynamic_offset": 9,
+      "local_row": 33,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "x",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 0,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 122,
+      "local_dynamic_offset": 10,
+      "local_row": 34,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "y",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 1,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    },
+    {
+      "checks": {
+        "balance_block_matches_source_order": true,
+        "body_matches_source_order": true,
+        "local_row_is_dynamic": true,
+        "runtime_source_component_index_matches": true,
+        "runtime_source_component_matches": true,
+        "runtime_source_component_offset_matches": true,
+        "runtime_source_component_width_matches": true,
+        "stage_index_matches_global_row": true
+      },
+      "expected": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3
+      },
+      "global_row": 123,
+      "local_dynamic_offset": 11,
+      "local_row": 35,
+      "proved": true,
+      "stage": 2,
+      "target": {
+        "balance_block": "rotational_euler_balance",
+        "body": 1,
+        "component": "z",
+        "runtime_source_component": "body1_rotational_balance_source",
+        "runtime_source_component_index": 2,
+        "runtime_source_component_offset": 9,
+        "runtime_source_component_width": 3,
+        "stage": 2
+      }
+    }
+  ],
+  "row_layout": {
+    "dynamic_offset": 24,
+    "dynamic_rows": 36,
+    "dynamic_width": 12,
+    "per_stage_order": [
+      "body0_translational_rows_0_2",
+      "body0_rotational_rows_3_5",
+      "body1_translational_rows_6_8",
+      "body1_rotational_rows_9_11"
+    ],
+    "stage_count": 3,
+    "stage_size": 44
+  },
+  "row_ordering_scaling_ad_closed": true,
+  "schema": "newton-euler-row-ordering-scaling-ad-audit-v1",
+  "source_checks": {
+    "dynamic_body_loop_is_body_order": true,
+    "dynamic_extend_trans_then_rot": true,
+    "dynamic_rows_are_unweighted_in_residual": true,
+    "dynamic_vector_initialized_once": true,
+    "r_jac_binds_jacfwd_residual": true,
+    "r_value_binds_residual": true,
+    "residual_family_concat_order": true,
+    "stage_loop_order_is_source_order": true
+  },
+  "source_files": {
+    "dynamic_row_oracle": "DYNAMIC_ROW_ORACLE_GATE.json",
+    "runtime_source": "../v047_cylindrical_chain_pipeline/run_v047.py",
+    "symbolic_target_audit": "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json"
+  },
+  "stage_residual_O_h7_implementation_defect_proved": false,
+  "status": "d6_row_ordering_scaling_ad_closed_dynamic_defect_open",
+  "submission_ready": false,
+  "symbolic_runtime_row_equivalence_closed": true
+}

@@ -1,0 +1,4 @@
+case,h,weighted_operator_rank,domain_column_count,full_column_rank,min_singular_value,condition_number,finite_state_projection_constant,gauss_stage_residual_norm,gauss_stage_newton_iterations
+cylindrical_smooth,0.04,108,108,True,0.03998587264769549,362.7290422635366,2.0194700009526936,1.0292829673060734e-14,6
+cylindrical_smooth,0.02,108,108,True,0.019998240408066848,723.4843411616006,2.007889290259502,9.238506732914585e-15,6
+cylindrical_smooth,0.01,108,108,True,0.009999780246803636,1446.2488274759571,2.0055934526401247,1.2213250127267018e-14,6

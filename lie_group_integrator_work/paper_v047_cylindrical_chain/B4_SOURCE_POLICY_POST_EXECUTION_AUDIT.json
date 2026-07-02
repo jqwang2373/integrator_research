@@ -1,0 +1,373 @@
+{
+  "approval_statement_matched": false,
+  "approved_driver_execution_recorded": false,
+  "b4_can_close_now": false,
+  "b7_can_close_now": false,
+  "command_artifact_presence": {
+    "all_expected_outputs_exist_now": true,
+    "all_expected_summaries_exist_now": true,
+    "command_count": 13,
+    "commands": [
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/ra2021_public_timing_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": null,
+        "expected_summary_exists_now": null,
+        "id": "ra2021_public_timing_all_forms_models",
+        "mapped_row_count": 12,
+        "packet_artifact_status": "not_run_by_this_packet",
+        "parse_ok": true,
+        "runner_script": "run_v048.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_single_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": null,
+        "expected_summary_exists_now": null,
+        "id": "gauss6_public_single_source_policy_trio",
+        "mapped_row_count": 3,
+        "packet_artifact_status": "not_run_by_this_packet",
+        "parse_ok": true,
+        "runner_script": "run_v048.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/ra2021_double_pendulum_order_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": null,
+        "expected_summary_exists_now": null,
+        "id": "ra2021_double_order_all_forms",
+        "mapped_row_count": 3,
+        "packet_artifact_status": "not_run_by_this_packet",
+        "parse_ok": true,
+        "runner_script": "run_v048.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/public_closed_loop_shards/four_link_1em02_1em03_1em04.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": null,
+        "expected_summary_exists_now": null,
+        "id": "gauss6_public_four_link_source_policy_trio",
+        "mapped_row_count": 3,
+        "packet_artifact_status": "not_run_by_this_packet",
+        "parse_ok": true,
+        "runner_script": "run_public_closed_loop_shard.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/public_closed_loop_shards/slider_crank_1em02_1em03_1em04.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": null,
+        "expected_summary_exists_now": null,
+        "id": "gauss6_public_slider_crank_source_policy_trio",
+        "mapped_row_count": 3,
+        "packet_artifact_status": "not_run_by_this_packet",
+        "parse_ok": true,
+        "runner_script": "run_public_closed_loop_shard.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_single_pendulum_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_single_pendulum_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_half_single_pendulum",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_half_double_pendulum",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "partial_or_failed_full_T8_source_policy_candidate_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_four_link_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_four_link_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_half_four_link",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_slider_crank_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_slider_crank_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_half_slider_crank",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_single_pendulum_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_single_pendulum_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_single_pendulum",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_double_pendulum",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_four_link_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_four_link_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_four_link",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      },
+      {
+        "expected_output_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_slider_crank_rows.csv",
+        "expected_output_exists_now": true,
+        "expected_summary_after_run": "../v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_slider_crank_summary.json",
+        "expected_summary_exists_now": true,
+        "id": "hi2022_selected_t8_rA_slider_crank",
+        "mapped_row_count": 1,
+        "packet_artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "parse_ok": true,
+        "runner_script": "run_hi2022_full_t8_source_policy_candidate.py"
+      }
+    ],
+    "expected_output_missing_command_ids": [],
+    "expected_summary_missing_command_ids": [],
+    "packet_artifact_status_counts": {
+      "executed_full_T8_selected_coarse_trio_not_promoted": 7,
+      "not_run_by_this_packet": 5,
+      "partial_or_failed_full_T8_source_policy_candidate_not_promoted": 1
+    }
+  },
+  "commands_executed_by_audit": false,
+  "exact_b4_opt_in_required_for_execution": true,
+  "execution_authorized": false,
+  "execution_record_scope": "no_verified_current_authorized_execution_record_existing_artifacts_only",
+  "existing_ready_command_artifacts_present": true,
+  "external_superiority_claim_allowed": false,
+  "guarded_driver": {
+    "exists": true,
+    "path": "run_b4_source_policy_after_opt_in.sh",
+    "ready_command_batch_count": 2,
+    "ready_command_count": 13,
+    "ready_command_mapped_external_rows": 20,
+    "unaddressed_external_rows_after_ready_commands": 0
+  },
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked_by_this_builder": false,
+  "next_required_actions": [
+    "Do not rerun the same guarded B4 driver blindly; it now records zero promoted rows.",
+    "Root-cause the RA2021 double local source-policy candidate low-order result before promotion.",
+    "Keep RA2021_DOUBLE_SOURCE_POLICY_LOW_ORDER_DIAGNOSIS.md/json as diagnostic-only evidence until a non-floor-limited verified row policy exists.",
+    "Keep HI2022_RA_HALF_DOUBLE_SOURCE_POLICY_FAILURE_DIAGNOSIS.md/json as diagnostic-only evidence until a repaired complete shard or formal suite demotion exists.",
+    "Keep TFE and VP rows marked attempted-not-reproducible and demoted unless new public-code or source-equivalent runner evidence is introduced.",
+    "Run the B6 final prose pass only after B4/B7 wording is settled."
+  ],
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "description": "Rebuild this post-execution audit plus downstream RA/HI, objective, review, and package manifests.",
+      "id": "rebuild_read_only_audit_chain"
+    },
+    {
+      "description": "Rerun validators that only read artifacts and do not execute B4 source-policy commands.",
+      "id": "rerun_read_only_validators"
+    },
+    {
+      "description": "Keep narrowed archive artifacts marked as provenance-only, not as a full source-policy runner archive.",
+      "id": "keep_narrowed_archive_provenance_only"
+    },
+    {
+      "description": "Monitor for new public code, author-provided code, or source-equivalent artifacts before reopening rows.",
+      "id": "monitor_reopen_conditions"
+    }
+  ],
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "packet_semantics": {
+    "execution_invoked_by_packet": false,
+    "note": "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET is a pre-execution guard; this audit records artifact state and only records verified authorized execution when the exact approval statement is supplied to the builder.",
+    "packet_status": "ready_for_user_opt_in_packet_not_authorized_not_run"
+  },
+  "post_execution_artifact_evidence": {
+    "gauss6_closed_loop_public_step_trios_completed": true,
+    "gauss6_closed_loop_rows_are_dynamic_work_precision": false,
+    "gauss6_local_status": "partial_local_source_policy_evidence_single_complete_closed_loop_residual_only_not_promoted",
+    "gauss6_single_public_horizon_step_trio_completed": true,
+    "hi2022_figure_scope_demotion_status": "demote_hi2022_from_b4_b7_source_policy_figures",
+    "hi2022_full_public_grid_selected": false,
+    "hi2022_full_t8_policy_completed": false,
+    "hi2022_ra_half_double_failure_b4_b7_can_close": false,
+    "hi2022_ra_half_double_failure_diagnosis_status": "diagnosis_only_partial_newton_failure_not_promoted",
+    "hi2022_ra_half_double_failure_newton_failure_count": 2,
+    "hi2022_ra_half_double_failure_pair_orders_available": false,
+    "hi2022_ra_half_double_failure_rows_failed": 2,
+    "hi2022_ra_half_double_failure_rows_ok": 1,
+    "hi2022_ra_half_double_failure_rows_promoted_by_diagnosis": 0,
+    "hi2022_ra_half_double_failure_rows_total": 3,
+    "hi2022_selected_candidate_completed_shards": 7,
+    "hi2022_selected_candidate_expected_shards": 8,
+    "hi2022_selected_candidate_partial_or_failed_shards": [
+      "rA_half:double_pendulum"
+    ],
+    "hi2022_selected_candidate_rows_ok": 22,
+    "hi2022_selected_candidate_rows_total": 24,
+    "hi2022_selected_candidate_status": "selected_candidate_matrix_partially_executed_not_promoted",
+    "public_closed_loop_shards": {
+      "four_link": {
+        "exists": true,
+        "ok_row_count": 3,
+        "path": "../v048_cross_paper_same_test_benchmarks/results/public_closed_loop_shards/four_link_1em02_1em03_1em04.csv",
+        "row_count": 3,
+        "status_counts": {
+          "ok": 3
+        }
+      },
+      "slider_crank": {
+        "exists": true,
+        "ok_row_count": 3,
+        "path": "../v048_cross_paper_same_test_benchmarks/results/public_closed_loop_shards/slider_crank_1em02_1em03_1em04.csv",
+        "row_count": 3,
+        "status_counts": {
+          "ok": 3
+        }
+      }
+    },
+    "public_closed_loop_trios_completed_by_latest_driver_outputs": true,
+    "ra2021_double_local_candidate_order_acceptance_satisfied": false,
+    "ra2021_double_local_candidate_pos_order": 2.148202286933232,
+    "ra2021_double_local_candidate_rows": 3,
+    "ra2021_double_local_candidate_status": "executed_order_below_acceptance_not_promoted",
+    "ra2021_double_local_candidate_vel_order": 2.463397024938419,
+    "ra2021_double_low_order_accepted_binding_closed": false,
+    "ra2021_double_low_order_b4_b7_can_close": false,
+    "ra2021_double_low_order_coarse_h_constraint_threshold_satisfied": false,
+    "ra2021_double_low_order_constraint_failure_components": [
+      "endpoint_velocity_constraint"
+    ],
+    "ra2021_double_low_order_diagnosis_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+    "ra2021_double_low_order_fine_pair_floor_limited": true,
+    "ra2021_double_low_order_fine_pair_floor_margin_to_threshold": 0.17550405573274475,
+    "ra2021_double_low_order_fine_pair_label": "0.002_to_0.001",
+    "ra2021_double_low_order_finest_to_reference_step_ratio": 10.0,
+    "ra2021_double_low_order_local_metrics_present": true,
+    "ra2021_double_low_order_rows_promoted_by_diagnosis": 0,
+    "ra2021_public_baseline_progress": {
+      "order_groups_completed": 12,
+      "order_groups_required": 12,
+      "order_rows_ok": 36,
+      "order_rows_total": 36,
+      "timing_rows_completed": 12,
+      "timing_rows_required": 12
+    },
+    "ra2021_public_baseline_shards_ok_rows": 9,
+    "ra2021_public_baseline_shards_status": "all_public_baseline_source_policy_shards_completed_not_promoted",
+    "tfe_runner_equivalence_open_blocker_count": 6,
+    "tfe_runner_equivalence_status": "preflight_ready_runner_equivalence_open"
+  },
+  "post_execution_summary": {
+    "approved_driver_execution_recorded": false,
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "existing_ready_command_artifacts_present": true,
+    "ready_command_mapped_external_rows": 20,
+    "ready_commands_in_packet": 13,
+    "ready_commands_verified_executed_by_this_record": 0,
+    "source_policy_rows_attempted_not_reproducible": 20,
+    "source_policy_rows_promoted_after_driver": 0,
+    "source_policy_rows_still_requiring_execution_or_promotion": 20,
+    "source_policy_rows_total": 40,
+    "unaddressed_external_rows_after_ready_commands": 0,
+    "verified_authorized_execution_recorded": false
+  },
+  "promotion_decision": {
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "existing_artifact_promotion_ready_count": 0,
+    "external_superiority_claim_allowed": false,
+    "reason": "The ready RA2021/HI2022 artifacts are present, but no exact approval statement was supplied to this builder. Existing artifacts are treated as artifact-presence evidence rather than a verified current authorized execution.",
+    "source_policy_rows_attempted_not_reproducible": 20,
+    "source_policy_rows_closed_after_driver": 0,
+    "source_policy_rows_closed_by_existing_artifacts": 0,
+    "source_policy_rows_still_requiring_execution_or_promotion": 20,
+    "source_policy_rows_total": 40
+  },
+  "read_only": true,
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "review_agent_status_after_driver": {
+    "cmame_blocker_gate_open_blocker_count": 0,
+    "cmame_blocker_gate_open_blockers": [],
+    "decision": "do_not_submit_global",
+    "global_submission_standard_met": false,
+    "narrowed_claim_decision": "submit_under_narrowed_claim",
+    "narrowed_submission_standard_met": true,
+    "open_blockers": [
+      "OC4",
+      "OC6",
+      "OC12"
+    ],
+    "submission_standard_met": false,
+    "submission_standard_scope": "global_submission_standard"
+  },
+  "row_status_after_driver": {
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "rows_with_launch_command_refs": 20,
+    "rows_without_launch_command_refs": 20,
+    "rows_without_launch_command_refs_attempted_not_reproducible": 20,
+    "source_policy_rows_attempted_not_reproducible": 20,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_open": 20,
+    "source_policy_rows_still_requiring_execution_or_promotion": 20,
+    "source_policy_rows_total": 40,
+    "source_policy_rows_unclosed": 40
+  },
+  "run_v047_invoked_by_this_builder": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "schema": "b4-source-policy-post-execution-audit-v1",
+  "source_policy_closed_ratio": "0/40",
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_rows_attempted_not_reproducible": 20,
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_open": 20,
+  "source_policy_rows_promoted": 0,
+  "source_policy_rows_still_requiring_execution_or_promotion": 20,
+  "source_policy_rows_unclosed": 40,
+  "source_policy_total_rows": 40,
+  "status": "existing_outputs_present_no_verified_authorized_execution_no_source_policy_rows_promoted",
+  "v048_runner_invoked_by_this_builder": false,
+  "verified_authorized_execution_recorded": false
+}

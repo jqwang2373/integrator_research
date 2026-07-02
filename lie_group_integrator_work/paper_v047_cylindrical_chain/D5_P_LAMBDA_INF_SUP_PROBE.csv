@@ -1,0 +1,4 @@
+case,h,operator_rank,lambda_column_count,full_column_rank,min_singular_value,condition_number,finite_multiplier_recovery_constant,gauss_stage_residual_norm,gauss_stage_newton_iterations
+cylindrical_smooth,0.04,24,24,True,0.614376448862205,2.770629358369089,1.62766655826725,1.0292829673060734e-14,6
+cylindrical_smooth,0.02,24,24,True,0.6143121789742879,2.7707407702069617,1.627836846193889,9.238506732914585e-15,6
+cylindrical_smooth,0.01,24,24,True,0.6142803888036007,2.769345999592584,1.6279210898261678,1.2213250127267018e-14,6

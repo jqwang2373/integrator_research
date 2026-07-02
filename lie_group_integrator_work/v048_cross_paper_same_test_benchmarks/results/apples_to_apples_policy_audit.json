@@ -1,0 +1,13 @@
+{
+  "claim": "The common-reference matrix is paper-safe only as a coarse apples-to-apples final-state comparison. It is not a reproduction of the source papers' default time horizons or h policies. Public-code rows are accepted only after fixed-grid replay on t_i=i*h.",
+  "common_reference_apples_to_apples_coarse_claim": true,
+  "failed_rows": [],
+  "fixed_grid_wrapper_present": true,
+  "nonlocal_paper_safe_comparison_count": 40,
+  "paper_safe_row_count": 44,
+  "public_fixed_grid_paper_safe_count": 20,
+  "public_source_time_grid_caveat_detected": true,
+  "row_count": 44,
+  "schema": "apples-to-apples-policy-audit-v1",
+  "source_policy_reproduction": false
+}
