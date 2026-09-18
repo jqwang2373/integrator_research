@@ -726,7 +726,7 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
 - 验证：paper chain 通过（仅剩 2 个既有 cross-paper 环境失败）；顶层 `validate_pipeline_outputs.py`
   用 `.venv_sbel/bin/python` 运行通过（系统 `python3` 没有 jax，会让 dynamic row oracle gate 和
   narrowed 归档 runner 失败）。claim 状态不变：`submission_ready=false`，OC4/OC6/OC12 仍开。
-- 研究仓库未提交任何东西，由用户决定。
+- 上述工作连同 2026-09-18 的补充已于 2026-09-18 提交为研究仓库 commit 5f7eeec（未 push；venv 的 .pyc 变动和 2 GB 的 `external/public-metadata` 克隆未纳入，后者由根目录 `.gitignore` 排除）。
 
 ## 2026-09-18 补充：P2 常数实例化、预测子事实、镜像恢复
 
