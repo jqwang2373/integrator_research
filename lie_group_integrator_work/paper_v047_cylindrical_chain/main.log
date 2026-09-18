@@ -1,82 +1,82 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.27)  19 JUN 2026 22:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  17 SEP 2026 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
-(c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(c:/texlive/2025/texmf-dist/tex/latex/base/size11.clo
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count275
-\c@section=\count276
-\c@subsection=\count277
-\c@subsubsection=\count278
-\c@paragraph=\count279
-\c@subparagraph=\count280
-\c@figure=\count281
-\c@table=\count282
+\c@part=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen148
+\bibindent=\dimen150
 )
-(c:/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
 
-(c:/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(c:/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-(c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count283
-\Gm@cntv=\count284
-\c@Gm@tempcnt=\count285
-\Gm@bindingoffset=\dimen149
-\Gm@wd@mp=\dimen150
-\Gm@odd@mp=\dimen151
-\Gm@even@mp=\dimen152
-\Gm@layoutwidth=\dimen153
-\Gm@layoutheight=\dimen154
-\Gm@layouthoffset=\dimen155
-\Gm@layoutvoffset=\dimen156
+\Gm@cnth=\count284
+\Gm@cntv=\count285
+\c@Gm@tempcnt=\count286
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
 \Gm@dimlist=\toks18
 )
-(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/07/09 v2.17z AMS math features
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2026/05/19 v2.18d AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
 
-(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
-\ex@=\dimen157
+\ex@=\dimen159
 ))
-(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen158
+\pmbraise@=\dimen160
 )
-(c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count286
+\inf@bad=\count287
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count287
-\leftroot@=\count288
+\uproot@=\count288
+\leftroot@=\count289
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count289
-\DOTSCASE@=\count290
+\classnum@=\count290
+\DOTSCASE@=\count291
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
@@ -86,41 +86,41 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen159
+\big@size=\dimen161
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count291
+\macc@depth=\count292
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count292
+\c@MaxMatrixCols=\count293
 \dotsspace@=\muskip17
-\c@parentequation=\count293
-\dspbrk@lvl=\count294
+\c@parentequation=\count294
+\dspbrk@lvl=\count295
 \tag@help=\toks20
-\row@=\count295
-\column@=\count296
-\maxfields@=\count297
+\row@=\count296
+\column@=\count297
+\maxfields@=\count298
 \andhelp@=\toks21
-\eqnshift@=\dimen160
-\alignsep@=\dimen161
-\tagshift@=\dimen162
-\tagwidth@=\dimen163
-\totwidth@=\dimen164
-\lineht@=\dimen165
+\eqnshift@=\dimen162
+\alignsep@=\dimen163
+\tagshift@=\dimen164
+\tagwidth@=\dimen165
+\totwidth@=\dimen166
+\lineht@=\dimen167
 \@envbody=\toks22
 \multlinegap=\skip52
 \multlinetaggap=\skip53
 \mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2950.
-LaTeX Info: Redefining \] on input line 2951.
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
 )
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
@@ -128,7 +128,7 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(c:/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks24
 \thm@bodyfont=\toks25
@@ -140,174 +140,173 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip56
 \dth@everypar=\toks29
 )
-(c:/texlive/2025/texmf-dist/tex/latex/tools/array.sty
-Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen166
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
+\col@sep=\dimen168
 \ar@mcellbox=\box55
-\extrarowheight=\dimen167
+\extrarowheight=\dimen169
 \NC@list=\toks30
 \extratabsurround=\skip57
 \backup@length=\skip58
 \ar@cellbox=\box56
 )
-(c:/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen168
-\lightrulewidth=\dimen169
-\cmidrulewidth=\dimen170
-\belowrulesep=\dimen171
-\belowbottomsep=\dimen172
-\aboverulesep=\dimen173
-\abovetopsep=\dimen174
-\cmidrulesep=\dimen175
-\cmidrulekern=\dimen176
-\defaultaddspace=\dimen177
-\@cmidla=\count298
-\@cmidlb=\count299
-\@aboverulesep=\dimen178
-\@belowrulesep=\dimen179
-\@thisruleclass=\count300
-\@lastruleclass=\count301
-\@thisrulewidth=\dimen180
+\heavyrulewidth=\dimen170
+\lightrulewidth=\dimen171
+\cmidrulewidth=\dimen172
+\belowrulesep=\dimen173
+\belowbottomsep=\dimen174
+\aboverulesep=\dimen175
+\abovetopsep=\dimen176
+\cmidrulesep=\dimen177
+\cmidrulekern=\dimen178
+\defaultaddspace=\dimen179
+\@cmidla=\count299
+\@cmidlb=\count300
+\@aboverulesep=\dimen180
+\@belowrulesep=\dimen181
+\@thisruleclass=\count301
+\@lastruleclass=\count302
+\@thisrulewidth=\dimen182
 )
-(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
 
-(c:/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
-(c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-
-(c:/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen181
-\Gin@req@width=\dimen182
-)
-(c:/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
-
-(c:/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+\Gin@req@height=\dimen183
+\Gin@req@width=\dimen184
+) (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(c:/texlive/2025/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefineke
+ys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(c:/texlive/2025/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-
-(c:/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(c:/texlive/2025/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.s
+ty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(c:/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-))
-(c:/texlive/2025/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(c:/texlive/2025/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
-(c:/texlive/2025/texmf-dist/tex/latex/refcount/refcount.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(c:/texlive/2025/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitle
+string.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(c:/texlive/2025/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count302
-)
-(c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+\c@section@level=\count303
+) (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count303
+\etb@tempcnta=\count304
 )
-(c:/texlive/2025/texmf-dist/tex/generic/stringenc/stringenc.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
-\@linkdim=\dimen183
-\Hy@linkcounter=\count304
-\Hy@pagecounter=\count305
-
-(c:/texlive/2025/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+\@linkdim=\dimen185
+\Hy@linkcounter=\count305
+\Hy@pagecounter=\count306
+ (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(c:/texlive/2025/texmf-dist/tex/generic/intcalc/intcalc.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count306
+\Hy@SavedSpaceFactor=\count307
 
-(c:/texlive/2025/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4195.
-Package hyperref Info: Link nesting OFF on input line 4200.
-Package hyperref Info: Hyper index ON on input line 4203.
-Package hyperref Info: Plain pages OFF on input line 4210.
-Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Hyper figures OFF on input line 4199.
+Package hyperref Info: Link nesting OFF on input line 4204.
+Package hyperref Info: Hyper index ON on input line 4207.
+Package hyperref Info: Plain pages OFF on input line 4214.
+Package hyperref Info: Backreferencing OFF on input line 4219.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4462.
-\c@Hy@tempcnt=\count307
+Package hyperref Info: Bookmarks ON on input line 4466.
+\c@Hy@tempcnt=\count308
 
-(c:/texlive/2025/texmf-dist/tex/latex/url/url.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4801.
-\XeTeXLinkMargin=\dimen184
+LaTeX Info: Redefining \url on input line 4805.
+\XeTeXLinkMargin=\dimen186
 
-(c:/texlive/2025/texmf-dist/tex/generic/bitset/bitset.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(c:/texlive/2025/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.s
+ty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count308
-\Field@Width=\dimen185
-\Fld@charsize=\dimen186
-Package hyperref Info: Hyper figures OFF on input line 6078.
-Package hyperref Info: Link nesting OFF on input line 6083.
-Package hyperref Info: Hyper index ON on input line 6086.
-Package hyperref Info: backreferencing OFF on input line 6093.
-Package hyperref Info: Link coloring OFF on input line 6098.
-Package hyperref Info: Link coloring with OCG OFF on input line 6103.
-Package hyperref Info: PDF/A mode OFF on input line 6108.
-\Hy@abspage=\count309
-\c@Item=\count310
-\c@Hfootnote=\count311
+\Fld@menulength=\count309
+\Field@Width=\dimen187
+\Fld@charsize=\dimen188
+Package hyperref Info: Hyper figures OFF on input line 6091.
+Package hyperref Info: Link nesting OFF on input line 6096.
+Package hyperref Info: Hyper index ON on input line 6099.
+Package hyperref Info: backreferencing OFF on input line 6106.
+Package hyperref Info: Link coloring OFF on input line 6111.
+Package hyperref Info: Link coloring with OCG OFF on input line 6116.
+Package hyperref Info: PDF/A mode OFF on input line 6121.
+\Hy@abspage=\count310
+\c@Item=\count311
+\c@Hfootnote=\count312
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(c:/texlive/2025/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
-\Fld@listcount=\count312
-\c@bookmark@seq@number=\count313
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
+\Fld@listcount=\count313
+\c@bookmark@seq@number=\count314
 
-(c:/texlive/2025/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilec
+heck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 
-(c:/texlive/2025/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecou
+nter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -315,15 +314,15 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip59
 )
-(c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 
-(c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
 
-(c:/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -335,17 +334,17 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 17.
-\c@proposition=\count314
-\c@theorem=\count315
-\c@lemma=\count316
-\c@assumption=\count317
-\c@corollary=\count318
+\c@proposition=\count315
+\c@theorem=\count316
+\c@lemma=\count317
+\c@assumption=\count318
+\c@corollary=\count319
 
-(c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count319
-)
-(./main.aux)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdfte
+x.def
+File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count320
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
@@ -401,217 +400,222 @@ LaTeX Font Info:    ... okay on input line 48.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
-\scratchdimen=\dimen187
+\scratchcounter=\count321
+\scratchdimen=\dimen189
 \scratchbox=\box57
-\nofMPsegments=\count321
-\nofMParguments=\count322
+\nofMPsegments=\count322
+\nofMParguments=\count323
 \everyMPshowfont=\toks31
-\MPscratchCnt=\count323
-\MPscratchDim=\dimen188
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
+\MPscratchCnt=\count324
+\MPscratchDim=\dimen190
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
 \everyMPtoPDFconversion=\toks32
-) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-bas
+e.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.
+cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring ON on input line 48.
-
-(./main.out) (./main.out)
+ (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 79.
 
 
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 79.
 
 
-(c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+[1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4{c:/t
-exlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [5] [6] [7] 
-[8]
+{c:/Users/jingquanw/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+ [2] [3] [4{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super
+/cm-super-ts1.enc}] [5] [6] [7] [8]
 <figures/convergence.png, id=198, 543.4704pt x 434.5836pt>
 File: figures/convergence.png Graphic file (type png)
 <use figures/convergence.png>
-Package pdftex.def Info: figures/convergence.png  used on input line 901.
+Package pdftex.def Info: figures/convergence.png  used on input line 911.
 (pdftex.def)             Requested size: 446.26582pt x 356.85156pt.
 <figures/friction_smoothness_sweep.png, id=201, 766.062pt x 289.08pt>
 File: figures/friction_smoothness_sweep.png Graphic file (type png)
 <use figures/friction_smoothness_sweep.png>
 Package pdftex.def Info: figures/friction_smoothness_sweep.png  used on input l
-ine 928.
+ine 938.
 (pdftex.def)             Requested size: 446.26582pt x 168.40756pt.
-<figures/asme_lower_pair_graph_bridge.png, id=202, 488.5452pt x 423.7431pt>
+ [9]
+<figures/asme_lower_pair_graph_bridge.png, id=209, 488.5452pt x 423.7431pt>
 File: figures/asme_lower_pair_graph_bridge.png Graphic file (type png)
 <use figures/asme_lower_pair_graph_bridge.png>
 Package pdftex.def Info: figures/asme_lower_pair_graph_bridge.png  used on inpu
-t line 956.
+t line 966.
 (pdftex.def)             Requested size: 446.26582pt x 387.08101pt.
-<figures/asme_closed_loop_kinematic_fullva.png, id=203, 794.97pt x 303.534pt>
+<figures/asme_closed_loop_kinematic_fullva.png, id=210, 794.97pt x 303.534pt>
 File: figures/asme_closed_loop_kinematic_fullva.png Graphic file (type png)
 <use figures/asme_closed_loop_kinematic_fullva.png>
 Package pdftex.def Info: figures/asme_closed_loop_kinematic_fullva.png  used on
- input line 961.
+ input line 971.
 (pdftex.def)             Requested size: 446.26582pt x 170.39471pt.
 
-Underfull \hbox (badness 1325) in paragraph at lines 972--974
+Underfull \hbox (badness 1325) in paragraph at lines 982--984
 \OT1/cmr/m/n/10.95 Ful-lVA resid-ual; em-bed-ded scalar Ful-lVA bridge; reactio
 n-
  []
 
 
-Underfull \hbox (badness 4429) in paragraph at lines 975--978
+Underfull \hbox (badness 4429) in paragraph at lines 985--988
 []|\OT1/cmr/m/n/10.95 Method-side Ful-lVA map-ping with ac-cepted nested lo-cal
 
  []
 
-[9]
 <figures/endpoint_kkt_closure.png, id=211, 751.608pt x 289.08pt>
 File: figures/endpoint_kkt_closure.png Graphic file (type png)
 <use figures/endpoint_kkt_closure.png>
 Package pdftex.def Info: figures/endpoint_kkt_closure.png  used on input line 1
-034.
+044.
 (pdftex.def)             Requested size: 446.26582pt x 171.64082pt.
-<figures/source_free_final_stage_velocity_closure.png, id=212, 1112.958pt x 303
+[10 <./figures/convergence.png>]
+<figures/source_free_final_stage_velocity_closure.png, id=218, 1112.958pt x 303
 .534pt>
 File: figures/source_free_final_stage_velocity_closure.png Graphic file (type p
 ng)
 <use figures/source_free_final_stage_velocity_closure.png>
 Package pdftex.def Info: figures/source_free_final_stage_velocity_closure.png  
-used on input line 1075.
+used on input line 1085.
 (pdftex.def)             Requested size: 446.26582pt x 121.70786pt.
- [10 <./figures/convergence.png>] [11 <./figures/friction_smoothness_sweep.png>
-] [12 <./figures/asme_lower_pair_graph_bridge.png>] [13 <./figures/asme_closed_
-loop_kinematic_fullva.png> <./figures/endpoint_kkt_closure.png>]
+ [11 <./figures/friction_smoothness_sweep.png>] [12 <./figures/asme_lower_pair_
+graph_bridge.png>] [13 <./figures/asme_closed_loop_kinematic_fullva.png> <./fig
+ures/endpoint_kkt_closure.png>]
 <figures/velocity_compression.png, id=241, 1192.455pt x 332.0405pt>
 File: figures/velocity_compression.png Graphic file (type png)
 <use figures/velocity_compression.png>
 Package pdftex.def Info: figures/velocity_compression.png  used on input line 1
-183.
+193.
 (pdftex.def)             Requested size: 446.26582pt x 124.26155pt.
 <figures/velocity_compression_nondegenerate.png, id=242, 1228.59pt x 332.0405pt
 >
 File: figures/velocity_compression_nondegenerate.png Graphic file (type png)
 <use figures/velocity_compression_nondegenerate.png>
 Package pdftex.def Info: figures/velocity_compression_nondegenerate.png  used o
-n input line 1196.
+n input line 1206.
 (pdftex.def)             Requested size: 446.26582pt x 120.60858pt.
-<figures/velocity_compression_state_dependent.png, id=243, 1047.915pt x 317.988
+ [14 <./figures/source_free_final_stage_velocity_closure.png> <./figures/veloci
+ty_compression.png>]
+<figures/velocity_compression_state_dependent.png, id=251, 1047.915pt x 317.988
 pt>
 File: figures/velocity_compression_state_dependent.png Graphic file (type png)
 <use figures/velocity_compression_state_dependent.png>
 Package pdftex.def Info: figures/velocity_compression_state_dependent.png  used
- on input line 1211.
+ on input line 1221.
 (pdftex.def)             Requested size: 446.26582pt x 135.41725pt.
-<figures/velocity_compression_component_mixing.png, id=244, 1228.59pt x 339.669
+<figures/velocity_compression_component_mixing.png, id=252, 1228.59pt x 339.669
 pt>
 File: figures/velocity_compression_component_mixing.png Graphic file (type png)
 
 <use figures/velocity_compression_component_mixing.png>
 Package pdftex.def Info: figures/velocity_compression_component_mixing.png  use
-d on input line 1224.
+d on input line 1234.
 (pdftex.def)             Requested size: 446.26582pt x 123.37952pt.
- [14 <./figures/source_free_final_stage_velocity_closure.png> <./figures/veloci
-ty_compression.png>]
 <figures/velocity_compression_value_level.png, id=253, 1300.86pt x 354.123pt>
 File: figures/velocity_compression_value_level.png Graphic file (type png)
 <use figures/velocity_compression_value_level.png>
 Package pdftex.def Info: figures/velocity_compression_value_level.png  used on 
-input line 1239.
+input line 1249.
 (pdftex.def)             Requested size: 446.26582pt x 121.48091pt.
-<figures/velocity_compression_derivative_aware.png, id=254, 1192.455pt x 346.89
+ [15 <./figures/velocity_compression_nondegenerate.png> <./figures/velocity_com
+pression_state_dependent.png>]
+<figures/velocity_compression_derivative_aware.png, id=262, 1192.455pt x 346.89
 6pt>
 File: figures/velocity_compression_derivative_aware.png Graphic file (type png)
 
 <use figures/velocity_compression_derivative_aware.png>
 Package pdftex.def Info: figures/velocity_compression_derivative_aware.png  use
-d on input line 1255.
+d on input line 1265.
 (pdftex.def)             Requested size: 446.26582pt x 129.82101pt.
- [15 <./figures/velocity_compression_nondegenerate.png> <./figures/velocity_com
-pression_state_dependent.png>]
 <figures/velocity_compression_bounded_gradient.png, id=263, 1120.185pt x 317.98
 8pt>
 File: figures/velocity_compression_bounded_gradient.png Graphic file (type png)
 
 <use figures/velocity_compression_bounded_gradient.png>
 Package pdftex.def Info: figures/velocity_compression_bounded_gradient.png  use
-d on input line 1275.
+d on input line 1285.
 (pdftex.def)             Requested size: 446.26582pt x 126.68347pt.
 <figures/velocity_compression_bounded_formula.png, id=264, 1192.455pt x 332.040
 5pt>
 File: figures/velocity_compression_bounded_formula.png Graphic file (type png)
 <use figures/velocity_compression_bounded_formula.png>
 Package pdftex.def Info: figures/velocity_compression_bounded_formula.png  used
- on input line 1290.
+ on input line 1300.
 (pdftex.def)             Requested size: 446.26582pt x 124.26155pt.
-<figures/velocity_compression_target_free_formula.png, id=265, 1192.455pt x 332
+ [16 <./figures/velocity_compression_component_mixing.png> <./figures/velocity_
+compression_value_level.png>]
+<figures/velocity_compression_target_free_formula.png, id=273, 1192.455pt x 332
 .0405pt>
 File: figures/velocity_compression_target_free_formula.png Graphic file (type p
 ng)
 <use figures/velocity_compression_target_free_formula.png>
 Package pdftex.def Info: figures/velocity_compression_target_free_formula.png  
-used on input line 1307.
+used on input line 1317.
 (pdftex.def)             Requested size: 446.26582pt x 124.26155pt.
- [16 <./figures/velocity_compression_component_mixing.png> <./figures/velocity_
-compression_value_level.png>]
-<figures/velocity_compression_direction_capacity.png, id=274, 1228.59pt x 346.8
+ [17 <./figures/velocity_compression_derivative_aware.png> <./figures/velocity_
+compression_bounded_gradient.png>]
+<figures/velocity_compression_direction_capacity.png, id=282, 1228.59pt x 346.8
 96pt>
 File: figures/velocity_compression_direction_capacity.png Graphic file (type pn
 g)
 <use figures/velocity_compression_direction_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_direction_capacity.png  u
-sed on input line 1334.
+sed on input line 1344.
 (pdftex.def)             Requested size: 446.26582pt x 126.00461pt.
-<figures/velocity_compression_nonlinear_capacity.png, id=275, 1300.86pt x 346.8
+<figures/velocity_compression_nonlinear_capacity.png, id=283, 1300.86pt x 346.8
 96pt>
 File: figures/velocity_compression_nonlinear_capacity.png Graphic file (type pn
 g)
 <use figures/velocity_compression_nonlinear_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_nonlinear_capacity.png  u
-sed on input line 1353.
+sed on input line 1363.
 (pdftex.def)             Requested size: 446.26582pt x 119.00171pt.
- [17 <./figures/velocity_compression_derivative_aware.png> <./figures/velocity_
-compression_bounded_gradient.png>]
 <figures/velocity_compression_higher_order_capacity.png, id=284, 1300.86pt x 34
 6.896pt>
 File: figures/velocity_compression_higher_order_capacity.png Graphic file (type
  png)
 <use figures/velocity_compression_higher_order_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_higher_order_capacity.png
-  used on input line 1369.
+  used on input line 1379.
 (pdftex.def)             Requested size: 446.26582pt x 119.00171pt.
-<figures/velocity_compression_history_capacity.png, id=285, 1300.86pt x 346.896
+ [18 <./figures/velocity_compression_bounded_formula.png> <./figures/velocity_c
+ompression_target_free_formula.png>]
+<figures/velocity_compression_history_capacity.png, id=293, 1300.86pt x 346.896
 pt>
 File: figures/velocity_compression_history_capacity.png Graphic file (type png)
 
 <use figures/velocity_compression_history_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_history_capacity.png  use
-d on input line 1388.
+d on input line 1398.
 (pdftex.def)             Requested size: 446.26582pt x 119.00171pt.
- [18 <./figures/velocity_compression_bounded_formula.png> <./figures/velocity_c
-ompression_target_free_formula.png>]
 <figures/velocity_compression_multi_step_history_capacity.png, id=294, 1300.86p
 t x 346.896pt>
 File: figures/velocity_compression_multi_step_history_capacity.png Graphic file
  (type png)
 <use figures/velocity_compression_multi_step_history_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_multi_step_history_capaci
-ty.png  used on input line 1404.
+ty.png  used on input line 1414.
 (pdftex.def)             Requested size: 446.26582pt x 119.00171pt.
 <figures/velocity_compression_recurrent_history_capacity.png, id=295, 1300.86pt
  x 346.896pt>
@@ -619,7 +623,7 @@ File: figures/velocity_compression_recurrent_history_capacity.png Graphic file
 (type png)
 <use figures/velocity_compression_recurrent_history_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_recurrent_history_capacit
-y.png  used on input line 1419.
+y.png  used on input line 1429.
 (pdftex.def)             Requested size: 446.26582pt x 119.00171pt.
 <figures/velocity_compression_weak_row_structure_capacity.png, id=296, 1300.86p
 t x 346.896pt>
@@ -627,81 +631,84 @@ File: figures/velocity_compression_weak_row_structure_capacity.png Graphic file
  (type png)
 <use figures/velocity_compression_weak_row_structure_capacity.png>
 Package pdftex.def Info: figures/velocity_compression_weak_row_structure_capaci
-ty.png  used on input line 1432.
+ty.png  used on input line 1442.
 (pdftex.def)             Requested size: 446.26582pt x 119.00171pt.
-<figures/velocity_compression_row_space_compression.png, id=297, 1264.725pt x 3
+ [19 <./figures/velocity_compression_direction_capacity.png> <./figures/velocit
+y_compression_nonlinear_capacity.png>]
+<figures/velocity_compression_row_space_compression.png, id=306, 1264.725pt x 3
 46.896pt>
 File: figures/velocity_compression_row_space_compression.png Graphic file (type
  png)
 <use figures/velocity_compression_row_space_compression.png>
 Package pdftex.def Info: figures/velocity_compression_row_space_compression.png
-  used on input line 1448.
+  used on input line 1458.
 (pdftex.def)             Requested size: 446.26582pt x 122.39995pt.
- [19 <./figures/velocity_compression_direction_capacity.png> <./figures/velocit
-y_compression_nonlinear_capacity.png>]
 <figures/order_closure_blend.png, id=307, 1141.866pt x 303.534pt>
 File: figures/order_closure_blend.png Graphic file (type png)
 <use figures/order_closure_blend.png>
 Package pdftex.def Info: figures/order_closure_blend.png  used on input line 14
-69.
+79.
 (pdftex.def)             Requested size: 446.26582pt x 118.62788pt.
  [20 <./figures/velocity_compression_higher_order_capacity.png> <./figures/velo
 city_compression_history_capacity.png>] [21 <./figures/velocity_compression_mul
 ti_step_history_capacity.png> <./figures/velocity_compression_recurrent_history
 _capacity.png>] [22 <./figures/velocity_compression_weak_row_structure_capacity
-.png> <./figures/velocity_compression_row_space_compression.png>] [23 <./figure
-s/order_closure_blend.png>] [24] [25] [26] [27] [28]
+.png> <./figures/velocity_compression_row_space_compression.png>]
+[23 <./figures/order_closure_blend.png>] [24] [25] [26] [27] [28]
 <figures/sparse_speed_gap.png, id=360, 780.516pt x 289.08pt>
 File: figures/sparse_speed_gap.png Graphic file (type png)
 <use figures/sparse_speed_gap.png>
-Package pdftex.def Info: figures/sparse_speed_gap.png  used on input line 2055.
+Package pdftex.def Info: figures/sparse_speed_gap.png  used on input line 2065.
 
 (pdftex.def)             Requested size: 446.26582pt x 165.28456pt.
- [29]
-[30 <./figures/sparse_speed_gap.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2243--2243
+ [29] [30 <./figures/sparse_speed_gap.png>] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 2253--2253
 []|\OT1/cmr/m/n/10.95 Independent full-TFE
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2276--2276
+Underfull \hbox (badness 10000) in paragraph at lines 2286--2286
 []|\OT1/cmr/m/n/10.95 Sharp-friction coarse
  []
 
-[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]
-[46] (./main.aux)
+[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
+(./main.aux)
  ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2708D19E563E86FDBA9457AEABF2CE54;4706.
  ) 
 Here is how much of TeX's memory you used:
- 11280 strings out of 467533
- 175307 string characters out of 5423668
- 671104 words of memory out of 5000000
- 39922 multiletter control sequences out of 15000+600000
- 638631 words of font info for 83 fonts, out of 8000000 for 9000
+ 11312 strings out of 467159
+ 179276 string characters out of 5404997
+ 680902 words of memory out of 5000000
+ 40318 multiletter control sequences out of 15000+600000
+ 637384 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,541b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/texlive/2025/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:
-/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2
-025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:
-/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (46 pages, 3377325 bytes).
+ 74i,11n,79p,541b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmex10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmitt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/jingquanw/texlive/2026/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/Users/jingquanw/texlive/2026/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/jingquanw/texlive/2
+026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/jingquanw/tex
+live/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/jingqua
+nw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/j
+ingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Us
+ers/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fon
+ts/type1/public/cm-super/sfrm1095.pfb>
+Output written on main.pdf (46 pages, 3380160 bytes).
 PDF statistics:
  564 PDF objects out of 1000 (max. 8388607)
  425 compressed objects within 5 object streams

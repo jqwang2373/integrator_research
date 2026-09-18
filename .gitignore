@@ -1,0 +1,2 @@
+# local shallow clone of https://github.com/uwsbel/public-metadata (2 GB); restore with git clone, not tracked here
+external/public-metadata/

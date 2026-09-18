@@ -432,3 +432,72 @@ close `full_tfe_stage_replacement_missing` by deriving and validating a
 source-free, projection-free, non-terminal-row-replacement TFE stage residual
 that keeps the 132-row Newton system full rank, closes raw terminal endpoint
 velocity, and recovers the smooth order target on the accepted h-sweep.
+
+## 2026-09-17 Manuscript Compaction and Proof-Route Pin
+
+The CMAME manuscript `paper_v047_cylindrical_chain/main_cmame.tex` was compacted around the
+exact stage identity (13047 lines / 259 pages to 4042 lines / 88 pages after the second pass). The lifted reduced
+Gauss stage satisfies all 132 implemented rows exactly (`lem:exact-stage-identity`), so the
+stage-residual perturbation term of the order theorem is zero and the local defect is
+`C_loc = C_G + C_E + C_N c_eta`. Retained theorem interfaces are P1, P2, P6; P7 stays the
+output boundary; P3, P4, P5 are removed. This changes no claim state: the accepted method,
+order claim, ASME example roles, `submission_ready=false`, and blockers OC4/OC6/OC12 are
+unchanged.
+
+Additional authoritative files:
+
+- `paper_v047_cylindrical_chain/EXACT_STAGE_IDENTITY_GATE.md` / `.json`
+  (built by `build_exact_stage_identity_gate.py`, checked by
+  `validate_exact_stage_identity_gate.py`; runs the Lean axiom check when the toolchain
+  in `~/lean/integrator_order_proof` is present).
+- `paper_v047_cylindrical_chain/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md` (why the old
+  displayed rows did not match the implemented residual).
+- `LEAN_FORMALIZATION.md` (pointer to the Lean development).
+
+The top-level `validate_pipeline_outputs.py` runs the exact-stage-identity gate in the slot
+formerly occupied by the proof-closure manifest step; its other retired-gate steps return a
+`superseded_by=EXACT_STAGE_IDENTITY_GATE` notice instead of re-validating archived records.
+
+Superseded (files kept, marked `superseded_by`, removed from the package validator chain and
+stubbed in the top-level validator):
+`PROOF_CLOSURE_MANIFEST`, `PROOF_CLAIM_TRACEABILITY_AUDIT`, `CMAME_STRICT_PROOF_AUDIT`,
+`CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT`, `CMAME_PROOF_STYLE_AUDIT`,
+`NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE`. The pre-compaction source is
+`paper_v047_cylindrical_chain/main_cmame_pre_v049_backup.tex`.
+
+### 2026-09-17 second pass (P2 from P1, P6 stopping rule, numerical identity check, Lean in package)
+
+- `lem:p2-from-p1` / `eq:p2-perturbation-bound`: P2 follows from P1 plus the chart assumption for
+  `h ≤ h_0` (Lean `uniform_inverse_of_perturbation`). `lem:newton-envelope` /
+  `eq:newton-envelope-decay`: the `c_η h⁷` stopping rule of P6 is reached after `O(log 1/h)`
+  simplified-Newton steps (Lean `simplified_newton_residual_decay`); the existing
+  `PROOF_SOLVER_TOLERANCE_REGIME_SWEEP` (policy `scaled_h7_c1e4`, `T = 0.08`) instantiates it.
+  P1, P2, P6 stay the stated interfaces; the theorem statement is unchanged.
+- New authoritative files: `EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.md/json/csv`
+  (`run_exact_stage_identity_numerical_check.py`, checked by
+  `validate_exact_stage_identity_numerical_check.py`; `h ∈ {0.04, 0.02, 0.01}`, `T = 0.08`,
+  Newton tolerance `1e-13`, threshold `1e-10`; not a heavy run, never calls `run_v047.py`), and the
+  Lean source copy `paper_v047_cylindrical_chain/lean/` (12 `.lean` files, `lakefile.toml`,
+  `lean-toolchain`, `lake-manifest.json`, `scripts/Axioms.lean`; the gate records byte-level sync
+  with `~/lean/integrator_order_proof`). Both are in `validate_paper_package.py`.
+- `P2_CONSTANTS_NUMERICAL_CHECK.md/json/csv` (`run_p2_constants_numerical_check.py`, checked by
+  `validate_p2_constants_numerical_check.py`, in `validate_paper_package.py`): `J_h` vs `J_0` on the
+  smooth chain, Euclidean norm on the implemented layout. Status
+  `inverse_bound_observed_neumann_threshold_below_reported_h`: `‖J_h⁻¹‖ ≤ 1.55‖J_0⁻¹‖` observed on
+  all grids, Neumann threshold `h_0 ≈ 2.5e-5–3.7e-5` far below the reported `h`. Records that the
+  Algorithm-1 predictor (zero angular velocity/acceleration guesses) is `O(1)` from `Z_G` and its
+  first Newton step expands; `lem:newton-envelope` is stated for predictors in the contraction ball.
+  Algorithm 1's predictor description in the manuscript now lists the zero angular guesses.
+- The `external/public-metadata` mirror (`https://github.com/uwsbel/public-metadata`, shallow clone
+  of `master` plus `user/aaron/msd`, ~2 GB, untracked nested git repo) was restored on 2026-09-18;
+  the two cross-paper benchmark validators pass again.
+- Manuscript additions: `tab:exact-identity-check`, `tab:p2-constants-check`, `tab:lean-development`, modelling sentence for
+  the second lower pair, closed-loop scope sentence, observed-order remark. `main.tex` and
+  `main_concise.tex` carry a legacy status note after `\maketitle`; both rebuild with zero
+  warnings (46 and 8 pages).
+- Operational: run the top-level `validate_pipeline_outputs.py` with `.venv_sbel/bin/python`
+  (system `python3` lacks `jax`, so `validate_dynamic_row_oracle_gate.py` and the extracted
+  narrowed-archive runner fail under it, and a failed archive run leaves
+  `cmame_narrowed_repro_bundle/results/*` in a state that makes the narrowed package audit report
+  `bundle summary status stale` until the archive validator runs again). Claim state unchanged:
+  `submission_ready=false`, OC4/OC6/OC12 open.

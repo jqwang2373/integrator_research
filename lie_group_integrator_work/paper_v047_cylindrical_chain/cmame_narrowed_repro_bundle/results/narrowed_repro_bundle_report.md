@@ -90,13 +90,14 @@ local_runner_proof_gap_closed=False
 ### double_pendulum
 
 ```text
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
 p1_double_runner_candidate=PASS
 example=double_pendulum
 rows=3
 position_order=6.010712
-velocity_order=6.009705
+velocity_order=6.009716
 finest_position_error=3.099743e-13
-finest_velocity_error=2.345589e-13
+finest_velocity_error=2.345554e-13
 p1_double_only_ready=True
 p1_complete=False
 imports_v047_v048_or_v029=False
@@ -157,90 +158,3 @@ submission_ready=False
 - Driver requires exact approval / does not authorize execution: `True/True`.
 - Opt-in commands / mapped rows: `13/20`.
 - Terminal unable-to-reproduce rows: `20`.
-
-## Local Runner Checks
-
-These opt-in checks regenerate the self-contained local Gauss6/FullVA
-single- and double-pendulum rows, replay-check the embedded
-closed-loop local four-link/slider-crank rows, and run the compact
-self-contained closed-loop local candidate. The companion launcher
-then checks the existing local accepted-row packages as one group.
-They do not run source-paper same-policy benchmarks and do not close
-source-policy or symbolic-certificate gaps.
-The global proof boundary is carried separately by the direct residual-bridge
-manifest: `direct_pc2_proof_gap_closed=True` and
-`proof_gap_scope=direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open`.
-
-### single_pendulum
-
-```text
-p1_single_runner_candidate=PASS
-example=single_pendulum
-rows=3
-position_order=6.013317
-velocity_order=6.006882
-p1_single_only_ready=True
-p1_complete=False
-source_policy_external_superiority_allowed=False
-local_runner_proof_gap_closed=False
-```
-
-### double_pendulum
-
-```text
-p1_double_runner_candidate=PASS
-example=double_pendulum
-rows=3
-position_order=6.010712
-velocity_order=6.009705
-finest_position_error=3.099743e-13
-finest_velocity_error=2.345589e-13
-p1_double_only_ready=True
-p1_complete=False
-imports_v047_v048_or_v029=False
-source_policy_external_superiority_allowed=False
-local_runner_proof_gap_closed=False
-```
-
-### four_link_slider_crank_closed_loop_replay
-
-```text
-cmame_closed_loop_local_rows_replay=PASS
-models=four_link,slider_crank
-local_rows=6/6
-summary_json=results/closed_loop_local_rows_summary.json
-rows_csv=results/closed_loop_local_rows.csv
-four_link_orders=5.954898/6.084819
-slider_crank_orders=6.163690/7.340915
-self_contained_simulation_runner=False
-source_policy_external_superiority_allowed=False
-proof_gap_closed_by_adapter=False
-submission_ready=False
-```
-
-### four_link_slider_crank_closed_loop_self_contained_candidate
-
-```text
-cmame_closed_loop_local_runner_candidate=PASS
-rows_ok=6/6
-four_link_orders=5.954898/5.955195/6.084819/5.971421
-slider_crank_orders=6.163687/6.158976/7.340920/6.425500
-self_contained_simulation_runner=True
-source_policy_external_superiority_allowed=False
-```
-
-### local_accepted_runner_companion
-
-```text
-cmame_local_accepted_runner_companion=PASS
-minimal_replay_boundary=preserved
-self_contained_examples=single_pendulum,double_pendulum,four_link,slider_crank
-local_rows=12
-source_policy_external_rows=0/40
-source_policy_handoff_status=source_policy_execution_handoff_ready_not_authorized_not_run
-source_policy_handoff_authorized=False
-source_policy_handoff_driver=run_b4_source_policy_after_opt_in.sh
-source_policy_handoff_opt_in=13/20
-full_source_policy_runner_package_ready=False
-submission_ready=False
-```

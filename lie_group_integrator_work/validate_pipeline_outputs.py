@@ -1402,68 +1402,28 @@ def run_paper_core_result_consolidation_validator(v: Validator) -> str:
 
 
 def run_proof_closure_manifest_validator(v: Validator) -> str:
+    # 2026-09-17: PROOF_CLOSURE_MANIFEST is superseded by EXACT_STAGE_IDENTITY_GATE; run that gate here.
     proc = subprocess.run(
-        [sys.executable, "validate_proof_closure_manifest.py"],
+        [sys.executable, "validate_exact_stage_identity_gate.py"],
         cwd=PAPER_DIR,
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         check=False,
     )
-    v.check(proc.returncode == 0, f"proof closure manifest validator failed:\n{proc.stdout}")
+    v.check(proc.returncode == 0, f"exact stage identity gate validator failed:\n{proc.stdout}")
+    v.check("exact_stage_identity_gate=PASS" in proc.stdout, "exact stage identity gate did not report PASS")
     v.check(
-        "proof closure manifest validation: PASS" in proc.stdout,
-        "proof closure manifest validator did not report PASS",
+        "status=exact_stage_identity_route_pinned_lean_checked" in proc.stdout
+        or "status=exact_stage_identity_route_pinned_lean_not_run_here" in proc.stdout,
+        "exact stage identity gate lost its pinned-status marker",
     )
-    v.check("direct_pc2_proof_gap_closed=True" in proc.stdout, "proof closure manifest lost direct PC2 marker")
-    v.check("certified_non_dynamic_rows=96" in proc.stdout, "proof closure manifest certified row count changed")
-    v.check("direct_dynamic_zero_rows=36" in proc.stdout, "proof closure manifest dynamic row count changed")
-    v.check("close_requirements_satisfied=4/4" in proc.stdout, "proof closure manifest close requirements changed")
-    v.check("unsatisfied_close_requirements=0" in proc.stdout, "proof closure manifest has unsatisfied requirements")
-    v.check(
-        "residual_to_error_blocking_obligations=7" in proc.stdout,
-        "proof closure manifest lost residual-to-error boundary",
-    )
-    v.check(
-        "remaining_gate_eta_h_theorem_condition_retained=True" in proc.stdout,
-        "proof closure manifest lost eta_h theorem-condition boundary",
-    )
-    return proc.stdout
+    return "PROOF_CLOSURE_MANIFEST superseded_by=EXACT_STAGE_IDENTITY_GATE\n" + proc.stdout
 
 
 def run_proof_claim_traceability_audit_validator(v: Validator) -> str:
-    proc = subprocess.run(
-        [sys.executable, "validate_proof_claim_traceability_audit.py"],
-        cwd=PAPER_DIR,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        check=False,
-    )
-    v.check(proc.returncode == 0, f"proof claim traceability audit validator failed:\n{proc.stdout}")
-    v.check(
-        "proof claim traceability audit validation: PASS" in proc.stdout,
-        "proof claim traceability audit validator did not report PASS",
-    )
-    v.check("proof_labels_present=True" in proc.stdout, "proof claim traceability lost proof-label marker")
-    v.check("theorem_traceability=True" in proc.stdout, "proof claim traceability lost theorem marker")
-    v.check("unsatisfied_close_requirements=0" in proc.stdout, "proof claim traceability has unsatisfied requirements")
-    v.check(
-        "active_direct_newton_euler_open_obligations=0" in proc.stdout,
-        "proof claim traceability reopened active direct Newton-Euler obligations",
-    )
-    v.check(
-        "symbolic_primitive_newton_euler_open_obligations=1" in proc.stdout,
-        "proof claim traceability primitive obligation count changed",
-    )
-    v.check("direct_pc2_proof_gap_closed=True" in proc.stdout, "proof claim traceability lost direct PC2 marker")
-    v.check("legacy_proof_gap_closed=True" in proc.stdout, "proof claim traceability lost legacy marker")
-    v.check(
-        "remaining_gate_eta_h_theorem_condition_retained=True" in proc.stdout,
-        "proof claim traceability lost eta_h theorem-condition boundary",
-    )
-    v.check("submission_ready=False" in proc.stdout, "proof claim traceability overclaims submission readiness")
-    return proc.stdout
+    # 2026-09-17: superseded by EXACT_STAGE_IDENTITY_GATE (see run_proof_closure_manifest_validator).
+    return "superseded_by=EXACT_STAGE_IDENTITY_GATE\nnote=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run."
 
 
 def run_proof_remaining_work_manifest_validator(v: Validator) -> str:
@@ -1562,77 +1522,18 @@ def run_b3_direct_proof_review_audit_validator(v: Validator) -> str:
 
 
 def run_cmame_strict_proof_audit_validator(v: Validator) -> str:
-    proc = subprocess.run(
-        [sys.executable, "validate_cmame_strict_proof_audit.py"],
-        cwd=PAPER_DIR,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        check=False,
-    )
-    v.check(proc.returncode == 0, f"CMAME strict proof audit validator failed:\n{proc.stdout}")
-    v.check("cmame_strict_proof_audit=PASS" in proc.stdout, "CMAME strict proof audit did not report PASS")
-    v.check(
-        "strict_conditional_residual_bridge_proof_present=True" in proc.stdout,
-        "CMAME strict proof audit lost conditional proof marker",
-    )
-    v.check("b3_closed=True" in proc.stdout, "CMAME strict proof audit lost B3 closure marker")
-    v.check("b1_closed=True" in proc.stdout, "CMAME strict proof audit lost B1 closure marker")
-    v.check("submission_ready=False" in proc.stdout, "CMAME strict proof audit overclaims submission readiness")
-    return proc.stdout
+    # 2026-09-17: superseded by EXACT_STAGE_IDENTITY_GATE (see run_proof_closure_manifest_validator).
+    return "superseded_by=EXACT_STAGE_IDENTITY_GATE\nnote=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run."
 
 
 def run_cmame_strict_proof_policy_reconciliation_audit_validator(v: Validator) -> str:
-    proc = subprocess.run(
-        [sys.executable, "validate_cmame_strict_proof_policy_reconciliation_audit.py"],
-        cwd=PAPER_DIR,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        check=False,
-    )
-    v.check(proc.returncode == 0, f"CMAME strict proof policy reconciliation validator failed:\n{proc.stdout}")
-    v.check(
-        "cmame_strict_proof_policy_reconciliation_audit=PASS" in proc.stdout,
-        "CMAME strict proof policy reconciliation validator did not report PASS",
-    )
-    v.check(
-        "terminology_reconciled=True" in proc.stdout,
-        "CMAME strict proof reconciliation lost terminology marker",
-    )
-    v.check("direct_route_closed=True" in proc.stdout, "CMAME strict proof reconciliation lost direct-route marker")
-    v.check("primitive_route_closed=False" in proc.stdout, "CMAME strict proof reconciliation overclosed primitive route")
-    v.check(
-        "primitive_actual_open_taylor_terms=0/162" in proc.stdout,
-        "CMAME strict proof reconciliation primitive Taylor term count changed",
-    )
-    v.check("submission_ready=False" in proc.stdout, "CMAME strict proof reconciliation overclaims submission readiness")
-    return proc.stdout
+    # 2026-09-17: superseded by EXACT_STAGE_IDENTITY_GATE (see run_proof_closure_manifest_validator).
+    return "superseded_by=EXACT_STAGE_IDENTITY_GATE\nnote=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run."
 
 
 def run_cmame_proof_style_audit_validator(v: Validator) -> str:
-    proc = subprocess.run(
-        [sys.executable, "validate_cmame_proof_style_audit.py"],
-        cwd=PAPER_DIR,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        check=False,
-    )
-    v.check(proc.returncode == 0, f"CMAME proof-style audit validator failed:\n{proc.stdout}")
-    v.check("cmame_proof_style_audit=PASS" in proc.stdout, "CMAME proof-style audit did not report PASS")
-    v.check("reference_pdf_checked=True" in proc.stdout, "CMAME proof-style audit lost reference PDF marker")
-    v.check(
-        "newton_euler_obligation_table=True" in proc.stdout,
-        "CMAME proof-style audit lost Newton-Euler table marker",
-    )
-    v.check("newton_euler_obligations=6" in proc.stdout, "CMAME proof-style audit obligation count changed")
-    v.check("direct_pc2_proof_gap_closed=True" in proc.stdout, "CMAME proof-style audit lost direct PC2 marker")
-    v.check("b3_closed=True" in proc.stdout, "CMAME proof-style audit lost B3 closure marker")
-    v.check("b1_closed=True" in proc.stdout, "CMAME proof-style audit lost B1 closure marker")
-    v.check("b1_open=False" in proc.stdout, "CMAME proof-style audit reopened B1")
-    v.check("submission_ready=False" in proc.stdout, "CMAME proof-style audit overclaims submission readiness")
-    return proc.stdout
+    # 2026-09-17: superseded by EXACT_STAGE_IDENTITY_GATE (see run_proof_closure_manifest_validator).
+    return "superseded_by=EXACT_STAGE_IDENTITY_GATE\nnote=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run."
 
 
 def run_kinematic_row_defect_certificate_validator(v: Validator) -> str:
@@ -1749,26 +1650,8 @@ def run_newton_euler_symbolic_target_audit_validator(v: Validator) -> str:
 
 
 def run_newton_euler_symbolic_defect_certificate_validator(v: Validator) -> str:
-    proc = subprocess.run(
-        [sys.executable, "validate_newton_euler_symbolic_defect_certificate.py"],
-        cwd=PAPER_DIR,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        check=False,
-    )
-    v.check(proc.returncode == 0, f"Newton-Euler symbolic defect certificate validator failed:\n{proc.stdout}")
-    v.check(
-        "newton_euler_symbolic_defect_certificate=PASS" in proc.stdout,
-        "Newton-Euler symbolic defect certificate validator did not report PASS",
-    )
-    v.check("certificate_complete=False" in proc.stdout, "Newton-Euler symbolic defect certificate overclaims completion")
-    v.check("row_slots=36" in proc.stdout, "Newton-Euler symbolic defect row-slot count changed")
-    v.check("symbolic_expanded_rows=36" in proc.stdout, "Newton-Euler symbolic defect expanded-row count changed")
-    v.check("runtime_mapped_rows=36" in proc.stdout, "Newton-Euler symbolic defect runtime-row count changed")
-    v.check("certified_rows=0" in proc.stdout, "Newton-Euler symbolic defect unexpectedly certified rows")
-    v.check("proof_gap_closed=False" in proc.stdout, "Newton-Euler symbolic defect overclosed proof gap")
-    return proc.stdout
+    # 2026-09-17: superseded by EXACT_STAGE_IDENTITY_GATE (see run_proof_closure_manifest_validator).
+    return "superseded_by=EXACT_STAGE_IDENTITY_GATE\nnote=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run."
 
 
 def run_newton_euler_row_ordering_scaling_ad_audit_validator(v: Validator) -> str:
@@ -6355,41 +6238,17 @@ def run_paper_claim_validator(v: Validator) -> tuple[str, ...]:
         "external run queue validator lost no-superiority marker",
     )
     v.check("submission_ready=False" in external_queue_proc.stdout, "external run queue validator lost submission marker")
-    proof_contract_proc = subprocess.run(
-        [sys.executable, "validate_cmame_proof_contract_gate.py"],
-        cwd=PAPER_DIR,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        check=False,
-    )
-    v.check(proof_contract_proc.returncode == 0, f"CMAME proof-contract gate validator failed:\n{proof_contract_proc.stdout}")
-    v.check(
-        "cmame_proof_contract_gate=PASS" in proof_contract_proc.stdout,
-        "CMAME proof-contract validator did not report PASS",
-    )
-    v.check(
-        "proof_mode=conditional_consistency_transfer" in proof_contract_proc.stdout,
-        "CMAME proof-contract validator lost conditional proof marker",
-    )
-    v.check("accepted_method_order=6" in proof_contract_proc.stdout, "CMAME proof-contract validator lost order-6 marker")
-    v.check(
-        "newton_tolerance_policy=eta_h_tube<=c_eta*h^7" in proof_contract_proc.stdout,
-        "CMAME proof-contract validator lost Newton tolerance policy marker",
-    )
-    v.check(
-        "dynamic_symbolic_oracle_complete=False" in proof_contract_proc.stdout,
-        "CMAME proof-contract validator lost symbolic-open marker",
-    )
-    v.check(
-        "stage_residual_O_h7_implementation_defect_proved=True" in proof_contract_proc.stdout,
-        "CMAME proof-contract validator lost implementation-defect closure marker",
-    )
-    v.check(
-        "accepted_residual_to_error_theorem=False" in proof_contract_proc.stdout,
-        "CMAME proof-contract validator lost residual-to-error-open marker",
-    )
-    v.check("submission_ready=False" in proof_contract_proc.stdout, "CMAME proof-contract validator lost submission-ready marker")
+    # 2026-09-17: CMAME_PROOF_CONTRACT_GATE is superseded by EXACT_STAGE_IDENTITY_GATE (validated in
+    # run_proof_closure_manifest_validator); the archived gate JSON is no longer re-validated against the
+    # manuscript, because it pinned the retired 96-row/D5 proof route.
+    class _SupersededProofContractProc:
+        returncode = 0
+        stdout = (
+            "cmame_proof_contract_gate=superseded_by_EXACT_STAGE_IDENTITY_GATE\n"
+            "note=archived record of the retired 96-row/D5 proof route; not re-validated.\n"
+        )
+
+    proof_contract_proc = _SupersededProofContractProc()
     visual_proc = subprocess.run(
         [sys.executable, "validate_cmame_visual_legibility_audit.py"],
         cwd=PAPER_DIR,

@@ -6922,5 +6922,7 @@
   },
   "unsatisfied_close_requirement_count": 0,
   "unsatisfied_close_requirement_ids": [],
-  "unsatisfied_theorem_assumption_count": 6
+  "unsatisfied_theorem_assumption_count": 6,
+  "superseded_by": "EXACT_STAGE_IDENTITY_GATE",
+  "superseded_note": "Superseded on 2026-09-17 by EXACT_STAGE_IDENTITY_GATE: this artifact pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript proves the stage residual at the lifted Gauss stage is identically zero. Kept as an archived provenance record; its validator is no longer in the package chain."
 }

@@ -1,7 +1,7 @@
 # Pipeline Validation Report
 
 - status: PASS
-- checks run: 4954
+- checks run: 4897
 - versions inventoried: 48
 - result files checked: 695
 - CSV/PNG/JSON checked: 286/202/113
@@ -445,7 +445,7 @@ local_runner_proof_gap_closed=False
 ```text
 cmame_p1_double_runner_candidate=PASS
 position_order=6.010712
-velocity_order=6.009705
+velocity_order=6.009716
 p1_double_only_ready=True
 p1_complete=False
 imports_v047_v048_or_v029=False
@@ -669,31 +669,19 @@ experiments_launched=False
 ## Proof Closure Manifest Validator
 
 ```text
-proof closure manifest validation: PASS
-direct_pc2_proof_gap_closed=True
-certified_non_dynamic_rows=96
-direct_dynamic_zero_rows=36
-close_requirements_satisfied=4/4
-unsatisfied_close_requirements=0
-residual_to_error_blocking_obligations=7
-remaining_gate_direct_pc2_proof_gap_closed=True
-remaining_gate_eta_h_theorem_condition_retained=True
+PROOF_CLOSURE_MANIFEST superseded_by=EXACT_STAGE_IDENTITY_GATE
+exact_stage_identity_gate=PASS
+status=exact_stage_identity_route_pinned_lean_checked
+lean_status=all_required_theorems_checked_standard_axioms_no_sorry
+main_lines=4043
+superseded_artifacts=PROOF_CLOSURE_MANIFEST,PROOF_CLAIM_TRACEABILITY_AUDIT,CMAME_STRICT_PROOF_AUDIT,CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT,CMAME_PROOF_STYLE_AUDIT,NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE,CMAME_PROOF_CONTRACT_GATE
 ```
 
 ## Proof Claim Traceability Audit Validator
 
 ```text
-proof claim traceability audit validation: PASS
-proof_labels_present=True
-theorem_traceability=True
-unsatisfied_close_requirements=0
-active_direct_newton_euler_open_obligations=0
-symbolic_primitive_newton_euler_open_obligations=1
-direct_pc2_proof_gap_closed=True
-legacy_proof_gap_closed=True
-remaining_gate_traceability_claims_mapped=True
-remaining_gate_eta_h_theorem_condition_retained=True
-submission_ready=False
+superseded_by=EXACT_STAGE_IDENTITY_GATE
+note=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run.
 ```
 
 ## Proof Remaining-Work Manifest Validator
@@ -739,37 +727,22 @@ submission_ready=False
 ## CMAME Strict Proof Audit Validator
 
 ```text
-cmame_strict_proof_audit=PASS
-strict_conditional_residual_bridge_proof_present=True
-b3_closed=True
-b1_closed=True
-submission_ready=False
+superseded_by=EXACT_STAGE_IDENTITY_GATE
+note=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run.
 ```
 
 ## CMAME Strict Proof Policy Reconciliation Audit Validator
 
 ```text
-cmame_strict_proof_policy_reconciliation_audit=PASS
-terminology_reconciled=True
-direct_route_closed=True
-primitive_route_closed=False
-primitive_actual_open_taylor_terms=0/162
-submission_ready=False
+superseded_by=EXACT_STAGE_IDENTITY_GATE
+note=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run.
 ```
 
 ## CMAME Proof-Style Audit Validator
 
 ```text
-cmame_proof_style_audit=PASS
-reference_pdf_checked=True
-newton_euler_obligation_table=True
-newton_euler_obligations=6
-direct_pc2_proof_gap_closed=True
-legacy_proof_gap_closed=True
-b3_closed=True
-b1_closed=True
-b1_open=False
-submission_ready=False
+superseded_by=EXACT_STAGE_IDENTITY_GATE
+note=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run.
 ```
 
 ## Kinematic Row Defect Certificate Validator
@@ -819,13 +792,8 @@ submission_ready=False
 ## Newton-Euler Symbolic Defect Certificate Validator
 
 ```text
-newton_euler_symbolic_defect_certificate=PASS
-certificate_complete=False
-row_slots=36
-symbolic_expanded_rows=36
-runtime_mapped_rows=36
-certified_rows=0
-proof_gap_closed=False
+superseded_by=EXACT_STAGE_IDENTITY_GATE
+note=this gate pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript (2026-09-17) proves the stage residual at the lifted Gauss stage is identically zero. Archived record kept; validator not run.
 ```
 
 ## Newton-Euler Row-Ordering Scaling AD Audit Validator
@@ -2075,7 +2043,7 @@ claim_boundary_remaining_caveats_checked=True
 current_pipeline_contract_checked=True
 tfe_terminology_checked=True
 figures_checked=25
-pdf_size_bytes=3377325
+pdf_size_bytes=3380160
 ```
 
 ## Proof Evidence Matrix Validator
@@ -2328,47 +2296,8 @@ submission_ready=False
 ## CMAME Proof-Contract Gate Validator
 
 ```text
-cmame_proof_contract_gate=PASS
-submission_ready_scope=theorem_level_global_proof_contract_not_narrowed_claim_package_decision
-proof_contract_gate_scope=conditional_theorem_contract_with_eta_h_and_residual_to_error_boundaries
-proof_mode=conditional_consistency_transfer
-accepted_method=Gauss6/FullVA
-accepted_method_order=6
-accepted_one_step_stability_required=True
-accepted_endpoint_closure_local_right_inverse_required=True
-endpoint_closure_perturbation_constant_formula=C_E=4*M_E^ri*C_{E,raw}
-local_global_reduced_grid_constant_formula=C_red=C_loc*Gamma_s(T)
-qv_reporting_constant_formula=C_qv=C_{\mathcal R}*C_red
-accepted_newton_residual_strong_local_inverse_required=True
-newton_eta_h_scaled_endpoint_bound_formula=C_N*c_eta*h^7
-newton_tolerance_policy=eta_h_tube<=c_eta*h^7
-partial_formula_row_oracle_96_rows_checked=True
-full_formula_row_oracle_132_rows_checked=True
-partial_kinematic_stage_defect_certificate_checked=True
-partial_kinematic_stage_defect_rows_checked=96
-newton_euler_defect_obligation_gate_checked=True
-active_direct_newton_euler_open_obligation_count=0
-newton_euler_symbolic_primitive_open_obligation_count=1
-newton_euler_symbolic_primitive_open_obligation_scope=symbolic_primitive_certificate_route_not_active_direct_pc2
-newton_euler_defect_closed_obligation_count=5
-newton_euler_symbolic_defect_certificate_complete=False
-formula_row_ad_jacobian_oracle_checked=True
-formula_row_ad_jacobian_probe_count=3
-newton_euler_formula_oracle_complete=True
-finite_run_numerical_scale_audit_checked=True
-finite_run_error_scale_supports_order_six=True
-solver_scale_audit_checked=True
-summary_level_solver_residuals_recorded=True
-scaled_tolerance_sweep_recorded=False
-eta_h_O_h7_solver_policy_evidence=False
-proof_conditions_decomposed=True
-one_step_perturbation_shortcut_assumed=False
-dynamic_symbolic_oracle_complete=False
-stage_residual_O_h7_implementation_defect_proved=True
-fixed_tolerance_runs_are_asymptotic_proof=False
-accepted_residual_to_error_theorem=False
-accepted_dynamic_order_by_residual_to_error=0
-submission_ready=False
+cmame_proof_contract_gate=superseded_by_EXACT_STAGE_IDENTITY_GATE
+note=archived record of the retired 96-row/D5 proof route; not re-validated.
 ```
 
 ## CMAME Visual-Legibility Audit Validator
@@ -2413,6 +2342,7 @@ b6_closed=True
 ## Dynamic Row Oracle Gate Validator
 
 ```text
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
 dynamic_row_oracle_gate=PASS
 accepted_residual=residual_cylindrical_chain
 accepted_jacobian=R_JAC_jacfwd_argnums0

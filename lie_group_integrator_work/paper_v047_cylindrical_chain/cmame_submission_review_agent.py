@@ -80,27 +80,21 @@ ALL_METHOD_MATRIX_EXAMPLE_TOKENS = [
 ]
 
 PROOF_CONDITIONAL_BOUNDARY_TOKENS = [
+    # 2026-09-17: pins the compacted exact-stage-identity proof route.
     "Conditional sixth-order theorem",
-    "conditional local-defect-to-global-error theorem",
-    "finite-run solver data, not as an asymptotic solver-error proof",
-    "proof certificates supply the accepted direct-route residual/Jacobian binding used by the bridge",
-    "derivative identities used by that binding",
-    "primitive/Taylor route",
-    "row-template instantiation",
-    "template-level algebraic equivalence subcheck",
-    "runtime row-slice evidence only, not a symbolic identity proof",
-    "stage-residual condition",
-    "not the route that discharges the PC2 stage-residual condition",
-    "proof dependencies used by the theorem",
-    "finite solver probes attach only to P6",
-    "residual tables are recorded only as diagnostics for the open P7 residual-to-error boundary",
-    "primitive symbolic route",
-    "is a separate primitive-route record",
-    "not an input to the PC2 stage-residual condition",
-    "implication would have to prove a bound",
-    "uniform stability or inf-sup constant on the reported branch",
+    "conditional sixth-order estimate",
+    "exactly three-stage Gauss collocation of the reduced joint-coordinate equation of motion",
+    "the residual value at the lifted Gauss stage is not small, it is zero",
+    "perturbation term appears",
+    "supports the asymptotic statement only on transitions where the accepted residual meets the",
     "small residual norms alone are not a trajectory-error theorem",
     "residual rows remain diagnostics even when their measured norms are small",
+    "implication would have to prove a bound",
+    "uniform stability or inf-sup constant on the reported branch",
+    "not accepted dynamic order rows",
+    "one residual/Jacobian implementation path",
+    "Mathlib development",
+    "simplifying assumptions",
 ]
 
 PUBLICATION_FIGURE_BOUNDARY_TOKENS = [
@@ -204,6 +198,10 @@ def contains_normalized(text: str, token: str) -> bool:
         # Preserve this paper-level term before generic dehyphenation of ordinary
         # line-wrap hyphenation such as "con-\ndition".
         value = re.sub(r"\bresidual-to-\s+error\b", "residual-to-error", value)
+        # pdftotext inserts a form feed and a bare page-number line at page breaks; a boundary
+        # sentence that straddles a page must still be recognised.
+        value = value.replace("\f", "\n")
+        value = re.sub(r"\n\s*\d{1,3}\s*\n", "\n", value)
         value = re.sub(r"([A-Za-z])-\s+([A-Za-z])", r"\1\2", value)
         value = value.replace("$", " ")
         return " ".join(value.split()).replace("–", "-").replace("—", "-").replace("−", "-")

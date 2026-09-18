@@ -3,11 +3,9 @@
 \Newlabel{cor1}{1}
 \Newlabel{inst1}{a}
 \citation{chaturvedi2026tfe}
+\citation{wieloch2021bdf}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{}\protected@file@percent }
 \newlabel{tab:intro-claim-hierarchy}{{1}{4}{}{table.1}{}}
-\citation{wieloch2021bdf}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces How the non-TFE{} reference proof is invoked.}}{7}{}\protected@file@percent }
-\newlabel{tab:reference-proof-order-map}{{2}{7}{}{table.2}{}}
 \citation{munthe1998lie,munthe1999high}
 \citation{bruls2012lie}
 \citation{wieloch2021bdf}
@@ -16,603 +14,233 @@
 \citation{taves2020exponential,kissel2021dwelling,kissel2022absolute,fang2023halfimplicit,kissel2024velocitypartitioning}
 \citation{gear1985automatic,hairer1993solving}
 \citation{jay1996symplectic}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{6}{}\protected@file@percent }
 \citation{marsden2001discrete,leyendecker2008variational,leok2012prolongation}
 \citation{stewart1996implicit,anitescu1997formulating,tasora2011matrixfree}
 \citation{borri1988rigid,hughes1988spacetime,hulbert1992time}
 \citation{kim2017higher,jog2016robust,bauchau2024time}
 \citation{chaturvedi2026tfe}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Mathematical setting and definitions}{10}{}\protected@file@percent }
-\newlabel{eq:dae-dyn}{{1}{10}{}{equation.1}{}}
-\newlabel{eq:dae-kin}{{2}{10}{}{equation.2}{}}
-\newlabel{eq:dae-constraint}{{3}{10}{}{equation.3}{}}
-\newlabel{eq:retraction}{{4}{10}{}{equation.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Nomenclature}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Accepted one-step integrator}{11}{}\protected@file@percent }
-\newlabel{sec:method}{{5}{11}{}{section.5}{}}
-\newlabel{eq:onestep}{{5}{11}{}{equation.5}{}}
-\newlabel{eq:residual}{{6}{11}{}{equation.6}{}}
-\newlabel{eq:stage-count}{{7}{11}{}{equation.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Main symbols used in the manuscript.}}{12}{}\protected@file@percent }
-\newlabel{tab:nomenclature}{{3}{12}{}{table.3}{}}
-\newlabel{eq:stage-variable-block}{{8}{13}{}{equation.8}{}}
-\newlabel{eq:g6fullva-expanded-stage}{{9}{13}{}{equation.9}{}}
-\newlabel{eq:trans-collocation}{{10}{14}{}{equation.10}{}}
-\newlabel{eq:rot-collocation}{{11}{14}{}{equation.11}{}}
-\newlabel{eq:v-collocation}{{12}{14}{}{equation.12}{}}
-\newlabel{eq:w-collocation}{{13}{14}{}{equation.13}{}}
-\newlabel{eq:trans-balance}{{14}{14}{}{equation.14}{}}
-\newlabel{eq:rot-balance}{{15}{14}{}{equation.15}{}}
-\newlabel{eq:fullva}{{16}{14}{}{equation.16}{}}
-\newlabel{eq:end-trans}{{17}{14}{}{equation.17}{}}
-\newlabel{eq:end-rot}{{18}{14}{}{equation.18}{}}
-\newlabel{eq:newton}{{19}{15}{}{equation.19}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Stage Jacobian structure}{15}{}\protected@file@percent }
-\newlabel{eq:pose-variation}{{20}{15}{}{equation.20}{}}
-\newlabel{eq:collocation-jacobian}{{24}{15}{}{equation.24}{}}
-\citation{browmcphee2016friction}
-\newlabel{eq:balance-jacobian}{{26}{16}{}{equation.26}{}}
-\newlabel{eq:gyro-linearization-operator}{{27}{16}{}{equation.27}{}}
-\newlabel{eq:fullva-jacobian}{{30}{16}{}{equation.30}{}}
-\newlabel{eq:stage-row-group-order}{{31}{16}{}{equation.31}{}}
-\newlabel{eq:stage-unknown-group-order}{{32}{16}{}{equation.32}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Nonzero block pattern of the accepted stage Newton matrix.}}{17}{}\protected@file@percent }
-\newlabel{tab:stage-jacobian-block}{{4}{17}{}{table.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Operational definition of the accepted method path.}}{17}{}\protected@file@percent }
-\newlabel{tab:method-path}{{5}{17}{}{table.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Algorithmic form of one Gauss6\slash  FullVA{} step.}}{18}{}\protected@file@percent }
-\newlabel{tab:algorithm}{{6}{18}{}{table.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Complete execution algorithm}{19}{}\protected@file@percent }
-\newlabel{sec:complete-algorithm}{{5.2}{19}{}{subsection.5.2}{}}
-\newlabel{eq:complete-execution-map}{{33}{19}{}{equation.33}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Accepted Gauss6\slash  FullVA{} one-step architecture. The schematic separates the 132-row FullVA residual and conditional order boundary from non-claims: it is not a full-TFE{} replacement, does not require a default $10^{-4}$ step-size sweep, and does not assert external superiority without same-test evidence.}}{21}{}\protected@file@percent }
-\newlabel{fig:method-stage-architecture}{{1}{21}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Mathematical setting and definitions}{8}{}\protected@file@percent }
+\newlabel{eq:dae-dyn}{{1}{8}{}{equation.1}{}}
+\newlabel{eq:dae-kin}{{2}{8}{}{equation.2}{}}
+\newlabel{eq:dae-constraint}{{3}{8}{}{equation.3}{}}
+\newlabel{eq:retraction}{{4}{8}{}{equation.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Nomenclature}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Accepted one-step integrator}{9}{}\protected@file@percent }
+\newlabel{sec:method}{{5}{9}{}{section.5}{}}
+\newlabel{eq:onestep}{{5}{9}{}{equation.5}{}}
+\newlabel{eq:residual}{{6}{9}{}{equation.6}{}}
+\newlabel{eq:stage-count}{{7}{9}{}{equation.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Main symbols used in the manuscript.}}{10}{}\protected@file@percent }
+\newlabel{tab:nomenclature}{{2}{10}{}{table.2}{}}
+\newlabel{eq:stage-variable-block}{{8}{11}{}{equation.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Lower-pair data and joint coordinates}{11}{}\protected@file@percent }
+\newlabel{eq:joint-coordinates}{{9}{11}{}{equation.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{Stage system}{12}{}\protected@file@percent }
+\newlabel{eq:collocation-defect-operator}{{10}{12}{}{equation.10}{}}
+\newlabel{eq:g6fullva-expanded-stage}{{11}{12}{}{equation.11}{}}
+\newlabel{eq:trans-balance}{{12}{12}{}{equation.12}{}}
+\newlabel{eq:rot-balance}{{13}{12}{}{equation.13}{}}
+\newlabel{eq:fullva}{{14}{13}{}{equation.14}{}}
+\newlabel{eq:end-trans}{{15}{13}{}{equation.15}{}}
+\newlabel{eq:end-rot}{{16}{13}{}{equation.16}{}}
+\newlabel{eq:newton}{{17}{13}{}{equation.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Complete execution algorithm}{13}{}\protected@file@percent }
+\newlabel{sec:complete-algorithm}{{5.1}{13}{}{subsection.5.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Algorithmic form of one Gauss6\slash  FullVA{} step.}}{14}{}\protected@file@percent }
+\newlabel{tab:algorithm}{{3}{14}{}{table.3}{}}
+\newlabel{eq:complete-execution-map}{{18}{15}{}{equation.18}{}}
 \citation{kim2017higher,chaturvedi2026tfe}
-\newlabel{eq:tfe-order}{{34}{22}{}{equation.34}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Validation protocol}{22}{}\protected@file@percent }
-\newlabel{sec:validation}{{6}{22}{}{section.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Comparison boundary used in the manuscript.}}{23}{}\protected@file@percent }
-\newlabel{tab:claim-boundary}{{7}{23}{}{table.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Guardrail for promoting a baseline row to an implemented same-test comparison.}}{24}{}\protected@file@percent }
-\newlabel{tab:same-test-rule}{{8}{24}{}{table.8}{}}
-\newlabel{eq:rotation-error}{{35}{25}{}{equation.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Reproducibility policy for the numerical evidence.}}{26}{}\protected@file@percent }
-\newlabel{tab:experiment-policy}{{9}{26}{}{table.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Smooth cylindrical-chain endpoint closure scaling diagnostic.}}{27}{}\protected@file@percent }
-\newlabel{tab:endpoint-closure-scaling}{{10}{27}{}{table.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conditional sixth-order theorem}{28}{}\protected@file@percent }
-\newlabel{sec:order}{{7}{28}{}{section.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Proof spine}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Proof contract}{29}{}\protected@file@percent }
-\newlabel{eq:proof-contract-implication}{{36}{29}{}{equation.36}{}}
-\newlabel{eq:direct-bridge-contract}{{37}{29}{}{equation.37}{}}
-\@writefile{toc}{\contentsline {paragraph}{Residual-bridge handoff}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Fixed theorem object}{30}{}\protected@file@percent }
-\newlabel{eq:g6fva-onestep-map}{{38}{30}{}{equation.38}{}}
-\@writefile{toc}{\contentsline {paragraph}{Data for theorem invocation}{31}{}\protected@file@percent }
-\citation{wieloch2021bdf}
-\@writefile{toc}{\contentsline {paragraph}{One-step perturbation decomposition}{32}{}\protected@file@percent }
-\newlabel{eq:onestep-perturbation-maps}{{39}{32}{}{equation.39}{}}
-\@writefile{toc}{\contentsline {paragraph}{Reference-paper proof-method alignment}{32}{}\protected@file@percent }
-\citation{wieloch2021bdf}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Reference proof-order correspondence. The reference proof is used only to organize the FullVA proof obligations; none of its BLieDF estimates, BDF order theorem, multiplier-history estimates, or source-paper comparison claims are imported.}}{35}{}\protected@file@percent }
-\newlabel{tab:reference-proof-order-correspondence}{{11}{35}{}{table.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces No-estimate-transfer table for the Wieloch--Arnold constrained-BDF proof.}}{36}{}\protected@file@percent }
-\newlabel{tab:reference-no-estimate-transfer-ledger}{{12}{36}{}{table.12}{}}
-\newlabel{lem:reference-order-contract}{{1}{38}{}{lemma.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Taylor-layer separation}{40}{}\protected@file@percent }
-\newlabel{eq:taylor-layer-typed-objects}{{40}{41}{}{equation.40}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Taylor-layer dependency map for the accepted proof route.}}{42}{}\protected@file@percent }
-\newlabel{tab:taylor-layer-consumption-ledger}{{13}{42}{}{table.13}{}}
-\newlabel{eq:t3-nonclosure-status-card}{{41}{43}{}{equation.41}{}}
-\newlabel{def:t3-primitive-route-certificate-template}{{4}{43}{}{definition.4}{}}
-\newlabel{eq:t3-certificate-tuple}{{42}{43}{}{equation.42}{}}
-\newlabel{eq:t3-root-lift-bounds}{{43}{43}{}{equation.43}{}}
-\newlabel{eq:t3-subterm-bounds}{{44}{44}{}{equation.44}{}}
-\newlabel{eq:t3-assembly-bound}{{45}{44}{}{equation.45}{}}
-\newlabel{lem:t3-replacement-certificate-use-rule}{{2}{44}{}{lemma.2}{}}
-\newlabel{eq:t3-no-reverse-inference}{{46}{45}{}{equation.46}{}}
-\newlabel{eq:primitive-route-obligation-ladder}{{47}{46}{}{equation.47}{}}
-\newlabel{lem:d5-conditional-taylor-finite-sum}{{3}{47}{}{lemma.3}{}}
-\newlabel{eq:d5-primitive-open-inputs}{{48}{47}{}{equation.48}{}}
-\newlabel{eq:d5-primitive-subterm-bound}{{49}{47}{}{equation.49}{}}
-\newlabel{eq:d5-primitive-dynamic-block-bound}{{50}{48}{}{equation.50}{}}
-\newlabel{eq:d5-finite-aggregation-bound}{{51}{48}{}{equation.51}{}}
-\newlabel{eq:d5-finite-sum-output}{{52}{48}{}{equation.52}{}}
-\newlabel{lem:taylor-route-separation}{{4}{49}{}{lemma.4}{}}
-\newlabel{eq:taylor-route-full-residual-input}{{53}{49}{}{equation.53}{}}
-\newlabel{ass:regularity}{{1}{50}{}{assumption.1}{}}
-\newlabel{eq:assumption-stability-scale}{{54}{51}{}{equation.54}{}}
-\newlabel{eq:backend-proof-norm-compatibility}{{55}{52}{}{equation.55}{}}
-\@writefile{toc}{\contentsline {paragraph}{Discharged residual input, not an assumption}{52}{}\protected@file@percent }
-\newlabel{eq:discharged-132-row-residual-input}{{56}{53}{}{equation.56}{}}
-\@writefile{toc}{\contentsline {paragraph}{Proof skeleton}{53}{}\protected@file@percent }
-\newlabel{eq:proof-skeleton-global-constant}{{57}{53}{}{equation.57}{}}
-\@writefile{toc}{\contentsline {paragraph}{Constant hierarchy for the local-defect chain}{54}{}\protected@file@percent }
-\newlabel{eq:local-defect-chain-constant}{{58}{54}{}{equation.58}{}}
-\newlabel{eq:reported-output-constant}{{59}{54}{}{equation.59}{}}
-\@writefile{toc}{\contentsline {paragraph}{Order-accounting checkpoint}{55}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Analytic inputs versus numerical evidence}{55}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Theorem status}{55}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Proof-scope invariant}{56}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Assumptions and theorem scope.}}{61}{}\protected@file@percent }
-\newlabel{tab:p-interface-satisfaction-ledger}{{14}{61}{}{table.14}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Route and interface separation table for Theorem~\ref {thm:g6fullva-order}.}}{62}{}\protected@file@percent }
-\newlabel{tab:pcp-close-requirement-separation-ledger}{{15}{62}{}{table.15}{}}
-\newlabel{lem:route-local-defect-sufficiency}{{5}{63}{}{lemma.5}{}}
-\newlabel{eq:route-local-defect-bound}{{60}{63}{}{equation.60}{}}
-\newlabel{eq:route-suff-gauss-defect}{{61}{63}{}{equation.61}{}}
-\newlabel{eq:route-suff-pc2-residual}{{62}{64}{}{equation.62}{}}
-\newlabel{eq:route-suff-block-residual}{{63}{64}{}{equation.63}{}}
-\newlabel{eq:route-suff-inexact-solver-term}{{64}{64}{}{equation.64}{}}
-\newlabel{eq:route-suff-local-sum}{{65}{64}{}{equation.65}{}}
-\newlabel{eq:route-suff-triangle}{{66}{65}{}{equation.66}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Theorem-interface and output-boundary anchors for Theorem~\ref {thm:g6fullva-order}.}}{66}{}\protected@file@percent }
-\newlabel{tab:theorem-assumption-anchor-ledger}{{16}{66}{}{table.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Theorem input-output flow for Theorem~\ref {thm:g6fullva-order}.}}{67}{}\protected@file@percent }
-\newlabel{tab:theorem-dependency-consumption-ledger}{{17}{67}{}{table.17}{}}
-\newlabel{def:p6-solver-policy-certificate-template}{{5}{68}{}{definition.5}{}}
-\newlabel{eq:p6-certificate-tuple}{{67}{68}{}{equation.67}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces P6 solver-policy interface table for Theorem~\ref {thm:g6fullva-order}.}}{69}{}\protected@file@percent }
-\newlabel{tab:p6-solver-policy-obligation-ledger}{{18}{69}{}{table.18}{}}
-\newlabel{eq:p6-certificate-template-bound}{{68}{70}{}{equation.68}{}}
-\newlabel{eq:p6-backend-to-proof-norm-conversion}{{69}{70}{}{equation.69}{}}
-\newlabel{eq:p6-proof-norm-stopping-target}{{70}{72}{}{equation.70}{}}
-\newlabel{def:p1p2-compact-branch-certificate-template}{{6}{72}{}{definition.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces P1/P2 compact-tube interfaces for Theorem~\ref {thm:g6fullva-order}.}}{73}{}\protected@file@percent }
-\newlabel{tab:p1p2-compact-tube-obligation-ledger}{{19}{73}{}{table.19}{}}
-\newlabel{eq:p12-certificate-tuple}{{71}{73}{}{equation.71}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {20}{\ignorespaces P3/P4 implementation-defect interface table for Theorem~\ref {thm:g6fullva-order}.}}{76}{}\protected@file@percent }
-\newlabel{tab:p3p4-implementation-defect-obligation-ledger}{{20}{76}{}{table.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {21}{\ignorespaces P5 direct-route satisfaction for Theorem~\ref {thm:g6fullva-order}.}}{77}{}\protected@file@percent }
-\newlabel{tab:p5-direct-route-satisfaction-ledger}{{21}{77}{}{table.21}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {22}{\ignorespaces Proof causality for Theorem~\ref {thm:g6fullva-order}.}}{78}{}\protected@file@percent }
-\newlabel{tab:proof-causality-ledger}{{22}{78}{}{table.22}{}}
-\newlabel{lem:endpoint-closure}{{6}{79}{}{lemma.6}{}}
-\newlabel{eq:endpoint-derivative-smallness}{{72}{79}{}{equation.72}{}}
-\newlabel{eq:endpoint-raw-defect-bound}{{73}{79}{}{equation.73}{}}
-\newlabel{eq:endpoint-linearized-closure}{{74}{80}{}{equation.74}{}}
-\newlabel{eq:endpoint-newton-refinement}{{75}{80}{}{equation.75}{}}
-\newlabel{eq:endpoint-correction-bound}{{76}{80}{}{equation.76}{}}
-\newlabel{eq:endpoint-map-correction-identity}{{77}{80}{}{equation.77}{}}
-\newlabel{eq:endpoint-right-inverse}{{78}{81}{}{equation.78}{}}
-\newlabel{eq:endpoint-first-correction-bound}{{79}{81}{}{equation.79}{}}
-\newlabel{eq:endpoint-postlinear-residual}{{80}{81}{}{equation.80}{}}
-\newlabel{eq:endpoint-refinement-recurrence}{{81}{81}{}{equation.81}{}}
-\newlabel{eq:endpoint-refinement-tail-bound}{{82}{82}{}{equation.82}{}}
-\newlabel{eq:endpoint-final-displacement-bound}{{83}{82}{}{equation.83}{}}
-\newlabel{lem:fullva-stage-lift}{{7}{83}{}{lemma.7}{}}
-\newlabel{eq:fullva-lift-map}{{84}{83}{}{equation.84}{}}
-\newlabel{eq:dynamic-row-index-map}{{85}{86}{}{equation.85}{}}
-\newlabel{eq:ne-template-audit}{{86}{86}{}{equation.86}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {23}{\ignorespaces Direct-route Newton--Euler row obligations used by the P5 stage-residual bridge; the primitive symbolic-defect route is tracked separately.}}{87}{}\protected@file@percent }
-\newlabel{tab:newton-euler-obligations}{{23}{87}{}{table.23}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {24}{\ignorespaces Row-level target map for the Newton--Euler weak-balance rows.}}{88}{}\protected@file@percent }
-\newlabel{tab:newton-euler-row-target-map}{{24}{88}{}{table.24}{}}
-\newlabel{eq:d5-representative-row-substitution}{{87}{88}{}{equation.87}{}}
-\newlabel{eq:d5-balance-identities-on-lift}{{88}{89}{}{equation.88}{}}
-\newlabel{eq:d5-dynamic-residual-decomposition}{{89}{89}{}{equation.89}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {25}{\ignorespaces Dynamic-row residual-identity table for the Newton--Euler rows.}}{90}{}\protected@file@percent }
-\newlabel{tab:dynamic-proof-closure-matrix}{{25}{90}{}{table.25}{}}
-\newlabel{lem:d5-same-object-lift-instantiation}{{8}{91}{}{lemma.8}{}}
-\newlabel{eq:d5-same-object-lift}{{90}{91}{}{equation.90}{}}
-\citation{wieloch2021bdf}
-\@writefile{toc}{\contentsline {paragraph}{Reference Taylor boundary for D5}{92}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {26}{\ignorespaces D5 primitive/Taylor route specification for the Newton--Euler rows; not invoked as a premise of Theorem~\ref {thm:g6fullva-order}.}}{93}{}\protected@file@percent }
-\newlabel{tab:d5-taylor-certificate-target}{{26}{93}{}{table.26}{}}
-\newlabel{eq:d5-primitive-dependency-graph}{{91}{95}{}{equation.91}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {27}{\ignorespaces D5 primitive/Taylor retained-interface map; separate primitive-route specification, not a premise of Theorem~\ref {thm:g6fullva-order}.}}{96}{}\protected@file@percent }
-\newlabel{tab:d5-primitive-blocker-ledger}{{27}{96}{}{table.27}{}}
-\newlabel{lem:d5-compact-tube-constants}{{9}{97}{}{lemma.9}{}}
-\newlabel{lem:d5-p-state-map-definition}{{10}{98}{}{lemma.10}{}}
-\newlabel{eq:d5-p-state-stage-blocks}{{92}{98}{}{equation.92}{}}
-\newlabel{eq:d5-p-state-nondynamic-map}{{93}{98}{}{equation.93}{}}
-\newlabel{lem:d5-p-state-anticircularity}{{11}{99}{}{lemma.11}{}}
-\newlabel{lem:d5-p-state-ps2-weighted-target}{{12}{99}{}{lemma.12}{}}
-\newlabel{eq:d5-p-state-weighted-ps2-target}{{94}{99}{}{equation.94}{}}
-\newlabel{lem:d5-p-state-ps2-kinematic-block}{{13}{99}{}{lemma.13}{}}
-\newlabel{eq:d5-p-state-gauss-kinematic-linearization}{{95}{99}{}{equation.95}{}}
-\newlabel{eq:d5-p-state-gauss-kinematic-inverse}{{96}{100}{}{equation.96}{}}
-\newlabel{lem:d5-p-state-ps2-lie-chart-binding}{{14}{100}{}{lemma.14}{}}
-\newlabel{eq:d5-p-state-lie-chart-bounds}{{97}{100}{}{equation.97}{}}
-\newlabel{lem:d5-p-state-ps2-row-injection}{{15}{100}{}{lemma.15}{}}
-\newlabel{eq:d5-p-state-row-injection-bound}{{98}{100}{}{equation.98}{}}
-\newlabel{lem:d5-p-state-ps2-nonlinear-binding}{{16}{101}{}{lemma.16}{}}
-\newlabel{eq:d5-p-state-nonlinear-f-map}{{99}{101}{}{equation.99}{}}
-\newlabel{eq:d5-p-state-nonlinear-lipschitz}{{100}{101}{}{equation.100}{}}
-\newlabel{eq:d5-p-state-rot-row}{{101}{101}{}{equation.101}{}}
-\newlabel{eq:d5-p-state-rot-bound}{{102}{101}{}{equation.102}{}}
-\newlabel{lem:d5-p-state-ps2-aggregate-promotion}{{17}{101}{}{lemma.17}{}}
-\newlabel{eq:d5-p-state-ps2-estimate}{{103}{101}{}{equation.103}{}}
-\newlabel{eq:d5-p-state-kin-selector-bound}{{104}{102}{}{equation.104}{}}
-\newlabel{eq:d5-p-state-trans-ang-bound}{{105}{102}{}{equation.105}{}}
-\newlabel{eq:d5-p-state-f-taylor-remainder-identity}{{106}{102}{}{equation.106}{}}
-\newlabel{eq:d5-p-state-f-remainder-bound}{{107}{102}{}{equation.107}{}}
-\newlabel{eq:d5-p-state-f-lipschitz-proof}{{108}{102}{}{equation.108}{}}
-\newlabel{eq:d5-p-state-small-step-absorption}{{109}{103}{}{equation.109}{}}
-\newlabel{eq:d5-p-state-rot-absorbed-bound}{{110}{103}{}{equation.110}{}}
-\newlabel{eq:d5-p-state-ps2-combined-bound}{{111}{103}{}{equation.111}{}}
-\newlabel{lem:d5-p-state-ps2-linearization-probe}{{18}{103}{}{lemma.18}{}}
-\newlabel{eq:d5-p-state-finite-ps2-operator}{{112}{103}{}{equation.112}{}}
-\newlabel{lem:d5-p-state-ps3-conditional-conversion}{{19}{103}{}{lemma.19}{}}
-\newlabel{eq:d5-p-state-ps3-conversion-bound}{{113}{104}{}{equation.113}{}}
-\newlabel{lem:d5-p-state-ps3-full-residual-route}{{20}{104}{}{lemma.20}{}}
-\newlabel{eq:d5-p-state-direct-corollary-state-acc}{{114}{104}{}{equation.114}{}}
-\newlabel{eq:d5-p-state-nondyn-residual-on-lift}{{115}{104}{}{equation.115}{}}
-\newlabel{eq:d5-p-state-full-residual-on-lift}{{116}{105}{}{equation.116}{}}
-\newlabel{eq:d5-p-state-stage-norm-bound}{{117}{105}{}{equation.117}{}}
-\newlabel{eq:d5-p-state-velocity-collocation-forbidden}{{118}{105}{}{equation.118}{}}
-\newlabel{eq:d5-p-state-final-ps2-application}{{119}{105}{}{equation.119}{}}
-\newlabel{lem:d5-p-state-direct-feedback-nonclosure}{{21}{105}{}{lemma.21}{}}
-\newlabel{lem:d5-p-acc-map-definition}{{22}{106}{}{lemma.22}{}}
-\newlabel{eq:d5-p-acc-stage-acc-block}{{120}{106}{}{equation.120}{}}
-\newlabel{eq:d5-p-acc-taylor-row-interfaces}{{121}{106}{}{equation.121}{}}
-\newlabel{lem:d5-p-acc-row-binding}{{23}{107}{}{lemma.23}{}}
-\newlabel{lem:d5-p-acc-independence}{{24}{107}{}{lemma.24}{}}
-\newlabel{eq:d5-p-acc-nondynamic-row-families}{{122}{108}{}{equation.122}{}}
-\newlabel{eq:d5-p-acc-stage-row-partition}{{123}{108}{}{equation.123}{}}
-\newlabel{lem:d5-p-acc-pa2-obstruction}{{25}{108}{}{lemma.25}{}}
-\newlabel{eq:d5-p-acc-velocity-collocation-loss}{{124}{108}{}{equation.124}{}}
-\@writefile{toc}{\contentsline {paragraph}{PA2 weighted-inverse diagnostic}{109}{}\protected@file@percent }
-\newlabel{lem:d5-p-acc-lower-pair-nonclosure}{{26}{109}{}{lemma.26}{}}
-\newlabel{eq:d5-p-acc-missing-unweighted-inverse}{{125}{110}{}{equation.125}{}}
-\newlabel{lem:d5-p-state-pacc-bootstrap-nonclosure}{{27}{110}{}{lemma.27}{}}
-\newlabel{eq:d5-ps2-pa2-coupled-available-bounds}{{126}{110}{}{equation.126}{}}
-\newlabel{eq:d5-ps2-pa2-feedback-bound}{{127}{111}{}{equation.127}{}}
-\newlabel{cor:d5-p-acc-row-bound-under-pacc}{{1}{111}{}{corollary.1}{}}
-\newlabel{eq:d5-p-acc-row-set}{{128}{111}{}{equation.128}{}}
-\newlabel{eq:d5-p-acc-assumed-lift-rate}{{129}{111}{}{equation.129}{}}
-\newlabel{eq:d5-p-acc-body-constants}{{130}{111}{}{equation.130}{}}
-\newlabel{eq:d5-p-acc-trans-row-bound}{{131}{112}{}{equation.131}{}}
-\newlabel{eq:d5-p-acc-rot-row-bound}{{132}{112}{}{equation.132}{}}
-\newlabel{eq:d5-p-acc-linear-lift-terms}{{133}{112}{}{equation.133}{}}
-\newlabel{lem:d5-p-lambda-interface}{{28}{112}{}{lemma.28}{}}
-\newlabel{eq:d5-p-lambda-stage-array}{{134}{112}{}{equation.134}{}}
-\newlabel{eq:d5-p-lambda-wrench-interface}{{135}{113}{}{equation.135}{}}
-\newlabel{eq:d5-p-lambda-runtime-unpack}{{136}{113}{}{equation.136}{}}
-\newlabel{lem:d5-p-lambda-d3-noncircularity}{{29}{113}{}{lemma.29}{}}
-\newlabel{eq:d5-p-lambda-inf-sup-probe-operator}{{137}{114}{}{equation.137}{}}
-\@writefile{toc}{\contentsline {paragraph}{PL2 geometric-margin diagnostic}{114}{}\protected@file@percent }
-\newlabel{lem:d5-p-lambda-pl2-symbolic-structure}{{30}{114}{}{lemma.30}{}}
-\newlabel{eq:d5-p-lambda-normal-force-map}{{138}{115}{}{equation.138}{}}
-\newlabel{eq:d5-p-lambda-normal-force-gram}{{139}{115}{}{equation.139}{}}
-\newlabel{eq:d5-p-lambda-trans-symbolic-bound}{{140}{115}{}{equation.140}{}}
-\newlabel{eq:d5-p-lambda-axis-torque-map}{{141}{115}{}{equation.141}{}}
-\newlabel{eq:d5-p-lambda-axis-torque-gram}{{142}{115}{}{equation.142}{}}
-\newlabel{eq:d5-p-lambda-two-joint-trans-bound}{{143}{115}{}{equation.143}{}}
-\newlabel{lem:d5-p-lambda-pl2-axis-plane-margin}{{31}{116}{}{lemma.31}{}}
-\newlabel{eq:d5-p-lambda-axis-plane-margin-function}{{144}{116}{}{equation.144}{}}
-\newlabel{eq:d5-p-lambda-axis-plane-margin-constant}{{145}{116}{}{equation.145}{}}
-\newlabel{eq:d5-p-lambda-axis-plane-singular-identity}{{146}{116}{}{equation.146}{}}
-\newlabel{lem:d5-p-lambda-pl2-compact-reduction}{{32}{117}{}{lemma.32}{}}
-\newlabel{eq:d5-p-lambda-pl2-gamma-tr}{{147}{117}{}{equation.147}{}}
-\newlabel{eq:d5-p-lambda-pl2-gamma-full}{{148}{117}{}{equation.148}{}}
-\newlabel{eq:d5-p-lambda-pl2-uniform-infsup}{{149}{117}{}{equation.149}{}}
-\newlabel{lem:d5-p-lambda-pl4-rate-propagation}{{33}{118}{}{lemma.33}{}}
-\newlabel{eq:d5-p-lambda-pl4-pl2-assumption}{{150}{118}{}{equation.150}{}}
-\newlabel{eq:d5-p-lambda-pl4-lipschitz}{{151}{118}{}{equation.151}{}}
-\newlabel{eq:d5-p-lambda-pl4-taylor-identity}{{152}{118}{}{equation.152}{}}
-\newlabel{eq:d5-p-lambda-pl4-remainder-bound}{{153}{118}{}{equation.153}{}}
-\newlabel{eq:d5-p-lambda-pl4-preabsorption}{{154}{118}{}{equation.154}{}}
-\newlabel{eq:d5-p-lambda-pl4-local-radius}{{155}{119}{}{equation.155}{}}
-\newlabel{eq:d5-p-lambda-pl4-absorbed-bound}{{156}{119}{}{equation.156}{}}
-\newlabel{lem:d5-p-lambda-conditional-nonclosure}{{34}{119}{}{lemma.34}{}}
-\newlabel{eq:d5-p-lambda-pl4-conditional-output}{{157}{119}{}{equation.157}{}}
-\newlabel{eq:d5-primitive-family-count}{{158}{120}{}{equation.158}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {28}{\ignorespaces Retained primitive proof interfaces for D5.}}{121}{}\protected@file@percent }
-\newlabel{tab:d5-open-primitive-proof-interfaces}{{28}{121}{}{table.28}{}}
-\newlabel{prop:d5-primitive-taylor-conditional-implication}{{1}{122}{}{proposition.1}{}}
-\newlabel{eq:d5-root-lift-hypotheses}{{159}{122}{}{equation.159}{}}
-\newlabel{eq:d5-prim-dynamic-block-bound}{{160}{122}{}{equation.160}{}}
-\newlabel{eq:d5-prim-dependency-order}{{161}{122}{}{equation.161}{}}
-\newlabel{cor:d5-smooth-force-row-bound-under-lifts}{{2}{123}{}{corollary.2}{}}
-\newlabel{eq:d5-smooth-template-slots}{{162}{124}{}{equation.162}{}}
-\newlabel{eq:d5-smooth-state-lift}{{163}{124}{}{equation.163}{}}
-\newlabel{eq:d5-smooth-lambda-lift}{{164}{124}{}{equation.164}{}}
-\newlabel{eq:d5-smooth-external-row-bound}{{165}{124}{}{equation.165}{}}
-\newlabel{eq:d5-smooth-friction-row-bound}{{166}{124}{}{equation.166}{}}
-\newlabel{eq:d5-smooth-external-taylor-identity}{{167}{124}{}{equation.167}{}}
-\newlabel{eq:d5-smooth-friction-proof-bound}{{168}{125}{}{equation.168}{}}
-\newlabel{lem:d5-geom-chart-reduction}{{35}{125}{}{lemma.35}{}}
-\newlabel{eq:d5-geom-wrench-maps}{{169}{125}{}{equation.169}{}}
-\newlabel{eq:d5-geom-chart-lipschitz-wg}{{170}{125}{}{equation.170}{}}
-\newlabel{eq:d5-geom-add-subtract}{{171}{125}{}{equation.171}{}}
-\newlabel{eq:d5-geom-proof-lipschitz}{{172}{126}{}{equation.172}{}}
-\newlabel{cor:d5-geom-row-bound-under-lifts}{{3}{126}{}{corollary.3}{}}
-\newlabel{eq:d5-geom-row-set}{{173}{126}{}{equation.173}{}}
-\newlabel{eq:d5-geom-lift-assumptions}{{174}{126}{}{equation.174}{}}
-\newlabel{eq:d5-geom-wrench-lipschitz-assumptions}{{175}{126}{}{equation.175}{}}
-\newlabel{eq:d5-geom-scalar-row-bound}{{176}{126}{}{equation.176}{}}
-\newlabel{eq:d5-geom-proof-row-bound}{{177}{127}{}{equation.177}{}}
-\newlabel{lem:d5-gyro-bilinear-reduction}{{36}{127}{}{lemma.36}{}}
-\newlabel{eq:d5-gyro-lipschitz-bound}{{178}{127}{}{equation.178}{}}
-\newlabel{eq:d5-gyro-bilinear-identity}{{179}{127}{}{equation.179}{}}
-\newlabel{eq:d5-gyro-proof-lipschitz}{{180}{127}{}{equation.180}{}}
-\newlabel{cor:d5-gyro-row-bound-under-pstate}{{4}{128}{}{corollary.4}{}}
-\newlabel{eq:d5-gyro-row-set}{{181}{128}{}{equation.181}{}}
-\newlabel{eq:d5-gyro-lift-assumption}{{182}{128}{}{equation.182}{}}
-\newlabel{eq:d5-gyro-compact-inertia-bound}{{183}{128}{}{equation.183}{}}
-\newlabel{eq:d5-gyro-scalar-row-bound}{{184}{128}{}{equation.184}{}}
-\newlabel{eq:d5-gyro-proof-row-bound}{{185}{128}{}{equation.185}{}}
-\@writefile{toc}{\contentsline {paragraph}{Primitive/Taylor nonclosure invariant}{128}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Primitive-route one-way implication discipline}{129}{}\protected@file@percent }
-\newlabel{eq:d5-primitive-one-way-discipline}{{186}{129}{}{equation.186}{}}
-\newlabel{lem:same-object-taylor-transport-gate}{{37}{131}{}{lemma.37}{}}
-\newlabel{lem:d5-primitive-obligation-implication}{{38}{132}{}{lemma.38}{}}
-\newlabel{eq:d5-primitive-linear-acc-terms}{{187}{133}{}{equation.187}{}}
-\newlabel{eq:d5-primitive-smooth-taylor-template}{{188}{133}{}{equation.188}{}}
-\newlabel{eq:d5-primitive-geom-taylor-template}{{189}{133}{}{equation.189}{}}
-\newlabel{eq:d5-primitive-gyro-template}{{190}{134}{}{equation.190}{}}
-\newlabel{eq:d5-primitive-row-summation-bound}{{191}{134}{}{equation.191}{}}
-\@writefile{toc}{\contentsline {paragraph}{Uniform residual-scaling convention}{135}{}\protected@file@percent }
-\newlabel{lem:stage-residual-defect}{{39}{135}{}{lemma.39}{}}
-\newlabel{eq:stage-pert-jacobian}{{192}{136}{}{equation.192}{}}
-\newlabel{eq:stage-pert-second-derivative-bound}{{193}{136}{}{equation.193}{}}
-\newlabel{eq:stage-pert-gauss-residual-input}{{194}{136}{}{equation.194}{}}
-\newlabel{eq:stage-pert-small-step}{{195}{136}{}{equation.195}{}}
-\newlabel{eq:stage-pert-radius}{{196}{136}{}{equation.196}{}}
-\newlabel{eq:stage-pert-root-bound}{{197}{136}{}{equation.197}{}}
-\newlabel{eq:stage-pert-endpoint-derivative-bound}{{198}{136}{}{equation.198}{}}
-\citation{wieloch2021bdf}
-\newlabel{eq:stage-pert-endpoint-bound}{{199}{137}{}{equation.199}{}}
-\newlabel{eq:stage-pert-taylor-expansion}{{200}{138}{}{equation.200}{}}
-\newlabel{eq:stage-pert-remainder}{{201}{138}{}{equation.201}{}}
-\newlabel{eq:stage-pert-fixed-point-map}{{202}{138}{}{equation.202}{}}
-\newlabel{eq:stage-pert-ball-map}{{203}{139}{}{equation.203}{}}
-\newlabel{eq:stage-pert-contraction}{{204}{139}{}{equation.204}{}}
-\newlabel{eq:stage-pert-proof-root-bound}{{205}{139}{}{equation.205}{}}
-\newlabel{eq:stage-pert-endpoint-taylor}{{206}{139}{}{equation.206}{}}
-\newlabel{eq:stage-pert-kantorovich-radius}{{207}{139}{}{equation.207}{}}
-\newlabel{lem:full-132-row-residual-bridge}{{40}{140}{}{lemma.40}{}}
-\newlabel{eq:full-bridge-dynamic-zero}{{208}{140}{}{equation.208}{}}
-\newlabel{eq:full-bridge-full-residual}{{209}{140}{}{equation.209}{}}
-\newlabel{eq:full-bridge-block-vector}{{210}{141}{}{equation.210}{}}
-\newlabel{eq:full-bridge-proof-dynamic-zero}{{211}{141}{}{equation.211}{}}
-\newlabel{eq:full-bridge-block-bound}{{212}{141}{}{equation.212}{}}
-\newlabel{cor:route-separation-invariant}{{5}{142}{}{corollary.5}{}}
-\newlabel{eq:direct-route-predicate}{{213}{142}{}{equation.213}{}}
-\newlabel{eq:t3-replacement-predicate-bound}{{214}{142}{}{equation.214}{}}
-\newlabel{lem:inexact-newton}{{41}{143}{}{lemma.41}{}}
-\newlabel{eq:inexact-newton-local-hypotheses}{{215}{143}{}{equation.215}{}}
-\newlabel{eq:inexact-newton-residual-input}{{216}{143}{}{equation.216}{}}
-\newlabel{eq:inexact-newton-stage-output-bounds}{{217}{143}{}{equation.217}{}}
-\newlabel{eq:inexact-newton-solver-scale}{{218}{144}{}{equation.218}{}}
-\newlabel{eq:inexact-newton-final-output-bound}{{219}{144}{}{equation.219}{}}
-\newlabel{eq:inexact-newton-averaged-jacobian}{{220}{145}{}{equation.220}{}}
-\newlabel{eq:inexact-newton-jacobian-error}{{221}{145}{}{equation.221}{}}
-\newlabel{eq:inexact-newton-stage-error-proof}{{222}{145}{}{equation.222}{}}
-\newlabel{eq:inexact-newton-output-error-proof}{{223}{146}{}{equation.223}{}}
-\newlabel{lem:p6-reported-log-nonclosure}{{42}{146}{}{lemma.42}{}}
-\newlabel{eq:p6-reported-log-bound}{{224}{146}{}{equation.224}{}}
-\newlabel{lem:p6-residual-size-subcondition}{{43}{147}{}{lemma.43}{}}
-\newlabel{eq:p6-proof-norm-residual-test}{{225}{147}{}{equation.225}{}}
-\newlabel{eq:p6-inexact-newton-residual-size-bound}{{226}{147}{}{equation.226}{}}
-\newlabel{lem:local-global-transfer}{{44}{148}{}{lemma.44}{}}
-\newlabel{eq:local-global-time-augmentation}{{227}{148}{}{equation.227}{}}
-\newlabel{eq:local-global-lemma-local-defect-input}{{228}{148}{}{equation.228}{}}
-\newlabel{eq:local-global-lemma-stability-input}{{229}{148}{}{equation.229}{}}
-\newlabel{eq:local-global-restricted-domain}{{230}{148}{}{equation.230}{}}
-\newlabel{eq:local-global-accepted-recurrence}{{231}{149}{}{equation.231}{}}
-\newlabel{eq:local-global-lemma-gronwall-factor}{{232}{149}{}{equation.232}{}}
-\newlabel{eq:local-global-lemma-grid-bound}{{233}{150}{}{equation.233}{}}
-\newlabel{eq:local-global-error-recursion-proof}{{234}{150}{}{equation.234}{}}
-\newlabel{eq:local-global-truncated-index}{{235}{150}{}{equation.235}{}}
-\newlabel{eq:local-global-gronwall-proof}{{236}{151}{}{equation.236}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {29}{\ignorespaces Local-to-global transfer table for Lemma~\ref {lem:local-global-transfer} and Theorem~\ref {thm:g6fullva-order}.}}{152}{}\protected@file@percent }
-\newlabel{tab:local-global-transfer-ledger}{{29}{152}{}{table.29}{}}
-\newlabel{lem:reporting-map-norm-consequence}{{45}{153}{}{lemma.45}{}}
-\newlabel{eq:reporting-map-derivative-bound}{{237}{153}{}{equation.237}{}}
-\newlabel{eq:reporting-map-reduced-input}{{238}{154}{}{equation.238}{}}
-\newlabel{eq:reporting-map-output-bound}{{239}{154}{}{equation.239}{}}
-\newlabel{eq:reporting-map-mean-value}{{240}{154}{}{equation.240}{}}
-\newlabel{eq:reporting-map-point-bound}{{241}{155}{}{equation.241}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {30}{\ignorespaces Residual-to-error transfer requirements for mechanism residual rows.}}{156}{}\protected@file@percent }
-\newlabel{tab:p7-residual-to-error-obligation-ledger}{{30}{156}{}{table.30}{}}
-\newlabel{eq:p7-residual-transfer-template}{{242}{157}{}{equation.242}{}}
-\newlabel{eq:p7-linearized-infsup-template}{{243}{157}{}{equation.243}{}}
-\newlabel{lem:p7-same-codomain-obstruction}{{46}{158}{}{lemma.46}{}}
-\newlabel{eq:p7-same-codomain-transfer}{{244}{158}{}{equation.244}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {31}{\ignorespaces Direct-route anti-circularity table for Theorem~\ref {thm:g6fullva-order}.}}{160}{}\protected@file@percent }
-\newlabel{tab:direct-route-anticircularity-ledger}{{31}{160}{}{table.31}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {32}{\ignorespaces Implementation-route/certificate separation table for Theorem~\ref {thm:g6fullva-order}.}}{162}{}\protected@file@percent }
-\newlabel{tab:implementation-route-oracle-separation-ledger}{{32}{162}{}{table.32}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {33}{\ignorespaces Scope of auxiliary evidence for Theorem~\ref {thm:g6fullva-order}.}}{164}{}\protected@file@percent }
-\newlabel{tab:theorem-use-rule}{{33}{164}{}{table.33}{}}
-\newlabel{def:accepted-branch-map}{{7}{164}{}{definition.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {34}{\ignorespaces Quantifier/domain table for Theorem~\ref {thm:g6fullva-order}.}}{165}{}\protected@file@percent }
-\newlabel{tab:quantifier-domain-ledger}{{34}{165}{}{table.34}{}}
-\@writefile{toc}{\contentsline {paragraph}{Common admissible-window checkpoint}{167}{}\protected@file@percent }
-\newlabel{eq:common-admissible-window}{{245}{167}{}{equation.245}{}}
-\newlabel{eq:common-admissible-kantorovich}{{246}{167}{}{equation.246}{}}
-\newlabel{eq:solver-admissible-set}{{247}{167}{}{equation.247}{}}
-\newlabel{eq:theorem-forward-chain}{{248}{170}{}{equation.248}{}}
-\newlabel{lem:p6-p7-nonclosing}{{47}{170}{}{lemma.47}{}}
-\newlabel{eq:p6-forward-clause}{{249}{170}{}{equation.249}{}}
-\newlabel{eq:p7-nonpromotion-clause}{{250}{170}{}{equation.250}{}}
-\newlabel{eq:local-defect-constants}{{251}{172}{}{equation.251}{}}
-\newlabel{lem:same-object-composition}{{48}{172}{}{lemma.48}{}}
-\newlabel{eq:reference-style-proof-invariant}{{252}{175}{}{equation.252}{}}
-\citation{wieloch2021bdf}
-\newlabel{thm:g6fullva-order}{{1}{176}{}{theorem.1}{}}
-\newlabel{eq:residual-certificate-slot}{{253}{177}{}{equation.253}{}}
-\newlabel{eq:g6fva-local-defect-theorem}{{254}{178}{}{equation.254}{}}
-\newlabel{eq:g6fva-reduced-grid-bound}{{255}{179}{}{equation.255}{}}
-\newlabel{eq:g6fva-reported-grid-bound}{{256}{179}{}{equation.256}{}}
-\@writefile{toc}{\contentsline {paragraph}{Scope and non-claims of Theorem~\ref {thm:g6fullva-order}}{180}{}\protected@file@percent }
-\newlabel{lem:no-reverse-taylor-inference}{{49}{180}{}{lemma.49}{}}
-\newlabel{eq:no-reverse-grid-conclusion}{{257}{180}{}{equation.257}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Accepted Gauss6\slash  FullVA{} one-step architecture. The schematic separates the 132-row FullVA residual and conditional order boundary from non-claims: it is not a full-TFE{} replacement, does not require a default $10^{-4}$ step-size sweep, and does not assert external superiority without same-test evidence.}}{17}{}\protected@file@percent }
+\newlabel{fig:method-stage-architecture}{{1}{17}{}{figure.1}{}}
+\newlabel{eq:tfe-order}{{19}{17}{}{equation.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Validation protocol}{18}{}\protected@file@percent }
+\newlabel{sec:validation}{{6}{18}{}{section.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Comparison boundary used in the manuscript.}}{19}{}\protected@file@percent }
+\newlabel{tab:claim-boundary}{{4}{19}{}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Guardrail for promoting a baseline row to an implemented same-test comparison.}}{20}{}\protected@file@percent }
+\newlabel{tab:same-test-rule}{{5}{20}{}{table.5}{}}
+\newlabel{eq:rotation-error}{{20}{21}{}{equation.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Reproducibility policy for the numerical evidence.}}{22}{}\protected@file@percent }
+\newlabel{tab:experiment-policy}{{6}{22}{}{table.6}{}}
 \citation{hairer1993solving}
-\newlabel{eq:accepted-newton-residual-envelope}{{258}{182}{}{equation.258}{}}
-\newlabel{eq:inexact-newton-output-perturbation}{{259}{182}{}{equation.259}{}}
-\newlabel{eq:reported-residual-specialization}{{260}{182}{}{equation.260}{}}
-\citation{wieloch2021bdf}
-\newlabel{eq:gauss-local-truncation}{{261}{183}{}{equation.261}{}}
-\newlabel{eq:reference-style-insertion-chain}{{262}{185}{}{equation.262}{}}
-\newlabel{eq:direct-residual-block-vector}{{263}{187}{}{equation.263}{}}
-\newlabel{eq:nonautonomous-residual-slice}{{264}{187}{}{equation.264}{}}
-\newlabel{eq:direct-dynamic-block-zero}{{265}{187}{}{equation.265}{}}
-\newlabel{eq:direct-residual-block-bound}{{266}{187}{}{equation.266}{}}
-\newlabel{eq:stage-root-equation}{{267}{187}{}{equation.267}{}}
-\newlabel{eq:stage-root-perturbation-bound}{{268}{188}{}{equation.268}{}}
-\newlabel{eq:endpoint-stage-perturbation-bound}{{269}{188}{}{equation.269}{}}
-\newlabel{eq:direct-dynamic-certificate}{{270}{188}{}{equation.270}{}}
-\newlabel{eq:t3-dynamic-certificate-template}{{271}{188}{}{equation.271}{}}
-\newlabel{eq:four-local-bounds}{{272}{189}{}{equation.272}{}}
-\newlabel{eq:four-term-local-defect-sum}{{273}{190}{}{equation.273}{}}
-\newlabel{eq:reduced-grid-error-definition}{{274}{191}{}{equation.274}{}}
-\newlabel{eq:error-recurrence}{{275}{192}{}{equation.275}{}}
-\newlabel{eq:gronwall-sum-bound}{{276}{194}{}{equation.276}{}}
-\newlabel{eq:gronwall-factor}{{277}{194}{}{equation.277}{}}
-\newlabel{eq:reduced-grid-constant}{{278}{194}{}{equation.278}{}}
-\newlabel{eq:reporting-map-definition}{{279}{195}{}{equation.279}{}}
-\newlabel{eq:reporting-map-bound-proof}{{280}{195}{}{equation.280}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {35}{\ignorespaces Accepted-branch consistency for Theorem~\ref {thm:g6fullva-order}.}}{198}{}\protected@file@percent }
-\newlabel{tab:accepted-branch-consistency-ledger}{{35}{198}{}{table.35}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {36}{\ignorespaces Nonlinear-solver scale conditions for Theorem~\ref {thm:g6fullva-order}.}}{199}{}\protected@file@percent }
-\newlabel{tab:nonlinear-solver-scale-ledger}{{36}{199}{}{table.36}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {37}{\ignorespaces Local-defect decomposition for Theorem~\ref {thm:g6fullva-order}.}}{200}{}\protected@file@percent }
-\newlabel{tab:local-defect-decomposition-ledger}{{37}{200}{}{table.37}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {38}{\ignorespaces Theorem output scope for Theorem~\ref {thm:g6fullva-order}.}}{201}{}\protected@file@percent }
-\newlabel{tab:theorem-output-scope-ledger}{{38}{201}{}{table.38}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {39}{\ignorespaces Reporting-map/norm-equivalence table for Theorem~\ref {thm:g6fullva-order}.}}{203}{}\protected@file@percent }
-\newlabel{tab:reporting-map-norm-equivalence-ledger}{{39}{203}{}{table.39}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {40}{\ignorespaces Constant-dependency table for Theorem~\ref {thm:g6fullva-order}.}}{204}{}\protected@file@percent }
-\newlabel{tab:constant-dependency-ledger}{{40}{204}{}{table.40}{}}
-\newlabel{lem:tfe-target-order}{{50}{205}{}{lemma.50}{}}
-\newlabel{prop:order-comparison}{{2}{205}{}{proposition.2}{}}
-\newlabel{def:p7-transfer-certificate-template}{{8}{206}{}{definition.8}{}}
-\newlabel{eq:p7-certificate-tuple}{{281}{206}{}{equation.281}{}}
-\newlabel{eq:p7-transfer-template-bound}{{282}{207}{}{equation.282}{}}
-\newlabel{eq:corollary-p7-transfer-bound}{{283}{208}{}{equation.283}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}External comparison boundary}{208}{}\protected@file@percent }
-\newlabel{sec:external-comparison-boundary-pointer}{{7.1}{208}{}{subsection.7.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {41}{\ignorespaces Proof-dependency map for Proposition~\ref {prop:order-comparison}.}}{209}{}\protected@file@percent }
-\newlabel{tab:proof-traceability}{{41}{209}{}{table.41}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Numerical evidence}{210}{}\protected@file@percent }
-\newlabel{sec:numerical}{{8}{210}{}{section.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {42}{\ignorespaces Observed orders for the accepted Gauss6\slash  FullVA{} path.}}{210}{}\protected@file@percent }
-\newlabel{tab:orders}{{42}{210}{}{table.42}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {43}{\ignorespaces Smooth cylindrical-chain projected-endpoint errors.}}{211}{}\protected@file@percent }
-\newlabel{tab:smooth-errors}{{43}{211}{}{table.43}{}}
-\newlabel{eq:solver-table-p6-scale}{{284}{211}{}{equation.284}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {44}{\ignorespaces Order-estimate acceptance policy used in the numerical section.}}{212}{}\protected@file@percent }
-\newlabel{tab:order-acceptance-policy}{{44}{212}{}{table.44}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {45}{\ignorespaces Non-promoted same-step diagnostic with a TFE{}-style all-row attempt.}}{212}{}\protected@file@percent }
-\newlabel{tab:tfe-diagnostic-comparison}{{45}{212}{}{table.45}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {46}{\ignorespaces Work and solver diagnostics for accepted evidence rows.}}{213}{}\protected@file@percent }
-\newlabel{tab:work-diagnostics}{{46}{213}{}{table.46}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {47}{\ignorespaces Nonlinear solver tolerances used for the reported evidence rows.}}{213}{}\protected@file@percent }
-\newlabel{tab:solver-tolerances}{{47}{213}{}{table.47}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Convergence and work/precision evidence for the accepted Gauss6\slash  FullVA{} path and the implemented source-paper all-row TFE{} diagnostic. The top row compares the smooth cylindrical-chain errors and Newton-work/error curves against the diagnostic paper-style all-row attempt; that curve is not an accepted fair baseline. The bottom row contrasts the sharp-friction coarse sweep with the refined cost envelope that recovers high order only at additional runtime.}}{215}{}\protected@file@percent }
-\newlabel{fig:convergence}{{2}{215}{}{figure.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Four-example mechanism validation}{216}{}\protected@file@percent }
-\newlabel{sec:four-examples}{{9}{216}{}{section.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Driven single pendulum}{216}{}\protected@file@percent }
-\newlabel{eq:single-drive}{{285}{216}{}{equation.285}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Double pendulum}{216}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Four-link closed loop}{217}{}\protected@file@percent }
-\newlabel{eq:four-link-fullva-constraint-levels}{{286}{217}{}{equation.286}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Slider-crank closed loop}{217}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Coordinate-level mechanism specification}{217}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Single pendulum}{217}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {48}{\ignorespaces Four-example validation summary.}}{218}{}\protected@file@percent }
-\newlabel{tab:asme}{{48}{218}{}{table.48}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {49}{\ignorespaces Problem setup values used by the four ASME-style validation examples.}}{219}{}\protected@file@percent }
-\newlabel{tab:asme-setup}{{49}{219}{}{table.49}{}}
-\@writefile{toc}{\contentsline {paragraph}{Double pendulum}{220}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Four-link closed loop}{220}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Slider-crank closed loop}{220}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Lower-pair constraint formulas}{220}{}\protected@file@percent }
-\newlabel{sec:lower-pair-formulas}{{10}{220}{}{section.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Coordinate-oriented mechanism schematics and lower-pair constraint inventory for the four ASME-style examples. Each panel shows the global coordinate frame, named joints, the principal moving bodies, the driver where applicable, and the CD/DP1/DP2/D constraint vocabulary used by the FullVA rows. Exact body-fixed point and direction vectors are listed in the text immediately preceding the figure.}}{221}{}\protected@file@percent }
-\newlabel{fig:asme-graph}{{3}{221}{}{figure.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Closed-loop kinematic FullVA mechanism-coverage evidence for the four-link and slider-crank examples.}}{222}{}\protected@file@percent }
-\newlabel{fig:closed-loop}{{4}{222}{}{figure.4}{}}
-\newlabel{eq:lower-pair-row-families}{{290}{222}{}{equation.290}{}}
-\newlabel{eq:lower-pair-rigid-kinematic-identities}{{292}{222}{}{equation.292}{}}
-\newlabel{eq:lower-pair-velocity-rows}{{296}{222}{}{equation.296}{}}
-\newlabel{eq:lower-pair-acceleration-rows}{{300}{223}{}{equation.300}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Scalar lower-pair Jacobian entries}{223}{}\protected@file@percent }
-\newlabel{eq:scalar-lower-pair-geometry-definitions}{{301}{223}{}{equation.301}{}}
-\newlabel{eq:point-direction-variation}{{303}{223}{}{equation.303}{}}
-\newlabel{eq:position-scalar-jacobian}{{307}{223}{}{equation.307}{}}
-\newlabel{eq:velocity-scalar-perturbation}{{310}{223}{}{equation.310}{}}
-\newlabel{eq:acceleration-scalar-perturbation}{{313}{224}{}{equation.313}{}}
-\newlabel{eq:assembled-fullva-levels}{{314}{224}{}{equation.314}{}}
-\newlabel{eq:stage-unknown-order}{{315}{224}{}{equation.315}{}}
-\newlabel{eq:lower-pair-residual-linearization}{{316}{224}{}{equation.316}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Diagnostic boundaries and limitations}{225}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Order/closure blend diagnostic. The tested path separates order preservation from terminal endpoint-velocity closure, which is why independent full-TFE{} replacement remains open.}}{225}{}\protected@file@percent }
-\newlabel{fig:order-closure-blend}{{5}{225}{}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Velocity-compression diagnostic. Local row-space probes quantify the gap between available weak-row features and the terminal bridge needed for accepted full-TFE{} stage replacement.}}{226}{}\protected@file@percent }
-\newlabel{fig:velocity-compression}{{6}{226}{}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Sparse backend speed-gap diagnostic. The sparse structure is correct and quantified, but dense \texttt  {jacfwd} remains faster in the recorded wall-clock evidence.}}{226}{}\protected@file@percent }
-\newlabel{fig:sparse-speed}{{7}{226}{}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Strict common-reference work/precision rows for bounded diagnostics on the closed-loop four-link and slider-crank mechanisms. Bounded common-reference diagnostic work/precision rows use the same finite accepted-method endpoint reference at $h=0.0125$ over the coarse $h=0.1,0.05,0.025$ window. The plot removes one fixed-grid diagnostic caveat for these coarse rows, but it is still not an external superiority claim because the broader source-paper suites and manuscript-level review remain open.}}{227}{}\protected@file@percent }
-\newlabel{fig:strict-common-reference}{{8}{227}{}{figure.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {50}{\ignorespaces Diagnostic boundaries separated from the accepted theorem.}}{227}{}\protected@file@percent }
-\newlabel{tab:diagnostic-boundaries}{{50}{227}{}{table.50}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Claim-boundary and limitation map for the present paper. Green items are accepted claims or accepted evidence rows; orange items are bounded or partial evidence; red items remain open boundaries. The figure summarizes why the manuscript supports a conditional sixth-order Gauss6\slash  FullVA{} claim under the retained theorem interfaces but still does not claim complete source-paper residual replacement, external same-test superiority, or a closed residual-to-error transfer theorem for the closed-loop mechanisms.}}{228}{}\protected@file@percent }
-\newlabel{fig:claim-boundary-limitations}{{9}{228}{}{figure.9}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Coarse-first baseline and work/precision diagnostics. The top panels compare observed order on the same coarse window for the single and double pendula. The lower panels use the strict common-reference closed-loop summaries for four-link and slider-crank, with all plotted rows evaluated against the same finite accepted-method endpoint reference at $h_{\rm  ref}=0.0125$. These panels document coarse-first diagnostics and work/precision availability, but they are not an external-superiority claim and do not replace the unresolved original source-policy campaigns.}}{229}{}\protected@file@percent }
-\newlabel{fig:coarse-baseline-work-precision}{{10}{229}{}{figure.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Closed-loop coarse-dynamics diagnostic evidence for the four-link and slider-crank mechanisms. Closed-loop coarse-window trajectory diagnostics plot endpoint position, orientation, linear-velocity, and angular-velocity errors against the $O(h^6)$ guide over $h=0.1,0.05,0.025$ with $h_{\rm  ref}=0.0125$. The bottom panels summarize the finite-window fitted slopes and the non-oracle Newton stage-solve work. These rows are mechanism-coverage and coarse-window trajectory diagnostics only, not accepted dynamic-order proof; they run without using stage-time kinematic oracles, without making $10^{-4}$ a default policy, without promoting four-link or slider-crank to accepted dynamic-order rows, and without asserting external same-test superiority. They are finite-window diagnostics: they do not instantiate the residual-to-error implication, do not close P7, and do not promote four-link or slider-crank to accepted dynamic-order examples.}}{230}{}\protected@file@percent }
-\newlabel{fig:closed-loop-true-dynamic-order}{{11}{230}{}{figure.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces All-method common-reference result matrix for the four validation examples. Each cell reports observed velocity order and finest-step velocity error from the paper numerical result matrix over $h=0.1,0.05,0.025$ with $h_{\rm  ref}=0.0125$. The local Gauss6\slash  FullVA{} row is method-side order evidence. All nonlocal rows remain bounded diagnostic rows with open source-policy status, so the figure does not authorize an external source-paper superiority claim.}}{231}{}\protected@file@percent }
-\newlabel{fig:all-method-result-matrix}{{12}{231}{}{figure.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Work/precision compendium for fair candidate diagnostics. The first two panels use the frictionless TFE source-pendulum candidate route on a shared $T=1$ grid and RK4 reference, plotting velocity error against wall time and Newton work. The Algorithm-1-literal $T=10$ panels plot velocity and coordinate error against Newton work from the Algorithm-1-literal work/precision diagnostic rows; these fixed-$h$ endpoint rows remain source-policy open because exact-$T$ error sampling and a source-equivalent DAE/method runner are not established. The RA2021 panel summarizes same-window pendulum finest-row runtime and velocity-error ratios relative to public $rA$ rows, and the closed-loop panel collects strict common-reference four-link and slider-crank work/precision rows. These panels consolidate existing evidence for review; they remain candidate/common-reference diagnostics, not source-policy superiority claims.}}{232}{}\protected@file@percent }
-\newlabel{fig:work-precision-compendium}{{13}{232}{}{figure.13}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12}Limitations}{233}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {13}Conclusions}{235}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conditional sixth-order theorem}{23}{}\protected@file@percent }
+\newlabel{sec:order}{{7}{23}{}{section.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Smooth cylindrical-chain endpoint closure scaling diagnostic.}}{24}{}\protected@file@percent }
+\newlabel{tab:endpoint-closure-scaling}{{7}{24}{}{table.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Reduced chart, lift, and retained hypotheses}{24}{}\protected@file@percent }
+\newlabel{eq:reduced-ode}{{21}{24}{}{equation.21}{}}
+\newlabel{eq:reduced-gauss-stages}{{22}{24}{}{equation.22}{}}
+\newlabel{ass:regularity}{{1}{25}{}{assumption.1}{}}
+\newlabel{eq:assumption-stability-scale}{{23}{25}{}{equation.23}{}}
+\citation{hairer1993solving}
+\newlabel{eq:gauss-local-truncation}{{24}{26}{}{equation.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Exact stage identity}{26}{}\protected@file@percent }
+\newlabel{lem:exact-stage-identity}{{1}{26}{}{lemma.1}{}}
+\newlabel{eq:exact-stage-identity}{{25}{26}{}{equation.25}{}}
+\@writefile{toc}{\contentsline {paragraph}{Implementation fidelity}{27}{}\protected@file@percent }
+\newlabel{lem:stage-residual-defect}{{2}{27}{}{lemma.2}{}}
+\newlabel{eq:branch-selection-chain}{{26}{27}{}{equation.26}{}}
+\newlabel{lem:p2-from-p1}{{3}{27}{}{lemma.3}{}}
+\newlabel{eq:p2-perturbation-bound}{{27}{27}{}{equation.27}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Endpoint defect, endpoint closure, and inexact Newton}{29}{}\protected@file@percent }
+\newlabel{lem:gauss-endpoint-defect}{{4}{29}{}{lemma.4}{}}
+\newlabel{eq:gauss-endpoint-defect}{{28}{29}{}{equation.28}{}}
+\newlabel{eq:gauss-quadrature-defect}{{29}{29}{}{equation.29}{}}
+\newlabel{lem:endpoint-closure}{{5}{29}{}{lemma.5}{}}
+\newlabel{eq:endpoint-correction-bound}{{30}{29}{}{equation.30}{}}
+\newlabel{lem:inexact-newton}{{6}{30}{}{lemma.6}{}}
+\newlabel{eq:inexact-newton-stage-output-bounds}{{31}{30}{}{equation.31}{}}
+\newlabel{lem:newton-envelope}{{7}{30}{}{lemma.7}{}}
+\newlabel{eq:newton-envelope-decay}{{32}{30}{}{equation.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Local-to-global transfer}{31}{}\protected@file@percent }
+\newlabel{lem:local-global-transfer}{{8}{31}{}{lemma.8}{}}
+\newlabel{eq:local-global-lemma-gronwall-factor}{{33}{31}{}{equation.33}{}}
+\newlabel{eq:local-global-lemma-grid-bound}{{34}{32}{}{equation.34}{}}
+\newlabel{def:accepted-branch-map}{{4}{32}{}{definition.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Main theorem}{32}{}\protected@file@percent }
+\newlabel{thm:g6fullva-order}{{1}{33}{}{theorem.1}{}}
+\newlabel{eq:g6fva-local-defect-theorem}{{35}{33}{}{equation.35}{}}
+\newlabel{eq:g6fva-reduced-grid-bound}{{36}{33}{}{equation.36}{}}
+\newlabel{eq:g6fva-reported-grid-bound}{{37}{33}{}{equation.37}{}}
+\newlabel{eq:three-term-local-defect-sum}{{38}{33}{}{equation.38}{}}
+\@writefile{toc}{\contentsline {paragraph}{Scope and non-claims of Theorem~\ref {thm:g6fullva-order}}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Formal-order comparison and output boundary}{34}{}\protected@file@percent }
+\newlabel{lem:tfe-target-order}{{9}{34}{}{lemma.9}{}}
+\newlabel{prop:order-comparison}{{1}{34}{}{proposition.1}{}}
+\newlabel{def:p7-transfer-certificate-template}{{5}{35}{}{definition.5}{}}
+\newlabel{eq:p7-certificate-tuple}{{39}{35}{}{equation.39}{}}
+\newlabel{eq:p7-transfer-template-bound}{{40}{36}{}{equation.40}{}}
+\newlabel{eq:corollary-p7-transfer-bound}{{41}{37}{}{equation.41}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.7}External comparison boundary}{37}{}\protected@file@percent }
+\newlabel{sec:external-comparison-boundary-pointer}{{7.7}{37}{}{subsection.7.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Proof-dependency map for Proposition~\ref {prop:order-comparison}.}}{38}{}\protected@file@percent }
+\newlabel{tab:proof-traceability}{{8}{38}{}{table.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Numerical evidence}{39}{}\protected@file@percent }
+\newlabel{sec:numerical}{{8}{39}{}{section.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Observed orders for the accepted Gauss6\slash  FullVA{} path.}}{39}{}\protected@file@percent }
+\newlabel{tab:orders}{{9}{39}{}{table.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Smooth cylindrical-chain projected-endpoint errors.}}{40}{}\protected@file@percent }
+\newlabel{tab:smooth-errors}{{10}{40}{}{table.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Exact stage identity diagnostic}{40}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Constants of the P2 reduction}{40}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Exact stage identity diagnostic on the smooth cylindrical chain.}}{41}{}\protected@file@percent }
+\newlabel{tab:exact-identity-check}{{11}{41}{}{table.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Constants of Lemmas~\ref {lem:p2-from-p1} and~\ref {lem:newton-envelope} on the smooth cylindrical chain, Euclidean norm on the implemented stage layout: $M_0=\max _n\|J_0^{-1}\|$, $C_J=\max _n\|J_h-J_0\|/h$, Neumann margin $M_0\|J_h-J_0\|$, inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$, implied $h_0=1/(2M_0C_J)$, distances of the lifted endpoint and Algorithm~1 predictors to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step from the Algorithm~1 predictor.}}{41}{}\protected@file@percent }
+\newlabel{tab:p2-constants-check}{{12}{41}{}{table.12}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces Order-estimate acceptance policy used in the numerical section.}}{42}{}\protected@file@percent }
+\newlabel{tab:order-acceptance-policy}{{13}{42}{}{table.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces Non-promoted same-step diagnostic with a TFE{}-style all-row attempt.}}{42}{}\protected@file@percent }
+\newlabel{tab:tfe-diagnostic-comparison}{{14}{42}{}{table.14}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces Work and solver diagnostics for accepted evidence rows.}}{43}{}\protected@file@percent }
+\newlabel{tab:work-diagnostics}{{15}{43}{}{table.15}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces Nonlinear solver tolerances used for the reported evidence rows.}}{43}{}\protected@file@percent }
+\newlabel{tab:solver-tolerances}{{16}{43}{}{table.16}{}}
+\newlabel{eq:solver-table-p6-scale}{{42}{43}{}{equation.42}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Convergence and work/precision evidence for the accepted Gauss6\slash  FullVA{} path and the implemented source-paper all-row TFE{} diagnostic. The top row compares the smooth cylindrical-chain errors and Newton-work/error curves against the diagnostic paper-style all-row attempt; that curve is not an accepted fair baseline. The bottom row contrasts the sharp-friction coarse sweep with the refined cost envelope that recovers high order only at additional runtime.}}{45}{}\protected@file@percent }
+\newlabel{fig:convergence}{{2}{45}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Four-example mechanism validation}{46}{}\protected@file@percent }
+\newlabel{sec:four-examples}{{9}{46}{}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Driven single pendulum}{46}{}\protected@file@percent }
+\newlabel{eq:single-drive}{{43}{46}{}{equation.43}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Double pendulum}{47}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Four-link closed loop}{47}{}\protected@file@percent }
+\newlabel{eq:four-link-fullva-constraint-levels}{{44}{47}{}{equation.44}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}Slider-crank closed loop}{47}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.5}Coordinate-level mechanism specification}{47}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Four-example validation summary.}}{48}{}\protected@file@percent }
+\newlabel{tab:asme}{{17}{48}{}{table.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {18}{\ignorespaces Problem setup values used by the four ASME-style validation examples.}}{49}{}\protected@file@percent }
+\newlabel{tab:asme-setup}{{18}{49}{}{table.18}{}}
+\@writefile{toc}{\contentsline {paragraph}{Single pendulum}{50}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Double pendulum}{50}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Four-link closed loop}{50}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Slider-crank closed loop}{50}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Lower-pair constraint formulas}{50}{}\protected@file@percent }
+\newlabel{sec:lower-pair-formulas}{{10}{50}{}{section.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Coordinate-oriented mechanism schematics and lower-pair constraint inventory for the four ASME-style examples. Each panel shows the global coordinate frame, named joints, the principal moving bodies, the driver where applicable, and the CD/DP1/DP2/D constraint vocabulary used by the FullVA rows. Exact body-fixed point and direction vectors are listed in the text immediately preceding the figure.}}{51}{}\protected@file@percent }
+\newlabel{fig:asme-graph}{{3}{51}{}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Closed-loop kinematic FullVA mechanism-coverage evidence for the four-link and slider-crank examples.}}{52}{}\protected@file@percent }
+\newlabel{fig:closed-loop}{{4}{52}{}{figure.4}{}}
+\newlabel{eq:lower-pair-row-families}{{48}{52}{}{equation.48}{}}
+\newlabel{eq:lower-pair-rigid-kinematic-identities}{{50}{52}{}{equation.50}{}}
+\newlabel{eq:lower-pair-velocity-rows}{{54}{53}{}{equation.54}{}}
+\newlabel{eq:lower-pair-acceleration-rows}{{58}{53}{}{equation.58}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Diagnostic boundaries and limitations}{53}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Order/closure blend diagnostic. The tested path separates order preservation from terminal endpoint-velocity closure, which is why independent full-TFE{} replacement remains open.}}{54}{}\protected@file@percent }
+\newlabel{fig:order-closure-blend}{{5}{54}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Velocity-compression diagnostic. Local row-space probes quantify the gap between available weak-row features and the terminal bridge needed for accepted full-TFE{} stage replacement.}}{54}{}\protected@file@percent }
+\newlabel{fig:velocity-compression}{{6}{54}{}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Sparse backend speed-gap diagnostic. The sparse structure is correct and quantified, but dense \texttt  {jacfwd} remains faster in the recorded wall-clock evidence.}}{55}{}\protected@file@percent }
+\newlabel{fig:sparse-speed}{{7}{55}{}{figure.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Limitations}{55}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Strict common-reference work/precision rows for bounded diagnostics on the closed-loop four-link and slider-crank mechanisms. Bounded common-reference diagnostic work/precision rows use the same finite accepted-method endpoint reference at $h=0.0125$ over the coarse $h=0.1,0.05,0.025$ window. The plot removes one fixed-grid diagnostic caveat for these coarse rows, but it is still not an external superiority claim because the broader source-paper suites and manuscript-level review remain open.}}{56}{}\protected@file@percent }
+\newlabel{fig:strict-common-reference}{{8}{56}{}{figure.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {19}{\ignorespaces Diagnostic boundaries separated from the accepted theorem.}}{56}{}\protected@file@percent }
+\newlabel{tab:diagnostic-boundaries}{{19}{56}{}{table.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Claim-boundary and limitation map for the present paper. Green items are accepted claims or accepted evidence rows; orange items are bounded or partial evidence; red items remain open boundaries. The figure summarizes why the manuscript supports a conditional sixth-order Gauss6\slash  FullVA{} claim under the retained theorem interfaces but still does not claim complete source-paper residual replacement, external same-test superiority, or a closed residual-to-error transfer theorem for the closed-loop mechanisms.}}{57}{}\protected@file@percent }
+\newlabel{fig:claim-boundary-limitations}{{9}{57}{}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Coarse-first baseline and work/precision diagnostics. The top panels compare observed order on the same coarse window for the single and double pendula. The lower panels use the strict common-reference closed-loop summaries for four-link and slider-crank, with all plotted rows evaluated against the same finite accepted-method endpoint reference at $h_{\rm  ref}=0.0125$. These panels document coarse-first diagnostics and work/precision availability, but they are not an external-superiority claim and do not replace the unresolved original source-policy campaigns.}}{58}{}\protected@file@percent }
+\newlabel{fig:coarse-baseline-work-precision}{{10}{58}{}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Closed-loop coarse-dynamics diagnostic evidence for the four-link and slider-crank mechanisms. Closed-loop coarse-window trajectory diagnostics plot endpoint position, orientation, linear-velocity, and angular-velocity errors against the $O(h^6)$ guide over $h=0.1,0.05,0.025$ with $h_{\rm  ref}=0.0125$. The bottom panels summarize the finite-window fitted slopes and the non-oracle Newton stage-solve work. These rows are mechanism-coverage and coarse-window trajectory diagnostics only, not accepted dynamic-order proof; they run without using stage-time kinematic oracles, without making $10^{-4}$ a default policy, without promoting four-link or slider-crank to accepted dynamic-order rows, and without asserting external same-test superiority. They are finite-window diagnostics: they do not instantiate the residual-to-error implication, do not close P7, and do not promote four-link or slider-crank to accepted dynamic-order examples.}}{59}{}\protected@file@percent }
+\newlabel{fig:closed-loop-true-dynamic-order}{{11}{59}{}{figure.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces All-method common-reference result matrix for the four validation examples. Each cell reports observed velocity order and finest-step velocity error from the paper numerical result matrix over $h=0.1,0.05,0.025$ with $h_{\rm  ref}=0.0125$. The local Gauss6\slash  FullVA{} row is method-side order evidence. All nonlocal rows remain bounded diagnostic rows with open source-policy status, so the figure does not authorize an external source-paper superiority claim.}}{60}{}\protected@file@percent }
+\newlabel{fig:all-method-result-matrix}{{12}{60}{}{figure.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Work/precision compendium for fair candidate diagnostics. The first two panels use the frictionless TFE source-pendulum candidate route on a shared $T=1$ grid and RK4 reference, plotting velocity error against wall time and Newton work. The Algorithm-1-literal $T=10$ panels plot velocity and coordinate error against Newton work from the Algorithm-1-literal work/precision diagnostic rows; these fixed-$h$ endpoint rows remain source-policy open because exact-$T$ error sampling and a source-equivalent DAE/method runner are not established. The RA2021 panel summarizes same-window pendulum finest-row runtime and velocity-error ratios relative to public $rA$ rows, and the closed-loop panel collects strict common-reference four-link and slider-crank work/precision rows. These panels consolidate existing evidence for review; they remain candidate/common-reference diagnostics, not source-policy superiority claims.}}{61}{}\protected@file@percent }
+\newlabel{fig:work-precision-compendium}{{13}{61}{}{figure.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13}Conclusions}{63}{}\protected@file@percent }
 \@writefile{toc}{\let\numberline\tmptocnumberline}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix~A}Cross-paper same-test comparison criterion: diagnostic appendix}{237}{}\protected@file@percent }
-\newlabel{sec:cross-paper-boundary}{{Appendix~A}{237}{}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix~A}Cross-paper same-test comparison criterion: diagnostic appendix}{65}{}\protected@file@percent }
+\newlabel{sec:cross-paper-boundary}{{Appendix~A}{65}{}{section.1}{}}
 \citation{chaturvedi2026tfe}
 \citation{taves2020exponential,kissel2021dwelling,kissel2022absolute}
 \citation{fang2023halfimplicit}
 \citation{kissel2024velocitypartitioning}
-\@writefile{toc}{\contentsline {paragraph}{Why the source-policy criterion is separate}{238}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Source-policy progress boundary}{238}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Claim-policy implication}{238}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.51}{\ignorespaces Required same-test comparisons and current external-suite claim boundary.}}{239}{}\protected@file@percent }
-\newlabel{tab:cross-paper-boundary}{{A.51}{239}{}{table.51}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.52}{\ignorespaces Minimum same-test TFE{} acceptance protocol before any source-paper superiority claim.}}{240}{}\protected@file@percent }
-\newlabel{tab:tfe-same-test-protocol}{{A.52}{240}{}{table.52}{}}
-\@writefile{toc}{\contentsline {paragraph}{Benchmark-policy dictionary}{241}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.53}{\ignorespaces RA2021 local-candidate promotion boundary.}}{242}{}\protected@file@percent }
-\newlabel{tab:ra2021-local-promotion-boundary}{{A.53}{242}{}{table.53}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.54}{\ignorespaces Bounded common-reference velocity evidence from the current result pack; diagnostic only, not external-superiority evidence.}}{243}{}\protected@file@percent }
-\newlabel{tab:common-reference-pack}{{A.54}{243}{}{table.54}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.55}{\ignorespaces All runnable common-reference velocity rows. Each entry is observed velocity order / finest-step velocity error on the fixed-grid $h=\{0.1,0.05,0.025\}$ sweep with reference $h=0.0125$; the table is a diagnostic common-reference matrix, not a source-policy superiority table.}}{243}{}\protected@file@percent }
-\newlabel{tab:common-reference-all-methods}{{A.55}{243}{}{table.55}{}}
+\@writefile{toc}{\contentsline {paragraph}{Why the source-policy criterion is separate}{66}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Source-policy progress boundary}{66}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Claim-policy implication}{66}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.20}{\ignorespaces Required same-test comparisons and current external-suite claim boundary.}}{67}{}\protected@file@percent }
+\newlabel{tab:cross-paper-boundary}{{A.20}{67}{}{table.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.21}{\ignorespaces Minimum same-test TFE{} acceptance protocol before any source-paper superiority claim.}}{68}{}\protected@file@percent }
+\newlabel{tab:tfe-same-test-protocol}{{A.21}{68}{}{table.21}{}}
+\@writefile{toc}{\contentsline {paragraph}{Benchmark-policy dictionary}{69}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {A.22}{\ignorespaces RA2021 local-candidate promotion boundary.}}{70}{}\protected@file@percent }
+\newlabel{tab:ra2021-local-promotion-boundary}{{A.22}{70}{}{table.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.23}{\ignorespaces Bounded common-reference velocity evidence from the current result pack; diagnostic only, not external-superiority evidence.}}{71}{}\protected@file@percent }
+\newlabel{tab:common-reference-pack}{{A.23}{71}{}{table.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.24}{\ignorespaces All runnable common-reference velocity rows. Each entry is observed velocity order / finest-step velocity error on the fixed-grid $h=\{0.1,0.05,0.025\}$ sweep with reference $h=0.0125$; the table is a diagnostic common-reference matrix, not a source-policy superiority table.}}{71}{}\protected@file@percent }
+\newlabel{tab:common-reference-all-methods}{{A.24}{71}{}{table.24}{}}
 \citation{chaturvedi2026tfe,browmcphee2016friction}
-\@writefile{lot}{\contentsline {table}{\numberline {A.56}{\ignorespaces Source-policy diagnosis for flagged common-reference baseline rows.}}{244}{}\protected@file@percent }
-\newlabel{tab:source-policy-diagnosis}{{A.56}{244}{}{table.56}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.57}{\ignorespaces All-example source-policy status for the flagged baseline rows.}}{245}{}\protected@file@percent }
-\newlabel{tab:all-example-source-policy}{{A.57}{245}{}{table.57}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.58}{\ignorespaces Bounded active-row candidate smoke for the original TFE{} pendulum rows. The run uses $T=0.024$, $h_{\rm  ref}=10^{-4}$, and $h=\{0.012,0.006,0.003\}$; it is not a full $T=10$ source-policy reproduction.}}{249}{}\protected@file@percent }
-\newlabel{tab:tfe-active-b2-smoke}{{A.58}{249}{}{table.58}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.59}{\ignorespaces Full-horizon coarse candidate probe for the original TFE{} pendulum rows. The run uses $T=10$, $h_{\rm  ref}=0.0125$, and $h=\{0.1,0.05,0.025\}$; it does not invoke the source-policy $h_{\rm  ref}=10^{-4}$ reference.}}{249}{}\protected@file@percent }
-\newlabel{tab:tfe-full-t10-coarse-candidate}{{A.59}{249}{}{table.59}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix~B}Reproducibility package}{249}{}\protected@file@percent }
-\newlabel{sec:repro-appendix}{{Appendix~B}{249}{}{section.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.60}{\ignorespaces Cross-paper evidence accumulated without treating it as an external superiority result.}}{250}{}\protected@file@percent }
-\newlabel{tab:cross-paper-evidence}{{A.60}{250}{}{table.60}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {B.61}{\ignorespaces External reproduction and package boundaries retained by the paper package.}}{251}{}\protected@file@percent }
-\newlabel{tab:objective-completion-blockers}{{B.61}{251}{}{table.61}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.25}{\ignorespaces Source-policy diagnosis for flagged common-reference baseline rows.}}{72}{}\protected@file@percent }
+\newlabel{tab:source-policy-diagnosis}{{A.25}{72}{}{table.25}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.26}{\ignorespaces All-example source-policy status for the flagged baseline rows.}}{73}{}\protected@file@percent }
+\newlabel{tab:all-example-source-policy}{{A.26}{73}{}{table.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.27}{\ignorespaces Bounded active-row candidate smoke for the original TFE{} pendulum rows. The run uses $T=0.024$, $h_{\rm  ref}=10^{-4}$, and $h=\{0.012,0.006,0.003\}$; it is not a full $T=10$ source-policy reproduction.}}{77}{}\protected@file@percent }
+\newlabel{tab:tfe-active-b2-smoke}{{A.27}{77}{}{table.27}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.28}{\ignorespaces Full-horizon coarse candidate probe for the original TFE{} pendulum rows. The run uses $T=10$, $h_{\rm  ref}=0.0125$, and $h=\{0.1,0.05,0.025\}$; it does not invoke the source-policy $h_{\rm  ref}=10^{-4}$ reference.}}{77}{}\protected@file@percent }
+\newlabel{tab:tfe-full-t10-coarse-candidate}{{A.28}{77}{}{table.28}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix~B}Reproducibility package}{77}{}\protected@file@percent }
+\newlabel{sec:repro-appendix}{{Appendix~B}{77}{}{section.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.29}{\ignorespaces Cross-paper evidence accumulated without treating it as an external superiority result.}}{78}{}\protected@file@percent }
+\newlabel{tab:cross-paper-evidence}{{A.29}{78}{}{table.29}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.30}{\ignorespaces External reproduction and package boundaries retained by the paper package.}}{79}{}\protected@file@percent }
+\newlabel{tab:objective-completion-blockers}{{B.30}{79}{}{table.30}{}}
+\@writefile{toc}{\contentsline {paragraph}{Lean development}{80}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix~C}Supplementary source package}{80}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {B.31}{\ignorespaces Algorithm-to-source map for the accepted Gauss6\slash  FullVA{} execution path.}}{81}{}\protected@file@percent }
+\newlabel{tab:algorithm-source-map}{{B.31}{81}{}{table.31}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.32}{\ignorespaces Compact reproducibility contract used by the bounded paper package.}}{82}{}\protected@file@percent }
+\newlabel{tab:artifact-contract}{{B.32}{82}{}{table.32}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.33}{\ignorespaces Cross-example and review records retained with the source package.}}{83}{}\protected@file@percent }
+\newlabel{tab:all-example-review-artifacts}{{B.33}{83}{}{table.33}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.34}{\ignorespaces Source-package reproducibility and consistency checks.}}{84}{}\protected@file@percent }
+\newlabel{tab:validators}{{B.34}{84}{}{table.34}{}}
 \bibcite{chaturvedi2026tfe}{{1}{}{{}}{{}}}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix~C}Supplementary source package}{252}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {B.62}{\ignorespaces Algorithm-to-source map for the accepted Gauss6\slash  FullVA{} execution path.}}{253}{}\protected@file@percent }
-\newlabel{tab:algorithm-source-map}{{B.62}{253}{}{table.62}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {B.63}{\ignorespaces Compact reproducibility contract used by the bounded paper package.}}{254}{}\protected@file@percent }
-\newlabel{tab:artifact-contract}{{B.63}{254}{}{table.63}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {B.64}{\ignorespaces Cross-example and review records retained with the source package.}}{255}{}\protected@file@percent }
-\newlabel{tab:all-example-review-artifacts}{{B.64}{255}{}{table.64}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {B.65}{\ignorespaces Source-package reproducibility and consistency checks.}}{256}{}\protected@file@percent }
-\newlabel{tab:validators}{{B.65}{256}{}{table.65}{}}
 \bibcite{kim2017higher}{{2}{}{{}}{{}}}
 \bibcite{hairer1993solving}{{3}{}{{}}{{}}}
 \bibcite{gear1985automatic}{{4}{}{{}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.35}{\ignorespaces Manuscript statements and the Lean theorems that check them.}}{85}{}\protected@file@percent }
+\newlabel{tab:lean-development}{{B.35}{85}{}{table.35}{}}
 \bibcite{munthe1998lie}{{5}{}{{}}{{}}}
 \bibcite{munthe1999high}{{6}{}{{}}{{}}}
 \bibcite{bruls2012lie}{{7}{}{{}}{{}}}
@@ -638,4 +266,4 @@
 \bibcite{bauchau2024time}{{27}{}{{}}{{}}}
 \bibcite{browmcphee2016friction}{{28}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{259}
+\gdef \@abspage@last{88}

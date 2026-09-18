@@ -1,7 +1,7 @@
 {
   "example": "double_pendulum",
   "finest_position_error": 3.099742684753437e-13,
-  "finest_velocity_error": 2.34558900080728e-13,
+  "finest_velocity_error": 2.3455543063377604e-13,
   "h_values": [
     0.1,
     0.05,
@@ -13,11 +13,11 @@
   "position_order": 6.01071161969125,
   "proof_gap_closed": false,
   "reference_h": 0.0125,
-  "reference_runtime_sec": 4.3296250510029495,
+  "reference_runtime_sec": 4.74365554000542,
   "rows": 3,
   "schema": "cmame-p1-double-runner-candidate-v1",
   "source_policy_external_superiority_allowed": false,
   "status": "double_runner_candidate_not_source_policy_or_proof_complete",
   "t_final": 0.1,
-  "velocity_order": 6.009704989719966
+  "velocity_order": 6.009715656945229
 }

@@ -464,6 +464,23 @@ def check_required_files() -> bool:
         PAPER / "validate_cmame_proof_style_audit.py",
         PAPER / "validate_proof_closure_manifest.py",
         PAPER / "validate_proof_claim_traceability_audit.py",
+        PAPER / "build_exact_stage_identity_gate.py",
+        PAPER / "validate_exact_stage_identity_gate.py",
+        PAPER / "EXACT_STAGE_IDENTITY_GATE.md",
+        PAPER / "EXACT_STAGE_IDENTITY_GATE.json",
+        PAPER / "run_exact_stage_identity_numerical_check.py",
+        PAPER / "validate_exact_stage_identity_numerical_check.py",
+        PAPER / "EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.md",
+        PAPER / "EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.json",
+        PAPER / "EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.csv",
+        PAPER / "run_p2_constants_numerical_check.py",
+        PAPER / "validate_p2_constants_numerical_check.py",
+        PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.md",
+        PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.json",
+        PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.csv",
+        PAPER / "lean" / "lakefile.toml",
+        PAPER / "lean" / "lean-toolchain",
+        PAPER / "lean" / "scripts" / "Axioms.lean",
         PAPER / "validate_d5_dynamic_defect_readiness_audit.py",
         PAPER / "validate_d5_dynamic_direct_substitution_certificate.py",
         PAPER / "validate_d5_taylor_term_budget_audit.py",
@@ -2498,7 +2515,12 @@ def main() -> int:
         ("reference metadata audit validator", [str(PYTHON), "validate_reference_metadata_audit.py"], PAPER),
         ("CMAME blocker closure gate validator", [str(PYTHON), "validate_cmame_blocker_closure_gate.py"], PAPER),
         ("CMAME external baseline gate validator", [str(PYTHON), "validate_cmame_external_baseline_gate.py"], PAPER),
-        ("CMAME proof contract gate validator", [str(PYTHON), "validate_cmame_proof_contract_gate.py"], PAPER),
+        # 2026-09-17: the "CMAME proof contract gate validator" step (validate_cmame_proof_contract_gate.py)
+        # pinned the retired 96-row/D5 route; superseded by the exact-stage-identity gate (its JSON is kept
+        # as an archived record). Likewise superseded: "CMAME proof style audit validator",
+        # "CMAME strict proof audit validator", "CMAME strict proof policy reconciliation audit validator",
+        # "proof closure manifest validator", "proof-claim traceability audit validator",
+        # "Newton-Euler symbolic defect certificate validator".
         ("CMAME visual legibility audit validator", [str(PYTHON), "validate_cmame_visual_legibility_audit.py"], PAPER),
         ("CMAME figure-set audit validator", [str(PYTHON), "validate_cmame_figure_set_audit.py"], PAPER),
         (
@@ -2513,15 +2535,20 @@ def main() -> int:
             [str(PYTHON), "validate_cmame_narrowed_claim_closure_policy_audit.py"],
             PAPER,
         ),
-        ("CMAME proof style audit validator", [str(PYTHON), "validate_cmame_proof_style_audit.py"], PAPER),
-        ("CMAME strict proof audit validator", [str(PYTHON), "validate_cmame_strict_proof_audit.py"], PAPER),
+        # 2026-09-17: the proof-style, strict-proof, policy-reconciliation, proof-closure, and
+        # proof-claim traceability gates pinned the retired 96-row/PS2/primitive-Taylor route and are
+        # superseded by the exact-stage-identity gate.
+        ("exact stage identity gate validator", [str(PYTHON), "validate_exact_stage_identity_gate.py"], PAPER),
         (
-            "CMAME strict proof policy reconciliation audit validator",
-            [str(PYTHON), "validate_cmame_strict_proof_policy_reconciliation_audit.py"],
+            "exact stage identity numerical check validator",
+            [str(PYTHON), "validate_exact_stage_identity_numerical_check.py"],
             PAPER,
         ),
-        ("proof closure manifest validator", [str(PYTHON), "validate_proof_closure_manifest.py"], PAPER),
-        ("proof-claim traceability audit validator", [str(PYTHON), "validate_proof_claim_traceability_audit.py"], PAPER),
+        (
+            "P2 constants numerical check validator",
+            [str(PYTHON), "validate_p2_constants_numerical_check.py"],
+            PAPER,
+        ),
         (
             "D5 dynamic-defect readiness audit validator",
             [str(PYTHON), "validate_d5_dynamic_defect_readiness_audit.py"],
@@ -3059,11 +3086,8 @@ def main() -> int:
             [str(PYTHON), "validate_newton_euler_virtual_work_wrench_audit.py"],
             PAPER,
         ),
-        (
-            "Newton-Euler symbolic defect certificate validator",
-            [str(PYTHON), "validate_newton_euler_symbolic_defect_certificate.py"],
-            PAPER,
-        ),
+        # 2026-09-17: NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE is superseded by the exact-stage-identity
+        # gate (36 Newton-Euler rows are proved to vanish in the Lean development).
         (
             "B1 symbolic row-oracle closure certificate validator",
             [str(PYTHON), "validate_b1_symbolic_row_oracle_closure_certificate.py"],

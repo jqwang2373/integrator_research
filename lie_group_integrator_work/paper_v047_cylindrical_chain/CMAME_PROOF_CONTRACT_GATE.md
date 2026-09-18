@@ -1,5 +1,7 @@
 # CMAME Proof Contract Gate
 
+> Superseded on 2026-09-17 by EXACT_STAGE_IDENTITY_GATE: this gate pinned the retired 96-row/D5/primitive-Taylor proof route. Kept as an archived provenance record; its validator is no longer in the package chain.
+
 Status: **CONDITIONAL CONTRACT RECORDED - GLOBAL SUBMISSION GATES OPEN**
 
 This gate records the proof boundary used by the CMAME manuscript. It is not a

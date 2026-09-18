@@ -1,5 +1,7 @@
 # CMAME Proof-Style Audit
 
+> Superseded on 2026-09-17 by EXACT_STAGE_IDENTITY_GATE: this artifact pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript proves the stage residual at the lifted Gauss stage is identically zero. Kept as an archived provenance record; its validator is no longer in the package chain.
+
 Status: **conditional theorem proof aligned; global submission boundaries retained**.
 
 This read-only audit compares the current proof section against the extracted

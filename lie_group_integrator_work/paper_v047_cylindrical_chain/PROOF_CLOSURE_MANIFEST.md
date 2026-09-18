@@ -1,5 +1,7 @@
 # Proof Closure Manifest
 
+> Superseded on 2026-09-17 by EXACT_STAGE_IDENTITY_GATE: this artifact pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript proves the stage residual at the lifted Gauss stage is identically zero. Kept as an archived provenance record; its validator is no longer in the package chain.
+
 Status: **Direct PC2 residual-value bridge closed under retained theorem interfaces; global claim-promotion/package gates still open**.
 Here `submission_ready=false` is scoped to proof-closure/global proof-package readiness,
 not to the separate narrowed-claim package decision.

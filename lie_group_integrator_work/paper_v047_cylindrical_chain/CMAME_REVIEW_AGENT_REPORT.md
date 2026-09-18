@@ -229,7 +229,7 @@ Narrowed blocker-gate closed blockers: `B1,B2,B3,B4,B5,B6,B7,B8`; scope `narrowe
 
 - Elsevier/CMAME class marker: `True`.
 - CMAME journal marker: `True`.
-- Abstract words: `246`.
+- Abstract words: `235`.
 - Keywords: `6`.
 - Highlights/declarations/flat source present: `True/True/True`.
 
@@ -321,8 +321,8 @@ Narrowed blocker-gate closed blockers: `B1,B2,B3,B4,B5,B6,B7,B8`; scope `narrowe
 ## Code Hygiene Checks
 
 - Code-hygiene status: `research_audit_repository_not_minimal_submission_code`.
-- Python code size: paper package `332` files / `199507` lines; v048 `74` files / `28742` lines; combined `228249` lines.
-- Python file mix: paper `{'build': 144, 'validate': 179, 'run': 5, 'merge': 0}`; v048 `{'build': 32, 'validate': 23, 'run': 12, 'merge': 5}`.
+- Python code size: paper package `338` files / `200735` lines; v048 `74` files / `28742` lines; combined `229477` lines.
+- Python file mix: paper `{'build': 145, 'validate': 182, 'run': 7, 'merge': 0}`; v048 `{'build': 32, 'validate': 23, 'run': 12, 'merge': 5}`.
 - Reviewer-facing code policy: primary supplement limit `12` Python files / `2000` lines; research-audit tree is provenance-only `True` and primary-submission allowed `False`.
 - Research-audit primary-package risk: over `20000` lines `True`; code-bloat risk remains `True` until the full source-policy runner package is ready.
 - Minimal reproducible submission code ready: `False`; code-bloat risk for submission: `True`.

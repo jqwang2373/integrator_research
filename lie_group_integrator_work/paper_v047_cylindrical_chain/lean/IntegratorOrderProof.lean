@@ -1,0 +1,11 @@
+-- Root module: re-exports the library.
+import IntegratorOrderProof.Basic
+import IntegratorOrderProof.PerturbationChain.Contraction
+import IntegratorOrderProof.PerturbationChain.EndpointClosure
+import IntegratorOrderProof.PerturbationChain.LocalToGlobal
+import IntegratorOrderProof.PerturbationChain.MainTheorem
+import IntegratorOrderProof.PerturbationChain.JacobianPerturbation
+import IntegratorOrderProof.NewtonEuler.DynamicRows
+import IntegratorOrderProof.Gauss.Tableau
+import IntegratorOrderProof.Gauss.QuadratureError
+import IntegratorOrderProof.FullVA.NonDynamicRows

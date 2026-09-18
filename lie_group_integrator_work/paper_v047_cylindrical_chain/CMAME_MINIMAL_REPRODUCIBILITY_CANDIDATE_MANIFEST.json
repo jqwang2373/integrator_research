@@ -43,14 +43,14 @@
       "bytes": 471653,
       "path": "data/CMAME_REVIEW_AGENT_REPORT.json",
       "role": "paper_evidence_artifact",
-      "sha256": "4d24b7bd91dc08e712f82fb8b7981f4a4cfdbd32fc4a3420671e961a5e170101",
+      "sha256": "3532297f9cfccc49003b196a30fea4344a13b613f8667828ec5438a4f898372f",
       "source": "CMAME_REVIEW_AGENT_REPORT.json"
     },
     {
-      "bytes": 210674,
+      "bytes": 211061,
       "path": "data/PROOF_CLOSURE_MANIFEST.json",
       "role": "paper_evidence_artifact",
-      "sha256": "c59a956c408c7b244c849218aebe7a278f0532451612aedd5403a7144637c90c",
+      "sha256": "1adf44ce6ee0b272580ccf2d41fa0bdb98676a0eaa2e5d31561d71d0617cc6b3",
       "source": "PROOF_CLOSURE_MANIFEST.json"
     },
     {
@@ -170,7 +170,7 @@
   "source_policy_total_rows": 40,
   "source_repository_context": {
     "full_audit_code_bloat_risk_for_submission": true,
-    "full_audit_python_lines": 228249,
+    "full_audit_python_lines": 229477,
     "research_audit_primary_submission_allowed": false,
     "research_audit_primary_submission_line_limit": 20000,
     "research_audit_provenance_only": true,

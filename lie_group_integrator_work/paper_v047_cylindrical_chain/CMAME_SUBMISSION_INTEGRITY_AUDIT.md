@@ -9,7 +9,7 @@ gates are checked separately.
 
 ## Citation-Key Integrity
 
-- Main citation groups: `29`.
+- Main citation groups: `23`.
 - Main cited keys / bibitems: `28/28`.
 - Flat cited keys / bibitems: `28/28`.
 - Main dangling citation keys: `none`.

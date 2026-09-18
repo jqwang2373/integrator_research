@@ -1,0 +1,154 @@
+% APPLIED 2026-09-17: this draft was merged into main_cmame.tex (compacted manuscript, 3758 lines);
+% kept for provenance only. Differences from the applied text: the stage system uses the defect
+% operator Delta_i[g] and the alignment residual psi_j for width; the exact-stage-identity lemma
+% carries label lem:exact-stage-identity; the theorem constant is C_loc = C_G + C_E + C_N c_eta.
+% =============================================================================
+% PROPOSED REPLACEMENT TEXT (draft, not wired into main_cmame.tex)
+% Scope: (A) the stage-system description around Eq. g6fullva-expanded-stage and the four
+% collocation row families; (B) the exact stage identity that replaces
+% lem:full-132-row-residual-bridge and the 96-row / PS2 / primitive-Taylor route;
+% (C) the simplified local-defect constant in thm:g6fullva-order.
+% Notation follows main_cmame.tex: bodies b, stages i=1,2,3, Gauss (A_{ij}, b_i, c_i),
+% q_i=(r_i,Q_i), Q_i = Q_n Exp(eta_i), stage vector Z_i=(r_i,eta_i,v_i,omega_i,a_i,alpha_i,lambda_i).
+% Lean references: ~/lean/integrator_order_proof (FullVA/NonDynamicRows.lean,
+% NewtonEuler/DynamicRows.lean, PerturbationChain/*.lean).
+% =============================================================================
+
+% -------------------------------------------------------------------------------------------
+% (A) Stage system: replaces Eq. (g6fullva-expanded-stage) and Eqs. (trans-collocation)--(w-collocation)
+% -------------------------------------------------------------------------------------------
+\paragraph{Lower-pair data.}
+For lower pair $j$ let $P_j(q)$ and $C_j(q)$ be the parent- and child-side attachment
+points, $d_j(q)=C_j(q)-P_j(q)$ the relative displacement, $a_j(q)$ the parent-fixed joint
+axis ($a_0$ is the ground axis, $a_1=Q_0\hat a_{0}^{\rm next}$), $\tilde a_j(q)$ the
+child-fixed axis, and $\omega^{\rm rel}_j=Q_{c(j)}\omega_{c(j)}-Q_{p(j)}\omega_{p(j)}$ the
+relative angular velocity in the world frame.  Each pair carries a fixed world direction
+$n_j$ (the joint axis at $t=0$) and a fixed orthonormal pair $e_{j,1},e_{j,2}\perp n_j$.
+The two joint coordinates of pair $j$ are the sliding coordinate and the twist angle,
+\begin{equation}
+  s_j(q)=n_j\cdot d_j(q),\qquad
+  \theta_j(q)=\operatorname{atan2}\bigl(\tilde t_j\cdot(a_j\times t_j),\ \tilde t_j\cdot t_j\bigr),
+  \label{eq:joint-coordinates}
+\end{equation}
+where $t_j,\tilde t_j$ are the parent- and child-fixed twist reference vectors, with rates
+$\dot s_j=n_j\cdot\dot d_j$, $\dot\theta_j=a_j\cdot\omega^{\rm rel}_j$ and second rates
+$\ddot s_j=n_j\cdot\ddot d_j$, $\ddot\theta_j=a_j\cdot\dot\omega^{\rm rel}_j+\dot a_j\cdot\omega^{\rm rel}_j$.
+
+\paragraph{Stage system.}
+With $t_i=t_n+c_ih$, $F^r_{b,i}=f_{b,i}+\Phi_{r,b}^T\lambda_i$ and
+$T^\theta_{b,i}=\tau_{b,i}+\Phi_{\theta,b}^T\lambda_i$, each stage solves, for every pair
+$j$ and every body $b$,
+\begin{equation}
+\label{eq:g6fullva-expanded-stage-revised}
+\begin{aligned}
+0 &= e_{j,m}\cdot d_j(q_i), &
+0 &= e_{j,m}\cdot\bigl(\tilde a_j(q_i)-a_j(q_i)\bigr), && m=1,2
+  &&\text{(position level)}\\
+0 &= e_{j,m}\cdot\dot d_j(q_i,v_i), &
+0 &= e_{j,m}\cdot\tfrac{d}{dt}\bigl(\tilde a_j-a_j\bigr)(q_i,v_i), && m=1,2
+  &&\text{(velocity level)}\\
+0 &= e_{j,m}\cdot\ddot d_j(q_i,v_i,a_i), &
+0 &= e_{j,m}\cdot\tfrac{d^2}{dt^2}\bigl(\tilde a_j-a_j\bigr)(q_i,v_i,a_i), && m=1,2
+  &&\text{(acceleration level)}\\
+0 &= s_j(Z_i)-s_j(y_n)-h\textstyle\sum_{k}A_{ik}\dot s_j(Z_k), &
+0 &= \dot s_j(Z_i)-\dot s_j(y_n)-h\textstyle\sum_{k}A_{ik}\ddot s_j(Z_k),
+  &&&&\text{(joint-coordinate collocation)}\\
+0 &= \theta_j(Z_i)-\theta_j(y_n)-h\textstyle\sum_{k}A_{ik}\dot\theta_j(Z_k), &
+0 &= \dot\theta_j(Z_i)-\dot\theta_j(y_n)-h\textstyle\sum_{k}A_{ik}\ddot\theta_j(Z_k), \\
+0 &= m_b a_{b,i}-F^r_{b,i}, &
+0 &= J_b\alpha_{b,i}+\omega_{b,i}\times J_b\omega_{b,i}-T^\theta_{b,i}
+  &&&&\text{(Newton--Euler)} .
+\end{aligned}
+\end{equation}
+Per stage this is $2\times(12+4)+12=44$ rows for the $44$ unknowns of
+Eq.~\eqref{eq:stage-count}: $72$ lower-pair constraint rows (24 per level), $24$
+joint-coordinate collocation rows, and $36$ Newton--Euler rows over the three stages.  The
+absolute body coordinates $(r_i,\eta_i,v_i,\omega_i)$ carry no collocation row of their own:
+they are determined by the constraint rows once the joint coordinates are collocated.  The
+implementation projects the two translational collocation rows onto the current joint axis
+$a_j(q_i)$ rather than onto $n_j$; on the constraint manifold $d_j,\dot d_j,\ddot d_j\parallel n_j$,
+so the two forms differ by the nonzero factor $n_j\cdot a_j(q_i)$ and define the same stage
+solution.  The endpoint is reconstructed from the stage values by the Gauss weights as in
+Eqs.~\eqref{eq:end-trans}--\eqref{eq:end-rot} and then closed by $\mathcal C_h$.
+
+% NOTE: the "Stage Jacobian structure" subsection (delta R^r_i = delta r_i - h sum A_ij delta v_j, ...)
+% describes rows that are not in the residual; either rewrite it for the rows above or drop it
+% (the Jacobian is obtained by automatic differentiation anyway).
+
+% -------------------------------------------------------------------------------------------
+% (B) Exact stage identity: replaces lem:full-132-row-residual-bridge and the whole
+%     96-row / PS2 / PS3 / primitive-Taylor (T3, 162 subterms, P_state, P_acc, P_lambda,
+%     P_geom, P_gyro) route.
+% -------------------------------------------------------------------------------------------
+\begin{lemma}[Exact stage identity at the lifted reduced Gauss stage]
+\label{lem:exact-stage-identity}
+Let $y=(s_0,\theta_0,s_1,\theta_1,\dot s_0,\dot\theta_0,\dot s_1,\dot\theta_1)$ be the
+joint-coordinate chart of the smooth constrained branch, $\dot y=f(y,t)$ the reduced
+equation of motion, $Y_1,Y_2,Y_3$ the three-stage Gauss collocation stages of $\dot y=f(y,t)$
+from $y_n$, and $Z_G=(\mathcal L(Y_1),\mathcal L(Y_2),\mathcal L(Y_3))$ their lift to
+absolute coordinates, where $\mathcal L$ is the forward kinematics with velocities,
+accelerations and multipliers taken from the constrained dynamics at $Y_k$.  Then the
+implemented $132$-row residual satisfies
+\begin{equation}
+  F_{A,h}(Z_G;y_n)=0 .
+  \label{eq:exact-stage-identity}
+\end{equation}
+Conversely, on the branch where $n_j\cdot a_j(q_i)\neq0$, every stage vector that satisfies
+the $96$ non-dynamic rows of Eq.~\eqref{eq:g6fullva-expanded-stage-revised} lies on the
+constraint manifold with consistent velocities and accelerations and has joint coordinates
+satisfying the reduced Gauss collocation equations.  Hence the accepted stage solve is
+three-stage Gauss collocation of $\dot y=f(y,t)$ in the joint-coordinate chart, written in
+absolute coordinates.
+\end{lemma}
+
+\begin{proof}
+The $72$ constraint rows vanish on $Z_G$ because $\mathcal L(Y_k)$ lies on the constraint
+manifold with consistent velocities and accelerations.  The $24$ joint-coordinate rows are,
+by Eq.~\eqref{eq:joint-coordinates}, exactly the reduced collocation equations
+$Y_i-y_n-h\sum_kA_{ik}f(Y_k,t_k)=0$ read component-wise; the implemented projection onto
+$a_j(q_i)$ multiplies each translational row by $n_j\cdot a_j(q_i)$.  The $36$
+Newton--Euler rows vanish because $\mathcal L$ supplies the stage accelerations and
+multipliers that satisfy force and moment balance (direct substitution).  For the converse,
+the constraint rows force $d_j,\dot d_j,\ddot d_j\parallel n_j$, so each translational
+collocation row factors as $(s_j(Z_i)-s_j(y_n)-h\sum_kA_{ik}\dot s_j(Z_k))\,(n_j\cdot a_j(q_i))$
+and the twist rows are already scalar.  Both directions are machine-checked in the
+accompanying Lean development (\texttt{FullVA.Transition.nondynamic\_rows\_iff},
+\texttt{NewtonEuler.dynamic\_rows\_vanish}).
+\end{proof}
+
+% Consequences to propagate:
+%  * lem:stage-residual-defect: hypothesis ||F_{A,h}(Z_G)|| <= C_R h^7 holds with C_R = 0, so
+%    Z_A = Z_G (uniqueness of the root in the linearization ball, P2 still needed to identify
+%    the Newton-selected root) and C_Z = C_A = 0.
+%  * The P4/P5 split, the 96-row certificate, KINEMATIC_ROW_DEFECT_CERTIFICATE and the
+%    D5 direct-substitution certificate collapse into lem:exact-stage-identity.
+%  * Everything under "primitive/Taylor route", PS2/PS3, T3, 162 subterms, P_state, P_acc,
+%    P_lambda, P_geom, P_gyro, D5_* audits is an upper bound for a quantity that is identically
+%    zero; delete from the manuscript, archive the artifacts with a superseded_by marker.
+
+% -------------------------------------------------------------------------------------------
+% (C) Local defect and theorem constant (thm:g6fullva-order)
+% -------------------------------------------------------------------------------------------
+% Replace the four-term chain by the three-term chain
+%   ||Psi_h^{G6FVA}(y) - phi_h(y)|| <= (C_G + C_E + C_N c_eta) h^7 ,
+% with
+%   C_G : Gauss endpoint reconstruction defect (classical Gauss local error O(h^7) for the
+%         reduced collocation, plus the O(h^7) Gauss-weight quadrature error of the lifted
+%         velocity/Lie-algebra velocity along the collocation polynomial; the latter is the
+%         Peano bound |int - sum b_i g(c_i)| <= K/60 of the Lean file Gauss/QuadratureError.lean),
+%   C_E = 2 M_ri C_raw  (endpoint closure; the manuscript's 4 M_ri C_raw is admissible but slack),
+%   C_N = 2 M_A M_N     (inexact Newton under eta_h <= c_eta h^7).
+% Retained hypotheses: P1 (smooth chart / lift), P2 (uniform stage inverse for branch
+% selection, endpoint right inverse, stability scale 1 + C_s h), P6 (solver envelope).
+% Removed: P3 row-identity interface (replaced by the row-by-row transcription checked in Lean),
+% P4 (96-row O(h^7) certificate), P5 as a separate item (absorbed), the primitive/Taylor lane.
+% Unchanged: P7 output boundary for closed-loop residual rows; the local-to-global lemma.
+
+% -------------------------------------------------------------------------------------------
+% (D) One sentence for the mechanism description (secondary, modelling)
+% -------------------------------------------------------------------------------------------
+% "Pair 1 constrains the relative translation to the world direction n_1 fixed at t = 0 and
+%  aligns the body-fixed axes a_1(q), \tilde a_1(q); because the axes of body 0 are skew and body 0
+%  spins, a_1(q) moves on a cone about the ground axis, so pair 1 is a four-constraint lower pair
+%  with a fixed sliding direction and a moving rotation axis rather than a cylindrical pair in the
+%  strict sense.  The friction sliding speed is rel_vel . a_1 = \dot s_1 (n_1 . a_1)."

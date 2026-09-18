@@ -680,3 +680,67 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
 放进 nonlinear stage residual。这个 candidate 需要再通过
 `h=[0.04,0.02,0.01]` 对
 `reference_h=0.005` 的 smooth/sharp h-sweep，才能改变当前 open gate。
+
+## 2026-09-17 补充：论文压缩与精确阶段恒等式
+
+- 发现 `main_cmame.tex` 展示的阶段方程组（逐刚体配置行 `r_i - r_n - hΣA v_j` 等，72 配置行 + 24
+  lower-pair 行）与 `run_v047.py` 实际求解的行不一致：实现是 72 行三层约束 + 24 行关节坐标配置行 +
+  36 行 Newton–Euler。详见 `LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`。
+- 后果：lifted 约化 Gauss 阶段让全部 132 行精确为零（`lem:exact-stage-identity`，Lean 已证正反两向），
+  `C_R = C_A = 0`，局部缺陷改为三项 `C_loc = C_G + C_E + C_N c_eta`。P4/PS2/primitive-Taylor 那条线
+  整体退役。
+- 论文已按此重写并压缩：13047 行 / 259 页 变为 3758 行 / 82 页；`main_cmame.pdf`、flat 版和
+  `cmame_submission_flat.zip` 已重新生成，LaTeX 零警告。原稿保留在
+  `main_cmame_pre_v049_backup.tex` 和 git。
+- 验证器：新增 `EXACT_STAGE_IDENTITY_GATE`（含 Lean 公理检查）；六个钉住旧路线的 gate
+  （PROOF_CLOSURE_MANIFEST、PROOF_CLAIM_TRACEABILITY_AUDIT、CMAME_STRICT_PROOF_AUDIT、
+  CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT、CMAME_PROOF_STYLE_AUDIT、
+  NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE）标记 superseded 并移出包验证链；审稿代理与
+  proof-contract gate 的短语清单已重钉。
+- 全局 claim 状态不变：`submission_ready=false`，阻塞项仍是 OC4/OC6/OC12。
+- 建模备注：关节 1 的 `joint_basis[1]` 在 t=0 冻结而其转轴随刚体 0 自旋运动，它是"滑移方向固定、
+  转轴运动"的四约束低副，不是严格意义的圆柱副；2026-09-17 第二轮已在方法节加上这句说明。
+
+## 2026-09-17 补充二：P2 归约到 P1、P6 停机准则、数值恒等式检查、Lean 源码入包
+
+- `lem:p2-from-p1`（`eq:p2-perturbation-bound`）：在 P1 加"关节坐标把低副约束补成一张图"的假设下，
+  阶段 Jacobian `J_h = J_0 + O(h)`，`J_0` 分块三角可逆，因此 `h ≤ h_0` 时 P2 成立，
+  `‖J_h⁻¹‖ ≤ 2‖J_0⁻¹‖`。Neumann 扰动那一步已由 Lean `uniform_inverse_of_perturbation` 机检。
+- `lem:newton-envelope`（`eq:newton-envelope-decay`）：从 Gauss 预测子出发的简化 Newton 每步把到
+  `Z_G` 的距离减半，残差按 `2⁻ᵏ` 衰减，所以 P6 的 `‖F‖ ≤ c_η h⁷` 停机准则 `O(log 1/h)` 步内必达。
+  Lean `simplified_newton_residual_decay` 机检；已有的 `PROOF_SOLVER_TOLERANCE_REGIME_SWEEP`
+  （`scaled_h7_c1e4`，`T=0.08`，`h∈{0.04,0.02,0.01,0.005}` 全部收敛，阶 6.946/6.608）就是这条准则
+  在报告网格上的实例。定理陈述不变，P1/P2/P6 仍列为接口。
+- 新增 `EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.md/json/csv`（`run_/validate_exact_stage_identity_numerical_check.py`）：
+  用真实残差、Newton 容差 1e-13 收敛的阶段向量读到约化图里，约化 Gauss 配置缺陷 ≤ 9.0e-15，
+  垂直分量 ≤ 2.1e-15，滑移行因式分解误差 ≤ 9.1e-15（`h∈{0.04,0.02,0.01}`，`T=0.08`）。
+  这是转写一致性诊断，不是证明输入；不调用 `run_v047.py`。
+- Lean 源码复制进论文包 `lean/`（12 个 `.lean`、`lakefile.toml`、`lean-toolchain`、
+  `lake-manifest.json`、`scripts/Axioms.lean`）；gate 记录它与 `~/lean/integrator_order_proof`
+  逐字节同步。附录新增 `tab:lean-development`（命题 ↔ Lean 定理对照表），数值节新增
+  `tab:exact-identity-check`。
+- 稿子其他补充：关节 1 建模说明、`lem:exact-stage-identity` 的闭环适用范围一句、"观测阶高于六是
+  六阶配置法的预渐近斜率"一句。现为 4042 行 / 88 页，LaTeX 零警告；flat 版和 zip 已重建。
+- `main.tex`、`main_concise.tex` 在 `\maketitle` 后加了 legacy 状态说明，指向 `main_cmame.tex`；
+  两份 PDF 重建零警告（46 页、8 页），`validate_paper_claims.py`、`validate_concise_paper.py` 通过。
+- 验证：paper chain 通过（仅剩 2 个既有 cross-paper 环境失败）；顶层 `validate_pipeline_outputs.py`
+  用 `.venv_sbel/bin/python` 运行通过（系统 `python3` 没有 jax，会让 dynamic row oracle gate 和
+  narrowed 归档 runner 失败）。claim 状态不变：`submission_ready=false`，OC4/OC6/OC12 仍开。
+- 研究仓库未提交任何东西，由用户决定。
+
+## 2026-09-18 补充：P2 常数实例化、预测子事实、镜像恢复
+
+- 新增 `P2_CONSTANTS_NUMERICAL_CHECK.md/json/csv`（`run_/validate_p2_constants_numerical_check.py`，已进
+  `validate_paper_package.py`）：用真实 `R_JAC` 算收敛阶段处的 `J_h` 和 `h=0` 方程组根处的 `J_0`
+  （该根把端点状态复现到 1e-12）。实现布局上的欧氏算子范数：`M_0 = max‖J_0⁻¹‖ ≈ 18–28`，
+  `C_J = max‖J_h−J_0‖/h ≈ 750–960`；引理结论 `‖J_h⁻¹‖ ≤ 2‖J_0⁻¹‖` 在所有报告网格上成立（比值 ≤ 1.55），
+  但 Neumann 充分条件 `M_0‖J_h−J_0‖ ≤ 1/2` 要 `h ≤ 3e-5` 才满足——`lem:p2-from-p1` 的 `h_0` 在这个范数下
+  悲观三个数量级。稿子里已如实写明（定理节一句 + 数值节段落 + `tab:p2-constants-check`）。
+- **发现**：Algorithm 1 的实现预测子（`stage_guess`）把角速度、角加速度猜测置零，只对位置/速度做常加速度
+  外推，所以它到 `Z_G` 的距离是 O(1)（约 50），第一步完全 Newton 甚至把距离放大最多 18%；而 lifted
+  端点预测子的距离是 O(h)（3.2/2.1/1.1）。原来 `lem:newton-envelope` 证明里"预测子 O(h) 接近"的说法对实现
+  预测子不成立，已改为：引理对收缩球内任何预测子成立，lifted 端点预测子小步时自动在球内；实现预测子的
+  球内归属留在 P6 里，报告网格上由恒等式检查（收敛根就是 Gauss 根）事后确认。Algorithm 1 的预测子描述、
+  引言、Limitations、traceability 表同步改写。
+- `external/public-metadata` 镜像（`uwsbel/public-metadata`，浅克隆 master + user/aaron/msd，约 2 GB，
+  未纳入 git）已恢复，`cross_paper_benchmark_spec/cases` 两个既有环境失败消失。

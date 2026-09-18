@@ -166,7 +166,13 @@
     "active_direct_newton_euler_stage_defect_closed": true,
     "active_direct_newton_euler_zero_residual_rows": 36,
     "newton_euler_defect_closed_obligation_count": 5,
-    "newton_euler_defect_closed_obligation_ids": ["translational_balance_identity", "rotational_balance_identity", "multiplier_wrench_consistency", "smooth_force_lift_consistency", "symbolic_runtime_row_equivalence"],
+    "newton_euler_defect_closed_obligation_ids": [
+      "translational_balance_identity",
+      "rotational_balance_identity",
+      "multiplier_wrench_consistency",
+      "smooth_force_lift_consistency",
+      "symbolic_runtime_row_equivalence"
+    ],
     "newton_euler_balance_identity_audit_checked": true,
     "newton_euler_balance_identity_closed_rows": 36,
     "newton_euler_symbolic_target_audit_checked": true,
@@ -194,9 +200,18 @@
     "finite_tolerance_regime_sweep_policy_count": 3,
     "finite_tolerance_regime_sweep_total_rows": 12,
     "finite_tolerance_regime_sweep_total_steps": 90,
-    "finite_tolerance_regime_sweep_fixed_position_velocity_orders": [6.946347411176867, 6.608089993735075],
-    "finite_tolerance_regime_sweep_h7_position_velocity_orders": [6.946347411176867, 6.608089993735075],
-    "finite_tolerance_regime_sweep_h8_position_velocity_orders": [6.946365976765468, 6.608137477881583],
+    "finite_tolerance_regime_sweep_fixed_position_velocity_orders": [
+      6.946347411176867,
+      6.608089993735075
+    ],
+    "finite_tolerance_regime_sweep_h7_position_velocity_orders": [
+      6.946347411176867,
+      6.608089993735075
+    ],
+    "finite_tolerance_regime_sweep_h8_position_velocity_orders": [
+      6.946365976765468,
+      6.608137477881583
+    ],
     "scaled_tolerance_sweep_recorded": false,
     "eta_h_O_h7_solver_policy_evidence": false,
     "proof_conditions_decomposed": true,
@@ -277,5 +292,7 @@
     "four_link_slider_crank_dynamic_order_accepted_by_residual",
     "full_tfe_stage_replacement_true",
     "submission_ready_true"
-  ]
+  ],
+  "superseded_by": "EXACT_STAGE_IDENTITY_GATE",
+  "superseded_note": "Superseded on 2026-09-17 by EXACT_STAGE_IDENTITY_GATE: this gate pinned the retired 96-row/D5/primitive-Taylor proof route. Kept as an archived provenance record; its validator is no longer in the package chain."
 }

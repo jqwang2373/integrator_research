@@ -1,5 +1,7 @@
 # CMAME Strict Proof Audit
 
+> Superseded on 2026-09-17 by EXACT_STAGE_IDENTITY_GATE: this artifact pinned the retired 96-row/PS2/primitive-Taylor proof route; the compacted manuscript proves the stage residual at the lifted Gauss stage is identically zero. Kept as an archived provenance record; its validator is no longer in the package chain.
+
 Status: **strict conditional residual-bridge proof audited; global proof-package submission not ready**.
 Here `submission_ready=false` is scoped to the strict-proof/global proof-package boundary,
 not to the separate narrowed-claim package decision.
