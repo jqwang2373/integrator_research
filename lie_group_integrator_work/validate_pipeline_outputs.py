@@ -5,12 +5,21 @@ import json
 import math
 import re
 import struct
+import importlib.util
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+
+# The validators below import jax; when invoked with an interpreter that lacks it, re-run under the
+# project virtual environment so the dynamic-row-oracle gate and the extracted archive runner see it.
+_VENV_PYTHON = ROOT / ".venv_sbel" / "bin" / "python"
+if (importlib.util.find_spec("jax") is None and _VENV_PYTHON.exists()
+        and Path(sys.executable).resolve() != _VENV_PYTHON.resolve()):
+    os.execv(str(_VENV_PYTHON), [str(_VENV_PYTHON), *sys.argv])
 RESULTS = ROOT / "pipeline_validation_results"
 CURRENT_VERSION = "v047"
 CURRENT_DIR = ROOT / "v047_cylindrical_chain_pipeline"

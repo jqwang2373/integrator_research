@@ -1249,10 +1249,15 @@ cylindrical-chain benchmark but a consequence of P1 and a small-step
 threshold; it is kept as a separate item because the theorem is stated for
 any mechanism whose stage system has the form of
 Eq.~\eqref{eq:g6fullva-expanded-stage}. The threshold $h_0$ of the Neumann
-argument is not sharp: in the Euclidean norm on the implemented stage
-layout, Table~\ref{tab:p2-constants-check} gives $h_0\approx3\times10^{-5}$
-on the benchmark, while the conclusion $\|J_h^{-1}\|\le2\|J_0^{-1}\|$ is
-observed with ratio at most $1.55$ on every reported grid.
+argument is not sharp. On the benchmark, Table~\ref{tab:p2-constants-check}
+gives $h_0\approx2\times10^{-5}$ in the Euclidean norm on the implemented
+stage layout and $h_0\approx8\times10^{-4}$ in the endpoint-linearized
+residual norm $\|J_0^{-1}\,\cdot\,\|$, while the conclusion
+$\|J_h^{-1}\|\le2\|J_0^{-1}\|$ is observed with ratio at most $1.55$ on
+every reported grid. The gap is the curvature of the Brown--McPhee friction
+law in the Newton--Euler rows: without joint friction the same mechanism has
+$h_0\approx1.4\times10^{-2}$ in the endpoint-linearized norm, and the
+Lipschitz constant of the Jacobian is then set by the gyroscopic terms.
 
 \subsection{Endpoint defect, endpoint closure, and inexact Newton}
 
@@ -1397,7 +1402,7 @@ positions and velocities with a constant acceleration but sets the
 angular-velocity and angular-acceleration guesses to zero and uses
 force-balance multiplier estimates, so its distance to $Z_G$ is of the order
 of $\|\omega_n\|+\|\alpha_n\|+\|\lambda_n\|$ rather than $O(h)$, and
-Table~\ref{tab:p2-constants-check} shows that the first full Newton step from
+Table~\ref{tab:predictor-check} shows that the first full Newton step from
 it does not contract in the Euclidean norm. Lemma~\ref{lem:newton-envelope}
 therefore covers the implemented run only through the branch-ball membership
 retained in P6; on the reported grids that membership is confirmed a
@@ -1944,35 +1949,62 @@ Lemmas~\ref{lem:p2-from-p1} and~\ref{lem:newton-envelope} have a numerical
 counterpart as well. On the same solves the implemented Jacobian is evaluated
 at the converged stage vector, giving $J_h$, and with $h=0$ at the root of
 the $h=0$ stage system, which reproduces the lifted endpoint state to
-$10^{-12}$, giving $J_0$. Table~\ref{tab:p2-constants-check} records, in the
-Euclidean norm on the implemented stage layout, $M_0=\max_n\|J_0^{-1}\|$,
-$C_J=\max_n\|J_h-J_0\|/h$, the Neumann margin $M_0\|J_h-J_0\|$, the observed
-ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$, the threshold $h_0=1/(2M_0C_J)$ implied by
-the Neumann argument, and the distances to $Z_G$ of the lifted endpoint
-predictor and of the Algorithm~1 predictor. The conclusion of
-Lemma~\ref{lem:p2-from-p1} holds on every grid with ratio at most $1.55$, but
-its sufficient condition $M_0\|J_h-J_0\|\le\tfrac12$ would require
-$h\le3\times10^{-5}$: the Neumann threshold is pessimistic by three orders
-of magnitude in this norm. The lifted predictor distance decreases with $h$
-as the lemma predicts, whereas the Algorithm~1 predictor stays at distance
-about $50$ because its angular-velocity and angular-acceleration guesses are
-zero, and the first full Newton step from it increases the distance by up to
-$18\%$ before the iteration converges. These are diagnostics of the lemma
-constants, not proof inputs.
+$10^{-12}$, giving $J_0$. Table~\ref{tab:p2-constants-check} records
+$M_0=\max_n\|J_0^{-1}\|$, $C_J=\max_n\|J_h-J_0\|/h$, the observed ratio
+$\|J_h^{-1}\|/\|J_0^{-1}\|$, and the threshold $h_0=1/(2M_0C_J)$ implied by
+the Neumann argument, in the Euclidean norm on the implemented stage layout
+and in the endpoint-linearized residual norm $\|F\|_{x_n}=\|J_0(x_n)^{-1}F\|$,
+the length of the simplified Newton correction, in which $\|J_0^{-1}\|=1$ and
+the Neumann argument is sharpest. The conclusion of
+Lemma~\ref{lem:p2-from-p1} holds on every grid with ratio at most $1.55$,
+but its sufficient condition $M_0\|J_h-J_0\|\le\tfrac12$ would require
+$h\le2\times10^{-5}$ in the Euclidean norm and $h\le8\times10^{-4}$ in the
+endpoint-linearized norm. The largest entries of $(J_h-J_0)/h$ sit in the
+Newton--Euler rows against the stage velocities, where the second derivative
+of the Brown--McPhee friction law with Stribeck velocity $0.5$ enters; the
+same mechanism with $\mu_s=\mu_d=0$ and no viscous damping has
+$C_J$ smaller by a factor of about fifteen, $h_0\approx1.4\times10^{-2}$ in
+the endpoint-linearized norm, and its largest Jacobian variation in the
+gyroscopic rows. The friction law, not the collocation structure, sets the
+small-step threshold, which is consistent with the coarse-grid order
+reduction of the sharp case with Stribeck velocity $0.05$.
+Table~\ref{tab:predictor-check} records the distances to $Z_G$ of the lifted
+endpoint predictor and of the Algorithm~1 predictor: the former decreases
+with $h$ as Lemma~\ref{lem:newton-envelope} predicts, whereas the latter
+stays at distance about $50$ because its angular-velocity and
+angular-acceleration guesses are zero, and the first full Newton step from it
+increases the distance by up to $18\%$ before the iteration converges. These
+are diagnostics of the lemma constants, not proof inputs.
 
 \begin{table}[htbp]
 \centering
-\caption{Constants of Lemmas~\ref{lem:p2-from-p1} and~\ref{lem:newton-envelope} on the smooth cylindrical chain, Euclidean norm on the implemented stage layout: $M_0=\max_n\|J_0^{-1}\|$, $C_J=\max_n\|J_h-J_0\|/h$, Neumann margin $M_0\|J_h-J_0\|$, inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$, implied $h_0=1/(2M_0C_J)$, distances of the lifted endpoint and Algorithm~1 predictors to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step from the Algorithm~1 predictor.}
+\caption{Constants of Lemma~\ref{lem:p2-from-p1} on the smooth cylindrical chain: $M_0=\max_n\|J_0^{-1}\|$, $C_J=\max_n\|J_h-J_0\|/h$, observed inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$, and Neumann threshold $h_0=1/(2M_0C_J)$, in the Euclidean norm on the implemented stage layout (E) and in the endpoint-linearized residual norm $\|J_0^{-1}\,\cdot\,\|$ (L, where $M_0=1$); the last two columns repeat the L-norm quantities for the same mechanism without joint friction.}
 \label{tab:p2-constants-check}
 \footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{P{0.05\linewidth}P{0.06\linewidth}P{0.10\linewidth}P{0.12\linewidth}P{0.08\linewidth}P{0.12\linewidth}P{0.08\linewidth}P{0.08\linewidth}P{0.09\linewidth}}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{P{0.05\linewidth}P{0.07\linewidth}P{0.10\linewidth}P{0.08\linewidth}P{0.10\linewidth}P{0.10\linewidth}P{0.10\linewidth}P{0.10\linewidth}P{0.10\linewidth}}
 \toprule
-$h$ & $M_0$ & $C_J$ & Neumann margin & inverse ratio & implied $h_0$ & lifted pred. & Alg.~1 pred. & first-step ratio \\
+$h$ & $M_0$ (E) & $C_J$ (E) & inverse ratio & $h_0$ (E) & $C_J$ (L) & $h_0$ (L) & $C_J$ (L, no friction) & $h_0$ (L, no friction) \\
 \midrule
-0.04 & 18.2 & $7.5\times10^{2}$ & $5.4\times10^{2}$ & 1.55 & $3.7\times10^{-5}$ & 3.23 & 50.2 & 1.12 \\
-0.02 & 24.3 & $8.2\times10^{2}$ & $3.0\times10^{2}$ & 1.26 & $3.3\times10^{-5}$ & 2.11 & 50.3 & 1.16 \\
-0.01 & 28.4 & $9.6\times10^{2}$ & $2.0\times10^{2}$ & 1.18 & $2.5\times10^{-5}$ & 1.07 & 50.4 & 1.18 \\
+0.04 & 18.2 & $7.5\times10^{2}$ & 1.55 & $3.7\times10^{-5}$ & $5.1\times10^{2}$ & $9.8\times10^{-4}$ & 34.1 & $1.5\times10^{-2}$ \\
+0.02 & 24.3 & $8.2\times10^{2}$ & 1.26 & $2.5\times10^{-5}$ & $5.6\times10^{2}$ & $8.9\times10^{-4}$ & 35.5 & $1.4\times10^{-2}$ \\
+0.01 & 28.4 & $9.6\times10^{2}$ & 1.18 & $1.8\times10^{-5}$ & $6.5\times10^{2}$ & $7.6\times10^{-4}$ & 36.5 & $1.4\times10^{-2}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Predictor distances for Lemma~\ref{lem:newton-envelope} on the smooth cylindrical chain (Euclidean norm on the implemented stage layout): distance of the lifted endpoint predictor $Z^{(0)}_\ast$ and of the Algorithm~1 predictor to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step from the Algorithm~1 predictor.}
+\label{tab:predictor-check}
+\small
+\begin{tabular}{P{0.08\linewidth}P{0.20\linewidth}P{0.20\linewidth}P{0.20\linewidth}}
+\toprule
+$h$ & lifted predictor & Algorithm~1 predictor & first-step ratio \\
+\midrule
+0.04 & 3.23 & 50.2 & 1.12 \\
+0.02 & 2.11 & 50.3 & 1.16 \\
+0.01 & 1.07 & 50.4 & 1.18 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2692,11 +2724,12 @@ method conditions to external reproduction boundaries.
   constants depending only on the tube. P6 is nevertheless retained as a
   hypothesis: the Algorithm~1 predictor is not the lifted endpoint predictor
   and its ball membership is confirmed only a posteriori
-  (Table~\ref{tab:p2-constants-check}), the reported production runs use a
+  (Table~\ref{tab:predictor-check}), the reported production runs use a
   fixed tolerance rather than that rule, so they are covered only on
   transitions where the accepted residual meets the envelope, and the Neumann
-  threshold $h_0$ is far below the reported step sizes in the implemented
-  norm. Discharging P6 would in any case address the solver-scale
+  threshold $h_0$ is below the reported step sizes in every norm tried,
+  because of the friction-law curvature. Discharging P6 would in any case
+  address the solver-scale
   interface only; it would still not promote residual-only mechanism rows
   unless the separate P7 residual-to-error transfer theorem were also proved.
   \item \textbf{Full source-paper residual replacement.} Independent

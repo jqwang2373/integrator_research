@@ -43,7 +43,7 @@
       "bytes": 471653,
       "path": "data/CMAME_REVIEW_AGENT_REPORT.json",
       "role": "paper_evidence_artifact",
-      "sha256": "be7d3c8c40683761abce9f77acf7444f9e569ce7de0af7bcab0a94f07da48527",
+      "sha256": "be4f0f79f016aa0c1e6fa8aa3f2f173a5dc2f39e41a8f7ab00725386ba20ae51",
       "source": "CMAME_REVIEW_AGENT_REPORT.json"
     },
     {
@@ -170,7 +170,7 @@
   "source_policy_total_rows": 40,
   "source_repository_context": {
     "full_audit_code_bloat_risk_for_submission": true,
-    "full_audit_python_lines": 229477,
+    "full_audit_python_lines": 229628,
     "research_audit_primary_submission_allowed": false,
     "research_audit_primary_submission_line_limit": 20000,
     "research_audit_provenance_only": true,

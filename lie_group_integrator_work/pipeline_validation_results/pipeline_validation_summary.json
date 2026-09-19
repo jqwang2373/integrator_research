@@ -1294,7 +1294,7 @@
     "exact_stage_identity_gate=PASS",
     "status=exact_stage_identity_route_pinned_lean_checked",
     "lean_status=all_required_theorems_checked_standard_axioms_no_sorry",
-    "main_lines=4043",
+    "main_lines=4076",
     "superseded_artifacts=PROOF_CLOSURE_MANIFEST,PROOF_CLAIM_TRACEABILITY_AUDIT,CMAME_STRICT_PROOF_AUDIT,CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT,CMAME_PROOF_STYLE_AUDIT,NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE,CMAME_PROOF_CONTRACT_GATE"
   ],
   "proof_evidence_matrix_validator_output": [

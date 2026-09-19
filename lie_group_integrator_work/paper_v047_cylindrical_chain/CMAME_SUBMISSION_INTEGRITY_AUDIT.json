@@ -392,7 +392,7 @@
           "b6_four_example_source_policy_rows_closed": 0,
           "b6_four_example_source_policy_rows_total": 40,
           "code_bloat_risk_for_submission": true,
-          "combined_python_line_count": 229477,
+          "combined_python_line_count": 229628,
           "compact_closed_loop_candidate_python_lines": 1962,
           "compact_closed_loop_candidate_runner_passed": true,
           "full_source_policy_runner_archive_gap_action_boundary": {
@@ -533,7 +533,7 @@
           "p1_double_runner_candidate_ready": true,
           "p1_single_runner_candidate_ready": true,
           "paper_python_file_count": 338,
-          "paper_python_line_count": 200735,
+          "paper_python_line_count": 200886,
           "runner_centered_package_ready": false,
           "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
           "source_policy_execution_handoff_authorized": false,

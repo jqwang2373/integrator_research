@@ -10,8 +10,8 @@ P3, P4, P5. It changes no claim state and keeps `submission_ready=false`.
 
 ## Manuscript checks
 
-- main: labels `38/38`, tokens `24/24`, retired tokens present `0`, lines `4043`, lemmas `9`, theorems `1`.
-- flat: labels `38/38`, tokens `24/24`, retired tokens present `0`.
+- main: labels `39/39`, tokens `24/24`, retired tokens present `0`, lines `4076`, lemmas `9`, theorems `1`.
+- flat: labels `39/39`, tokens `24/24`, retired tokens present `0`.
 - display hygiene (main): unlabelled `0`, bare `0`, unreferenced labels `0` of `48`.
 
 ## Lean binding

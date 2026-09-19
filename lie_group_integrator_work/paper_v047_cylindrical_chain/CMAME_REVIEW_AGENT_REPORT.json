@@ -371,7 +371,7 @@
         "b6_four_example_source_policy_rows_closed": 0,
         "b6_four_example_source_policy_rows_total": 40,
         "code_bloat_risk_for_submission": true,
-        "combined_python_line_count": 229477,
+        "combined_python_line_count": 229628,
         "compact_closed_loop_candidate_python_lines": 1962,
         "compact_closed_loop_candidate_runner_passed": true,
         "full_source_policy_runner_archive_gap_action_boundary": {
@@ -512,7 +512,7 @@
         "p1_double_runner_candidate_ready": true,
         "p1_single_runner_candidate_ready": true,
         "paper_python_file_count": 338,
-        "paper_python_line_count": 200735,
+        "paper_python_line_count": 200886,
         "runner_centered_package_ready": false,
         "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
         "source_policy_execution_handoff_authorized": false,
@@ -1441,7 +1441,7 @@
   "cmame_blocker_gate_open_blockers": [],
   "code_hygiene_checks": {
     "code_bloat_risk_for_submission": true,
-    "combined_python_line_count": 229477,
+    "combined_python_line_count": 229628,
     "full_source_policy_runner_package_ready": false,
     "hi2022_bounded_rows_present": true,
     "local_runner_centered_candidate_ready": true,
@@ -1515,7 +1515,7 @@
       }
     ],
     "paper_python_file_count": 338,
-    "paper_python_line_count": 200735,
+    "paper_python_line_count": 200886,
     "paper_python_prefix_counts": {
       "build": 145,
       "merge": 0,
@@ -4098,24 +4098,24 @@
     "hash_algorithm": "sha256",
     "input_artifacts_read": [
       {
-        "bytes": 204916,
+        "bytes": 206902,
         "path": "main_cmame.tex",
-        "sha256": "838618d20c9ecab74c846bbdedaa8441c9d87dd1173d70377a4c5021911e0f6b"
+        "sha256": "56f9a6968ecf3ea4dea094e5668dfd7d80fb8b7a7adaf97df2a5ac12974982cb"
       },
       {
-        "bytes": 217027,
+        "bytes": 219107,
         "path": "main_cmame.txt",
-        "sha256": "8c2d5b6bd70059daf70c73c9cf0cb9b70551dcb85e747402e77c41505880de72"
+        "sha256": "d8dd12620596711622a241026a6c4c3ccfd0995ef3a4ef484e9d3956f5b2c847"
       },
       {
-        "bytes": 204914,
+        "bytes": 206900,
         "path": "cmame_submission_flat/main_cmame_submission.tex",
-        "sha256": "45d75d75b40275c723d5f4c80763103bd2acadea65024d1c1006e8af9ea498b7"
+        "sha256": "3dc7265bf108337be5586ee008d1932bf251169b5fa07a797ca59dc350d32298"
       },
       {
-        "bytes": 217027,
+        "bytes": 219107,
         "path": "cmame_submission_flat/main_cmame_submission.txt",
-        "sha256": "8c2d5b6bd70059daf70c73c9cf0cb9b70551dcb85e747402e77c41505880de72"
+        "sha256": "d8dd12620596711622a241026a6c4c3ccfd0995ef3a4ef484e9d3956f5b2c847"
       },
       {
         "bytes": 43120,
@@ -4125,7 +4125,7 @@
       {
         "bytes": 283617,
         "path": "OBJECTIVE_COMPLETION_AUDIT.json",
-        "sha256": "d1175ccd701bb43ccebcc9c2312a6b41a5199a7df880da5aa5924b66d462caca"
+        "sha256": "a857714346f2ebf3289fa796972d7e8abcba41c75ce0e1ec45139b5ad73ac5b4"
       },
       {
         "bytes": 96834,
@@ -4235,12 +4235,12 @@
       {
         "bytes": 6754,
         "path": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json",
-        "sha256": "73c13a21ed7e0b8a89b5a68429178b5647dbc7f90a74554e8c8b328d0afd47a1"
+        "sha256": "b28618c4cf2dd6b323ef0254f28ec03c564842e5f701e495b3d53d454259c2f9"
       },
       {
         "bytes": 64518,
         "path": "CMAME_RUNNER_CENTERED_REPRODUCIBILITY_AUDIT.json",
-        "sha256": "504097842da7a8178efc587e57d1b3f00b992a88b30e49ce7e2419143d758e65"
+        "sha256": "33f618722d7c2fae906ce2f896185029ee2384088b34b83c505d2b8e9e03c36a"
       },
       {
         "bytes": 45927,
@@ -4255,7 +4255,7 @@
       {
         "bytes": 137347,
         "path": "CMAME_SUBMISSION_INTEGRITY_AUDIT.json",
-        "sha256": "b23e5920d3c96d31334252c63ae7206c43f5919e0ef7b26060223e2e0460d25c"
+        "sha256": "6e6ad0d6041eab1436a65ce5dc46a1864f5741f8edb225f4cbdc8a19a86b933a"
       },
       {
         "bytes": 22404,
@@ -4270,7 +4270,7 @@
       {
         "bytes": 407369,
         "path": "CMAME_REPRODUCIBILITY_PACKAGE_MANIFEST.json",
-        "sha256": "1868354c00f37a00fcd1342e8e88f6762baee01036885f26b593d4fd620781d5"
+        "sha256": "adf718348b5374c7853141a66f0388438f5463ece201e4f5a7541e6dd0eb0294"
       },
       {
         "bytes": 915,
@@ -4678,7 +4678,7 @@
         "b6_four_example_source_policy_rows_closed": 0,
         "b6_four_example_source_policy_rows_total": 40,
         "code_bloat_risk_for_submission": true,
-        "combined_python_line_count": 229477,
+        "combined_python_line_count": 229628,
         "compact_closed_loop_candidate_python_lines": 1962,
         "compact_closed_loop_candidate_runner_passed": true,
         "full_source_policy_runner_archive_gap_action_boundary": {
@@ -4819,7 +4819,7 @@
         "p1_double_runner_candidate_ready": true,
         "p1_single_runner_candidate_ready": true,
         "paper_python_file_count": 338,
-        "paper_python_line_count": 200735,
+        "paper_python_line_count": 200886,
         "runner_centered_package_ready": false,
         "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
         "source_policy_execution_handoff_authorized": false,
@@ -5912,7 +5912,7 @@
           "b6_four_example_source_policy_rows_closed": 0,
           "b6_four_example_source_policy_rows_total": 40,
           "code_bloat_risk_for_submission": true,
-          "combined_python_line_count": 229477,
+          "combined_python_line_count": 229628,
           "compact_closed_loop_candidate_python_lines": 1962,
           "compact_closed_loop_candidate_runner_passed": true,
           "full_source_policy_runner_archive_gap_action_boundary": {
@@ -6053,7 +6053,7 @@
           "p1_double_runner_candidate_ready": true,
           "p1_single_runner_candidate_ready": true,
           "paper_python_file_count": 338,
-          "paper_python_line_count": 200735,
+          "paper_python_line_count": 200886,
           "runner_centered_package_ready": false,
           "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
           "source_policy_execution_handoff_authorized": false,

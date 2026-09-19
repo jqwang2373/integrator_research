@@ -619,7 +619,7 @@ satisfies the scaled proof policy ηhtube ≤ cη h7 in the fixed proof norm. A 
 cepted branch-selected residuals meet that h7 bound; otherwise it is finite-run
 diagnostic evidence and does not discharge P6. The correspondence between
 Algorithm 1 and the supplied source package is summarized in Appendix
-Table B.31; that table is a reproducibility map, not an additional numerical
+Table B.32; that table is a reproducibility map, not an additional numerical
 claim.
 
                                        16
@@ -1063,24 +1063,28 @@ Lemma 1 the accepted map read in the reduced chart is the reduced Gauss
 step, whose derivative is I + O(h) by the implicit function theorem for the
 stage equations, composed with the smooth endpoint reconstruction and an
 O(h7 ) closure correction; this gives the Lipschitz scale 1 + Cs h.
-   With Lemma 3, P2 is not an independent hypothesis for the cylindrical-
-chain benchmark but a consequence of P1 and a small-step threshold; it is
-kept as a separate item because the theorem is stated for any mechanism
-whose stage system has the form of Eq. (11). The threshold h0 of the Neu-
-mann argument is not sharp: in the Euclidean norm on the implemented
-stage layout, Table 12 gives h0 ≈ 3 × 10−5 on the benchmark, while the
+    With Lemma 3, P2 is not an independent hypothesis for the cylindrical-
+chain benchmark but a consequence of P1 and a small-step threshold; it
+is kept as a separate item because the theorem is stated for any mecha-
+nism whose stage system has the form of Eq. (11). The threshold h0 of
+the Neumann argument is not sharp. On the benchmark, Table 12 gives
+h0 ≈ 2 × 10−5 in the Euclidean norm on the implemented stage layout and
+h0 ≈ 8 × 10−4 in the endpoint-linearized residual norm ∥J0−1 · ∥, while the
 conclusion ∥Jh−1 ∥ ≤ 2∥J0−1 ∥ is observed with ratio at most 1.55 on every
-reported grid.
-
-
-
+reported grid. The gap is the curvature of the Brown–McPhee friction law
+in the Newton–Euler rows: without joint friction the same mechanism has
 
                                          28
-7.3. Endpoint defect, endpoint closure, and inexact Newton
+h0 ≈ 1.4 × 10−2 in the endpoint-linearized norm, and the Lipschitz constant
+of the Jacobian is then set by the gyroscopic terms.
+
+7.3. Endpoint defect, endpoint closure, and inexact Newton
 Lemma 4 (Gauss endpoint defect). Under P1 there is a constant CG , uni-
 form on the compact tube, such that
-                            ∥ΨG                     7
-                              h (y) − φh (y)∥ ≤ CG h .                            (28)
+
+                           ∥ΨG                     7
+                             h (y) − φh (y)∥ ≤ CG h .                        (28)
+
 Proof. Let u be the collocation polynomial of Eq. (22) and g any component
 of the lifted state along u, so that g(t) = ρ(u(t)) for a smooth chart function
 ρ and g ′ (tk ) equals the lifted stage velocity at Yk ; for the rotational compo-
@@ -1088,21 +1092,18 @@ nent, g is the Lie-algebra increment η(t) with η ′ = Jr−1 (η)ω along the
 trajectory. The reconstruction Eqs. (15)–(16) replaces g(tn + h) − g(tn ) =
 ∫︁ tn +h ′
         g (t) dt by the Gauss quadrature h i bi g ′ (ti ). Because the Gauss
-                                                            ∑︁
+                                                ∑︁
   tn
 weights integrate polynomials of degree at most five exactly, a Peano-kernel
 argument gives
-                 ⃓∫︂ tn +h                 3
-                                          ∑︂               ⃓ h7
-                             ′                      ′
-                           g   (t) dt − h     b   g   (t i ⃓ ≤
-                                                          )          max |g (7) |, (29)
-                 ⃓                                         ⃓
-                                                i
-                                                               60
-                 ⃓
-                    tn                                            [t n ,tn +h]
-                                          i=1
+              ⃓∫︂ tn +h               3
+                                     ∑︂            ⃓ h7
+                         ′                   ′
+                        g (t) dt − h     bi g (ti )⃓ ≤      max |g (7) |,    (29)
+              ⃓                                    ⃓
+                                                       60 [tn ,tn +h]
+              ⃓
+                 tn                  i=1
 
 with g (7) bounded uniformly on the tube by P1 and the smoothness of u.
 Hence each reconstructed endpoint component equals the lifted endpoint of
@@ -1113,19 +1114,21 @@ level/KKT endpoint closure subsystem corrected by Ch , and let zu = ΨG     h be
 the unclosed endpoint. Under P2 the right-inverse Newton iteration zl+1 =
 zl − B∗ E(zl ), z0 = zu , converges to a closed endpoint zE = Ch (zu ) with
 E(zE ) = 0, and any closed endpoint of the form zu + B∗ w in BrE (z∗ ) satisfies
-      ∥zE − zu ∥ ≤ 2ME,ri ∥E(zu )∥ ≤ CE h7 ,         CE = 2ME,ri CE,raw .         (30)
+
+      ∥zE − zu ∥ ≤ 2ME,ri ∥E(zu )∥ ≤ CE h7 ,          CE = 2ME,ri CE,raw .   (30)
+
 Proof. Write G(w) = E(zu + B∗ w). Since DE(z∗ )B∗ = I and ∥DE(z) −
 DE(z∗ )∥ ≤ LE ∥z − z∗ ∥ ≤ LE rE on the ball, the mean value inequality gives
 ∥G(w1 ) − G(w2 ) − (w1 − w2 )∥ ≤ ME,ri LE rE ∥w1 − w2 ∥ ≤ 21 ∥w1 − w2 ∥ whenever
 both arguments stay in the ball. The map w ↦→ w − G(w) is therefore a 21 -
 contraction of the ball of radius 2∥G(0)∥ = 2∥E(zu )∥ into itself, which stays
-inside BrE (z∗ ) for h ≤ h0 ; its fixed point w∗ gives zE = zu + B∗ w∗ with
+
+                                          29
+inside BrE (z∗ ) for h ≤ h0 ; its fixed point w∗ gives zE = zu + B∗ w∗ with
 E(zE ) = 0. For any root of this form, the same inequality with w2 = 0
 yields ∥w∥ ≤ 2∥E(zu )∥, hence ∥zE − zu ∥ = ∥B∗ w∥ ≤ 2ME,ri ∥E(zu )∥. The
 raw-defect hypothesis of P2 completes Eq. (30).
-
-                                          29
-   The raw endpoint defect ∥E(zu )∥ ≤ CE,raw h7 is a retained P2 hypothesis
+   The raw endpoint defect ∥E(zu )∥ ≤ CE,raw h7 is a retained P2 hypothesis
 about the closure functional actually corrected by Ch . The endpoint-closure
 diagnostic in Table 7 records its finite-window scale; it does not discharge
 the hypothesis.
@@ -1137,9 +1140,10 @@ and output perturbations satisfy Eq. (31):
                                                                                  (31)
      ∥Ph (Z˜︁A ) − Ph (ZG )∥ ≤ CN ηhtube ≤ CN cη h7 ,      CN = 2M MN .
 
-Proof. With  (︁ Eq. (25) andLρthe mean value                     2, ∥Z˜︁A −
+Proof. With  (︁ Eq. (25) andLρthe mean value                    2, ∥Z˜︁A −
                                          )︁ inequality of Lemma tube
-ZG ∥ ≤ M ∥FA,h (Z˜︁A )∥ + 2 ∥Z˜︁A − ZG ∥ , so ∥Z˜︁A − ZG ∥ ≤ 2M ηh . The
+ZG ∥ ≤ M ∥FA,h (ZA )∥ + 2 ∥ZA − ZG ∥ , so ∥ZA − ZG ∥ ≤ 2M ηh . The
+                     ˜︁         ˜︁             ˜︁
 output bound follows from ∥DZ Ph ∥ ≤ MN on the ball and the envelope
 ηhtube ≤ cη h7 .
      The residual inequality and the branch-ball membership in P6 are sepa-
@@ -1162,14 +1166,13 @@ the accepted map of Definition 4 is well defined on the whole tube for small
 steps whenever the stage solve starts in Bρ/2 (ZG ): with the lifted endpoint
 predictor, P6 is achievable by construction.
 
-Proof. The stages of ZG are L(Yk ) with ∥Yk − xn ∥ = O(h) on the compact
+                                         30
+Proof. The stages of ZG are L(Yk ) with ∥Yk − xn ∥ = O(h) on the compact
              (0)                       (0)
 tube, so ∥Z∗ − ZG ∥ = O(h) and Z∗ ∈ Bρ/2 (ZG ) for small h. The lineariza-
 tion inequality of P2 makes the simplified Newton map a 21 -contraction of
 Bρ (ZG ) into itself with fixed point ZG (Lemma 2), which gives the first bound
-
-                                         30
-in Eq. (32); the second follows from FA,h (ZG ) = 0 and the Lipschitz bound.
+in Eq. (32); the second follows from FA,h (ZG ) = 0 and the Lipschitz bound.
 The implementation recomputes the Jacobian at every iterate; for that full
 Newton iteration P2 gives ∥DZ FA,h (Z) − Jh ∥ ≤ L∥Z − ZG ∥ ≤ Lρ on the ball,
 so the perturbation bound of Lemma 3 yields ∥DZ FA,h (Z)−1 ∥ ≤ 2M , and
@@ -1181,7 +1184,7 @@ machine-checked (simplified_newton_residual_decay).
 velocities with a constant acceleration but sets the angular-velocity and
 angular-acceleration guesses to zero and uses force-balance multiplier esti-
 mates, so its distance to ZG is of the order of ∥ωn ∥ + ∥αn ∥ + ∥λn ∥ rather
-than O(h), and Table 12 shows that the first full Newton step from it does
+than O(h), and Table 13 shows that the first full Newton step from it does
 not contract in the Euclidean norm. Lemma 7 therefore covers the imple-
 mented run only through the branch-ball membership retained in P6; on the
 reported grids that membership is confirmed a posteriori by Table 11, whose
@@ -1202,25 +1205,25 @@ Lemma 8 (Local-to-global transfer on the accepted tube). Let Ψh be a one-
 step map on the reduced chart, tn = nh, and yn+1 = Ψh (yn ) with y0 the exact
 initial state. Suppose that for 0 ≤ n < N with N h ≤ T the exact states
 Yn = φtn (y0 ) satisfy ∥Ψh (Yn ) − Yn+1 ∥ ≤ Cℓ hp+1 , that ∥Ψh (yn ) − Ψh (Yn )∥ ≤
-(1+Cs h)∥yn −Yn ∥ whenever yn ∈ K, and that Cℓ Γs (T )hp ≤ dK , where Γs (T )
+
+
+                                       31
+(1+Cs h)∥yn −Yn ∥ whenever yn ∈ K, and that Cℓ Γs (T )hp ≤ dK , where Γs (T )
 is the Gronwall factor of Eq. (33),
-                                  ⎧ Cs T
-                                  ⎨e      −1
-                                             , Cs > 0,
-                        Γs (T ) =       Cs                                     (33)
-                                  ⎩
-                                    T,           Cs = 0.
+                                 ⎧ Cs T
+                                 ⎨e     −1
+                                           , Cs > 0,
+                       Γs (T ) =      Cs                               (33)
+                                 ⎩
+                                   T,        Cs = 0.
 
-                                        31
-Then yn ∈ K for all n ≤ N and the grid bound Eq. (34) holds,
+Then yn ∈ K for all n ≤ N and the grid bound Eq. (34) holds,
 
-                         max ∥yn − Yn ∥ ≤ Cℓ Γs (T )hp .                    (34)
+                        max ∥yn − Yn ∥ ≤ Cℓ Γs (T )hp .                    (34)
                         0≤n≤N
-
 
 If moreover the reporting map R (chart to reported position and velocity) is
 CR -Lipschitz on K, then maxn ∥R(yn ) − R(Yn )∥ ≤ CR Cℓ Γs (T )hp .
-
 Proof. Let en = ∥yn − Yn ∥. By induction,   ∑︁ as long as kyn ∈ K, en+1 ≤
                    p+1                  p+1
 (1 + Cs h)en + Cℓ h , hence en ≤ Cℓ h         k<n (1 + Cs h) . For Cs > 0 the
@@ -1228,7 +1231,6 @@ geometric sum equals ((1 + Cs h)n − 1)/(Cs h) ≤ (eCs nh − 1)/(Cs h) ≤ Γ
 and for Cs = 0 it equals n ≤ T /h. Thus en ≤ Cℓ Γs (T )hp ≤ dK , which keeps
 yn in the tube and closes the induction (first-exit bootstrap). The reporting
 bound is the Lipschitz property. The lemma is machine-checked.
-
 Definition 4 (Accepted branch-selected one-step map). The accepted map
 ΨG6FVA
   h     is defined on the set Dh ⊂ K of reduced states for which the transition
@@ -1249,16 +1251,16 @@ mechanism-coverage rows. For those rows, small residual norms alone are
 not a trajectory-error theorem; a residual-to-error implication would have to
 prove a bound with a uniform stability or inf-sup constant on the reported
 branch, and no residual-to-trajectory-error transfer theorem is accepted in
-this manuscript. Closed-loop residual rows remain diagnostics even when
+
+                                      32
+this manuscript. Closed-loop residual rows remain diagnostics even when
 their measured norms are small, and they are not accepted dynamic order
 rows. Finite solver probes and fixed-tolerance runs may corroborate the ac-
 cepted branch. Those probes are finite solver-policy diagnostics only; they
 are not proof inputs and not a substitute for the explicit ηhtube ≤ cη h7 theorem
 condition.
 
-
-                                       32
-Theorem 1 (Conditional sixth-order error theorem for the accepted
+Theorem 1 (Conditional sixth-order error theorem for the accepted
 branch-selected Gauss6/FullVA map). Let Assumption 1 hold with the tube
 K, the proof norms, and the constants fixed before any numerical evidence
 is read, and let Cloc = CG + CE + CN cη with CG , CE , CN from Lemmas 4,
@@ -1302,16 +1304,15 @@ stage-root perturbation term, and the three-term chain Eq. (38) gives
 
 by Lemmas 4, 5, and 6, after shrinking h0 so that all three lemmas apply on
 the tube. This is Eq. (35). Choose h0 additionally so that Cloc Γs (T )h60 ≤ dK .
-Lemma 8 with p = 6, Cℓ = Cloc , the local defect Eq. (35) at the exact
+
+                                       33
+Lemma 8 with p = 6, Cℓ = Cloc , the local defect Eq. (35) at the exact
 grid states, and the stability scale Eq. (23) gives Eq. (36); the reporting-
 map clause gives Eq. (37). The constants CG , CE , CN , cη , Cs , CR are fixed by
 Assumption 1 before any reported grid is considered, so Cloc , Cred , and Cqv
 are independent of h and Nh .
 
-
-
-                                       33
-Scope and non-claims of Theorem 1. The theorem is a same-initial-state
+Scope and non-claims of Theorem 1. The theorem is a same-initial-state
 reduced-chart and reported position–velocity estimate on the reported grid
 for transitions in Dh . It does not claim an unconditional order: it does not
 close P6 and supplies no fixed-tolerance asymptotic proof of the solver enve-
@@ -1344,15 +1345,15 @@ order.
 
 Proposition 1 (Conditional order comparison). Under Assumption 1 and
 the current reproducibility contract, Gauss6/FullVA has higher formal order
-than the local paper-style m = 3 Gauss–Lobatto TFE formula target in the
+
+                                       34
+than the local paper-style m = 3 Gauss–Lobatto TFE formula target in the
 narrow order-comparison sense.
 
 Proof. Theorem 1, built on the exact stage identity of Lemma 1, gives
 the conditional route to the sixth-order method claim for Gauss6/FullVA.
 Lemma 9 gives the fifth-order local paper-style m = 3 comparator. This
-
-                                      34
-theorem–lemma pair is the formal-order proof of the proposition. The gen-
+theorem–lemma pair is the formal-order proof of the proposition. The gen-
 erated h-sweep records observed smooth position and velocity orders 7.161
 and 7.066 only as consistency evidence after that comparison; those finite-
 window slopes are not proof inputs. The four-example validation crite-
@@ -1374,25 +1375,29 @@ sharp-friction regime, four-link/slider-crank dynamic convergence order, or
 complete source-paper residual reproduction. Those exclusions define the
 claim boundary; in particular, the method is not a complete source-paper
 temporal finite-element residual replacement.
+
 Corollary 1 (Non-claim). Proposition 1 does not prove that the implemented
 nonlinear residual is the complete source-paper temporal finite-element resid-
 ual.
+
 Proof. The accepted method solves Eq. (6). A complete source-paper resid-
 ual reproduction would require replacing every stage row in that solve by
 accepted paper-derived weak rows and passing the same validation criteria.
 That stronger criterion remains open.
-Definition 5 (P7 boundary-certificate template). For a mechanism-coverage
+
+
+
+                                      35
+Definition 5 (P7 boundary-certificate template). For a mechanism-coverage
 row family on a fixed accepted branch, an accepted P7 residual-to-error cer-
 tificate would be a same-branch tuple
 
-               TP7 = (Rmech
-                       h    , ∥ · ∥traj , CP7 , ρres , εfloor , εest , Gdyn ).   (39)
+                 TP7 = (Rmech
+                         h    , ∥ · ∥traj , CP7 , ρres , εfloor , εest , Gdyn ).   (39)
 
 and this tuple is fixed before the residual table is inspected, with the following
 properties. Equation (39) fixes the object whose transfer bound is Eq. (40).
-
-                                            35
-First, Rmech
+First, Rmech
          h      is the residual operator actually reported for the mechanism
 rows, with the same branch, time grid, row scaling, and norm used in the
 table. Second, ∥ · ∥traj is the trajectory error norm in which a dynamic-order
@@ -1413,9 +1418,9 @@ and trajectory output variables must be fixed together before any residual row
 is promoted.
     The certificate would have to imply Eq. (40), uniformly for all sufficiently
 small reported step sizes in that campaign,
-                           (︂                                         )︂
-                                mech
-           ∥eh ∥traj ≤ CP7 ∥Rh ∥res + ρres (h) + εfloor (h) + εest (h) .    (40)
+                           (︂                                                  )︂
+           ∥eh ∥traj ≤ CP7 ∥Rmech
+                                h   ∥ res + ρ res (h) + ε floor (h) + ε est (h)   . (40)
 
 Definition 5 is a closure criterion, not a theorem premise of Theorem 1: no
 such tuple is proved or invoked in this manuscript.
@@ -1425,17 +1430,16 @@ crank residual/reaction rows in the validation section, and the common-
 reference or source-policy residual rows reported elsewhere, do not become
 accepted dynamic-order or trajectory-error rows in this manuscript.
 
-Proof. This exclusion is not a residual-transfer theorem. Those rows are
+
+                                              36
+Proof. This exclusion is not a residual-transfer theorem. Those rows are
 mechanism-coverage evidence for the accepted FullVA residual vocabulary,
 not residual-to-error evidence for the reported trajectory norm. Promoting
 them to trajectory-error/order evidence would require seven residual-to-error
 obligations to close on the same branch: dynamic residual identity, residual-
 consistency rate, closed-loop DAE stability or inf-sup control, calibrated es-
 timator, reference-floor exclusion, coarse-first dynamic-order campaign, and
-
-
-                                       36
-a manuscript transfer theorem. Equivalently, the closure would have to in-
+a manuscript transfer theorem. Equivalently, the closure would have to in-
 stantiate the same-branch tuple in Definition 5. Since that joint criterion
 remains open, the rows remain diagnostics. Equivalently, that separate pro-
 motion would require an additional same-branch residual operator with a
@@ -1466,14 +1470,6 @@ campaign, or manuscript-theorem component of the open P7 route.
 7.7. External comparison boundary
     External source-paper comparison is kept outside the main method and
 proof claims. The accepted evidence below supports the branch-selected
-Gauss6/FullVA method, the conditional sixth-order theorem, and method-
-side mechanism coverage. The TFE and public-code source-policy rows are
-retained only as diagnostic boundary records; they close no source-paper su-
-periority row and no theorem input. The detailed same-test promotion cri-
-terion, common-reference tables, and source-policy runner gaps are recorded
-in Section Appendix A so that the main numerical section is read in the
-intended evidence order: dynamic-order evidence first, mechanism-coverage
-evidence second, external-comparison diagnostics last.
 
                                           37
               Table 8: Proof-dependency map for Proposition 1.
@@ -1522,7 +1518,16 @@ Non-claims             Complete source-paper residual      Excluded stronger
 
 
                                         38
-8. Numerical evidence
+Gauss6/FullVA method, the conditional sixth-order theorem, and method-
+side mechanism coverage. The TFE and public-code source-policy rows are
+retained only as diagnostic boundary records; they close no source-paper su-
+periority row and no theorem input. The detailed same-test promotion cri-
+terion, common-reference tables, and source-policy runner gaps are recorded
+in Section Appendix A so that the main numerical section is read in the
+intended evidence order: dynamic-order evidence first, mechanism-coverage
+evidence second, external-comparison diagnostics last.
+
+8. Numerical evidence
      The numerical section should be read as a sequence of evidence blocks
 rather than as a single undifferentiated benchmark table. First, the smooth
 cylindrical-chain sweep tests the accepted 132-row Gauss6/FullVA stage solve
@@ -1548,20 +1553,20 @@ finite reference row cannot discharge the compact-tube regularity, endpoint-
 closure, P6 solver-scale, or P7 residual-to-error boundaries, cannot be used
 to tune the reported norm after the fact, and cannot exclude a reference floor
 without a separate refinement or analytic-reference argument.
+     The slopes 7.161 and 7.066 in Tables 9–10 should not be read as a seventh-
+order method claim. The theorem above claims sixth order under an O(h7 )
 
-           Table 9: Observed orders for the accepted Gauss6/FullVA path.
- Case                        Step sizes         Position          Velocity
-                                                order             order
- Smooth cylindrical          0.04, 0.02, 0.01   7.161             7.066
+                                      39
+           Table 9: Observed orders for the accepted Gauss6/FullVA path.
+ Case                        Step sizes           Position          Velocity
+                                                  order             order
+ Smooth cylindrical          0.04, 0.02, 0.01     7.161             7.066
  chain
- Sharp friction, coarse      0.04, 0.02, 0.01   1.894             2.683
+ Sharp friction, coarse      0.04, 0.02, 0.01     1.894             2.683
  sweep
 
 
-
-
-                                          39
-            Table 10: Smooth cylindrical-chain projected-endpoint errors.
+            Table 10: Smooth cylindrical-chain projected-endpoint errors.
    h           Steps           Position error     Velocity error     Newton
                                                                      iterations
    0.04        2               1.761 × 10−7       1.007 × 10−5       12
@@ -1569,8 +1574,6 @@ without a separate refinement or analytic-reference argument.
    0.01        8               8.602 × 10−12      5.609 × 10−10      48
 
 
-    The slopes 7.161 and 7.066 in Tables 9–10 should not be read as a seventh-
-order method claim. The theorem above claims sixth order under an O(h7 )
 local-defect contract. The larger fitted slopes come from a short, smooth,
 projected-endpoint window in which the leading sixth-order error coefficient
 is small relative to higher-order terms, while the finest row is already close
@@ -1591,58 +1594,85 @@ tight Newton tolerance of 10−13 in the proof norm, is read in the reduced
 joint-coordinate chart, and the reduced Gauss collocation defects ∆i [sj ],
 ∆i [ṡj ], ∆i [θj ], ∆i [θ̇j ] of Eq. (10) are evaluated together with the compo-
 nent of dj , d˙j , d¨j orthogonal to nj and the factorization of the implemented
-sliding row. Table 11 shows all of them at roundoff over the accepted horizon
+
+
+                                          40
+sliding row. Table 11 shows all of them at roundoff over the accepted horizon
 T = 0.08, with six Newton iterations per step at every step size. This is a
 consistency check of the transcription used in the lemma, not a proof input.
+
+         Table 11: Exact stage identity diagnostic on the smooth cylindrical chain.
+  h         Steps     Newton         Max stage         Max reduced      Max ⊥ nj
+                      iters.         residual          defect           component
+  0.04      2         12             6.8 × 10−14       9.0 × 10−15      1.5 × 10−15
+  0.02      4         24             1.5 × 10−14       5.5 × 10−16      1.9 × 10−15
+  0.01      8         48             1.6 × 10−14       5.8 × 10−16      2.0 × 10−15
+
 
 Constants of the P2 reduction. Lemmas 3 and 7 have a numerical counter-
 part as well. On the same solves the implemented Jacobian is evaluated at
 the converged stage vector, giving Jh , and with h = 0 at the root of the
+h = 0 stage system, which reproduces the lifted endpoint state to 10−12 ,
+giving J0 . Table 12 records M0 = maxn ∥J0−1 ∥, CJ = maxn ∥Jh − J0 ∥/h, the
+observed ratio ∥Jh−1 ∥/∥J0−1 ∥, and the threshold h0 = 1/(2M0 CJ ) implied by
+the Neumann argument, in the Euclidean norm on the implemented stage
+layout and in the endpoint-linearized residual norm ∥F ∥xn = ∥J0 (xn )−1 F ∥,
+the length of the simplified Newton correction, in which ∥J0−1 ∥ = 1 and the
+Neumann argument is sharpest. The conclusion of Lemma 3 holds on every
+grid with ratio at most 1.55, but its sufficient condition M0 ∥Jh − J0 ∥ ≤ 12
+would require h ≤ 2 × 10−5 in the Euclidean norm and h ≤ 8 × 10−4 in
+the endpoint-linearized norm. The largest entries of (Jh − J0 )/h sit in the
+Newton–Euler rows against the stage velocities, where the second derivative
+of the Brown–McPhee friction law with Stribeck velocity 0.5 enters; the same
+mechanism with µs = µd = 0 and no viscous damping has CJ smaller by a
+factor of about fifteen, h0 ≈ 1.4 × 10−2 in the endpoint-linearized norm, and
+its largest Jacobian variation in the gyroscopic rows. The friction law, not the
+collocation structure, sets the small-step threshold, which is consistent with
+the coarse-grid order reduction of the sharp case with Stribeck velocity 0.05.
+Table 13 records the distances to ZG of the lifted endpoint predictor and of
+the Algorithm 1 predictor: the former decreases with h as Lemma 7 predicts,
+whereas the latter stays at distance about 50 because its angular-velocity and
+angular-acceleration guesses are zero, and the first full Newton step from it
+increases the distance by up to 18% before the iteration converges. These
+are diagnostics of the lemma constants, not proof inputs.
+
+                                            41
+Table 12: Constants of Lemma 3 on the smooth cylindrical chain: M0 = maxn ∥J0−1 ∥,
+CJ = maxn ∥Jh − J0 ∥/h, observed inverse ratio ∥Jh−1 ∥/∥J0−1 ∥, and Neumann threshold
+h0 = 1/(2M0 CJ ), in the Euclidean norm on the implemented stage layout (E) and in the
+endpoint-linearized residual norm ∥J0−1 · ∥ (L, where M0 = 1); the last two columns repeat
+the L-norm quantities for the same mechanism without joint friction.
+  h     M0       CJ (E)    inverse h0 (E)        CJ (L)    h0 (L)     CJ (L,      h0 (L,
+        (E)                ratio                                      no          no
+                                                                      friction)   friction)
+  0.04 18.2      7.5 × 102 1.55     3.7 ×        5.1 × 102 9.8 ×      34.1        1.5 ×
+                                    10−5                   10−4                   10−2
+  0.02 24.3      8.2 × 102 1.26     2.5 ×                2
+                                                 5.6 × 10 8.9 ×       35.5        1.4 ×
+                                    10−5                   10−4                   10−2
+  0.01 28.4      9.6 × 102 1.18     1.8 ×                2
+                                                 6.5 × 10 7.6 ×       36.5        1.4 ×
+                                    10−5                   10−4                   10−2
 
 
-                                         40
-          Table 11: Exact stage identity diagnostic on the smooth cylindrical chain.
-  h          Steps      Newton        Max stage         Max reduced        Max ⊥ nj
-                        iters.        residual          defect             component
-  0.04       2          12            6.8 × 10−14       9.0 × 10−15        1.5 × 10−15
-  0.02       4          24            1.5 × 10−14       5.5 × 10−16        1.9 × 10−15
-  0.01       8          48            1.6 × 10−14       5.8 × 10−16        2.0 × 10−15
 
 
-h = 0 stage system, which reproduces the lifted endpoint state to 10−12 , giv-
-ing J0 . Table 12 records, in the Euclidean norm on the implemented stage
-layout, M0 = maxn ∥J0−1 ∥, CJ = maxn ∥Jh − J0 ∥/h, the Neumann margin
-M0 ∥Jh −J0 ∥, the observed ratio ∥Jh−1 ∥/∥J0−1 ∥, the threshold h0 = 1/(2M0 CJ )
-implied by the Neumann argument, and the distances to ZG of the lifted
-endpoint predictor and of the Algorithm 1 predictor. The conclusion of
-Lemma 3 holds on every grid with ratio at most 1.55, but its sufficient con-
-dition M0 ∥Jh − J0 ∥ ≤ 21 would require h ≤ 3 × 10−5 : the Neumann threshold
-is pessimistic by three orders of magnitude in this norm. The lifted predictor
-distance decreases with h as the lemma predicts, whereas the Algorithm 1
-predictor stays at distance about 50 because its angular-velocity and angular-
-acceleration guesses are zero, and the first full Newton step from it increases
-the distance by up to 18% before the iteration converges. These are diagnos-
-tics of the lemma constants, not proof inputs.
-
-Table 12: Constants of Lemmas 3 and 7 on the smooth cylindrical chain, Euclidean norm
-on the implemented stage layout: M0 = maxn ∥J0−1 ∥, CJ = maxn ∥Jh − J0 ∥/h, Neumann
-margin M0 ∥Jh −J0 ∥, inverse ratio ∥Jh−1 ∥/∥J0−1 ∥, implied h0 = 1/(2M0 CJ ), distances of the
-lifted endpoint and Algorithm 1 predictors to ZG , and the ratio ∥Z (1) − ZG ∥/∥Z (0) − ZG ∥
-of the first full Newton step from the Algorithm 1 predictor.
-      h     M0     CJ        Neumann     inverse implied h0 lifted      Alg. 1   first-
-                             margin      ratio              pred.       pred.    step
-                                                                                 ratio
-      0.04 18.2    7.5 × 102 5.4 × 102   1.55     3.7 × 10−5 3.23       50.2     1.12
-      0.02 24.3    8.2 × 102 3.0 × 102   1.26     3.3 × 10−5 2.11       50.3     1.16
-      0.01 28.4    9.6 × 102 2.0 × 102   1.18     2.5 × 10−5 1.07       50.4     1.18
+Table 13: Predictor distances for Lemma 7 on the smooth cylindrical chain (Euclidean
+                                                                                   (0)
+norm on the implemented stage layout): distance of the lifted endpoint predictor Z∗ and
+of the Algorithm 1 predictor to ZG , and the ratio ∥Z (1) − ZG ∥/∥Z (0) − ZG ∥ of the first
+full Newton step from the Algorithm 1 predictor.
+          h         lifted predictor     Algorithm 1           first-step ratio
+                                         predictor
+          0.04      3.23                 50.2                  1.12
+          0.02      2.11                 50.3                  1.16
+          0.01      1.07                 50.4                  1.18
 
 
-   Table 14 is retained only as a non-promotion record for the current source-
-paper comparator status. The paper-style column is an implemented all-row
-TFE diagnostic using the terminal Lobatto-node output, a consistent initial
 
-                                             41
-       Table 13: Order-estimate acceptance policy used in the numerical section.
+
+                                            42
+       Table 14: Order-estimate acceptance policy used in the numerical section.
  Evidence row             Step/reference policy        Order information      Manuscript role
  Smooth cylindrical       h = 0.04, 0.02, 0.01         Position/velocity      Post-theorem finite-run
  chain                    against h = 0.005.           slopes 7.161/7.066.    consistency check for
@@ -1685,7 +1715,7 @@ TFE diagnostic using the terminal Lobatto-node output, a consistent initial
 
 
 
-Table 14: Non-promoted same-step diagnostic with a TFE-style all-row attempt.
+Table 15: Non-promoted same-step diagnostic with a TFE-style all-row attempt.
 h           Accepted Gauss6/FullVA             Paper-style all-row TFE                Diagnostic
                                                diagnostic                             status
 0.04        Position 1.761 × 10−7 ; velocity   Position 9.064 × 10−8 ; velocity       Not accepted.
@@ -1699,14 +1729,17 @@ h           Accepted Gauss6/FullVA             Paper-style all-row TFE          
 
 
 
-                                                  42
-z0 policy, and an equilibrated Newton linear solve. Its recorded smooth orders
+                                                  43
+    Table 15 is retained only as a non-promotion record for the current source-
+paper comparator status. The paper-style column is an implemented all-row
+TFE diagnostic using the terminal Lobatto-node output, a consistent initial
+z0 policy, and an equilibrated Newton linear solve. Its recorded smooth orders
 are 4.046 in position and 4.420 in velocity. Because the start policy is not a
 paper-derived recurrent policy and the full-TFE replacement criterion is not
 met by the current evidence package, this row is not an accepted fair baseline
 and is not part of the main order evidence.
 
-             Table 15: Work and solver diagnostics for accepted evidence rows.
+             Table 16: Work and solver diagnostics for accepted evidence rows.
     Evidence row            Finest work           Runtime (s)     Finest accepted value
     Smooth cylindrical    h = 0.01; 8 steps /     0.199           Position 8.602 × 10−12 ; velocity
     chain                 48 Newton                               5.609 × 10−10 .
@@ -1722,9 +1755,9 @@ and is not part of the main order evidence.
 
 
 
-        Table 16: Nonlinear solver tolerances used for the reported evidence rows.
+        Table 17: Nonlinear solver tolerances used for the reported evidence rows.
   Evidence row           Nonlinear solve                      Stopping rule                Finest count
-  Cylindrical chain     132-row Gauss6/FullVA residual        Stop when ∥R∥2 < 10−11 or 48 Newton.
+  Cylindrical chain     132-row Gauss6/FullVA residual        Stop when ∥R∥2  < 10−11 or   48 Newton.
                         with dense AD Jacobian and            ∥∆Z∥2 < 10−11 ; cap 80
                         dense linear solve; rank              Newton iterations.
                         diagnostics use tolerance 10−10 .
@@ -1744,15 +1777,15 @@ and is not part of the main order evidence.
                         four-link example.                    Newton iterations.
 
 
-
-    For the asymptotic theorem, Table 16 should be read with the inexact-
+  For the asymptotic theorem, Table 17 should be read with the inexact-
 Newton policy of Lemma 6: a proof-level h-sweep must use the nonlinear
-residual threshold in Eq. (42),
 
-                                            ηhtube ≤ cη h7                                              (42)
+                                                   44
+residual threshold in Eq. (42),
 
-                                                   43
-on the compact-tube branch, or an equivalent update criterion that implies
+                                  ηhtube ≤ cη h7                             (42)
+
+on the compact-tube branch, or an equivalent update criterion that implies
 the same stage-solution error. The fixed absolute tolerances in the recorded
 runs are retained for reproducibility of the reported runs and explain the
 reported Newton counts; they are not by themselves a derivation of the
@@ -1783,16 +1816,15 @@ on the ηhtube ≤ cη h7 compact-tube policy. The reported-log quantity is only
 ηhreported = max0≤n<Nh ηh,n , also denoted ηˆ︁hlog in diagnostic tables, after the
 accepted branch, proof norm, row scaling, and cη have already been fixed; it
 cannot select the branch, norm, or theorem constant.
-     Tables 15–16 and Table 14 are solver-scale and diagnostic comparison
+     Tables 16–17 and Table 15 are solver-scale and diagnostic comparison
 tables, not accepted fair baseline comparisons.             Runtime values are
 single-machine recorded timings, and the mechanism rows report the
-accepted finest-step evidence for each validation path. A publication-level
+
+                                       45
+accepted finest-step evidence for each validation path. A publication-level
 comparison still requires accepted implemented baselines and cross-method
 work/precision curves on the same problems; these tables and Figure 2
-
-
-                                       44
-only prevent the accepted evidence from being reported without any
+only prevent the accepted evidence from being reported without any
 work, tolerance, Newton-iteration, or source-paper diagnostic context. For
 the four-link and slider-crank rows, the finest-step residual and reaction
 entries are read through the P7 boundary stated after Theorem 1: they
@@ -1811,12 +1843,12 @@ contrasts the sharp-friction coarse sweep with the refined cost envelope that re
 order only at additional runtime.
 
     The sharp-friction coarse sweep is not used as the main order claim. It
-is reported as a limitation: deeper fixed refinement recovers high order at
+
+                                            46
+is reported as a limitation: deeper fixed refinement recovers high order at
 increased cost, while the practical coarse regime remains order-reduced. The
 recorded sharp-friction diagnostic shows the practical tradeoff: the coarse
-
-                                            45
-h = {0.04, 0.02, 0.01} sweep gives only 1.894/2.683 position/velocity order,
+h = {0.04, 0.02, 0.01} sweep gives only 1.894/2.683 position/velocity order,
 while ultra refinement over h = {0.005, 0.0025, 0.00125} against h = 0.000625
 recovers 7.521/5.725 all-point position/velocity order. The high-order recov-
 ery requires an approximately 7.25× runtime increase relative to the h = 0.01
@@ -1851,10 +1883,7 @@ pivot reaction force, axis multipliers, and drive multiplier. Its square residua
 includes pivot velocity and pivot acceleration rows, two revolute-axis rows,
 and the acceleration-level drive row.
 
-
-
-
-                                        46
+                                        47
 9.2. Double pendulum
     The double pendulum uses two rigid bars with lengths 4.0 m and 2.0
 m, the same square side length, density, and gravity as the single-pendulum
@@ -1893,8 +1922,8 @@ direction vectors a are body-fixed unless the body is ground; each CD group
 uses the three coordinate directions ex , ey , ez . Driver functions listed here are
 the functions actually used by the setup code after model-file overrides.
 
-                                          47
-              Table 17: Four-example validation summary.
+                                          48
+              Table 18: Four-example validation summary.
 Example     Accepted evidence    Role             Headline metric
 Single       Driven              Dynamic-order Minimum observed
 pendulum     absolute-coordinate evidence      order 6.024; max
@@ -1917,8 +1946,8 @@ Slider crank Closed-loop         Mechanism     Max constraint norm
 
 
 
-                                 48
-Table 18: Problem setup values used by the four ASME-style validation examples.
+                                 49
+Table 19: Problem setup values used by the four ASME-style validation examples.
  Example        Physical and constraint setup        Time grid and reference     Accepted check
                                                      policy
  Single         One steel bar, length 4 m,           Driven angle θ(t) =         Minimum
@@ -1955,7 +1984,7 @@ Slider crank Closed-loop         Mechanism     Max constraint norm
 
 
 
-                                               49
+                                               50
 Single pendulum. The moving body is body 1 and ground is body 0. The
 ground revolute joint uses CD rows with s1 = (−2, 0, 0) and s0 = (0, 0, 0),
 plus DP1 rows (a1 , a0 ) = (ex , ex ) and (ey , ex ). The driven DP1 row uses
@@ -1993,7 +2022,7 @@ The driving DP1 row uses (ey , ey ) and f (t) = cos(−2πt + π/2).
    This section makes explicit the scalar constraint rows used by the four
 example mechanisms. Let body i have center position ri , rotation matrix
 
-                                         50
+                                         51
 Figure 3: Coordinate-oriented mechanism schematics and lower-pair constraint inventory
 for the four ASME-style examples. Each panel shows the global coordinate frame, named
 joints, the principal moving bodies, the driver where applicable, and the CD/DP1/DP2/D
@@ -2003,7 +2032,7 @@ vectors are listed in the text immediately preceding the figure.
 
 
 
-                                         51
+                                         52
 Figure 4: Closed-loop kinematic FullVA mechanism-coverage evidence for the four-link
 and slider-crank examples.
 
@@ -2034,7 +2063,7 @@ Writing ∆x = xj − xi , ∆ẋ = ẋj − ẋi , and ∆ẍ = ẍj − ẍi ,
 
 
 
-                                         52
+                                         53
 assembled by the FullVA block are Eq. (54) at velocity level
 
                           ĊCD,k = eTk ∆ẋ − d˙k ,                        (51)
@@ -2073,7 +2102,7 @@ show a stable speed win over dense jacfwd. The current code should therefore
 be read as a reference implementation. The recorded small-system pattern
 has a 132 × 132 dense dimension, 2637 nonzeros, and 90/60 column/row
 
-                                           53
+                                           54
 Figure 5: Order/closure blend diagnostic. The tested path separates order preservation
 from terminal endpoint-velocity closure, which is why independent full-TFE replacement
 remains open.
@@ -2088,7 +2117,7 @@ stage replacement.
 
 
 
-                                         54
+                                         55
 colors; row-VJP is still 1.20–1.22 times the dense runtime, requiring a 16.9–
 18.3% row-runtime reduction merely to match dense. No body-count sweep
 for N = 2, 4, 8, 16, 32, memory scaling, conditioning-versus-body-count, or
@@ -2122,7 +2151,7 @@ and method conditions to external reproduction boundaries.
       that theorem; P7 remains a separate output nonclaim/residual-to-error
       boundary.
 
-                                          55
+                                          56
 Figure 8: Strict common-reference work/precision rows for bounded diagnostics on the
 closed-loop four-link and slider-crank mechanisms. Bounded common-reference diagnostic
 work/precision rows use the same finite accepted-method endpoint reference at h = 0.0125
@@ -2133,7 +2162,7 @@ broader source-paper suites and manuscript-level review remain open.
 
 
 
-         Table 19: Diagnostic boundaries separated from the accepted theorem.
+         Table 20: Diagnostic boundaries separated from the accepted theorem.
     Diagnostic boundary           Current evidence                       Claim
                                                                          boundary
     Independent full-TFE          No accepted 132-row                    Boundary
@@ -2152,7 +2181,7 @@ broader source-paper suites and manuscript-level review remain open.
 
 
 
-                                            56
+                                            57
 Figure 9: Claim-boundary and limitation map for the present paper. Green items are
 accepted claims or accepted evidence rows; orange items are bounded or partial evidence;
 red items remain open boundaries. The figure summarizes why the manuscript supports
@@ -2163,7 +2192,7 @@ riority, or a closed residual-to-error transfer theorem for the closed-loop mech
 
 
 
-                                           57
+                                           58
 Figure 10: Coarse-first baseline and work/precision diagnostics. The top panels com-
 pare observed order on the same coarse window for the single and double pendula. The
 lower panels use the strict common-reference closed-loop summaries for four-link and
@@ -2175,7 +2204,7 @@ place the unresolved original source-policy campaigns.
 
 
 
-                                           58
+                                           59
 Figure 11: Closed-loop coarse-dynamics diagnostic evidence for the four-link and slider-
 crank mechanisms. Closed-loop coarse-window trajectory diagnostics plot endpoint posi-
 tion, orientation, linear-velocity, and angular-velocity errors against the O(h6 ) guide over
@@ -2191,7 +2220,7 @@ or slider-crank to accepted dynamic-order examples.
 
 
 
-                                             59
+                                             60
 Figure 12: All-method common-reference result matrix for the four validation examples.
 Each cell reports observed velocity order and finest-step velocity error from the paper
 numerical result matrix over h = 0.1, 0.05, 0.025 with href = 0.0125. The local Gauss6/
@@ -2202,7 +2231,7 @@ paper superiority claim.
 
 
 
-                                           60
+                                           61
 Figure 13: Work/precision compendium for fair candidate diagnostics. The first two panels
 use the frictionless TFE source-pendulum candidate route on a shared T = 1 grid and RK4
 reference, plotting velocity error against wall time and Newton work. The Algorithm-1-
@@ -2218,7 +2247,7 @@ diagnostics, not source-policy superiority claims.
 
 
 
-                                            61
+                                            62
 2. Nonlinear tolerance and endpoint closure. The asymptotic the-
    orem requires a compact-tube nonlinear residual policy ηhtube ≤ cη h7 ,
    while the reported production runs use a fixed finite-run tolerance.
@@ -2231,20 +2260,20 @@ diagnostics, not source-policy superiority claims.
    residual/correction rows do not prove those retained hypotheses and
    are not hidden source-paper or reference-solution projections. Lemma 7
    supplies the solver result that closing P6 demands on the same compact
-   tube: under P1 and P2 and for h ≤ h0 the lifted endpoint predictor
-   lies in the strong local residual-inverse ball, the Newton iterates from
-   any point of that ball stay in it, and the h7 -scaled stopping rule is
-   met after O(log(1/h)) iterations with constants depending only on the
-   tube. P6 is nevertheless retained as a hypothesis: the Algorithm 1
-   predictor is not the lifted endpoint predictor and its ball membership
-   is confirmed only a posteriori (Table 12), the reported production runs
-   use a fixed tolerance rather than that rule, so they are covered only
-   on transitions where the accepted residual meets the envelope, and the
-   Neumann threshold h0 is far below the reported step sizes in the im-
-   plemented norm. Discharging P6 would in any case address the solver-
-   scale interface only; it would still not promote residual-only mechanism
-   rows unless the separate P7 residual-to-error transfer theorem were also
-   proved.
+   tube: under P1 and P2 and for h ≤ h0 the lifted endpoint predictor lies
+   in the strong local residual-inverse ball, the Newton iterates from any
+   point of that ball stay in it, and the h7 -scaled stopping rule is met after
+   O(log(1/h)) iterations with constants depending only on the tube. P6
+   is nevertheless retained as a hypothesis: the Algorithm 1 predictor is
+   not the lifted endpoint predictor and its ball membership is confirmed
+   only a posteriori (Table 13), the reported production runs use a fixed
+   tolerance rather than that rule, so they are covered only on transi-
+   tions where the accepted residual meets the envelope, and the Neu-
+   mann threshold h0 is below the reported step sizes in every norm tried,
+   because of the friction-law curvature. Discharging P6 would in any
+   case address the solver-scale interface only; it would still not promote
+   residual-only mechanism rows unless the separate P7 residual-to-error
+   transfer theorem were also proved.
 3. Full source-paper residual replacement. Independent full-TFE
    stage replacement is not accepted. The accepted theorem is tied to
    the Gauss/FullVA residual in Eq. (6); replacing those rows by paper-
@@ -2258,7 +2287,7 @@ diagnostics, not source-policy superiority claims.
    chain benchmark with wall-clock time, Newton iterations, Jacobian-
    assembly time, linear-solve time, conditioning or rank diagnostics, and
 
-                                   62
+                                    63
      memory scaling.
   5. Sharp-friction coarse regime. The practical coarse sharp-friction
      regime is order-reduced, although deeper fixed refinement recovers high
@@ -2297,7 +2326,7 @@ the four-link and slider-crank rows provide diagnostic mechanism-coverage
 evidence, not accepted dynamic-order proof and not residual-to-error evi-
 dence, for the same FullVA residual. Against the local order-five m = 3
 
-                                     63
+                                     64
 Gauss–Lobatto temporal finite-element target, this is a conditional formal-
 order comparison, not an external same-test superiority claim.
     The proof route is anchored by the exact stage identity: the lifted reduced
@@ -2335,7 +2364,7 @@ Funding
 
 
 
-                                      64
+                                      65
 Data availability
     The journal source archive is the LaTeX archive: it contains the
 manuscript sources, figures, and declarations. This is an editorial-source
@@ -2366,14 +2395,14 @@ source-paper comparison must be made on the same numerical tests used by
 the source papers, not only on mechanisms with similar names. The criterion
 is strict: the body parameters, initial conditions, prescribed drivers, friction
 model, step-size sweep, nonlinear tolerance policy, reference solution, error
-norm, and work metric must be matched or explicitly justified. Table A.20
+norm, and work metric must be matched or explicitly justified. Table A.21
 records the required external comparisons, the status of this evidence pack-
 age, and the claim that is allowed before the remaining source-suite decisions
 close. The current paper uses these rows only to prevent overclaiming: the
 method claim, the conditional theorem, and the accepted numerical evidence
 do not depend on source-policy promotion.
 
-                                      65
+                                      66
 Why the source-policy criterion is separate. The source-policy criterion is re-
 quired only for a stronger external apples-to-apples statement: that Gauss6/
 FullVA has been evaluated under the source papers’ own model, output, tol-
@@ -2401,7 +2430,7 @@ precision, or full-TFE replacement claim is made.
 Claim-policy implication. The source-policy promotion criterion is inter-
 preted as a logical promotion rule, not as a visual preference over plots. A
 paper-level external-superiority statement requires the source benchmark,
-method-set, numerical-control, and work-metric rows in Table A.21 to close
+method-set, numerical-control, and work-metric rows in Table A.22 to close
 for the source-policy campaign being cited. The current evidence record
 reports no strict external error-claim rows, does not establish any source-
 policy-closed external same-test error row, and leaves the same-test promo-
@@ -2414,8 +2443,8 @@ comparison. The method-side evidence consists of the smooth cylindrical-
 chain benchmark plus the four ASME-style mechanisms in this package; the
 
 
-                                      66
-Table A.20: Required same-test comparisons and current external-suite claim boundary.
+                                      67
+Table A.21: Required same-test comparisons and current external-suite claim boundary.
    External source         Published or              Current evidence         Claim allowed now
                            code-backed tests
    Chaturvedi–Sandu–   Rigid pendulum without       Specification and         Formula-order
@@ -2470,8 +2499,8 @@ chain benchmark plus the four ASME-style mechanisms in this package; the
 
 
 
-                                                67
-Table A.21: Minimum same-test TFE acceptance protocol before any source-paper supe-
+                                                68
+Table A.22: Minimum same-test TFE acceptance protocol before any source-paper supe-
 riority claim.
    Promotion item       Required evidence                                  Evidence boundary
    Source benchmarks    Reproduce the Chaturvedi–Sandu–Sandu               Specification and
@@ -2519,7 +2548,7 @@ accepted dynamic-order rows. Because a separate residual-to-error trans-
 fer theorem remains open, residual-only rows are not promoted to order
 claims. The external same-test campaign remains incomplete: full source-
 
-                                               68
+                                               69
 policy dynamic-comparison rows remain unaccepted, and the paper makes
 no external-superiority claim. Equivalently, the source-policy dynamic-order
 count is nevertheless 0/4 for the external source-paper rows; this count is
@@ -2535,7 +2564,7 @@ a reproduction of the source papers’ default time horizons, output policies,
 error norms, or 10−4 policies.
 
 Benchmark-policy dictionary. The bounded common-reference policy used in
-Tables A.23–A.24 fixes T = 0.1, h ∈ {0.1, 0.05, 0.025}, and href = 0.0125 for
+Tables A.24–A.25 fixes T = 0.1, h ∈ {0.1, 0.05, 0.025}, and href = 0.0125 for
 every runnable method. The single-pendulum row uses the analytic exact
 final state and a final L2 error. The double-pendulum row uses the local
 Gauss6/FullVA href = 0.0125 final state and a final L∞ error. The four-
@@ -2545,8 +2574,8 @@ to all runnable methods. Source-policy rows, by contrast, must follow each
 source paper or public code on its own horizon, time grid, reference solution,
 error norm, tolerance, and output variables. This dictionary is the reason the
 common-reference table can be arithmetically reconciled while source-policy
-external-superiority rows remain open. Table A.23 summarizes the nearest
-nonlocal bounded common-reference error evidence, and Table A.24 reports
+external-superiority rows remain open. Table A.24 summarizes the nearest
+nonlocal bounded common-reference error evidence, and Table A.25 reports
 the full runnable method-by-example order/error matrix.
     We therefore separate two comparison statements. The finite-grid
 common-reference diagnostic is assembled for arithmetic coverage of the
@@ -2559,7 +2588,7 @@ These diagnostic comparisons are not promoted to a CMAME paper-level
 external-superiority claim. The stronger source-policy statement remains a
 non-claim, and no common-reference count is promoted to a source-paper
 
-                                      69
+                                      70
 superiority claim.
     This paragraph separates local-candidate availability from source-policy
 closure. For the 2021 absolute-coordinate suite, the public-code path, the
@@ -2567,7 +2596,7 @@ body.r/body.dr/body.ddr output map, and the endpoint time-grid con-
 vention have been extracted and checked; in that bounded sense, source
 identity is now closed only for the diagnostic row map, not for source-policy
 closure. The remaining gap is promotion of local Gauss6/FullVA rows under
-the same source-policy dynamic-order contract. Table A.22 records why the
+the same source-policy dynamic-order contract. Table A.23 records why the
 existing local candidates are not promoted: the single-pendulum public-grid
 tranche is floor limited, the double-pendulum row is a coarse self-reference
 run, and the four-link/slider-crank true-dynamic rows are bounded T = 0.1
@@ -2581,7 +2610,7 @@ quently no local method row is accepted under the external source-policy
 dynamic-order contract, and no source-policy-closed external same-test error
 row is established.
 
-                 Table A.22: RA2021 local-candidate promotion boundary.
+                 Table A.23: RA2021 local-candidate promotion boundary.
   Example            Local candidate evidence                 Why not promoted to RA2021
                                                               source-policy row
   Single pendulum    Public T = 3 row trio at                 The row is roundoff/floor limited;
@@ -2606,8 +2635,8 @@ row is established.
    The full common-reference table is arithmetic-consistent but not, by itself,
 a source-policy reproduction. An independent recomputation from the 132
 
-                                                70
-Table A.23: Bounded common-reference velocity evidence from the current result pack;
+                                                71
+Table A.24: Bounded common-reference velocity evidence from the current result pack;
 diagnostic only, not external-superiority evidence.
 Example                 Local velocity           Local finest             Nearest nonlocal                   Nearest nonlocal
                         order                    velocity error           method                             finest error
@@ -2618,7 +2647,7 @@ Slider-crank            7.341                    9.189 × 10−12            vel
 
 
 
-Table A.24: All runnable common-reference velocity rows. Each entry is observed velocity
+Table A.25: All runnable common-reference velocity rows. Each entry is observed velocity
 order / finest-step velocity error on the fixed-grid h = {0.1, 0.05, 0.025} sweep with refer-
 ence h = 0.0125; the table is a diagnostic common-reference matrix, not a source-policy
 superiority table.
@@ -2644,7 +2673,7 @@ than arithmetical: 15 nonlocal method/example rows are flagged for source-
 policy review, and 10 of those rows have small position error but large velocity
 error. This pattern is consistent with a velocity-output, state-map, time-
 grid, or reference-policy mismatch and therefore cannot support an external-
-superiority claim. Table A.25 records the resulting claim boundary.
+superiority claim. Table A.26 records the resulting claim boundary.
     The flagged-row count should not be read as the complete set of
 open external claim rows. All 40 nonlocal method/example rows remain
 bounded common-reference diagnostics rather than source-policy-closed
@@ -2657,8 +2686,8 @@ gory counts to the actual method/example coverage. It checks all 15 flagged
 summary rows and their 45 raw coarse rows at h = {0.1, 0.05, 0.025}. The
 flagged rows cover all four examples: 8 single-pendulum rows, 2 double-
 
-                                                              71
-    Table A.25: Source-policy diagnosis for flagged common-reference baseline rows.
+                                                              72
+    Table A.26: Source-policy diagnosis for flagged common-reference baseline rows.
  Diagnostic category               Rows   Affected examples       Claim-boundary
                                                                   interpretation
  Position aligned, velocity        10     single pendulum,        Likely velocity-output,
@@ -2685,7 +2714,7 @@ flagged rows cover all four examples: 8 single-pendulum rows, 2 double-
 
 
 
-pendulum rows, 4 four-link rows, and 1 slider-crank row. Table A.26 records
+pendulum rows, 4 four-link rows, and 1 slider-crank row. Table A.27 records
 the suite-level closure boundary. A stricter all-method/all-example consis-
 tency check then checks the complete 44-cell common-reference table and its
 132 raw rows; it keeps all 44 cells as bounded diagnostics but allows zero
@@ -2706,8 +2735,8 @@ Brown–McPhee velocity-based continuous friction model;
 candidate published formula, not source-code-equivalent friction implemen-
 
 
-                                          72
-        Table A.26: All-example source-policy status for the flagged baseline rows.
+                                          73
+        Table A.27: All-example source-policy status for the flagged baseline rows.
 Suite                   Rows      Common-reference row source        Closure boundary
 2021                    5         Public setup and rA/rp/rϵ         Source identity is checked;
 absolute-coordinate               steppers, fixed-grid replay, and  promotion still requires
@@ -2738,7 +2767,7 @@ partitioning                      the RA2021 public setup.          velocity-par
 
 
 
-                                            73
+                                            74
 tation;
 source-policy boundaries;
 Brown–McPhee formula is not fixed;
@@ -2778,7 +2807,7 @@ power. These checks certify local dissipativity and absolute-coordinate resid-
 ual consistency for the encoded candidate law only. They do not certify a
 
 
-                                      74
+                                      75
 source-code-equivalent Brown–McPhee law, do not implement a monolithic
 source-policy DAE runner, and do not close any source-policy row.
     Consequently, the source-policy runner acceptance contract has six
@@ -2818,7 +2847,7 @@ policy boundary, the full-T = 10 coarse formula probe targets the Appendix-
 B m = 3 Gauss–Lobatto target, records a formal fifth-order target, and
 does not invoke the source h = 10−4 reference campaign. The source-
 
-                                     75
+                                     76
 reference side is therefore checked separately. A full-T = 10 frictionless
 source-reference feasibility probe integrates the extracted source pendulum
 with href = 10−4 and compares it against a h = 5 × 10−5 check run, using
@@ -2855,11 +2884,11 @@ only on the short frictionless interval T = 0.024 and the source-shaped grid
 h = {0.012, 0.006, 0.003}. The row is therefore useful for checking whether
 the installed Newmark, trapezoidal, and TFE formula runners have coherent
 local order/error behavior, but it is not the full T = 10 original-source cam-
-paign and it closes zero source-policy rows. Table A.27 records this bounded
+paign and it closes zero source-policy rows. Table A.28 records this bounded
 diagnostic.
 
-                                      76
-Table A.27: Bounded active-row candidate smoke for the original TFE pendulum rows.
+                                      77
+Table A.28: Bounded active-row candidate smoke for the original TFE pendulum rows.
 The run uses T = 0.024, href = 10−4 , and h = {0.012, 0.006, 0.003}; it is not a full T = 10
 source-policy reproduction.
 Original-row method Formula   Velocity pair orders   Coordinate pair   Finest         Finest         Claim boundary
@@ -2889,7 +2918,7 @@ it tests full-horizon large-step behavior without invoking the extracted href =
 residual stable, but the table remains a candidate-runner diagnostic rather
 than a source-policy reproduction; it closes zero source-policy rows.
 
-Table A.28: Full-horizon coarse candidate probe for the original TFE pendulum rows.
+Table A.29: Full-horizon coarse candidate probe for the original TFE pendulum rows.
 The run uses T = 10, href = 0.0125, and h = {0.1, 0.05, 0.025}; it does not invoke the
 source-policy href = 10−4 reference.
 Original-row method Formula   Velocity pair orders   Coordinate pair   Finest         Finest         Claim boundary
@@ -2913,8 +2942,8 @@ piled manuscript, the thirteen figures, and declaration files. The companion
 repository-facing reproducibility package contains the scripts needed to check
 
 
-                                                          77
-Table A.29: Cross-paper evidence accumulated without treating it as an external superi-
+                                                          78
+Table A.30: Cross-paper evidence accumulated without treating it as an external superi-
 ority result.
    Tranche                             Rows                 Main metric                              Interpretation
 
@@ -2986,7 +3015,7 @@ ority result.
 
 
 
-                                                            78
+                                                            79
 the reported tables. The paper-level checks read existing result records un-
 less a full numerical rebuild is explicitly requested; this keeps editorial checks
 separate from computational campaigns. Companion records encode the ac-
@@ -3003,7 +3032,7 @@ TFE source-policy runner, and regeneration of both the accepted local rows
 and any promoted source-policy rows from a standalone runner. That archive
 is outside the current paper package.
 
-Table B.30: External reproduction and package boundaries retained by the paper package.
+Table B.31: External reproduction and package boundaries retained by the paper package.
    Boundary         Current evidence state                        Manuscript consequence
    External         External source-policy reproduction has not   No source-paper superiority or
    same-test        been established on the source paper tests,   source-policy direct-error claim
@@ -3024,7 +3053,7 @@ Table B.30: External reproduction and package boundaries retained by the paper p
                                                                   comparison claims.
 
 
-   External reproduction/package boundary: the three rows in Table B.30
+   External reproduction/package boundary: the three rows in Table B.31
 are scope boundaries, not theorem hypotheses. They do not change the
 conditional theorem proof; they keep source-policy reproduction, full-TFE
 runner evidence, and a full source-policy runner archive outside the accepted
@@ -3032,7 +3061,7 @@ theorem and comparison claims. Notation boundary: theorem P6 denotes
 only the compact-tube solver-scale interface ηhtube ≤ cη h7 , whereas the sepa-
 rate original-TFE source-policy DAE-runner/package gap is an external re-
 
-                                               79
+                                               80
 production boundary, not a theorem condition.
     The implementation record identifies residual_cylindrical_chain, R_
 VALUE, and R_JAC as the implemented FullVA residual and Jacobian path.
@@ -3048,7 +3077,7 @@ Lean development. The source package contains the Lean 4 development
 (directory lean/, Mathlib pinned by lake-manifest.json) that machine-
 checks the algebraic and perturbation lemmas of Section 7. It builds with
 lakebuild after lakeexecacheget; the command file scripts/Axioms.lean
-prints, for every theorem in Table B.35, that only the standard axioms
+prints, for every theorem in Table B.36, that only the standard axioms
 propext, Classical.choice, and Quot.sound are used and that no proof is
 left open. The exact-stage-identity check in the package records the result of
 that command when the toolchain is present.
@@ -3072,8 +3101,8 @@ complete runner-centered source-policy archive. A full source-policy runner
 archive is not included; it would require closing the 40 source-policy rows
 
 
-                                     80
-Table B.31: Algorithm-to-source map for the accepted Gauss6/FullVA execution path.
+                                     81
+Table B.32: Algorithm-to-source map for the accepted Gauss6/FullVA execution path.
    Algorithm block     Source location               Reproduction role
    Mechanism setup     v047_cylindrical_chain_       Builds the
    and examples        pipeline/run_v047.py          cylindrical-chain data and
@@ -3112,8 +3141,8 @@ archive is not included; it would require closing the 40 source-policy rows
 
 
 
-                                         81
-Table B.32: Compact reproducibility contract used by the bounded paper package.
+                                         82
+Table B.33: Compact reproducibility contract used by the bounded paper package.
   Field                        Paper-level value
   Accepted method              Gauss6/FullVA.
   Conditional method           Sixth-order path of Theorem 1.
@@ -3150,8 +3179,8 @@ archive is not included; it would require closing the 40 source-policy rows
 
 
 
-                                      82
-Table B.33: Cross-example and review records retained with the source package.
+                                      83
+Table B.34: Cross-example and review records retained with the source package.
  Record                       Role
  All-example result           Checks every one of the 44
  matrix                       method/example cells and separates the
@@ -3174,8 +3203,8 @@ archive is not included; it would require closing the 40 source-policy rows
 
 
 
-                                     83
-    Table B.34: Source-package reproducibility and consistency checks.
+                                     84
+    Table B.35: Source-package reproducibility and consistency checks.
 Check group                   Role
 Source-format check            Checks the Elsevier source, PDF, highlights,
                                declarations, clean log, and non-claim scope.
@@ -3213,8 +3242,8 @@ Repository-provenance check    Checks the broader repository inventory and
 
 
 
-                                    84
-     Table B.35: Manuscript statements and the Lean theorems that check them.
+                                    85
+     Table B.36: Manuscript statements and the Lean theorems that check them.
    Manuscript statement          Lean theorem
    Lemma 1, non-dynamic rows     FullVA.Transition.nondynamic_rows_iff
    (both directions)
@@ -3255,7 +3284,7 @@ References
      and Differential-Algebraic Problems, Springer, Berlin, 1996.
 
 
-                                       85
+                                       86
  [4] C.W. Gear, B. Leimkuhler, G.K. Gupta, Automatic integration of
      Euler–Lagrange equations with constraints, Journal of Computa-
      tional and Applied Mathematics 12–13 (1985) 77–90. doi:10.1016/0377-
@@ -3298,7 +3327,7 @@ References
      CIE2021, 2021.
 
 
-                                      86
+                                      87
 [13] A. Kissel, D. Negrut, J. Taves, Constrained multibody kinematics and
      dynamics in absolute coordinates: a discussion of three approaches to
      representing rigid body rotation, Journal of Computational and Nonlin-
@@ -3341,7 +3370,7 @@ References
      doi:10.1023/A:1008292328909.
 
 
-                                     87
+                                     88
 [22] A. Tasora, M. Anitescu, A matrix-free cone complementarity approach
      for solving large-scale, nonsmooth, rigid body dynamics, Computer
      Methods in Applied Mechanics and Engineering 200 (2011) 439–453.
@@ -3374,5 +3403,5 @@ References
 
 
 
-                                     88
+                                     89
 

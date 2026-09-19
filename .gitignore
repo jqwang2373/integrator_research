@@ -1,2 +1,6 @@
 # local shallow clone of https://github.com/uwsbel/public-metadata (2 GB); restore with git clone, not tracked here
 external/public-metadata/
+# Python caches and the project virtual environment (recreate with uv; see lie_group_integrator_work docs)
+__pycache__/
+*.pyc
+lie_group_integrator_work/.venv_sbel/

@@ -98,6 +98,7 @@ REQUIRED_LABELS = [
     "lem:newton-envelope",
     "tab:exact-identity-check",
     "tab:p2-constants-check",
+    "tab:predictor-check",
     "tab:lean-development",
 ]
 

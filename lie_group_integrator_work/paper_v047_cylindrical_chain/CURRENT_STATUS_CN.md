@@ -720,7 +720,7 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
   逐字节同步。附录新增 `tab:lean-development`（命题 ↔ Lean 定理对照表），数值节新增
   `tab:exact-identity-check`。
 - 稿子其他补充：关节 1 建模说明、`lem:exact-stage-identity` 的闭环适用范围一句、"观测阶高于六是
-  六阶配置法的预渐近斜率"一句。现为 4042 行 / 88 页，LaTeX 零警告；flat 版和 zip 已重建。
+  六阶配置法的预渐近斜率"一句。现为 4075 行 / 89 页，LaTeX 零警告；flat 版和 zip 已重建。
 - `main.tex`、`main_concise.tex` 在 `\maketitle` 后加了 legacy 状态说明，指向 `main_cmame.tex`；
   两份 PDF 重建零警告（46 页、8 页），`validate_paper_claims.py`、`validate_concise_paper.py` 通过。
 - 验证：paper chain 通过（仅剩 2 个既有 cross-paper 环境失败）；顶层 `validate_pipeline_outputs.py`
@@ -744,3 +744,19 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
   引言、Limitations、traceability 表同步改写。
 - `external/public-metadata` 镜像（`uwsbel/public-metadata`，浅克隆 master + user/aaron/msd，约 2 GB，
   未纳入 git）已恢复，`cross_paper_benchmark_spec/cases` 两个既有环境失败消失。
+
+## 2026-09-19 补充：换范数重算 h₀、摩擦归因、仓库卫生、镜像瘦身
+
+- `P2_CONSTANTS_NUMERICAL_CHECK` 升到 v2：除欧氏范数外，加了端点线性化残差范数 `‖J₀⁻¹·‖`
+  （Neumann 论证在这个范数下最锐，`M₀=1`）和行列均衡范数。结果：欧氏 `h₀≈2e-5`，端点线性化
+  `h₀≈8e-4`，均衡 `≈8e-4`；结论比值仍 ≤1.55。`(J_h−J₀)/h` 最大的块是 Newton–Euler 行 × 阶段速度，
+  即 Brown–McPhee 摩擦律的二阶导（Stribeck 速度 0.5）。同一机构去掉摩擦（μ_s=μ_d=黏性=0）后
+  `C_J` 小约 15 倍，`h₀≈1.4e-2`，最大变化转到陀螺项。结论：小步长门槛由摩擦律曲率决定，不是配置
+  结构；这也和 sharp 案例（Stribeck 0.05）粗网格降阶一致。稿子 `tab:p2-constants-check` 改为
+  E/L 两种范数 + 无摩擦列，预测子距离拆到新表 `tab:predictor-check`。现为 4075 行 / 89 页。
+- 仓库卫生：`.venv_sbel/`（7536 个文件）和全部 `__pycache__/`（2139 个）从 git 索引移除（工作树未动），
+  根 `.gitignore` 忽略之。顶层 `validate_pipeline_outputs.py` 在系统 python 缺 jax 时自动用
+  `.venv_sbel/bin/python` 重新执行自己。
+- `external/public-metadata` 换成 `--filter=blob:none --no-checkout` 克隆（约 200 KB，工作树为空），
+  与 VP2024 审计记录的 `visible_non_git_file_count == 0` 一致；四个用到镜像的验证器通过。
+- 生成脚本 `rewrite_v049.py`（会话 scratchpad）改为从 commit `cbcee80` 读原稿，因为 HEAD 已是压缩稿。

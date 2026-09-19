@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1789762081.86823 "main_cmame_submission.tex" "main_cmame_submission.pdf" "main_cmame_submission" 1789762086.10851 0
+["pdflatex"] 1789857582.48245 "main_cmame_submission.tex" "main_cmame_submission.pdf" "main_cmame_submission" 1789857586.62961 0
   "Figure_10_closed_loop_true_dynamic_order.png" 1789674449 500095 cbf3a07b8d732978915563fc1341161c ""
   "Figure_11_method_stage_architecture.png" 1789674449 260562 d0433bb305a6bc35cc4910012a91f7b0 ""
   "Figure_12_all_method_result_matrix.png" 1789674449 386784 1de8334f415df89e2fd67f6c7cddad87 ""
@@ -120,9 +120,9 @@
   "c:/Users/jingquanw/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1786567183 5619590 1489a863203f695fc78b31f9454c124e ""
   "c:/Users/jingquanw/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1786567287 3656759 a283652fdec94505cc8b50589e02ce6f ""
   "c:/Users/jingquanw/texlive/2026/texmf.cnf" 1786567161 865 2bc0e3956d9f8f7cfc8b91199104b179 ""
-  "main_cmame_submission.aux" 1789762085 28419 ccb74efc00ce2a18882956d40f75b5ba "pdflatex"
-  "main_cmame_submission.spl" 1789762082 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main_cmame_submission.tex" 1789762053 204914 ec6a7f46a35e98e51d5aa35b54fda74c ""
+  "main_cmame_submission.aux" 1789857586 28902 1d9ae758277d0e7e68a479b97c25e1f0 "pdflatex"
+  "main_cmame_submission.spl" 1789857582 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main_cmame_submission.tex" 1789857567 206900 e674914eb466e1e496f6ae1791d09d4f ""
   (generated)
   "main_cmame_submission.aux"
   "main_cmame_submission.log"

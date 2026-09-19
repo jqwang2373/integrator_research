@@ -62,7 +62,7 @@ the lifted Gauss stage is identically zero. No claim state is changed by this no
 ## Manuscript compaction (2026-09-17)
 
 `paper_v047_cylindrical_chain/main_cmame.tex` was rewritten around the exact stage identity:
-13047 lines / 259 pages became 4042 lines / 88 pages (after the 2026-09-17 additions below). The method section now displays the
+13047 lines / 259 pages became 4075 lines / 89 pages (after the 2026-09-17 additions below). The method section now displays the
 implemented rows (72 constraint rows, 24 joint-coordinate collocation rows, 36 Newton–Euler rows),
 the theorem section proves `F_{A,h}(Z_G)=0` (`lem:exact-stage-identity`) and the three-term local
 defect `C_loc = C_G + C_E + C_N c_eta`, and the PS2/primitive-Taylor route is gone. The original is
@@ -96,8 +96,10 @@ package chain). Global claim state is unchanged: `submission_ready=false`, OC4/O
   system (`J_0`, reproduces the lifted endpoint to `1e-12`). Euclidean norm on the implemented
   layout: `M_0 = max ‖J_0⁻¹‖ ≈ 18–28`, `C_J = max ‖J_h − J_0‖/h ≈ 750–960`, observed
   `‖J_h⁻¹‖/‖J_0⁻¹‖ ≤ 1.55` on all reported grids (lemma conclusion holds), but the Neumann
-  sufficient condition `M_0‖J_h − J_0‖ ≤ ½` would need `h ≤ 3e-5` — the lemma's `h_0` is
-  pessimistic by three orders of magnitude in this norm. The lifted endpoint predictor is `O(h)`
+  sufficient condition `M_0‖J_h − J_0‖ ≤ ½` would need `h ≤ 2e-5` in that norm and `h ≤ 8e-4` in
+  the endpoint-linearized residual norm `‖J_0⁻¹·‖` (the sharpest norm-based form). The gap is the
+  Brown–McPhee friction curvature in the Newton–Euler rows: the frictionless mechanism has `C_J`
+  ~15× smaller and `h_0 ≈ 1.4e-2`, with the Jacobian variation then set by the gyroscopic terms. The lifted endpoint predictor is `O(h)`
   from `Z_G` (3.2/2.1/1.1); the Algorithm-1 predictor zeroes the angular velocity/acceleration
   guesses and stays at distance ≈ 50 with a first Newton step that expands by up to 18%.
   `lem:newton-envelope` is therefore stated for predictors inside the contraction ball (the lifted

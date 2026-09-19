@@ -436,7 +436,7 @@ velocity, and recovers the smooth order target on the accepted h-sweep.
 ## 2026-09-17 Manuscript Compaction and Proof-Route Pin
 
 The CMAME manuscript `paper_v047_cylindrical_chain/main_cmame.tex` was compacted around the
-exact stage identity (13047 lines / 259 pages to 4042 lines / 88 pages after the second pass). The lifted reduced
+exact stage identity (13047 lines / 259 pages to 4075 lines / 89 pages after the second pass). The lifted reduced
 Gauss stage satisfies all 132 implemented rows exactly (`lem:exact-stage-identity`), so the
 stage-residual perturbation term of the order theorem is zero and the local defect is
 `C_loc = C_G + C_E + C_N c_eta`. Retained theorem interfaces are P1, P2, P6; P7 stays the
@@ -488,9 +488,22 @@ stubbed in the top-level validator):
   Algorithm-1 predictor (zero angular velocity/acceleration guesses) is `O(1)` from `Z_G` and its
   first Newton step expands; `lem:newton-envelope` is stated for predictors in the contraction ball.
   Algorithm 1's predictor description in the manuscript now lists the zero angular guesses.
-- The `external/public-metadata` mirror (`https://github.com/uwsbel/public-metadata`, shallow clone
-  of `master` plus `user/aaron/msd`, ~2 GB, untracked nested git repo) was restored on 2026-09-18;
-  the two cross-paper benchmark validators pass again.
+- The `external/public-metadata` mirror (`https://github.com/uwsbel/public-metadata`) was restored
+  on 2026-09-18 and, on 2026-09-19, replaced by a blob-filtered no-checkout clone
+  (`git clone --filter=blob:none --no-checkout --depth 1`, branches `master` and `user/aaron/msd`,
+  ~200 KB, working tree empty). This matches the recorded audit state
+  (`local_public_metadata_visible_non_git_file_count == 0` in the VP2024 disposition audit) and keeps
+  the two cross-paper benchmark validators passing. The clone is excluded by the root `.gitignore`.
+- `P2_CONSTANTS_NUMERICAL_CHECK` schema v2 (2026-09-19) adds the endpoint-linearized residual norm
+  `‖J_0^{-1}·‖` (Neumann `h_0 ≈ 8e-4`), a row/column-equilibrated norm, the dominant block of
+  `(J_h − J_0)/h` (Newton–Euler rows × stage velocities: Brown–McPhee curvature, Stribeck velocity
+  0.5), and a frictionless variant of the mechanism (`C_J` smaller by ~15×, `h_0 ≈ 1.4e-2`). The
+  manuscript reports this in `tab:p2-constants-check` and the new `tab:predictor-check`.
+- Repository hygiene (2026-09-19): `.venv_sbel/` and all `__pycache__/` files were removed from the
+  git index (working tree untouched) and are ignored by the root `.gitignore`. The top-level
+  `validate_pipeline_outputs.py` re-executes itself under `.venv_sbel/bin/python` when `jax` is not
+  importable, so it may be started with the system `python3`. The manuscript generator in the
+  session scratchpad reads the pristine original from commit `cbcee80`, not from `HEAD`.
 - Manuscript additions: `tab:exact-identity-check`, `tab:p2-constants-check`, `tab:lean-development`, modelling sentence for
   the second lower pair, closed-loop scope sentence, observed-order remark. `main.tex` and
   `main_concise.tex` carry a legacy status note after `\maketitle`; both rebuild with zero

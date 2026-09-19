@@ -80,6 +80,7 @@
         "lem:newton-envelope": true,
         "tab:exact-identity-check": true,
         "tab:p2-constants-check": true,
+        "tab:predictor-check": true,
         "tab:lean-development": true
       },
       "all_labels_present": true,
@@ -132,7 +133,7 @@
       "no_retired_tokens": true,
       "lemma_count": 9,
       "theorem_count": 1,
-      "line_count": 4043,
+      "line_count": 4076,
       "display_equation_hygiene": {
         "env_counts": {
           "equation": 36,
@@ -190,6 +191,7 @@
         "lem:newton-envelope": true,
         "tab:exact-identity-check": true,
         "tab:p2-constants-check": true,
+        "tab:predictor-check": true,
         "tab:lean-development": true
       },
       "all_labels_present": true,
@@ -242,7 +244,7 @@
       "no_retired_tokens": true,
       "lemma_count": 9,
       "theorem_count": 1,
-      "line_count": 4043,
+      "line_count": 4076,
       "display_equation_hygiene": {
         "env_counts": {
           "equation": 36,
