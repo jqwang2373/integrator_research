@@ -1,7 +1,7 @@
 Highlights
 
-- Conditional sixth-order FullVA proof uses a direct 132-row 96+36 bridge.
-- Smooth cylindrical-chain tests record position/velocity orders 7.161/7.066.
-- Four ASME-style mechanisms test pendulum order and closed-loop coverage.
-- The paper-style m=3 TFE comparator has expected order five.
+- The implemented FullVA stage system is exactly reduced Gauss collocation.
+- Conditional sixth-order theorem with a three-term local defect; lemmas Lean-checked.
+- Smooth cylindrical chain records orders 7.161/7.066 as consistency diagnostics.
+- Four ASME-style mechanisms tested; the paper-style m=3 TFE comparator has order five.
 - Full source-paper TFE stage replacement remains an explicit non-claim.
