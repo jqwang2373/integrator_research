@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  20 SEP 2026 00:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  20 SEP 2026 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,7 +378,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \c@theorem=\count318
 \c@proposition=\count319
 \c@corollary=\count320
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 42
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 43
 .
  (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -390,24 +390,24 @@ File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
 ) (./main_arxiv.aux)
 \openout1 = `main_arxiv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -469,65 +469,65 @@ cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 42.
+Package hyperref Info: Link coloring ON on input line 43.
  (./main_arxiv.out) (./main_arxiv.out)
 \@outlinefile=\write3
 \openout3 = `main_arxiv.out'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-2.
+3.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-2.
+3.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-2.
+3.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-62.
+63.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-62.
+63.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 62.
+(Font)              <10> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 62.
+(Font)              <7> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 62.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+(Font)              <5> on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 104.
+(Font)              <10.95> on input line 105.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 104.
+(Font)              <8> on input line 105.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 104.
+(Font)              <6> on input line 105.
 
 [1
 
@@ -538,7 +538,7 @@ gquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/jingq
 uanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [2] [3]
 [4] [5] [6] [7{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm
 -mathex.enc}] [8]
-Underfull \hbox (badness 1960) in paragraph at lines 665--668
+Underfull \hbox (badness 1960) in paragraph at lines 666--669
 []\T1/lmr/m/n/10.95 Build the body mass and in-er-tia blocks, lower-pair graph,
  joint frames, axes,
  []
@@ -548,30 +548,30 @@ Underfull \hbox (badness 1960) in paragraph at lines 665--668
 File: Figure_11_method_stage_architecture.png Graphic file (type png)
 <use Figure_11_method_stage_architecture.png>
 Package pdftex.def Info: Figure_11_method_stage_architecture.png  used on input
- line 734.
+ line 735.
 (pdftex.def)             Requested size: 407.66833pt x 244.3742pt.
  [10] [11 <./Figure_11_method_stage_architecture.png>] [12] [13] [14]
 [15] [16] [17] [18] [19] [20] [21] [22]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1762.
+(Font)              <9> on input line 1763.
  [23] [24] [25] [26] [27] [28]
 <Figure_1_convergence.png, id=625, 543.4704pt x 434.5836pt>
 File: Figure_1_convergence.png Graphic file (type png)
 <use Figure_1_convergence.png>
-Package pdftex.def Info: Figure_1_convergence.png  used on input line 2228.
+Package pdftex.def Info: Figure_1_convergence.png  used on input line 2229.
 (pdftex.def)             Requested size: 407.66833pt x 325.98994pt.
  [29 <./Figure_1_convergence.png>] [30] [31]
 <Figure_2_asme_lower_pair_graph_bridge.png, id=649, 488.5452pt x 423.7431pt>
 File: Figure_2_asme_lower_pair_graph_bridge.png Graphic file (type png)
 <use Figure_2_asme_lower_pair_graph_bridge.png>
 Package pdftex.def Info: Figure_2_asme_lower_pair_graph_bridge.png  used on inp
-ut line 2460.
+ut line 2461.
 (pdftex.def)             Requested size: 407.66833pt x 353.60115pt.
 <Figure_3_asme_closed_loop_kinematic_fullva.png, id=650, 794.97pt x 303.534pt>
 File: Figure_3_asme_closed_loop_kinematic_fullva.png Graphic file (type png)
 <use Figure_3_asme_closed_loop_kinematic_fullva.png>
 Package pdftex.def Info: Figure_3_asme_closed_loop_kinematic_fullva.png  used o
-n input line 2465.
+n input line 2466.
 (pdftex.def)             Requested size: 407.66833pt x 155.65712pt.
  [32] [33 <./Figure_2_asme_lower_pair_graph_bridge.png> <./Figure_3_asme_closed
 _loop_kinematic_fullva.png>]
@@ -579,19 +579,19 @@ _loop_kinematic_fullva.png>]
 File: Figure_4_order_closure_blend.png Graphic file (type png)
 <use Figure_4_order_closure_blend.png>
 Package pdftex.def Info: Figure_4_order_closure_blend.png  used on input line 2
-557.
+558.
 (pdftex.def)             Requested size: 407.66833pt x 108.36899pt.
 <Figure_5_velocity_compression.png, id=679, 1192.455pt x 332.0405pt>
 File: Figure_5_velocity_compression.png Graphic file (type png)
 <use Figure_5_velocity_compression.png>
 Package pdftex.def Info: Figure_5_velocity_compression.png  used on input line 
-2563.
+2564.
 (pdftex.def)             Requested size: 407.66833pt x 113.51546pt.
  [34 <./Figure_4_order_closure_blend.png>]
 <Figure_6_sparse_speed_gap.png, id=696, 780.516pt x 289.08pt>
 File: Figure_6_sparse_speed_gap.png Graphic file (type png)
 <use Figure_6_sparse_speed_gap.png>
-Package pdftex.def Info: Figure_6_sparse_speed_gap.png  used on input line 2580
+Package pdftex.def Info: Figure_6_sparse_speed_gap.png  used on input line 2581
 .
 (pdftex.def)             Requested size: 407.66833pt x 150.98851pt.
 <Figure_7_strict_common_reference_work_precision.png, id=697, 498.38504pt x 213
@@ -600,38 +600,38 @@ File: Figure_7_strict_common_reference_work_precision.png Graphic file (type pn
 g)
 <use Figure_7_strict_common_reference_work_precision.png>
 Package pdftex.def Info: Figure_7_strict_common_reference_work_precision.png  u
-sed on input line 2590.
+sed on input line 2591.
 (pdftex.def)             Requested size: 407.66833pt x 174.39284pt.
 <Figure_8_claim_boundary_limitations.png, id=698, 554.3109pt x 434.5836pt>
 File: Figure_8_claim_boundary_limitations.png Graphic file (type png)
 <use Figure_8_claim_boundary_limitations.png>
 Package pdftex.def Info: Figure_8_claim_boundary_limitations.png  used on input
- line 2600.
+ line 2601.
 (pdftex.def)             Requested size: 407.66833pt x 319.63062pt.
 <Figure_9_coarse_baseline_work_precision.png, id=699, 611.6451pt x 467.1051pt>
 File: Figure_9_coarse_baseline_work_precision.png Graphic file (type png)
 <use Figure_9_coarse_baseline_work_precision.png>
 Package pdftex.def Info: Figure_9_coarse_baseline_work_precision.png  used on i
-nput line 2611.
+nput line 2612.
 (pdftex.def)             Requested size: 407.66833pt x 311.33372pt.
 <Figure_10_closed_loop_true_dynamic_order.png, id=700, 571.8966pt x 434.5836pt>
 
 File: Figure_10_closed_loop_true_dynamic_order.png Graphic file (type png)
 <use Figure_10_closed_loop_true_dynamic_order.png>
 Package pdftex.def Info: Figure_10_closed_loop_true_dynamic_order.png  used on 
-input line 2628.
+input line 2629.
 (pdftex.def)             Requested size: 407.66833pt x 309.79654pt.
 <Figure_12_all_method_result_matrix.png, id=701, 608.0316pt x 492.3996pt>
 File: Figure_12_all_method_result_matrix.png Graphic file (type png)
 <use Figure_12_all_method_result_matrix.png>
 Package pdftex.def Info: Figure_12_all_method_result_matrix.png  used on input 
-line 2638.
+line 2639.
 (pdftex.def)             Requested size: 407.66833pt x 330.15396pt.
 <Figure_13_work_precision_compendium.png, id=702, 788.2248pt x 467.1051pt>
 File: Figure_13_work_precision_compendium.png Graphic file (type png)
 <use Figure_13_work_precision_compendium.png>
 Package pdftex.def Info: Figure_13_work_precision_compendium.png  used on input
- line 2653.
+ line 2654.
 (pdftex.def)             Requested size: 407.66833pt x 241.5846pt.
  [35 <./Figure_5_velocity_compression.png> <./Figure_6_sparse_speed_gap.png>] [
 36 <./Figure_7_strict_common_reference_work_precision.png> <./Figure_8_claim_bo
@@ -640,13 +640,13 @@ undary_limitations.png>] [37 <./Figure_9_coarse_baseline_work_precision.png>] [
 [39 <./Figure_12_all_method_result_matrix.png>] [40 <./Figure_13_work_precision
 _compendium.png>] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
 [52] [53] [54] [55]
-Underfull \hbox (badness 1552) in paragraph at lines 3932--3936
+Underfull \hbox (badness 1552) in paragraph at lines 3933--3937
 []\T1/lmr/m/n/10.95 V. Wie-loch, M. Arnold, BDF in-te-gra-tors for con-strained
  me-chan-i-cal sys-tems on
  []
 
 [56]
-Underfull \hbox (badness 1152) in paragraph at lines 4010--4016
+Underfull \hbox (badness 1152) in paragraph at lines 4011--4017
 []\T1/lmr/m/n/10.95 D.E. Stew-art, J.C. Trin-kle, An im-plicit time-stepping sc
 heme for rigid body dy-
  []

@@ -53,7 +53,7 @@ def main() -> int:
         checks.check(manifest.get(key) == em[key], f"manifest field stale: {key}")
     checks.check(manifest.get("claim_state_change") is False, "arXiv version must not change claim state")
     checks.check(em["plain_abstract_within_limit"], "plain abstract exceeds the arXiv limit")
-    checks.check(tex.startswith("% arXiv preprint version"), "generated header missing")
+    checks.check(tex.startswith("\\pdfoutput=1\n% arXiv preprint version"), "pdfoutput line or generated header missing")
     checks.check("\\documentclass[11pt,a4paper]{article}" in tex, "document class changed")
     checks.check("\\begin{frontmatter}" not in tex and "\\journal{" not in tex, "elsarticle frontmatter leaked into the arXiv source")
     checks.check("\\begin{thebibliography}" in tex, "inline bibliography missing")

@@ -3,7 +3,7 @@
   "source": "main_cmame.tex",
   "source_sha256": "56f9a6968ecf3ea4dea094e5668dfd7d80fb8b7a7adaf97df2a5ac12974982cb",
   "output_tex": "arxiv/main_arxiv.tex",
-  "output_tex_sha256": "81e28cb5837c1c9ddeab566bd55759227e06228d9fbeef96dc454f3201235d82",
+  "output_tex_sha256": "e081b875b9da10dcdaca5de199124d25eafa0aff03651425452fb5fce1c0c3da",
   "document_class": "article",
   "figures": [
     "Figure_10_closed_loop_true_dynamic_order.png",
@@ -31,5 +31,5 @@
   ],
   "claim_state_change": false,
   "run_v047_invoked": false,
-  "zip_sha256": "d384a1ecf5bbeb070f4310a64a8fa002815f7284ce27b738e819ebcff1e3190a"
+  "zip_sha256": "ff77ad5597a466912254f1cbcca334bf56ea1ee011b232977347bd969ca9321a"
 }

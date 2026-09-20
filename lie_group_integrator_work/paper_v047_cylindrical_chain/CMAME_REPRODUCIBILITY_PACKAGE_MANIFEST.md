@@ -2,7 +2,7 @@
 
 Status: **not_ready_self_contained_runner_centered_package_missing_source_policy**.
 Submission-ready code package: `False`.
-Current Python size: `229996` lines.
+Current Python size: `229998` lines.
 Reviewer-facing code limit: `12` Python files / `2000` lines.
 Research-audit tree primary submission allowed: `False`; provenance-only: `True`.
 Runner-centered package ready: `False`.
