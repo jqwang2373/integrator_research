@@ -787,3 +787,20 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
 - 研究仓库已推到 `https://github.com/jqwang2373/integrator_research`（main，fast-forward）。
 - Lean 开发已推到新建的私有仓库 `https://github.com/jqwang2373/integrator_order_proof`；论文包
   `lean/` 与之逐字节同步。`gh` 装在 `~/bin/gh`，已登录 jqwang2373。
+
+## 2026-09-20 补充四：B4 跑了，结论
+
+- 按你的指示跑了 `run_b4_source_policy_after_opt_in.sh`（我按脚本要求传入了精确批准语句）。13 条命令全部完成，
+  大多复用已有结果，几分钟跑完。驾驶脚本自带的后执行审计记录了 `verified_authorized_execution_recorded=True`；这份执行态记录、行关闭账本、
+  两份诊断和完整运行日志归档在 `notes/b4_run_2026-09-20/`。随后我把活账本恢复到提交前状态：要让账本采纳
+  "已执行"态，需要重钉约 24 个验证器（blocker closure gate、prose residue、promotion-readiness、handoff、
+  review agent、repro manifest、顶层验证器），而这次运行一行都没晋升；我第一次尝试重建快照链时还误触了
+  退役证明路线的记录。所以账本里的后执行审计仍写"无已验证执行"，本节和 notes 归档才是这次执行的权威记录。
+- 结果：`source_policy_rows_closed=0/40`，B4/B7 仍开，review agent 仍是 `do_not_submit_global`（narrowed
+  子检查满足）。逐行原因：RA2021 单摆/双摆各 3 行在公开步长族下触到舍入底（h=2e-3 时误差已 ~3e-13），
+  测不出阶（双摆候选 2.1/2.5，h=0.01 那行还没过约束阈值）；RA2021 闭环 6 行用的是 T=0.1 混合参考，不是
+  公开策略；HI2022 8 行跑的是选定粗三元组而非九步公开网格，且公开 rA_half 代码在双摆 h=0.02、0.01 上
+  Newton 不收敛；TFE 16 行和 VP2024 4 行没有源码等价 runner，永远是 attempted-not-reproducible。
+- 结论：B4 靠执行到不了 40/40。20 行有命令的要关闭需要：RA2021 换成能处理舍入底的验收规则（政策决定）、
+  HI2022 跑完整公开网格（重，而且双摆失败在公开代码里）、闭环行换公开策略时域；另外 20 行没有路径。所以
+  全局投稿决定按构造永远是 do_not_submit_global，实际可走的是 narrowed claim 投稿。

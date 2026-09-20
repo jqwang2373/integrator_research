@@ -555,3 +555,36 @@ manuscript edit: install `main_cmame.tex` → flat copy → `python3 build_arxiv
   `cbcee80` to the reorganization commit). Lean development pushed to the new private repo
   `https://github.com/jqwang2373/integrator_order_proof`. GitHub CLI is installed at `~/bin/gh`
   (logged in as jqwang2373, https protocol, `gh auth setup-git` configured the credential helper).
+
+### 2026-09-20 B4 guarded driver executed (user-authorized), zero rows promoted
+
+- On the user's instruction ("跑B4") the guarded driver `run_b4_source_policy_after_opt_in.sh` was run
+  once with the exact approval statement from the opt-in packet. All 13 ready commands completed
+  (RA2021 public timing rA/rp/reps × four examples with `h=1e-4`; Gauss6 public single-pendulum
+  `1e-2/1e-3/1e-4`; RA2021 double order; four-link and slider-crank public closed-loop shards; eight
+  HI2022 full-`T=8` selected-coarse-trio candidates). Most reused existing results; wall time was
+  minutes. The driver's post-execution audit recorded
+  `verified_authorized_execution_recorded=True`; that executed-state record, the row-closure ledger,
+  the two diagnoses and the full driver log are archived under
+  `paper_v047_cylindrical_chain/notes/b4_run_2026-09-20/`. The live ledger was then restored to the
+  committed pre-execution state: adopting the executed state would have required repinning about
+  24 validators (blocker closure gate, prose residue audit, promotion-readiness audit, handoff
+  package, review agent, reproducibility manifest, top-level validator) for a run that promoted no
+  row, and a first attempt to rebuild the snapshot chain also regenerated retired proof-route
+  records. So `B4_SOURCE_POLICY_POST_EXECUTION_AUDIT` in the ledger still reads "no verified
+  authorized execution"; the authoritative record of the 2026-09-20 execution is this section and
+  the archived notes.
+- Promotion outcome: `source_policy_rows_closed=0/40`, B4/B7 remain open, review agent still
+  `do_not_submit_global` with bounded narrowed subcheck satisfied. Per-row blockers:
+  RA2021 single (3 rows) and double (3 rows) are floor-limited at the public step family (the
+  accepted method reaches roundoff, `~3e-13`, by `h=2e-3`, so no order can be certified there; the
+  double candidate shows 2.1/2.5 with the `h=0.01` row missing the constraint threshold); RA2021
+  closed-loop rows (6) use `T=0.1` with a mixed reference, not the public policy; HI2022 rows (8)
+  were run on the selected coarse trio, not the full nine-step public grid, and the public rA_half
+  code fails Newton on the double pendulum at `h=0.02` and `h=0.01`; TFE (16) and VP2024 (4) rows
+  remain attempted-not-reproducible because no source-equivalent runner exists.
+- Consequence: B4 cannot reach 40/40 by execution alone. Closing the 20 command-mapped rows would
+  need a floor-aware acceptance rule for RA2021 (a policy decision), full public-grid HI2022 runs
+  (heavy, and the double-pendulum Newton failure is in the public code), and public-policy horizons
+  for the closed-loop rows; the other 20 rows have no closable path. The global submit decision
+  therefore stays `do_not_submit_global` by construction; the narrowed claim is the submission path.
