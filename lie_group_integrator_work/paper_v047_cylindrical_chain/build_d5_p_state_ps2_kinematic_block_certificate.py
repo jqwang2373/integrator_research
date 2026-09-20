@@ -18,6 +18,7 @@ import numpy as np
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_STATE_PS2_KINEMATIC_BLOCK_CERTIFICATE.json"
 OUT_MD = PAPER / "D5_P_STATE_PS2_KINEMATIC_BLOCK_CERTIFICATE.md"
 
@@ -67,8 +68,8 @@ def main() -> None:
     p_tube = read_json(PAPER / "D5_P_TUBE_CONSTANTS_AUDIT.json")
     p_state_map = read_json(PAPER / "D5_P_STATE_MAP_DEFINITION_AUDIT.json")
     p_state_anti = read_json(PAPER / "D5_P_STATE_ANTICIRCULARITY_AUDIT.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     h_max = 0.04
     gauss_a = gauss3_matrix()

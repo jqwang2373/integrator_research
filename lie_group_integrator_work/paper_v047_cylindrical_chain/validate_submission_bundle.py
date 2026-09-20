@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 PIPELINE = ROOT / "v047_cylindrical_chain_pipeline"
 RESULTS = PIPELINE / "results"
@@ -56,8 +57,8 @@ def contains_normalized(text: str, token: str) -> bool:
 
 def package_path(path_label: str) -> Path:
     if path_label.startswith("../"):
-        return (PAPER / path_label).resolve()
-    paper_path = PAPER / path_label
+        return (manuscript_path(path_label)).resolve()
+    paper_path = manuscript_path(path_label)
     if paper_path.exists():
         return paper_path
     return ROOT / path_label
@@ -76,7 +77,7 @@ def oc6_latest_probe_marker(full_source_runner_gap: dict) -> str:
 
 
 def check_log_clean(checks: Checks, log_name: str) -> None:
-    log_path = PAPER / log_name
+    log_path = manuscript_path(log_name)
     checks.check(log_path.exists() and log_path.stat().st_size > 0, f"{log_name} missing or empty")
     if not log_path.exists():
         return
@@ -3148,7 +3149,7 @@ def check_submission_texts(checks: Checks) -> None:
         ],
     }
     for file_label, tokens in required_tokens.items():
-        text = read_text(PAPER / file_label)
+        text = read_text(manuscript_path(file_label))
         for token in tokens:
             checks.check(contains_normalized(text, token), f"{file_label} missing token: {token}")
         for forbidden in forbidden_tokens:
@@ -3188,7 +3189,7 @@ def main() -> int:
     check_log_clean(checks, "cmame_submission_flat/main_cmame_submission.log")
 
     for pdf_label in ["main_cmame.pdf", "cmame_submission_flat/main_cmame_submission.pdf", "main_concise.pdf", "main.pdf"]:
-        path = PAPER / pdf_label
+        path = manuscript_path(pdf_label)
         checks.check(path.exists() and path.stat().st_size > 100_000, f"{pdf_label} missing or unexpectedly small")
 
     if checks.errors:

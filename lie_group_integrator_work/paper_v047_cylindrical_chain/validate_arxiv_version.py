@@ -18,7 +18,8 @@ from pathlib import Path
 import build_arxiv_version as gen
 
 PAPER = Path(__file__).resolve().parent
-ARXIV = PAPER / "arxiv"
+from paper_paths import LATEX, package_path as manuscript_path
+ARXIV = LATEX / "arxiv"
 LOG = ARXIV / "main_arxiv.log"
 PDF = ARXIV / "main_arxiv.pdf"
 

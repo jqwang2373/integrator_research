@@ -13,7 +13,7 @@
   "position_order": 6.01071161969125,
   "proof_gap_closed": false,
   "reference_h": 0.0125,
-  "reference_runtime_sec": 4.073420534026809,
+  "reference_runtime_sec": 4.1364649860188365,
   "rows": 3,
   "schema": "cmame-p1-double-runner-candidate-v1",
   "source_policy_external_superiority_allowed": false,

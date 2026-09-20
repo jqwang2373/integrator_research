@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 EXPECTED_SAFE_ACTION_IDS = [
     "rebuild_read_only_audit_chain",
     "rerun_read_only_validators",
@@ -91,7 +92,7 @@ def main() -> int:
         "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json",
     ]
     expected_source_artifact_sha256 = {
-        name: sha256_file(PAPER / name)
+        name: sha256_file(manuscript_path(name))
         for name in expected_source_files
         if name != "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json"
     }

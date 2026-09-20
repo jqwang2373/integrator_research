@@ -25,6 +25,16 @@ CURRENT_VERSION = "v047"
 CURRENT_DIR = ROOT / "v047_cylindrical_chain_pipeline"
 V048_DIR = ROOT / "v048_cross_paper_same_test_benchmarks"
 PAPER_DIR = ROOT / "paper_v047_cylindrical_chain"
+LATEX_DIR = ROOT / "paper"  # manuscript sources, figures, submission copies (since 2026-09-20)
+_MANUSCRIPT_TOPLEVEL = {"main_cmame.tex", "main_cmame.pdf", "main_cmame.log", "main_cmame.txt", "main.tex", "main.pdf", "main.log", "main.txt",
+                        "main_concise.tex", "main_concise.pdf", "main_concise.log", "main_concise.txt", "highlights_cmame.txt",
+                        "declarations_cmame.md", "COVER_LETTER.md", "README_CMAME_FLAT_SUBMISSION.md", "cmame_submission_flat.zip"}
+_MANUSCRIPT_DIRS = {"figures", "cmame_submission_flat", "arxiv"}
+
+
+def paper_asset_path(label: str) -> Path:
+    first = str(label).replace("\\", "/").split("/")[0]
+    return (LATEX_DIR / label) if (first in _MANUSCRIPT_TOPLEVEL or first in _MANUSCRIPT_DIRS) else (PAPER_DIR / label)
 EXPECTED_ASME_MODELS = {"single_pendulum", "double_pendulum", "four_link", "slider_crank"}
 
 
@@ -4369,14 +4379,14 @@ def run_v048_single_coarse_validator(v: Validator) -> str:
 
 def run_paper_claim_validator(v: Validator) -> tuple[str, ...]:
     required_files = [
-        PAPER_DIR / "main.tex",
-        PAPER_DIR / "main.pdf",
-        PAPER_DIR / "main_concise.tex",
-        PAPER_DIR / "main_concise.pdf",
-        PAPER_DIR / "main_cmame.tex",
-        PAPER_DIR / "main_cmame.pdf",
-        PAPER_DIR / "highlights_cmame.txt",
-        PAPER_DIR / "declarations_cmame.md",
+        LATEX_DIR / "main.tex",
+        LATEX_DIR / "main.pdf",
+        LATEX_DIR / "main_concise.tex",
+        LATEX_DIR / "main_concise.pdf",
+        LATEX_DIR / "main_cmame.tex",
+        LATEX_DIR / "main_cmame.pdf",
+        LATEX_DIR / "highlights_cmame.txt",
+        LATEX_DIR / "declarations_cmame.md",
         PAPER_DIR / "CMAME_SUBMISSION_CHECKLIST.md",
         PAPER_DIR / "CMAME_SUBMISSION_READINESS_AUDIT.md",
         PAPER_DIR / "CMAME_SUBMISSION_READINESS_REVIEW.md",
@@ -4394,30 +4404,30 @@ def run_paper_claim_validator(v: Validator) -> tuple[str, ...]:
         PAPER_DIR / "CMAME_PROSE_RESIDUE_AUDIT.json",
         PAPER_DIR / "DYNAMIC_ROW_ORACLE_GATE.md",
         PAPER_DIR / "DYNAMIC_ROW_ORACLE_GATE.json",
-        PAPER_DIR / "README_CMAME_FLAT_SUBMISSION.md",
-        PAPER_DIR / "cmame_submission_flat.zip",
-        PAPER_DIR / "cmame_submission_flat" / "main_cmame_submission.tex",
-        PAPER_DIR / "cmame_submission_flat" / "main_cmame_submission.pdf",
-        PAPER_DIR / "cmame_submission_flat" / "main_cmame_submission.log",
-        PAPER_DIR / "cmame_submission_flat" / "highlights_cmame.txt",
-        PAPER_DIR / "cmame_submission_flat" / "declarations_cmame.md",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_1_convergence.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_2_asme_lower_pair_graph_bridge.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_3_asme_closed_loop_kinematic_fullva.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_4_order_closure_blend.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_5_velocity_compression.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_6_sparse_speed_gap.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_7_strict_common_reference_work_precision.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_8_claim_boundary_limitations.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_9_coarse_baseline_work_precision.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_10_closed_loop_true_dynamic_order.png",
-        PAPER_DIR / "cmame_submission_flat" / "Figure_11_method_stage_architecture.png",
+        LATEX_DIR / "README_CMAME_FLAT_SUBMISSION.md",
+        LATEX_DIR / "cmame_submission_flat.zip",
+        LATEX_DIR / "cmame_submission_flat" / "main_cmame_submission.tex",
+        LATEX_DIR / "cmame_submission_flat" / "main_cmame_submission.pdf",
+        LATEX_DIR / "cmame_submission_flat" / "main_cmame_submission.log",
+        LATEX_DIR / "cmame_submission_flat" / "highlights_cmame.txt",
+        LATEX_DIR / "cmame_submission_flat" / "declarations_cmame.md",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_1_convergence.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_2_asme_lower_pair_graph_bridge.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_3_asme_closed_loop_kinematic_fullva.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_4_order_closure_blend.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_5_velocity_compression.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_6_sparse_speed_gap.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_7_strict_common_reference_work_precision.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_8_claim_boundary_limitations.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_9_coarse_baseline_work_precision.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_10_closed_loop_true_dynamic_order.png",
+        LATEX_DIR / "cmame_submission_flat" / "Figure_11_method_stage_architecture.png",
         PAPER_DIR / "README.md",
         PAPER_DIR / "CLAIM_BOUNDARY.json",
         PAPER_DIR / "CURRENT_STATUS_CN.md",
         PAPER_DIR / "PAPER_CLAIM_LEDGER.md",
         PAPER_DIR / "SUBMISSION_PACKET.md",
-        PAPER_DIR / "COVER_LETTER.md",
+        LATEX_DIR / "COVER_LETTER.md",
         PAPER_DIR / "SUBMISSION_ARTIFACT_MANIFEST.json",
         PAPER_DIR / "SUBMISSION_FILE_INVENTORY.md",
         PAPER_DIR / "REVIEW_RESPONSE_TEMPLATE.md",
@@ -5491,7 +5501,7 @@ def run_paper_claim_validator(v: Validator) -> tuple[str, ...]:
     ]:
         v.check(contains_normalized(review_response, token), f"review response template missing token: {token}")
 
-    cover = (PAPER_DIR / "COVER_LETTER.md").read_text(encoding="utf-8")
+    cover = (LATEX_DIR / "COVER_LETTER.md").read_text(encoding="utf-8")
     for token in [
         "Cover Letter Draft",
         "main_cmame.pdf",
@@ -6492,7 +6502,7 @@ def validate_paper_latex_log(v: Validator) -> str:
     missing_logs: list[str] = []
     warning_total = 0
     for log_name in log_names:
-        log_path = PAPER_DIR / log_name
+        log_path = paper_asset_path(log_name)
         v.check(log_path.exists(), f"paper LaTeX log missing: paper_v047_cylindrical_chain/{log_name}")
         if not log_path.exists():
             missing_logs.append(log_name)
@@ -6756,8 +6766,8 @@ def validate_current_pipeline_contract_doc(v: Validator) -> None:
         "process guard",
         "current files in this repository are authoritative",
         "paper_v047_cylindrical_chain/CLAIM_BOUNDARY.json",
-        "paper_v047_cylindrical_chain/main_cmame.tex",
-        "paper_v047_cylindrical_chain/main_cmame.pdf",
+        "paper/main_cmame.tex",
+        "paper/main_cmame.pdf",
         "paper_v047_cylindrical_chain/CMAME_SUBMISSION_CHECKLIST.md",
         "paper_v047_cylindrical_chain/CMAME_BLOCKER_CLOSURE_GATE.md",
         "paper_v047_cylindrical_chain/CMAME_BLOCKER_CLOSURE_GATE.json",
@@ -6969,7 +6979,7 @@ def validate_tfe_terminology_docs(v: Validator) -> None:
             "blocker_closure_decision_by_id=OC4:remain_open_ready_for_authorized_execution_not_executed_not_promoted,OC6:remain_open_no_positive_source_equivalent_artifact,OC12:remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
             "blocker_closure_allowed_by_id=OC4:False,OC6:False,OC12:False",
         ],
-        "paper_v047_cylindrical_chain/main.tex": [
+        "paper/main.tex": [
             "occasional spelling ``FTE''",
             "should be read as \\tfe{}, temporal finite element",
             "full-\\tfe{} replacement",
@@ -7063,7 +7073,7 @@ def validate_no_claim_regression_wording(v: Validator) -> None:
         "paper_v047_cylindrical_chain/PAPER_CLAIM_LEDGER.md",
         "paper_v047_cylindrical_chain/CURRENT_STATUS_CN.md",
         "paper_v047_cylindrical_chain/SOURCE_PAPER_COMPARISON.md",
-        "paper_v047_cylindrical_chain/main.tex",
+        "paper/main.tex",
     ]
     forbidden_patterns = [
         r"`four_link`\s+mapping",

@@ -15,6 +15,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_STATE_ANTICIRCULARITY_AUDIT.json"
 OUT_MD = PAPER / "D5_P_STATE_ANTICIRCULARITY_AUDIT.md"
 
@@ -41,8 +42,8 @@ def main() -> None:
     p_state_map_definition = read_json(PAPER / "D5_P_STATE_MAP_DEFINITION_AUDIT.json")
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
     dynamic_readiness = read_json(PAPER / "D5_DYNAMIC_DEFECT_READINESS_AUDIT.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     proof_scope = kinematic_certificate.get("proof_scope", {})
     forbidden_inputs = [

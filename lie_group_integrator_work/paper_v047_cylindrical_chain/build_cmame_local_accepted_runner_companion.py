@@ -16,6 +16,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 COMPANION = PAPER / "cmame_local_accepted_runner_companion"
 OUT_JSON = PAPER / "CMAME_LOCAL_ACCEPTED_RUNNER_COMPANION_MANIFEST.json"
 OUT_MD = PAPER / "CMAME_LOCAL_ACCEPTED_RUNNER_COMPANION_MANIFEST.md"
@@ -76,8 +77,8 @@ def read_json(path: Path) -> dict:
 
 
 def run_item(item: dict[str, str]) -> dict[str, object]:
-    script = PAPER / item["script"]
-    cwd = PAPER / item["cwd"]
+    script = manuscript_path(item["script"])
+    cwd = manuscript_path(item["cwd"])
     proc = subprocess.run(
         [sys.executable, str(script)],
         cwd=cwd,

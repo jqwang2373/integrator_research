@@ -10,6 +10,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent.parent
 AUDIT_JSON = PAPER / "CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT.json"
 AUDIT_MD = PAPER / "CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT.md"
@@ -24,8 +25,8 @@ B3_REVIEW = PAPER / "B3_DIRECT_PROOF_REVIEW_AUDIT.json"
 D5_TAYLOR = PAPER / "D5_CONDITIONAL_TAYLOR_CERTIFICATE.json"
 D5_BUDGET = PAPER / "D5_TAYLOR_TERM_BUDGET_AUDIT.json"
 D5_PLAN = PAPER / "D5_PRIMITIVE_OBLIGATION_CLOSURE_PLAN.json"
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
 
 
 class Checks:

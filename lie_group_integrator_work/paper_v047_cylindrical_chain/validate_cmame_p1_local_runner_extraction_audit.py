@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 
 
@@ -39,8 +40,8 @@ def resolve_label(path_label: str) -> Path:
     if path_label.startswith("lie_group_integrator_work/"):
         return ROOT.parent / path_label
     if path_label.startswith("../"):
-        return (PAPER / path_label).resolve()
-    return PAPER / path_label
+        return (manuscript_path(path_label)).resolve()
+    return manuscript_path(path_label)
 
 
 def line_count(path: Path) -> int:

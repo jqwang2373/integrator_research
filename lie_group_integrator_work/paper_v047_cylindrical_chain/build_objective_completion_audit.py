@@ -12,6 +12,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 V048 = ROOT / "v048_cross_paper_same_test_benchmarks"
 OUT_JSON = PAPER / "OBJECTIVE_COMPLETION_AUDIT.json"
@@ -285,7 +286,7 @@ def main() -> None:
         and visual.get("status") == "b5_closed_mechanism_visual_reproducibility_checked"
     )
     review_agent_present = all(
-        (PAPER / item).exists()
+        (manuscript_path(item)).exists()
         for item in [
             "cmame_submission_review_agent.py",
             "validate_cmame_review_agent.py",

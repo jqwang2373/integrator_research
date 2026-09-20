@@ -12,12 +12,15 @@ lie_group_integrator_work/
   README.md, CURRENT_PIPELINE_CONTRACT.md, validate_pipeline_outputs.py
   docs/      this file, the ledgers and audits below, LEAN_FORMALIZATION.md, PATH_DEPENDENCY_REPORT.md
   tools/     plot_version_ledger.py, build_path_dependency_report.py
-  paper_v047_cylindrical_chain/
+  paper/                                   the manuscript (LaTeX only)
     main_cmame.tex (authoritative) + main_cmame.pdf/.log/.txt
+    figures/                 figure sources                   notes/   manuscript backups
     cmame_submission_flat/   Elsevier flat copy (derived)     arxiv/   arXiv preprint (derived)
-    lean/                    Lean development copy            notes/   backups and working notes
-    figures/                 figure sources                   cmame_*/ reproducibility bundles
-    *.json/*.md/*.csv        audit records and gates          build_*/validate_*/run_*.py
+    highlights/declarations/cover letter, legacy main.tex and main_concise.tex
+  paper_v047_cylindrical_chain/            the evidence ledger
+    paper_paths.py           how scripts locate ../paper       lean/    Lean development copy
+    *.json/*.md/*.csv        audit records and gates          notes/   working notes, B4 run archive
+    build_*/validate_*/run_*.py                               cmame_*/ reproducibility bundles
   v047_cylindrical_chain_pipeline/, v048_cross_paper_same_test_benchmarks/, v001_… v046_…
   pipeline_validation_results/, reproduction/, scratch_v046_cylindrical_chain_pending/, skills/
 ```

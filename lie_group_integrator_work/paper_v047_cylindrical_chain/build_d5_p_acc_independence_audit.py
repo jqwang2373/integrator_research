@@ -14,6 +14,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 RUN_V047 = PAPER.parent / "v047_cylindrical_chain_pipeline" / "run_v047.py"
 OUT_JSON = PAPER / "D5_P_ACC_INDEPENDENCE_AUDIT.json"
 OUT_MD = PAPER / "D5_P_ACC_INDEPENDENCE_AUDIT.md"
@@ -62,8 +63,8 @@ def main() -> None:
     p_acc_row_binding = read_json(PAPER / "D5_P_ACC_ROW_BINDING_AUDIT.json")
     dynamic_gate = read_json(PAPER / "DYNAMIC_ROW_ORACLE_GATE.json")
     kinematic_certificate = read_json(PAPER / "KINEMATIC_ROW_DEFECT_CERTIFICATE.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
     run_source = read_text(RUN_V047)
 
     layout = dynamic_gate.get("layout", {})

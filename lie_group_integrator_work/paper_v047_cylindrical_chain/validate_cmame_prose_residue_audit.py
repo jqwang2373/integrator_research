@@ -10,10 +10,11 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 AUDIT_MD = PAPER / "CMAME_PROSE_RESIDUE_AUDIT.md"
 AUDIT_JSON = PAPER / "CMAME_PROSE_RESIDUE_AUDIT.json"
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
 MANIFEST = PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json"
 BLOCKER_GATE = PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json"
 B4_PLAN = PAPER / "B4_SOURCE_POLICY_WORK_PRECISION_EXECUTION_PLAN.json"

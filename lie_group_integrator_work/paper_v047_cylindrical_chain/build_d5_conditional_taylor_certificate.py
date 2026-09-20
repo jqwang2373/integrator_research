@@ -17,6 +17,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_CONDITIONAL_TAYLOR_CERTIFICATE.json"
 OUT_MD = PAPER / "D5_CONDITIONAL_TAYLOR_CERTIFICATE.md"
 
@@ -115,8 +116,8 @@ def main() -> None:
     p_tube = read_json(PAPER / "D5_P_TUBE_CONSTANTS_AUDIT.json")
     closure_plan = read_json(PAPER / "D5_PRIMITIVE_OBLIGATION_CLOSURE_PLAN.json")
     open_gap = read_json(PAPER / "D5_OPEN_PRIMITIVE_GAP_AUDIT.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     reduction_by_key = {
         key(row): row for row in primitive_reduction.get("reduction_rows", []) if isinstance(row, dict)

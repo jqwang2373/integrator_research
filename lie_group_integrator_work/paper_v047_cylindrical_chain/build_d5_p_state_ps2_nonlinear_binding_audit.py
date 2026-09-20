@@ -15,6 +15,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_STATE_PS2_NONLINEAR_BINDING_AUDIT.json"
 OUT_MD = PAPER / "D5_P_STATE_PS2_NONLINEAR_BINDING_AUDIT.md"
 
@@ -42,8 +43,8 @@ def main() -> None:
     kinematic_block = read_json(PAPER / "D5_P_STATE_PS2_KINEMATIC_BLOCK_CERTIFICATE.json")
     lie_chart = read_json(PAPER / "D5_P_STATE_PS2_LIE_CHART_BINDING_AUDIT.json")
     row_injection = read_json(PAPER / "D5_P_STATE_PS2_ROW_INJECTION_AUDIT.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     gauss_norm = kinematic_block.get("gauss_matrix_2_norm")
     if not isinstance(gauss_norm, (int, float)):

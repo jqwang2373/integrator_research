@@ -9,6 +9,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_TAYLOR_TERM_BUDGET_AUDIT.json"
 OUT_MD = PAPER / "D5_TAYLOR_TERM_BUDGET_AUDIT.md"
 
@@ -239,8 +240,8 @@ def main() -> None:
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
     p_acc_lift_obstruction = read_json(PAPER / "D5_P_ACC_LIFT_OBSTRUCTION_AUDIT.json")
     p_acc_weighted_inverse = read_json(PAPER / "D5_P_ACC_PA2_WEIGHTED_INVERSE_AUDIT.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     rows = readiness.get("rows", [])
     term_rows = [term for row in rows if isinstance(row, dict) for term in row_terms(row)]

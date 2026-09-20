@@ -15,6 +15,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "CMAME_CLAIM_HYGIENE_AUDIT.json"
 OUT_MD = PAPER / "CMAME_CLAIM_HYGIENE_AUDIT.md"
 
@@ -79,7 +80,7 @@ FORBIDDEN_SUPPORT_TOKENS = [
 
 
 def read_text(rel_path: str) -> str:
-    return (PAPER / rel_path).read_text(encoding="utf-8", errors="replace")
+    return (manuscript_path(rel_path)).read_text(encoding="utf-8", errors="replace")
 
 
 def count_token(text: str, token: str) -> int:

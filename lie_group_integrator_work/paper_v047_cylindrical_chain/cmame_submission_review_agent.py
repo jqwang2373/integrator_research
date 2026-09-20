@@ -17,6 +17,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "CMAME_REVIEW_AGENT_REPORT.json"
 OUT_MD = PAPER / "CMAME_REVIEW_AGENT_REPORT.md"
 BLOCKER_IDS = ["OC4", "OC6", "OC12"]
@@ -333,10 +334,10 @@ def review_safe_b6_post_execution_status(boundary: dict) -> object:
 
 
 def main() -> None:
-    tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
-    pdf_text = read_text(PAPER / "main_cmame.txt")
-    flat_pdf_text = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.txt")
+    tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
+    pdf_text = read_text(LATEX / "main_cmame.txt")
+    flat_pdf_text = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.txt")
     readiness_review_text = read_text(PAPER / "CMAME_SUBMISSION_READINESS_REVIEW.md")
     result_pack = read_json(PAPER / "PAPER_RESULT_PACK.json")
     numerical_matrix = read_json(PAPER / "PAPER_NUMERICAL_RESULT_MATRIX.json")
@@ -843,9 +844,9 @@ def main() -> None:
         "abstract_within_limit": abstract_words <= REQUIRED_CMAME_STANDARD["abstract_words_max"],
         "keyword_count": keywords,
         "keywords_within_limit": REQUIRED_CMAME_STANDARD["keywords_min"] <= keywords <= REQUIRED_CMAME_STANDARD["keywords_max"],
-        "highlights_present": (PAPER / "highlights_cmame.txt").exists(),
-        "declarations_present": (PAPER / "declarations_cmame.md").exists(),
-        "flat_submission_present": (PAPER / "cmame_submission_flat" / "main_cmame_submission.tex").exists(),
+        "highlights_present": (LATEX / "highlights_cmame.txt").exists(),
+        "declarations_present": (LATEX / "declarations_cmame.md").exists(),
+        "flat_submission_present": (LATEX / "cmame_submission_flat" / "main_cmame_submission.tex").exists(),
     }
     prose_post_execution_boundary = prose_residue.get("post_baseline_final_prose_dependency", {}).get(
         "post_execution_dependency_boundary", {}
@@ -4674,7 +4675,7 @@ def main() -> None:
         "hash_algorithm": "sha256",
         "timestamp_policy": "deterministic_no_wall_clock_timestamp",
         "input_artifacts_read": [
-            artifact_snapshot(PAPER / relative_path)
+            artifact_snapshot(manuscript_path(relative_path))
             for relative_path in input_artifact_relative_paths
         ],
     }

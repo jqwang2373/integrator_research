@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parents[1]
 OUT_JSON = PAPER / "FULL_SOURCE_POLICY_ROW_PROVENANCE_AUDIT.json"
 OUT_MD = PAPER / "FULL_SOURCE_POLICY_ROW_PROVENANCE_AUDIT.md"
@@ -49,7 +50,7 @@ def resolve_paper_relative(label: str | None) -> Path | None:
     path = Path(label)
     if path.is_absolute():
         return path
-    return (PAPER / path).resolve()
+    return (manuscript_path(path)).resolve()
 
 
 def file_sha256(path: Path | None) -> str | None:

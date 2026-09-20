@@ -13,6 +13,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 V048 = ROOT / "v048_cross_paper_same_test_benchmarks"
 OUT_JSON = PAPER / "CMAME_REPRODUCIBILITY_PACKAGE_MANIFEST.json"
@@ -41,8 +42,8 @@ def read_text(path: Path) -> str:
 
 def resolve_package_path(path_label: str) -> Path:
     if path_label.startswith("../"):
-        return (PAPER / path_label).resolve()
-    return PAPER / path_label
+        return (manuscript_path(path_label)).resolve()
+    return manuscript_path(path_label)
 
 
 def line_count(path: Path) -> int | None:

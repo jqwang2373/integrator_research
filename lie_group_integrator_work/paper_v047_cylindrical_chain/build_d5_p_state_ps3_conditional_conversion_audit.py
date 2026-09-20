@@ -17,6 +17,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_STATE_PS3_CONDITIONAL_CONVERSION_AUDIT.json"
 OUT_MD = PAPER / "D5_P_STATE_PS3_CONDITIONAL_CONVERSION_AUDIT.md"
 
@@ -42,8 +43,8 @@ def main() -> None:
     p_state_ps2_aggregate = read_json(PAPER / "D5_P_STATE_PS2_AGGREGATE_PROMOTION_AUDIT.json")
     p_acc_obstruction = read_json(PAPER / "D5_P_ACC_LIFT_OBSTRUCTION_AUDIT.json")
     kinematic = read_json(PAPER / "KINEMATIC_ROW_DEFECT_CERTIFICATE.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     manuscript_tokens = [
         r"\label{lem:d5-p-state-ps3-conditional-conversion}",

@@ -12,10 +12,11 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 AUDIT_JSON = PAPER / "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.json"
 AUDIT_MD = PAPER / "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.md"
 AUDIT_CSV = PAPER / "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.csv"
-AUDIT_FIGURE = PAPER / "figures" / "tfe_algorithm_literal_work_precision.png"
+AUDIT_FIGURE = LATEX / "figures" / "tfe_algorithm_literal_work_precision.png"
 SOURCE_JSON = PAPER / "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.json"
 SOURCE_CSV = PAPER / "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.csv"
 EXPECTED_METHODS = {

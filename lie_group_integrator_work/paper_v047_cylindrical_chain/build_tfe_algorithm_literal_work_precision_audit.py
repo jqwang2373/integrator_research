@@ -20,13 +20,14 @@ import numpy as np
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 os.environ.setdefault("MPLCONFIGDIR", str(Path("/tmp") / "jingquan_mplconfig"))
 SOURCE_JSON = PAPER / "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.json"
 SOURCE_CSV = PAPER / "TFE_ALGORITHM_LITERAL_ENDPOINT_PROBE.csv"
 OUT_JSON = PAPER / "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.json"
 OUT_MD = PAPER / "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.md"
 OUT_CSV = PAPER / "TFE_ALGORITHM_LITERAL_WORK_PRECISION_AUDIT.csv"
-OUT_FIG = PAPER / "figures" / "tfe_algorithm_literal_work_precision.png"
+OUT_FIG = LATEX / "figures" / "tfe_algorithm_literal_work_precision.png"
 
 
 def read_json(path: Path) -> dict[str, Any]:

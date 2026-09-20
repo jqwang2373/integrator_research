@@ -31,10 +31,11 @@ import zipfile
 from pathlib import Path
 
 PAPER = Path(__file__).resolve().parent
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
-FLAT_DIR = PAPER / "cmame_submission_flat"
-ARXIV = PAPER / "arxiv"
+from paper_paths import LATEX, package_path as manuscript_path
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
+FLAT_DIR = LATEX / "cmame_submission_flat"
+ARXIV = LATEX / "arxiv"
 OUT_TEX = ARXIV / "main_arxiv.tex"
 OUT_README = ARXIV / "README.md"
 OUT_ZIP = ARXIV / "arxiv_submission.zip"
@@ -163,7 +164,7 @@ def render_readme(parts: dict[str, str], figures: list[str], abstract_plain: str
     figs = "\n".join(f"- `{f}`" for f in figures)
     return f"""# arXiv version
 
-Generated from `../main_cmame.tex` by `../build_arxiv_version.py`; do not edit `main_arxiv.tex`
+Generated from `../main_cmame.tex` by `../../paper_v047_cylindrical_chain/build_arxiv_version.py`; do not edit `main_arxiv.tex`
 by hand.  Compile locally with `latexmk -pdf main_arxiv.tex` (pdflatex, TeX Live 2023 or later;
 no BibTeX run is needed because the bibliography is inline).
 

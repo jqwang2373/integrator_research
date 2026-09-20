@@ -14,6 +14,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent.parent
 REF_TXT = ROOT / "1-s2.0-S0377042719305229-main.txt"
 BLOCKER = PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json"
@@ -59,8 +60,8 @@ def main() -> None:
     d5_budget = read_json(PAPER / "D5_TAYLOR_TERM_BUDGET_AUDIT.json")
     d5_plan = read_json(PAPER / "D5_PRIMITIVE_OBLIGATION_CLOSURE_PLAN.json")
     blocker = read_json(BLOCKER)
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
     ref_text = read_text(REF_TXT)
 
     closure = proof_closure.get("closure_state", {})

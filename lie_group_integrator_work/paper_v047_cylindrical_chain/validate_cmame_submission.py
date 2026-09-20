@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 PIPELINE = ROOT / "v047_cylindrical_chain_pipeline"
 RESULTS = PIPELINE / "results"
@@ -22,7 +23,7 @@ EXPECTED_CAVEATS = {
     "full_tfe_stage_replacement_missing",
     "sharp_friction_coarse_order_reduction_ultra_recovered",
 }
-FLAT = PAPER / "cmame_submission_flat"
+FLAT = LATEX / "cmame_submission_flat"
 FLAT_FIGURES = [
     "Figure_1_convergence.png",
     "Figure_2_asme_lower_pair_graph_bridge.png",
@@ -123,7 +124,7 @@ def check_one_log_clean(checks: Checks, log_path: Path, label: str) -> None:
 
 
 def check_log_clean(checks: Checks) -> None:
-    check_one_log_clean(checks, PAPER / "main_cmame.log", "main_cmame.log")
+    check_one_log_clean(checks, LATEX / "main_cmame.log", "main_cmame.log")
     check_one_log_clean(checks, FLAT / "main_cmame_submission.log", "flat main_cmame_submission.log")
 
 
@@ -192,9 +193,9 @@ def check_files(checks: Checks) -> None:
         "figures/all_method_result_matrix.png",
         "figures/work_precision_compendium.png",
     ]:
-        path = PAPER / label
+        path = manuscript_path(label)
         checks.check(path.exists() and path.stat().st_size > 0, f"missing or empty file: {label}")
-    pdf_path = PAPER / "main_cmame.pdf"
+    pdf_path = LATEX / "main_cmame.pdf"
     if pdf_path.exists():
         checks.check(pdf_path.stat().st_size > 100_000, "main_cmame.pdf is unexpectedly small")
     for label in [
@@ -979,9 +980,9 @@ def check_manifest(
 def main() -> int:
     checks = Checks()
     try:
-        tex = read_text(PAPER / "main_cmame.tex")
-        highlights = read_text(PAPER / "highlights_cmame.txt")
-        declarations = read_text(PAPER / "declarations_cmame.md")
+        tex = read_text(LATEX / "main_cmame.tex")
+        highlights = read_text(LATEX / "highlights_cmame.txt")
+        declarations = read_text(LATEX / "declarations_cmame.md")
         readiness = read_text(PAPER / "CMAME_SUBMISSION_READINESS_AUDIT.md")
         readiness_review = read_text(PAPER / "CMAME_SUBMISSION_READINESS_REVIEW.md")
         flat_tex = read_text(FLAT / "main_cmame_submission.tex")

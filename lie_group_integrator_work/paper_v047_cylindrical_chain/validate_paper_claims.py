@@ -14,6 +14,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 PIPELINE = ROOT / "v047_cylindrical_chain_pipeline"
 RESULTS = PIPELINE / "results"
@@ -1131,12 +1132,12 @@ def check_claim_boundary_json(checks: Checks, summary: dict, boundary: dict) -> 
         "paper_formula_mapping_csv": "v047_cylindrical_chain_pipeline/results/cylindrical_chain_endpoint_tfe_paper_formula_mapping_audit.csv",
         "full_tfe_gap_ledger": "v047_cylindrical_chain_pipeline/FULL_TFE_REPLACEMENT_GAP_LEDGER.md",
         "full_tfe_repair_spec": "v047_cylindrical_chain_pipeline/FULL_TFE_REPAIR_SPEC.md",
-        "paper_tex": "paper_v047_cylindrical_chain/main.tex",
-        "paper_pdf": "paper_v047_cylindrical_chain/main.pdf",
-        "cmame_tex": "paper_v047_cylindrical_chain/main_cmame.tex",
-        "cmame_pdf": "paper_v047_cylindrical_chain/main_cmame.pdf",
-        "cmame_highlights": "paper_v047_cylindrical_chain/highlights_cmame.txt",
-        "cmame_declarations": "paper_v047_cylindrical_chain/declarations_cmame.md",
+        "paper_tex": "paper/main.tex",
+        "paper_pdf": "paper/main.pdf",
+        "cmame_tex": "paper/main_cmame.tex",
+        "cmame_pdf": "paper/main_cmame.pdf",
+        "cmame_highlights": "paper/highlights_cmame.txt",
+        "cmame_declarations": "paper/declarations_cmame.md",
         "cmame_checklist": "paper_v047_cylindrical_chain/CMAME_SUBMISSION_CHECKLIST.md",
         "proof_evidence_matrix": "paper_v047_cylindrical_chain/PROOF_EVIDENCE_MATRIX.md",
         "order_acceptance_gate": "paper_v047_cylindrical_chain/ORDER_ACCEPTANCE_GATE.md",
@@ -2271,11 +2272,11 @@ def check_figures_and_pdf(checks: Checks, tex: str) -> int:
     figures = sorted(set(re.findall(r"\\plotfigure\{\\figpath/([^}]+)\}", tex)))
     checks.check(bool(figures), "paper has no plotfigure references")
     for figure in figures:
-        path = PAPER / "figures" / figure
+        path = LATEX / "figures" / figure
         checks.check(path.exists(), f"missing figure snapshot: {figure}")
         if path.exists():
             checks.check(path.stat().st_size > 1000, f"figure snapshot is too small: {figure}")
-    pdf = PAPER / "main.pdf"
+    pdf = LATEX / "main.pdf"
     checks.check(pdf.exists(), "paper PDF is missing")
     if pdf.exists():
         checks.check(pdf.stat().st_size > 1_000_000, "paper PDF is unexpectedly small")
@@ -2285,7 +2286,7 @@ def check_figures_and_pdf(checks: Checks, tex: str) -> int:
 def main() -> int:
     checks = Checks()
     try:
-        tex = read_text(PAPER / "main.tex")
+        tex = read_text(LATEX / "main.tex")
         readme = read_text(PAPER / "README.md")
         ledger = read_text(PAPER / "PAPER_CLAIM_LEDGER.md")
         reviewer_checklist = read_text(PAPER / "REVIEWER_CHECKLIST.md")
@@ -2338,7 +2339,7 @@ def main() -> int:
     print("current_pipeline_contract_checked=True")
     print("tfe_terminology_checked=True")
     print(f"figures_checked={figure_count}")
-    print(f"pdf_size_bytes={(PAPER / 'main.pdf').stat().st_size}")
+    print(f"pdf_size_bytes={(LATEX / 'main.pdf').stat().st_size}")
     return 0
 
 

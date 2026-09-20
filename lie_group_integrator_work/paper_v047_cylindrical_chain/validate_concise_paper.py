@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 PIPELINE = ROOT / "v047_cylindrical_chain_pipeline"
 RESULTS = PIPELINE / "results"
@@ -55,9 +56,9 @@ def latex_sci(value: float, digits: int = 3) -> str:
 
 def check_required_files(checks: Checks) -> None:
     for path in [
-        PAPER / "main_concise.tex",
-        PAPER / "main_concise.pdf",
-        PAPER / "main_concise.log",
+        LATEX / "main_concise.tex",
+        LATEX / "main_concise.pdf",
+        LATEX / "main_concise.log",
         PAPER / "CLAIM_BOUNDARY.json",
         PAPER / "ORDER_ACCEPTANCE_GATE.md",
         PAPER / "ORDER_ACCEPTANCE_GATE.json",
@@ -68,7 +69,7 @@ def check_required_files(checks: Checks) -> None:
 
 
 def check_latex_log(checks: Checks) -> None:
-    log_path = PAPER / "main_concise.log"
+    log_path = LATEX / "main_concise.log"
     if not log_path.exists():
         checks.check(False, "main_concise.log missing")
         return
@@ -181,7 +182,7 @@ def check_claim_boundary(checks: Checks, boundary: dict, summary: dict, tex: str
 def main() -> int:
     checks = Checks()
     try:
-        tex = read_text(PAPER / "main_concise.tex")
+        tex = read_text(LATEX / "main_concise.tex")
         boundary = read_json(PAPER / "CLAIM_BOUNDARY.json")
         summary = read_json(RESULTS / "summary_v047.json")
     except Exception as exc:  # noqa: BLE001 - validator should report a concise failure.
@@ -192,7 +193,7 @@ def main() -> int:
     check_latex_log(checks)
     check_claim_boundary(checks, boundary, summary, tex)
 
-    pdf_path = PAPER / "main_concise.pdf"
+    pdf_path = LATEX / "main_concise.pdf"
     if pdf_path.exists():
         checks.check(pdf_path.stat().st_size > 100_000, "main_concise.pdf is unexpectedly small")
 

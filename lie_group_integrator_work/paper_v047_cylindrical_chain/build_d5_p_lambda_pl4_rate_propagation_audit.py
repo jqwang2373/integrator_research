@@ -16,6 +16,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_LAMBDA_PL4_RATE_PROPAGATION_AUDIT.json"
 OUT_MD = PAPER / "D5_P_LAMBDA_PL4_RATE_PROPAGATION_AUDIT.md"
 
@@ -67,8 +68,8 @@ def main() -> None:
     primitive_reduction = read_json(PAPER / "D5_PRIMITIVE_BOUND_REDUCTION_AUDIT.json")
     p_tube = read_json(PAPER / "D5_P_TUBE_CONSTANTS_AUDIT.json")
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     primitive = primitive_row(primitive_reduction, "P_multiplier_lift")
     term_rows = term_budget.get("term_rows", [])

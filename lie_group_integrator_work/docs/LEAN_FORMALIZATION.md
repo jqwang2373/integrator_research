@@ -39,7 +39,7 @@ to the development.
 
 ## What is machine-checked
 
-| Manuscript object (`paper_v047_cylindrical_chain/main_cmame.tex`) | Lean theorem |
+| Manuscript object (`paper/main_cmame.tex`) | Lean theorem |
 | --- | --- |
 | `lem:stage-residual-defect` (branch selection; general Kantorovich form with `C_Z = 2 M C_R`, now `C_R = 0`) | `exists_root_of_linearization`, `stage_root_exists_unique`, `norm_sub_le_of_linearization` |
 | P2 derivative form (`‖J⁻¹‖ ≤ M`, `‖D²F‖ ≤ L`, `2 M² L C_R h⁷ ≤ ½`; vacuous radius when `C_R = 0`) | `linearization_of_fderiv_bound` |
@@ -69,7 +69,7 @@ the lifted Gauss stage is identically zero. No claim state is changed by this no
 
 ## Manuscript compaction (2026-09-17)
 
-`paper_v047_cylindrical_chain/main_cmame.tex` was rewritten around the exact stage identity:
+`paper/main_cmame.tex` was rewritten around the exact stage identity:
 13047 lines / 259 pages became 4075 lines / 89 pages (after the 2026-09-17 additions below). The method section now displays the
 implemented rows (72 constraint rows, 24 joint-coordinate collocation rows, 36 Newton–Euler rows),
 the theorem section proves `F_{A,h}(Z_G)=0` (`lem:exact-stage-identity`) and the three-term local

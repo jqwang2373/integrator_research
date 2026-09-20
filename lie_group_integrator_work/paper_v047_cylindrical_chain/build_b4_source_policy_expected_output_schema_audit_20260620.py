@@ -18,6 +18,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "B4_SOURCE_POLICY_EXPECTED_OUTPUT_SCHEMA_AUDIT_20260620.json"
 OUT_MD = PAPER / "B4_SOURCE_POLICY_EXPECTED_OUTPUT_SCHEMA_AUDIT_20260620.md"
 FREEZE_PATH = PAPER / "B4_SOURCE_POLICY_COMMAND_PREFLIGHT_FREEZE_20260620.json"
@@ -80,7 +81,7 @@ def canonical_digest(value: Any) -> str:
 def package_path(path_label: str | None) -> Path | None:
     if not path_label:
         return None
-    return (PAPER / path_label).resolve()
+    return (manuscript_path(path_label)).resolve()
 
 
 def artifact_state(path_label: str | None, frozen: dict[str, Any] | None) -> dict[str, Any]:

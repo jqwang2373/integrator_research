@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 APPROVAL = (
     "I explicitly approve running the B4 source-policy execution commands listed in "
     "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json."
@@ -64,7 +65,7 @@ def canonical_digest(value: Any) -> str:
 def package_path(path_label: str | None) -> Path | None:
     if not path_label:
         return None
-    return (PAPER / path_label).resolve()
+    return (manuscript_path(path_label)).resolve()
 
 
 def row_key(row: dict[str, Any]) -> str:

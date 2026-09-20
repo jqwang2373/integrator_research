@@ -8,6 +8,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "EXTERNAL_SUITE_DISPOSITION_AUDIT.json"
 OUT_MD = PAPER / "EXTERNAL_SUITE_DISPOSITION_AUDIT.md"
 
@@ -91,8 +92,8 @@ def main() -> None:
     queue = read_json(PAPER / "EXTERNAL_SAME_TEST_RUN_QUEUE.json")
     diagnosis = read_json(PAPER / "EXTERNAL_BASELINE_SOURCE_POLICY_DIAGNOSIS.json")
     blocker = read_json(PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     suite_rows = []
     for suite in acceptance.get("source_suite_acceptance", []):

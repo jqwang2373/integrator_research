@@ -10,11 +10,12 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 V048 = ROOT / "v048_cross_paper_same_test_benchmarks" / "results"
 GATE_JSON = PAPER / "CMAME_PROOF_CONTRACT_GATE.json"
 GATE_MD = PAPER / "CMAME_PROOF_CONTRACT_GATE.md"
-MANUSCRIPT = PAPER / "main_cmame.tex"
+MANUSCRIPT = LATEX / "main_cmame.tex"
 ORDER_GATE = PAPER / "ORDER_ACCEPTANCE_GATE.json"
 DYNAMIC_ORACLE = PAPER / "DYNAMIC_ROW_ORACLE_GATE.json"
 BLOCKER_GATE = PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json"
@@ -30,9 +31,9 @@ KINEMATIC_DEFECT_MD = PAPER / "KINEMATIC_ROW_DEFECT_CERTIFICATE.md"
 NEWTON_EULER_OBLIGATION_JSON = PAPER / "NEWTON_EULER_DEFECT_OBLIGATION_GATE.json"
 NEWTON_EULER_OBLIGATION_MD = PAPER / "NEWTON_EULER_DEFECT_OBLIGATION_GATE.md"
 MANIFEST = PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json"
-FLAT_MANUSCRIPT = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
-PDF_TEXT = PAPER / "main_cmame.txt"
-FLAT_PDF_TEXT = PAPER / "cmame_submission_flat" / "main_cmame_submission.txt"
+FLAT_MANUSCRIPT = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
+PDF_TEXT = LATEX / "main_cmame.txt"
+FLAT_PDF_TEXT = LATEX / "cmame_submission_flat" / "main_cmame_submission.txt"
 R2E = V048 / "closed_loop_residual_to_error_theorem_obligations.json"
 
 PROOF_CONDITIONAL_BOUNDARY_TOKENS = [

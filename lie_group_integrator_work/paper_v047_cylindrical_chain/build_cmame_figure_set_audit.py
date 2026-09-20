@@ -11,7 +11,8 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
-FLAT = PAPER / "cmame_submission_flat"
+from paper_paths import LATEX, package_path as manuscript_path
+FLAT = LATEX / "cmame_submission_flat"
 OUT_JSON = PAPER / "CMAME_FIGURE_SET_AUDIT.json"
 OUT_MD = PAPER / "CMAME_FIGURE_SET_AUDIT.md"
 
@@ -157,8 +158,8 @@ def png_size(path: Path) -> tuple[int, int]:
 
 
 def audit_figure(spec: dict[str, object], main_tex: str, flat_tex: str, main_pdf: str, flat_pdf: str) -> dict[str, object]:
-    main_path = PAPER / str(spec["main"])
-    flat_path = PAPER / str(spec["flat"])
+    main_path = manuscript_path(str(spec["main"]))
+    flat_path = manuscript_path(str(spec["flat"]))
     main_exists = main_path.exists() and main_path.stat().st_size > 0
     flat_exists = flat_path.exists() and flat_path.stat().st_size > 0
     main_width, main_height = png_size(main_path) if main_exists else (0, 0)
@@ -331,9 +332,9 @@ def post_b4_figure_scope_plan(
 
 
 def main() -> None:
-    main_tex = read_text(PAPER / "main_cmame.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
     flat_tex = read_text(FLAT / "main_cmame_submission.tex")
-    main_pdf = read_text(PAPER / "main_cmame.txt")
+    main_pdf = read_text(LATEX / "main_cmame.txt")
     flat_pdf = read_text(FLAT / "main_cmame_submission.txt")
     b4_plan = read_json(PAPER / "B4_SOURCE_POLICY_WORK_PRECISION_EXECUTION_PLAN.json")
     opt_in_packet = read_json(PAPER / "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json")

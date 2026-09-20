@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 AUDIT_JSON = PAPER / "CMAME_SUBMISSION_INTEGRITY_AUDIT.json"
 AUDIT_MD = PAPER / "CMAME_SUBMISSION_INTEGRITY_AUDIT.md"
 EXPECTED_OC6_REOPEN_LATEST_EXTERNAL_PROBE = "2026-06-21/9/0/0/4/False/False"
@@ -102,8 +103,8 @@ def main() -> int:
         audit = read_json(AUDIT_JSON)
         audit_md = read_text(AUDIT_MD)
         reference_audit = read_json(PAPER / "REFERENCE_METADATA_AUDIT.json")
-        main_tex = read_text(PAPER / "main_cmame.tex")
-        flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+        main_tex = read_text(LATEX / "main_cmame.tex")
+        flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
         manifest = read_json(PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json")
         full_source_runner_gap = read_json(PAPER / "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json")
         objective_completion = read_json(PAPER / "OBJECTIVE_COMPLETION_AUDIT.json")

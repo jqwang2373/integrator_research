@@ -10,6 +10,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_ZIP = PAPER / "cmame_narrowed_repro_code_archive.zip"
 OUT_JSON = PAPER / "CMAME_NARROWED_REPRO_CODE_ARCHIVE_MANIFEST.json"
 OUT_MD = PAPER / "CMAME_NARROWED_REPRO_CODE_ARCHIVE_MANIFEST.md"
@@ -112,12 +113,12 @@ def should_skip(path: Path) -> bool:
 def source_entries() -> list[Path]:
     entries: list[Path] = []
     for rel in SOURCE_FILES:
-        path = PAPER / rel
+        path = manuscript_path(rel)
         if not path.exists() or path.stat().st_size == 0:
             raise FileNotFoundError(rel)
         entries.append(path)
     for rel_dir in SOURCE_DIRS:
-        root = PAPER / rel_dir
+        root = manuscript_path(rel_dir)
         if not root.exists():
             raise FileNotFoundError(rel_dir)
         for path in sorted(root.rglob("*")):

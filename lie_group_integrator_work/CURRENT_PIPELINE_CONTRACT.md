@@ -23,8 +23,8 @@ The skill still matters because it enforces the research discipline:
 Use these files as the current source of truth:
 
 - `paper_v047_cylindrical_chain/CLAIM_BOUNDARY.json`
-- `paper_v047_cylindrical_chain/main_cmame.tex`
-- `paper_v047_cylindrical_chain/main_cmame.pdf`
+- `paper/main_cmame.tex`
+- `paper/main_cmame.pdf`
 - `paper_v047_cylindrical_chain/CMAME_SUBMISSION_CHECKLIST.md`
 - `paper_v047_cylindrical_chain/CMAME_SUBMISSION_READINESS_AUDIT.md`
 - `paper_v047_cylindrical_chain/CMAME_SUBMISSION_READINESS_REVIEW.md`
@@ -69,9 +69,9 @@ Use these files as the current source of truth:
 - `paper_v047_cylindrical_chain/ORDER_ACCEPTANCE_GATE.md`
 - `paper_v047_cylindrical_chain/ORDER_ACCEPTANCE_GATE.json`
 - `paper_v047_cylindrical_chain/IMPLEMENTATION_FIDELITY_CERTIFICATE.md`
-- `paper_v047_cylindrical_chain/cmame_submission_flat/main_cmame_submission.tex`
-- `paper_v047_cylindrical_chain/cmame_submission_flat/main_cmame_submission.pdf`
-- `paper_v047_cylindrical_chain/cmame_submission_flat.zip`
+- `paper/cmame_submission_flat/main_cmame_submission.tex`
+- `paper/cmame_submission_flat/main_cmame_submission.pdf`
+- `paper/cmame_submission_flat.zip`
 - `pipeline_validation_results/pipeline_validation_summary.json`
 - `v047_cylindrical_chain_pipeline/results/summary_v047.json`
 - `docs/VALIDATION_QUICKSTART.md`
@@ -435,7 +435,7 @@ velocity, and recovers the smooth order target on the accepted h-sweep.
 
 ## 2026-09-17 Manuscript Compaction and Proof-Route Pin
 
-The CMAME manuscript `paper_v047_cylindrical_chain/main_cmame.tex` was compacted around the
+The CMAME manuscript `paper/main_cmame.tex` was compacted around the
 exact stage identity (13047 lines / 259 pages to 4075 lines / 89 pages after the second pass). The lifted reduced
 Gauss stage satisfies all 132 implemented rows exactly (`lem:exact-stage-identity`), so the
 stage-residual perturbation term of the order theorem is zero and the local defect is
@@ -517,7 +517,7 @@ stubbed in the top-level validator):
 
 ### 2026-09-20 arXiv version (derived, no claim-state change)
 
-`paper_v047_cylindrical_chain/arxiv/` holds the arXiv preprint: `main_arxiv.tex` (plain
+`paper/arxiv/` holds the arXiv preprint: `main_arxiv.tex` (plain
 `article` class, geometry/amsthm/booktabs/graphicx/hyperref), the 13 flat figures, `README.md`
 (title, plain-text abstract under the 1920-character arXiv limit, suggested categories math.NA /
 cs.CE / physics.comp-ph, upload steps), `arxiv_submission.zip` (source + figures, fixed
@@ -588,3 +588,20 @@ manuscript edit: install `main_cmame.tex` → flat copy → `python3 build_arxiv
   (heavy, and the double-pendulum Newton failure is in the public code), and public-policy horizons
   for the closed-loop rows; the other 20 rows have no closable path. The global submit decision
   therefore stays `do_not_submit_global` by construction; the narrowed claim is the submission path.
+
+### 2026-09-20 LaTeX split: `paper/` holds the manuscript, the package holds the ledger
+
+- Moved from `paper_v047_cylindrical_chain/` to `lie_group_integrator_work/paper/`: `main_cmame.tex`
+  (+ pdf/log/txt), `figures/`, `cmame_submission_flat/` (+ zip), `arxiv/`, `highlights_cmame.txt`,
+  `declarations_cmame.md`, `COVER_LETTER.md`, `README_CMAME_FLAT_SUBMISSION.md`, the legacy `main.tex`
+  and `main_concise.tex` (+ pdf/log/txt), and the manuscript backups (`paper/notes/`).
+- Scripts locate them through `paper_v047_cylindrical_chain/paper_paths.py` (`LATEX`,
+  `package_path(label)`); every `PAPER / "<manuscript asset>"` construction in the package (about
+  260 sites in 70 scripts) was rewritten to `LATEX / ...`, label-resolution helpers
+  (`validate_cmame_submission`, `validate_submission_bundle`, `validate_paper_package`,
+  `build_cmame_reproducibility_package_manifest`, `build_cmame_figure_set_audit`, the review agent)
+  route relative labels through `package_path`, and the top-level validator uses `LATEX_DIR` /
+  `paper_asset_path`. Record labels such as `cmame_submission_flat/main_cmame_submission.tex` are
+  unchanged: only their resolution moved.
+- LaTeX builds now run inside `paper/` (`validate_paper_package.py --latex` uses that cwd). The
+  quickstart commands are unchanged apart from the directory.

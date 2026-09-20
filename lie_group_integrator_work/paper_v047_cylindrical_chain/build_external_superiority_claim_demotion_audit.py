@@ -15,6 +15,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "EXTERNAL_SUPERIORITY_CLAIM_DEMOTION_AUDIT.json"
 OUT_MD = PAPER / "EXTERNAL_SUPERIORITY_CLAIM_DEMOTION_AUDIT.md"
 
@@ -44,8 +45,8 @@ def main() -> None:
     tfe_row_audit = read_json(PAPER / "TFE_SOURCE_POLICY_ROW_AUDIT.json")
     tfe_model_audit = read_json(PAPER / "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json")
     blocker = read_json(PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json")
-    main_tex = (PAPER / "main_cmame.tex").read_text(encoding="utf-8", errors="replace")
-    flat_tex = (PAPER / "cmame_submission_flat" / "main_cmame_submission.tex").read_text(
+    main_tex = (LATEX / "main_cmame.tex").read_text(encoding="utf-8", errors="replace")
+    flat_tex = (LATEX / "cmame_submission_flat" / "main_cmame_submission.tex").read_text(
         encoding="utf-8",
         errors="replace",
     )

@@ -16,6 +16,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "SOURCE_POLICY_REOPEN_CONDITION_MONITOR_20260621_DELTA.json"
 OUT_MD = PAPER / "SOURCE_POLICY_REOPEN_CONDITION_MONITOR_20260621_DELTA.md"
 
@@ -93,7 +94,7 @@ def main() -> None:
         "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json",
     ]
     source_artifact_sha256 = {
-        name: sha256_file(PAPER / name)
+        name: sha256_file(manuscript_path(name))
         for name in source_files
         if name != "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json"
     }

@@ -10,6 +10,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 EXPECTED_SUBMISSION_FILES = {
     "main_cmame.tex",
     "cmame_submission_flat/main_cmame_submission.tex",
@@ -56,10 +57,10 @@ def main() -> int:
     try:
         audit = read_json(PAPER / "CMAME_CLAIM_HYGIENE_AUDIT.json")
         audit_md = read_text(PAPER / "CMAME_CLAIM_HYGIENE_AUDIT.md")
-        cmame_tex = read_text(PAPER / "main_cmame.tex")
-        flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
-        pdf_text = read_text(PAPER / "main_cmame.txt")
-        flat_pdf_text = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.txt")
+        cmame_tex = read_text(LATEX / "main_cmame.tex")
+        flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
+        pdf_text = read_text(LATEX / "main_cmame.txt")
+        flat_pdf_text = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.txt")
     except Exception as exc:  # noqa: BLE001
         print(f"cmame claim-hygiene audit validation: FAIL\n- {exc}")
         return 1

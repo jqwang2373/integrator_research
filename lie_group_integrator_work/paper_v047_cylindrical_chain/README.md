@@ -2,27 +2,29 @@
 
 ## Map (read this first)
 
-This directory is the CMAME paper package **and** its evidence ledger. About 750 files live here
-because every audit record is kept next to the validator that checks it. What you actually edit
-and read:
+This directory is the CMAME paper's **evidence ledger**: audit records, the builders that write
+them and the validators that check them (about 750 files, because every record sits next to its
+validator). The LaTeX itself lives in `../paper/` since 2026-09-20; scripts here reach it through
+`paper_paths.py` (`LATEX`, `package_path`). What you actually edit and read:
 
 | Purpose | Files |
 | --- | --- |
-| Manuscript (the only hand-edited source) | `main_cmame.tex` → `main_cmame.pdf`, `main_cmame.log`, `main_cmame.txt` |
-| Elsevier flat copy (derived) | `cmame_submission_flat/main_cmame_submission.tex` + 13 `Figure_n_*.png`, `cmame_submission_flat.zip` |
-| arXiv preprint (derived) | `arxiv/main_arxiv.tex`, `arxiv/README.md` (metadata), `arxiv/arxiv_submission.zip`; generator `build_arxiv_version.py` |
-| Submission sidecars | `highlights_cmame.txt`, `declarations_cmame.md`, `COVER_LETTER.md`, `CMAME_SUBMISSION_CHECKLIST.md`, `SUBMISSION_PACKET.md` |
+| Manuscript (the only hand-edited source) | `../paper/main_cmame.tex` → `main_cmame.pdf`, `main_cmame.log`, `main_cmame.txt` (all in `../paper/`) |
+| Elsevier flat copy (derived) | `../paper/cmame_submission_flat/` + `../paper/cmame_submission_flat.zip` (built by `build_cmame_flat_archive.py`) |
+| arXiv preprint (derived) | `../paper/arxiv/`; generator `build_arxiv_version.py` here |
+| Submission sidecars | `../paper/highlights_cmame.txt`, `../paper/declarations_cmame.md`, `../paper/COVER_LETTER.md`; here: `CMAME_SUBMISSION_CHECKLIST.md`, `SUBMISSION_PACKET.md` |
 | Lean 4 development (copy of `~/lean/integrator_order_proof`) | `lean/` |
 | Proof-route gate and numerical checks | `EXACT_STAGE_IDENTITY_GATE.md`, `EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.md`, `P2_CONSTANTS_NUMERICAL_CHECK.md`, `PROOF_SOLVER_TOLERANCE_REGIME_SWEEP.md` |
-| Status and history | `CURRENT_STATUS_CN.md` (Chinese, dated sections), `PAPER_CLAIM_LEDGER.md`, `notes/` (backups, working notes) |
-| Legacy manuscripts (superseded, kept for the record) | `main.tex`, `main_concise.tex` and their PDFs |
-| Figures | `figures/` (sources), `generate_publication_figures.py` |
+| Status and history | `CURRENT_STATUS_CN.md` (Chinese, dated sections), `PAPER_CLAIM_LEDGER.md`, `notes/` (working notes, B4 run archive); manuscript backups in `../paper/notes/` |
+| Legacy manuscripts (superseded, kept for the record) | `../paper/main.tex`, `../paper/main_concise.tex` and their PDFs |
+| Figures | `../paper/figures/` (sources), `generate_publication_figures.py` here |
 | Reproducibility bundles | `cmame_narrowed_repro_bundle/`, `cmame_minimal_reproducibility_candidate/`, `cmame_*_runner_*` |
 
 How the rest is organized (by file-name prefix):
 
 - `build_<name>.py` regenerates the record `<NAME>.json` + `<NAME>.md`; `validate_<name>.py` checks it read-only.
-  Records whose JSON carries `superseded_by` are retired but kept.
+  Records whose JSON carries `superseded_by` are retired but kept. Manuscript-asset paths go through
+  `paper_paths.py` (`LATEX / "main_cmame.tex"`, `package_path(label)`), never `PAPER / "main_cmame.tex"`.
 - `run_*.py` are numerical probes and guarded drivers; `run_b4_source_policy_after_opt_in.sh` requires the
   explicit opt-in sentence from `../CURRENT_PIPELINE_CONTRACT.md`.
 - `validate_paper_package.py` runs the whole paper chain; `../validate_pipeline_outputs.py` runs the

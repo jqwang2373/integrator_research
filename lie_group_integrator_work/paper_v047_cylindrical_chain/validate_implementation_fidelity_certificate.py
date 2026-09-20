@@ -9,12 +9,13 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 PIPELINE = ROOT / "v047_cylindrical_chain_pipeline"
 RUN = PIPELINE / "run_v047.py"
 CERT = PAPER / "IMPLEMENTATION_FIDELITY_CERTIFICATE.md"
 DYNAMIC = PAPER / "DYNAMIC_ROW_ORACLE_GATE.md"
-MAIN = PAPER / "main_cmame.tex"
+MAIN = LATEX / "main_cmame.tex"
 MANIFEST = PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json"
 
 

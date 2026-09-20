@@ -18,6 +18,7 @@ import sympy as sp
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.json"
 OUT_MD = PAPER / "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.md"
 
@@ -125,9 +126,8 @@ def manuscript_link_audit() -> dict[str, Any]:
         "\\label{lem:stage-residual-defect}",
     ]
     sources = {
-        "main_cmame.tex": PAPER / "main_cmame.tex",
-        "cmame_submission_flat/main_cmame_submission.tex": PAPER
-        / "cmame_submission_flat"
+        "main_cmame.tex": LATEX / "main_cmame.tex",
+        "cmame_submission_flat/main_cmame_submission.tex": LATEX / "cmame_submission_flat"
         / "main_cmame_submission.tex",
     }
     checked_sources: dict[str, Any] = {}

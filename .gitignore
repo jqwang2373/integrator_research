@@ -14,3 +14,5 @@ lie_group_integrator_work/paper_v047_cylindrical_chain/**/*.out
 lie_group_integrator_work/paper_v047_cylindrical_chain/*.out
 slides/**/*.out
 slides/*.out
+lie_group_integrator_work/paper/**/*.out
+lie_group_integrator_work/paper/*.out

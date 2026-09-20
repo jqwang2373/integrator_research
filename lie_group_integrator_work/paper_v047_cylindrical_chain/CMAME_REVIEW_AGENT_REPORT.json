@@ -371,7 +371,7 @@
         "b6_four_example_source_policy_rows_closed": 0,
         "b6_four_example_source_policy_rows_total": 40,
         "code_bloat_risk_for_submission": true,
-        "combined_python_line_count": 229998,
+        "combined_python_line_count": 230137,
         "compact_closed_loop_candidate_python_lines": 1962,
         "compact_closed_loop_candidate_runner_passed": true,
         "full_source_policy_runner_archive_gap_action_boundary": {
@@ -511,8 +511,8 @@
         "narrowed_reproducibility_package_ready": true,
         "p1_double_runner_candidate_ready": true,
         "p1_single_runner_candidate_ready": true,
-        "paper_python_file_count": 340,
-        "paper_python_line_count": 201256,
+        "paper_python_file_count": 341,
+        "paper_python_line_count": 201395,
         "runner_centered_package_ready": false,
         "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
         "source_policy_execution_handoff_authorized": false,
@@ -1441,7 +1441,7 @@
   "cmame_blocker_gate_open_blockers": [],
   "code_hygiene_checks": {
     "code_bloat_risk_for_submission": true,
-    "combined_python_line_count": 229998,
+    "combined_python_line_count": 230137,
     "full_source_policy_runner_package_ready": false,
     "hi2022_bounded_rows_present": true,
     "local_runner_centered_candidate_ready": true,
@@ -1495,27 +1495,27 @@
     "paper_largest_python_files": [
       {
         "file": "validate_cmame_review_agent.py",
-        "lines": 8287
+        "lines": 8288
       },
       {
         "file": "validate_cmame_reproducibility_package_manifest.py",
-        "lines": 7065
+        "lines": 7066
       },
       {
         "file": "cmame_submission_review_agent.py",
-        "lines": 6413
+        "lines": 6414
       },
       {
         "file": "validate_cmame_blocker_closure_gate.py",
-        "lines": 6014
+        "lines": 6015
       },
       {
         "file": "build_cmame_reproducibility_package_manifest.py",
-        "lines": 5362
+        "lines": 5363
       }
     ],
-    "paper_python_file_count": 340,
-    "paper_python_line_count": 201256,
+    "paper_python_file_count": 341,
+    "paper_python_line_count": 201395,
     "paper_python_prefix_counts": {
       "build": 146,
       "merge": 0,
@@ -4099,22 +4099,22 @@
     "input_artifacts_read": [
       {
         "bytes": 206902,
-        "path": "main_cmame.tex",
+        "path": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/uw_paper/integrator_research/lie_group_integrator_work/paper/main_cmame.tex",
         "sha256": "56f9a6968ecf3ea4dea094e5668dfd7d80fb8b7a7adaf97df2a5ac12974982cb"
       },
       {
         "bytes": 219107,
-        "path": "main_cmame.txt",
+        "path": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/uw_paper/integrator_research/lie_group_integrator_work/paper/main_cmame.txt",
         "sha256": "d8dd12620596711622a241026a6c4c3ccfd0995ef3a4ef484e9d3956f5b2c847"
       },
       {
         "bytes": 206900,
-        "path": "cmame_submission_flat/main_cmame_submission.tex",
+        "path": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/uw_paper/integrator_research/lie_group_integrator_work/paper/cmame_submission_flat/main_cmame_submission.tex",
         "sha256": "3dc7265bf108337be5586ee008d1932bf251169b5fa07a797ca59dc350d32298"
       },
       {
         "bytes": 219107,
-        "path": "cmame_submission_flat/main_cmame_submission.txt",
+        "path": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/uw_paper/integrator_research/lie_group_integrator_work/paper/cmame_submission_flat/main_cmame_submission.txt",
         "sha256": "d8dd12620596711622a241026a6c4c3ccfd0995ef3a4ef484e9d3956f5b2c847"
       },
       {
@@ -4125,7 +4125,7 @@
       {
         "bytes": 283617,
         "path": "OBJECTIVE_COMPLETION_AUDIT.json",
-        "sha256": "b679ce719e761797cb66eadcf087859ae862d8e88d9345dda0df2ef1355a3554"
+        "sha256": "a4de1d7ee70d469e094b069187391a414da7c4835ea4724f4e8a0cc6d5a99bb8"
       },
       {
         "bytes": 96834,
@@ -4235,12 +4235,12 @@
       {
         "bytes": 6754,
         "path": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json",
-        "sha256": "742471f37b24c2e60d8f534ba4ac5d3c7e4b5facf3bae341612690983c8d8b38"
+        "sha256": "8aef8f38bd9510117d7ce938dc580b1e865fa16c684f2bb33de63f6186d572cf"
       },
       {
         "bytes": 64518,
         "path": "CMAME_RUNNER_CENTERED_REPRODUCIBILITY_AUDIT.json",
-        "sha256": "f2e27f39eeebf093e207f09ff4ccf32bd01f50fa963209b58ac134d9d26347e2"
+        "sha256": "164944f6185b720817bf65bf844a885ad091fc81ce45738c55919a12da053b8d"
       },
       {
         "bytes": 45927,
@@ -4255,7 +4255,7 @@
       {
         "bytes": 137347,
         "path": "CMAME_SUBMISSION_INTEGRITY_AUDIT.json",
-        "sha256": "b9364cbdfc01a62046df802bfc9b04d21e994418d37c1e37a3b0bec9eaec1964"
+        "sha256": "27957a003b4ed185da3844437d851ac05f41490199a700df74b773e86d01cc67"
       },
       {
         "bytes": 22404,
@@ -4270,11 +4270,11 @@
       {
         "bytes": 407369,
         "path": "CMAME_REPRODUCIBILITY_PACKAGE_MANIFEST.json",
-        "sha256": "1a696baea66cfb3682974cd95c1452a512a47583f2749ac5b311c54274bd9c8a"
+        "sha256": "228a763fa934a181331b7860750541b2350f18714943d0c5a5b43c91869cb24e"
       },
       {
         "bytes": 915,
-        "path": "../v048_cross_paper_same_test_benchmarks/results/global_comparison_policy_audit.json",
+        "path": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/uw_paper/integrator_research/lie_group_integrator_work/v048_cross_paper_same_test_benchmarks/results/global_comparison_policy_audit.json",
         "sha256": "30dcc49274966f72a11728c474ae1072387e28bc1304dc254f7a0e0fc5f875f5"
       }
     ],
@@ -4678,7 +4678,7 @@
         "b6_four_example_source_policy_rows_closed": 0,
         "b6_four_example_source_policy_rows_total": 40,
         "code_bloat_risk_for_submission": true,
-        "combined_python_line_count": 229998,
+        "combined_python_line_count": 230137,
         "compact_closed_loop_candidate_python_lines": 1962,
         "compact_closed_loop_candidate_runner_passed": true,
         "full_source_policy_runner_archive_gap_action_boundary": {
@@ -4818,8 +4818,8 @@
         "narrowed_reproducibility_package_ready": true,
         "p1_double_runner_candidate_ready": true,
         "p1_single_runner_candidate_ready": true,
-        "paper_python_file_count": 340,
-        "paper_python_line_count": 201256,
+        "paper_python_file_count": 341,
+        "paper_python_line_count": 201395,
         "runner_centered_package_ready": false,
         "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
         "source_policy_execution_handoff_authorized": false,
@@ -5912,7 +5912,7 @@
           "b6_four_example_source_policy_rows_closed": 0,
           "b6_four_example_source_policy_rows_total": 40,
           "code_bloat_risk_for_submission": true,
-          "combined_python_line_count": 229998,
+          "combined_python_line_count": 230137,
           "compact_closed_loop_candidate_python_lines": 1962,
           "compact_closed_loop_candidate_runner_passed": true,
           "full_source_policy_runner_archive_gap_action_boundary": {
@@ -6052,8 +6052,8 @@
           "narrowed_reproducibility_package_ready": true,
           "p1_double_runner_candidate_ready": true,
           "p1_single_runner_candidate_ready": true,
-          "paper_python_file_count": 340,
-          "paper_python_line_count": 201256,
+          "paper_python_file_count": 341,
+          "paper_python_line_count": 201395,
           "runner_centered_package_ready": false,
           "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
           "source_policy_execution_handoff_authorized": false,

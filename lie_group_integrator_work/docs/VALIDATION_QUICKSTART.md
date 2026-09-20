@@ -61,12 +61,12 @@ checks do not accidentally trigger the full numerical regeneration.
   `declarations_cmame.md`, `CMAME_SUBMISSION_CHECKLIST.md`, and
   `CMAME_SUBMISSION_READINESS_AUDIT.md`.
 - The flat source package is
-  `paper_v047_cylindrical_chain/cmame_submission_flat/`; its master file is
+  `paper/cmame_submission_flat/`; its master file is
   `cmame_submission_flat/main_cmame_submission.tex` and its compiled check PDF
   is `cmame_submission_flat/main_cmame_submission.pdf`. The upload-shaped flat
   archive is `cmame_submission_flat.zip`.
 - The submission package also includes
-  `paper_v047_cylindrical_chain/COVER_LETTER.md` and
+  `paper/COVER_LETTER.md` and
   `paper_v047_cylindrical_chain/SUBMISSION_ARTIFACT_MANIFEST.json`; the package
   validator checks both files against the same claim boundary.
 - The submission artifact manifest boundary is synchronized by
@@ -924,3 +924,7 @@ cd v047_cylindrical_chain_pipeline
 The latest recorded full regeneration time is `2386.76` seconds. For paper
 edits, claim checks, or the four-example acceptance check, use the fast
 validators above instead.
+
+## Where the LaTeX lives (2026-09-20)
+
+The manuscript, figures, flat copy and arXiv version are in `lie_group_integrator_work/paper/`; LaTeX builds run inside `paper/` (the `latexmk` commands above are unchanged, only the working directory moved). The evidence ledger and all validators stay in `paper_v047_cylindrical_chain/`.

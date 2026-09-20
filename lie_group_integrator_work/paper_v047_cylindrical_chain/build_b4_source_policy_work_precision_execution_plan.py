@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 V048 = PAPER.parent / "v048_cross_paper_same_test_benchmarks"
 RA2021_DOUBLE_ORDER_FORMS = ("rA", "rp", "reps")
 
@@ -58,7 +59,7 @@ def summarize_executed_ra2021_shard(form: str) -> dict[str, Any]:
         "../v048_cross_paper_same_test_benchmarks/results/ra2021_double_order_shards/"
         f"{form}_double_pendulum_0p0001.csv"
     )
-    shard_path = PAPER / shard_label
+    shard_path = manuscript_path(shard_label)
     rows = read_csv(shard_path.resolve())
     ok_rows = [row for row in rows if row.get("status") == "ok"]
     h_values = [float(row["h"]) for row in rows] if rows else []
@@ -155,7 +156,7 @@ def build_executed_ra2021_shard_evidence() -> dict[str, Any]:
 
 
 def summarize_gauss6_csv(path_label: str, model: str | None = None) -> dict[str, Any]:
-    path = PAPER / path_label
+    path = manuscript_path(path_label)
     rows = read_csv(path.resolve())
     ok_rows = [row for row in rows if row.get("status") == "ok"]
     failed_rows = [row for row in rows if str(row.get("status", "")).startswith("failed")]
@@ -285,9 +286,9 @@ def build_ra2021_closed_loop_same_window_public_work_precision_evidence() -> dic
         "../v048_cross_paper_same_test_benchmarks/results/"
         "closed_loop_true_dynamic_public_work_precision_summary.csv"
     )
-    summary_path = PAPER / summary_label
-    rows_path = PAPER / rows_label
-    summary_rows_path = PAPER / summary_rows_label
+    summary_path = manuscript_path(summary_label)
+    rows_path = manuscript_path(rows_label)
+    summary_rows_path = manuscript_path(summary_rows_label)
     summary = read_json(summary_path.resolve()) if summary_path.exists() else {}
     rows = read_csv(rows_path.resolve())
     summary_rows = read_csv(summary_rows_path.resolve())
@@ -379,9 +380,9 @@ def build_ra2021_double_local_source_policy_candidate_evidence() -> dict[str, An
         "ra2021_double_local_source_policy_candidate_rows.csv"
     )
     validator_label = "../v048_cross_paper_same_test_benchmarks/validate_ra2021_double_local_source_policy_candidate.py"
-    summary_path = PAPER / summary_label
-    rows_path = PAPER / rows_label
-    validator_path = PAPER / validator_label
+    summary_path = manuscript_path(summary_label)
+    rows_path = manuscript_path(rows_label)
+    validator_path = manuscript_path(validator_label)
     summary = read_json(summary_path.resolve()) if summary_path.exists() else {}
     rows = read_csv(rows_path.resolve())
     ok_rows = [row for row in rows if row.get("status") == "ok"]
@@ -469,7 +470,7 @@ def build_hi2022_full_t8_source_policy_candidate_evidence(
     hi2022_source_row_audit: dict[str, Any],
 ) -> dict[str, Any]:
     validator_label = "../v048_cross_paper_same_test_benchmarks/validate_hi2022_full_t8_source_policy_candidate.py"
-    validator_path = PAPER / validator_label
+    validator_path = manuscript_path(validator_label)
     matrix = hi2022_source_row_audit.get("t8_selected_candidate_matrix_preflight", {})
     matrix_shards = [item for item in matrix.get("shards", []) if isinstance(item, dict)]
     summaries: list[dict[str, Any]] = []
@@ -479,8 +480,8 @@ def build_hi2022_full_t8_source_policy_candidate_evidence(
         shard_id = str(shard.get("shard_id"))
         summary_label = str(shard.get("summary_path") or "")
         rows_label = str(shard.get("rows_path") or "")
-        summary_path = PAPER / summary_label
-        rows_path = PAPER / rows_label
+        summary_path = manuscript_path(summary_label)
+        rows_path = manuscript_path(rows_label)
         summary = read_json(summary_path.resolve()) if summary_path.exists() else {}
         rows = read_csv(rows_path.resolve()) if rows_path.exists() else []
         ok_rows = [row for row in rows if row.get("status") == "ok"]

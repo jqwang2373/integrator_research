@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 
 
 class Checks:
@@ -34,7 +35,7 @@ def read_text(path: Path) -> str:
 
 
 def resolve(path_label: str) -> Path:
-    return (PAPER / path_label).resolve() if path_label.startswith("../") else PAPER / path_label
+    return (manuscript_path(path_label)).resolve() if path_label.startswith("../") else manuscript_path(path_label)
 
 
 def symbol_spans(path: Path) -> dict[str, tuple[int, int]]:

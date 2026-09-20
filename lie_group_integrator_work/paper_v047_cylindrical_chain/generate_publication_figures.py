@@ -14,8 +14,9 @@ from matplotlib import patches
 
 
 PAPER = Path(__file__).resolve().parent
-FIGURES = PAPER / "figures"
-FLAT = PAPER / "cmame_submission_flat"
+from paper_paths import LATEX, package_path as manuscript_path
+FIGURES = LATEX / "figures"
+FLAT = LATEX / "cmame_submission_flat"
 RESULTS = PAPER.parent / "v047_cylindrical_chain_pipeline" / "results"
 V048_RESULTS = PAPER.parent / "v048_cross_paper_same_test_benchmarks" / "results"
 
@@ -42,13 +43,13 @@ def read_v048_csv(name: str) -> list[dict[str, str]]:
 
 
 def read_paper_csv(name: str) -> list[dict[str, str]]:
-    path = PAPER / name
+    path = manuscript_path(name)
     with path.open(newline="", encoding="utf-8") as handle:
         return list(csv.DictReader(handle))
 
 
 def read_json(name: str) -> dict:
-    path = PAPER / name
+    path = manuscript_path(name)
     with path.open(encoding="utf-8") as handle:
         data = json.load(handle)
     if not isinstance(data, dict):

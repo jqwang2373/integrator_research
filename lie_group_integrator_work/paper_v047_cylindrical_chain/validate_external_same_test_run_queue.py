@@ -10,6 +10,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 QUEUE_JSON = PAPER / "EXTERNAL_SAME_TEST_RUN_QUEUE.json"
 QUEUE_MD = PAPER / "EXTERNAL_SAME_TEST_RUN_QUEUE.md"
 CROSS_CASES = PAPER / "CROSS_PAPER_BENCHMARK_CASES.json"
@@ -206,7 +207,7 @@ def main() -> int:
         "RA2021 source-policy dynamic-order reading changed",
     )
     for artifact in ra_batch.get("current_evidence", []):
-        checks.check((PAPER / artifact).resolve().exists(), f"RA2021 evidence missing: {artifact}")
+        checks.check((manuscript_path(artifact)).resolve().exists(), f"RA2021 evidence missing: {artifact}")
 
     checks.check(
         hi_batch.get("queue_status") == "parallel_ready_after_policy_selection",
@@ -219,7 +220,7 @@ def main() -> int:
     checks.check(hi_batch.get("can_parallelize") is True, "HI2022 should remain parallelizable")
     checks.check(hi_batch.get("source_policy_1e-4_required") is False, "HI2022 queue overclaims source 1e-4 need")
     for artifact in hi_batch.get("current_evidence", []):
-        checks.check((PAPER / artifact).resolve().exists(), f"HI2022 evidence missing: {artifact}")
+        checks.check((manuscript_path(artifact)).resolve().exists(), f"HI2022 evidence missing: {artifact}")
 
     checks.check(
         tfe_batch.get("queue_status") == "not_ready_source_setup_encoding_required",
@@ -237,7 +238,7 @@ def main() -> int:
     checks.check(vp_batch.get("can_parallelize") is False, "VP2024 batch should not be runnable before code resolution")
     checks.check(vp_batch.get("source_policy_1e-4_required") is False, "VP2024 source policy changed")
     for artifact in vp_batch.get("current_evidence", []):
-        checks.check((PAPER / artifact).resolve().exists(), f"VP2024 evidence missing: {artifact}")
+        checks.check((manuscript_path(artifact)).resolve().exists(), f"VP2024 evidence missing: {artifact}")
 
     acceptance = queue.get("acceptance_rules", {})
     for key in [

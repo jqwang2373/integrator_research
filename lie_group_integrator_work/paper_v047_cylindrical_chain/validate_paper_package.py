@@ -18,6 +18,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 PIPELINE = ROOT / "v047_cylindrical_chain_pipeline"
 PYTHON = ROOT / ".venv_sbel" / "bin" / "python"
@@ -55,7 +56,7 @@ def check_latex_log() -> bool:
     failures: list[str] = []
     checked: list[str] = []
     for log_name in ["main.log", "main_concise.log", "main_cmame.log", "cmame_submission_flat/main_cmame_submission.log", "arxiv/main_arxiv.log"]:
-        log_path = PAPER / log_name
+        log_path = manuscript_path(log_name)
         if not log_path.exists():
             failures.append(f"{log_name} is missing; run with --latex or rebuild PDFs first")
             continue
@@ -79,17 +80,17 @@ def check_latex_log() -> bool:
 
 def check_required_files() -> bool:
     required_files = [
-        PAPER / "main.tex",
-        PAPER / "main.pdf",
-        PAPER / "main.log",
-        PAPER / "main_concise.tex",
-        PAPER / "main_concise.pdf",
-        PAPER / "main_concise.log",
-        PAPER / "main_cmame.tex",
-        PAPER / "main_cmame.pdf",
-        PAPER / "main_cmame.log",
-        PAPER / "highlights_cmame.txt",
-        PAPER / "declarations_cmame.md",
+        LATEX / "main.tex",
+        LATEX / "main.pdf",
+        LATEX / "main.log",
+        LATEX / "main_concise.tex",
+        LATEX / "main_concise.pdf",
+        LATEX / "main_concise.log",
+        LATEX / "main_cmame.tex",
+        LATEX / "main_cmame.pdf",
+        LATEX / "main_cmame.log",
+        LATEX / "highlights_cmame.txt",
+        LATEX / "declarations_cmame.md",
         PAPER / "CMAME_SUBMISSION_CHECKLIST.md",
         PAPER / "CMAME_SUBMISSION_READINESS_AUDIT.md",
         PAPER / "CMAME_SUBMISSION_READINESS_REVIEW.md",
@@ -393,33 +394,33 @@ def check_required_files() -> bool:
         PAPER / "NEWTON_EULER_DYNAMIC_ROW_CLOSURE_CONTRACT.json",
         PAPER / "build_newton_euler_dynamic_row_closure_contract.py",
         PAPER / "validate_newton_euler_dynamic_row_closure_contract.py",
-        PAPER / "README_CMAME_FLAT_SUBMISSION.md",
-        PAPER / "cmame_submission_flat.zip",
-        PAPER / "cmame_submission_flat" / "main_cmame_submission.tex",
-        PAPER / "cmame_submission_flat" / "main_cmame_submission.pdf",
-        PAPER / "cmame_submission_flat" / "main_cmame_submission.log",
-        PAPER / "cmame_submission_flat" / "highlights_cmame.txt",
-        PAPER / "cmame_submission_flat" / "declarations_cmame.md",
-        PAPER / "cmame_submission_flat" / "Figure_1_convergence.png",
-        PAPER / "cmame_submission_flat" / "Figure_2_asme_lower_pair_graph_bridge.png",
-        PAPER / "cmame_submission_flat" / "Figure_3_asme_closed_loop_kinematic_fullva.png",
-        PAPER / "cmame_submission_flat" / "Figure_4_order_closure_blend.png",
-        PAPER / "cmame_submission_flat" / "Figure_5_velocity_compression.png",
-        PAPER / "cmame_submission_flat" / "Figure_6_sparse_speed_gap.png",
-        PAPER / "cmame_submission_flat" / "Figure_7_strict_common_reference_work_precision.png",
-        PAPER / "cmame_submission_flat" / "Figure_8_claim_boundary_limitations.png",
-        PAPER / "cmame_submission_flat" / "Figure_9_coarse_baseline_work_precision.png",
-        PAPER / "cmame_submission_flat" / "Figure_10_closed_loop_true_dynamic_order.png",
-        PAPER / "cmame_submission_flat" / "Figure_11_method_stage_architecture.png",
-        PAPER / "cmame_submission_flat" / "Figure_12_all_method_result_matrix.png",
-        PAPER / "cmame_submission_flat" / "Figure_13_work_precision_compendium.png",
+        LATEX / "README_CMAME_FLAT_SUBMISSION.md",
+        LATEX / "cmame_submission_flat.zip",
+        LATEX / "cmame_submission_flat" / "main_cmame_submission.tex",
+        LATEX / "cmame_submission_flat" / "main_cmame_submission.pdf",
+        LATEX / "cmame_submission_flat" / "main_cmame_submission.log",
+        LATEX / "cmame_submission_flat" / "highlights_cmame.txt",
+        LATEX / "cmame_submission_flat" / "declarations_cmame.md",
+        LATEX / "cmame_submission_flat" / "Figure_1_convergence.png",
+        LATEX / "cmame_submission_flat" / "Figure_2_asme_lower_pair_graph_bridge.png",
+        LATEX / "cmame_submission_flat" / "Figure_3_asme_closed_loop_kinematic_fullva.png",
+        LATEX / "cmame_submission_flat" / "Figure_4_order_closure_blend.png",
+        LATEX / "cmame_submission_flat" / "Figure_5_velocity_compression.png",
+        LATEX / "cmame_submission_flat" / "Figure_6_sparse_speed_gap.png",
+        LATEX / "cmame_submission_flat" / "Figure_7_strict_common_reference_work_precision.png",
+        LATEX / "cmame_submission_flat" / "Figure_8_claim_boundary_limitations.png",
+        LATEX / "cmame_submission_flat" / "Figure_9_coarse_baseline_work_precision.png",
+        LATEX / "cmame_submission_flat" / "Figure_10_closed_loop_true_dynamic_order.png",
+        LATEX / "cmame_submission_flat" / "Figure_11_method_stage_architecture.png",
+        LATEX / "cmame_submission_flat" / "Figure_12_all_method_result_matrix.png",
+        LATEX / "cmame_submission_flat" / "Figure_13_work_precision_compendium.png",
         PAPER / "README.md",
         PAPER / "CLAIM_BOUNDARY.json",
         PAPER / "CURRENT_STATUS_CN.md",
         PAPER / "PAPER_CLAIM_LEDGER.md",
         PAPER / "REVIEWER_CHECKLIST.md",
         PAPER / "SUBMISSION_PACKET.md",
-        PAPER / "COVER_LETTER.md",
+        LATEX / "COVER_LETTER.md",
         PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json",
         PAPER / "SUBMISSION_FILE_INVENTORY.md",
         PAPER / "REVIEW_RESPONSE_TEMPLATE.md",
@@ -480,11 +481,11 @@ def check_required_files() -> bool:
         PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.csv",
         PAPER / "build_arxiv_version.py",
         PAPER / "validate_arxiv_version.py",
-        PAPER / "arxiv" / "main_arxiv.tex",
-        PAPER / "arxiv" / "main_arxiv.pdf",
-        PAPER / "arxiv" / "README.md",
-        PAPER / "arxiv" / "arxiv_submission.zip",
-        PAPER / "arxiv" / "ARXIV_VERSION.json",
+        LATEX / "arxiv" / "main_arxiv.tex",
+        LATEX / "arxiv" / "main_arxiv.pdf",
+        LATEX / "arxiv" / "README.md",
+        LATEX / "arxiv" / "arxiv_submission.zip",
+        LATEX / "arxiv" / "ARXIV_VERSION.json",
         PAPER / "lean" / "lakefile.toml",
         PAPER / "lean" / "lean-toolchain",
         PAPER / "lean" / "scripts" / "Axioms.lean",
@@ -1789,7 +1790,7 @@ def check_required_files() -> bool:
         if not submission_packet_ok:
             submission_packet_error = "SUBMISSION_PACKET.md has unexpected objective blocker boundary values"
 
-    cover_path = PAPER / "COVER_LETTER.md"
+    cover_path = LATEX / "COVER_LETTER.md"
     if cover_path.exists():
         cover_text = cover_path.read_text(encoding="utf-8", errors="replace")
         cover_letter_ok = all(
@@ -2211,7 +2212,7 @@ def check_required_files() -> bool:
     ]
     boundary_doc_missing: list[str] = []
     for rel_path in boundary_doc_paths:
-        path = PAPER / rel_path
+        path = manuscript_path(rel_path)
         text = path.read_text(encoding="utf-8", errors="replace") if path.exists() else ""
         for token in boundary_doc_tokens:
             if not contains_normalized(text, token):
@@ -2238,7 +2239,7 @@ def check_required_files() -> bool:
     ]
     global_blocker_matrix_doc_missing: list[str] = []
     for rel_path in global_blocker_matrix_doc_paths:
-        path = PAPER / rel_path
+        path = manuscript_path(rel_path)
         text = path.read_text(encoding="utf-8", errors="replace") if path.exists() else ""
         for token in global_blocker_matrix_doc_tokens:
             if not contains_normalized(text, token):
@@ -2500,16 +2501,16 @@ def main() -> int:
 
     failures = 0
     if args.latex:
-        ok, _ = run_step("latex paper build", latex_command("main.tex"), PAPER)
+        ok, _ = run_step("latex paper build", latex_command("main.tex"), LATEX)
         failures += 0 if ok else 1
-        ok, _ = run_step("latex concise paper build", latex_command("main_concise.tex"), PAPER)
+        ok, _ = run_step("latex concise paper build", latex_command("main_concise.tex"), LATEX)
         failures += 0 if ok else 1
-        ok, _ = run_step("latex CMAME paper build", latex_command("main_cmame.tex"), PAPER)
+        ok, _ = run_step("latex CMAME paper build", latex_command("main_cmame.tex"), LATEX)
         failures += 0 if ok else 1
         ok, _ = run_step(
             "latex flat CMAME source build",
             latex_command("main_cmame_submission.tex"),
-            PAPER / "cmame_submission_flat",
+            LATEX / "cmame_submission_flat",
         )
         failures += 0 if ok else 1
 

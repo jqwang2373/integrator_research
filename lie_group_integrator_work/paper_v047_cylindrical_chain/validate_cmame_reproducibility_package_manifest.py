@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 EXPECTED_OC6_REOPEN_LATEST_EXTERNAL_PROBE = "2026-06-21/9/0/0/4/False/False"
 
 
@@ -35,8 +36,8 @@ def read_text(path: Path) -> str:
 
 def resolve_package_path(path_label: str) -> Path:
     if path_label.startswith("../"):
-        return (PAPER / path_label).resolve()
-    return PAPER / path_label
+        return (manuscript_path(path_label)).resolve()
+    return manuscript_path(path_label)
 
 
 def main() -> int:

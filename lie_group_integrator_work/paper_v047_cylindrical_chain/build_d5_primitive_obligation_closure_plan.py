@@ -13,6 +13,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_PRIMITIVE_OBLIGATION_CLOSURE_PLAN.json"
 OUT_MD = PAPER / "D5_PRIMITIVE_OBLIGATION_CLOSURE_PLAN.md"
 
@@ -167,8 +168,8 @@ def main() -> None:
     p_geom_reduction = read_json(PAPER / "D5_P_GEOM_CHART_REDUCTION_AUDIT.json")
     p_gyro_reduction = read_json(PAPER / "D5_P_GYRO_BILINEAR_REDUCTION_AUDIT.json")
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     primitive_rows = {
         row.get("id"): row

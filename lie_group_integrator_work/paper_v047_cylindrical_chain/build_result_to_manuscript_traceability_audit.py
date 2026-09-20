@@ -17,6 +17,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json"
 OUT_MD = PAPER / "RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.md"
 
@@ -302,10 +303,10 @@ def main() -> None:
     matrix = read_json(PAPER / "PAPER_NUMERICAL_RESULT_MATRIX.json")
     ra2021_audit = read_json(PAPER / "RA2021_SOURCE_POLICY_ROW_AUDIT.json")
     by_key = build_rows(matrix)
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
-    main_pdf_text = read_text(PAPER / "main_cmame.txt")
-    flat_pdf_text = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.txt")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_pdf_text = read_text(LATEX / "main_cmame.txt")
+    flat_pdf_text = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.txt")
 
     main_table = tex_table_block(main_tex)
     flat_table = tex_table_block(flat_tex)

@@ -19,6 +19,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "REFERENCE_METADATA_AUDIT.json"
 OUT_MD = PAPER / "REFERENCE_METADATA_AUDIT.md"
 CROSSREF_URL = "https://api.crossref.org/works/"
@@ -214,7 +215,7 @@ def apply_manual_metadata(row: dict[str, Any], item: dict[str, str]) -> bool:
 
 
 def build_audit() -> dict[str, Any]:
-    items = bibitems(read_text(PAPER / "main_cmame.tex"))
+    items = bibitems(read_text(LATEX / "main_cmame.tex"))
     rows: list[dict[str, Any]] = []
     for index, item in enumerate(items, start=1):
         row: dict[str, Any] = {

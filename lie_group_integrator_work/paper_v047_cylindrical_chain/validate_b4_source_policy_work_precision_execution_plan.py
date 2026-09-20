@@ -12,6 +12,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 EXPECTED_LANES = {
     "ra2021_source_policy_work_precision",
     "tfe_source_policy_work_precision",
@@ -498,7 +499,7 @@ def main() -> int:
     for form in EXPECTED_RA2021_FORMS:
         shard = shard_by_form.get(form, {})
         checks.check(shard.get("exists") is True, f"executed RA2021 shard CSV missing: {form}")
-        shard_path = (PAPER / str(shard.get("path"))).resolve()
+        shard_path = (manuscript_path(str(shard.get("path")))).resolve()
         shard_rows = read_csv(shard_path)
         checks.check(shard.get("row_count") == len(shard_rows) == 3, f"executed shard row count changed: {form}")
         checks.check(shard.get("ok_row_count") == 3, f"executed shard ok row count changed: {form}")
@@ -588,7 +589,7 @@ def main() -> int:
         gauss6_local.get("single_public_horizon_step_trio_completed") is True,
         "Gauss6 single public-horizon trio should be complete",
     )
-    single_rows = read_csv((PAPER / str(single.get("path"))).resolve())
+    single_rows = read_csv((manuscript_path(str(single.get("path")))).resolve())
     checks.check(single.get("row_count") == len(single_rows) == 3, "Gauss6 single row count changed")
     checks.check(single.get("ok_row_count") == 3, "Gauss6 single ok row count changed")
     checks.check(single.get("failed_row_count") == 0, "Gauss6 single unexpectedly has failed rows")
@@ -617,7 +618,7 @@ def main() -> int:
     h1e4_by_model = {item.get("model"): item for item in h1e4 if isinstance(item, dict)}
     for model in ["four_link", "slider_crank"]:
         shard = combined_by_model.get(model, {})
-        rows = read_csv((PAPER / str(shard.get("path"))).resolve())
+        rows = read_csv((manuscript_path(str(shard.get("path")))).resolve())
         checks.check(shard.get("row_count") == len(rows) == 3, f"Gauss6 combined row count changed: {model}")
         checks.check(shard.get("ok_row_count") == 3, f"Gauss6 combined ok count changed: {model}")
         checks.check(shard.get("failed_row_count") == 0, f"Gauss6 combined failure count changed: {model}")
@@ -639,7 +640,7 @@ def main() -> int:
             f"Gauss6 combined row type changed: {model}",
         )
         standalone = h1e4_by_model.get(model, {})
-        standalone_rows = read_csv((PAPER / str(standalone.get("path"))).resolve())
+        standalone_rows = read_csv((manuscript_path(str(standalone.get("path")))).resolve())
         checks.check(
             standalone.get("row_count") == len(standalone_rows) == 1,
             f"Gauss6 h1e4 standalone row count changed: {model}",
@@ -694,9 +695,9 @@ def main() -> int:
         == "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
         "RA2021 closed-loop same-window evidence status changed",
     )
-    same_window_summary_path = (PAPER / str(closed_loop_same_window.get("summary_path"))).resolve()
-    same_window_rows_path = (PAPER / str(closed_loop_same_window.get("rows_path"))).resolve()
-    same_window_summary_rows_path = (PAPER / str(closed_loop_same_window.get("summary_rows_path"))).resolve()
+    same_window_summary_path = (manuscript_path(str(closed_loop_same_window.get("summary_path")))).resolve()
+    same_window_rows_path = (manuscript_path(str(closed_loop_same_window.get("rows_path")))).resolve()
+    same_window_summary_rows_path = (manuscript_path(str(closed_loop_same_window.get("summary_rows_path")))).resolve()
     same_window_summary = read_json(same_window_summary_path)
     same_window_rows = read_csv(same_window_rows_path)
     same_window_summary_rows = read_csv(same_window_summary_rows_path)
@@ -822,9 +823,9 @@ def main() -> int:
         double_candidate.get("status") == "executed_order_below_acceptance_not_promoted",
         "RA2021 double local candidate evidence status changed",
     )
-    candidate_summary_path = (PAPER / str(double_candidate.get("summary_path"))).resolve()
-    candidate_rows_path = (PAPER / str(double_candidate.get("rows_path"))).resolve()
-    candidate_validator_path = (PAPER / str(double_candidate.get("validator_path"))).resolve()
+    candidate_summary_path = (manuscript_path(str(double_candidate.get("summary_path")))).resolve()
+    candidate_rows_path = (manuscript_path(str(double_candidate.get("rows_path")))).resolve()
+    candidate_validator_path = (manuscript_path(str(double_candidate.get("validator_path")))).resolve()
     candidate_summary = read_json(candidate_summary_path)
     candidate_rows = read_csv(candidate_rows_path)
     checks.check(double_candidate.get("summary_exists") is True, "double candidate summary missing")
@@ -982,7 +983,7 @@ def main() -> int:
         hi2022_t8_candidate.get("status") == "selected_candidate_matrix_partially_executed_not_promoted",
         "HI2022 full T8 candidate status changed",
     )
-    hi2022_validator_path = (PAPER / str(hi2022_t8_candidate.get("validator_path"))).resolve()
+    hi2022_validator_path = (manuscript_path(str(hi2022_t8_candidate.get("validator_path")))).resolve()
     checks.check(
         hi2022_t8_candidate.get("validator_exists") is True and hi2022_validator_path.exists(),
         "HI2022 T8 validator missing",

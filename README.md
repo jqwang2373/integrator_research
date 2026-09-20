@@ -5,9 +5,9 @@ CMAME manuscript. Start here:
 
 | What you want | Open |
 | --- | --- |
-| The paper (journal version, authoritative source) | `lie_group_integrator_work/paper_v047_cylindrical_chain/main_cmame.tex` → `main_cmame.pdf` |
-| The arXiv preprint (derived, `article` class) | `lie_group_integrator_work/paper_v047_cylindrical_chain/arxiv/` (`README.md` there has the metadata) |
-| Elsevier flat source + zip | `lie_group_integrator_work/paper_v047_cylindrical_chain/cmame_submission_flat/`, `cmame_submission_flat.zip` |
+| The paper (journal version, authoritative source) | `lie_group_integrator_work/paper/main_cmame.tex` → `main_cmame.pdf` (LaTeX only lives in `paper/`) |
+| The arXiv preprint (derived, `article` class) | `lie_group_integrator_work/paper/arxiv/` (`README.md` there has the metadata) |
+| Elsevier flat source + zip | `lie_group_integrator_work/paper/cmame_submission_flat/`, `paper/cmame_submission_flat.zip` |
 | The Lean 4 / Mathlib proofs | `lie_group_integrator_work/paper_v047_cylindrical_chain/lean/` (copy of `~/lean/integrator_order_proof`); pointer: `lie_group_integrator_work/docs/LEAN_FORMALIZATION.md` |
 | Current status in Chinese | `lie_group_integrator_work/paper_v047_cylindrical_chain/CURRENT_STATUS_CN.md` |
 | Claim boundary and command rules | `lie_group_integrator_work/CURRENT_PIPELINE_CONTRACT.md` |
@@ -27,7 +27,8 @@ integrator_research/
     validate_pipeline_outputs.py     top-level validator (runs under .venv_sbel automatically)
     docs/                            ledgers, audits, plans, Lean pointer, path dependency report
     tools/                           plot_version_ledger.py, build_path_dependency_report.py
-    paper_v047_cylindrical_chain/    CMAME paper package (see its README for the map)
+    paper/                           the manuscript: main_cmame.tex, figures/, cmame_submission_flat/, arxiv/, sidecars
+    paper_v047_cylindrical_chain/    evidence ledger: records, builders, validators, Lean copy (see its README)
     v047_cylindrical_chain_pipeline/ accepted method implementation and its validators
     v048_cross_paper_same_test_benchmarks/  external same-test benchmark layer
     v001_… v046_…                    development history, one directory per version (read-only record)
@@ -44,7 +45,7 @@ integrator_research/
 
 ## Rules of the tree
 
-- `main_cmame.tex` is the only hand-edited manuscript. The flat copy, the arXiv version, the PDFs and
+- `paper/main_cmame.tex` is the only hand-edited manuscript. The flat copy, the arXiv version, the PDFs and
   the text dumps are regenerated from it (see `CURRENT_PIPELINE_CONTRACT.md`, "rebuild order").
 - Files under `paper_v047_cylindrical_chain/` are an evidence ledger: almost every JSON/Markdown record
   is read by a validator. Do not move or rename them without `docs/PATH_DEPENDENCY_REPORT.md`.

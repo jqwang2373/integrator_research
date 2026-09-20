@@ -15,6 +15,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 V048_WORKDIR = PAPER.parent / "v048_cross_paper_same_test_benchmarks"
 OUT_JSON = PAPER / "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json"
 OUT_MD = PAPER / "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.md"
@@ -35,7 +36,7 @@ def resolve_path(label: str | None) -> Path | None:
     path = Path(label)
     if path.is_absolute():
         return path
-    return (PAPER / path).resolve()
+    return (manuscript_path(path)).resolve()
 
 
 def command_rows(row_ledger: dict[str, Any]) -> dict[str, list[dict[str, str]]]:

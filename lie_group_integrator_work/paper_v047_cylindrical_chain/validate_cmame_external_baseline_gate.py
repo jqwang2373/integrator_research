@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 V048 = ROOT / "v048_cross_paper_same_test_benchmarks" / "results"
 GATE_JSON = PAPER / "CMAME_EXTERNAL_BASELINE_GATE.json"
@@ -874,18 +875,18 @@ def main() -> int:
                 "RA2021 overlay strict common-reference examples changed",
             )
             for artifact in ra_overlay.get("artifacts", []):
-                checks.check((PAPER / artifact).resolve().exists(), f"RA2021 overlay artifact missing: {artifact}")
+                checks.check((manuscript_path(artifact)).resolve().exists(), f"RA2021 overlay artifact missing: {artifact}")
         checks.check(isinstance(hi_overlay, dict), "HI2022 overlay missing")
         if isinstance(hi_overlay, dict):
             checks.check(hi_overlay.get("bounded_rows") == 24, "HI2022 overlay bounded rows changed")
             checks.check(hi_overlay.get("full_T8_policy_complete") is False, "HI2022 overlay overclaimed T8 policy")
             for artifact in hi_overlay.get("artifacts", []):
-                checks.check((PAPER / artifact).resolve().exists(), f"HI2022 overlay artifact missing: {artifact}")
+                checks.check((manuscript_path(artifact)).resolve().exists(), f"HI2022 overlay artifact missing: {artifact}")
         checks.check(isinstance(vp_overlay, dict), "VP2024 overlay missing")
         if isinstance(vp_overlay, dict):
             checks.check(vp_overlay.get("evidence_status") == "code_path_unresolved", "VP2024 overlay status changed")
             for artifact in vp_overlay.get("artifacts", []):
-                checks.check((PAPER / artifact).resolve().exists(), f"VP2024 overlay artifact missing: {artifact}")
+                checks.check((manuscript_path(artifact)).resolve().exists(), f"VP2024 overlay artifact missing: {artifact}")
     required_groups = {group.get("group_id"): group.get("required_status") for group in cross_cases.get("case_groups", [])}
     checks.check(required_groups.get("tfe2026_original_pendulum") == "not_run", "TFE pendulum group overclaim")
     checks.check(required_groups.get("ra2021_absolute_coordinate") == "not_run", "RA2021 group overclaim")

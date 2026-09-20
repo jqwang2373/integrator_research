@@ -12,14 +12,15 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 AUDIT_MD = PAPER / "CMAME_VISUAL_LEGIBILITY_AUDIT.md"
 AUDIT_JSON = PAPER / "CMAME_VISUAL_LEGIBILITY_AUDIT.json"
-MAIN_FIGURE = PAPER / "figures" / "asme_lower_pair_graph_bridge.png"
-FLAT_FIGURE = PAPER / "cmame_submission_flat" / "Figure_2_asme_lower_pair_graph_bridge.png"
-MAIN_PDF_TEXT = PAPER / "main_cmame.txt"
-FLAT_PDF_TEXT = PAPER / "cmame_submission_flat" / "main_cmame_submission.txt"
-MAIN_LOG = PAPER / "main_cmame.log"
-FLAT_LOG = PAPER / "cmame_submission_flat" / "main_cmame_submission.log"
+MAIN_FIGURE = LATEX / "figures" / "asme_lower_pair_graph_bridge.png"
+FLAT_FIGURE = LATEX / "cmame_submission_flat" / "Figure_2_asme_lower_pair_graph_bridge.png"
+MAIN_PDF_TEXT = LATEX / "main_cmame.txt"
+FLAT_PDF_TEXT = LATEX / "cmame_submission_flat" / "main_cmame_submission.txt"
+MAIN_LOG = LATEX / "main_cmame.log"
+FLAT_LOG = LATEX / "cmame_submission_flat" / "main_cmame_submission.log"
 
 
 class Checks:

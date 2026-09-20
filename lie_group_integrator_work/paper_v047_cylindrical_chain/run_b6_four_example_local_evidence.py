@@ -16,6 +16,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "B6_FOUR_EXAMPLE_LOCAL_EVIDENCE_SUMMARY.json"
 OUT_MD = PAPER / "B6_FOUR_EXAMPLE_LOCAL_EVIDENCE_SUMMARY.md"
 
@@ -53,7 +54,7 @@ def read_json(path: Path) -> dict:
 
 
 def run_runner(item: dict[str, object]) -> dict[str, object]:
-    command = [sys.executable, *[str(PAPER / str(part)) for part in item["command"]]]
+    command = [sys.executable, *[str(manuscript_path(str(part))) for part in item["command"]]]
     proc = subprocess.run(command, cwd=PAPER, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     output = proc.stdout.strip()
     return {

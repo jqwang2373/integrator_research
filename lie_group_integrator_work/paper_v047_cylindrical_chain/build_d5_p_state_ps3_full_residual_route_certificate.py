@@ -9,6 +9,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent.parent
 REF_TXT = ROOT / "s11044-026-10153-w.txt"
 OUT_JSON = PAPER / "D5_P_STATE_PS3_FULL_RESIDUAL_ROUTE_CERTIFICATE.json"
@@ -38,8 +39,8 @@ def main() -> None:
     kinematic = read_json(PAPER / "KINEMATIC_ROW_DEFECT_CERTIFICATE.json")
     direct = read_json(PAPER / "D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE.json")
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
     ref_text = read_text(REF_TXT)
 
     closure_state = proof_manifest.get("closure_state", {})

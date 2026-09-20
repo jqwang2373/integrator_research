@@ -21,6 +21,7 @@ import numpy as np
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 RUN = ROOT / "v047_cylindrical_chain_pipeline" / "run_v047.py"
 OUT_JSON = PAPER / "D5_P_LAMBDA_PL2_GEOMETRIC_MARGIN_AUDIT.json"
@@ -129,8 +130,8 @@ def main() -> None:
     p_tube = read_json(PAPER / "D5_P_TUBE_CONSTANTS_AUDIT.json")
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
     run_source = read_text(RUN)
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     params = module.make_params(CASE_FRICTION_SMOOTHNESS)
     state = module.project_endpoint_velocity(module.initial_state(params), params)

@@ -10,6 +10,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 V047_RESULTS = ROOT / "v047_cylindrical_chain_pipeline" / "results"
 V048_RESULTS = ROOT / "v048_cross_paper_same_test_benchmarks" / "results"
@@ -71,7 +72,7 @@ def main() -> int:
     try:
         gate = read_json(PAPER / "ORDER_ACCEPTANCE_GATE.json")
         gate_md = read_text(PAPER / "ORDER_ACCEPTANCE_GATE.md")
-        manuscript = read_text(PAPER / "main_cmame.tex")
+        manuscript = read_text(LATEX / "main_cmame.tex")
         boundary = read_json(PAPER / "CLAIM_BOUNDARY.json")
         manifest = read_json(PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json")
         proof_matrix = read_text(PAPER / "PROOF_EVIDENCE_MATRIX.md")

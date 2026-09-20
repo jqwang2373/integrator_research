@@ -8,8 +8,9 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 
 PAPER = Path(__file__).resolve().parent
-FLAT = PAPER / "cmame_submission_flat"
-OUT = PAPER / "cmame_submission_flat.zip"
+from paper_paths import LATEX, package_path as manuscript_path
+FLAT = LATEX / "cmame_submission_flat"
+OUT = LATEX / "cmame_submission_flat.zip"
 
 FILES = [
     "main_cmame_submission.tex",

@@ -40,10 +40,10 @@
       "source": "RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json"
     },
     {
-      "bytes": 471653,
+      "bytes": 472254,
       "path": "data/CMAME_REVIEW_AGENT_REPORT.json",
       "role": "paper_evidence_artifact",
-      "sha256": "ca241c261d58fe4e79613460844cbe9fb2a1d189a6b62cb2374c39178f285608",
+      "sha256": "f47be05eece39f3556fa9f6c4b29fa9cb47d7eca773edfb9317697c2d62bffae",
       "source": "CMAME_REVIEW_AGENT_REPORT.json"
     },
     {
@@ -61,10 +61,10 @@
       "source": "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json"
     },
     {
-      "bytes": 12743,
+      "bytes": 12559,
       "path": "data/CLAIM_BOUNDARY.json",
       "role": "paper_evidence_artifact",
-      "sha256": "30b4257688dcd22c9435ce4ee070ecb1c567816dc6ac05e7e4063e7cd93647f2",
+      "sha256": "dbb6529cdef257608b236805e0fe604b41120d553b0848732f52f0221215edc0",
       "source": "CLAIM_BOUNDARY.json"
     },
     {
@@ -170,7 +170,7 @@
   "source_policy_total_rows": 40,
   "source_repository_context": {
     "full_audit_code_bloat_risk_for_submission": true,
-    "full_audit_python_lines": 229998,
+    "full_audit_python_lines": 230137,
     "research_audit_primary_submission_allowed": false,
     "research_audit_primary_submission_line_limit": 20000,
     "research_audit_provenance_only": true,

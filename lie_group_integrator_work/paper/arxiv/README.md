@@ -1,6 +1,6 @@
 # arXiv version
 
-Generated from `../main_cmame.tex` by `../build_arxiv_version.py`; do not edit `main_arxiv.tex`
+Generated from `../main_cmame.tex` by `../../paper_v047_cylindrical_chain/build_arxiv_version.py`; do not edit `main_arxiv.tex`
 by hand.  Compile locally with `latexmk -pdf main_arxiv.tex` (pdflatex, TeX Live 2023 or later;
 no BibTeX run is needed because the bibliography is inline).
 

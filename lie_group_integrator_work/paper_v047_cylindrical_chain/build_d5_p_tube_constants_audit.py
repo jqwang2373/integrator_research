@@ -14,6 +14,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_TUBE_CONSTANTS_AUDIT.json"
 OUT_MD = PAPER / "D5_P_TUBE_CONSTANTS_AUDIT.md"
 
@@ -39,8 +40,8 @@ def main() -> None:
     term_budget = read_json(PAPER / "D5_TAYLOR_TERM_BUDGET_AUDIT.json")
     smooth_force = read_json(PAPER / "SMOOTH_FORCE_LIFT_CERTIFICATE.json")
     proof_manifest = read_json(PAPER / "PROOF_CLOSURE_MANIFEST.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     primitive_rows = primitive_reduction.get("primitive_obligations", [])
     p_tube_row = next(

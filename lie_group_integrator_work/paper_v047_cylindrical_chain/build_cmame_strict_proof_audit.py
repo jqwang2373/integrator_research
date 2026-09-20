@@ -9,10 +9,11 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent.parent
 REF_TXT = ROOT / "1-s2.0-S0377042719305229-main.txt"
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
 BLOCKER = PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json"
 PROOF_CONTRACT = PAPER / "CMAME_PROOF_CONTRACT_GATE.json"
 PROOF_CLOSURE = PAPER / "PROOF_CLOSURE_MANIFEST.json"

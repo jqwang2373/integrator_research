@@ -10,10 +10,11 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 CERT_JSON = PAPER / "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.json"
 CERT_MD = PAPER / "NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE.md"
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
 
 
 class Checks:

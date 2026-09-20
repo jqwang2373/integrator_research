@@ -15,10 +15,11 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 REPO = PAPER.parent.parent
 REFERENCE_TXT = REPO / "s11044-026-10153-w.txt"
-MANUSCRIPT_TXT = PAPER / "main_cmame.txt"
-FLAT_MANUSCRIPT_TXT = PAPER / "cmame_submission_flat" / "main_cmame_submission.txt"
+MANUSCRIPT_TXT = LATEX / "main_cmame.txt"
+FLAT_MANUSCRIPT_TXT = LATEX / "cmame_submission_flat" / "main_cmame_submission.txt"
 OUT_JSON = PAPER / "CMAME_PDF_STYLE_REVIEW_AUDIT.json"
 OUT_MD = PAPER / "CMAME_PDF_STYLE_REVIEW_AUDIT.md"
 

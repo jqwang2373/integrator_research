@@ -10,11 +10,12 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
-MAIN_PDF_TEXT = PAPER / "main_cmame.txt"
-FLAT_PDF_TEXT = PAPER / "cmame_submission_flat" / "main_cmame_submission.txt"
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
+MAIN_PDF_TEXT = LATEX / "main_cmame.txt"
+FLAT_PDF_TEXT = LATEX / "cmame_submission_flat" / "main_cmame_submission.txt"
 PROOF_CLOSURE = PAPER / "PROOF_CLOSURE_MANIFEST.json"
 PROOF_CONTRACT = PAPER / "CMAME_PROOF_CONTRACT_GATE.json"
 PROOF_EVIDENCE = PAPER / "PROOF_EVIDENCE_MATRIX.md"

@@ -14,6 +14,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "D5_P_STATE_PS2_AGGREGATE_PROMOTION_AUDIT.json"
 OUT_MD = PAPER / "D5_P_STATE_PS2_AGGREGATE_PROMOTION_AUDIT.md"
 
@@ -41,8 +42,8 @@ def main() -> None:
     row_injection = read_json(PAPER / "D5_P_STATE_PS2_ROW_INJECTION_AUDIT.json")
     nonlinear = read_json(PAPER / "D5_P_STATE_PS2_NONLINEAR_BINDING_AUDIT.json")
     probe = read_json(PAPER / "D5_P_STATE_PS2_LINEARIZATION_PROBE.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     dims = target.get("dimensions", {})
     if not isinstance(dims, dict):

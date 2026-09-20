@@ -11,6 +11,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "RA_HI_SOURCE_POLICY_OUTPUT_INVENTORY.json"
 OUT_MD = PAPER / "RA_HI_SOURCE_POLICY_OUTPUT_INVENTORY.md"
 
@@ -29,7 +30,7 @@ def resolve_artifact(path_text: str | None) -> Path | None:
     path = Path(path_text)
     if path.is_absolute():
         return path
-    return (PAPER / path).resolve()
+    return (manuscript_path(path)).resolve()
 
 
 def rel(path: Path | None) -> str | None:

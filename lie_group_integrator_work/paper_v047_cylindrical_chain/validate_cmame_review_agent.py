@@ -11,6 +11,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 EXPECTED_BLOCKER_OPEN_BY_ID = {"OC4": True, "OC6": True, "OC12": True}
 EXPECTED_BLOCKER_CLOSURE_DECISION_BY_ID = {
     "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
@@ -374,7 +375,7 @@ def main() -> int:
         "../v048_cross_paper_same_test_benchmarks/results/global_comparison_policy_audit.json",
     ]
     expected_input_artifacts = [
-        artifact_snapshot(PAPER / relative_path)
+        artifact_snapshot(manuscript_path(relative_path))
         for relative_path in expected_input_artifact_paths
     ]
     input_artifact_provenance = report.get("input_artifact_provenance", {})

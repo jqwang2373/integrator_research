@@ -10,6 +10,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "PAPER_CORE_TO_MANUSCRIPT_AUDIT.json"
 OUT_MD = PAPER / "PAPER_CORE_TO_MANUSCRIPT_AUDIT.md"
 
@@ -54,10 +55,10 @@ def token_row(label: str, tex_tokens: list[str], pdf_tokens: list[str], tex: str
 
 def main() -> None:
     core = read_json(PAPER / "PAPER_CORE_RESULT_CONSOLIDATION.json")
-    tex = read_text(PAPER / "main_cmame.tex")
-    pdf = read_text(PAPER / "main_cmame.txt")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
-    flat_pdf = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.txt")
+    tex = read_text(LATEX / "main_cmame.tex")
+    pdf = read_text(LATEX / "main_cmame.txt")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
+    flat_pdf = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.txt")
 
     token_rows = [
         token_row(

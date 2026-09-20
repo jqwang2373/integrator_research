@@ -10,12 +10,13 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 REPO = ROOT.parent
 CASES = PAPER / "CROSS_PAPER_BENCHMARK_CASES.json"
 SPEC = PAPER / "CROSS_PAPER_BENCHMARK_SPEC.md"
 MATRIX = PAPER / "CROSS_PAPER_BENCHMARK_MATRIX.md"
-MAIN = PAPER / "main_cmame.tex"
+MAIN = LATEX / "main_cmame.tex"
 EXTERNAL = REPO / "external" / "sbel-reproducibility"
 PUBLIC_METADATA = REPO / "external" / "public-metadata"
 RA2021 = EXTERNAL / "2021" / "ASME" / "rA-formulation"
@@ -94,8 +95,8 @@ def resolve_source(path_label: str) -> Path:
     if path_label.startswith("../external/"):
         return (ROOT / path_label).resolve()
     if path_label.startswith("../../"):
-        return (PAPER / path_label).resolve()
-    return (PAPER / path_label).resolve()
+        return (manuscript_path(path_label)).resolve()
+    return (manuscript_path(path_label)).resolve()
 
 
 def require_tokens(checks: Checks, text: str, tokens: list[str], label: str) -> None:

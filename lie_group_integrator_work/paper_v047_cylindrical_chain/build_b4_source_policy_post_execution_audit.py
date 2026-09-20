@@ -19,6 +19,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "B4_SOURCE_POLICY_POST_EXECUTION_AUDIT.json"
 OUT_MD = PAPER / "B4_SOURCE_POLICY_POST_EXECUTION_AUDIT.md"
 APPROVAL_REQUIRED = (
@@ -59,8 +60,8 @@ def resolve_artifact(path_label: str | None) -> Path | None:
     if not path_label:
         return None
     if path_label.startswith("../"):
-        return (PAPER / path_label).resolve()
-    return PAPER / path_label
+        return (manuscript_path(path_label)).resolve()
+    return manuscript_path(path_label)
 
 
 def read_csv_rows(path_label: str) -> list[dict[str, str]]:

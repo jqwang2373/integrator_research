@@ -20,6 +20,7 @@ import numpy as np
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent.parent
 REF_TXT = ROOT / "s11044-026-10153-w.txt"
 RUN_V047 = PAPER.parent / "v047_cylindrical_chain_pipeline" / "run_v047.py"
@@ -62,8 +63,8 @@ def main() -> None:
     kinematic_certificate = read_json(PAPER / "KINEMATIC_ROW_DEFECT_CERTIFICATE.json")
     reference_text = read_text(REF_TXT)
     run_v047_text = read_text(RUN_V047)
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
 
     matrix = gauss3_matrix()
     inverse = np.linalg.inv(matrix)

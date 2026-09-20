@@ -10,7 +10,8 @@ This directory keeps every experimental version instead of overwriting prior wor
 | `validate_pipeline_outputs.py` | Top-level validator over all versions, the paper package and the ledgers (re-executes under `.venv_sbel` when `jax` is missing). |
 | `docs/` | Ledgers and audits: `VERSION_LEDGER.md`, `VERSION_TREE.md`, `ORDER_PROOF_LEDGER.md`, `PIPELINE_AUDIT.md`, `VALIDATION_QUICKSTART.md`, `METHOD_COMPARISON.md`, `LEAN_FORMALIZATION.md`, `FOLDER_MAP.md`, `PATH_DEPENDENCY_REPORT.md`, `version_ledger.csv`, `version_progression.png`. |
 | `tools/` | `plot_version_ledger.py` (ledger plot), `build_path_dependency_report.py` (who reads which paper-package file). |
-| `paper_v047_cylindrical_chain/` | The CMAME paper package: `main_cmame.tex` (authoritative), `cmame_submission_flat/`, `arxiv/`, `lean/`, `notes/`, records, builders, validators. Its `README.md` has the map. |
+| `paper/` | **The manuscript**: `main_cmame.tex` (authoritative), `figures/`, `cmame_submission_flat/`, `arxiv/`, journal sidecars, legacy drafts, `notes/`. LaTeX only; see its `README.md` for the build. |
+| `paper_v047_cylindrical_chain/` | The evidence ledger for the paper: audit records, builders, validators, `lean/` (Lean copy), reproducibility bundles. Its `README.md` has the map. |
 | `v047_cylindrical_chain_pipeline/` | Accepted method implementation (`run_v047.py`, do not run as a routine check) and its validators. |
 | `v048_cross_paper_same_test_benchmarks/` | External same-test benchmark layer; no external superiority claim. |
 | `v001_…`–`v046_…` | Development history, one directory per version; each has `README.md` and `results/`. Read-only record, indexed in `docs/VERSION_LEDGER.md`. |

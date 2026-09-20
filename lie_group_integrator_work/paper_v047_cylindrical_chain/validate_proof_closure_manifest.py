@@ -11,10 +11,11 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 ROOT = PAPER.parent
 V048 = ROOT / "v048_cross_paper_same_test_benchmarks" / "results"
-MAIN_TEX = PAPER / "main_cmame.tex"
-FLAT_TEX = PAPER / "cmame_submission_flat" / "main_cmame_submission.tex"
+MAIN_TEX = LATEX / "main_cmame.tex"
+FLAT_TEX = LATEX / "cmame_submission_flat" / "main_cmame_submission.tex"
 
 MANUSCRIPT_LABEL_TOKENS = {
     "regularity_assumption": r"\label{ass:regularity}",

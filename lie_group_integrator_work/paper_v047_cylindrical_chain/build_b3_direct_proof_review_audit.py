@@ -15,6 +15,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "B3_DIRECT_PROOF_REVIEW_AUDIT.json"
 OUT_MD = PAPER / "B3_DIRECT_PROOF_REVIEW_AUDIT.md"
 
@@ -46,10 +47,10 @@ def main() -> None:
     proof_contract = read_json(PAPER / "CMAME_PROOF_CONTRACT_GATE.json")
     strict_proof_audit = read_json(PAPER / "CMAME_STRICT_PROOF_AUDIT.json")
     blocker_gate = read_json(PAPER / "CMAME_BLOCKER_CLOSURE_GATE.json")
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
-    main_pdf_text = read_text(PAPER / "main_cmame.txt")
-    flat_pdf_text = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.txt")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_pdf_text = read_text(LATEX / "main_cmame.txt")
+    flat_pdf_text = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.txt")
 
     closure = proof_closure.get("closure_state", {})
     evidence = proof_closure.get("evidence_summary", {})

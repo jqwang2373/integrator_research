@@ -16,6 +16,7 @@ from pathlib import Path
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 CANDIDATE = PAPER / "cmame_minimal_reproducibility_candidate"
 OUT_JSON = PAPER / "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json"
 OUT_MD = PAPER / "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.md"
@@ -258,7 +259,7 @@ def copy_data_files() -> list[dict[str, object]]:
     data_dir = CANDIDATE / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
     for file_name in DATA_FILES:
-        source = PAPER / file_name
+        source = manuscript_path(file_name)
         target = data_dir / file_name
         shutil.copyfile(source, target)
         copied.append(

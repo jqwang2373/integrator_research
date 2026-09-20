@@ -17,6 +17,7 @@ from typing import Any
 
 
 PAPER = Path(__file__).resolve().parent
+from paper_paths import LATEX, package_path as manuscript_path
 OUT_JSON = PAPER / "CMAME_SUBMISSION_INTEGRITY_AUDIT.json"
 OUT_MD = PAPER / "CMAME_SUBMISSION_INTEGRITY_AUDIT.md"
 
@@ -113,11 +114,11 @@ def oc6_latest_probe(full_source_runner_gap: dict[str, Any]) -> dict[str, Any]:
 
 
 def sidecar_status() -> dict[str, Any]:
-    declarations = read_text(PAPER / "declarations_cmame.md")
-    flat_declarations = read_text(PAPER / "cmame_submission_flat" / "declarations_cmame.md")
-    highlights = read_text(PAPER / "highlights_cmame.txt")
-    flat_highlights = read_text(PAPER / "cmame_submission_flat" / "highlights_cmame.txt")
-    cover = read_text(PAPER / "COVER_LETTER.md")
+    declarations = read_text(LATEX / "declarations_cmame.md")
+    flat_declarations = read_text(LATEX / "cmame_submission_flat" / "declarations_cmame.md")
+    highlights = read_text(LATEX / "highlights_cmame.txt")
+    flat_highlights = read_text(LATEX / "cmame_submission_flat" / "highlights_cmame.txt")
+    cover = read_text(LATEX / "COVER_LETTER.md")
     declaration_tokens = [
         "Declaration of Competing Interest",
         "Funding",
@@ -144,12 +145,12 @@ def sidecar_status() -> dict[str, Any]:
 
 
 def main() -> None:
-    main_tex = read_text(PAPER / "main_cmame.tex")
-    flat_tex = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.tex")
-    main_log = read_text(PAPER / "main_cmame.log")
-    flat_log = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.log")
-    main_pdf_text = read_text(PAPER / "main_cmame.txt")
-    flat_pdf_text = read_text(PAPER / "cmame_submission_flat" / "main_cmame_submission.txt")
+    main_tex = read_text(LATEX / "main_cmame.tex")
+    flat_tex = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.tex")
+    main_log = read_text(LATEX / "main_cmame.log")
+    flat_log = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.log")
+    main_pdf_text = read_text(LATEX / "main_cmame.txt")
+    flat_pdf_text = read_text(LATEX / "cmame_submission_flat" / "main_cmame_submission.txt")
     reference_audit = read_json_if_present(PAPER / "REFERENCE_METADATA_AUDIT.json")
     manifest = read_json_if_present(PAPER / "SUBMISSION_ARTIFACT_MANIFEST.json")
     full_source_runner_gap = read_json_if_present(PAPER / "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json")

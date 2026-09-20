@@ -495,7 +495,7 @@
       "include_in_minimal_submission_package": true,
       "layer": "replay_package",
       "path": "run_b6_four_example_local_evidence.py",
-      "python_lines": 214,
+      "python_lines": 215,
       "role": "one_command_b6_four_example_local_evidence_runner",
       "status": "ready_source_policy_open"
     },
@@ -545,7 +545,7 @@
       "include_in_minimal_submission_package": true,
       "layer": "candidate_runner_validation",
       "path": "build_b6_closed_loop_self_contained_extraction_audit.py",
-      "python_lines": 370,
+      "python_lines": 371,
       "role": "b6_closed_loop_self_contained_extraction_audit_builder",
       "status": "closed_loop_self_contained_runner_candidate_ready_source_policy_open"
     },
@@ -554,7 +554,7 @@
       "include_in_minimal_submission_package": true,
       "layer": "candidate_runner_validation",
       "path": "validate_b6_closed_loop_self_contained_extraction_audit.py",
-      "python_lines": 313,
+      "python_lines": 314,
       "role": "b6_closed_loop_self_contained_extraction_audit_validator",
       "status": "closed_loop_self_contained_runner_candidate_ready_source_policy_open"
     },
@@ -1002,7 +1002,7 @@
       "include_in_minimal_submission_package": false,
       "layer": "external_source_policy_candidate",
       "path": "build_full_source_policy_row_provenance_audit.py",
-      "python_lines": 568,
+      "python_lines": 569,
       "role": "full_source_policy_row_provenance_audit_builder",
       "status": "row_provenance_preflight_complete_not_promotion"
     },
@@ -1140,7 +1140,7 @@
       "include_in_minimal_submission_package": false,
       "layer": "external_source_policy_candidate",
       "path": "build_b4_source_policy_command_preflight_freeze_20260620.py",
-      "python_lines": 330,
+      "python_lines": 331,
       "role": "builder_b4_source_policy_command_preflight_freeze",
       "status": "read_only_freeze_builder"
     },
@@ -1149,7 +1149,7 @@
       "include_in_minimal_submission_package": false,
       "layer": "external_source_policy_candidate",
       "path": "validate_b4_source_policy_command_preflight_freeze_20260620.py",
-      "python_lines": 379,
+      "python_lines": 380,
       "role": "validator_b4_source_policy_command_preflight_freeze",
       "status": "read_only_freeze_validator"
     },
@@ -1174,7 +1174,7 @@
       "include_in_minimal_submission_package": false,
       "layer": "external_source_policy_candidate",
       "path": "build_b4_source_policy_expected_output_schema_audit_20260620.py",
-      "python_lines": 503,
+      "python_lines": 504,
       "role": "builder_b4_source_policy_expected_output_schema_audit",
       "status": "read_only_schema_audit_builder"
     },
@@ -1183,7 +1183,7 @@
       "include_in_minimal_submission_package": false,
       "layer": "external_source_policy_candidate",
       "path": "validate_b4_source_policy_expected_output_schema_audit_20260620.py",
-      "python_lines": 573,
+      "python_lines": 574,
       "role": "validator_b4_source_policy_expected_output_schema_audit",
       "status": "read_only_schema_audit_validator"
     },
@@ -1360,7 +1360,7 @@
       "include_in_minimal_submission_package": true,
       "layer": "candidate_runner_validation",
       "path": "build_cmame_local_accepted_runner_companion.py",
-      "python_lines": 390,
+      "python_lines": 391,
       "role": "local_accepted_runner_companion_builder",
       "status": "local_accepted_runner_companion_ready_source_policy_package_open"
     },
@@ -1485,7 +1485,7 @@
       "include_in_minimal_submission_package": true,
       "layer": "candidate_runner_validation",
       "path": "build_cmame_narrowed_repro_code_archive.py",
-      "python_lines": 449,
+      "python_lines": 450,
       "role": "narrowed_repro_code_archive_builder",
       "status": "narrowed_repro_code_archive_ready_source_policy_open"
     },
@@ -1556,9 +1556,9 @@
     "submission_ready": false
   },
   "current_code_inventory": {
-    "combined_python_line_count": 229998,
-    "paper_python_file_count": 340,
-    "paper_python_line_count": 201256,
+    "combined_python_line_count": 230137,
+    "paper_python_file_count": 341,
+    "paper_python_line_count": 201395,
     "paper_python_prefix_counts": {
       "build": 146,
       "merge": 0,
@@ -4050,7 +4050,7 @@
         "status": "satisfied"
       },
       {
-        "evidence": "combined_python_line_count=229998, primary_allowed=False",
+        "evidence": "combined_python_line_count=230137, primary_allowed=False",
         "id": "R5_research_audit_tree_not_primary_code",
         "status": "satisfied"
       }
@@ -5069,7 +5069,7 @@
       ]
     },
     "code_bloat_risk_for_submission": true,
-    "combined_python_line_count": 229998,
+    "combined_python_line_count": 230137,
     "common_reference_error_comparisons": 40,
     "common_reference_error_wins": 40,
     "common_reference_order_comparisons": 40,
@@ -5991,7 +5991,7 @@
           "b6_four_example_source_policy_rows_closed": 0,
           "b6_four_example_source_policy_rows_total": 40,
           "code_bloat_risk_for_submission": true,
-          "combined_python_line_count": 229998,
+          "combined_python_line_count": 230137,
           "compact_closed_loop_candidate_python_lines": 1962,
           "compact_closed_loop_candidate_runner_passed": true,
           "full_source_policy_runner_archive_gap_action_boundary": {
@@ -6131,8 +6131,8 @@
           "narrowed_reproducibility_package_ready": true,
           "p1_double_runner_candidate_ready": true,
           "p1_single_runner_candidate_ready": true,
-          "paper_python_file_count": 340,
-          "paper_python_line_count": 201256,
+          "paper_python_file_count": 341,
+          "paper_python_line_count": 201395,
           "runner_centered_package_ready": false,
           "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
           "source_policy_execution_handoff_authorized": false,
