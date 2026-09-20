@@ -47,4 +47,4 @@ Existing v048 runner candidates total `12085` Python lines before extraction.
 | `R2_runner_centered_generation` | `partial_compact_closed_loop_candidate_passed` | small report-only adapter plus B6 four-example local-evidence runner present; closed-loop executable candidate now regenerates four_link/slider_crank rows under the compact reviewer-facing line limit, but the full runner-centered package/source-policy rows remain open; candidate rows=6, compact=True; closed-loop extraction audit=closed_loop_self_contained_runner_candidate_ready_source_policy_open |
 | `R3_source_policy_external_rows` | `open` | 0/40 |
 | `R4_proof_boundary` | `satisfied` | direct_pc2_proof_gap_closed=True; primitive/Taylor, solver-policy, residual-to-error, and source-policy boundaries remain separate |
-| `R5_research_audit_tree_not_primary_code` | `satisfied` | combined_python_line_count=229628, primary_allowed=False |
+| `R5_research_audit_tree_not_primary_code` | `satisfied` | combined_python_line_count=229996, primary_allowed=False |

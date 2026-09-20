@@ -770,3 +770,14 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
   （`local_to_global`、`reported_grid_bound`、`conditional_sixth_order_grid_bound`），定理内容不变。
 - 模块头和 README 去掉了退役的 P4/P5 接口名，改为"精确阶段恒等式的动力学/非动力学两半"；根模块加了总览。
 - 论文包 `lean/` 已同步（gate 逐字节核对），gate 的 Lean 文件清单加入两个脚本；两条验证链重跑。
+
+## 2026-09-20 补充：arXiv 版本
+
+- 新增 `arxiv/`：`main_arxiv.tex`（普通 `article` 模板：geometry、amsthm、booktabs、graphicx、彩色链接
+  hyperref）、13 张平铺图、`README.md`（标题、≤1920 字符的纯文本摘要、建议分类 math.NA / cs.CE /
+  physics.comp-ph、上传步骤）、`arxiv_submission.zip`、`ARXIV_VERSION.json`。
+- 由 `build_arxiv_version.py` 从 `main_cmame.tex` 确定性生成：定理环境和宏从 CMAME 前言原样拷贝，
+  正文从 `\section{Introduction}` 起原样拷贝，只换图片文件名；参考文献是内联 `thebibliography`，
+  arXiv 不需要 `.bbl`。改稿后重新跑生成器 + `latexmk` 即可。
+- `validate_arxiv_version.py` 已进 paper chain（含 log 零警告检查），任何派生文件过期即 FAIL。
+- 推送 GitHub 仍等你在本会话里跑 `! ~/bin/gh auth login --git-protocol https --web`。

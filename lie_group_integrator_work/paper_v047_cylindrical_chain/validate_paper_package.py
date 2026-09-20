@@ -54,7 +54,7 @@ def check_latex_log() -> bool:
     ]
     failures: list[str] = []
     checked: list[str] = []
-    for log_name in ["main.log", "main_concise.log", "main_cmame.log", "cmame_submission_flat/main_cmame_submission.log"]:
+    for log_name in ["main.log", "main_concise.log", "main_cmame.log", "cmame_submission_flat/main_cmame_submission.log", "arxiv/main_arxiv.log"]:
         log_path = PAPER / log_name
         if not log_path.exists():
             failures.append(f"{log_name} is missing; run with --latex or rebuild PDFs first")
@@ -478,6 +478,13 @@ def check_required_files() -> bool:
         PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.md",
         PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.json",
         PAPER / "P2_CONSTANTS_NUMERICAL_CHECK.csv",
+        PAPER / "build_arxiv_version.py",
+        PAPER / "validate_arxiv_version.py",
+        PAPER / "arxiv" / "main_arxiv.tex",
+        PAPER / "arxiv" / "main_arxiv.pdf",
+        PAPER / "arxiv" / "README.md",
+        PAPER / "arxiv" / "arxiv_submission.zip",
+        PAPER / "arxiv" / "ARXIV_VERSION.json",
         PAPER / "lean" / "lakefile.toml",
         PAPER / "lean" / "lean-toolchain",
         PAPER / "lean" / "scripts" / "Axioms.lean",
@@ -2549,6 +2556,7 @@ def main() -> int:
             [str(PYTHON), "validate_p2_constants_numerical_check.py"],
             PAPER,
         ),
+        ("arXiv version validator", [str(PYTHON), "validate_arxiv_version.py"], PAPER),
         (
             "D5 dynamic-defect readiness audit validator",
             [str(PYTHON), "validate_d5_dynamic_defect_readiness_audit.py"],

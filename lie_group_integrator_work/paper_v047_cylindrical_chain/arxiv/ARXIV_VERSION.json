@@ -1,0 +1,35 @@
+{
+  "schema": "arxiv-version-v1",
+  "source": "main_cmame.tex",
+  "source_sha256": "56f9a6968ecf3ea4dea094e5668dfd7d80fb8b7a7adaf97df2a5ac12974982cb",
+  "output_tex": "arxiv/main_arxiv.tex",
+  "output_tex_sha256": "81e28cb5837c1c9ddeab566bd55759227e06228d9fbeef96dc454f3201235d82",
+  "document_class": "article",
+  "figures": [
+    "Figure_10_closed_loop_true_dynamic_order.png",
+    "Figure_11_method_stage_architecture.png",
+    "Figure_12_all_method_result_matrix.png",
+    "Figure_13_work_precision_compendium.png",
+    "Figure_1_convergence.png",
+    "Figure_2_asme_lower_pair_graph_bridge.png",
+    "Figure_3_asme_closed_loop_kinematic_fullva.png",
+    "Figure_4_order_closure_blend.png",
+    "Figure_5_velocity_compression.png",
+    "Figure_6_sparse_speed_gap.png",
+    "Figure_7_strict_common_reference_work_precision.png",
+    "Figure_8_claim_boundary_limitations.png",
+    "Figure_9_coarse_baseline_work_precision.png"
+  ],
+  "figure_count": 13,
+  "plain_abstract_characters": 1887,
+  "plain_abstract_within_limit": true,
+  "bibliography": "inline_thebibliography_no_bbl_needed",
+  "suggested_categories": [
+    "math.NA (Numerical Analysis) - primary",
+    "cs.CE (Computational Engineering, Finance, and Science) - cross-list",
+    "physics.comp-ph (Computational Physics) - optional cross-list"
+  ],
+  "claim_state_change": false,
+  "run_v047_invoked": false,
+  "zip_sha256": "d384a1ecf5bbeb070f4310a64a8fa002815f7284ce27b738e819ebcff1e3190a"
+}

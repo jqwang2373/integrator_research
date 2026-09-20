@@ -371,7 +371,7 @@
         "b6_four_example_source_policy_rows_closed": 0,
         "b6_four_example_source_policy_rows_total": 40,
         "code_bloat_risk_for_submission": true,
-        "combined_python_line_count": 229628,
+        "combined_python_line_count": 229996,
         "compact_closed_loop_candidate_python_lines": 1962,
         "compact_closed_loop_candidate_runner_passed": true,
         "full_source_policy_runner_archive_gap_action_boundary": {
@@ -511,8 +511,8 @@
         "narrowed_reproducibility_package_ready": true,
         "p1_double_runner_candidate_ready": true,
         "p1_single_runner_candidate_ready": true,
-        "paper_python_file_count": 338,
-        "paper_python_line_count": 200886,
+        "paper_python_file_count": 340,
+        "paper_python_line_count": 201254,
         "runner_centered_package_ready": false,
         "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
         "source_policy_execution_handoff_authorized": false,
@@ -1441,7 +1441,7 @@
   "cmame_blocker_gate_open_blockers": [],
   "code_hygiene_checks": {
     "code_bloat_risk_for_submission": true,
-    "combined_python_line_count": 229628,
+    "combined_python_line_count": 229996,
     "full_source_policy_runner_package_ready": false,
     "hi2022_bounded_rows_present": true,
     "local_runner_centered_candidate_ready": true,
@@ -1514,13 +1514,13 @@
         "lines": 5362
       }
     ],
-    "paper_python_file_count": 338,
-    "paper_python_line_count": 200886,
+    "paper_python_file_count": 340,
+    "paper_python_line_count": 201254,
     "paper_python_prefix_counts": {
-      "build": 145,
+      "build": 146,
       "merge": 0,
       "run": 7,
-      "validate": 182
+      "validate": 183
     },
     "ra2021_public_baselines_present": true,
     "recommended_submission_code_shape": "extract a small reproducibility package around the 44-row result matrix, the four-example runner inputs, and the selected RA2021/HI2022/TFE source-policy runners; keep the many audit builders as supplementary provenance, not the primary submission API",
@@ -4125,7 +4125,7 @@
       {
         "bytes": 283617,
         "path": "OBJECTIVE_COMPLETION_AUDIT.json",
-        "sha256": "a857714346f2ebf3289fa796972d7e8abcba41c75ce0e1ec45139b5ad73ac5b4"
+        "sha256": "431b2c6074b9f58255b2aa131303db0a3bbb8343b7ddc875a8c046277d9078e2"
       },
       {
         "bytes": 96834,
@@ -4235,12 +4235,12 @@
       {
         "bytes": 6754,
         "path": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json",
-        "sha256": "26d695ddf0bf94ade0ec4811c1f2dc013078e821c0271d451eb1469d1e6d7cae"
+        "sha256": "cdfcb3edddc5630883a2b575cbb36ddf2385398f82b7946b41f1bf5ebad66c93"
       },
       {
         "bytes": 64518,
         "path": "CMAME_RUNNER_CENTERED_REPRODUCIBILITY_AUDIT.json",
-        "sha256": "33f618722d7c2fae906ce2f896185029ee2384088b34b83c505d2b8e9e03c36a"
+        "sha256": "fad7f96382be4809fb471b6986a6f1dfe8e1e066862db7e05196c7a01152f9be"
       },
       {
         "bytes": 45927,
@@ -4255,7 +4255,7 @@
       {
         "bytes": 137347,
         "path": "CMAME_SUBMISSION_INTEGRITY_AUDIT.json",
-        "sha256": "6e6ad0d6041eab1436a65ce5dc46a1864f5741f8edb225f4cbdc8a19a86b933a"
+        "sha256": "c381b319b1ae24a978efe32729e7ef7968bddb2e701b07c060dae0ca7687feb8"
       },
       {
         "bytes": 22404,
@@ -4270,7 +4270,7 @@
       {
         "bytes": 407369,
         "path": "CMAME_REPRODUCIBILITY_PACKAGE_MANIFEST.json",
-        "sha256": "27551c31baff420a15709fa91fcd35a685e0314a21b32e855c47905a5eeb06ad"
+        "sha256": "81355e482bc357afd2d9a565e19d13b5223ceca81ea0c2d52f1fc7c263ea6113"
       },
       {
         "bytes": 915,
@@ -4678,7 +4678,7 @@
         "b6_four_example_source_policy_rows_closed": 0,
         "b6_four_example_source_policy_rows_total": 40,
         "code_bloat_risk_for_submission": true,
-        "combined_python_line_count": 229628,
+        "combined_python_line_count": 229996,
         "compact_closed_loop_candidate_python_lines": 1962,
         "compact_closed_loop_candidate_runner_passed": true,
         "full_source_policy_runner_archive_gap_action_boundary": {
@@ -4818,8 +4818,8 @@
         "narrowed_reproducibility_package_ready": true,
         "p1_double_runner_candidate_ready": true,
         "p1_single_runner_candidate_ready": true,
-        "paper_python_file_count": 338,
-        "paper_python_line_count": 200886,
+        "paper_python_file_count": 340,
+        "paper_python_line_count": 201254,
         "runner_centered_package_ready": false,
         "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
         "source_policy_execution_handoff_authorized": false,
@@ -5912,7 +5912,7 @@
           "b6_four_example_source_policy_rows_closed": 0,
           "b6_four_example_source_policy_rows_total": 40,
           "code_bloat_risk_for_submission": true,
-          "combined_python_line_count": 229628,
+          "combined_python_line_count": 229996,
           "compact_closed_loop_candidate_python_lines": 1962,
           "compact_closed_loop_candidate_runner_passed": true,
           "full_source_policy_runner_archive_gap_action_boundary": {
@@ -6052,8 +6052,8 @@
           "narrowed_reproducibility_package_ready": true,
           "p1_double_runner_candidate_ready": true,
           "p1_single_runner_candidate_ready": true,
-          "paper_python_file_count": 338,
-          "paper_python_line_count": 200886,
+          "paper_python_file_count": 340,
+          "paper_python_line_count": 201254,
           "runner_centered_package_ready": false,
           "runner_centered_status": "local_runner_centered_candidate_ready_source_policy_package_open",
           "source_policy_execution_handoff_authorized": false,
