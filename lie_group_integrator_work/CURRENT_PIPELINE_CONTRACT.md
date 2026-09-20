@@ -74,12 +74,12 @@ Use these files as the current source of truth:
 - `paper_v047_cylindrical_chain/cmame_submission_flat.zip`
 - `pipeline_validation_results/pipeline_validation_summary.json`
 - `v047_cylindrical_chain_pipeline/results/summary_v047.json`
-- `VALIDATION_QUICKSTART.md`
+- `docs/VALIDATION_QUICKSTART.md`
 - `paper_v047_cylindrical_chain/CURRENT_STATUS_CN.md`
-- `PIPELINE_AUDIT.md`
-- `ORDER_PROOF_LEDGER.md`
-- `VERSION_LEDGER.md`
-- `VERSION_TREE.md`
+- `docs/PIPELINE_AUDIT.md`
+- `docs/ORDER_PROOF_LEDGER.md`
+- `docs/VERSION_LEDGER.md`
+- `docs/VERSION_TREE.md`
 
 ## Accepted Claim
 
@@ -450,9 +450,9 @@ Additional authoritative files:
   (built by `build_exact_stage_identity_gate.py`, checked by
   `validate_exact_stage_identity_gate.py`; runs the Lean axiom check when the toolchain
   in `~/lean/integrator_order_proof` is present).
-- `paper_v047_cylindrical_chain/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md` (why the old
+- `paper_v047_cylindrical_chain/notes/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md` (why the old
   displayed rows did not match the implemented residual).
-- `LEAN_FORMALIZATION.md` (pointer to the Lean development).
+- `docs/LEAN_FORMALIZATION.md` (pointer to the Lean development).
 
 The top-level `validate_pipeline_outputs.py` runs the exact-stage-identity gate in the slot
 formerly occupied by the proof-closure manifest step; its other retired-gate steps return a
@@ -463,7 +463,7 @@ stubbed in the top-level validator):
 `PROOF_CLOSURE_MANIFEST`, `PROOF_CLAIM_TRACEABILITY_AUDIT`, `CMAME_STRICT_PROOF_AUDIT`,
 `CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT`, `CMAME_PROOF_STYLE_AUDIT`,
 `NEWTON_EULER_SYMBOLIC_DEFECT_CERTIFICATE`. The pre-compaction source is
-`paper_v047_cylindrical_chain/main_cmame_pre_v049_backup.tex`.
+`paper_v047_cylindrical_chain/notes/main_cmame_pre_v049_backup.tex`.
 
 ### 2026-09-17 second pass (P2 from P1, P6 stopping rule, numerical identity check, Lean in package)
 
@@ -529,3 +529,22 @@ figure file names, so the two sources cannot drift. `validate_arxiv_version.py` 
 regenerates the source in memory and fails if any derived file is stale. Rebuild order after a
 manuscript edit: install `main_cmame.tex` → flat copy → `python3 build_arxiv_version.py` →
 `latexmk -pdf main_arxiv.tex` in `arxiv/` → the usual builder sequence and chains.
+
+### 2026-09-20 folder reorganization (no claim-state change)
+
+- Work-tree top level reduced to `README.md`, `CURRENT_PIPELINE_CONTRACT.md`, `validate_pipeline_outputs.py`
+  plus directories. Ledgers and audits moved to `docs/` (`VERSION_LEDGER.md`, `VERSION_TREE.md`,
+  `ORDER_PROOF_LEDGER.md`, `PIPELINE_AUDIT.md`, `VALIDATION_QUICKSTART.md`, `METHOD_COMPARISON.md`,
+  `VERSION_ROUND_TEMPLATE.md`, `FOLDER_MAP.md`, `FOLDER_CLEANUP_PLAN.md`, `LEAN_FORMALIZATION.md`,
+  `literature_status_2026-05-26.md`, `version_ledger.csv`, `version_progression.png`); scripts that read
+  them (`validate_pipeline_outputs.py`, `validate_paper_claims.py`, `validate_v047_outputs.py`,
+  `tools/plot_version_ledger.py`) were repointed. `tools/` holds the ledger plot and the new
+  `build_path_dependency_report.py` → `docs/PATH_DEPENDENCY_REPORT.md/json`.
+- Paper package: manuscript backups and working notes moved to `paper_v047_cylindrical_chain/notes/`
+  (`main_cmame_pre_v049_backup.tex`, the flat backup, `PROPOSED_METHOD_SECTION_REVISION.tex`,
+  `LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`). LaTeX byproducts (`.aux`, `.fls`, `.fdb_latexmk`, `.spl`, `.out`)
+  untracked and ignored; logs and PDFs stay tracked.
+- Not moved, deliberately: `vNNN_*` directories (enumerated by the top-level validator and imported by
+  `run_v047.py`), the paper-package records and scripts (evidence ledger; ~750 files, nearly all read by
+  validators), the legacy `main.tex`/`main_concise.tex` (read by five validators), and the root reference
+  PDFs (read by ~35 scripts). See `docs/PATH_DEPENDENCY_REPORT.md`.

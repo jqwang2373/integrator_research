@@ -13,7 +13,7 @@ The manuscript edits recommended in Section 4 were applied on 2026-09-17: `main_
 was compacted from 13047 lines / 259 pages to 3763 lines / 82 pages around
 `lem:exact-stage-identity`, the PS2/primitive-Taylor route was removed, and the local defect
 is now `C_loc = C_G + C_E + C_N c_eta`. The pre-rewrite source is
-`main_cmame_pre_v049_backup.tex`. The new proof gate is `EXACT_STAGE_IDENTITY_GATE.md/json`;
+`notes/main_cmame_pre_v049_backup.tex`. The new proof gate is `EXACT_STAGE_IDENTITY_GATE.md/json`;
 seven route-pinning gates were marked superseded and removed from the package chain. The
 modelling sentence of Section 3 has **not** been added to the mechanism description yet.
 

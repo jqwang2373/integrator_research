@@ -10213,11 +10213,11 @@ def validate_docs(v: Validator) -> None:
 
     docs = [
         WORK / "README.md",
-        WORK / "VERSION_LEDGER.md",
-        WORK / "VERSION_TREE.md",
-        WORK / "PIPELINE_AUDIT.md",
-        WORK / "ORDER_PROOF_LEDGER.md",
-        WORK / "version_ledger.csv",
+        WORK / "docs" / "VERSION_LEDGER.md",
+        WORK / "docs" / "VERSION_TREE.md",
+        WORK / "docs" / "PIPELINE_AUDIT.md",
+        WORK / "docs" / "ORDER_PROOF_LEDGER.md",
+        WORK / "docs" / "version_ledger.csv",
         ROOT / "README.md",
         RESULTS / "v047_report.md",
     ]

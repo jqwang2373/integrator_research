@@ -59,7 +59,7 @@ Proved constant for the endpoint closure is `2 M_ri C_raw`, sharper than the pri
 
 ## Audit finding (2026-09-17)
 
-`paper_v047_cylindrical_chain/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`: the stage system displayed in
+`paper_v047_cylindrical_chain/notes/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`: the stage system displayed in
 `main_cmame.tex` (body-level collocation rows, 72 kinematic + 24 lower-pair) does not match the
 implemented residual (72 constraint rows at position/velocity/acceleration level + 24
 joint-coordinate collocation rows). The implemented stage system is exactly reduced
@@ -73,7 +73,7 @@ the lifted Gauss stage is identically zero. No claim state is changed by this no
 implemented rows (72 constraint rows, 24 joint-coordinate collocation rows, 36 Newton–Euler rows),
 the theorem section proves `F_{A,h}(Z_G)=0` (`lem:exact-stage-identity`) and the three-term local
 defect `C_loc = C_G + C_E + C_N c_eta`, and the PS2/primitive-Taylor route is gone. The original is
-kept as `main_cmame_pre_v049_backup.tex` and in git. The new proof gate is
+kept as `notes/main_cmame_pre_v049_backup.tex` and in git. The new proof gate is
 `EXACT_STAGE_IDENTITY_GATE.md/json` (`build_/validate_exact_stage_identity_gate.py`); it runs the
 Lean axiom check when the toolchain is present and supersedes PROOF_CLOSURE_MANIFEST,
 PROOF_CLAIM_TRACEABILITY_AUDIT, CMAME_STRICT_PROOF_AUDIT,

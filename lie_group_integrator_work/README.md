@@ -2,13 +2,28 @@
 
 This directory keeps every experimental version instead of overwriting prior work.
 
-Folder navigation shortcut: use `FOLDER_MAP.md` for the directory map and
-`FOLDER_CLEANUP_PLAN.md` for cleanup/refactor boundaries. Many files are wired
-into validators and paper artifacts, so prefer index/documentation cleanup
-before moving paths.
+## Map (2026-09-20 layout)
+
+| Path | Role |
+| --- | --- |
+| `CURRENT_PIPELINE_CONTRACT.md` | Claim boundary, command boundary, dated change log. Read first. |
+| `validate_pipeline_outputs.py` | Top-level validator over all versions, the paper package and the ledgers (re-executes under `.venv_sbel` when `jax` is missing). |
+| `docs/` | Ledgers and audits: `VERSION_LEDGER.md`, `VERSION_TREE.md`, `ORDER_PROOF_LEDGER.md`, `PIPELINE_AUDIT.md`, `VALIDATION_QUICKSTART.md`, `METHOD_COMPARISON.md`, `LEAN_FORMALIZATION.md`, `FOLDER_MAP.md`, `PATH_DEPENDENCY_REPORT.md`, `version_ledger.csv`, `version_progression.png`. |
+| `tools/` | `plot_version_ledger.py` (ledger plot), `build_path_dependency_report.py` (who reads which paper-package file). |
+| `paper_v047_cylindrical_chain/` | The CMAME paper package: `main_cmame.tex` (authoritative), `cmame_submission_flat/`, `arxiv/`, `lean/`, `notes/`, records, builders, validators. Its `README.md` has the map. |
+| `v047_cylindrical_chain_pipeline/` | Accepted method implementation (`run_v047.py`, do not run as a routine check) and its validators. |
+| `v048_cross_paper_same_test_benchmarks/` | External same-test benchmark layer; no external superiority claim. |
+| `v001_…`–`v046_…` | Development history, one directory per version; each has `README.md` and `results/`. Read-only record, indexed in `docs/VERSION_LEDGER.md`. |
+| `pipeline_validation_results/` | Output of the top-level validator. |
+| `reproduction/` | Human-runnable rebuild of summary tables from checked artifacts. |
+| `scratch_v046_cylindrical_chain_pending/`, `skills/` | Historical scratch context and local workflow skill text. |
+
+Folder navigation: `docs/FOLDER_MAP.md` (directory map) and `docs/FOLDER_CLEANUP_PLAN.md`
+(what was reorganized and what must not move). Many files are wired into validators and paper
+artifacts, so consult `docs/PATH_DEPENDENCY_REPORT.md` before moving paths.
 
 Validation shortcut: use `CURRENT_PIPELINE_CONTRACT.md` for the current
-skill/pipeline contract and `VALIDATION_QUICKSTART.md` to choose the right
+skill/pipeline contract and `docs/VALIDATION_QUICKSTART.md` to choose the right
 lightweight check before running any full numerical regeneration. The paper
 package and four-ASME method gate can be checked without invoking
 `v047_cylindrical_chain_pipeline/run_v047.py`.
@@ -179,9 +194,9 @@ Version policy:
   normalized-history source-direction variant runs 10 local rows in 49.4
   seconds, still keeps the uncorrected row best at 0.009512, and gives best
   corrected residual 0.009590 with rank 8/no span.
-- `VERSION_TREE.md`, `VERSION_LEDGER.md`, `ORDER_PROOF_LEDGER.md`, `version_ledger.csv`, and `version_progression.png` keep the detailed cross-version record.
+- `docs/VERSION_TREE.md`, `docs/VERSION_LEDGER.md`, `docs/ORDER_PROOF_LEDGER.md`, `docs/version_ledger.csv`, and `docs/version_progression.png` keep the detailed cross-version record.
 - `validate_pipeline_outputs.py` is the top-level generated-output validation harness. The latest pass writes `pipeline_validation_results/` and checks 48 versions, 695 result files, 286 CSVs, 202 PNGs, 113 JSON files, the current v047 proof/ASME/convergence/plot gate, the nested v047 output validator, and the v048 scaffold/matrix/single-coarse/coarse-first/surrogate/floor-audit/coarse-probe validators.
-- `METHOD_COMPARISON.md` states why the current path is better than the nearby paper baselines where the evidence supports that claim, and where it does not.
+- `docs/METHOD_COMPARISON.md` states why the current path is better than the nearby paper baselines where the evidence supports that claim, and where it does not.
 - Future versions should create a new `vNNN_*` directory or add new result files with a timestamp/run label, and add a matching numerical-order proof/status entry to `ORDER_PROOF_LEDGER.md`.
 - External source material is kept under `../external/`.
 
@@ -193,7 +208,7 @@ Per-version completion gate:
 - Ledger update: a version is not complete until `README.md`, `VERSION_LEDGER.md`, `VERSION_TREE.md`, `ORDER_PROOF_LEDGER.md`, and `version_ledger.csv` reflect its evidence.
 - Pipeline validation: before reporting a version as clean, run `.venv_sbel/bin/python validate_pipeline_outputs.py` from this directory and keep `pipeline_validation_results/` synchronized.
 
-Use `VERSION_ROUND_TEMPLATE.md` when starting or closing a new version.
+Use `docs/VERSION_ROUND_TEMPLATE.md` when starting or closing a new version.
 
 Primary local inputs:
 - `../s11044-026-10153-w.pdf`

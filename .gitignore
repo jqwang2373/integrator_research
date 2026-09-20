@@ -4,3 +4,13 @@ external/public-metadata/
 __pycache__/
 *.pyc
 lie_group_integrator_work/.venv_sbel/
+# LaTeX build byproducts (logs and PDFs stay tracked because validators read them)
+*.aux
+*.fls
+*.fdb_latexmk
+*.spl
+*.synctex.gz
+lie_group_integrator_work/paper_v047_cylindrical_chain/**/*.out
+lie_group_integrator_work/paper_v047_cylindrical_chain/*.out
+slides/**/*.out
+slides/*.out

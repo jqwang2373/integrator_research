@@ -1,3 +1,40 @@
+# v047 Cylindrical Chain Paper Package
+
+## Map (read this first)
+
+This directory is the CMAME paper package **and** its evidence ledger. About 750 files live here
+because every audit record is kept next to the validator that checks it. What you actually edit
+and read:
+
+| Purpose | Files |
+| --- | --- |
+| Manuscript (the only hand-edited source) | `main_cmame.tex` → `main_cmame.pdf`, `main_cmame.log`, `main_cmame.txt` |
+| Elsevier flat copy (derived) | `cmame_submission_flat/main_cmame_submission.tex` + 13 `Figure_n_*.png`, `cmame_submission_flat.zip` |
+| arXiv preprint (derived) | `arxiv/main_arxiv.tex`, `arxiv/README.md` (metadata), `arxiv/arxiv_submission.zip`; generator `build_arxiv_version.py` |
+| Submission sidecars | `highlights_cmame.txt`, `declarations_cmame.md`, `COVER_LETTER.md`, `CMAME_SUBMISSION_CHECKLIST.md`, `SUBMISSION_PACKET.md` |
+| Lean 4 development (copy of `~/lean/integrator_order_proof`) | `lean/` |
+| Proof-route gate and numerical checks | `EXACT_STAGE_IDENTITY_GATE.md`, `EXACT_STAGE_IDENTITY_NUMERICAL_CHECK.md`, `P2_CONSTANTS_NUMERICAL_CHECK.md`, `PROOF_SOLVER_TOLERANCE_REGIME_SWEEP.md` |
+| Status and history | `CURRENT_STATUS_CN.md` (Chinese, dated sections), `PAPER_CLAIM_LEDGER.md`, `notes/` (backups, working notes) |
+| Legacy manuscripts (superseded, kept for the record) | `main.tex`, `main_concise.tex` and their PDFs |
+| Figures | `figures/` (sources), `generate_publication_figures.py` |
+| Reproducibility bundles | `cmame_narrowed_repro_bundle/`, `cmame_minimal_reproducibility_candidate/`, `cmame_*_runner_*` |
+
+How the rest is organized (by file-name prefix):
+
+- `build_<name>.py` regenerates the record `<NAME>.json` + `<NAME>.md`; `validate_<name>.py` checks it read-only.
+  Records whose JSON carries `superseded_by` are retired but kept.
+- `run_*.py` are numerical probes and guarded drivers; `run_b4_source_policy_after_opt_in.sh` requires the
+  explicit opt-in sentence from `../CURRENT_PIPELINE_CONTRACT.md`.
+- `validate_paper_package.py` runs the whole paper chain; `../validate_pipeline_outputs.py` runs the
+  top-level chain. Rebuild order after any manuscript edit: install `main_cmame.tex` → flat copy →
+  `build_arxiv_version.py` → `latexmk` on the three PDFs → `build_exact_stage_identity_gate.py` →
+  builder sequence (twice) → both chains (see `../CURRENT_PIPELINE_CONTRACT.md`).
+- `../docs/PATH_DEPENDENCY_REPORT.md` lists every file here with its family and readers.
+
+The remainder of this README is the historical description of the package.
+
+---
+
 # v047 Cylindrical Chain Paper Draft
 
 This directory contains a self-contained LaTeX draft for the v047 cylindrical

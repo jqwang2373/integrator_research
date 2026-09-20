@@ -61,7 +61,7 @@ and fails if any depends on `sorryAx` or on a non-standard axiom.
   `NewtonEuler/DynamicRows.lean` show all 132 rows are exactly `0` at the lifted reduced Gauss
   stage (`lem:exact-stage-identity`), so `C_R = 0` and the manuscript's three-term
   `C_loc = C_G + C_E + C_N c_η` is the special case of `local_defect_bound`.  See
-  `lie_group_integrator_work/paper_v047_cylindrical_chain/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`
+  `lie_group_integrator_work/paper_v047_cylindrical_chain/notes/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`
   for the manuscript/implementation row-family mismatch this uncovered.
 * **Lift property**: `hlift` says the lifted Gauss stage satisfies the pointwise Newton–Euler
   balance (the defining property of the smooth FullVA lift). What is proved is that the

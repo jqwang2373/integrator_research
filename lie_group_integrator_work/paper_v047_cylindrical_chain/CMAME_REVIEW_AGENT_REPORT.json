@@ -4235,7 +4235,7 @@
       {
         "bytes": 6754,
         "path": "CMAME_MINIMAL_REPRODUCIBILITY_CANDIDATE_MANIFEST.json",
-        "sha256": "a5c939a8ba6a2ce8bbd9bf180deb932f6e7e05e975376db664eaa450a2362699"
+        "sha256": "f3431438c671cab4bce2643171ddb993e9c38691a6a11d6d81f9366ad4f5d258"
       },
       {
         "bytes": 64518,
@@ -4270,7 +4270,7 @@
       {
         "bytes": 407369,
         "path": "CMAME_REPRODUCIBILITY_PACKAGE_MANIFEST.json",
-        "sha256": "9a5859cc5102a17e8397b902b70c2e92f70fedb62197d6ccaf2daee78c0e385c"
+        "sha256": "1a696baea66cfb3682974cd95c1452a512a47583f2749ac5b311c54274bd9c8a"
       },
       {
         "bytes": 915,

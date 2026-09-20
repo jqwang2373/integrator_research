@@ -10,9 +10,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-ROOT = Path(__file__).resolve().parent
-CSV_PATH = ROOT / "version_ledger.csv"
-PLOT_PATH = ROOT / "version_progression.png"
+ROOT = Path(__file__).resolve().parent.parent
+CSV_PATH = ROOT / "docs" / "version_ledger.csv"
+PLOT_PATH = ROOT / "docs" / "version_progression.png"
 
 
 STAGE_SCORE = {

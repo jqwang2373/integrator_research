@@ -10,6 +10,19 @@ without moving required artifacts.
 - Added this cleanup plan.
 - Added `FOLDER_MAP.md` for the research tree.
 
+## Done On 2026-09-20 (path-dependency-driven pass)
+
+- Built the machine-readable dependency report recommended below:
+  `tools/build_path_dependency_report.py` → `docs/PATH_DEPENDENCY_REPORT.md/json`.
+- Moved all ledgers, audits and plans from the work-tree top level into `docs/`, the ledger plot
+  script into `tools/`; repointed the four scripts that read them.
+- Moved manuscript backups and working notes into `paper_v047_cylindrical_chain/notes/`.
+- Untracked LaTeX byproducts (`.aux`, `.fls`, `.fdb_latexmk`, `.spl`, `.out`) and ignored them;
+  untracked `.venv_sbel/` and `__pycache__/` (done 2026-09-19).
+- Rewrote the root `README.md` as a map; prepended maps to the work-tree and paper-package READMEs.
+- Kept in place after measuring the blast radius: `vNNN_*` directories, paper-package records and
+  scripts, legacy `main.tex`/`main_concise.tex`, root reference PDFs (see the report).
+
 ## Safe Immediate Cleanup
 
 These actions should not change research evidence:

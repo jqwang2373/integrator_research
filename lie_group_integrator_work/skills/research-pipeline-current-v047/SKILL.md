@@ -13,7 +13,7 @@ artifacts as authority, not memory or stale summaries.
 
 Every research round must preserve:
 
-- math proof/status in `ORDER_PROOF_LEDGER.md`;
+- math proof/status in `docs/ORDER_PROOF_LEDGER.md`;
 - four ASME examples: `single_pendulum`, `double_pendulum`, `four_link`, `slider_crank`;
 - convergence analysis with at least three step sizes;
 - convergence and diagnostic plots;

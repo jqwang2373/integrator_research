@@ -685,13 +685,13 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
 
 - 发现 `main_cmame.tex` 展示的阶段方程组（逐刚体配置行 `r_i - r_n - hΣA v_j` 等，72 配置行 + 24
   lower-pair 行）与 `run_v047.py` 实际求解的行不一致：实现是 72 行三层约束 + 24 行关节坐标配置行 +
-  36 行 Newton–Euler。详见 `LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`。
+  36 行 Newton–Euler。详见 `notes/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`。
 - 后果：lifted 约化 Gauss 阶段让全部 132 行精确为零（`lem:exact-stage-identity`，Lean 已证正反两向），
   `C_R = C_A = 0`，局部缺陷改为三项 `C_loc = C_G + C_E + C_N c_eta`。P4/PS2/primitive-Taylor 那条线
   整体退役。
 - 论文已按此重写并压缩：13047 行 / 259 页 变为 3758 行 / 82 页；`main_cmame.pdf`、flat 版和
   `cmame_submission_flat.zip` 已重新生成，LaTeX 零警告。原稿保留在
-  `main_cmame_pre_v049_backup.tex` 和 git。
+  `notes/main_cmame_pre_v049_backup.tex` 和 git。
 - 验证器：新增 `EXACT_STAGE_IDENTITY_GATE`（含 Lean 公理检查）；六个钉住旧路线的 gate
   （PROOF_CLOSURE_MANIFEST、PROOF_CLAIM_TRACEABILITY_AUDIT、CMAME_STRICT_PROOF_AUDIT、
   CMAME_STRICT_PROOF_POLICY_RECONCILIATION_AUDIT、CMAME_PROOF_STYLE_AUDIT、

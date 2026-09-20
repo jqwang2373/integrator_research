@@ -126,7 +126,7 @@ def validate_artifact_files(v: Validator, files: list[Path]) -> dict[str, int]:
 
 
 def validate_version_inventory(v: Validator) -> tuple[list[dict[str, object]], dict[str, int]]:
-    ledger_rows = read_csv_rows(ROOT / "version_ledger.csv")
+    ledger_rows = read_csv_rows(ROOT / "docs" / "version_ledger.csv")
     ledger_by_version = {row["version"]: row for row in ledger_rows}
     version_dirs = sorted(
         [path for path in ROOT.iterdir() if path.is_dir() and re.fullmatch(r"v\d{3}_.+", path.name)],
@@ -6522,7 +6522,7 @@ def validate_paper_latex_log(v: Validator) -> str:
 
 
 def validate_quickstart_doc(v: Validator) -> None:
-    path = ROOT / "VALIDATION_QUICKSTART.md"
+    path = ROOT / "docs" / "VALIDATION_QUICKSTART.md"
     v.check(path.exists() and path.stat().st_size > 0, "VALIDATION_QUICKSTART.md missing or empty")
     if not path.exists():
         return
@@ -6862,7 +6862,7 @@ def validate_better_integrator_boundary_docs(v: Validator) -> None:
             "7.161/7.066",
             "expected order `5`",
         ],
-        "VALIDATION_QUICKSTART.md": [
+        "docs/VALIDATION_QUICKSTART.md": [
             "Primary paper claim",
             "conditional formal-order comparison",
             "not a full source-paper residual reproduction",
@@ -6877,7 +6877,7 @@ def validate_better_integrator_boundary_docs(v: Validator) -> None:
             "every source-paper TFE residual row",
             "optional stronger source-paper reproduction gate",
         ],
-        "PIPELINE_AUDIT.md": [
+        "docs/PIPELINE_AUDIT.md": [
             "conditional formal-order comparison explicit",
             "Gauss6/FullVA path is sixth order",
             "7.161/7.066",
@@ -6891,7 +6891,7 @@ def validate_better_integrator_boundary_docs(v: Validator) -> None:
             "OC6/partial",
             "OC12/partial",
         ],
-        "ORDER_PROOF_LEDGER.md": [
+        "docs/ORDER_PROOF_LEDGER.md": [
             "Primary claim boundary",
             "conditional sixth order for the accepted smooth",
             "P5 direct Newton--Euler residual bridge",
@@ -6909,14 +6909,14 @@ def validate_better_integrator_boundary_docs(v: Validator) -> None:
             "Seven residual-to-error obligations remain blocking",
             "not accepted dynamic order rows",
         ],
-        "VERSION_LEDGER.md": [
+        "docs/VERSION_LEDGER.md": [
             "Paper-facing claim boundary",
             "conditional formal-order comparison",
             "not as a full source-paper residual reproduction",
             "7.161/7.066",
             "expected order five",
         ],
-        "VERSION_TREE.md": [
+        "docs/VERSION_TREE.md": [
             "Current v047 paper-facing interpretation",
             "conditional formal-order",
             "7.161/7.066",
@@ -6932,7 +6932,7 @@ def validate_better_integrator_boundary_docs(v: Validator) -> None:
         text = path.read_text(encoding="utf-8")
         for token in tokens:
             v.check(contains_normalized(text, token), f"{rel_path} missing better-integrator boundary token: {token}")
-    pipeline_audit_text = (ROOT / "PIPELINE_AUDIT.md").read_text(encoding="utf-8")
+    pipeline_audit_text = (ROOT / "docs" / "PIPELINE_AUDIT.md").read_text(encoding="utf-8")
     v.check(
         "latest pass runs 3579 checks" not in pipeline_audit_text,
         "PIPELINE_AUDIT.md still hard-codes the stale 3579-check pass count",
@@ -6941,7 +6941,7 @@ def validate_better_integrator_boundary_docs(v: Validator) -> None:
 
 def validate_tfe_terminology_docs(v: Validator) -> None:
     doc_tokens = {
-        "VALIDATION_QUICKSTART.md": [
+        "docs/VALIDATION_QUICKSTART.md": [
             "Terminology: TFE Versus FTE",
             "`TFE` means temporal finite element",
             "`FTE` is not a separate method",
@@ -6995,7 +6995,7 @@ def validate_pipeline_count_docs(v: Validator, totals: dict[str, int]) -> None:
                 f"{totals['csv']} CSVs, {totals['png']} PNGs, {totals['json']} JSON files"
             ),
         ],
-        "PIPELINE_AUDIT.md": [
+        "docs/PIPELINE_AUDIT.md": [
             f"inventories all {totals['versions']} `vNNN_*` directories",
             (
                 f"checks {totals['result_files']} result files, parses {totals['csv']} "
@@ -7051,11 +7051,11 @@ def validate_no_claim_regression_wording(v: Validator) -> None:
     rel_paths = [
         "README.md",
         "CURRENT_PIPELINE_CONTRACT.md",
-        "VERSION_LEDGER.md",
-        "VERSION_TREE.md",
-        "PIPELINE_AUDIT.md",
-        "ORDER_PROOF_LEDGER.md",
-        "VALIDATION_QUICKSTART.md",
+        "docs/VERSION_LEDGER.md",
+        "docs/VERSION_TREE.md",
+        "docs/PIPELINE_AUDIT.md",
+        "docs/ORDER_PROOF_LEDGER.md",
+        "docs/VALIDATION_QUICKSTART.md",
         "v047_cylindrical_chain_pipeline/README.md",
         "v047_cylindrical_chain_pipeline/results/v047_report.md",
         "paper_v047_cylindrical_chain/README.md",
@@ -7182,10 +7182,10 @@ def validate_current_pipeline_gate(v: Validator) -> dict:
     for model, data in asme_gate.get("models", {}).items():
         v.check(str(data.get("v047_mapping_status", "")).startswith(("accepted", "exact_driven")), f"v047 model not accepted: {model}")
 
-    proof_text = (ROOT / "ORDER_PROOF_LEDGER.md").read_text(encoding="utf-8")
-    audit_text = (ROOT / "PIPELINE_AUDIT.md").read_text(encoding="utf-8")
-    ledger_text = (ROOT / "VERSION_LEDGER.md").read_text(encoding="utf-8")
-    tree_text = (ROOT / "VERSION_TREE.md").read_text(encoding="utf-8")
+    proof_text = (ROOT / "docs" / "ORDER_PROOF_LEDGER.md").read_text(encoding="utf-8")
+    audit_text = (ROOT / "docs" / "PIPELINE_AUDIT.md").read_text(encoding="utf-8")
+    ledger_text = (ROOT / "docs" / "VERSION_LEDGER.md").read_text(encoding="utf-8")
+    tree_text = (ROOT / "docs" / "VERSION_TREE.md").read_text(encoding="utf-8")
     readme_text = (ROOT / "README.md").read_text(encoding="utf-8")
     for name, text in [
         ("ORDER_PROOF_LEDGER.md", proof_text),
@@ -7984,7 +7984,7 @@ def validate_current_pipeline_gate(v: Validator) -> dict:
     v.check(paper_contract.get("accepted_h_sweep_count") == 0, "v047 paper contract unexpectedly accepted h-sweep")
     v.check(paper_contract.get("full_tfe_stage_replacement") is False, "v047 paper contract unexpectedly claims full TFE replacement")
 
-    width, height = png_size(ROOT / "version_progression.png")
+    width, height = png_size(ROOT / "docs" / "version_progression.png")
     v.check(width > 0 and height > 0, "version_progression.png is invalid")
     return {
         "asme_status": asme_gate.get("status"),

@@ -2,21 +2,40 @@
 
 This file is a navigation layer for the research tree. It does not change the
 pipeline contract; authoritative claim boundaries remain in
-`CURRENT_PIPELINE_CONTRACT.md`, `PIPELINE_AUDIT.md`, and the paper gates under
-`paper_v047_cylindrical_chain/`.
+`../CURRENT_PIPELINE_CONTRACT.md`, `PIPELINE_AUDIT.md`, and the paper gates under
+`../paper_v047_cylindrical_chain/`.
 
-## Current Status Files
+## Layout since 2026-09-20
+
+```
+lie_group_integrator_work/
+  README.md, CURRENT_PIPELINE_CONTRACT.md, validate_pipeline_outputs.py
+  docs/      this file, the ledgers and audits below, LEAN_FORMALIZATION.md, PATH_DEPENDENCY_REPORT.md
+  tools/     plot_version_ledger.py, build_path_dependency_report.py
+  paper_v047_cylindrical_chain/
+    main_cmame.tex (authoritative) + main_cmame.pdf/.log/.txt
+    cmame_submission_flat/   Elsevier flat copy (derived)     arxiv/   arXiv preprint (derived)
+    lean/                    Lean development copy            notes/   backups and working notes
+    figures/                 figure sources                   cmame_*/ reproducibility bundles
+    *.json/*.md/*.csv        audit records and gates          build_*/validate_*/run_*.py
+  v047_cylindrical_chain_pipeline/, v048_cross_paper_same_test_benchmarks/, v001_… v046_…
+  pipeline_validation_results/, reproduction/, scratch_v046_cylindrical_chain_pending/, skills/
+```
+
+## Current Status Files (all in `docs/` except the contract)
 
 | File | Use |
 | --- | --- |
-| `CURRENT_PIPELINE_CONTRACT.md` | Short current-state contract and command boundary. |
+| `../CURRENT_PIPELINE_CONTRACT.md` | Short current-state contract and command boundary. |
 | `VALIDATION_QUICKSTART.md` | Which validator to run for each routine check. |
 | `PIPELINE_AUDIT.md` | Pipeline-level gate status across v047/v048. |
 | `ORDER_PROOF_LEDGER.md` | Mathematical proof/order status by version. |
 | `VERSION_LEDGER.md` | Human-readable version history. |
 | `VERSION_TREE.md` | Version lineage. |
 | `version_ledger.csv` | Machine-readable version ledger. |
-| `version_progression.png` | Plot generated from `version_ledger.csv`. |
+| `version_progression.png` | Plot generated from `version_ledger.csv` by `../tools/plot_version_ledger.py`. |
+| `LEAN_FORMALIZATION.md` | What the Lean development proves and where it lives. |
+| `PATH_DEPENDENCY_REPORT.md` | Family and readers of every paper-package file; consult before moving anything. |
 
 ## Main Working Areas
 
