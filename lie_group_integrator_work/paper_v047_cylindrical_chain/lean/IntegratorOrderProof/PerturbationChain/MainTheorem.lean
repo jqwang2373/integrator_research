@@ -9,9 +9,12 @@ This file assembles `thm:g6fullva-order` from the four perturbation lemmas, keep
 constant explicit.  It is a formalization of the **conditional** theorem: the P1/P2/P6
 hypotheses (smooth chart, uniform stage inverse, endpoint right inverse, stability scale,
 solver envelope `η_h ≤ c_η h⁷`) and the two named classical inputs (Gauss collocation order,
-Lie-group chart transfer) enter as hypotheses; the P4/P5 residual certificate enters as the
-single hypothesis `‖F_{A,h}(Z_G)‖ ≤ C_R h⁷`.  Nothing here discharges those hypotheses for
-the concrete cylindrical-chain mechanism.
+Lie-group chart transfer) enter as hypotheses; the value of the implemented residual at the
+lifted Gauss stage enters as the single hypothesis `‖F_{A,h}(Z_G)‖ ≤ C_R h⁷`.  The exact
+stage identity of `FullVA/NonDynamicRows.lean` and `NewtonEuler/DynamicRows.lean` discharges
+that hypothesis with `C_R = 0` (all 132 rows vanish), so the manuscript's three-term local
+defect `C_loc = C_G + C_E + C_N c_η` is the `C_R = 0` instance of the four-term bound below.
+Nothing here discharges the P1/P2/P6 hypotheses for the concrete cylindrical-chain mechanism.
 
 Per transition (`local_defect_bound`), with the four-map chain
 `Ψ_h^G = 𝓔(Z_G)`, `Ψ_h^A = 𝓔(Z_A)`, `Ψ_h^E = 𝓒(𝓔(Z_A))`, `Ψ_h^{G6FVA} = 𝓒(𝓔(Z̃_A))`:
@@ -160,7 +163,7 @@ theorem local_defect_bound_paper
 trajectory, and the tube-retention bootstrap, the reduced-chart grid error is
 `≤ C_red h⁶` with `C_red = C_loc Γ_s(T)`, and the reported `(q, v)` error is `≤ C_qv h⁶` with
 `C_qv = C_𝓡 C_red`. -/
-theorem conditional_sixth_order_grid_bound {Y Q : Type*} [NormedAddCommGroup Y] [NormedSpace ℝ Y]
+theorem conditional_sixth_order_grid_bound {Y Q : Type*} [NormedAddCommGroup Y]
     [NormedAddCommGroup Q]
     (K : Set Y) (Ψ : Y → Y) (x y : ℕ → Y) (N : ℕ) {Cloc Cs h d T : ℝ}
     (hh : 0 < h) (hCs : 0 ≤ Cs) (hCloc : 0 ≤ Cloc) (hd : 0 ≤ d) (hNT : (N : ℝ) * h ≤ T)

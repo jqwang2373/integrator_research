@@ -1,11 +1,12 @@
 import Mathlib
 
 /-!
-# Smoke test for the Lean + Mathlib toolchain
+# One-step stability factor
 
-Two tiny checks that exercise `norm_num`, `positivity`, `Real.exp`, and
-`linarith` from Mathlib. The second is the shape of the one-step stability
-factor `(1 + C_s h)^n ≤ exp(C_s h n)` used in local-to-global order transfer.
+`stability_factor_le_exp`: `(1 + C_s h)^n ≤ exp(C_s h n)` for `C_s, h ≥ 0`.  This is the
+elementary growth bound behind the discrete Gronwall argument of
+`PerturbationChain/LocalToGlobal.lean` (Eq. `local-global-lemma-gronwall-factor` of the
+manuscript).
 -/
 
 example : (2 : ℝ) + 2 = 4 := by norm_num

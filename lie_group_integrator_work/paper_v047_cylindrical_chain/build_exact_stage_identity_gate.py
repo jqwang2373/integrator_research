@@ -236,7 +236,7 @@ def _sha256(path: Path) -> str:
 def package_copy_sync() -> dict[str, Any]:
     """The Lean sources distributed with the paper package must equal the built development."""
     tracked = LEAN_FILES + ["IntegratorOrderProof.lean", "lakefile.toml", "lean-toolchain",
-                            "lake-manifest.json", "scripts/Axioms.lean"]
+                            "lake-manifest.json", "scripts/Axioms.lean", "scripts/Lint.lean", "scripts/check.sh"]
     per_file = {}
     for name in tracked:
         pkg = PACKAGE_LEAN_DIR / name
@@ -285,7 +285,7 @@ def lean_binding(run_lean: bool) -> dict[str, Any]:
     info["lean_check_run"] = True
     info["axiom_lines"] = lines
     info["all_standard_axioms"] = bool(entries) and all(
-        set(a.strip() for a in axioms.split(",")) <= standard for _, axioms in entries)
+        set(a.strip() for a in axioms.split(",") if a.strip()) <= standard for _, axioms in entries)
     info["sorry_count"] = proc.stdout.count("sorryAx")
     checked_names = {name for name, _ in entries}
     info["required_theorems_checked"] = {key: (name in checked_names) for key, name in LEAN_THEOREMS.items()}

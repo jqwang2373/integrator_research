@@ -42,24 +42,39 @@ abbrev V3 := Fin 3 → ℝ
 /-- Fixed mechanism parameters (`params_arrays` in the code).  Joint `0` is ground–body0,
 joint `1` is body0–body1.  `basis j m` is the fixed world basis `joint_basis[j, m]`. -/
 structure JointParams where
+  /-- child-side attachment point of joint `j` in the child body frame (`s_prev[j]`) -/
   sPrev : Fin 2 → V3
+  /-- parent-side attachment point of joint `j+1` in body `j`'s frame (`s_next[j]`) -/
   sNext : Fin 2 → V3
+  /-- child-fixed joint axis (`axis_prev[j]`) -/
   axisPrev : Fin 2 → V3
+  /-- parent-fixed axis of the next joint in body `j`'s frame (`axis_next[j]`) -/
   axisNext : Fin 2 → V3
+  /-- child-fixed twist reference vector (`twist_prev[j]`) -/
   twistPrev : Fin 2 → V3
+  /-- parent-fixed twist reference vector of the next joint (`twist_next[j]`) -/
   twistNext : Fin 2 → V3
+  /-- world axis of the ground joint (`ground_axis`) -/
   groundAxis : V3
+  /-- world twist reference of the ground joint (`ground_twist`) -/
   groundTwist : V3
+  /-- fixed world basis `joint_basis[j, m]`, orthogonal to the joint axis at `t = 0` -/
   basis : Fin 2 → Fin 2 → V3
 
 /-- Body data at one stage (or at the initial time): rotation matrices and the `r, v, w, a, α`
 blocks of `unpack_stages`. -/
 structure BodyState where
+  /-- rotation matrix of each body (`R[body]`) -/
   R : Fin 2 → Matrix (Fin 3) (Fin 3) ℝ
+  /-- body positions (`st["r"]`) -/
   r : Fin 2 → V3
+  /-- body translational velocities (`st["v"]`) -/
   v : Fin 2 → V3
+  /-- body angular velocities in the body frame (`st["w"]`) -/
   w : Fin 2 → V3
+  /-- body translational accelerations (`st["a"]`) -/
   a : Fin 2 → V3
+  /-- body angular accelerations in the body frame (`st["alpha"]`) -/
   α : Fin 2 → V3
 
 namespace BodyState
@@ -68,40 +83,66 @@ variable (P : JointParams) (st : BodyState)
 
 /-! ### `joint_kinematics_jax`, transcribed -/
 
+/-- world position of the child-side attachment point (`child_point`) -/
 def childPoint (j : Fin 2) : V3 := st.r j + st.R j *ᵥ P.sPrev j
+/-- world velocity of the child-side attachment point (`child_vel`) -/
 def childVel (j : Fin 2) : V3 := st.v j + st.R j *ᵥ (st.w j ⨯₃ P.sPrev j)
+/-- world acceleration of the child-side attachment point (`child_acc`) -/
 def childAcc (j : Fin 2) : V3 :=
   st.a j + st.R j *ᵥ (st.α j ⨯₃ P.sPrev j + st.w j ⨯₃ (st.w j ⨯₃ P.sPrev j))
+/-- child-fixed joint axis in the world frame (`child_axis`) -/
 def childAxis (j : Fin 2) : V3 := st.R j *ᵥ P.axisPrev j
+/-- child-fixed twist reference in the world frame (`child_twist`) -/
 def childTwist (j : Fin 2) : V3 := st.R j *ᵥ P.twistPrev j
+/-- time derivative of `childAxis` (`child_axis_rate`) -/
 def childAxisRate (j : Fin 2) : V3 := st.R j *ᵥ (st.w j ⨯₃ P.axisPrev j)
+/-- second time derivative of `childAxis` (`child_axis_acc`) -/
 def childAxisAcc (j : Fin 2) : V3 :=
   st.R j *ᵥ (st.α j ⨯₃ P.axisPrev j + st.w j ⨯₃ (st.w j ⨯₃ P.axisPrev j))
 
+/-- world position of the parent-side attachment point: ground origin for joint `0`, body `0` for joint `1` (`parent_point`) -/
 def parentPoint : Fin 2 → V3 := ![0, st.r 0 + st.R 0 *ᵥ P.sNext 0]
+/-- world velocity of the parent-side attachment point (`parent_vel`) -/
 def parentVel : Fin 2 → V3 := ![0, st.v 0 + st.R 0 *ᵥ (st.w 0 ⨯₃ P.sNext 0)]
+/-- world acceleration of the parent-side attachment point (`parent_acc`) -/
 def parentAcc : Fin 2 → V3 :=
   ![0, st.a 0 + st.R 0 *ᵥ (st.α 0 ⨯₃ P.sNext 0 + st.w 0 ⨯₃ (st.w 0 ⨯₃ P.sNext 0))]
+/-- parent-fixed joint axis in the world frame: the ground axis for joint `0`, rotated with body `0` for joint `1` (`parent_axis`) -/
 def parentAxis : Fin 2 → V3 := ![P.groundAxis, st.R 0 *ᵥ P.axisNext 0]
+/-- parent-fixed twist reference in the world frame (`parent_twist`) -/
 def parentTwist : Fin 2 → V3 := ![P.groundTwist, st.R 0 *ᵥ P.twistNext 0]
+/-- time derivative of `parentAxis` (`parent_axis_rate`) -/
 def parentAxisRate : Fin 2 → V3 := ![0, st.R 0 *ᵥ (st.w 0 ⨯₃ P.axisNext 0)]
+/-- second time derivative of `parentAxis` (`parent_axis_acc`) -/
 def parentAxisAcc : Fin 2 → V3 :=
   ![0, st.R 0 *ᵥ (st.α 0 ⨯₃ P.axisNext 0 + st.w 0 ⨯₃ (st.w 0 ⨯₃ P.axisNext 0))]
 
+/-- child angular velocity in the world frame (`child_omega_world`) -/
 def childOmegaWorld (j : Fin 2) : V3 := st.R j *ᵥ st.w j
+/-- child angular acceleration in the world frame (`child_alpha_world`) -/
 def childAlphaWorld (j : Fin 2) : V3 := st.R j *ᵥ st.α j
+/-- parent angular velocity in the world frame (`parent_omega_world`) -/
 def parentOmegaWorld : Fin 2 → V3 := ![0, st.R 0 *ᵥ st.w 0]
+/-- parent angular acceleration in the world frame (`parent_alpha_world`) -/
 def parentAlphaWorld : Fin 2 → V3 := ![0, st.R 0 *ᵥ st.α 0]
 
+/-- relative displacement `d_j = C_j - P_j` (`rel_point`) -/
 def relPoint (j : Fin 2) : V3 := childPoint P st j - parentPoint P st j
+/-- relative velocity of the attachment points (`rel_vel`) -/
 def relVel (j : Fin 2) : V3 := childVel P st j - parentVel P st j
+/-- relative acceleration of the attachment points (`rel_acc`) -/
 def relAcc (j : Fin 2) : V3 := childAcc P st j - parentAcc P st j
+/-- relative angular velocity in the world frame (`rel_omega`) -/
 def relOmega (j : Fin 2) : V3 := childOmegaWorld st j - parentOmegaWorld st j
+/-- relative angular acceleration in the world frame (`rel_alpha`) -/
 def relAlpha (j : Fin 2) : V3 := childAlphaWorld st j - parentAlphaWorld st j
 
+/-- axis-alignment constraint `(child_axis - parent_axis) ⬝ basis[j, m]` (`axis_res`) -/
 def axisRes (j : Fin 2) (m : Fin 2) : ℝ := (childAxis P st j - parentAxis P st j) ⬝ᵥ P.basis j m
+/-- velocity-level axis-alignment row (`axis_rate`) -/
 def axisRate (j : Fin 2) (m : Fin 2) : ℝ :=
   (childAxisRate P st j - parentAxisRate P st j) ⬝ᵥ P.basis j m
+/-- acceleration-level axis-alignment row (`axis_acc`) -/
 def axisAcc (j : Fin 2) (m : Fin 2) : ℝ :=
   (childAxisAcc P st j - parentAxisAcc P st j) ⬝ᵥ P.basis j m
 
@@ -110,7 +151,9 @@ with an opaque `atan2`. -/
 def twistAngle (atan2 : ℝ → ℝ → ℝ) (j : Fin 2) : ℝ :=
   atan2 (childTwist P st j ⬝ᵥ (parentAxis P st j ⨯₃ parentTwist P st j))
     (childTwist P st j ⬝ᵥ parentTwist P st j)
+/-- twist rate `θ̇ = ω_rel ⬝ a_j` (`rel_spin_vel`) -/
 def relSpinVel (j : Fin 2) : ℝ := relOmega st j ⬝ᵥ parentAxis P st j
+/-- twist acceleration `θ̈ = α_rel ⬝ a_j + ω_rel ⬝ ȧ_j` (`rel_spin_acc`) -/
 def relSpinAcc (j : Fin 2) : ℝ :=
   relAlpha st j ⬝ᵥ parentAxis P st j + relOmega st j ⬝ᵥ parentAxisRate P st j
 
@@ -121,11 +164,17 @@ end BodyState
 /-- Data of one Gauss transition: initial body state, the three stage states, step `h`,
 the Gauss matrix `A`, and the opaque `atan2`. -/
 structure Transition where
+  /-- fixed mechanism parameters -/
   P : JointParams
+  /-- body state at the beginning of the step (`state0`) -/
   st0 : BodyState
+  /-- the three Gauss stage states (`unpack_stages`) -/
   st : Fin 3 → BodyState
+  /-- step size -/
   h : ℝ
+  /-- Gauss collocation matrix `A` -/
   A : Fin 3 → Fin 3 → ℝ
+  /-- opaque two-argument arctangent used for the twist angle (`jnp.arctan2`) -/
   atan2 : ℝ → ℝ → ℝ
 
 namespace Transition
@@ -177,7 +226,9 @@ def NonDynamicRowsVanish : Prop :=
 /-- Sliding coordinate `s = rel_point ⬝ n` along the fixed world direction `n j`
 (the normal of the fixed basis plane), and its rates. -/
 def slide (n : Fin 2 → V3) (b : BodyState) (j : Fin 2) : ℝ := relPoint T.P b j ⬝ᵥ n j
+/-- sliding rate `ṡ = rel_vel ⬝ n` -/
 def slideRate (n : Fin 2 → V3) (b : BodyState) (j : Fin 2) : ℝ := relVel T.P b j ⬝ᵥ n j
+/-- sliding acceleration `s̈ = rel_acc ⬝ n` -/
 def slideAcc (n : Fin 2 → V3) (b : BodyState) (j : Fin 2) : ℝ := relAcc T.P b j ⬝ᵥ n j
 
 /-- Lower-pair constraints at position, velocity and acceleration level, at every stage and at

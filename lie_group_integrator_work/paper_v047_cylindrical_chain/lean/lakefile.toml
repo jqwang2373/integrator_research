@@ -2,6 +2,10 @@ name = "IntegratorOrderProof"
 version = "0.1.0"
 defaultTargets = ["IntegratorOrderProof"]
 
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4"

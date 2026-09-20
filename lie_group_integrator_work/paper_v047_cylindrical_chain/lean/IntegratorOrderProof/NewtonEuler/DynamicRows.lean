@@ -1,7 +1,7 @@
 import Mathlib
 
 /-!
-# The 36 Newton–Euler dynamic rows of the `Gauss6/FullVA` cylindrical-chain residual (P5)
+# The 36 Newton–Euler dynamic rows of the `Gauss6/FullVA` cylindrical-chain residual
 
 This file is the Lean counterpart of `D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE` and of the
 `D1/D2` template identities in `NEWTON_EULER_BALANCE_IDENTITY_AUDIT` (previously checked by
@@ -17,13 +17,15 @@ sign conventions kept verbatim:
 
 The two theorems `transRow_eq` / `rotRow_eq` are the D1/D2 identities: each implemented row is
 literally the defect of the mathematical Newton (resp. Euler) balance.  The theorem
-`dynamic_rows_vanish` is the P5 direct-substitution statement: if the lifted Gauss stage
+`dynamic_rows_vanish` is the dynamic half of the exact stage identity (formerly the "P5
+direct-substitution" interface of the manuscript): if the lifted Gauss stage
 satisfies the pointwise balance (which is what the smooth FullVA lift `𝓛(y,t) = (q,v,a,λ)`
 supplies, `lem:fullva-stage-lift`), then all `3 × 2 × 2 × 3 = 36` implemented dynamic rows are
 exactly `0`, hence trivially `O(h⁷)`.
 
 What is **not** proved here: that the lift satisfies the balance (that is the definition of
-the lift), the 96 non-dynamic rows, and any statement about the AD/row-scaling binding (P3/D6).
+the lift), the 96 non-dynamic rows (see `FullVA/NonDynamicRows.lean`), and any statement about
+the automatic-differentiation/row-scaling binding between transcription and source code.
 -/
 
 open Matrix
@@ -64,11 +66,13 @@ structure StageData where
   parentAxis : Fin 2 → V3
   /-- Brown–McPhee friction scalar per joint -/
   fric : Fin 2 → ℝ
-  /-- body-frame joint attachment points `s_prev[body]`, `s_next[body]` -/
+  /-- body-frame attachment point of the proximal joint (`s_prev[body]`) -/
   sPrev : Fin 2 → V3
+  /-- body-frame attachment point of the distal joint (`s_next[body]`) -/
   sNext : Fin 2 → V3
-  /-- body-frame joint axes `axis_prev[body]`, `axis_next[body]` -/
+  /-- body-frame axis of the proximal joint (`axis_prev[body]`) -/
   axisPrev : Fin 2 → V3
+  /-- body-frame axis of the distal joint (`axis_next[body]`) -/
   axisNext : Fin 2 → V3
 
 namespace StageData
@@ -162,7 +166,7 @@ def dynamicRow (Z : Fin 3 → StageData) (s : Fin 3) (i : Fin 2) (blk : Bool) (c
 theorem card_dynamic_rows : Fintype.card (Fin 3 × Fin 2 × Bool × Fin 3) = 36 := by
   simp
 
-/-- **P5 direct-substitution certificate.**  If the lifted Gauss stage satisfies the pointwise
+/-- **Dynamic rows of the exact stage identity.**  If the lifted Gauss stage satisfies the pointwise
 Newton–Euler balance at every stage and body, then every one of the 36 implemented dynamic rows
 evaluates to `0`. -/
 theorem dynamic_rows_vanish (Z : Fin 3 → StageData)

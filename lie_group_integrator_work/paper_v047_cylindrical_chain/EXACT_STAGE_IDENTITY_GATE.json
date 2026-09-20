@@ -274,8 +274,8 @@
       "files": {
         "IntegratorOrderProof/Basic.lean": {
           "package_present": true,
-          "package_sha256": "f05c171717d231676207c52c5a6867959ab9a7b10c22c5d43430cc1c3109af3a",
-          "development_sha256": "f05c171717d231676207c52c5a6867959ab9a7b10c22c5d43430cc1c3109af3a",
+          "package_sha256": "d8563c9efdd11fc5b5f6db9bce6f896347d6f717a711639c69ae5b7bd5f75b35",
+          "development_sha256": "d8563c9efdd11fc5b5f6db9bce6f896347d6f717a711639c69ae5b7bd5f75b35",
           "in_sync": true
         },
         "IntegratorOrderProof/PerturbationChain/Contraction.lean": {
@@ -292,14 +292,14 @@
         },
         "IntegratorOrderProof/PerturbationChain/LocalToGlobal.lean": {
           "package_present": true,
-          "package_sha256": "19297b801bff16b48355e26e221fc756c2325f50c9d59f927ec4c43d66d14022",
-          "development_sha256": "19297b801bff16b48355e26e221fc756c2325f50c9d59f927ec4c43d66d14022",
+          "package_sha256": "3897419f66fca1a0c3466866817a730536c1c56a09909addb293f853f4b7a6e6",
+          "development_sha256": "3897419f66fca1a0c3466866817a730536c1c56a09909addb293f853f4b7a6e6",
           "in_sync": true
         },
         "IntegratorOrderProof/PerturbationChain/MainTheorem.lean": {
           "package_present": true,
-          "package_sha256": "8f2e054c801c56b2206e2d930fe2bf42e89096546233cb093f0f598d597b6cda",
-          "development_sha256": "8f2e054c801c56b2206e2d930fe2bf42e89096546233cb093f0f598d597b6cda",
+          "package_sha256": "41101b7d9e288143f95ff8a1acdeb46f4ead7a12112fef4bd517eb817412161c",
+          "development_sha256": "41101b7d9e288143f95ff8a1acdeb46f4ead7a12112fef4bd517eb817412161c",
           "in_sync": true
         },
         "IntegratorOrderProof/PerturbationChain/JacobianPerturbation.lean": {
@@ -310,14 +310,14 @@
         },
         "IntegratorOrderProof/NewtonEuler/DynamicRows.lean": {
           "package_present": true,
-          "package_sha256": "ba650f4883a64d86e3deabf06bf245137828840cae099a71a98b46a2ecbd58e3",
-          "development_sha256": "ba650f4883a64d86e3deabf06bf245137828840cae099a71a98b46a2ecbd58e3",
+          "package_sha256": "e18429e35d942145a49d0a7baf892f3b8f503b8afc6f1a30332929fb0f24f127",
+          "development_sha256": "e18429e35d942145a49d0a7baf892f3b8f503b8afc6f1a30332929fb0f24f127",
           "in_sync": true
         },
         "IntegratorOrderProof/FullVA/NonDynamicRows.lean": {
           "package_present": true,
-          "package_sha256": "9bd7173e157d7b2556cdae3d61f67fa399ade8233dd2b6690c26824d9a5b8708",
-          "development_sha256": "9bd7173e157d7b2556cdae3d61f67fa399ade8233dd2b6690c26824d9a5b8708",
+          "package_sha256": "f42923cce717a6bf96aa3b4a33f483b0d0398e91bb0c39ae074902bec3e65b84",
+          "development_sha256": "f42923cce717a6bf96aa3b4a33f483b0d0398e91bb0c39ae074902bec3e65b84",
           "in_sync": true
         },
         "IntegratorOrderProof/Gauss/Tableau.lean": {
@@ -334,14 +334,14 @@
         },
         "IntegratorOrderProof.lean": {
           "package_present": true,
-          "package_sha256": "283b9b6c51066641cbe49396d3eafdc731049f62e8583858858f3c6df9091ee8",
-          "development_sha256": "283b9b6c51066641cbe49396d3eafdc731049f62e8583858858f3c6df9091ee8",
+          "package_sha256": "3ae74c55324e3cc2fc259030852a994e064108fc92b24551d4a6477363269f09",
+          "development_sha256": "3ae74c55324e3cc2fc259030852a994e064108fc92b24551d4a6477363269f09",
           "in_sync": true
         },
         "lakefile.toml": {
           "package_present": true,
-          "package_sha256": "aae521ba78d1deac17fa0ddb17525e50a4abf40069d82c659482e4813efde0e0",
-          "development_sha256": "aae521ba78d1deac17fa0ddb17525e50a4abf40069d82c659482e4813efde0e0",
+          "package_sha256": "2d925317e7429c221fdf7b424aea0ddce2200bbd333c69f27743a7d2a6fe4b30",
+          "development_sha256": "2d925317e7429c221fdf7b424aea0ddce2200bbd333c69f27743a7d2a6fe4b30",
           "in_sync": true
         },
         "lean-toolchain": {
@@ -358,8 +358,20 @@
         },
         "scripts/Axioms.lean": {
           "package_present": true,
-          "package_sha256": "284237cea767f8934304e6e4f82111392d21fb33a03d660a12188e8c0e59e4ce",
-          "development_sha256": "284237cea767f8934304e6e4f82111392d21fb33a03d660a12188e8c0e59e4ce",
+          "package_sha256": "81586a7add18c0f4967253b9a1acb990ae4969e7b9e1483cf43b8729e81bae9c",
+          "development_sha256": "81586a7add18c0f4967253b9a1acb990ae4969e7b9e1483cf43b8729e81bae9c",
+          "in_sync": true
+        },
+        "scripts/Lint.lean": {
+          "package_present": true,
+          "package_sha256": "f3bc3038a2fcf2743f927e71bdbd35ecec6416bccbeb0487a50217031f845419",
+          "development_sha256": "f3bc3038a2fcf2743f927e71bdbd35ecec6416bccbeb0487a50217031f845419",
+          "in_sync": true
+        },
+        "scripts/check.sh": {
+          "package_present": true,
+          "package_sha256": "9a4702091093b0b57b9b4c3708f5032f8eac61f84cd35405f41816a6a6de59bb",
+          "development_sha256": "9a4702091093b0b57b9b4c3708f5032f8eac61f84cd35405f41816a6a6de59bb",
           "in_sync": true
         }
       }
@@ -396,37 +408,63 @@
     "lean_check_run": true,
     "lean_status": "all_required_theorems_checked_standard_axioms_no_sorry",
     "axiom_lines": [
-      "'IntegratorOrderProof.exists_root_of_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.root_unique_of_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.stage_root_exists_unique' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.linearization_of_fderiv_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.inexact_newton_output_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.endpoint_closure_exists' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.endpoint_correction_bound_h7' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.geom_sum_le_gronwallFactor' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.local_to_global' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.reported_grid_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.local_defect_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.local_defect_bound_paper' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.conditional_sixth_order_grid_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.NewtonEuler.StageData.transRow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.NewtonEuler.StageData.rotRow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.NewtonEuler.dynamic_rows_vanish' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.NewtonEuler.card_dynamic_rows' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.Gauss6.B_six' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.Gauss6.not_B_seven' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.Gauss6.C_three' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.Gauss6.D_three' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.Gauss6.butcher_order_six_hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.quadrature_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.gauss6_quadrature_error' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.gauss6_step_defect' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Cloc_le_ClocPaper' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.FullVA.Transition.card_nondynamic_rows' depends on axioms: [propext]",
+      "'IntegratorOrderProof.FullVA.Transition.coll_dot' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.FullVA.Transition.eq_smul_of_perp' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.FullVA.Transition.nondynamic_rows_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
       "'IntegratorOrderProof.FullVA.Transition.nondynamic_rows_vanish' depends on axioms: [propext, Classical.choice, Quot.sound]",
       "'IntegratorOrderProof.FullVA.Transition.reducedCollocation_of_rows' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.FullVA.Transition.nondynamic_rows_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.B_six' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.C_three' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.D_three' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.b_pos' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.butcher_order_six_hypotheses' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.c_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.monomial_exact' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.not_B_seven' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.r_lt_half' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.r_pos' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.r_pow_four' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.r_sq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.sum_abs_b' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.Gauss6.sum_b' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.StageData.netForce_one' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.StageData.netForce_zero' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.StageData.rotRow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.StageData.rotRow_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.StageData.transRow_eq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.StageData.transRow_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.card_dynamic_rows' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.dynamic_rows_le_h7' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.NewtonEuler.dynamic_rows_vanish' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.conditional_sixth_order_grid_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.endpoint_closure_exists' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.endpoint_correction_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.endpoint_correction_bound_h7' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.exists_root_of_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.gauss6_quadrature_error' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.gauss6_step_defect' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.geom_sum_le_gronwallFactor' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.gronwallFactor_of_pos' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.gronwallFactor_zero' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.inexact_newton_output_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.inexact_newton_stage_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.integral_step_eq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.linearization_of_fderiv_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.local_defect_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.local_defect_bound_paper' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.local_to_global' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.newtonMap_sub' depends on axioms: [propext, Classical.choice, Quot.sound]",
       "'IntegratorOrderProof.norm_le_of_perturbed' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.norm_sub_le_of_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.quadrature_error_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.reported_grid_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.root_unique_of_linearization' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.simplified_newton_residual_decay' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "'IntegratorOrderProof.stage_root_exists_unique' depends on axioms: [propext, Classical.choice, Quot.sound]",
       "'IntegratorOrderProof.uniform_inverse_of_perturbation' depends on axioms: [propext, Classical.choice, Quot.sound]",
-      "'IntegratorOrderProof.simplified_newton_residual_decay' depends on axioms: [propext, Classical.choice, Quot.sound]"
+      "'stability_factor_le_exp' depends on axioms: [propext, Classical.choice, Quot.sound]"
     ],
     "all_standard_axioms": true,
     "sorry_count": 0,

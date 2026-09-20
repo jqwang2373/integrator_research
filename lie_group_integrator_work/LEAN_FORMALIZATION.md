@@ -25,9 +25,16 @@ Build and check:
 ```bash
 cd ~/lean/integrator_order_proof
 lake exe cache get
-lake build
-lake env lean scripts/Axioms.lean      # every theorem: [propext, Classical.choice, Quot.sound]
+lake build                             # autoImplicit off, no warnings
+lake env lean scripts/Axioms.lean      # every theorem (57, enumerated automatically): standard axioms, no sorry
+lake env lean scripts/Lint.lean        # Batteries linter over the library: 0 findings
+scripts/check.sh                       # the three steps above
 ```
+
+The audit script enumerates every theorem of the library from the environment (no hand-kept
+list), so a new theorem cannot escape it; the gate `build_exact_stage_identity_gate.py` parses its
+output and also checks that the package copy `paper_v047_cylindrical_chain/lean/` is byte-identical
+to the development.
 
 ## What is machine-checked
 
@@ -125,3 +132,13 @@ package chain). Global claim state is unchanged: `submission_ready=false`, OC4/O
   stage (`C_R = 0`); P4/P5 as separate interfaces no longer exist.
 - Nothing numerical about the concrete cylindrical chain is verified in Lean; the numerical
   identity check above is a floating-point diagnostic, not a proof.
+
+## Tidy-up (2026-09-19)
+
+Lean commit after `cceb5e0`: exhaustive `scripts/Axioms.lean` (57 theorems, 56 with the three
+standard axioms, one with `propext` only), `scripts/Lint.lean` + `scripts/check.sh`,
+`autoImplicit = false` in `lakefile.toml`, docstrings on every structure field and kinematic
+definition (linter `docBlame` clean), three unused `NormedSpace ℝ Y` instance arguments removed
+(`local_to_global`, `reported_grid_bound`, `conditional_sixth_order_grid_bound`), module headers and
+README rewritten without the retired P4/P5 interface names, overview docstring in the root module.
+No theorem statement changed except for the dropped unused instance arguments.

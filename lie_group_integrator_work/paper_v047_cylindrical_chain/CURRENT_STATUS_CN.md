@@ -760,3 +760,13 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
 - `external/public-metadata` 换成 `--filter=blob:none --no-checkout` 克隆（约 200 KB，工作树为空），
   与 VP2024 审计记录的 `visible_non_git_file_count == 0` 一致；四个用到镜像的验证器通过。
 - 生成脚本 `rewrite_v049.py`（会话 scratchpad）改为从 commit `cbcee80` 读原稿，因为 HEAD 已是压缩稿。
+
+## 2026-09-19 补充二：Lean 开发整理
+
+- `scripts/Axioms.lean` 改为自动枚举库里全部定理（57 个）并打印公理，任何定理依赖 `sorryAx` 或非标准公理
+  即以非零退出；不再靠手写清单。`scripts/Lint.lean` 跑 Batteries linter（0 条），`scripts/check.sh` =
+  build + 公理审计 + lint。`lakefile.toml` 关掉 `autoImplicit`。
+- 所有结构字段和运动学定义补了 docstring；去掉三个未用的 `[NormedSpace ℝ Y]` 实例参数
+  （`local_to_global`、`reported_grid_bound`、`conditional_sixth_order_grid_bound`），定理内容不变。
+- 模块头和 README 去掉了退役的 P4/P5 接口名，改为"精确阶段恒等式的动力学/非动力学两半"；根模块加了总览。
+- 论文包 `lean/` 已同步（gate 逐字节核对），gate 的 Lean 文件清单加入两个脚本；两条验证链重跑。

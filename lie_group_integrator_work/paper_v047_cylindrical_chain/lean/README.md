@@ -14,9 +14,14 @@ Toolchain: `leanprover/lean4:v4.34.0`, Mathlib tag `v4.34.0` (pinned in `lakefil
 
 ```bash
 lake exe cache get          # once, fetches Mathlib oleans
-lake build                  # builds everything (no sorry)
-lake env lean scripts/Axioms.lean   # each theorem: [propext, Classical.choice, Quot.sound]
+lake build                  # builds everything (no sorry, autoImplicit off)
+lake env lean scripts/Axioms.lean   # every theorem: [propext, Classical.choice, Quot.sound]
+lake env lean scripts/Lint.lean     # Batteries linter over the library
+scripts/check.sh                    # the three steps above
 ```
+
+`scripts/Axioms.lean` enumerates every theorem of the library automatically (no hand-kept list)
+and fails if any depends on `sorryAx` or on a non-standard axiom.
 
 ## What is proved
 
@@ -32,7 +37,7 @@ lake env lean scripts/Axioms.lean   # each theorem: [propext, Classical.choice, 
 | `local_defect_bound`, `local_defect_bound_paper` | Eq. `g6fva-local-defect-theorem` | four-term chain, `C_loc = C_G + M_E·2MC_R + C_E + 2M_AM_N c_η` |
 | `conditional_sixth_order_grid_bound` | Eqs. `g6fva-reduced-grid-bound`, `g6fva-reported-grid-bound` | `C_red = C_loc Γ_s(T)`, `C_qv = C_𝓡 C_red`, order `h⁶` |
 | `NewtonEuler.transRow_eq`, `NewtonEuler.rotRow_eq` | D1/D2 identities (`NEWTON_EULER_BALANCE_IDENTITY_AUDIT`) | implemented `trans`/`rot` rows of `run_v047.py` equal the Newton/Euler balance defects, as ℝ³ vectors with the cross-product torque structure |
-| `NewtonEuler.dynamic_rows_vanish`, `card_dynamic_rows` | P5 (`D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE`) | pointwise balance at the lifted stage ⇒ all `3·2·2·3 = 36` rows are exactly `0` |
+| `NewtonEuler.dynamic_rows_vanish`, `card_dynamic_rows` | dynamic half of `lem:exact-stage-identity` (formerly the P5 direct-substitution interface) | pointwise balance at the lifted stage ⇒ all `3·2·2·3 = 36` rows are exactly `0` |
 | `FullVA.Transition.nondynamic_rows_vanish`, `reducedCollocation_of_rows`, `nondynamic_rows_iff` | the 96 non-dynamic rows (`pvel`, `u_block`, `pacc`, `w_block`, `constraints` of `run_v047.py`, with `joint_kinematics_jax` transcribed) | rows vanish **iff** lower-pair constraints hold at all three levels and the reduced joint coordinates `(s, θ, ṡ, θ̇)` satisfy Gauss collocation; so `F_{A,h}(Z_G) = 0` exactly and `C_R = 0` |
 | `Gauss6.B_six`, `Gauss6.C_three`, `Gauss6.D_three`, `Gauss6.not_B_seven` | Lemma B of `ORDER_PROOF_LEDGER.md` (Butcher simplifying assumptions) | the exact tableau hard-coded in `quaternion_pendulum.py` satisfies `B(6)`, `C(3)`, `D(3)` and fails `B(7)`; with Butcher's theorem (not formalized) this is order exactly 6 |
 | `quadrature_error_bound` | Peano-kernel step of the collocation order proof | rule exact on `x^k, k ≤ n` and `g ∈ C^{n+1}` ⇒ `|∫₀¹ g − ∑ bᵢ g(cᵢ)| ≤ (1 + ∑|bᵢ|) K / n!` |
@@ -51,14 +56,16 @@ lake env lean scripts/Axioms.lean   # each theorem: [propext, Classical.choice, 
   `PerturbationChain/JacobianPerturbation.lean` reduces the inverse bound and the solver envelope
   to P1-type data plus `h ≤ h₀`; the block-structure argument for the `h → 0` Jacobian `J_0` and
   the `O(h)` predictor distance remain paper arguments.
-* **P4**: in the perturbation chain the 96 non-dynamic rows enter only through
-  `hR : ‖F(Z_G)‖ ≤ C_R h⁷`; `FullVA/NonDynamicRows.lean` shows they are exactly `0` at the
-  lifted reduced Gauss stage, so `C_R = 0` is admissible.  See
+* **Residual value at the lifted stage**: in the perturbation chain the implemented rows enter
+  only through `hR : ‖F(Z_G)‖ ≤ C_R h⁷`; `FullVA/NonDynamicRows.lean` and
+  `NewtonEuler/DynamicRows.lean` show all 132 rows are exactly `0` at the lifted reduced Gauss
+  stage (`lem:exact-stage-identity`), so `C_R = 0` and the manuscript's three-term
+  `C_loc = C_G + C_E + C_N c_η` is the special case of `local_defect_bound`.  See
   `lie_group_integrator_work/paper_v047_cylindrical_chain/LEAN_RESIDUAL_ROW_FAMILY_AUDIT.md`
   for the manuscript/implementation row-family mismatch this uncovered.
-* **P5 lift property**: `hlift` says the lifted Gauss stage satisfies the pointwise Newton–Euler
-  balance (the defining property of the smooth FullVA lift, `lem:fullva-stage-lift`). What is
-  proved is that the *implemented* rows are exactly the balance defects.
+* **Lift property**: `hlift` says the lifted Gauss stage satisfies the pointwise Newton–Euler
+  balance (the defining property of the smooth FullVA lift). What is proved is that the
+  *implemented* rows are exactly the balance defects.
 * Nothing about the concrete cylindrical-chain mechanism: no numerics, no interval arithmetic,
   no P7 residual-to-error transfer, no source-policy rows.
 
@@ -85,9 +92,11 @@ IntegratorOrderProof/
   PerturbationChain/LocalToGlobal.lean    Γ_s(T), discrete Gronwall with tube-retention bootstrap
   PerturbationChain/MainTheorem.lean      C_loc assembly, grid bounds
   PerturbationChain/JacobianPerturbation.lean  uniform inverse under O(h) perturbation; simplified Newton residual decay
+scripts/Axioms.lean                       exhaustive axiom audit (every theorem of the library)
+scripts/Lint.lean                         Batteries linter over the library
+scripts/check.sh                          build + audit + lint
   NewtonEuler/DynamicRows.lean            36 Newton–Euler rows transcribed from run_v047.py
   FullVA/NonDynamicRows.lean              96 non-dynamic rows ⇔ constraints + reduced joint-coordinate Gauss collocation
   Gauss/Tableau.lean                      exact Gauss6 tableau, B(6)/C(3)/D(3), ¬B(7)
   Gauss/QuadratureError.lean              Peano-type quadrature error, Gauss6 h⁷ step defect
-scripts/Axioms.lean                       #print axioms for every main theorem
 ```

@@ -63,7 +63,7 @@ theorem geom_sum_le_gronwallFactor {C h T : ℝ} (hC : 0 ≤ C) (hh : 0 < h) (n 
     linarith
 
 /-- **Local-to-global transfer with tube-retention bootstrap.** -/
-theorem local_to_global {Y : Type*} [NormedAddCommGroup Y] [NormedSpace ℝ Y]
+theorem local_to_global {Y : Type*} [NormedAddCommGroup Y]
     (K : Set Y) (Ψ : Y → Y) (x y : ℕ → Y) (N p : ℕ) {Cℓ Cs h d T : ℝ}
     (hh : 0 < h) (hCs : 0 ≤ Cs) (hCℓ : 0 ≤ Cℓ) (hNT : (N : ℝ) * h ≤ T)
     (htube : ∀ n ≤ N, closedBall (x n) d ⊆ K)
@@ -120,7 +120,7 @@ theorem local_to_global {Y : Type*} [NormedAddCommGroup Y] [NormedSpace ℝ Y]
 
 /-- Reported-grid bound through a Lipschitz reporting map `𝓡` (chart → position/velocity):
 `max_n ‖𝓡(y_n) - 𝓡(Y_n)‖ ≤ C_𝓡 C_ℓ Γ_s(T) h^p` (Eq. `g6fva-reported-grid-bound` shape). -/
-theorem reported_grid_bound {Y Q : Type*} [NormedAddCommGroup Y] [NormedSpace ℝ Y]
+theorem reported_grid_bound {Y Q : Type*} [NormedAddCommGroup Y]
     [NormedAddCommGroup Q]
     (K : Set Y) (Ψ : Y → Y) (x y : ℕ → Y) (N p : ℕ) {Cℓ Cs h d T : ℝ}
     (hh : 0 < h) (hCs : 0 ≤ Cs) (hCℓ : 0 ≤ Cℓ) (hd : 0 ≤ d) (hNT : (N : ℝ) * h ≤ T)

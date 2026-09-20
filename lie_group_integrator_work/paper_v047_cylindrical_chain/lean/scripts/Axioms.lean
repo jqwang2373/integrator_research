@@ -1,34 +1,64 @@
--- Run with:  lake env lean scripts/Axioms.lean
--- Every theorem must report only [propext, Classical.choice, Quot.sound]; `sorryAx` must not appear.
 import IntegratorOrderProof
-#print axioms IntegratorOrderProof.exists_root_of_linearization
-#print axioms IntegratorOrderProof.root_unique_of_linearization
-#print axioms IntegratorOrderProof.stage_root_exists_unique
-#print axioms IntegratorOrderProof.linearization_of_fderiv_bound
-#print axioms IntegratorOrderProof.inexact_newton_output_bound
-#print axioms IntegratorOrderProof.endpoint_closure_exists
-#print axioms IntegratorOrderProof.endpoint_correction_bound_h7
-#print axioms IntegratorOrderProof.geom_sum_le_gronwallFactor
-#print axioms IntegratorOrderProof.local_to_global
-#print axioms IntegratorOrderProof.reported_grid_bound
-#print axioms IntegratorOrderProof.local_defect_bound
-#print axioms IntegratorOrderProof.local_defect_bound_paper
-#print axioms IntegratorOrderProof.conditional_sixth_order_grid_bound
-#print axioms IntegratorOrderProof.NewtonEuler.StageData.transRow_eq
-#print axioms IntegratorOrderProof.NewtonEuler.StageData.rotRow_eq
-#print axioms IntegratorOrderProof.NewtonEuler.dynamic_rows_vanish
-#print axioms IntegratorOrderProof.NewtonEuler.card_dynamic_rows
-#print axioms IntegratorOrderProof.Gauss6.B_six
-#print axioms IntegratorOrderProof.Gauss6.not_B_seven
-#print axioms IntegratorOrderProof.Gauss6.C_three
-#print axioms IntegratorOrderProof.Gauss6.D_three
-#print axioms IntegratorOrderProof.Gauss6.butcher_order_six_hypotheses
-#print axioms IntegratorOrderProof.quadrature_error_bound
-#print axioms IntegratorOrderProof.gauss6_quadrature_error
-#print axioms IntegratorOrderProof.gauss6_step_defect
-#print axioms IntegratorOrderProof.FullVA.Transition.nondynamic_rows_vanish
-#print axioms IntegratorOrderProof.FullVA.Transition.reducedCollocation_of_rows
-#print axioms IntegratorOrderProof.FullVA.Transition.nondynamic_rows_iff
-#print axioms IntegratorOrderProof.norm_le_of_perturbed
-#print axioms IntegratorOrderProof.uniform_inverse_of_perturbation
-#print axioms IntegratorOrderProof.simplified_newton_residual_decay
+/-!
+# Axiom audit for every theorem of `IntegratorOrderProof`
+
+Run with `lake env lean scripts/Axioms.lean` (after `lake build`).
+
+The command `#axiom_audit` below enumerates **every** theorem declared in a module of the
+`IntegratorOrderProof` library (auxiliary and structural declarations such as `injEq`,
+`sizeOf_spec`, `match_*`, `proof_*` are skipped), prints the axioms it depends on in the
+`#print axioms` format, and fails with a non-zero exit code if any theorem depends on `sorryAx`
+or on any axiom other than `propext`, `Classical.choice`, `Quot.sound`.  No hand-maintained
+list is involved, so a new theorem cannot escape the audit.
+-/
+open Lean Elab Command
+
+namespace IntegratorOrderProof.Audit
+
+/-- The three standard axioms of classical Mathlib developments. -/
+def allowedAxioms : List Name := [``propext, ``Classical.choice, ``Quot.sound]
+
+/-- Auto-generated companions of structures and pattern matches that are not user theorems. -/
+def structuralSuffixes : List String :=
+  ["injEq", "sizeOf_spec", "inj", "noConfusion", "noConfusionType", "rec", "recOn", "casesOn",
+   "below", "brecOn", "eq_1", "eq_def", "ext", "ext_iff"]
+
+/-- Declarations that are not user-facing theorems. -/
+def isStructural (n : Name) : Bool :=
+  n.isInternalDetail
+    || n.components.any (fun c => (c.toString.startsWith "_") || (c.toString.startsWith "match_")
+                                  || (c.toString.startsWith "proof_"))
+    || (match n.components.getLast? with
+        | some c => structuralSuffixes.contains c.toString
+        | none => true)
+
+/-- Is `n` declared in a module of this library? -/
+def inLibrary (env : Environment) (n : Name) : Bool :=
+  match env.getModuleIdxFor? n with
+  | some idx => (`IntegratorOrderProof).isPrefixOf env.header.moduleNames[idx]!
+  | none => false
+
+/-- Enumerate the library's theorems, print their axioms, fail on non-standard axioms. -/
+elab "#axiom_audit" : command => do
+  let env ← getEnv
+  let mut names : Array Name := #[]
+  for (n, ci) in env.constants.toList do
+    if inLibrary env n && !isStructural n then
+      match ci with
+      | .thmInfo _ => names := names.push n
+      | _ => pure ()
+  let sorted := names.qsort (fun a b => a.toString < b.toString)
+  let mut bad : Array Name := #[]
+  for n in sorted do
+    let axs ← liftCoreM (collectAxioms n)
+    let axs := axs.qsort Name.lt
+    logInfo m!"'{n}' depends on axioms: {axs.toList}"
+    if axs.any (fun a => !(allowedAxioms.contains a)) then
+      bad := bad.push n
+  logInfo m!"axiom audit: {sorted.size} theorems checked, {bad.size} with non-standard axioms"
+  if bad.size > 0 then
+    throwError "axiom audit failed: {bad.toList}"
+
+end IntegratorOrderProof.Audit
+
+#axiom_audit
