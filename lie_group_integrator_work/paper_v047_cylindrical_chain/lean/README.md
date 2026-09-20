@@ -10,6 +10,8 @@ P1 plus a small-step threshold (`lem:p2-from-p1`, `lem:newton-envelope`).
 
 A copy of these sources ships in the paper package at `paper_v047_cylindrical_chain/lean/`.
 
+Repository: <https://github.com/jqwang2373/integrator_order_proof> (private; a byte-identical copy ships in the paper package as `paper_v047_cylindrical_chain/lean/`).
+
 Toolchain: `leanprover/lean4:v4.34.0`, Mathlib tag `v4.34.0` (pinned in `lakefile.toml`).
 
 ```bash

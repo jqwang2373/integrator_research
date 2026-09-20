@@ -18,6 +18,7 @@ of small files):
 
 ```text
 ~/lean/integrator_order_proof          (WSL home; Lean 4.34.0, Mathlib v4.34.0)
+https://github.com/jqwang2373/integrator_order_proof   (private remote, pushed 2026-09-20)
 ```
 
 Build and check:

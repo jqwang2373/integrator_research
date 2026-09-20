@@ -781,3 +781,9 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
   arXiv 不需要 `.bbl`。改稿后重新跑生成器 + `latexmk` 即可。
 - `validate_arxiv_version.py` 已进 paper chain（含 log 零警告检查），任何派生文件过期即 FAIL。
 - 推送 GitHub 仍等你在本会话里跑 `! ~/bin/gh auth login --git-protocol https --web`。
+
+## 2026-09-20 补充三：推送
+
+- 研究仓库已推到 `https://github.com/jqwang2373/integrator_research`（main，fast-forward）。
+- Lean 开发已推到新建的私有仓库 `https://github.com/jqwang2373/integrator_order_proof`；论文包
+  `lean/` 与之逐字节同步。`gh` 装在 `~/bin/gh`，已登录 jqwang2373。

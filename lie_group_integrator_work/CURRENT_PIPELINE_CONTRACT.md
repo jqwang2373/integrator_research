@@ -548,3 +548,10 @@ manuscript edit: install `main_cmame.tex` → flat copy → `python3 build_arxiv
   `run_v047.py`), the paper-package records and scripts (evidence ledger; ~750 files, nearly all read by
   validators), the legacy `main.tex`/`main_concise.tex` (read by five validators), and the root reference
   PDFs (read by ~35 scripts). See `docs/PATH_DEPENDENCY_REPORT.md`.
+
+### 2026-09-20 remotes
+
+- Research repo pushed to `https://github.com/jqwang2373/integrator_research` (`main`, fast-forward from
+  `cbcee80` to the reorganization commit). Lean development pushed to the new private repo
+  `https://github.com/jqwang2373/integrator_order_proof`. GitHub CLI is installed at `~/bin/gh`
+  (logged in as jqwang2373, https protocol, `gh auth setup-git` configured the credential helper).
