@@ -1,0 +1,168 @@
+{
+  "claim_boundary": {
+    "accepted_use": "non_heavy_full_T10_large_step_candidate_diagnostic",
+    "not_external_superiority_evidence": true,
+    "not_source_policy_reproduction": true,
+    "reason": "The run uses the original T=10 horizon, but uses h_ref=0.0125 instead of the extracted source-policy reference h=1e-4 and does not certify source-code-equivalent TFE/Newmark/trapezoidal runners."
+  },
+  "comparison_h": [
+    0.1,
+    0.05,
+    0.025
+  ],
+  "coordinate_error_decrease_row_count": 4,
+  "default_1e_4_campaign_invoked": false,
+  "external_superiority_claim_allowed": false,
+  "finite_row_count": 4,
+  "full_T10_candidate_probe_completed": true,
+  "full_T10_source_policy_reproduction": false,
+  "reference_h": 0.0125,
+  "residual_ok_row_count": 4,
+  "row_count": 4,
+  "rows": [
+    {
+      "accepted_use": "full_T10_coarse_candidate_probe_not_source_policy",
+      "comparison_h": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "coordinate_error_decreased": true,
+      "coordinate_order_text": "2.028, 2.007",
+      "coordinate_pairwise_orders": [
+        2.0275441214668217,
+        2.00705831194839
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 0.0019561639512457596,
+      "finest_frobenius_error": 0.0027664331489949665,
+      "finest_h": 0.025,
+      "finest_velocity_error": 0.004641850782248991,
+      "max_newton_residual_norm": 9.964575016662981e-13,
+      "paper_method": "tfe2026_Newmark_beta",
+      "reference_h": 0.0125,
+      "source_method": "Newmark_beta",
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "t_final": 10.0,
+      "total_newton_iterations": 1183.0,
+      "velocity_error_decreased": true,
+      "velocity_order_text": "1.991, 1.998",
+      "velocity_pairwise_orders": [
+        1.9913345509240037,
+        1.9979308636529627
+      ]
+    },
+    {
+      "accepted_use": "full_T10_coarse_candidate_probe_not_source_policy",
+      "comparison_h": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "coordinate_error_decreased": true,
+      "coordinate_order_text": "2.623, 5.795",
+      "coordinate_pairwise_orders": [
+        2.622522438741144,
+        5.794748228533962
+      ],
+      "expected_order": 1,
+      "finest_coordinate_error": 5.225571554889896e-05,
+      "finest_frobenius_error": 7.39007416323408e-05,
+      "finest_h": 0.025,
+      "finest_velocity_error": 0.006800503489656107,
+      "max_newton_residual_norm": 9.086065233532281e-13,
+      "paper_method": "tfe2026_TFE_m1",
+      "reference_h": 0.0125,
+      "source_method": "TFE_m1",
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "t_final": 10.0,
+      "total_newton_iterations": 1339.0,
+      "velocity_error_decreased": true,
+      "velocity_order_text": "1.276, -0.077",
+      "velocity_pairwise_orders": [
+        1.275914434435794,
+        -0.07748019480798148
+      ]
+    },
+    {
+      "accepted_use": "full_T10_coarse_candidate_probe_not_source_policy",
+      "comparison_h": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "coordinate_error_decreased": true,
+      "coordinate_order_text": "2.694, 2.824",
+      "coordinate_pairwise_orders": [
+        2.6944804658657833,
+        2.8242719940269363
+      ],
+      "expected_order": 3,
+      "finest_coordinate_error": 3.346023156325373e-07,
+      "finest_frobenius_error": 4.7319913271872964e-07,
+      "finest_h": 0.025,
+      "finest_velocity_error": 2.3747224864312244e-06,
+      "max_newton_residual_norm": 3.3458397372908554e-11,
+      "paper_method": "tfe2026_TFE_m2",
+      "reference_h": 0.0125,
+      "source_method": "TFE_m2",
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "t_final": 10.0,
+      "total_newton_iterations": 1330.0,
+      "velocity_error_decreased": true,
+      "velocity_order_text": "2.927, 2.952",
+      "velocity_pairwise_orders": [
+        2.9269220362250254,
+        2.9523681373640587
+      ]
+    },
+    {
+      "accepted_use": "full_T10_coarse_candidate_probe_not_source_policy",
+      "comparison_h": [
+        0.1,
+        0.05,
+        0.025
+      ],
+      "coordinate_error_decreased": true,
+      "coordinate_order_text": "2.021, 2.005",
+      "coordinate_pairwise_orders": [
+        2.0211072045442493,
+        2.005385108140571
+      ],
+      "expected_order": 2,
+      "finest_coordinate_error": 0.0015041501361783283,
+      "finest_frobenius_error": 0.0021271893218996647,
+      "finest_h": 0.025,
+      "finest_velocity_error": 0.003558196030236882,
+      "max_newton_residual_norm": 9.774845057279062e-13,
+      "paper_method": "tfe2026_trapezoidal",
+      "reference_h": 0.0125,
+      "source_method": "trapezoidal",
+      "source_policy_method_runner_equivalent": false,
+      "source_policy_row_completed": false,
+      "t_final": 10.0,
+      "total_newton_iterations": 1170.0,
+      "velocity_error_decreased": true,
+      "velocity_order_text": "1.993, 1.998",
+      "velocity_pairwise_orders": [
+        1.9927244377728803,
+        1.9982473034815917
+      ]
+    }
+  ],
+  "schema": "tfe-full-t10-coarse-candidate-summary-v1",
+  "source_files": {
+    "source_model": "../../numerics/v048_cross_paper_same_test_benchmarks/tfe_source_pendulum_model.py",
+    "tfe_source_pendulum_model_audit": "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json"
+  },
+  "source_policy_reference_h": 0.0001,
+  "source_policy_reference_invoked": false,
+  "source_policy_rows_completed": 0,
+  "status": "full_T10_coarse_candidate_probe_summarized_not_source_policy",
+  "submission_ready": false,
+  "t_final": 10.0,
+  "velocity_error_decrease_row_count": 4
+}

@@ -1,0 +1,469 @@
+{
+  "active_b2_flagged_rows": 0,
+  "audited_active_rows": 0,
+  "closed_loop_same_window_public_work_precision_evidence": {
+    "accepted_external_dynamic_order_examples": [],
+    "artifact_json": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision.json",
+    "artifact_present": true,
+    "artifact_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision_rows.csv",
+    "artifact_status": "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
+    "artifact_summary_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision_summary.csv",
+    "b4_b7_can_close_from_this_evidence": false,
+    "counts_as_bounded_same_window_diagnostic": true,
+    "counts_as_external_superiority_evidence": false,
+    "counts_as_source_policy_reproduction": false,
+    "external_superiority_claim": false,
+    "local_true_dynamic_order_available_count": 2,
+    "model_summaries": {
+      "four_link": {
+        "accepted_dynamic_order": true,
+        "external_superiority_claim_allowed": false,
+        "local_finest_pos_final_linf": 2.2888357875672227e-12,
+        "local_finest_runtime_ratio_vs_public_rA": 64.79499358020124,
+        "local_finest_vel_final_linf": 1.092770318678049e-11,
+        "local_pos_observed_order": 5.954897911118808,
+        "local_runtime_sec_sum": 2.4778123860014603,
+        "local_summary_present": true,
+        "local_vel_observed_order": 6.08481873098771,
+        "public_methods": [
+          "rA-public-dynamics",
+          "reps-public-dynamics",
+          "rp-public-dynamics"
+        ],
+        "public_summary_count": 3,
+        "reference_alignment": "local_exact_endpoint_not_public_kinematic_array"
+      },
+      "slider_crank": {
+        "accepted_dynamic_order": true,
+        "external_superiority_claim_allowed": false,
+        "local_finest_pos_final_linf": 8.583161958952701e-12,
+        "local_finest_runtime_ratio_vs_public_rA": 80.79864653298493,
+        "local_finest_vel_final_linf": 9.188851068930859e-12,
+        "local_pos_observed_order": 6.163689642514354,
+        "local_runtime_sec_sum": 3.0849206619895995,
+        "local_summary_present": true,
+        "local_vel_observed_order": 7.340914510263872,
+        "public_methods": [
+          "rA-public-dynamics",
+          "reps-public-dynamics",
+          "rp-public-dynamics"
+        ],
+        "public_summary_count": 3,
+        "reference_alignment": "local_exact_endpoint_not_public_kinematic_array"
+      }
+    },
+    "models": [
+      "four_link",
+      "slider_crank"
+    ],
+    "ok_row_count": 24,
+    "promotion_gap": "same-window public work/precision rows are available for the two closed-loop examples, but public errors use the RA2021 rA kinematic reference while local errors use the local exact-endpoint reference; the T=0.1 bounded rows therefore remain diagnostic rather than source-policy promotion rows",
+    "public_forms": [
+      "rA",
+      "rp",
+      "reps"
+    ],
+    "public_work_precision_available_count": 2,
+    "public_work_precision_available_examples": [
+      "four_link",
+      "slider_crank"
+    ],
+    "public_work_precision_missing_count": 0,
+    "reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+    "reference_h": 0.0125,
+    "row_count": 24,
+    "schema": "ra2021-closed-loop-same-window-public-work-precision-evidence-v1",
+    "source_policy_rows_closed_by_this_evidence": 0,
+    "step_sizes": [
+      0.1,
+      0.05,
+      0.025
+    ],
+    "strict_common_reference_error_columns": false,
+    "summary_row_count": 8,
+    "t_end": 0.1
+  },
+  "closure_criteria": {
+    "fixed_grid_common_reference_rows_present": true,
+    "flagged_velocity_mapping_or_floor_issues_resolved": false,
+    "order_summary_rows_ok": true,
+    "paper_safe_common_reference_rows_present": true,
+    "public_order_groups_completed": true,
+    "public_timing_rows_completed": true,
+    "rerun_or_independent_verification_artifact_present": false,
+    "runtime_policy_tied_to_source_policy_order_rows": false,
+    "source_default_horizon_and_h_policy_reproduced": false,
+    "source_output_mapping_verified": true,
+    "source_policy_reproduction_rows_present": true,
+    "source_time_grid_policy_extracted": true,
+    "timing_rows_ok": true
+  },
+  "decision": {
+    "can_close_ra2021_b2_requirement_now": false,
+    "reason": "RA2021 public order/timing rows are complete and useful as bounded common-reference evidence, and the source-code identity audit now verifies body.r/body.dr/body.ddr output mapping and extracts the public time-grid convention. Local Gauss6/FullVA candidate rows exist for single pendulum, double pendulum, and the two closed-loop examples, but they are respectively floor limited, coarse h/reference-policy rows, or bounded T=0.1 true-dynamic rows rather than promoted RA2021 source-policy dynamic-order rows. The closed-loop same-window public work/precision artifact closes the availability gap for bounded diagnostics, but mixed reference families prevent external-superiority promotion; the error/runtime/Newton policy binding is also not closed.",
+    "required_to_close": [
+      "run or promote local Gauss6 FullVA under the same RA2021 source time-grid and dynamic policy",
+      "bind error norm/output policy to source-policy order rows",
+      "tie runtime/Newton-iteration policy to the accepted source-policy order rows",
+      "produce rerun or independent verification artifact"
+    ]
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim_allowed": false,
+  "external_superiority_ready_rows": 0,
+  "fixed_grid_common_reference_rows": 12,
+  "local_candidate_feasibility": {
+    "double_pendulum": {
+      "candidate_rows_exist": true,
+      "finest_h": 0.025,
+      "finest_position_linf_error": 5.257765778310386e-09,
+      "finest_velocity_linf_error": 1.6883527464983672e-08,
+      "isolated_source_policy_candidate_contract_selected": true,
+      "isolated_source_policy_candidate_estimated_candidate_steps": [
+        300,
+        1500,
+        3000
+      ],
+      "isolated_source_policy_candidate_estimated_reference_steps": 30000,
+      "isolated_source_policy_candidate_execution_mode": "candidate",
+      "isolated_source_policy_candidate_jax_safe_small_angle_patch_enabled": true,
+      "isolated_source_policy_candidate_jax_safe_small_angle_patch_id": "isolated_v013_jax_safe_small_angle_taylor_v1",
+      "isolated_source_policy_candidate_low_order_coarse_h_constraint_threshold_satisfied": false,
+      "isolated_source_policy_candidate_low_order_constraint_failure_components": [
+        "endpoint_velocity_constraint"
+      ],
+      "isolated_source_policy_candidate_low_order_diagnosis_file": "RA2021_DOUBLE_SOURCE_POLICY_LOW_ORDER_DIAGNOSIS.json",
+      "isolated_source_policy_candidate_low_order_diagnosis_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+      "isolated_source_policy_candidate_low_order_fine_pair_floor_limited": true,
+      "isolated_source_policy_candidate_low_order_fine_pair_floor_margin_to_threshold": 0.17550405573274475,
+      "isolated_source_policy_candidate_low_order_fine_pair_label": "0.002_to_0.001",
+      "isolated_source_policy_candidate_low_order_finest_to_reference_step_ratio": 10.0,
+      "isolated_source_policy_candidate_low_order_reference_floor_sensitivity": "fine_pair_errors_below_floor_threshold_and_only_ten_reference_steps_per_finest_step",
+      "isolated_source_policy_candidate_low_order_rows_promoted": 0,
+      "isolated_source_policy_candidate_order_acceptance_satisfied": false,
+      "isolated_source_policy_candidate_pos_observed_order": 2.148202286933232,
+      "isolated_source_policy_candidate_present": true,
+      "isolated_source_policy_candidate_reference_failure_kind": null,
+      "isolated_source_policy_candidate_reference_failure_message": null,
+      "isolated_source_policy_candidate_reference_status": "ok",
+      "isolated_source_policy_candidate_rows": 3,
+      "isolated_source_policy_candidate_rows_completed": 3,
+      "isolated_source_policy_candidate_rows_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_local_source_policy_candidate_rows.csv",
+      "isolated_source_policy_candidate_status": "executed_isolated_source_policy_candidate",
+      "isolated_source_policy_candidate_summary_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_local_source_policy_candidate_summary.json",
+      "isolated_source_policy_candidate_validator": "../../numerics/v048_cross_paper_same_test_benchmarks/validate_ra2021_double_local_source_policy_candidate.py",
+      "isolated_source_policy_candidate_vel_observed_order": 2.463397024938419,
+      "newton_iterations_at_finest_h": 480.0,
+      "position_observed_order": 7.9506178035038175,
+      "promotion_blockers": [
+        "strong local coarse order exists, but h values are 0.1/0.05/0.025 rather than the RA2021 double-pendulum source-policy h trio",
+        "reference_h is 0.0125 rather than the public double-pendulum 1e-4 self-reference",
+        "isolated exact source-policy rows are complete, but their observed order is below sixth-order acceptance and they remain unpromoted",
+        "runtime/Newton policy still has to be bound to accepted source-policy rows"
+      ],
+      "promotion_status": "not_promoted_coarse_h_and_reference_policy_mismatch",
+      "public_policy_h_rows_completed": 0,
+      "public_policy_h_rows_required": 3,
+      "public_policy_time_window": true,
+      "reference_h": 0.0125,
+      "row_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_double_coarse_rows.csv",
+      "runtime_sec_at_finest_h": 50.024840053054504,
+      "source_policy_reference_h_required": 0.0001,
+      "source_policy_step_sizes_required": [
+        0.01,
+        0.002,
+        0.001
+      ],
+      "step_sizes": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "velocity_observed_order": 7.041570696587532
+    },
+    "four_link": {
+      "candidate_rows_exist": true,
+      "promotion_blockers": [
+        "public-horizon T=3 h-policy rows are kinematic/reaction rows, not true-dynamic order rows",
+        "true-dynamic local rows exist only for the bounded T=0.1 coarse common-reference policy",
+        "same-window public work/precision rows exist for bounded T=0.1, but mixed reference families keep them diagnostic",
+        "source-policy promotion needs a true-dynamic T=3 public-horizon row or an explicit suite demotion"
+      ],
+      "promotion_status": "not_promoted_true_dynamic_not_source_policy_and_public_horizon_not_dynamic_order",
+      "public_horizon_kinematic_row_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_closed_loop_rows.csv",
+      "public_horizon_status": "accepted_closed_loop_kinematic_reaction",
+      "public_policy_h_rows_completed": 6,
+      "public_policy_h_rows_required": 6,
+      "public_policy_time_window": true,
+      "same_window_public_work_precision_available": true,
+      "same_window_public_work_precision_json": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision.json",
+      "same_window_public_work_precision_promotion_status": "diagnostic_only_mixed_reference_family_not_source_policy",
+      "same_window_public_work_precision_reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+      "same_window_public_work_precision_rows_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision_rows.csv",
+      "same_window_public_work_precision_source_policy_rows_closed": 0,
+      "same_window_public_work_precision_status": "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
+      "source_policy_t_end_required": 3.0,
+      "true_dynamic_position_order": 5.954897911118808,
+      "true_dynamic_row_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order_rows.csv",
+      "true_dynamic_step_sizes": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "true_dynamic_t_end": 0.1,
+      "true_dynamic_velocity_order": 6.08481873098771
+    },
+    "single_pendulum": {
+      "candidate_rows_exist": true,
+      "finest_h": 0.0001,
+      "finest_position_l2_error": 2.5841260732974822e-14,
+      "finest_velocity_l2_error": 7.012005498302777e-15,
+      "newton_iterations_at_finest_h": 30000.0,
+      "omega_observed_order": 2.7178459328049804,
+      "orientation_observed_order": -0.03599445915563391,
+      "position_observed_order": -0.1181769239059881,
+      "promotion_blockers": [
+        "public h rows exist, but position/orientation errors are near roundoff and observed order is floor limited",
+        "source-policy dynamic-order superiority would need a wider admissible step window or a stronger precision/reference policy",
+        "runtime/Newton policy still has to be bound to any accepted promoted row"
+      ],
+      "promotion_status": "not_promoted_floor_limited_public_h_tranche",
+      "public_policy_h_rows_completed": 3,
+      "public_policy_h_rows_required": 3,
+      "public_policy_time_window": true,
+      "reference_h": 0.001,
+      "row_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_single_rows.csv",
+      "runtime_sec_at_finest_h": 85.58841725206003,
+      "step_sizes": [
+        0.0001,
+        0.001,
+        0.01
+      ],
+      "velocity_observed_order": 2.5561902805560694
+    },
+    "slider_crank": {
+      "candidate_rows_exist": true,
+      "promotion_blockers": [
+        "public-horizon T=3 h-policy rows are kinematic/reaction rows, not true-dynamic order rows",
+        "true-dynamic local rows exist only for the bounded T=0.1 coarse common-reference policy",
+        "same-window public work/precision rows exist for bounded T=0.1, but mixed reference families keep them diagnostic",
+        "source-policy promotion needs a true-dynamic T=3 public-horizon row or an explicit suite demotion"
+      ],
+      "promotion_status": "not_promoted_true_dynamic_not_source_policy_and_public_horizon_not_dynamic_order",
+      "public_horizon_kinematic_row_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_closed_loop_rows.csv",
+      "public_horizon_status": "accepted_closed_loop_kinematic_reaction",
+      "public_policy_h_rows_completed": 6,
+      "public_policy_h_rows_required": 6,
+      "public_policy_time_window": true,
+      "same_window_public_work_precision_available": true,
+      "same_window_public_work_precision_json": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision.json",
+      "same_window_public_work_precision_promotion_status": "diagnostic_only_mixed_reference_family_not_source_policy",
+      "same_window_public_work_precision_reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+      "same_window_public_work_precision_rows_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision_rows.csv",
+      "same_window_public_work_precision_source_policy_rows_closed": 0,
+      "same_window_public_work_precision_status": "same_window_public_work_precision_available_reference_caveat_not_external_superiority",
+      "source_policy_t_end_required": 3.0,
+      "true_dynamic_position_order": 6.163689642514354,
+      "true_dynamic_row_file": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order_rows.csv",
+      "true_dynamic_step_sizes": [
+        0.025,
+        0.05,
+        0.1
+      ],
+      "true_dynamic_t_end": 0.1,
+      "true_dynamic_velocity_order": 7.340914510263872
+    }
+  },
+  "order_summary_ok_rows": 9,
+  "order_summary_rows": 9,
+  "paper_safe_common_reference_rows": 12,
+  "per_row_source_identity_requirements_resolved": 3,
+  "per_row_source_policy_promotion_requirements_remaining": 4,
+  "position_aligned_velocity_mismatch_rows": 9,
+  "promotion_gap_drilldown": {
+    "active_rows_checked": 0,
+    "checked": true,
+    "closed_loop_same_window_public_work_precision_available_examples": [
+      "four_link",
+      "slider_crank"
+    ],
+    "closed_loop_same_window_public_work_precision_checked": true,
+    "closed_loop_same_window_public_work_precision_promotion_closed": false,
+    "closed_loop_same_window_public_work_precision_rows_closed": 0,
+    "examples_checked": 4,
+    "external_superiority_ready_rows": 0,
+    "per_example": {
+      "double_pendulum": {
+        "finest_velocity_error": 1.6883527464983672e-08,
+        "isolated_source_policy_candidate_contract_selected": true,
+        "isolated_source_policy_candidate_execution_mode": "candidate",
+        "isolated_source_policy_candidate_present": true,
+        "isolated_source_policy_candidate_rows_completed": 3,
+        "local_candidate_position_order": 7.9506178035038175,
+        "local_candidate_reference_h": 0.0125,
+        "local_candidate_step_sizes": [
+          0.025,
+          0.05,
+          0.1
+        ],
+        "local_candidate_velocity_order": 7.041570696587532,
+        "promotion_gap": "coarse local h/ref policy is not the public double-pendulum source h/ref policy",
+        "promotion_status": "not_promoted_coarse_h_and_reference_policy_mismatch",
+        "source_policy_contract_satisfied": false,
+        "source_policy_reference_h": 0.0001,
+        "source_policy_step_sizes": [
+          0.01,
+          0.002,
+          0.001
+        ],
+        "source_policy_t_end": 3.0
+      },
+      "four_link": {
+        "local_candidate_position_order": 5.954897911118808,
+        "local_candidate_step_sizes": [
+          0.025,
+          0.05,
+          0.1
+        ],
+        "local_candidate_t_end": 0.1,
+        "local_candidate_velocity_order": 6.08481873098771,
+        "promotion_gap": "true-dynamic order row exists only for bounded T=0.1",
+        "promotion_status": "not_promoted_true_dynamic_not_source_policy_and_public_horizon_not_dynamic_order",
+        "same_window_public_work_precision_available": true,
+        "same_window_public_work_precision_reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+        "same_window_public_work_precision_source_policy_rows_closed": 0,
+        "source_policy_contract_satisfied": false,
+        "source_policy_step_sizes": "public_horizon_rows_are_kinematic_reaction_not_dynamic_order",
+        "source_policy_t_end": 3.0
+      },
+      "single_pendulum": {
+        "finest_velocity_error": 7.012005498302777e-15,
+        "local_candidate_position_order": -0.1181769239059881,
+        "local_candidate_reference_h": 0.001,
+        "local_candidate_step_sizes": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "local_candidate_velocity_order": 2.5561902805560694,
+        "promotion_gap": "source grid exists but the candidate is floor limited and not a stable order row",
+        "promotion_status": "not_promoted_floor_limited_public_h_tranche",
+        "source_policy_contract_satisfied": false,
+        "source_policy_reference_h": 0.001,
+        "source_policy_step_sizes": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "source_policy_t_end": 3.0
+      },
+      "slider_crank": {
+        "local_candidate_position_order": 6.163689642514354,
+        "local_candidate_step_sizes": [
+          0.025,
+          0.05,
+          0.1
+        ],
+        "local_candidate_t_end": 0.1,
+        "local_candidate_velocity_order": 7.340914510263872,
+        "promotion_gap": "true-dynamic order row exists only for bounded T=0.1",
+        "promotion_status": "not_promoted_true_dynamic_not_source_policy_and_public_horizon_not_dynamic_order",
+        "same_window_public_work_precision_available": true,
+        "same_window_public_work_precision_reference_alignment_status": "mixed_reference_family_requires_manuscript_caveat",
+        "same_window_public_work_precision_source_policy_rows_closed": 0,
+        "source_policy_contract_satisfied": false,
+        "source_policy_step_sizes": "public_horizon_rows_are_kinematic_reaction_not_dynamic_order",
+        "source_policy_t_end": 3.0
+      }
+    },
+    "row_level_gap_summary": {
+      "double_pendulum": "local candidate uses coarse h/ref policy rather than the public double-pendulum h/ref policy",
+      "four_link": "true-dynamic local evidence is bounded T=0.1, not the public T=3 source-policy horizon",
+      "single_pendulum": "public h grid is present, but position/orientation errors are floor-limited",
+      "slider_crank": "true-dynamic local evidence is bounded T=0.1, not the public T=3 source-policy horizon"
+    },
+    "source_identity_closed": true,
+    "source_policy_promotion_closed": false,
+    "source_policy_rows_closed": 0
+  },
+  "public_order_groups_completed": 12,
+  "public_order_groups_required": 12,
+  "public_timing_rows_completed": 12,
+  "public_timing_rows_required": 12,
+  "ra2021_double_local_source_policy_candidate": {
+    "estimated_reference_steps": 30000,
+    "execution_mode": "candidate",
+    "jax_safe_small_angle_patch_enabled": true,
+    "jax_safe_small_angle_patch_id": "isolated_v013_jax_safe_small_angle_taylor_v1",
+    "low_order_diagnosis": {
+      "b4_b7_can_close_from_this_diagnosis": false,
+      "coarse_h_constraint_failure_components": [
+        "endpoint_velocity_constraint"
+      ],
+      "coarse_h_constraint_threshold_satisfied": false,
+      "fine_pair_floor_limited": true,
+      "fine_pair_floor_margin_to_threshold": 0.17550405573274475,
+      "fine_pair_label": "0.002_to_0.001",
+      "finest_to_reference_step_ratio": 10.0,
+      "reference_floor_sensitivity": "fine_pair_errors_below_floor_threshold_and_only_ten_reference_steps_per_finest_step",
+      "schema": "ra2021-double-source-policy-low-order-diagnosis-v1",
+      "source_policy_rows_promoted_by_this_diagnosis": 0,
+      "status": "diagnosis_only_low_order_floor_limited_not_promoted"
+    },
+    "present": true,
+    "promotion_ready": false,
+    "reference_failure_kind": null,
+    "reference_failure_message": null,
+    "reference_status": "ok",
+    "schema": "ra2021-double-local-source-policy-candidate-v1",
+    "source_policy_candidate_rows_completed": 3,
+    "source_policy_contract_selected": true,
+    "source_policy_order_acceptance_satisfied": false,
+    "source_policy_pos_observed_order": 2.148202286933232,
+    "source_policy_vel_observed_order": 2.463397024938419,
+    "status": "executed_isolated_source_policy_candidate",
+    "validator": "../../numerics/v048_cross_paper_same_test_benchmarks/validate_ra2021_double_local_source_policy_candidate.py"
+  },
+  "row_missing_evidence_shrunk_by_identity_audit": true,
+  "rows": [],
+  "schema": "ra2021-source-policy-row-audit-v1",
+  "source_files": {
+    "apples_to_apples_policy_audit": "../../numerics/v048_cross_paper_same_test_benchmarks/results/apples_to_apples_policy_audit.csv",
+    "b2_remaining_work_manifest": "B2_SOURCE_POLICY_REMAINING_WORK_MANIFEST.json",
+    "closed_loop_true_dynamic_public_work_precision": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision.json",
+    "closed_loop_true_dynamic_public_work_precision_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision_rows.csv",
+    "closed_loop_true_dynamic_public_work_precision_summary": "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision_summary.csv",
+    "external_case_evidence_reconciliation": "EXTERNAL_CASE_EVIDENCE_RECONCILIATION.json",
+    "forensic_audit": "../../numerics/v048_cross_paper_same_test_benchmarks/results/all_examples_apples_to_apples_forensic_audit.csv",
+    "ra2021_double_local_source_policy_candidate_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_local_source_policy_candidate_rows.csv",
+    "ra2021_double_local_source_policy_candidate_summary": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_local_source_policy_candidate_summary.json",
+    "ra2021_double_local_source_policy_candidate_validator": "../../numerics/v048_cross_paper_same_test_benchmarks/validate_ra2021_double_local_source_policy_candidate.py",
+    "ra2021_double_source_policy_low_order_diagnosis": "RA2021_DOUBLE_SOURCE_POLICY_LOW_ORDER_DIAGNOSIS.json",
+    "ra2021_public_order_work_summary": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_public_order_work_summary.csv",
+    "ra2021_public_timing_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_public_timing_rows.csv",
+    "ra2021_source_identity_audit": "RA2021_SOURCE_IDENTITY_AUDIT.json"
+  },
+  "source_identity_audit": {
+    "external_superiority_claim_allowed": false,
+    "output_mapping_verified_from_source": true,
+    "schema": "ra2021-source-identity-audit-v1",
+    "source_policy_reproduction_rows_closed": 0,
+    "status": "source_output_time_grid_policy_extracted_promotion_still_open",
+    "time_grid_policy_extracted_from_source": true
+  },
+  "source_policy_closed_rows": 0,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_reproduction_rows": 0,
+  "status": "public_rows_complete_source_policy_rows_not_closed",
+  "submission_ready": false,
+  "suite_id": "ra2021_absolute_coordinate",
+  "timing_ok_rows": 12,
+  "timing_rows": 12,
+  "velocity_nonmonotone_or_floor_limited_rows": 1
+}

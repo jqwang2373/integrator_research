@@ -1,0 +1,429 @@
+{
+  "candidate_contract": {
+    "estimated_candidate_steps": [
+      300,
+      1500,
+      3000
+    ],
+    "estimated_reference_steps": 30000,
+    "execution_mode": "candidate",
+    "jax_safe_small_angle_patch_enabled": true,
+    "jax_safe_small_angle_patch_id": "isolated_v013_jax_safe_small_angle_taylor_v1",
+    "observed_h_values": [
+      0.001,
+      0.002,
+      0.01
+    ],
+    "observed_reference_h_values": [
+      0.0001
+    ],
+    "ok_row_count": 3,
+    "reference_runtime_sec": 5707.131385425993,
+    "reference_status": "ok",
+    "row_count": 3,
+    "rows_complete": true,
+    "selected_reference_h": 0.0001,
+    "selected_step_sizes": [
+      0.01,
+      0.002,
+      0.001
+    ],
+    "selected_t_end": 3.0,
+    "source_policy_contract_selected": true,
+    "source_policy_reference_h_selected": true,
+    "source_policy_step_trio_selected": true,
+    "source_policy_time_window_selected": true,
+    "summary_status": "executed_isolated_source_policy_candidate"
+  },
+  "diagnosis": {
+    "coarse_h_constraint_failure_components": [
+      "endpoint_velocity_constraint"
+    ],
+    "coarse_h_constraint_threshold_satisfied": false,
+    "coarse_h_endpoint_velocity_over_threshold_factor": 1.805105192348697,
+    "coarse_h_max_endpoint_constraint_norm": 8.174087292413717e-12,
+    "coarse_h_max_endpoint_velocity_constraint_norm": 1.805105192348697e-10,
+    "coarse_to_mid_pair_below_acceptance": true,
+    "coarse_to_mid_pair_label": "0.01_to_0.002",
+    "coarse_to_mid_pos_pair_order": 2.824757355346447,
+    "coarse_to_mid_vel_pair_order": 3.248066380656726,
+    "constraint_threshold": 1e-10,
+    "fine_pair_floor_error_scale_threshold": 1e-11,
+    "fine_pair_floor_limited": true,
+    "fine_pair_floor_margin_to_threshold": 0.17550405573274475,
+    "fine_pair_label": "0.002_to_0.001",
+    "fine_pair_max_error_scale": 1.7550405573274475e-12,
+    "fine_pair_pos_pair_order": 0.09680243299693665,
+    "fine_pair_vel_pair_order": 0.08418108693039757,
+    "finest_h": 0.001,
+    "finest_to_reference_step_ratio": 10.0,
+    "proof_boundary": "The existing read-only rows prove non-promotion conditions but do not identify a single implementation defect. The low aggregate order is consistent with both a non-asymptotic coarse-to-mid pair and a near-floor fine pair.",
+    "reference_floor_sensitivity": "fine_pair_errors_below_floor_threshold_and_only_ten_reference_steps_per_finest_step",
+    "reference_h": 0.0001,
+    "root_cause_labels": [
+      "fine_pair_near_reference_or_roundoff_floor",
+      "coarse_to_mid_pair_below_sixth_order_acceptance",
+      "coarse_h_constraint_threshold_not_satisfied",
+      "aggregate_order_below_sixth_order_acceptance",
+      "local_double_source_policy_not_generic_public_order_step_family",
+      "no_single_implementation_defect_proven_from_existing_read_only_evidence",
+      "independent_rerun_missing",
+      "error_runtime_newton_policy_binding_missing",
+      "coarse_h_endpoint_velocity_constraint_exceeds_threshold",
+      "final_error_orders_do_not_rescue_trajectory_order_acceptance"
+    ]
+  },
+  "heavy_numerical_run_invoked_by_this_builder": false,
+  "input_artifacts": {
+    "candidate_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_local_source_policy_candidate_rows.csv",
+    "candidate_summary": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_local_source_policy_candidate_summary.json"
+  },
+  "ledger_binding_reconciliation": {
+    "accepted_source_policy_binding_closed": false,
+    "candidate_local_error_runtime_newton_columns_present": true,
+    "candidate_local_metrics_are_promotable_binding": false,
+    "candidate_metric_columns_checked": [
+      "pos_traj_linf",
+      "vel_traj_linf",
+      "pos_final_linf",
+      "vel_final_linf",
+      "runtime_sec",
+      "total_newton_iterations"
+    ],
+    "ledger_double_action_classes": [
+      "fix_or_rerun_public_velocity_mapping_time_grid_norm_runtime"
+    ],
+    "ledger_double_allowed_uses": [
+      "diagnostic_common_reference_only"
+    ],
+    "ledger_double_missing_evidence_counts": [
+      4
+    ],
+    "ledger_double_required_actions": [
+      "rerun_or_verify_ra2021_double_pendulum_under_declared_same_test_policy_with_state_velocity_mapping_time_grid_norm_and_runtime"
+    ],
+    "ledger_double_row_count": 1,
+    "ledger_ra2021_source_identity_resolved_evidence_per_row": 3,
+    "ledger_ra2021_source_policy_promotion_evidence_remaining_per_row": 4,
+    "ledger_ra2021_status": "open_verify_or_rerun_public_rows",
+    "ledger_rows_external_superiority_ready": 0,
+    "ledger_rows_source_policy_closed": 0,
+    "ledger_status": "row_level_source_policy_closure_open",
+    "reason": "The candidate rows contain local error, runtime, and Newton fields, but the row ledger still requires accepted source-policy binding plus independent verification before any RA2021 double row can close.",
+    "row_status_can_shrink_from_this_read_only_diagnosis": false,
+    "source": "SOURCE_POLICY_ROW_CLOSURE_LEDGER.json"
+  },
+  "order_evidence": {
+    "aggregate_order_acceptance_satisfied": false,
+    "aggregate_order_below_acceptance": true,
+    "aggregate_pos_observed_order": 2.148202286933232,
+    "aggregate_vel_observed_order": 2.463397024938419,
+    "final_error_pairwise_orders": [
+      {
+        "error_coarse": 2.1022295015882264e-11,
+        "error_fine": 2.6201263381153694e-13,
+        "error_ratio": 80.23389830508475,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "pos_final_linf",
+        "pair_order": 2.724520196664956
+      },
+      {
+        "error_coarse": 7.086686792945329e-11,
+        "error_fine": 1.7550405573274475e-12,
+        "error_ratio": 40.37904858299595,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "vel_final_linf",
+        "pair_order": 2.2978898548648097
+      },
+      {
+        "error_coarse": 2.6201263381153694e-13,
+        "error_fine": 2.149391775674303e-13,
+        "error_ratio": 1.21900826446281,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "pos_final_linf",
+        "pair_order": 0.2857079069746092
+      },
+      {
+        "error_coarse": 1.7550405573274475e-12,
+        "error_fine": 1.6555645743210334e-12,
+        "error_ratio": 1.0600858369098713,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "vel_final_linf",
+        "pair_order": 0.08418108693039757
+      }
+    ],
+    "pairwise_error_family": [
+      {
+        "error_coarse": 2.8387070472035703e-11,
+        "error_fine": 3.0109248427834245e-13,
+        "error_ratio": 94.28023598820059,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "pos_traj_linf",
+        "pair_order": 2.824757355346447
+      },
+      {
+        "error_coarse": 3.2703040275805506e-10,
+        "error_fine": 1.7550405573274475e-12,
+        "error_ratio": 186.3378036437247,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "vel_traj_linf",
+        "pair_order": 3.248066380656726
+      },
+      {
+        "error_coarse": 2.1022295015882264e-11,
+        "error_fine": 2.6201263381153694e-13,
+        "error_ratio": 80.23389830508475,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "pos_final_linf",
+        "pair_order": 2.724520196664956
+      },
+      {
+        "error_coarse": 7.086686792945329e-11,
+        "error_fine": 1.7550405573274475e-12,
+        "error_ratio": 40.37904858299595,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "vel_final_linf",
+        "pair_order": 2.2978898548648097
+      },
+      {
+        "error_coarse": 3.0109248427834245e-13,
+        "error_fine": 2.815525590449397e-13,
+        "error_ratio": 1.0694006309148265,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "pos_traj_linf",
+        "pair_order": 0.09680243299693665
+      },
+      {
+        "error_coarse": 1.7550405573274475e-12,
+        "error_fine": 1.6555645743210334e-12,
+        "error_ratio": 1.0600858369098713,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "vel_traj_linf",
+        "pair_order": 0.08418108693039757
+      },
+      {
+        "error_coarse": 2.6201263381153694e-13,
+        "error_fine": 2.149391775674303e-13,
+        "error_ratio": 1.21900826446281,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "pos_final_linf",
+        "pair_order": 0.2857079069746092
+      },
+      {
+        "error_coarse": 1.7550405573274475e-12,
+        "error_fine": 1.6555645743210334e-12,
+        "error_ratio": 1.0600858369098713,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "vel_final_linf",
+        "pair_order": 0.08418108693039757
+      }
+    ],
+    "pairwise_orders": [
+      {
+        "fine_pair_floor_limited": false,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "h_ratio": 5.0,
+        "label": "0.01_to_0.002",
+        "max_pair_error_scale": 3.2703040275805506e-10,
+        "pos_error_ratio": 94.28023598820059,
+        "pos_pair_order": 2.824757355346447,
+        "vel_error_ratio": 186.3378036437247,
+        "vel_pair_order": 3.248066380656726
+      },
+      {
+        "fine_pair_floor_limited": true,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "h_ratio": 2.0,
+        "label": "0.002_to_0.001",
+        "max_pair_error_scale": 1.7550405573274475e-12,
+        "pos_error_ratio": 1.0694006309148265,
+        "pos_pair_order": 0.09680243299693665,
+        "vel_error_ratio": 1.0600858369098713,
+        "vel_pair_order": 0.08418108693039757
+      }
+    ],
+    "source_policy_order_acceptance_threshold": 5.5,
+    "trajectory_error_pairwise_orders": [
+      {
+        "error_coarse": 2.8387070472035703e-11,
+        "error_fine": 3.0109248427834245e-13,
+        "error_ratio": 94.28023598820059,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "pos_traj_linf",
+        "pair_order": 2.824757355346447
+      },
+      {
+        "error_coarse": 3.2703040275805506e-10,
+        "error_fine": 1.7550405573274475e-12,
+        "error_ratio": 186.3378036437247,
+        "h_coarse": 0.01,
+        "h_fine": 0.002,
+        "label": "0.01_to_0.002",
+        "metric": "vel_traj_linf",
+        "pair_order": 3.248066380656726
+      },
+      {
+        "error_coarse": 3.0109248427834245e-13,
+        "error_fine": 2.815525590449397e-13,
+        "error_ratio": 1.0694006309148265,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "pos_traj_linf",
+        "pair_order": 0.09680243299693665
+      },
+      {
+        "error_coarse": 1.7550405573274475e-12,
+        "error_fine": 1.6555645743210334e-12,
+        "error_ratio": 1.0600858369098713,
+        "h_coarse": 0.002,
+        "h_fine": 0.001,
+        "label": "0.002_to_0.001",
+        "metric": "vel_traj_linf",
+        "pair_order": 0.08418108693039757
+      }
+    ]
+  },
+  "promotion_decision": {
+    "b4_b7_can_close_from_this_diagnosis": false,
+    "external_superiority_claim_allowed": false,
+    "promotion_blockers": [
+      "source-policy rows are complete but not yet independently rerun",
+      "observed source-policy order is below sixth-order acceptance (pos=2.148, vel=2.463)",
+      "error norm/output mapping not yet bound to accepted source-policy rows",
+      "runtime/Newton-iteration policy not yet tied to accepted source-policy rows",
+      "independent rerun or verification artifact not yet produced"
+    ],
+    "promotion_ready": false,
+    "reason": "The exact h/ref source-policy candidate rows are complete, but the aggregate order is below acceptance, the 0.01->0.002 pair is itself below sixth-order acceptance, the 0.002->0.001 pair is near the numerical floor, the h=0.01 row misses the constraint threshold, the scope remains an isolated local double source-policy candidate rather than the generic RA2021 public order step family, and independent rerun plus error/runtime/Newton bindings remain absent.",
+    "source_policy_rows_closed_by_this_diagnosis": 0,
+    "source_policy_rows_promoted_by_this_diagnosis": 0
+  },
+  "public_step_family_audit": {
+    "candidate_public_policy_h_count": 2,
+    "candidate_public_policy_h_values": [
+      0.001,
+      0.01
+    ],
+    "generic_public_policy_h_missing_as_candidate_values": [
+      0.0001
+    ],
+    "generic_public_policy_h_required_count": 3,
+    "generic_ra2021_public_order_step_sizes": [
+      0.01,
+      0.001,
+      0.0001
+    ],
+    "non_public_selected_candidate_h_values": [
+      0.002
+    ],
+    "scope_note": "The isolated double-pendulum candidate uses the encoded double-local source-policy trio [0.01, 0.002, 0.001] with h_ref=0.0001. In the generic RA2021 public order step family [0.01, 0.001, 0.0001], h=0.002 is not a public-policy candidate h and h=0.0001 appears only as the reference for this local candidate.",
+    "selected_source_policy_h_values": [
+      0.001,
+      0.002,
+      0.01
+    ],
+    "source_policy_h_marker_count": 3
+  },
+  "read_only": true,
+  "rows": [
+    {
+      "constraint_threshold_satisfied": false,
+      "h": 0.01,
+      "max_endpoint_constraint_norm": 8.174087292413717e-12,
+      "max_endpoint_velocity_constraint_norm": 1.805105192348697e-10,
+      "pos_final_linf": 2.1022295015882264e-11,
+      "pos_traj_linf": 2.8387070472035703e-11,
+      "public_policy_h": true,
+      "public_policy_time_window": true,
+      "runtime_sec": 110.50530292099575,
+      "source_policy_contract_selected": true,
+      "source_policy_h": true,
+      "source_policy_reference_h": true,
+      "source_policy_time_window": true,
+      "status": "ok",
+      "steps": 300,
+      "total_newton_iterations": 1155,
+      "vel_final_linf": 7.086686792945329e-11,
+      "vel_traj_linf": 3.2703040275805506e-10
+    },
+    {
+      "constraint_threshold_satisfied": true,
+      "h": 0.002,
+      "max_endpoint_constraint_norm": 2.854201807967376e-14,
+      "max_endpoint_velocity_constraint_norm": 3.822925268020186e-14,
+      "pos_final_linf": 2.6201263381153694e-13,
+      "pos_traj_linf": 3.0109248427834245e-13,
+      "public_policy_h": false,
+      "public_policy_time_window": true,
+      "runtime_sec": 278.75182385500375,
+      "source_policy_contract_selected": true,
+      "source_policy_h": true,
+      "source_policy_reference_h": true,
+      "source_policy_time_window": true,
+      "status": "ok",
+      "steps": 1500,
+      "total_newton_iterations": 4680,
+      "vel_final_linf": 1.7550405573274475e-12,
+      "vel_traj_linf": 1.7550405573274475e-12
+    },
+    {
+      "constraint_threshold_satisfied": true,
+      "h": 0.001,
+      "max_endpoint_constraint_norm": 5.70547706274081e-14,
+      "max_endpoint_velocity_constraint_norm": 4.2217555083192855e-14,
+      "pos_final_linf": 2.149391775674303e-13,
+      "pos_traj_linf": 2.815525590449397e-13,
+      "public_policy_h": true,
+      "public_policy_time_window": true,
+      "runtime_sec": 553.4769997190015,
+      "source_policy_contract_selected": true,
+      "source_policy_h": true,
+      "source_policy_reference_h": true,
+      "source_policy_time_window": true,
+      "status": "ok",
+      "steps": 3000,
+      "total_newton_iterations": 9000,
+      "vel_final_linf": 1.6555645743210334e-12,
+      "vel_traj_linf": 1.6555645743210334e-12
+    }
+  ],
+  "run_v047_invoked_by_this_builder": false,
+  "safe_next_actions": [
+    "Keep the three rows as diagnostic evidence only.",
+    "Do not rerun the same B4 guarded driver solely to promote these rows.",
+    "If pursuing RA2021 double closure, produce a separately labeled non-floor-limited diagnostic policy or a stronger precision/reference policy plus independent verification.",
+    "Bind accepted source-policy errors, runtime, and Newton iteration counts before any B4/B7 promotion."
+  ],
+  "schema": "ra2021-double-source-policy-low-order-diagnosis-v1",
+  "status": "diagnosis_only_low_order_floor_limited_not_promoted",
+  "v048_runner_invoked_by_this_builder": false
+}

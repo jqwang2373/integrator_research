@@ -1,0 +1,452 @@
+{
+  "schema": "cross-paper-benchmark-cases-v1",
+  "status": "spec_extracted_partial_evidence_not_full_campaign",
+  "same_test_campaign_status": "not_run",
+  "full_external_same_test_campaign_passed": false,
+  "external_superiority_claim": false,
+  "default_1e-4_required": false,
+  "accepted_internal_method": "Gauss6/FullVA",
+  "purpose": "Machine-readable inventory of external same-test rows that must be run before claiming external-method superiority.",
+  "path_base": "Paths beginning with ../external are resolved from the validation root, matching v048 and the paper validators.",
+  "case_status_semantics": "Each case current_status records the full required source-policy case status. Partial or coarse-first evidence that does not close the full case is recorded in partial_evidence_overlay.",
+  "partial_evidence_overlay": {
+    "claim_boundary": {
+      "same_test_campaign_status": "not_run",
+      "external_superiority_claim": false,
+      "strict_public_policy_1e-4_required": false,
+      "default_1e-4_required": false
+    },
+    "tfe2026_original_pendulum": {
+      "evidence_status": "spec_extracted_only",
+      "completed_required_cases": 0,
+      "open_required_cases": 2
+    },
+    "ra2021_absolute_coordinate": {
+      "evidence_status": "partial_public_baseline_and_coarse_local_evidence_available_not_full_external_superiority",
+      "public_baseline_order_rows": 27,
+      "public_order_summary_rows": 9,
+      "coarse_same_window_ready_examples": ["single_pendulum", "double_pendulum"],
+      "local_true_dynamic_order_examples": ["four_link", "slider_crank"],
+      "public_work_precision_available_examples": ["four_link", "slider_crank"],
+      "strict_common_reference_available_examples": ["four_link", "slider_crank"],
+      "artifacts": [
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_public_order_work_summary.csv",
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/single_pendulum_coarse_same_window_work_precision_summary.csv",
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/double_pendulum_coarse_same_window_work_precision_summary.csv",
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_newton_coarse_order.json",
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_public_work_precision.json",
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/closed_loop_true_dynamic_strict_common_reference.json"
+      ]
+    },
+    "hi2022_half_implicit": {
+      "evidence_status": "bounded_pilot_available_full_T8_policy_not_complete",
+      "bounded_rows": 24,
+      "full_T8_policy_complete": false,
+      "artifacts": [
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_halfimplicit_rows.csv"
+      ]
+    },
+    "vp2024_velocity_partitioning": {
+      "evidence_status": "code_path_unresolved",
+      "artifacts": [
+        "../../numerics/v048_cross_paper_same_test_benchmarks/results/velocity_partitioning_code_search.csv"
+      ]
+    }
+  },
+  "external_sources": [
+    {
+      "source_id": "tfe2026_chaturvedi_sandu_sandu",
+      "source_type": "paper_pdf",
+      "title": "Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups",
+      "authors": ["E. Chaturvedi", "C. Sandu", "A. Sandu"],
+      "local_source": "../../external/literature/s11044-026-10153-w.pdf",
+      "code_directory_status": "not_available_in_current_workspace",
+      "comparison_role": "original TFE paper and Newmark/trapezoidal baseline"
+    },
+    {
+      "source_id": "ra2021_taves_kissel_negrut",
+      "source_type": "public_code_suite",
+      "title": "rA/rp/r-epsilon absolute-coordinate rotation-formulation suite",
+      "authors": ["J. Taves", "A. Kissel", "D. Negrut"],
+      "local_source": "../external/sbel-reproducibility/2021/ASME/rA-formulation",
+      "public_url": "https://github.com/uwsbel/public-metadata/tree/master/2021/ASME/rA-formulation",
+      "forms": ["rA", "rp", "reps"],
+      "comparison_role": "absolute-coordinate index-3 DAE public-code baseline"
+    },
+    {
+      "source_id": "hi2022_fang_kissel_zhang_negrut",
+      "source_type": "public_code_suite",
+      "title": "Half-implicit numerical integration in multibody dynamics",
+      "authors": ["L. Fang", "A. Kissel", "R. Zhang", "D. Negrut"],
+      "local_source": "../external/sbel-reproducibility/2022/HalfImplicit_JCND",
+      "public_url": "https://github.com/uwsbel/public-metadata/tree/master/2022/HalfImplicit_JCND",
+      "forms": ["rA_half", "rA"],
+      "comparison_role": "half-implicit versus fully implicit public-code baseline"
+    },
+    {
+      "source_id": "vp2024_kissel_bakke_negrut",
+      "source_type": "paper_with_public_code_claim",
+      "title": "Reducing the Constrained Multibody Dynamics Problem to the Solution of a System of Ordinary Differential Equations Via Velocity Partitioning and Lie Group Integration",
+      "authors": ["A. Kissel", "L. Bakke", "D. Negrut"],
+      "doi": "10.1115/1.4065254",
+      "local_source": null,
+      "code_directory_status": "not_resolved_in_local_sbel_or_public_metadata_tree",
+      "public_code_note": "The 2024 JCND paper and EasyChair performance-comparison preprint report open-source Python code for reproducibility, but no separate velocity-partitioning directory has been resolved in the local sbel-reproducibility or public-metadata origin/master or origin/user/aaron/msd trees, or by the public web search.",
+      "related_sources": [
+        "A. Kissel, L. Fang, D. Negrut, Using velocity partitioning in the rA formulation to solve the equations of constrained multibody dynamics, ASME IDETC-CIE 2023",
+        "A. Kissel, L. Bakke, D. Negrut, A Performance Comparison of Several Lie Group Integration Methods for Solving the Equations of Constrained Multibody Dynamics, EasyChair Preprint 13546, 2024"
+      ],
+      "public_url_candidates": [
+        "https://github.com/uwsbel/public-metadata/tree/master/2021/ASME/rA-formulation",
+        "https://easychair.org/publications/preprint/nVxd"
+      ],
+      "local_code_search_artifact": "../../numerics/v048_cross_paper_same_test_benchmarks/results/velocity_partitioning_code_search.csv",
+      "comparison_role": "velocity-partitioning Lie-group ODE baseline to resolve before final related-work comparison"
+    }
+  ],
+  "case_groups": [
+    {
+      "group_id": "tfe2026_original_pendulum",
+      "source_id": "tfe2026_chaturvedi_sandu_sandu",
+      "required_status": "not_run"
+    },
+    {
+      "group_id": "ra2021_absolute_coordinate",
+      "source_id": "ra2021_taves_kissel_negrut",
+      "required_status": "not_run"
+    },
+    {
+      "group_id": "hi2022_half_implicit",
+      "source_id": "hi2022_fang_kissel_zhang_negrut",
+      "required_status": "not_run"
+    },
+    {
+      "group_id": "vp2024_velocity_partitioning",
+      "source_id": "vp2024_kissel_bakke_negrut",
+      "required_status": "code_path_unresolved"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "tfe2026_rigid_pendulum_no_friction",
+      "group_id": "tfe2026_original_pendulum",
+      "model": "rigid_pendulum",
+      "physics": "no_joint_friction",
+      "baseline_methods": ["TFE_m1", "TFE_m2", "TFE_m3", "Newmark_beta", "trapezoidal"],
+      "required_gauss6_run": true,
+      "time_horizon": "match_source_paper",
+      "step_sizes": "match_source_paper",
+      "reference_policy": "match_source_paper_reference_solution",
+      "tolerance_policy": "match_or_report_source_paper_policy",
+      "metrics": ["position_error", "velocity_error", "observed_order", "newton_iterations", "cost", "large_step_stability"],
+      "source_files": ["../../external/literature/s11044-026-10153-w.pdf"],
+      "current_status": "not_run",
+      "blocker": "pendulum setup and source-paper error norm still need to be encoded"
+    },
+    {
+      "case_id": "tfe2026_rigid_pendulum_with_friction",
+      "group_id": "tfe2026_original_pendulum",
+      "model": "rigid_pendulum",
+      "physics": "joint_friction",
+      "baseline_methods": ["TFE_m1", "TFE_m2", "TFE_m3", "Newmark_beta", "trapezoidal"],
+      "required_gauss6_run": true,
+      "time_horizon": "match_source_paper",
+      "step_sizes": "match_source_paper",
+      "reference_policy": "match_source_paper_reference_solution",
+      "tolerance_policy": "match_or_report_source_paper_policy",
+      "metrics": ["position_error", "velocity_error", "observed_order", "newton_iterations", "cost", "large_step_stability", "friction_response"],
+      "source_files": ["../../external/literature/s11044-026-10153-w.pdf"],
+      "current_status": "not_run",
+      "blocker": "friction law and source-paper output policy still need to be encoded"
+    },
+    {
+      "case_id": "ra2021_single_pendulum_order",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "single_pendulum",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["kinematic_reference", "dynamics_order"],
+      "time_horizon": "from 2021 order_analysis.sh",
+      "step_sizes": [0.01, 0.001, 0.0001],
+      "reference_policy": "C2 order_analysis.sh generates kinematic reference with --mode kin --tol 1e-12 --save_data",
+      "tolerance_policy": "match public script",
+      "metrics": ["position_delta", "velocity_delta", "acceleration_delta", "observed_order"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/single_pendulum.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/order_analysis.sh"
+      ],
+      "public_command_template": "cd C2 && python order_analysis.py --form {form} --model single_pendulum --mode dyn --step_size {h}",
+      "current_status": "not_run",
+      "local_anchor": "v046 has a short rA-only h={0.02,0.01,0.005}, T=0.2 check; it is not this public-code campaign"
+    },
+    {
+      "case_id": "ra2021_four_link_order",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "four_link",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["kinematic_reference", "dynamics_order"],
+      "time_horizon": "from 2021 order_analysis.sh",
+      "step_sizes": [0.01, 0.001, 0.0001],
+      "reference_policy": "C2 order_analysis.sh generates kinematic reference with --mode kin --tol 1e-12 --save_data",
+      "tolerance_policy": "match public script",
+      "metrics": ["position_delta", "velocity_delta", "acceleration_delta", "observed_order"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/order_analysis.sh"
+      ],
+      "public_command_template": "cd C2 && python order_analysis.py --form {form} --model four_link --mode dyn --step_size {h}",
+      "current_status": "not_run",
+      "local_anchor": "v046 has a short rA-only h={0.02,0.01,0.005}, T=0.2 check; it is not this public-code campaign"
+    },
+    {
+      "case_id": "ra2021_slider_crank_order",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "slider_crank",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["kinematic_reference", "dynamics_order"],
+      "time_horizon": "from 2021 order_analysis.sh",
+      "step_sizes": [0.01, 0.001, 0.0001],
+      "reference_policy": "C2 order_analysis.sh generates kinematic reference with --mode kin --tol 1e-12 --save_data",
+      "tolerance_policy": "match public script",
+      "metrics": ["position_delta", "velocity_delta", "acceleration_delta", "observed_order"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/order_analysis.sh"
+      ],
+      "public_command_template": "cd C2 && python order_analysis.py --form {form} --model slider_crank --mode dyn --step_size {h}",
+      "parameter_guard": "2021 crank mass is 0.12; do not merge with the 2022 half-implicit slider-crank mass 1.2",
+      "current_status": "not_run",
+      "local_anchor": "v046 has a short rA-only h={0.02,0.01,0.005}, T=0.2 check; it is not this public-code campaign"
+    },
+    {
+      "case_id": "ra2021_single_pendulum_timing_iterations",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "single_pendulum",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["kinematics", "dynamics"],
+      "time_horizon": 3.0,
+      "step_sizes": [0.001],
+      "reference_policy": "not an error reference row; timing and average Newton iterations",
+      "tolerance_policy": "2021 time.sh uses --tol 1e-10",
+      "metrics": ["simulation_time", "average_iterations"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/single_pendulum.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/time.sh",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/check_iters.sh"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "ra2021_double_pendulum_timing_iterations",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "double_pendulum",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["dynamics"],
+      "time_horizon": 3.0,
+      "step_sizes": [0.001],
+      "reference_policy": "not an order-analysis row in 2021 order_analysis.sh; timing and average Newton iterations only",
+      "tolerance_policy": "2021 time.sh uses --tol 1e-10",
+      "metrics": ["simulation_time", "average_iterations"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/double_pendulum.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/time.sh",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/check_iters.sh"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "ra2021_four_link_timing_iterations",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "four_link",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["kinematics", "dynamics"],
+      "time_horizon": 3.0,
+      "step_sizes": [0.001],
+      "reference_policy": "not an error reference row; timing and average Newton iterations",
+      "tolerance_policy": "2021 time.sh uses --tol 1e-10",
+      "metrics": ["simulation_time", "average_iterations"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/four_link.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/time.sh",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/check_iters.sh"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "ra2021_slider_crank_timing_iterations",
+      "group_id": "ra2021_absolute_coordinate",
+      "model": "slider_crank",
+      "baseline_methods": ["rA", "rp", "reps"],
+      "required_gauss6_run": true,
+      "modes": ["kinematics", "dynamics"],
+      "time_horizon": 3.0,
+      "step_sizes": [0.001],
+      "reference_policy": "not an error reference row; timing and average Newton iterations",
+      "tolerance_policy": "2021 time.sh uses --tol 1e-10",
+      "metrics": ["simulation_time", "average_iterations"],
+      "source_files": [
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/C2/SimEngineMBD/example_models/slider_crank.py",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/time.sh",
+        "../external/sbel-reproducibility/2021/ASME/rA-formulation/profiling_scripts/check_iters.sh"
+      ],
+      "parameter_guard": "2021 crank mass is 0.12; do not merge with the 2022 half-implicit slider-crank mass 1.2",
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_double_pendulum_open_loop_convergence",
+      "group_id": "hi2022_half_implicit",
+      "model": "double_pendulum",
+      "baseline_methods": ["rA_half", "rA"],
+      "required_gauss6_run": true,
+      "modes": ["open_loop_ode_reference", "dae_convergence"],
+      "time_horizon": 8.0,
+      "step_sizes": [0.0001, 0.0002, 0.0004, 0.001, 0.002, 0.004, 0.01, 0.02, 0.04],
+      "reference_policy": "ODE reference dt_exact=1e-6 generated by run_double_pendulum_ode.py",
+      "tolerance_policy": "base 1e-10; rA uses tolerance/step_size**2; rA_half uses base tolerance",
+      "metrics": ["position_error", "velocity_error", "observed_order"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_double_pendulum_ode.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_double_pendulum_dae.py"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_four_link_closed_loop_convergence",
+      "group_id": "hi2022_half_implicit",
+      "model": "four_link",
+      "baseline_methods": ["rA_half", "rA"],
+      "required_gauss6_run": true,
+      "modes": ["closed_loop_kinematic_reference", "dae_convergence"],
+      "time_horizon": 8.0,
+      "step_sizes": [0.0001, 0.0002, 0.0004, 0.001, 0.002, 0.004, 0.01, 0.02, 0.04],
+      "reference_policy": "kinematic rA reference dt_ref=1e-5, tol_ref=1e-10",
+      "tolerance_policy": "match run_closed_loop_setups.py",
+      "metrics": ["position_error", "velocity_error", "observed_order", "constraint_drift"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_closed_loop_setups.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/SimEngineMBD/example_models/four_link.py"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_slider_crank_closed_loop_convergence",
+      "group_id": "hi2022_half_implicit",
+      "model": "slider_crank",
+      "baseline_methods": ["rA_half", "rA"],
+      "required_gauss6_run": true,
+      "modes": ["closed_loop_kinematic_reference", "dae_convergence"],
+      "time_horizon": 8.0,
+      "step_sizes": [0.0001, 0.0002, 0.0004, 0.001, 0.002, 0.004, 0.01, 0.02, 0.04],
+      "reference_policy": "kinematic rA reference dt_ref=1e-5, tol_ref=1e-10",
+      "tolerance_policy": "match run_closed_loop_setups.py",
+      "metrics": ["position_error", "velocity_error", "observed_order", "constraint_drift"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_closed_loop_setups.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/SimEngineMBD/example_models/slider_crank.py"
+      ],
+      "parameter_guard": "2022 crank mass is 1.2; do not merge with the 2021 rA slider-crank mass 0.12",
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_double_pendulum_energy",
+      "group_id": "hi2022_half_implicit",
+      "model": "double_pendulum",
+      "baseline_methods": ["rA_half", "rA"],
+      "required_gauss6_run": true,
+      "modes": ["energy_response"],
+      "time_horizon": 10.0,
+      "step_sizes": [0.001],
+      "reference_policy": "energy behavior figure policy from plot_double_pendulum_energy.py",
+      "tolerance_policy": "match 2022 script",
+      "metrics": ["energy_error", "energy_drift", "trajectory_response"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/plot_double_pendulum_energy.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_double_pendulum_dae.py"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_timing_iterations",
+      "group_id": "hi2022_half_implicit",
+      "model": "double_pendulum_four_link_slider_crank",
+      "baseline_methods": ["rA_half", "rA"],
+      "required_gauss6_run": true,
+      "modes": ["timing", "average_iterations"],
+      "time_horizon": "model_specific_2022_script_policy",
+      "step_sizes": [0.0001, 0.001, 0.01],
+      "reference_policy": "not an error reference row; timing and average Newton iterations",
+      "tolerance_policy": "model-specific tolerances in run_num_itr.py",
+      "metrics": ["simulation_time", "average_iterations"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_num_itr.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/data/timing.csv"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_n_pendulum_scaling",
+      "group_id": "hi2022_half_implicit",
+      "model": "N_pendulum",
+      "baseline_methods": ["rA_half", "rA"],
+      "required_gauss6_run": true,
+      "modes": ["scaling"],
+      "time_horizon": 3.0,
+      "step_sizes": [0.001],
+      "body_counts": [2, 4, 6, 8, 16, 32],
+      "reference_policy": "scaling analysis timing and iteration policy",
+      "tolerance_policy": "rA_half tolerance 1e-7; rA tolerance 1e-5",
+      "metrics": ["simulation_time", "average_iterations", "scaling_slope"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_scaling_analysis.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/scaling_analysis.py"
+      ],
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "hi2022_slider_crank_friction",
+      "group_id": "hi2022_half_implicit",
+      "model": "slider_crank",
+      "baseline_methods": ["rA_half"],
+      "required_gauss6_run": true,
+      "modes": ["friction_response"],
+      "time_horizon": 2.0,
+      "step_sizes": [0.001],
+      "friction_coefficients": [0.0, 0.2, 0.4],
+      "reference_policy": "figure response policy from run_slider_crank_frictional.py",
+      "tolerance_policy": "1e-10",
+      "metrics": ["trajectory_response", "friction_response", "constraint_drift"],
+      "source_files": [
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/run_slider_crank_frictional.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/slider_crank_frictional.py",
+        "../external/sbel-reproducibility/2022/HalfImplicit_JCND/SimEngineMBD/example_models/slider_crank.py"
+      ],
+      "parameter_guard": "2022 crank mass is 1.2; do not merge with the 2021 rA slider-crank mass 0.12",
+      "current_status": "not_run"
+    },
+    {
+      "case_id": "vp2024_velocity_partitioning_code_resolution",
+      "group_id": "vp2024_velocity_partitioning",
+      "model": "single_pendulum_double_pendulum_four_link_slider_crank",
+      "baseline_methods": ["velocity_partitioning_lie_group_ode", "coordinate_partitioning_euler_parameter"],
+      "required_gauss6_run": false,
+      "required_action": "resolve public-code location, then split this placeholder into concrete convergence and performance rows",
+      "time_horizon": "unresolved",
+      "step_sizes": "unresolved",
+      "reference_policy": "unresolved",
+      "tolerance_policy": "unresolved",
+      "metrics": ["observed_order", "performance_comparison"],
+      "source_files": [],
+      "source_urls": [
+        "https://doi.org/10.1115/1.4065254"
+      ],
+      "current_status": "code_path_unresolved",
+      "blocker": "paper and open-source-code claim found; no distinct velocity-partitioning directory located in the local sbel-reproducibility or public-metadata origin/master or origin/user/aaron/msd trees, or by the public web search"
+    }
+  ],
+  "next_gate": "run_gauss6_fullva_on_external_public_code_tests"
+}

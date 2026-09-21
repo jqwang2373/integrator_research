@@ -1,0 +1,1150 @@
+{
+  "archive_gap_summary": {
+    "exact_b4_opt_in_required_for_execution": true,
+    "full_archive_ready_now": false,
+    "opt_in_action_ids": [
+      "authorized_b4_ra_hi_source_policy_execution"
+    ],
+    "ra_hi_rows_requiring_authorized_closeout_or_new_artifact": 20,
+    "safe_action_ids": [
+      "rebuild_read_only_audit_chain",
+      "rerun_read_only_validators",
+      "keep_narrowed_archive_provenance_only",
+      "monitor_reopen_conditions"
+    ],
+    "source_policy_closed_ratio": "0/40",
+    "source_policy_execution_allowed_now": false,
+    "source_policy_execution_invoked": false,
+    "status": "full_source_policy_runner_archive_not_ready_source_policy_open",
+    "submission_ready": false,
+    "terminal_unable_to_reproduce_rows": 20
+  },
+  "b4_can_close_now": false,
+  "b7_can_close_now": false,
+  "builder_invoked_heavy_numerical_run": false,
+  "command_count": 13,
+  "command_row_reference_total": 32,
+  "commands": [
+    {
+      "artifact_status": "not_run_by_this_packet",
+      "batch_id": "ra2021_ready_after_explicit_1e_4_opt_in",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 16,
+      "csv_row_count": 12,
+      "csv_status_counts": {
+        "ok": 12
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_public_timing_rows.csv",
+      "expected_summary_path": null,
+      "id": "ra2021_public_timing_all_forms_models",
+      "mapped_row_count_declared": 12,
+      "mapped_row_count_traced": 12,
+      "mapped_row_key_count": 12,
+      "matched_ra_hi_matrix_rows": 12,
+      "matched_rows_future_authorization_or_new_artifact": 12,
+      "matched_rows_not_promoted": 12,
+      "matched_rows_output_present": 12,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy": 6,
+        "ra2021_double_low_order_floor_limited_constraint_not_promoted": 3,
+        "ra2021_single_floor_limited_public_h_tranche_not_promoted": 3
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_double_low_order_floor_limited_constraint_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_single_floor_limited_public_h_tranche_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_double_low_order_floor_limited_constraint_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_single_floor_limited_public_h_tranche_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_double_low_order_floor_limited_constraint_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_single_floor_limited_public_h_tranche_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "ra2021_absolute_coordinate",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": null
+    },
+    {
+      "artifact_status": "not_run_by_this_packet",
+      "batch_id": "ra2021_ready_after_explicit_1e_4_opt_in",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 32,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/gauss6_fullva_public_horizon_single_rows.csv",
+      "expected_summary_path": null,
+      "id": "gauss6_public_single_source_policy_trio",
+      "mapped_row_count_declared": 3,
+      "mapped_row_count_traced": 3,
+      "mapped_row_key_count": 3,
+      "matched_ra_hi_matrix_rows": 3,
+      "matched_rows_future_authorization_or_new_artifact": 3,
+      "matched_rows_not_promoted": 3,
+      "matched_rows_output_present": 3,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "ra2021_single_floor_limited_public_h_tranche_not_promoted": 3
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_single_floor_limited_public_h_tranche_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_single_floor_limited_public_h_tranche_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_single_floor_limited_public_h_tranche_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "ra2021_absolute_coordinate",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": null
+    },
+    {
+      "artifact_status": "not_run_by_this_packet",
+      "batch_id": "ra2021_ready_after_explicit_1e_4_opt_in",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 23,
+      "csv_row_count": 9,
+      "csv_status_counts": {
+        "ok": 9
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/ra2021_double_pendulum_order_rows.csv",
+      "expected_summary_path": null,
+      "id": "ra2021_double_order_all_forms",
+      "mapped_row_count_declared": 3,
+      "mapped_row_count_traced": 3,
+      "mapped_row_key_count": 3,
+      "matched_ra_hi_matrix_rows": 3,
+      "matched_rows_future_authorization_or_new_artifact": 3,
+      "matched_rows_not_promoted": 3,
+      "matched_rows_output_present": 3,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "ra2021_double_low_order_floor_limited_constraint_not_promoted": 3
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_double_low_order_floor_limited_constraint_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_double_low_order_floor_limited_constraint_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_low_order_floor_limited_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_double_low_order_floor_limited_constraint_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "ra2021_absolute_coordinate",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": null
+    },
+    {
+      "artifact_status": "not_run_by_this_packet",
+      "batch_id": "ra2021_ready_after_explicit_1e_4_opt_in",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 38,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/public_closed_loop_shards/four_link_1em02_1em03_1em04.csv",
+      "expected_summary_path": null,
+      "id": "gauss6_public_four_link_source_policy_trio",
+      "mapped_row_count_declared": 3,
+      "mapped_row_count_traced": 3,
+      "mapped_row_key_count": 3,
+      "matched_ra_hi_matrix_rows": 3,
+      "matched_rows_future_authorization_or_new_artifact": 3,
+      "matched_rows_not_promoted": 3,
+      "matched_rows_output_present": 3,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy": 3
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "ra2021_absolute_coordinate",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": null
+    },
+    {
+      "artifact_status": "not_run_by_this_packet",
+      "batch_id": "ra2021_ready_after_explicit_1e_4_opt_in",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 38,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/public_closed_loop_shards/slider_crank_1em02_1em03_1em04.csv",
+      "expected_summary_path": null,
+      "id": "gauss6_public_slider_crank_source_policy_trio",
+      "mapped_row_count_declared": 3,
+      "mapped_row_count_traced": 3,
+      "mapped_row_key_count": 3,
+      "matched_ra_hi_matrix_rows": 3,
+      "matched_rows_future_authorization_or_new_artifact": 3,
+      "matched_rows_not_promoted": 3,
+      "matched_rows_output_present": 3,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy": 3
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rA|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_reps|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        },
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "approved_driver_outputs_present_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "ra2021_absolute_coordinate|ra2021_rp|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "ra2021_absolute_coordinate",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": null
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_single_pendulum_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_single_pendulum_summary.json",
+      "id": "hi2022_selected_t8_rA_half_single_pendulum",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA_half|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    },
+    {
+      "artifact_status": "partial_or_failed_full_T8_source_policy_candidate_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "failed:RuntimeError:Newton-Raphson not converging at t: 2.240, k: 100": 1,
+        "failed:RuntimeError:Newton-Raphson not converging at t: 5.800, k: 100": 1,
+        "ok": 1
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_summary.json",
+      "id": "hi2022_selected_t8_rA_half_double_pendulum",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_ra_half_double_partial_newton_failure_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "diagnosis_only_partial_newton_failure_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_ra_half_double_partial_newton_failure_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA_half|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "partial_or_failed_full_T8_source_policy_candidate_not_promoted"
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_four_link_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_four_link_summary.json",
+      "id": "hi2022_selected_t8_rA_half_four_link",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA_half|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_slider_crank_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_slider_crank_summary.json",
+      "id": "hi2022_selected_t8_rA_half_slider_crank",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA_half|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_single_pendulum_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_single_pendulum_summary.json",
+      "id": "hi2022_selected_t8_rA_single_pendulum",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA|single_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_summary.json",
+      "id": "hi2022_selected_t8_rA_double_pendulum",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA|double_pendulum",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_four_link_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_four_link_summary.json",
+      "id": "hi2022_selected_t8_rA_four_link",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA|four_link",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    },
+    {
+      "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+      "batch_id": "hi2022_ready_no_1e_4_selected_candidate",
+      "blocking_flags": {
+        "all_mapped_rows_promoted": false,
+        "commands_executed_by_schema_audit": false,
+        "schema_ready_is_not_promotion_ready": true,
+        "summary_rows_closed": 0,
+        "summary_rows_promoted": 0,
+        "verified_authorized_execution_recorded": false
+      },
+      "csv_column_count": 34,
+      "csv_row_count": 3,
+      "csv_status_counts": {
+        "ok": 3
+      },
+      "expected_output_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_slider_crank_rows.csv",
+      "expected_summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_slider_crank_summary.json",
+      "id": "hi2022_selected_t8_rA_slider_crank",
+      "mapped_row_count_declared": 1,
+      "mapped_row_count_traced": 1,
+      "mapped_row_key_count": 1,
+      "matched_ra_hi_matrix_rows": 1,
+      "matched_rows_future_authorization_or_new_artifact": 1,
+      "matched_rows_not_promoted": 1,
+      "matched_rows_output_present": 1,
+      "matched_rows_reproduction_complete": 0,
+      "matched_rows_source_policy_closed": 0,
+      "primary_promotion_blocker_counts": {
+        "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 1
+      },
+      "promotion_ready": false,
+      "promotion_status": "schema_ready_promotion_blocked",
+      "row_blockers": [
+        {
+          "all_command_outputs_present": true,
+          "future_promotion_requires_authorized_execution_or_new_artifact": true,
+          "matrix_row_present": true,
+          "post_execution_attempt_status": "selected_candidate_executed_not_promoted",
+          "post_execution_decision": "not_promoted",
+          "primary_promotion_blocker": "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted",
+          "ready_to_launch_after_explicit_opt_in": true,
+          "row_key": "hi2022_half_implicit|hi2022_rA|slider_crank",
+          "source_policy_closed": false,
+          "source_policy_reproduction_complete": false
+        }
+      ],
+      "schema_ready": true,
+      "schema_status": "schema_ready",
+      "suite_id": "hi2022_half_implicit",
+      "summary_promotion_ready": false,
+      "summary_source_policy_rows_closed": 0,
+      "summary_source_policy_rows_promoted": 0,
+      "summary_status": "executed_full_T8_selected_coarse_trio_not_promoted"
+    }
+  ],
+  "commands_executed_by_audit": false,
+  "commands_with_schema_ready_but_promotion_blocked": 13,
+  "date_checked": "2026-06-20",
+  "exact_b4_opt_in_required_for_execution": true,
+  "execution_authorized": false,
+  "existing_artifact_promotion_summary": {
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "candidate_item_count": 8,
+    "promotion_ready_without_new_execution_count": 0,
+    "source_policy_rows_closed_by_existing_artifacts": 0,
+    "status": "no_existing_artifact_promotable_without_new_source_policy_execution"
+  },
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "description": "Rebuild this promotion blocker audit plus downstream objective, review, and package manifests.",
+      "id": "rebuild_read_only_audit_chain"
+    },
+    {
+      "description": "Rerun validators that only read artifacts and do not execute B4 source-policy commands.",
+      "id": "rerun_read_only_validators"
+    },
+    {
+      "description": "Keep narrowed archive artifacts marked as provenance-only, not as a full source-policy runner archive.",
+      "id": "keep_narrowed_archive_provenance_only"
+    },
+    {
+      "description": "Monitor for new public code, author-provided code, or source-equivalent artifacts before reopening rows.",
+      "id": "monitor_reopen_conditions"
+    }
+  ],
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "post_execution_summary": {
+    "approved_driver_execution_recorded": false,
+    "b4_can_close_now": false,
+    "b7_can_close_now": false,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_open": 20,
+    "source_policy_rows_still_requiring_execution_or_promotion": 20,
+    "status": "existing_outputs_present_no_verified_authorized_execution_no_source_policy_rows_promoted",
+    "verified_authorized_execution_recorded": false
+  },
+  "promotion_blocker_matrix": {
+    "blocking_ids": [
+      "OC4",
+      "OC12"
+    ],
+    "existing_artifacts_promotion_ready_without_new_execution": 0,
+    "full_archive_ready_now": false,
+    "post_execution_promoted_rows": 0,
+    "post_execution_rows_still_requiring_execution_or_promotion": 20,
+    "ra_hi_rows_not_promoted": 20,
+    "ra_hi_rows_with_all_command_outputs_present": 20,
+    "schema_ready_commands": 13,
+    "schema_ready_csv_rows": 54,
+    "schema_ready_expected_artifacts": 21,
+    "source_policy_closed_ratio": "0/40",
+    "verified_authorized_execution_recorded": false
+  },
+  "promotion_readiness_digest": "5b1bc14cdb569981fd6c3c9b2c2316e0b75ae1868527c14f5b2c6634156dccf2",
+  "promotion_ready_command_count": 0,
+  "promotion_ready_rows": 0,
+  "ra_hi_promotion_matrix_summary": {
+    "future_promotion_requires_authorized_execution_or_new_artifact_rows": 20,
+    "hi2022_row_count": 8,
+    "post_execution_attempt_status_counts": {
+      "approved_driver_outputs_present_not_promoted": 9,
+      "diagnosis_only_low_order_floor_limited_not_promoted": 3,
+      "diagnosis_only_partial_newton_failure_not_promoted": 1,
+      "selected_candidate_executed_not_promoted": 7
+    },
+    "primary_promotion_blocker_counts": {
+      "hi2022_ra_half_double_partial_newton_failure_not_promoted": 1,
+      "hi2022_selected_coarse_trio_not_full_public_grid_not_promoted": 7,
+      "ra2021_closed_loop_T0p1_mixed_reference_not_source_policy": 6,
+      "ra2021_double_low_order_floor_limited_constraint_not_promoted": 3,
+      "ra2021_single_floor_limited_public_h_tranche_not_promoted": 3
+    },
+    "ra2021_row_count": 12,
+    "row_count": 20,
+    "rows_with_all_command_outputs_present": 20,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_not_promoted": 20,
+    "status": "ra_hi_public_root_rows_not_promoted_source_policy_open"
+  },
+  "read_only": true,
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "schema": "b4-expected-output-promotion-readiness-blocker-audit-20260620-v1",
+  "schema_audit_summary": {
+    "artifacts_sha256_match_freeze": 21,
+    "command_count": 13,
+    "commands_executed_by_audit": false,
+    "csv_parseable_artifacts": 13,
+    "exact_b4_opt_in_required_for_execution": true,
+    "expected_artifact_count": 21,
+    "expected_output_schema_audit_sha256": "c7b392fc7e1fa88f044d274127e41846d7e47b7d3ed955b0c9a852a132e08516",
+    "json_summary_parseable_artifacts": 8,
+    "opt_in_action_ids": [
+      "authorized_b4_ra_hi_source_policy_execution"
+    ],
+    "promotion_ready_rows": 0,
+    "safe_action_ids": [
+      "rebuild_read_only_audit_chain",
+      "rerun_read_only_validators",
+      "keep_narrowed_archive_provenance_only",
+      "monitor_reopen_conditions"
+    ],
+    "schema_ready_commands": 13,
+    "source_policy_execution_allowed_now": false,
+    "source_policy_execution_invoked": false,
+    "source_policy_rows_closed": 0,
+    "status": "expected_outputs_schema_ready_not_authorized_not_run_not_promoted",
+    "total_csv_data_rows": 54
+  },
+  "schema_ready_command_count": 13,
+  "source_files": [
+    "B4_SOURCE_POLICY_EXPECTED_OUTPUT_SCHEMA_AUDIT_20260620.json",
+    "B4_SOURCE_POLICY_POST_EXECUTION_AUDIT.json",
+    "B4_EXISTING_ARTIFACT_PROMOTION_AUDIT.json",
+    "B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json",
+    "B4_SOURCE_POLICY_EXECUTION_HANDOFF_PACKAGE.json",
+    "RA_HI_SOURCE_POLICY_PROMOTION_BLOCKER_MATRIX.json",
+    "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json"
+  ],
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_promoted": 0,
+  "source_policy_rows_total": 40,
+  "status": "expected_outputs_schema_ready_but_promotion_blocked",
+  "submission_ready": false,
+  "summary_source_policy_rows_closed_total": 0,
+  "summary_source_policy_rows_promoted_total": 0,
+  "unique_mapped_ra_hi_row_count": 20,
+  "unique_mapped_ra_hi_rows": [
+    "hi2022_half_implicit|hi2022_rA_half|double_pendulum",
+    "hi2022_half_implicit|hi2022_rA_half|four_link",
+    "hi2022_half_implicit|hi2022_rA_half|single_pendulum",
+    "hi2022_half_implicit|hi2022_rA_half|slider_crank",
+    "hi2022_half_implicit|hi2022_rA|double_pendulum",
+    "hi2022_half_implicit|hi2022_rA|four_link",
+    "hi2022_half_implicit|hi2022_rA|single_pendulum",
+    "hi2022_half_implicit|hi2022_rA|slider_crank",
+    "ra2021_absolute_coordinate|ra2021_rA|double_pendulum",
+    "ra2021_absolute_coordinate|ra2021_rA|four_link",
+    "ra2021_absolute_coordinate|ra2021_rA|single_pendulum",
+    "ra2021_absolute_coordinate|ra2021_rA|slider_crank",
+    "ra2021_absolute_coordinate|ra2021_reps|double_pendulum",
+    "ra2021_absolute_coordinate|ra2021_reps|four_link",
+    "ra2021_absolute_coordinate|ra2021_reps|single_pendulum",
+    "ra2021_absolute_coordinate|ra2021_reps|slider_crank",
+    "ra2021_absolute_coordinate|ra2021_rp|double_pendulum",
+    "ra2021_absolute_coordinate|ra2021_rp|four_link",
+    "ra2021_absolute_coordinate|ra2021_rp|single_pendulum",
+    "ra2021_absolute_coordinate|ra2021_rp|slider_crank"
+  ],
+  "unique_mapped_ra_hi_rows_not_promoted": 20,
+  "v048_runner_invoked": false
+}

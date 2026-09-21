@@ -1,0 +1,514 @@
+{
+  "all_source_h_values_integer_step_compatible": false,
+  "endpoint_compatible_rows_source_endpoint_convention_resolved": 2,
+  "endpoint_convention_candidates": [
+    {
+      "acceptance_use": "diagnostic_only_until_source_endpoint_convention_is_verified",
+      "keeps_exact_T": false,
+      "keeps_published_h": true,
+      "policy": "nearest_integer_horizon",
+      "source_equivalent": false
+    },
+    {
+      "acceptance_use": "diagnostic_only_because_the_text_does_not_state_error_sampling_at_noninteger_T_overruns",
+      "keeps_exact_T": false,
+      "keeps_published_h": true,
+      "policy": "algorithm_literal_fixed_h_until_tn_ge_tfinal",
+      "source_equivalent": false
+    },
+    {
+      "acceptance_use": "diagnostic_only_because_published_h_is_changed",
+      "keeps_exact_T": true,
+      "keeps_published_h": false,
+      "policy": "adjust_h_to_hit_T_exactly",
+      "source_equivalent": false
+    },
+    {
+      "acceptance_use": "diagnostic_only_unless_source_code_or_paper_confirms_partial_final_step",
+      "keeps_exact_T": true,
+      "keeps_published_h": true,
+      "policy": "integer_steps_plus_final_partial_step",
+      "source_equivalent": false
+    }
+  ],
+  "endpoint_grid_subclosure": {
+    "boundary": "Only rows whose published h divides T=10 exactly are endpoint-grid resolved. Rows whose published h does not divide T=10 remain demoted from source-policy promotion until the source endpoint/output sampling convention is established; no source-policy reproduction row is closed by this audit.",
+    "endpoint_compatible_rows_source_endpoint_convention_resolved": 2,
+    "endpoint_incompatible_rows_demoted_from_source_policy": 4,
+    "endpoint_incompatible_rows_require_source_endpoint_policy": 4,
+    "source_endpoint_compatible_row_ids": [
+      "frictional_pendulum:h=0.008",
+      "frictional_pendulum:h=0.2"
+    ],
+    "source_endpoint_incompatible_row_ids": [
+      "frictionless_pendulum:h=0.003",
+      "frictionless_pendulum:h=0.006",
+      "frictionless_pendulum:h=0.012",
+      "frictional_pendulum:h=0.003"
+    ],
+    "source_endpoint_incompatible_row_ids_demoted_from_source_policy": [
+      "frictionless_pendulum:h=0.003",
+      "frictionless_pendulum:h=0.006",
+      "frictionless_pendulum:h=0.012",
+      "frictional_pendulum:h=0.003"
+    ],
+    "source_grid_policy_resolved_for_exact_T_compatible_rows": true,
+    "source_grid_policy_resolved_for_full_T10": false,
+    "source_policy_rows_completed": 0
+  },
+  "endpoint_incompatible_rows_demoted_from_source_policy": 4,
+  "endpoint_incompatible_rows_require_source_endpoint_policy": 4,
+  "endpoint_policy_acceptance_contract": {
+    "endpoint_incompatible_demotion_contract": "Endpoint-incompatible published h rows are diagnostic-only and excluded from the source-policy row set unless source text, source code, or a source-equivalent runner establishes the error/output sampling convention for noninteger T/h.",
+    "endpoint_incompatible_rows_blocked_until_source_sampling_policy": [
+      "frictionless_pendulum:h=0.003",
+      "frictionless_pendulum:h=0.006",
+      "frictionless_pendulum:h=0.012",
+      "frictional_pendulum:h=0.003"
+    ],
+    "endpoint_incompatible_rows_demoted_from_source_policy": [
+      "frictionless_pendulum:h=0.003",
+      "frictionless_pendulum:h=0.006",
+      "frictionless_pendulum:h=0.012",
+      "frictional_pendulum:h=0.003"
+    ],
+    "exact_T_compatible_row_ids": [
+      "frictional_pendulum:h=0.008",
+      "frictional_pendulum:h=0.2"
+    ],
+    "exact_T_compatible_subset_can_enter_future_execution_after_runner_contracts": true,
+    "forbidden_without_contract": [
+      "promote endpoint-incompatible rows from diagnostic algorithm-literal probes",
+      "claim exact-T source-policy errors for h rows that overrun T=10",
+      "use compatible endpoint-grid rows as source-policy rows before runner equivalence is closed"
+    ],
+    "full_T10_source_policy_promotion_requires": [
+      "all published h rows use a source-confirmed endpoint/output sampling convention",
+      "Algorithm-1-literal overrun rows are accepted only if source output/error sampling is confirmed at the overrun state",
+      "adjusted-h, interpolation, floor/nearest, or partial-step conventions require source text, source code, or explicit demotion",
+      "method-runner, DAE-runner, friction-law, and work-metric contracts close before any B4/B7 promotion"
+    ]
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim_allowed": false,
+  "frictional_incompatible_rows": 1,
+  "frictionless_incompatible_rows": 3,
+  "integer_step_compatible_rows": 2,
+  "integer_step_incompatible_rows": 4,
+  "interpretation": "The extracted source-policy horizon is T=10. Two published frictional h values divide T exactly and are endpoint-grid resolved under the source text's fixed-h loop convention, but several other published h values do not divide T exactly. Those endpoint-incompatible rows are explicitly demoted from source-policy promotion until the source paper or source code establishes the endpoint/output sampling convention.",
+  "required_to_accept_full_T10_rows": [
+    "verify the source paper/source code endpoint convention for h values that do not divide T=10",
+    "identify whether Algorithm 1's fixed-h loop uses overrun, interpolation, adjusted h, or a final partial step for reported errors",
+    "record whether the accepted convention keeps published h, exact T, or both",
+    "keep endpoint-incompatible rows demoted from the source-policy row set unless that convention is source-confirmed",
+    "rerun the TFE m=1/m=2/Newmark/trapezoidal rows with the verified convention",
+    "keep source_policy_rows_completed at zero until the convention and method runner are source-equivalent"
+  ],
+  "row_count": 6,
+  "row_level_promotion_disposition": [
+    {
+      "case_id": "frictionless_pendulum",
+      "endpoint_grid_disposition": "blocked_by_endpoint_sampling_policy",
+      "friction_enabled": false,
+      "h": 0.003,
+      "integer_step_compatible": false,
+      "required_before_promotion": [
+        "source-confirmed endpoint/output sampling convention for noninteger T/h",
+        "source-equivalent absolute-coordinate DAE runner",
+        "source-equivalent method runner for the selected TFE/Newmark/trapezoidal method",
+        "accepted error/order/runtime/work metric binding"
+      ],
+      "row_id": "frictionless_pendulum:h=0.003",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_execution_eligible_now": false,
+      "source_policy_row_completed": false
+    },
+    {
+      "case_id": "frictionless_pendulum",
+      "endpoint_grid_disposition": "blocked_by_endpoint_sampling_policy",
+      "friction_enabled": false,
+      "h": 0.006,
+      "integer_step_compatible": false,
+      "required_before_promotion": [
+        "source-confirmed endpoint/output sampling convention for noninteger T/h",
+        "source-equivalent absolute-coordinate DAE runner",
+        "source-equivalent method runner for the selected TFE/Newmark/trapezoidal method",
+        "accepted error/order/runtime/work metric binding"
+      ],
+      "row_id": "frictionless_pendulum:h=0.006",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_execution_eligible_now": false,
+      "source_policy_row_completed": false
+    },
+    {
+      "case_id": "frictionless_pendulum",
+      "endpoint_grid_disposition": "blocked_by_endpoint_sampling_policy",
+      "friction_enabled": false,
+      "h": 0.012,
+      "integer_step_compatible": false,
+      "required_before_promotion": [
+        "source-confirmed endpoint/output sampling convention for noninteger T/h",
+        "source-equivalent absolute-coordinate DAE runner",
+        "source-equivalent method runner for the selected TFE/Newmark/trapezoidal method",
+        "accepted error/order/runtime/work metric binding"
+      ],
+      "row_id": "frictionless_pendulum:h=0.012",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_execution_eligible_now": false,
+      "source_policy_row_completed": false
+    },
+    {
+      "case_id": "frictional_pendulum",
+      "endpoint_grid_disposition": "blocked_by_endpoint_sampling_policy",
+      "friction_enabled": true,
+      "h": 0.003,
+      "integer_step_compatible": false,
+      "required_before_promotion": [
+        "source-confirmed endpoint/output sampling convention for noninteger T/h",
+        "source-equivalent absolute-coordinate DAE runner",
+        "source-equivalent method runner for the selected TFE/Newmark/trapezoidal method",
+        "accepted error/order/runtime/work metric binding"
+      ],
+      "row_id": "frictional_pendulum:h=0.003",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": true,
+      "source_policy_execution_eligible_now": false,
+      "source_policy_row_completed": false
+    },
+    {
+      "case_id": "frictional_pendulum",
+      "endpoint_grid_disposition": "endpoint_grid_resolved_pending_runner_contracts",
+      "friction_enabled": true,
+      "h": 0.008,
+      "integer_step_compatible": true,
+      "required_before_promotion": [
+        "source-equivalent absolute-coordinate DAE runner",
+        "source-equivalent method runner for the selected TFE/Newmark/trapezoidal method",
+        "source-code-equivalent Brown--McPhee friction law if the row is frictional",
+        "accepted error/order/runtime/work metric binding"
+      ],
+      "row_id": "frictional_pendulum:h=0.008",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": false,
+      "source_policy_execution_eligible_now": false,
+      "source_policy_row_completed": false
+    },
+    {
+      "case_id": "frictional_pendulum",
+      "endpoint_grid_disposition": "endpoint_grid_resolved_pending_runner_contracts",
+      "friction_enabled": true,
+      "h": 0.2,
+      "integer_step_compatible": true,
+      "required_before_promotion": [
+        "source-equivalent absolute-coordinate DAE runner",
+        "source-equivalent method runner for the selected TFE/Newmark/trapezoidal method",
+        "source-code-equivalent Brown--McPhee friction law if the row is frictional",
+        "accepted error/order/runtime/work metric binding"
+      ],
+      "row_id": "frictional_pendulum:h=0.2",
+      "source_policy_demoted_until_source_endpoint_sampling_policy": false,
+      "source_policy_execution_eligible_now": false,
+      "source_policy_row_completed": false
+    }
+  ],
+  "rows": [
+    {
+      "adjusted_h_for_exact_T_using_nearest_steps": 0.003000300030003,
+      "case_id": "frictionless_pendulum",
+      "ceil_integer_steps": 3334,
+      "ceil_integer_t_final": 10.002,
+      "ceil_t_final_mismatch": 0.002000000000000668,
+      "exact_steps": 3333.3333333333335,
+      "final_partial_step_fraction_of_h": 0.3333333333331486,
+      "final_partial_step_size_for_exact_T": 0.0009999999999994458,
+      "floor_integer_steps": 3333,
+      "floor_integer_t_final": 9.999,
+      "floor_t_final_mismatch": 0.0009999999999994458,
+      "friction_enabled": false,
+      "h": 0.003,
+      "integer_step_compatible": false,
+      "nearest_integer_steps": 3333,
+      "nearest_integer_t_final": 9.999,
+      "relative_h_adjustment_for_exact_T": 0.00010001000100001249,
+      "row_id": "frictionless_pendulum:h=0.003",
+      "source_endpoint_policy_needed_for_exact_T": true,
+      "t_final": 10.0,
+      "t_final_mismatch": 0.0009999999999994458
+    },
+    {
+      "adjusted_h_for_exact_T_using_nearest_steps": 0.00599880023995201,
+      "case_id": "frictionless_pendulum",
+      "ceil_integer_steps": 1667,
+      "ceil_integer_t_final": 10.002,
+      "ceil_t_final_mismatch": 0.002000000000000668,
+      "exact_steps": 1666.6666666666667,
+      "final_partial_step_fraction_of_h": 0.6666666666665932,
+      "final_partial_step_size_for_exact_T": 0.0039999999999995595,
+      "floor_integer_steps": 1666,
+      "floor_integer_t_final": 9.996,
+      "floor_t_final_mismatch": 0.0039999999999995595,
+      "friction_enabled": false,
+      "h": 0.006,
+      "integer_step_compatible": false,
+      "nearest_integer_steps": 1667,
+      "nearest_integer_t_final": 10.002,
+      "relative_h_adjustment_for_exact_T": 0.00019996000799836025,
+      "row_id": "frictionless_pendulum:h=0.006",
+      "source_endpoint_policy_needed_for_exact_T": true,
+      "t_final": 10.0,
+      "t_final_mismatch": 0.002000000000000668
+    },
+    {
+      "adjusted_h_for_exact_T_using_nearest_steps": 0.012004801920768308,
+      "case_id": "frictionless_pendulum",
+      "ceil_integer_steps": 834,
+      "ceil_integer_t_final": 10.008000000000001,
+      "ceil_t_final_mismatch": 0.008000000000000895,
+      "exact_steps": 833.3333333333334,
+      "final_partial_step_fraction_of_h": 0.3333333333332966,
+      "final_partial_step_size_for_exact_T": 0.0039999999999995595,
+      "floor_integer_steps": 833,
+      "floor_integer_t_final": 9.996,
+      "floor_t_final_mismatch": 0.0039999999999995595,
+      "friction_enabled": false,
+      "h": 0.012,
+      "integer_step_compatible": false,
+      "nearest_integer_steps": 833,
+      "nearest_integer_t_final": 9.996,
+      "relative_h_adjustment_for_exact_T": 0.00040016006402562865,
+      "row_id": "frictionless_pendulum:h=0.012",
+      "source_endpoint_policy_needed_for_exact_T": true,
+      "t_final": 10.0,
+      "t_final_mismatch": 0.0039999999999995595
+    },
+    {
+      "adjusted_h_for_exact_T_using_nearest_steps": 0.003000300030003,
+      "case_id": "frictional_pendulum",
+      "ceil_integer_steps": 3334,
+      "ceil_integer_t_final": 10.002,
+      "ceil_t_final_mismatch": 0.002000000000000668,
+      "exact_steps": 3333.3333333333335,
+      "final_partial_step_fraction_of_h": 0.3333333333331486,
+      "final_partial_step_size_for_exact_T": 0.0009999999999994458,
+      "floor_integer_steps": 3333,
+      "floor_integer_t_final": 9.999,
+      "floor_t_final_mismatch": 0.0009999999999994458,
+      "friction_enabled": true,
+      "h": 0.003,
+      "integer_step_compatible": false,
+      "nearest_integer_steps": 3333,
+      "nearest_integer_t_final": 9.999,
+      "relative_h_adjustment_for_exact_T": 0.00010001000100001249,
+      "row_id": "frictional_pendulum:h=0.003",
+      "source_endpoint_policy_needed_for_exact_T": true,
+      "t_final": 10.0,
+      "t_final_mismatch": 0.0009999999999994458
+    },
+    {
+      "adjusted_h_for_exact_T_using_nearest_steps": 0.008,
+      "case_id": "frictional_pendulum",
+      "ceil_integer_steps": 1250,
+      "ceil_integer_t_final": 10.0,
+      "ceil_t_final_mismatch": 0.0,
+      "exact_steps": 1250.0,
+      "final_partial_step_fraction_of_h": 0.0,
+      "final_partial_step_size_for_exact_T": 0.0,
+      "floor_integer_steps": 1250,
+      "floor_integer_t_final": 10.0,
+      "floor_t_final_mismatch": 0.0,
+      "friction_enabled": true,
+      "h": 0.008,
+      "integer_step_compatible": true,
+      "nearest_integer_steps": 1250,
+      "nearest_integer_t_final": 10.0,
+      "relative_h_adjustment_for_exact_T": 0.0,
+      "row_id": "frictional_pendulum:h=0.008",
+      "source_endpoint_policy_needed_for_exact_T": false,
+      "t_final": 10.0,
+      "t_final_mismatch": 0.0
+    },
+    {
+      "adjusted_h_for_exact_T_using_nearest_steps": 0.2,
+      "case_id": "frictional_pendulum",
+      "ceil_integer_steps": 50,
+      "ceil_integer_t_final": 10.0,
+      "ceil_t_final_mismatch": 0.0,
+      "exact_steps": 50.0,
+      "final_partial_step_fraction_of_h": 0.0,
+      "final_partial_step_size_for_exact_T": 0.0,
+      "floor_integer_steps": 50,
+      "floor_integer_t_final": 10.0,
+      "floor_t_final_mismatch": 0.0,
+      "friction_enabled": true,
+      "h": 0.2,
+      "integer_step_compatible": true,
+      "nearest_integer_steps": 50,
+      "nearest_integer_t_final": 10.0,
+      "relative_h_adjustment_for_exact_T": 0.0,
+      "row_id": "frictional_pendulum:h=0.2",
+      "source_endpoint_policy_needed_for_exact_T": false,
+      "t_final": 10.0,
+      "t_final_mismatch": 0.0
+    }
+  ],
+  "schema": "tfe-source-grid-compatibility-audit-v1",
+  "source_endpoint_compatible_row_ids": [
+    "frictional_pendulum:h=0.008",
+    "frictional_pendulum:h=0.2"
+  ],
+  "source_endpoint_incompatible_row_ids": [
+    "frictionless_pendulum:h=0.003",
+    "frictionless_pendulum:h=0.006",
+    "frictionless_pendulum:h=0.012",
+    "frictional_pendulum:h=0.003"
+  ],
+  "source_endpoint_incompatible_row_ids_demoted_from_source_policy": [
+    "frictionless_pendulum:h=0.003",
+    "frictionless_pendulum:h=0.006",
+    "frictionless_pendulum:h=0.012",
+    "frictional_pendulum:h=0.003"
+  ],
+  "source_grid_policy_resolved_for_exact_T_compatible_rows": true,
+  "source_grid_policy_resolved_for_full_T10": false,
+  "source_policy_rows_completed": 0,
+  "source_policy_spec": "TFE_SOURCE_POLICY_SPEC.json",
+  "source_text_endpoint_convention_audit": {
+    "algorithm_literal_constant_h_until_tn_ge_tfinal": true,
+    "algorithm_literal_rows": [
+      {
+        "algorithm_literal_overshoot": 0.002000000000000668,
+        "algorithm_literal_terminal_time": 10.002,
+        "case_id": "frictionless_pendulum",
+        "friction_enabled": false,
+        "h": 0.003,
+        "hits_exact_T": false,
+        "row_id": "frictionless_pendulum:h=0.003",
+        "steps_to_reach_or_exceed_T": 3334
+      },
+      {
+        "algorithm_literal_overshoot": 0.002000000000000668,
+        "algorithm_literal_terminal_time": 10.002,
+        "case_id": "frictionless_pendulum",
+        "friction_enabled": false,
+        "h": 0.006,
+        "hits_exact_T": false,
+        "row_id": "frictionless_pendulum:h=0.006",
+        "steps_to_reach_or_exceed_T": 1667
+      },
+      {
+        "algorithm_literal_overshoot": 0.008000000000000895,
+        "algorithm_literal_terminal_time": 10.008000000000001,
+        "case_id": "frictionless_pendulum",
+        "friction_enabled": false,
+        "h": 0.012,
+        "hits_exact_T": false,
+        "row_id": "frictionless_pendulum:h=0.012",
+        "steps_to_reach_or_exceed_T": 834
+      },
+      {
+        "algorithm_literal_overshoot": 0.002000000000000668,
+        "algorithm_literal_terminal_time": 10.002,
+        "case_id": "frictional_pendulum",
+        "friction_enabled": true,
+        "h": 0.003,
+        "hits_exact_T": false,
+        "row_id": "frictional_pendulum:h=0.003",
+        "steps_to_reach_or_exceed_T": 3334
+      },
+      {
+        "algorithm_literal_overshoot": 0.0,
+        "algorithm_literal_terminal_time": 10.0,
+        "case_id": "frictional_pendulum",
+        "friction_enabled": true,
+        "h": 0.008,
+        "hits_exact_T": true,
+        "row_id": "frictional_pendulum:h=0.008",
+        "steps_to_reach_or_exceed_T": 1250
+      },
+      {
+        "algorithm_literal_overshoot": 0.0,
+        "algorithm_literal_terminal_time": 10.0,
+        "case_id": "frictional_pendulum",
+        "friction_enabled": true,
+        "h": 0.2,
+        "hits_exact_T": true,
+        "row_id": "frictional_pendulum:h=0.2",
+        "steps_to_reach_or_exceed_T": 50
+      }
+    ],
+    "anchor_count": 9,
+    "anchors": [
+      {
+        "finding": "Algorithm 1 takes a target final time but does not describe a last-step adjustment.",
+        "line": 830,
+        "needle": "Inputs: m, \u03bd, t0 , tfinal"
+      },
+      {
+        "finding": "Algorithm 1 uses a strict less-than final-time loop condition.",
+        "line": 835,
+        "needle": "while tn < tfinal do"
+      },
+      {
+        "finding": "Algorithm 1 advances by the fixed step size h.",
+        "line": 857,
+        "needle": "tn \u2190 tn\u22121 + h"
+      },
+      {
+        "finding": "The frictionless comparison uses published h values that do not divide T=10 exactly.",
+        "line": 1065,
+        "needle": "h = 0.003 and h = 0.006"
+      },
+      {
+        "finding": "The source reference step size is stated, but the endpoint convention is not.",
+        "line": 1274,
+        "needle": "step-size 1e \u2212 4"
+      },
+      {
+        "finding": "The error discussion reports values at a 10 s final time.",
+        "line": 1123,
+        "needle": "tf inal = 10 s"
+      },
+      {
+        "finding": "The frictional comparison mixes one incompatible and one compatible h value.",
+        "line": 1148,
+        "needle": "h = 0.003 and h = 0.008"
+      },
+      {
+        "finding": "The large-step frictional comparison uses a compatible h value.",
+        "line": 1167,
+        "needle": "time-step h = 0.2"
+      },
+      {
+        "finding": "Figure captions repeatedly frame the run as a 10 s simulation.",
+        "line": 1175,
+        "needle": "Computational times for a 10 s simulation"
+      }
+    ],
+    "interpretation": "The paper text supports a fixed-h, loop-until-final-time algorithm outline, but it does not state where error/order values are sampled when h does not divide T=10. Therefore the endpoint convention is not source-policy closed.",
+    "negative_search_terms_found": {
+      "adjusted step": false,
+      "ceil": false,
+      "floor": false,
+      "interpolate": false,
+      "interpolation": true,
+      "last step": false,
+      "nearest integer": false,
+      "partial final step": false,
+      "truncate": true
+    },
+    "source_endpoint_convention_resolved_for_error_sampling": false,
+    "source_text_available": true,
+    "source_text_confirms_adjusted_h_for_exact_T": false,
+    "source_text_confirms_floor_or_nearest_endpoint_sampling": false,
+    "source_text_confirms_interpolation_to_exact_T": false,
+    "source_text_confirms_partial_final_step": false,
+    "source_text_file": "../../external/literature/s11044-026-10153-w.txt",
+    "source_text_line_count": 1587
+  },
+  "status": "source_horizon_step_grid_policy_open",
+  "submission_ready": false
+}

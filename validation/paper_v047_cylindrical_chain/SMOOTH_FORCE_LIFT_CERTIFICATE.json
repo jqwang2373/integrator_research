@@ -1,0 +1,160 @@
+{
+  "accepted_method": "Gauss6/FullVA",
+  "active_direct_pc2_route_source": "D5_DYNAMIC_DIRECT_SUBSTITUTION_CERTIFICATE.json",
+  "certificate_complete": true,
+  "claim_policy": {
+    "allowed_now": [
+      "smooth Brown-McPhee source formula structure is checked",
+      "normal-load regularization and stage-local force lift are checked",
+      "accepted smooth-branch force/friction lift is C7 on the compact proof tube",
+      "sharp-friction case remains a diagnostic caveat"
+    ],
+    "forbidden_now": [
+      "stage_residual_O_h7_implementation_defect_proved",
+      "proof_gap_closed",
+      "submission_ready"
+    ]
+  },
+  "compact_tube_c7_audit": {
+    "checks": {
+      "denominator_bounded_below": true,
+      "fixed_positive_parameters": true,
+      "formula_components_smooth": true,
+      "normal_load_regularized": true,
+      "sharp_branch_excluded": true,
+      "smooth_branch_positive_vs": true,
+      "source_structure_checked": true,
+      "stage_local_lift_checked": true
+    },
+    "derivative_bound_argument": [
+      "The accepted smooth branch fixes stribeck_velocity=0.5, so v/vs has a positive constant denominator.",
+      "The Brown-McPhee curve uses arithmetic, tanh, and a rational term with denominator (0.25*z^2+0.75)^2 >= 0.75^2.",
+      "The normal load uses sqrt(||normal_force||^2 + 1e-24), so the square-root argument is bounded away from zero.",
+      "Constant gravity, external forces, external torques, positive friction radius, and positive viscous damping are fixed parameters.",
+      "On any compact accepted smooth proof tube for the stage variables and multipliers, every derivative through order seven is continuous and attains a finite maximum."
+    ],
+    "derivative_order": 7,
+    "elementary_maps": [
+      "addition",
+      "multiplication",
+      "dot_product",
+      "cross_product",
+      "tanh",
+      "sqrt_on_[1e-24, infinity)",
+      "rational_map_with_denominator_ge_0.75^2"
+    ],
+    "positive_lower_bounds": {
+      "accepted_smooth_stribeck_velocity": 0.5,
+      "normal_load_sqrt_epsilon": 1e-24,
+      "rational_denominator_lower_bound": 0.5625,
+      "sharp_stribeck_velocity_excluded": 0.05,
+      "sqrt_argument_lower_bound": 1e-24,
+      "v043_stribeck_floor": 1e-12
+    },
+    "proved": true,
+    "schema": "compact-smooth-force-c7-audit-v1",
+    "scope": "accepted cylindrical_smooth branch only; assumes the already accepted smooth FullVA stage lift stays in a compact proof tube; excludes the sharp/small-stribeck diagnostic branch and does not prove dynamic-row O(h^7) defect"
+  },
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "formula_checks": {
+    "delegates_v047_to_v043": true,
+    "no_state_sign_or_abs_branch": true,
+    "normal_load_multiplies_curve": true,
+    "positive_denominator_structure": true,
+    "positive_stribeck_floor": true,
+    "rational_static_transition_term": true,
+    "tanh_dynamic_friction_term": true,
+    "viscous_term_present": true
+  },
+  "friction_smoothness_sweep_checks": {
+    "sharp_case_kept_diagnostic": true,
+    "smooth_case_has_high_order": true,
+    "summary_sweep_cases_match_source": true,
+    "summary_sweep_status_ok": true,
+    "summary_sweep_velocity_grid_matches_source": true
+  },
+  "friction_smoothness_sweep_summary": {
+    "h_values": [
+      0.04,
+      0.02,
+      0.01
+    ],
+    "reference_h": 0.005,
+    "sharp_position_order": 1.8935250288226582,
+    "sharp_velocity_order": 2.683371636159996,
+    "smooth_position_order": 7.160828003417382,
+    "smooth_velocity_order": 7.06618253965185,
+    "status": "ok",
+    "stribeck_velocities": [
+      0.5,
+      0.2,
+      0.1,
+      0.05
+    ]
+  },
+  "global_C7_tube_derivative_bound_proved": true,
+  "mathematical_reading": {
+    "brown_mcphee_curve": "mu_d*tanh(4*v/vs) + (mu_s-mu_d)*(v/vs)/(0.25*(v/vs)^2+0.75)^2",
+    "regularized_normal_load": "sqrt(lambda-normal-force dot lambda-normal-force + 1e-24)",
+    "smoothness_scope": "For fixed positive parameters and the regularized normal-load map, the source expression is a composition of smooth arithmetic, tanh, sqrt on a positive argument, and a rational denominator bounded below by 0.75^2. On the accepted compact smooth proof tube this gives finite derivatives through order seven for the force/friction lift."
+  },
+  "normal_load_regularization_checks": {
+    "friction_force_uses_parent_axis": true,
+    "friction_uses_stage_local_normal_load": true,
+    "normal_force_from_lambda_basis": true,
+    "positive_sqrt_regularization": true,
+    "slide_velocity_stage_local": true
+  },
+  "open_proof_boundaries": [
+    "connect those bounds to each Newton-Euler dynamic row after full symbolic expansion",
+    "combine the closed smooth-force certificate with D1-D3/D5-D6 to prove O(h^7) dynamic defect"
+  ],
+  "parameter_checks": {
+    "external_forces_constant_arrays": true,
+    "external_torques_constant_arrays": true,
+    "friction_radius_positive": true,
+    "friction_smoothness_velocities_recorded": true,
+    "mu_d_positive": true,
+    "mu_s_ge_mu_d": true,
+    "mu_s_positive": true,
+    "sharp_case_separate": true,
+    "smooth_case_present": true,
+    "viscous_damping_positive": true
+  },
+  "proof_gap_closed": false,
+  "proof_gap_closed_scope": "false only for this D4 smooth-force certificate; active direct PC2 closure is recorded separately by the D5 direct-substitution route",
+  "schema": "smooth-force-lift-certificate-v1",
+  "sharp_branch": {
+    "case": "cylindrical_sharp",
+    "role": "diagnostic sharp-friction caveat, not the smooth proof branch",
+    "stribeck_velocity": 0.05
+  },
+  "smooth_branch": {
+    "case": "cylindrical_smooth",
+    "role": "accepted smooth-order branch",
+    "stribeck_velocity": 0.5
+  },
+  "smooth_force_lift_consistency_closed": true,
+  "smooth_force_lift_source_structure_checked": true,
+  "source_files": {
+    "v043_brown_mcphee_source": "../../numerics/v043_skew_prismatic_lower_pair/run_v043.py",
+    "v047_residual_source": "../../numerics/v047_cylindrical_chain_pipeline/run_v047.py",
+    "v047_summary": "../../numerics/v047_cylindrical_chain_pipeline/results/summary_v047.json"
+  },
+  "stage_lift_checks": {
+    "force_rows_share_dynamic_stage": true,
+    "uses_same_joint_kinematics_for_force_and_constraints": true,
+    "uses_stage_kinematics": true,
+    "uses_stage_variables": true
+  },
+  "stage_residual_O_h7_implementation_defect_proved": false,
+  "stage_residual_O_h7_implementation_defect_proved_scope": "not proved by this D4 smooth-force certificate alone; this artifact supplies only the compact-tube C7 force/friction lift input",
+  "status": "smooth_force_lift_c7_tube_bound_closed_dynamic_defect_open",
+  "submission_ready": false
+}

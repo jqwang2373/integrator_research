@@ -1,0 +1,227 @@
+{
+  "candidate_vs_source_policy_boundary": {
+    "candidate_scaffold_allowed_use": "diagnostic_scaffold_only_not_source_policy_reproduction",
+    "candidate_scaffold_components": [
+      "source_pendulum_parameter_model",
+      "frictionless_planar_rhs_smoke",
+      "absolute_coordinate_dae_residual_smoke",
+      "bounded_candidate_runner_api",
+      "full_T10_coarse_candidate_probe",
+      "Gauss6_FullVA_source_pendulum_candidate_smoke"
+    ],
+    "candidate_scaffold_present": true,
+    "external_superiority_allowed": false,
+    "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_equivalent": false,
+    "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_implemented": false,
+    "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_required": true,
+    "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_rows_completed": 0,
+    "gauss6_fullva_candidate_smoke_allowed_use": "candidate_smoke_only_not_source_policy_dae_runner",
+    "gauss6_fullva_candidate_smoke_available": true,
+    "gauss6_fullva_candidate_smoke_source_policy_rows_completed": 0,
+    "source_policy_dae_runner_equivalent": false,
+    "source_policy_method_runner_equivalent": false,
+    "source_policy_rows_completed": 0,
+    "source_policy_runner_obligations": [
+      "monolithic_absolute_coordinate_DAE_time_integrator",
+      "source_code_equivalent_Brown_McPhee_friction_law",
+      "TFE_m1_m2_m3_Newmark_beta_trapezoidal_source_policy_method_runners",
+      "Gauss6_FullVA_absolute_coordinate_source_policy_DAE_runner",
+      "accepted_T10_source_policy_work_precision_rows"
+    ],
+    "source_policy_runner_required_for_promotion": true
+  },
+  "claim_policy": {
+    "allowed_now": [
+      "source-policy specification extracted from the TFE paper",
+      "TFE m=3 formal expected order is five",
+      "source paper reports DAE order loss for m=3",
+      "candidate planar source-output runners and a full T=10 coarse probe exist outside source-policy closure"
+    ],
+    "forbidden_now": [
+      "original TFE pendulum rows completed",
+      "TFE source-policy reproduction passed",
+      "Gauss6/FullVA beats original TFE source-policy runs",
+      "source Brown--McPhee friction law fully encoded",
+      "submission ready"
+    ]
+  },
+  "execution_policy": {
+    "heavy_numerical_run_invoked": false,
+    "read_only_extraction": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim": false,
+  "required_next_artifacts": [
+    "promote_source_pendulum_parameter_model_to_absolute_coordinate_dae_runner",
+    "replace_candidate_brown_mcphee_surrogate_with_source_code_equivalent_friction_law",
+    "promote_TFE_m1_m2_m3_Newmark_beta_trapezoidal_candidate_runners_to_source_policy_equivalence",
+    "run_frictionless_and_frictional_h_sweeps_with_source_reference_policy",
+    "add_order_time_work_precision_rows_and_figures",
+    "compare_Gauss6_FullVA_on_identical_source_pendulum_policy_or_demote_suite"
+  ],
+  "runner_gap": {
+    "absolute_coordinate_dae_residual_smoke_implemented": true,
+    "bounded_candidate_runner_api_implemented": true,
+    "brown_mcphee_friction_law_implemented": false,
+    "candidate_friction_law_encoded": true,
+    "external_superiority_allowed": false,
+    "frictionless_planar_rhs_smoke_implemented": true,
+    "full_T10_coarse_candidate_probe_implemented": true,
+    "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_equivalent": false,
+    "gauss6_fullva_absolute_coordinate_source_policy_dae_runner_implemented": false,
+    "gauss6_fullva_on_source_pendulum_implemented": false,
+    "gauss6_fullva_source_pendulum_candidate_smoke_implemented": true,
+    "gauss6_fullva_source_pendulum_candidate_smoke_source_policy_rows_completed": 0,
+    "newmark_trapezoidal_candidate_runner_smoke_implemented": true,
+    "newmark_trapezoidal_runner_implemented": false,
+    "pendulum_dae_runner_implemented": false,
+    "source_error_norm_and_output_policy_encoded": true,
+    "source_pendulum_parameter_model_implemented": true,
+    "source_policy_rows_completed": 0,
+    "source_policy_spec_extracted": true,
+    "tfe_m1_m2_m3_candidate_runner_smoke_implemented": true,
+    "tfe_m1_m2_m3_runner_implemented": false
+  },
+  "schema": "tfe-source-policy-spec-v1",
+  "source_files": {
+    "pdf": "../../external/literature/s11044-026-10153-w.pdf",
+    "text": "../../external/literature/s11044-026-10153-w.txt"
+  },
+  "source_policy": {
+    "body_parameters": {
+      "center_of_mass_x_m": 3.09,
+      "hinge_pin_radius_m": 0.5,
+      "inertia_kg_m2": [
+        [
+          0.05,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.03,
+          0.015
+        ],
+        [
+          0.0,
+          0.015,
+          0.028
+        ]
+      ],
+      "length_m": 2.0,
+      "mass_kg": 10.0
+    },
+    "cases": [
+      {
+        "case_id": "frictionless_pendulum",
+        "comparison_step_sizes": [
+          0.003,
+          0.006
+        ],
+        "error_sweep_h_max": 0.012,
+        "error_sweep_h_min": 0.006,
+        "friction_enabled": false,
+        "reference_h": 0.0001,
+        "t_final": 10.0
+      },
+      {
+        "case_id": "frictional_pendulum",
+        "comparison_step_sizes": [
+          0.003,
+          0.008
+        ],
+        "friction_enabled": true,
+        "large_step_stability_h": 0.2,
+        "reference_h": 0.0001,
+        "t_final": 10.0
+      }
+    ],
+    "friction_parameters": {
+      "law_details_available_in_source_paper": false,
+      "model_family": "Brown--McPhee velocity-based continuous friction model",
+      "mu_dynamic": 0.2,
+      "mu_static": 0.3,
+      "requires_reference_38_39_or_existing_source_code": true
+    },
+    "gravity_axis": "-Y",
+    "hinge_pin": "massless_fixed_at_both_ends",
+    "methods": [
+      {
+        "damping_parameter_nu": 0.99,
+        "expected_order": 1,
+        "method": "TFE_m1"
+      },
+      {
+        "damping_parameter_nu": 0.95,
+        "expected_order": 3,
+        "method": "TFE_m2"
+      },
+      {
+        "damping_parameter_nu": 0.9,
+        "expected_order": 5,
+        "method": "TFE_m3"
+      },
+      {
+        "damping_parameter": null,
+        "expected_order": 2,
+        "method": "trapezoidal"
+      },
+      {
+        "beta": 0.3,
+        "expected_order": 2,
+        "gamma": 0.5,
+        "method": "Newmark_beta"
+      }
+    ],
+    "metrics": [
+      "coordinate_error_order_q",
+      "velocity_error_order_v",
+      "Frobenius_error_norm_eta",
+      "mechanical_energy_deviation",
+      "newton_iterations_per_step",
+      "total_simulation_time",
+      "large_step_stability"
+    ],
+    "model": "rigid_pendulum_revolute_pair",
+    "paper": "Chaturvedi--Sandu--Sandu TFE pendulum suite",
+    "reported_source_observations": {
+      "formula_expected_order": "2m-1",
+      "frictional_order_loss": "larger_than_frictionless_case",
+      "frictionless_TFE_m3_observed_order": "about_fourth_order_in_DAE_experiment",
+      "newmark_beta": "stable_with_beta_0p3_but_large_step_failure_reported_for_friction_case",
+      "trapezoidal_stability": "unstable_across_reported_step_sizes"
+    },
+    "solver_policy": {
+      "default_1e_4_campaign_invoked": false,
+      "jacobian_policy": "central finite difference with sqrt(machine precision) perturbation",
+      "newton_tolerance": 1e-07,
+      "source_reference_h_for_exact_reproduction": 0.0001
+    },
+    "tfe_nodes": {
+      "m1": [
+        "0",
+        "1"
+      ],
+      "m2": [
+        "0",
+        "1/2",
+        "1"
+      ],
+      "m3_equally_spaced": [
+        "0",
+        "1/3",
+        "2/3",
+        "1"
+      ],
+      "m3_gauss_lobatto": [
+        "0",
+        "1/2-sqrt(5)/10",
+        "1/2+sqrt(5)/10",
+        "1"
+      ]
+    }
+  },
+  "status": "source_policy_extracted_candidate_scaffold_present_source_policy_open",
+  "submission_ready": false
+}

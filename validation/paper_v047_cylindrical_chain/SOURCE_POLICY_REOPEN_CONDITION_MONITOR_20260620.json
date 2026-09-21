@@ -1,0 +1,202 @@
+{
+  "b4_source_policy_execution_invoked": false,
+  "date_checked": "2026-06-20",
+  "evidence_policy": {
+    "local_mirror_absence_is_global_absence_proof": false,
+    "monitor_artifact_closes_source_policy_rows": false,
+    "no_positive_reopen_condition_action": "retain_terminal_unable_to_reproduce_not_promoted_disposition",
+    "query_absence_is_global_absence_proof": false
+  },
+  "exact_b4_opt_in_required_for_execution": true,
+  "external_roots_scanned": [
+    "external/sbel-reproducibility",
+    "external/public-metadata"
+  ],
+  "full_archive_gap_status": "full_source_policy_runner_archive_not_ready_source_policy_open",
+  "full_archive_ready_now": false,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked": false,
+  "latest_external_probe_access_limited_count": 4,
+  "latest_external_probe_count": 9,
+  "latest_external_probe_date_checked": "2026-06-21",
+  "latest_external_probe_global_absence_proved": false,
+  "latest_external_probe_marker": "2026-06-21/9/0/0/4/False/False",
+  "latest_external_probe_positive_public_code_artifact_rows": 0,
+  "latest_external_probe_source_policy_reopen_triggered": false,
+  "latest_external_probe_source_policy_rows_closed": 0,
+  "local_positive_reopen_artifact_rows": 0,
+  "local_scan_digest": "f31cbb9cb18b03c9ecfd5aad29ea57e7262efa616c87ddd10a9f0796403cd208",
+  "monitor_evidence_digest": "ca378b553b51b368e589f7961f72894c79398d393bf599fe52a97c3d9b35dc43",
+  "monitored_suites": [
+    {
+      "final_disposition": "unable_to_reproduce_not_promoted",
+      "local_external_mirror_matched_token_count": 0,
+      "local_external_mirror_positive_reopen_artifact_found": false,
+      "public_refresh_positive_public_code_artifact_found": false,
+      "reopen_condition": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+      "row_count": 16,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_promoted": 0,
+      "suite_id": "tfe2026_original_pendulum",
+      "unable_to_reproduce_rows": 16
+    },
+    {
+      "final_disposition": "unable_to_reproduce_not_promoted",
+      "local_external_mirror_matched_token_count": 0,
+      "local_external_mirror_positive_reopen_artifact_found": false,
+      "public_refresh_positive_public_code_artifact_found": false,
+      "reopen_condition": "new_distinct_public_vp2024_velocity_partitioning_code_path",
+      "row_count": 4,
+      "source_policy_reopen_triggered": false,
+      "source_policy_rows_closed": 0,
+      "source_policy_rows_promoted": 0,
+      "suite_id": "vp2024_velocity_partitioning",
+      "unable_to_reproduce_rows": 4
+    }
+  ],
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "positive_public_code_artifact_rows": 0,
+  "public_refresh_current_query_count": 11,
+  "public_refresh_date_checked": "2026-06-20",
+  "public_refresh_latest_external_probe_marker": "2026-06-21/9/0/0/4/False/False",
+  "public_refresh_local_positive_reopen_artifact_rows": 0,
+  "public_refresh_positive_public_code_artifact_rows": 0,
+  "public_refresh_source_policy_reopen_triggered": false,
+  "public_refresh_status": "public_code_refresh_20260620_no_positive_new_source_artifact_rows_remain_unable_to_reproduce",
+  "read_only": true,
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "root_scans": [
+    {
+      "exists": true,
+      "files_scanned": 165,
+      "path": "external/sbel-reproducibility",
+      "suite_summaries": {
+        "tfe2026_original_pendulum": {
+          "matched_token_count": 0,
+          "matched_tokens": {},
+          "positive_reopen_artifact_found": false,
+          "token_count": 5
+        },
+        "vp2024_velocity_partitioning": {
+          "matched_token_count": 0,
+          "matched_tokens": {},
+          "positive_reopen_artifact_found": false,
+          "token_count": 5
+        }
+      },
+      "text_files_scanned": 165
+    },
+    {
+      "exists": true,
+      "files_scanned": 0,
+      "path": "external/public-metadata",
+      "suite_summaries": {
+        "tfe2026_original_pendulum": {
+          "matched_token_count": 0,
+          "matched_tokens": {},
+          "positive_reopen_artifact_found": false,
+          "token_count": 5
+        },
+        "vp2024_velocity_partitioning": {
+          "matched_token_count": 0,
+          "matched_tokens": {},
+          "positive_reopen_artifact_found": false,
+          "token_count": 5
+        }
+      },
+      "text_files_scanned": 0
+    }
+  ],
+  "row_count": 20,
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "safe_actions_without_b4_opt_in": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "schema": "source-policy-reopen-condition-monitor-20260620-v1",
+  "source_artifact_digest_policy": {
+    "excluded_source_files": [
+      "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json"
+    ],
+    "exclusion_reason": "avoids cyclic digest between this monitor and the full archive gap audit that summarizes it",
+    "hashed_source_files": [
+      "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json",
+      "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json"
+    ]
+  },
+  "source_artifact_sha256": {
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json": "e92b91e269ffa830f20f83edcc42d44de8914f9735a6baacddc3f2b1c6163410",
+    "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json": "54c3e9969676c6531b336bce2b2098f7aa3c40cfd1ac0ed9a3d0277dea4ba0f8"
+  },
+  "source_files": [
+    "SOURCE_POLICY_PUBLIC_CODE_REFRESH_20260620.json",
+    "SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_AUDIT.json",
+    "FULL_SOURCE_POLICY_RUNNER_ARCHIVE_GAP_AUDIT.json"
+  ],
+  "source_policy_closed": false,
+  "source_policy_closed_ratio": "0/20",
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_open": true,
+  "source_policy_reopen_triggered": false,
+  "source_policy_rows_closed": 0,
+  "source_policy_rows_open": 20,
+  "source_policy_rows_promoted": 0,
+  "source_policy_rows_total": 20,
+  "status": "reopen_conditions_monitored_no_positive_source_artifact_source_policy_open",
+  "submission_ready": false,
+  "terminal_reopen_conditions": {
+    "tfe2026_original_pendulum": "new_public_or_source_code_equivalent_tfe_implementation_artifact",
+    "vp2024_velocity_partitioning": "new_distinct_public_vp2024_velocity_partitioning_code_path"
+  },
+  "terminal_suite_count": 2,
+  "unable_to_reproduce_rows": 20,
+  "v048_runner_invoked": false
+}

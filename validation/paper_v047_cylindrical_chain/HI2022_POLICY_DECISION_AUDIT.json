@@ -1,0 +1,300 @@
+{
+  "claim_policy": {
+    "allowed_now": [
+      "HI2022 bounded T=0.1 pilot rows as diagnostic evidence",
+      "HI2022 queue/workload planning without default 1e-4"
+    ],
+    "forbidden_now": [
+      "HI2022 full T=8 source-policy reproduction",
+      "HI2022 external-superiority claim",
+      "paper-level direct-error superiority based on HI2022 bounded pilot rows"
+    ]
+  },
+  "decision": "choose_full_T8_reproduction_or_explicit_demotion",
+  "evidence_class": "bounded_pilot_only_not_source_policy_reproduction",
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_audit": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "existing_bounded_evidence": {
+    "execution_paths": [
+      "public_run_function",
+      "state_history_replay"
+    ],
+    "forms": [
+      "rA",
+      "rA_half"
+    ],
+    "group_count": 8,
+    "groups_with_three_step_sizes": 8,
+    "models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "ok_row_count": 24,
+    "policy": "hi2022_bounded_four_example_pilot_not_full_campaign",
+    "reference_h_values": [
+      0.001
+    ],
+    "reference_modes": [
+      "dynamics",
+      "kinematics"
+    ],
+    "reference_policies": [
+      "bounded_rA_dynamics_self_reference",
+      "bounded_rA_kinematics_reference"
+    ],
+    "row_count": 24,
+    "row_groups": {
+      "rA:double_pendulum": {
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "form": "rA",
+        "model": "double_pendulum",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "dynamics"
+        ],
+        "reference_policies": [
+          "bounded_rA_dynamics_self_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA:four_link": {
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "form": "rA",
+        "model": "four_link",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "kinematics"
+        ],
+        "reference_policies": [
+          "bounded_rA_kinematics_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA:single_pendulum": {
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "form": "rA",
+        "model": "single_pendulum",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "kinematics"
+        ],
+        "reference_policies": [
+          "bounded_rA_kinematics_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA:slider_crank": {
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "form": "rA",
+        "model": "slider_crank",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "kinematics"
+        ],
+        "reference_policies": [
+          "bounded_rA_kinematics_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA_half:double_pendulum": {
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "form": "rA_half",
+        "model": "double_pendulum",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "dynamics"
+        ],
+        "reference_policies": [
+          "bounded_rA_dynamics_self_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA_half:four_link": {
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "form": "rA_half",
+        "model": "four_link",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "kinematics"
+        ],
+        "reference_policies": [
+          "bounded_rA_kinematics_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA_half:single_pendulum": {
+        "execution_paths": [
+          "public_run_function"
+        ],
+        "form": "rA_half",
+        "model": "single_pendulum",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "kinematics"
+        ],
+        "reference_policies": [
+          "bounded_rA_kinematics_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      },
+      "rA_half:slider_crank": {
+        "execution_paths": [
+          "state_history_replay"
+        ],
+        "form": "rA_half",
+        "model": "slider_crank",
+        "ok_row_count": 3,
+        "reference_modes": [
+          "kinematics"
+        ],
+        "reference_policies": [
+          "bounded_rA_kinematics_reference"
+        ],
+        "row_count": 3,
+        "step_sizes": [
+          0.005,
+          0.01,
+          0.02
+        ]
+      }
+    },
+    "run_mode": "hi2022_bounded_pilot",
+    "source_suite": "hi2022_fang_kissel_zhang_negrut",
+    "status_counts": {
+      "ok": 24
+    },
+    "step_sizes": [
+      0.005,
+      0.01,
+      0.02
+    ],
+    "t_end_values": [
+      0.1
+    ]
+  },
+  "local_order_boundary": {
+    "accepted_method_dynamic_order_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "accepted_method_dynamic_order_examples_count": 2,
+    "accepted_source_policy_dynamic_order_examples": 0,
+    "local_dynamic_order_examples": [
+      "single_pendulum",
+      "double_pendulum"
+    ],
+    "local_dynamic_order_examples_count": 2,
+    "local_evidence_coverage_examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "local_evidence_coverage_examples_count": 4,
+    "mechanism_coverage_examples": [
+      "four_link",
+      "slider_crank"
+    ],
+    "mechanism_coverage_examples_count": 2,
+    "source_policy_external_superiority_allowed": false
+  },
+  "queue_policy_decision": {
+    "batch_id": "hi2022_halfimplicit_full_policy_decision",
+    "can_parallelize": true,
+    "models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "next_action": "choose full T8 reproduction or explicit demotion before an external-superiority claim",
+    "parallel_shard_count": 8,
+    "public_forms": [
+      "rA_half",
+      "rA"
+    ],
+    "queue_status": "parallel_ready_after_policy_selection",
+    "reference_h": "match_2022_policy",
+    "source_policy_1e-4_required": false,
+    "step_sizes": "match_2022_full_T8_policy_or_report_demotion",
+    "time_horizon": 8.0
+  },
+  "recommended_next_action": "choose_full_T8_reproduction_or_explicit_demotion",
+  "schema": "hi2022-policy-decision-audit-v1",
+  "source_files": {
+    "acceptance_sheet": "EXTERNAL_SAME_TEST_ACCEPTANCE_SHEET.json",
+    "four_example_source_policy_dashboard": "FOUR_EXAMPLE_SOURCE_POLICY_DASHBOARD.json",
+    "rows_csv": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_halfimplicit_rows.csv",
+    "run_queue": "EXTERNAL_SAME_TEST_RUN_QUEUE.json",
+    "summary_v048": "../../numerics/v048_cross_paper_same_test_benchmarks/results/summary_v048.json"
+  },
+  "source_policy_required_before_external_superiority": {
+    "accepted_external_dynamic_order_examples_count": 0,
+    "accepted_for_bounded_evidence": true,
+    "accepted_for_external_superiority": false,
+    "accepted_source_policy_dynamic_order_examples_count": 0,
+    "external_superiority_claim_allowed": false,
+    "full_T8_policy_completed": false,
+    "full_T8_policy_required": true,
+    "paper_direct_error_superiority_allowed": false,
+    "source_policy_reproduction_closed": false
+  },
+  "source_suite": "hi2022_fang_kissel_zhang_negrut",
+  "status": "bounded_T0p1_rows_complete_full_T8_source_policy_open",
+  "submission_ready": false,
+  "suite_id": "hi2022_half_implicit"
+}

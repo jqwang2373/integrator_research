@@ -1,18 +1,18 @@
-# local shallow clone of https://github.com/uwsbel/public-metadata (2 GB); restore with git clone, not tracked here
+# local shallow clone of https://github.com/uwsbel/public-metadata (no working tree); restore with git clone
 external/public-metadata/
-# Python caches and the project virtual environment (recreate with uv; see lie_group_integrator_work docs)
+# Python caches and the project virtual environment (uv, Python 3.11; see validation/README.md)
 __pycache__/
 *.pyc
-lie_group_integrator_work/.venv_sbel/
+.venv_sbel/
 # LaTeX build byproducts (logs and PDFs stay tracked because validators read them)
 *.aux
 *.fls
 *.fdb_latexmk
 *.spl
 *.synctex.gz
-lie_group_integrator_work/paper_v047_cylindrical_chain/**/*.out
-lie_group_integrator_work/paper_v047_cylindrical_chain/*.out
-slides/**/*.out
-slides/*.out
-lie_group_integrator_work/paper/**/*.out
-lie_group_integrator_work/paper/*.out
+*.nav
+*.snm
+*.toc
+paper/**/*.out
+paper/*.out
+validation/legacy_drafts/*.out

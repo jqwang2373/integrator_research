@@ -1,0 +1,184 @@
+{
+  "candidate_file_count": 10,
+  "candidate_python_file_count": 1,
+  "candidate_python_line_count": 180,
+  "direct_pc2_proof_gap_closed": true,
+  "files": [
+    {
+      "bytes": 25097,
+      "path": "data/PAPER_NUMERICAL_RESULT_MATRIX.csv",
+      "role": "paper_evidence_artifact",
+      "sha256": "5eef4f7415bc5ec88bb60cdcf139a0bd8389e3c9f8ec37750a158e7dacda66a9",
+      "source": "PAPER_NUMERICAL_RESULT_MATRIX.csv"
+    },
+    {
+      "bytes": 62850,
+      "path": "data/PAPER_NUMERICAL_RESULT_MATRIX.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "c61a1f6f6d48c7ab03a63d5aefa145cacaf45081ec7ef61bc62325d4d5303a0c",
+      "source": "PAPER_NUMERICAL_RESULT_MATRIX.json"
+    },
+    {
+      "bytes": 12374,
+      "path": "data/PAPER_NUMERICAL_RESULT_MATRIX.md",
+      "role": "paper_evidence_artifact",
+      "sha256": "df4e8801c0a1c9753a98a5734998cf1bf270fef84482e064f650bde833ebfb3b",
+      "source": "PAPER_NUMERICAL_RESULT_MATRIX.md"
+    },
+    {
+      "bytes": 8671,
+      "path": "data/FOUR_EXAMPLE_SOURCE_POLICY_DASHBOARD.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "8ed2336ffbfe87e5836cf52cf89eaaf97a71d4ae01bb90cef2646aef3ee41d98",
+      "source": "FOUR_EXAMPLE_SOURCE_POLICY_DASHBOARD.json"
+    },
+    {
+      "bytes": 3918,
+      "path": "data/RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "e4c94457dadd1714c8f6045ae5ddb5736eef56b94e2823efdfd7b1d9556aea54",
+      "source": "RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json"
+    },
+    {
+      "bytes": 472131,
+      "path": "data/CMAME_REVIEW_AGENT_REPORT.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "6a5d92d1cf339a28c81eea7175b6f6186c5ea7effc1844aaed5ac180feb838fb",
+      "source": "CMAME_REVIEW_AGENT_REPORT.json"
+    },
+    {
+      "bytes": 211073,
+      "path": "data/PROOF_CLOSURE_MANIFEST.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "6bfad97ea1e0e44b62df289ab72b3e635e790489e2e53c193598c6f8ebaa8197",
+      "source": "PROOF_CLOSURE_MANIFEST.json"
+    },
+    {
+      "bytes": 50544,
+      "path": "data/NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "15790e2d87df46b924ddd9a6fa1f793dc1dd301725117e6156ea66394e817e7d",
+      "source": "NEWTON_EULER_SYMBOLIC_TARGET_AUDIT.json"
+    },
+    {
+      "bytes": 12575,
+      "path": "data/CLAIM_BOUNDARY.json",
+      "role": "paper_evidence_artifact",
+      "sha256": "a0cb8d2be83ce59cc0e74cdcc071071e698ed7cf02b58ad9aee9702a75139db2",
+      "source": "CLAIM_BOUNDARY.json"
+    },
+    {
+      "bytes": 8654,
+      "path": "scripts/replay_paper_matrix.py",
+      "python_lines": 180,
+      "role": "bounded_common_reference_result_replay",
+      "sha256": "198b413099786c1e2db1b804ce48d5cf9625f2a1fb007ff35e6058dab1f27d47",
+      "source": "generated"
+    }
+  ],
+  "forbidden_claims": [
+    "submission_ready_true",
+    "source_policy_external_superiority_true",
+    "minimal_submission_code_ready_true",
+    "accepted_residual_to_error_theorem_true"
+  ],
+  "matrix_summary": {
+    "direct_nonlocal_velocity_error_comparisons": 40,
+    "direct_nonlocal_velocity_error_wins": 40,
+    "direct_nonlocal_velocity_order_comparisons": 40,
+    "direct_nonlocal_velocity_order_wins": 40,
+    "examples": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "method_count": 11,
+    "methods": [
+      "local_Gauss6_FullVA",
+      "hi2022_rA",
+      "hi2022_rA_half",
+      "ra2021_rA",
+      "ra2021_reps",
+      "ra2021_rp",
+      "tfe2026_Newmark_beta",
+      "tfe2026_TFE_m1",
+      "tfe2026_TFE_m2",
+      "tfe2026_trapezoidal",
+      "vp2024_coordinate_partitioning_rA"
+    ],
+    "raw_row_count": 132,
+    "row_count": 44
+  },
+  "minimal_submission_code_ready": false,
+  "objective_blocker_matrix": {
+    "blocker_closure_allowed_by_id": {
+      "OC12": false,
+      "OC4": false,
+      "OC6": false
+    },
+    "blocker_closure_decision_by_id": {
+      "OC12": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+      "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
+      "OC6": "remain_open_no_positive_source_equivalent_artifact"
+    },
+    "blocker_open_by_id": {
+      "OC12": true,
+      "OC4": true,
+      "OC6": true
+    },
+    "decision": "do_not_submit_global",
+    "objective_blocker_open_by_id": {
+      "OC12": true,
+      "OC4": true,
+      "OC6": true
+    },
+    "open_blockers": [
+      "OC4",
+      "OC6",
+      "OC12"
+    ],
+    "submission_standard_met": false
+  },
+  "package_dir": "cmame_minimal_reproducibility_candidate",
+  "paper_result_scope": "bounded_common_reference_only",
+  "proof_gap_closed": true,
+  "proof_gap_closed_reading_rule": "The schema-only compatibility boolean proof_gap_closed is a schema-compatible shorthand for direct_pc2_proof_gap_closed and is scoped to the active direct PC2 residual-bridge/Kantorovich proof closure. Reader-facing proof status should use direct_pc2_proof_gap_closed. The compatibility boolean does not close the primitive 162-subterm Taylor lane, source-policy rows, P6 solver-policy evidence, or P7 residual-to-error promotion.",
+  "proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+  "proof_summary": {
+    "certified_non_dynamic_rows": 96,
+    "newton_euler_obligation_coverage_matrix_complete": true,
+    "newton_euler_row_obligation_links": 180,
+    "open_dynamic_rows": 36
+  },
+  "read_only_replay_package": true,
+  "reviewer_facing_code_policy": {
+    "candidate_code_size_ok": true,
+    "candidate_replay_only": true,
+    "candidate_runner_centered": false,
+    "minimal_submission_code_ready": false,
+    "primary_submission_package_required": true
+  },
+  "schema": "cmame-minimal-reproducibility-candidate-v1",
+  "schema_compatibility": {
+    "legacy_key": "proof_gap_closed",
+    "legacy_key_retained_for_schema_compatibility": true,
+    "preferred_key": "direct_pc2_proof_gap_closed"
+  },
+  "source_policy_closed_rows": 0,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_total_rows": 40,
+  "source_repository_context": {
+    "full_audit_code_bloat_risk_for_submission": true,
+    "full_audit_python_lines": 230217,
+    "research_audit_primary_submission_allowed": false,
+    "research_audit_primary_submission_line_limit": 20000,
+    "research_audit_provenance_only": true,
+    "research_audit_too_large_for_primary_submission": true,
+    "reviewer_facing_python_file_limit": 12,
+    "reviewer_facing_python_line_limit": 2000
+  },
+  "stage_residual_O_h7_implementation_defect_proved": true,
+  "status": "candidate_replay_package_built_not_submission_ready",
+  "submission_ready": false
+}

@@ -1,0 +1,138 @@
+{
+  "b6_local_evidence_runner_passed": true,
+  "closed_loop_candidate_rows": 6,
+  "closed_loop_candidate_self_contained_simulation_runner": true,
+  "closed_loop_candidate_status": "closed_loop_self_contained_candidate_rows_passed_not_source_policy",
+  "direct_residual_bridge_proof_gap_closed": true,
+  "double_pendulum": {
+    "imports_v047_v048_or_v029": false,
+    "mode": "self_contained_simulation",
+    "position_order": 6.01071161969125,
+    "proof_gap_closed_by_local_runner": false,
+    "ready": true,
+    "rows": 3,
+    "velocity_order": 6.009704989719966
+  },
+  "errors": [],
+  "examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "four_link": {
+    "mode": "self_contained_simulation",
+    "omega_order": 5.971421238692113,
+    "orientation_order": 5.955195227478643,
+    "position_order": 5.954897911118808,
+    "ready": true,
+    "velocity_order": 6.08481873098771
+  },
+  "generated_from": [
+    "cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+    "cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+    "cmame_closed_loop_local_runner_candidate/scripts/run_closed_loop_fullva_candidate.py",
+    "PROOF_CLOSURE_MANIFEST.json",
+    "CMAME_REVIEW_AGENT_REPORT.json"
+  ],
+  "global_proof_gap_closed": true,
+  "global_proof_gap_closed_scope": "direct_residual_bridge_kantorovich_route_closed_primitive_taylor_conditional_schema_open",
+  "human_runnable_four_example_local_evidence_available": true,
+  "human_runnable_four_example_self_contained_simulation_ready": true,
+  "local_rows": 12,
+  "replay_only_examples": [],
+  "run_v047_invoked": false,
+  "run_v048_invoked": false,
+  "runner_invocations": [
+    {
+      "command": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/validation/paper_v047_cylindrical_chain/../../.venv_sbel/bin/python /mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/validation/paper_v047_cylindrical_chain/cmame_p1_single_runner_candidate/scripts/run_single_pendulum_fullva.py",
+      "example": "single_pendulum",
+      "id": "single_pendulum_self_contained",
+      "mode": "self_contained_simulation",
+      "output_tail": [
+        "p1_single_runner_candidate=PASS",
+        "example=single_pendulum",
+        "rows=3",
+        "position_order=6.013317",
+        "velocity_order=6.006882",
+        "p1_single_only_ready=True",
+        "p1_complete=False",
+        "source_policy_external_superiority_allowed=False",
+        "local_runner_proof_gap_closed=False"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "summary": "cmame_p1_single_runner_candidate/results/single_pendulum_summary.json"
+    },
+    {
+      "command": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/validation/paper_v047_cylindrical_chain/../../.venv_sbel/bin/python /mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/validation/paper_v047_cylindrical_chain/cmame_p1_double_runner_candidate/scripts/run_double_pendulum_fullva.py",
+      "example": "double_pendulum",
+      "id": "double_pendulum_self_contained",
+      "mode": "self_contained_simulation",
+      "output_tail": [
+        "p1_double_runner_candidate=PASS",
+        "example=double_pendulum",
+        "rows=3",
+        "position_order=6.010712",
+        "velocity_order=6.009705",
+        "finest_position_error=3.099743e-13",
+        "finest_velocity_error=2.345589e-13",
+        "p1_double_only_ready=True",
+        "p1_complete=False",
+        "imports_v047_v048_or_v029=False",
+        "source_policy_external_superiority_allowed=False",
+        "local_runner_proof_gap_closed=False"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "summary": "cmame_p1_double_runner_candidate/results/double_pendulum_summary.json"
+    },
+    {
+      "command": "/mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/validation/paper_v047_cylindrical_chain/../../.venv_sbel/bin/python /mnt/c/Users/jingquanw/OneDrive - NVIDIA Corporation/Desktop/jingquan-autoresearch/validation/paper_v047_cylindrical_chain/cmame_closed_loop_local_runner_candidate/scripts/run_closed_loop_fullva_candidate.py",
+      "example": "four_link,slider_crank",
+      "id": "four_link_slider_crank_closed_loop_self_contained",
+      "mode": "self_contained_simulation",
+      "output_tail": [
+        "cmame_closed_loop_local_runner_candidate=PASS",
+        "rows_ok=6/6",
+        "four_link_orders=5.954898/5.955195/6.084819/5.971421",
+        "slider_crank_orders=6.163687/6.158976/7.340920/6.425500",
+        "self_contained_simulation_runner=True",
+        "source_policy_external_superiority_allowed=False"
+      ],
+      "passed": true,
+      "returncode": 0,
+      "summary": "cmame_closed_loop_local_runner_candidate/results/closed_loop_local_summary.json"
+    }
+  ],
+  "runner_tail_proof_gap_closed_scope": "runner-tail local_runner_proof_gap_closed=False is local-runner proof closure only; direct_residual_bridge_proof_gap_closed is the proof-manifest status",
+  "schema": "b6-four-example-local-evidence-summary-v1",
+  "self_contained_examples": [
+    "single_pendulum",
+    "double_pendulum",
+    "four_link",
+    "slider_crank"
+  ],
+  "single_pendulum": {
+    "imports_v047_or_v048": false,
+    "mode": "self_contained_simulation",
+    "position_order": 6.013317461143006,
+    "proof_gap_closed_by_local_runner": false,
+    "ready": true,
+    "rows": 3,
+    "velocity_order": 6.006882393965576
+  },
+  "slider_crank": {
+    "mode": "self_contained_simulation",
+    "omega_order": 6.425500310886128,
+    "orientation_order": 6.1589759629934155,
+    "position_order": 6.163687310333313,
+    "ready": true,
+    "velocity_order": 7.3409196849286005
+  },
+  "source_policy_external_rows_closed": 0,
+  "source_policy_external_rows_total": 40,
+  "source_policy_external_superiority_allowed": false,
+  "status": "four_example_local_evidence_runnable_source_policy_open",
+  "submission_ready": false
+}

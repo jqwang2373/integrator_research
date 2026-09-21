@@ -1,0 +1,188 @@
+{
+  "b4_source_policy_execution_invoked": false,
+  "blocker_closure_allowed_by_id": {
+    "OC12": false,
+    "OC4": false,
+    "OC6": false
+  },
+  "blocker_closure_decision_by_id": {
+    "OC12": "remain_partial_narrowed_replay_ready_full_source_policy_archive_not_ready",
+    "OC4": "remain_open_ready_for_authorized_execution_not_executed_not_promoted",
+    "OC6": "remain_open_no_positive_source_equivalent_artifact"
+  },
+  "blocker_open_by_id": {
+    "OC12": true,
+    "OC4": true,
+    "OC6": true
+  },
+  "brown_mcphee_source_code_equivalent_law": false,
+  "brown_mcphee_transition_velocity_policy_resolved_from_source": false,
+  "can_close_now": false,
+  "candidate_evidence_allowed_use": "local_dissipativity_residual_sensitivity_diagnostic_only",
+  "candidate_frictional_dae_trajectory_contract": {
+    "brown_mcphee_source_code_equivalent_law": false,
+    "monolithic_absolute_coordinate_dae_time_integrator": false,
+    "row_count": 12,
+    "source_policy_dae_runner_equivalent": false,
+    "source_policy_method_runner_equivalent": false,
+    "source_policy_rows_completed": 0,
+    "step_residual_row_count": 56
+  },
+  "certificate_available": true,
+  "certificate_kind": "current_package_negative_equivalence_certificate",
+  "closure_decision": {
+    "can_certify_source_code_equivalent_law_now": false,
+    "can_close_brown_mcphee_source_code_equivalent_law_now": false,
+    "can_promote_frictional_tfe_source_policy_rows_now": false,
+    "reason": "The current package proves only a Brown--McPhee-family surrogate: the source text reports mu_s/mu_d and names the model family, but the transition velocity, normal-load coupling, damping/default policy, and implementation-level source code binding remain unavailable. This certificate therefore records a negative source-code-equivalence decision."
+  },
+  "exact_b4_opt_in_required_for_execution": true,
+  "external_superiority_claim_allowed": false,
+  "formula_equivalence_gap": {
+    "encoded_candidate_formula": "tau = -R N [mu_d tanh(4 omega/vs) + (mu_s-mu_d)(omega/vs)/(0.25(omega/vs)^2+0.75)^2] - c tanh(4) omega",
+    "missing_for_source_policy_equivalence": [
+      "transition/Stribeck velocity used by the source experiments",
+      "source-code treatment of normal-load coupling and joint multipliers",
+      "source-code treatment of viscous damping or zero-viscous default",
+      "source implementation tolerance/Jacobian coupling for friction rows",
+      "Brown--McPhee reference source code or Refs. 38--39 implementation details",
+      "complete law details are not available in the TFE source paper text"
+    ],
+    "missing_item_count": 6,
+    "required_to_promote": [
+      "source-code or Refs. 38--39 transition/Stribeck velocity",
+      "source-code normal-load and joint-multiplier coupling policy",
+      "source-code viscous damping or zero-viscous default policy",
+      "source implementation tolerance/Jacobian coupling for friction rows",
+      "source-equivalent absolute-coordinate DAE and method-runner contracts"
+    ],
+    "required_to_promote_count": 5
+  },
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked": false,
+  "local_surrogate_provenance": {
+    "accepted_source_policy_equivalence": false,
+    "provenance_label": "v022_revolute_brown_mcphee_surrogate_not_source_policy_equivalent",
+    "v021_formula_mentions_componentwise_surrogate": true,
+    "v021_readme": "../../numerics/v021_brown_mcphee_lambda_friction/README.md",
+    "v021_readme_present": true,
+    "v021_run_present": true,
+    "v022_formula_matches_candidate_family": true,
+    "v022_local_stribeck_velocity_cases": [
+      0.5,
+      0.05
+    ],
+    "v022_readme": "../../numerics/v022_revolute_brown_mcphee/README.md",
+    "v022_readme_present": true,
+    "v022_run_has_matching_candidate_function": true,
+    "v022_run_present": true
+  },
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "nonheavy_contract_block_closed": false,
+  "objective_blocker_matrix_status": "global_objective_blockers_remain_open",
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "positive_source_code_equivalence_certified": false,
+  "read_only": true,
+  "referenced_detail_sources": {
+    "reference_38_boundary": "bibliographic pointer only in current package; no implementation constants or code binding available",
+    "reference_38_local_full_text_or_source_code_present": false,
+    "reference_39_boundary": "bibliographic pointer only in current package; no transition velocity or coupling policy extracted",
+    "reference_39_local_full_text_or_source_code_present": false
+  },
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "row_audit_gap_status": {
+    "can_resolve_without_heavy_run": true,
+    "first_required_artifact": "Brown--McPhee source-code-equivalent friction-law certificate",
+    "gap_id": "brown_mcphee_source_code_equivalent_law_open",
+    "gap_status": "open"
+  },
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "safe_actions_without_b4_opt_in": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "schema": "tfe-brown-mcphee-source-code-equivalence-certificate-v1",
+  "source_files": {
+    "brown_mcphee_source_law_boundary": "TFE_BROWN_MCPHEE_SOURCE_LAW_BOUNDARY_AUDIT.json",
+    "source_policy_friction_spec_status": false,
+    "source_policy_row_audit": "TFE_SOURCE_POLICY_ROW_AUDIT.json",
+    "source_policy_spec": "TFE_SOURCE_POLICY_SPEC.json"
+  },
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_friction_spec_boundary": {
+    "law_details_available_in_source_paper": false,
+    "model_family": "Brown--McPhee velocity-based continuous friction model",
+    "mu_dynamic": 0.2,
+    "mu_static": 0.3,
+    "requires_reference_38_39_or_existing_source_code": true
+  },
+  "source_policy_rows_completed": 0,
+  "source_policy_rows_promoted": 0,
+  "source_text_evidence": {
+    "defers_law_details_to_refs_38_39": true,
+    "line_anchor_count": 6,
+    "line_anchors_found": 6,
+    "names_velocity_based_continuous_model": true,
+    "reports_mu_static_dynamic": true,
+    "source_text_found": true
+  },
+  "status": "negative_source_code_equivalence_certificate_not_source_policy",
+  "submission_ready": false,
+  "transition_velocity_sensitivity": {
+    "all_contract_equivalence_flags_false": true,
+    "contract_row_count": 36,
+    "endpoint_delta_row_count": 3,
+    "max_endpoint_coordinate_delta_vs_baseline": 2.8991542837530915e-06,
+    "max_endpoint_velocity_delta_vs_baseline": 0.00023551663524623567,
+    "missing_transition_velocity_is_numerically_material": true,
+    "source_policy_rows_completed": 0,
+    "status": "candidate_transition_velocity_sensitivity_recorded_not_source_policy"
+  },
+  "v048_runner_invoked": false
+}

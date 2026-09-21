@@ -1,0 +1,649 @@
+{
+  "accepted_external_dynamic_order_examples_count": 0,
+  "accepted_for_bounded_evidence": true,
+  "accepted_for_external_superiority": false,
+  "accepted_source_policy_dynamic_order_examples_count": 0,
+  "active_b2_flagged_rows": 3,
+  "active_b2_flagged_rows_after_demotion": 0,
+  "audited_active_rows": 3,
+  "b4_b7_figure_scope_decision": {
+    "allowed_figure_use": [
+      "bounded diagnostic rows",
+      "T=8 failure/stability demotion evidence"
+    ],
+    "b4_b7_can_close_from_hi2022": false,
+    "counts_as_clean_work_precision_figure": false,
+    "forbidden_figure_use": [
+      "source-policy external-superiority curve",
+      "publication-grade B4/B7 work/precision closure row"
+    ],
+    "reason": "Current T=8 evidence is useful for stability and failure-boundary diagnosis, but it does not complete the full public source-policy grid or a promoted work/precision curve.",
+    "source_policy_rows_closed_by_hi2022": 0,
+    "status": "demote_hi2022_from_b4_b7_source_policy_figures"
+  },
+  "bounded_group_count": 8,
+  "bounded_groups_with_three_step_sizes": 8,
+  "bounded_ok_row_count": 24,
+  "bounded_pilot_groups_completed": 8,
+  "bounded_pilot_groups_required": 8,
+  "bounded_pilot_rows_ok": 24,
+  "bounded_reference_h_values": [
+    0.001
+  ],
+  "bounded_row_count": 24,
+  "bounded_step_sizes": [
+    0.005,
+    0.01,
+    0.02
+  ],
+  "bounded_t_end_values": [
+    0.1
+  ],
+  "closure_criteria": {
+    "bounded_T0p1_rows_ok": true,
+    "bounded_eight_form_model_groups_complete": true,
+    "explicit_demotion_recorded_for_hi2022": true,
+    "full_T8_public_policy_completed": false,
+    "full_T8_public_policy_required": true,
+    "hi2022_b4_b7_figure_scope_demotion_recorded": true,
+    "rerun_or_independent_verification_artifact_present": false,
+    "runtime_iteration_metric_tied_to_source_policy_rows": false,
+    "selected_T8_candidate_artifact_present": true,
+    "selected_T8_candidate_promoted_to_source_policy": false,
+    "source_policy_reproduction_closed": false,
+    "velocity_mapping_and_error_norm_closed": false
+  },
+  "decision": {
+    "can_close_hi2022_b2_requirement_now": false,
+    "reason": "The existing HI2022 rows are a bounded T=0.1 pilot with three coarse step sizes. They cover all four models and both public forms, but they do not reproduce the full T=8 source-paper policy and therefore cannot support a source-policy external-superiority claim. The B2 requirement is now removed from active external-superiority scope by explicit demotion.",
+    "required_to_close": [
+      "choose and document full T=8 public-policy h/reference setup or explicitly demote the suite",
+      "identify the public half-implicit code path used for each accepted row",
+      "close the velocity mapping and error norm policy for source-policy rows",
+      "tie runtime/iteration and diagnostic metrics to the accepted source-policy rows",
+      "produce a full-policy rerun artifact or an explicit demotion artifact"
+    ]
+  },
+  "demoted_b2_flagged_rows": 3,
+  "evidence_class": "bounded_pilot_only_not_source_policy_reproduction",
+  "execution_policy": {
+    "default_1e_4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "read_only_existing_artifacts": true,
+    "run_v047_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "external_superiority_claim_allowed": false,
+  "external_superiority_ready_rows": 0,
+  "full_T8_policy_completed": false,
+  "full_T8_policy_required": true,
+  "queue_policy": {
+    "batch_id": "hi2022_halfimplicit_full_policy_decision",
+    "models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "parallel_shard_count": 8,
+    "public_forms": [
+      "rA_half",
+      "rA"
+    ],
+    "queue_status": "parallel_ready_after_policy_selection",
+    "source_policy_1e_4_required": false,
+    "time_horizon": 8.0
+  },
+  "rows": [
+    {
+      "bounded_acc_order": 0.9953344933750605,
+      "bounded_execution_paths": [
+        "state_history_replay"
+      ],
+      "bounded_group_key": "rA:four_link",
+      "bounded_h_values": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "bounded_ok_row_count": 3,
+      "bounded_pos_order": 0.03355709792926145,
+      "bounded_reference_h": 0.001,
+      "bounded_reference_mode": "kinematics",
+      "bounded_reference_policy": "bounded_rA_kinematics_reference",
+      "bounded_row_count": 3,
+      "bounded_t_end": 0.1,
+      "bounded_vel_order": 1.0027928353008617,
+      "example": "four_link",
+      "external_superiority_ready": false,
+      "form": "rA",
+      "full_T8_source_policy_completed": false,
+      "method": "hi2022_rA",
+      "remaining_required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "row_index": 1,
+      "source_policy_closed": false,
+      "source_policy_reproduction": false
+    },
+    {
+      "bounded_acc_order": -1.112786767029119,
+      "bounded_execution_paths": [
+        "public_run_function"
+      ],
+      "bounded_group_key": "rA_half:double_pendulum",
+      "bounded_h_values": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "bounded_ok_row_count": 3,
+      "bounded_pos_order": -1.1021219021188444,
+      "bounded_reference_h": 0.001,
+      "bounded_reference_mode": "dynamics",
+      "bounded_reference_policy": "bounded_rA_dynamics_self_reference",
+      "bounded_row_count": 3,
+      "bounded_t_end": 0.1,
+      "bounded_vel_order": -1.1822478983424192,
+      "example": "double_pendulum",
+      "external_superiority_ready": false,
+      "form": "rA_half",
+      "full_T8_source_policy_completed": false,
+      "method": "hi2022_rA_half",
+      "remaining_required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "row_index": 2,
+      "source_policy_closed": false,
+      "source_policy_reproduction": false
+    },
+    {
+      "bounded_acc_order": 0.9953344905378425,
+      "bounded_execution_paths": [
+        "state_history_replay"
+      ],
+      "bounded_group_key": "rA_half:four_link",
+      "bounded_h_values": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "bounded_ok_row_count": 3,
+      "bounded_pos_order": -0.010766580774816426,
+      "bounded_reference_h": 0.001,
+      "bounded_reference_mode": "kinematics",
+      "bounded_reference_policy": "bounded_rA_kinematics_reference",
+      "bounded_row_count": 3,
+      "bounded_t_end": 0.1,
+      "bounded_vel_order": 1.0027928352635627,
+      "example": "four_link",
+      "external_superiority_ready": false,
+      "form": "rA_half",
+      "full_T8_source_policy_completed": false,
+      "method": "hi2022_rA_half",
+      "remaining_required_evidence": [
+        "full T=8 public-policy step-size/reference decision",
+        "public half-implicit code path identity",
+        "velocity mapping and error norm check",
+        "runtime/iteration and energy-or-constraint metric policy",
+        "full-policy rerun artifact or explicit demotion"
+      ],
+      "row_index": 3,
+      "source_policy_closed": false,
+      "source_policy_reproduction": false
+    }
+  ],
+  "schema": "hi2022-source-policy-row-audit-v1",
+  "source_files": {
+    "b2_remaining_work_manifest": "B2_SOURCE_POLICY_REMAINING_WORK_MANIFEST.json",
+    "external_case_evidence_reconciliation": "EXTERNAL_CASE_EVIDENCE_RECONCILIATION.json",
+    "external_same_test_acceptance_sheet": "EXTERNAL_SAME_TEST_ACCEPTANCE_SHEET.json",
+    "external_same_test_run_queue": "EXTERNAL_SAME_TEST_RUN_QUEUE.json",
+    "hi2022_T8_coarse_model_shards": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_T8_coarse_model_shards",
+    "hi2022_T8_selected_candidate_matrix_script": "../../numerics/v048_cross_paper_same_test_benchmarks/run_hi2022_full_t8_source_policy_candidate.py",
+    "hi2022_T8_selected_candidate_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_rows.csv",
+    "hi2022_T8_selected_candidate_summary": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_summary.json",
+    "hi2022_halfimplicit_rows": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_halfimplicit_rows.csv",
+    "hi2022_policy_decision_audit": "HI2022_POLICY_DECISION_AUDIT.json",
+    "hi2022_workload_estimate": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_workload_estimate.csv",
+    "summary_v048": "../../numerics/v048_cross_paper_same_test_benchmarks/results/summary_v048.json"
+  },
+  "source_policy_closed_rows": 0,
+  "source_policy_external_superiority_allowed": false,
+  "source_policy_reproduction_closed": false,
+  "source_suite": "hi2022_fang_kissel_zhang_negrut",
+  "status": "bounded_T0p1_rows_complete_full_T8_source_policy_rows_not_closed",
+  "submission_ready": false,
+  "suite_id": "hi2022_half_implicit",
+  "t8_coarse_horizon_evidence": {
+    "artifact_dir": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_T8_coarse_model_shards",
+    "artifact_present": true,
+    "complete_form_model_groups": 4,
+    "contains_source_policy_1e_4_rows": false,
+    "default_1e_4_required": false,
+    "failed_row_count": 6,
+    "full_T8_policy_completed": false,
+    "group_count": 8,
+    "groups": {
+      "rA:double_pendulum": {
+        "acceleration_order": 0.536461761853677,
+        "complete_three_step_group": true,
+        "failed_row_count": 0,
+        "max_iterations": 32.0,
+        "ok_row_count": 3,
+        "position_order": 1.1881357901449592,
+        "row_count": 3,
+        "status_values": [
+          "ok"
+        ],
+        "velocity_order": 0.6785202717684979
+      },
+      "rA:four_link": {
+        "acceleration_order": 1.0659430501135896,
+        "complete_three_step_group": true,
+        "failed_row_count": 0,
+        "max_iterations": 100.0,
+        "ok_row_count": 3,
+        "position_order": 0.016386870582001428,
+        "row_count": 3,
+        "status_values": [
+          "ok"
+        ],
+        "velocity_order": 1.0055172192452555
+      },
+      "rA:single_pendulum": {
+        "acceleration_order": 0.763086531018352,
+        "complete_three_step_group": true,
+        "failed_row_count": 0,
+        "max_iterations": 12.0,
+        "ok_row_count": 3,
+        "position_order": -0.2129629077107894,
+        "row_count": 3,
+        "status_values": [
+          "ok"
+        ],
+        "velocity_order": 1.0040874919720277
+      },
+      "rA:slider_crank": {
+        "acceleration_order": null,
+        "complete_three_step_group": false,
+        "failed_row_count": 1,
+        "max_iterations": 37.0,
+        "ok_row_count": 2,
+        "position_order": null,
+        "row_count": 3,
+        "status_values": [
+          "failed:ValueError:array must not contain infs or NaNs",
+          "ok"
+        ],
+        "velocity_order": null
+      },
+      "rA_half:double_pendulum": {
+        "acceleration_order": null,
+        "complete_three_step_group": false,
+        "failed_row_count": 3,
+        "max_iterations": 0.0,
+        "ok_row_count": 0,
+        "position_order": null,
+        "row_count": 3,
+        "status_values": [
+          "failed:RuntimeError:Newton-Raphson not converging at t: 5.000, k: 100",
+          "failed:RuntimeError:Newton-Raphson not converging at t: 5.275, k: 100",
+          "failed:RuntimeError:Newton-Raphson not converging at t: 5.850, k: 100"
+        ],
+        "velocity_order": null
+      },
+      "rA_half:four_link": {
+        "acceleration_order": null,
+        "complete_three_step_group": false,
+        "failed_row_count": 1,
+        "max_iterations": 25.0,
+        "ok_row_count": 2,
+        "position_order": null,
+        "row_count": 3,
+        "status_values": [
+          "failed:RuntimeError:Newton-Raphson not converging at t: 0.700, k: 100",
+          "ok"
+        ],
+        "velocity_order": null
+      },
+      "rA_half:single_pendulum": {
+        "acceleration_order": 0.7630865313157607,
+        "complete_three_step_group": true,
+        "failed_row_count": 0,
+        "max_iterations": 11.0,
+        "ok_row_count": 3,
+        "position_order": -0.2427134135851202,
+        "row_count": 3,
+        "status_values": [
+          "ok"
+        ],
+        "velocity_order": 1.0040874919717881
+      },
+      "rA_half:slider_crank": {
+        "acceleration_order": null,
+        "complete_three_step_group": false,
+        "failed_row_count": 1,
+        "max_iterations": 19.0,
+        "ok_row_count": 2,
+        "position_order": null,
+        "row_count": 3,
+        "status_values": [
+          "failed:ValueError:array must not contain infs or NaNs",
+          "ok"
+        ],
+        "velocity_order": null
+      }
+    },
+    "ok_row_count": 18,
+    "policy": "T8_coarse_horizon_sanity_not_source_policy",
+    "reference_h_values": [
+      0.0125
+    ],
+    "row_count": 24,
+    "source_policy_reproduction": false,
+    "step_sizes": [
+      0.025,
+      0.05,
+      0.1
+    ],
+    "t_end_values": [
+      8.0
+    ],
+    "v048_runner_invoked_for_this_evidence": true
+  },
+  "t8_selected_candidate_evidence": {
+    "acceleration_pair_orders": [
+      0.15772788977030902,
+      0.4447263931480143
+    ],
+    "artifact_present": true,
+    "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+    "b4_b7_can_close_from_this_evidence": false,
+    "canonical_hi2022_output_untouched_by_writer": true,
+    "counts_as_complete_work_precision_curve": false,
+    "counts_as_full_public_grid_source_policy": false,
+    "estimated_candidate_steps": [
+      400,
+      800,
+      1600
+    ],
+    "estimated_reference_steps": 8000,
+    "form": "rA",
+    "full_T8_policy_completed": false,
+    "full_public_grid_selected": false,
+    "model": "double_pendulum",
+    "ok_row_count": 3,
+    "position_pair_orders": [
+      0.30212137477335393,
+      1.0774892160989
+    ],
+    "promotion_blockers": [
+      "full HI2022 public step grid is not selected or not completed",
+      "work/precision figure rows are not promoted from this isolated shard",
+      "runtime and error/order rows are not yet bound into a publication-grade full-policy figure",
+      "selected coarse trio is not the full encoded HI2022 public step family"
+    ],
+    "promotion_ready": false,
+    "reference_runtime_sec": 13.354955013026483,
+    "row_count": 3,
+    "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_rows.csv",
+    "runtime_sec_values": [
+      0.8930995169794187,
+      1.6052946330746636,
+      3.1232164630200714
+    ],
+    "selected_coarse_trio": true,
+    "selected_reference_h": 0.001,
+    "selected_step_sizes": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "selected_t_end": 8.0,
+    "source_policy_1e_4_included": false,
+    "source_policy_candidate_rows_completed": 3,
+    "source_policy_reference_h_selected": true,
+    "source_policy_rows_closed_by_this_evidence": 0,
+    "source_policy_time_window_selected": true,
+    "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_summary.json",
+    "velocity_pair_orders": [
+      0.3416453126642631,
+      1.062670620819211
+    ]
+  },
+  "t8_selected_candidate_matrix_preflight": {
+    "all_commands_avoid_1e_4": true,
+    "b4_b7_can_close_from_preflight": false,
+    "command_count": 8,
+    "completed_shard_count": 7,
+    "completed_shards": [
+      "rA_half:single_pendulum",
+      "rA_half:four_link",
+      "rA_half:slider_crank",
+      "rA:single_pendulum",
+      "rA:double_pendulum",
+      "rA:four_link",
+      "rA:slider_crank"
+    ],
+    "counts_as_complete_work_precision_curve": false,
+    "existing_artifact_count": 8,
+    "expected_shard_count": 8,
+    "forms": [
+      "rA_half",
+      "rA"
+    ],
+    "heavy_numerical_run_invoked": false,
+    "missing_artifact_shards": [],
+    "missing_or_unexecuted_shards": [
+      "rA_half:double_pendulum"
+    ],
+    "models": [
+      "single_pendulum",
+      "double_pendulum",
+      "four_link",
+      "slider_crank"
+    ],
+    "partial_or_failed_shards": [
+      "rA_half:double_pendulum"
+    ],
+    "promotion_gap": [
+      "matrix preflight only enumerates isolated candidate shard commands",
+      "existing selected candidates remain coarse-trio diagnostics, not full public-grid source-policy rows",
+      "full source-policy promotion still requires executed rows, work metrics, and a figure policy over accepted rows"
+    ],
+    "run_v047_invoked": false,
+    "schema": "hi2022-t8-selected-candidate-matrix-preflight-v1",
+    "script": "../../numerics/v048_cross_paper_same_test_benchmarks/run_hi2022_full_t8_source_policy_candidate.py",
+    "script_exists": true,
+    "shards": [
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA_half --model single_pendulum --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA_half",
+        "full_public_grid_selected": false,
+        "model": "single_pendulum",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_single_pendulum_rows.csv",
+        "shard_id": "rA_half:single_pendulum",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_single_pendulum_summary.json"
+      },
+      {
+        "artifact_status": "partial_or_failed_full_T8_source_policy_candidate_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA_half --model double_pendulum --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA_half",
+        "full_public_grid_selected": false,
+        "model": "double_pendulum",
+        "ok_row_count": 1,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_rows.csv",
+        "shard_id": "rA_half:double_pendulum",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_double_pendulum_summary.json"
+      },
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA_half --model four_link --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA_half",
+        "full_public_grid_selected": false,
+        "model": "four_link",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_four_link_rows.csv",
+        "shard_id": "rA_half:four_link",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_four_link_summary.json"
+      },
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA_half --model slider_crank --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA_half",
+        "full_public_grid_selected": false,
+        "model": "slider_crank",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_slider_crank_rows.csv",
+        "shard_id": "rA_half:slider_crank",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_half_slider_crank_summary.json"
+      },
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA --model single_pendulum --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA",
+        "full_public_grid_selected": false,
+        "model": "single_pendulum",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_single_pendulum_rows.csv",
+        "shard_id": "rA:single_pendulum",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_single_pendulum_summary.json"
+      },
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA --model double_pendulum --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA",
+        "full_public_grid_selected": false,
+        "model": "double_pendulum",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_rows.csv",
+        "shard_id": "rA:double_pendulum",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_double_pendulum_summary.json"
+      },
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA --model four_link --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA",
+        "full_public_grid_selected": false,
+        "model": "four_link",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_four_link_rows.csv",
+        "shard_id": "rA:four_link",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_four_link_summary.json"
+      },
+      {
+        "artifact_status": "executed_full_T8_selected_coarse_trio_not_promoted",
+        "b4_b7_can_close_from_this_shard": false,
+        "command": "../../.venv_sbel/bin/python run_hi2022_full_t8_source_policy_candidate.py --form rA --model slider_crank --execute",
+        "contains_1e_4": false,
+        "counts_as_complete_work_precision_curve": false,
+        "counts_as_preflight_only": true,
+        "form": "rA",
+        "full_public_grid_selected": false,
+        "model": "slider_crank",
+        "ok_row_count": 3,
+        "requires_heavy_run_opt_in": true,
+        "requires_source_policy_1e_4_opt_in": false,
+        "row_count": 3,
+        "rows_exists": true,
+        "rows_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_slider_crank_rows.csv",
+        "shard_id": "rA:slider_crank",
+        "source_policy_rows_closed_by_this_evidence": 0,
+        "summary_exists": true,
+        "summary_path": "../../numerics/v048_cross_paper_same_test_benchmarks/results/hi2022_full_t8_source_policy_candidate_rA_slider_crank_summary.json"
+      }
+    ],
+    "source_policy_1e_4_required": false,
+    "source_policy_rows_closed_by_existing_candidates": 0,
+    "source_policy_rows_closed_by_preflight": 0,
+    "status": "preflight_ready_existing_selected_candidate_matrix_incomplete",
+    "v048_runner_invoked": false
+  },
+  "workload_estimate": {
+    "bounded_T0p1_estimated_public_steps_total": 1080,
+    "bounded_T0p1_evidence_status": "will_run",
+    "full_T8_estimated_public_steps_total": 1243200,
+    "full_T8_evidence_status": "not_run_by_default"
+  }
+}

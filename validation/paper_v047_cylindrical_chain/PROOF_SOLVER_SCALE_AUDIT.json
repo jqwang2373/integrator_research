@@ -1,0 +1,182 @@
+{
+  "schema": "proof-solver-scale-audit-v1",
+  "status": "summary_level_solver_residuals_recorded_not_scaled_eta_h_proof",
+  "submission_ready": false,
+  "submission_ready_scope": "solver_scale_global_eta_h_boundary_not_narrowed_claim_package_decision",
+  "readiness_boundary": {
+    "solver_scale_audit_scope": "finite_solver_scale_diagnostic_and_theorem_level_eta_h_boundary",
+    "narrowed_claim_b4_b6_b7_statuses": {
+      "B4": "closed",
+      "B6": "closed",
+      "B7": "closed"
+    },
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ]
+  },
+  "remaining_gate_scope": {
+    "narrowed_claim_b4_b6_b7_statuses": {
+      "B4": "closed",
+      "B6": "closed",
+      "B7": "closed"
+    },
+    "b4_b6_b7_closed_elsewhere_under_narrowed_claim": true,
+    "finite_solver_scale_diagnostic_recorded": true,
+    "summary_level_solver_residuals_recorded": true,
+    "convergence_csv_newton_residual_norm_recorded": false,
+    "finite_scaled_tolerance_probe_recorded": true,
+    "finite_scaled_tolerance_trajectory_probe_recorded": true,
+    "finite_tolerance_regime_sweep_recorded": true,
+    "finite_h_scaled_tolerance_sweep_recorded": true,
+    "fixed_tolerance_window_comparison_only": true,
+    "fixed_tolerance_does_not_instantiate_P6": true,
+    "scaled_tolerance_sweep_recorded": false,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "eta_h_theorem_condition_retained": true,
+    "fixed_tolerance_runs_are_asymptotic_proof": false,
+    "stage_residual_O_h7_implementation_defect_proved_by_this_audit": false,
+    "dynamic_symbolic_oracle_complete": false,
+    "global_submission_boundaries_retained": [
+      "full_source_policy_package_ready",
+      "theorem_level_eta_h_solver_policy_evidence",
+      "closed_residual_to_error_theorem_for_mechanism_rows"
+    ]
+  },
+  "accepted_method": "Gauss6/FullVA",
+  "source_summary": "../../numerics/v047_cylindrical_chain_pipeline/results/summary_v047.json",
+  "execution_policy": {
+    "read_only_audit": true,
+    "default_step_policy": "coarse_first_no_default_1e-4",
+    "default_1e-4_required": false,
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false
+  },
+  "recorded_solver_residuals": {
+    "smooth_projected_reference_max_linear_residual_norm": 2.800513564816292e-13,
+    "smooth_raw_reference_max_linear_residual_norm": 2.800513564816292e-13,
+    "sharp_projected_reference_max_linear_residual_norm": 3.7018688740777353e-13,
+    "sharp_raw_reference_max_linear_residual_norm": 3.7018688740777353e-13,
+    "endpoint_kkt_smooth_reference_max_linear_residual_norm": 4.3384560428137684e-14,
+    "endpoint_kkt_sharp_reference_max_linear_residual_norm": 4.932067561463195e-14,
+    "single_pendulum_driven_fullva_max_stage_residual_norm": 9.187733067060637e-13,
+    "single_pendulum_absolute_fullva_max_stage_residual_norm": 3.663986665284353e-12
+  },
+  "eta_over_h7_diagnostics": {
+    "h_values": [0.04, 0.02, 0.01, 0.005],
+    "smooth_projected_reference_residual_over_h7": [
+      0.0017092978300880684,
+      0.21879012225127276,
+      28.005135648162913,
+      3584.657362964853
+    ],
+    "endpoint_kkt_smooth_reference_linear_residual_over_h7": [
+      0.000264798342456895,
+      0.03389418783448256,
+      4.3384560428137675,
+      555.3223734801622
+    ]
+  },
+  "finite_scaled_tolerance_probe": {
+    "schema": "proof-solver-scaled-tolerance-probe-v1",
+    "status": "finite_scaled_tolerance_probe_recorded_not_theorem_closure",
+    "source_md": "PROOF_SOLVER_SCALED_TOLERANCE_PROBE.md",
+    "source_json": "PROOF_SOLVER_SCALED_TOLERANCE_PROBE.json",
+    "source_csv": "PROOF_SOLVER_SCALED_TOLERANCE_PROBE.csv",
+    "case": "cylindrical_smooth",
+    "h_values": [0.04, 0.02, 0.01, 0.005],
+    "c_eta": 10000.0,
+    "row_count": 4,
+    "ok_row_count": 4,
+    "max_final_residual_over_h7": 127.58372278641149,
+    "scaled_policy_exercised": true,
+    "theorem_level_solver_proof_closed": false
+  },
+  "finite_scaled_tolerance_trajectory_probe": {
+    "schema": "proof-solver-scaled-tolerance-trajectory-probe-v1",
+    "status": "finite_scaled_tolerance_trajectory_probe_recorded_not_theorem_closure",
+    "source_md": "PROOF_SOLVER_SCALED_TOLERANCE_TRAJECTORY_PROBE.md",
+    "source_json": "PROOF_SOLVER_SCALED_TOLERANCE_TRAJECTORY_PROBE.json",
+    "source_csv": "PROOF_SOLVER_SCALED_TOLERANCE_TRAJECTORY_PROBE.csv",
+    "case": "cylindrical_smooth",
+    "h_values": [
+      0.04,
+      0.02,
+      0.01,
+      0.005
+    ],
+    "t_final": 0.08,
+    "c_eta": 10000.0,
+    "row_count": 4,
+    "ok_row_count": 4,
+    "total_steps_checked": 30,
+    "max_final_residual_over_h7": 210.89078604575462,
+    "scaled_trajectory_policy_exercised": true,
+    "theorem_level_solver_proof_closed": false,
+    "eta_h_O_h7_solver_policy_evidence": false
+  },
+  "finite_tolerance_regime_sweep": {
+    "schema": "proof-solver-tolerance-regime-sweep-v1",
+    "status": "finite_tolerance_regime_sweep_recorded_not_theorem_closure",
+    "source_md": "PROOF_SOLVER_TOLERANCE_REGIME_SWEEP.md",
+    "source_json": "PROOF_SOLVER_TOLERANCE_REGIME_SWEEP.json",
+    "source_csv": "PROOF_SOLVER_TOLERANCE_REGIME_SWEEP.csv",
+    "case": "cylindrical_smooth",
+    "h_values": [0.04, 0.02, 0.01, 0.005],
+    "t_final": 0.08,
+    "reference_h": 0.0025,
+    "reference_eta_target": 1.0e-13,
+    "policy_count": 3,
+    "policy_names": ["fixed_1e-10", "scaled_h7_c1e4", "scaled_h8_c1e6"],
+    "total_rows_checked": 12,
+    "total_steps_checked": 90,
+    "all_rows_converged": true,
+    "fixed_1e_10_position_velocity_orders": [6.946347411176867, 6.608089993735075],
+    "scaled_h7_position_velocity_orders": [6.946347411176867, 6.608089993735075],
+    "scaled_h8_position_velocity_orders": [6.946365976765468, 6.608137477881583],
+    "fixed_1e_10_max_residual_over_h7": 210.89078604575462,
+    "scaled_h7_max_residual_over_h7": 210.89078604575462,
+    "scaled_h8_max_residual_over_h8": 303216.05230464996,
+    "finite_tolerance_regime_sweep_recorded": true,
+    "finite_h_scaled_tolerance_sweep_recorded": true,
+    "finite_h_scaled_policy_names": ["scaled_h7_c1e4", "scaled_h8_c1e6"],
+    "finite_h_scaled_policy_rows": 8,
+    "finite_h_scaled_policy_steps": 60,
+    "finite_h_scaled_position_order_floor": 6.946347411176867,
+    "finite_h_scaled_velocity_order_floor": 6.608089993735075,
+    "fixed_tolerance_window_comparison_only": true,
+    "fixed_tolerance_does_not_instantiate_P6": true,
+    "scaled_h7_residual_bound_satisfied": true,
+    "scaled_h8_residual_bound_satisfied": true,
+    "scaled_tolerance_sweep_recorded": false,
+    "theorem_level_solver_proof_closed": false,
+    "eta_h_O_h7_solver_policy_evidence": false
+  },
+  "proof_boundary": {
+    "summary_level_solver_residuals_recorded": true,
+    "convergence_csv_newton_residual_norm_recorded": false,
+    "finite_scaled_tolerance_probe_recorded": true,
+    "finite_scaled_tolerance_trajectory_probe_recorded": true,
+    "finite_tolerance_regime_sweep_recorded": true,
+    "finite_h_scaled_tolerance_sweep_recorded": true,
+    "fixed_tolerance_window_comparison_only": true,
+    "fixed_tolerance_does_not_instantiate_P6": true,
+    "scaled_tolerance_sweep_recorded": false,
+    "eta_h_O_h7_solver_policy_evidence": false,
+    "fixed_tolerance_runs_are_asymptotic_proof": false,
+    "stage_residual_O_h7_implementation_defect_proved_by_this_audit": false,
+    "dynamic_symbolic_oracle_complete": false,
+    "external_superiority_claim": false
+  },
+  "forbidden_claims": [
+    "eta_h_O_h7_solver_policy_evidence_true",
+    "fixed_tolerance_runs_are_asymptotic_proof_true",
+    "scaled_tolerance_sweep_recorded_true",
+    "stage_residual_O_h7_implementation_defect_proved_by_this_audit_true",
+    "dynamic_symbolic_oracle_complete_true",
+    "external_superiority_claim_true",
+    "default_1e-4_required_true",
+    "submission_ready_true"
+  ]
+}

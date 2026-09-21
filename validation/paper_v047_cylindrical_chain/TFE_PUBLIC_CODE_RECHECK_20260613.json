@@ -1,0 +1,111 @@
+{
+  "accepted_for_external_superiority": false,
+  "claim_boundary": {
+    "distinct_public_tfe_code_artifact_found": false,
+    "external_superiority_claim_allowed": false,
+    "paper_spec_reconstruction_is_source_policy_reproduction": false,
+    "source_policy_rows_closed": 0,
+    "source_policy_rows_total": 16
+  },
+  "coverage": {
+    "direct_public_code_hit_count": 0,
+    "github_code_search_api_status": "requires_authentication",
+    "github_repository_search_incomplete_results": false,
+    "github_repository_search_total_count": 0,
+    "github_user_search_total_count": 0,
+    "paper_spec_candidate_reconstruction_available": true,
+    "rechecked_external_rows": 16,
+    "source_policy_rows_attempted_not_reproducible": 16,
+    "source_policy_rows_closed": 0,
+    "web_search_direct_public_code_hit_count": 0
+  },
+  "date_checked": "2026-06-13",
+  "decision": {
+    "can_close_tfe_source_policy_rows_now": false,
+    "reason": "The source paper and current public searches do not expose a distinct source-code artifact. GitHub repository/user searches for the paper title, DOI, author handle, and TFE/Sandu pendulum terms returned zero repositories/users, while GitHub code search requires authentication. The available paper-spec reconstruction remains a diagnostic scaffold, not a source-code-equivalent TFE source-policy runner.",
+    "row_disposition": "attempted_not_reproducible_not_promoted"
+  },
+  "public_code_recheck": {
+    "github_code_search_queries": [
+      "\"Higher-order integration of index-3 DAE\""
+    ],
+    "github_repository_search_queries": [
+      "\"Higher-order integration of index-3 DAE\"",
+      "ekanshchat96",
+      "\"time finite element\" Sandu pendulum",
+      "\"s11044-026-10153-w\"",
+      "\"Chaturvedi\" \"Sandu\" TFE",
+      "\"Brown-McPhee\" TFE"
+    ],
+    "github_repository_search_results": [
+      {
+        "incomplete_results": false,
+        "query": "\"Higher-order integration of index-3 DAE\"",
+        "total_count": 0
+      },
+      {
+        "incomplete_results": false,
+        "query": "ekanshchat96",
+        "total_count": 0
+      },
+      {
+        "incomplete_results": false,
+        "query": "\"time finite element\" Sandu pendulum",
+        "total_count": 0
+      },
+      {
+        "incomplete_results": false,
+        "query": "\"s11044-026-10153-w\"",
+        "total_count": 0
+      },
+      {
+        "incomplete_results": false,
+        "query": "\"Chaturvedi\" \"Sandu\" TFE",
+        "total_count": 0
+      },
+      {
+        "incomplete_results": false,
+        "query": "\"Brown-McPhee\" TFE",
+        "total_count": 0
+      }
+    ],
+    "github_user_search_results": [
+      {
+        "incomplete_results": false,
+        "query": "ekanshchat96",
+        "total_count": 0
+      }
+    ],
+    "web_search_queries": [
+      "\"Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups\" code",
+      "\"Higher-order integration of index-3 DAE\" GitHub",
+      "\"s11044-026-10153-w\" code",
+      "\"Ekansh Chaturvedi\" \"Higher-order integration\" GitHub",
+      "site:github.com \"Higher-order integration of index-3 DAE\"",
+      "site:github.com \"ekanshchat96\"",
+      "site:github.com \"time finite element\" \"Sandu\" \"pendulum\"",
+      "site:github.com \"Brown-McPhee\" \"TFE\""
+    ]
+  },
+  "read_only": true,
+  "run_v047_invoked": false,
+  "schema": "tfe-public-code-recheck-20260613-v1",
+  "source_files": [
+    "../../external/literature/s11044-026-10153-w.txt",
+    "TFE_SOURCE_POLICY_SPEC.json",
+    "TFE_SOURCE_POLICY_SELF_REPRODUCTION_ATTEMPT_CERTIFICATE.json",
+    "../../numerics/v048_cross_paper_same_test_benchmarks/tfe_source_pendulum_model.py"
+  ],
+  "source_paper": {
+    "authors": [
+      "Ekansh Chaturvedi",
+      "Corina Sandu",
+      "Adrian Sandu"
+    ],
+    "doi": "10.1007/s11044-026-10153-w",
+    "title": "Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups"
+  },
+  "status": "public_code_rechecked_no_distinct_tfe_code_artifact_attempted_not_reproducible",
+  "suite_id": "tfe2026_original_pendulum",
+  "v048_runner_invoked": false
+}

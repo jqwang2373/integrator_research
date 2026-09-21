@@ -1,0 +1,65 @@
+{
+  "date_checked": "2026-06-21",
+  "evidence_policy": {
+    "absence_of_code_availability_section_closes_source_policy": false,
+    "data_availability_statement_is_code_availability": false,
+    "no_positive_article_signal_action": "retain_oc6_open_no_positive_source_equivalent_artifact",
+    "publisher_article_absence_is_global_absence_proof": false
+  },
+  "forbidden_execution_flags": {
+    "heavy_numerical_run_invoked": false,
+    "run_v047_invoked": false,
+    "source_policy_execution_invoked": false,
+    "v048_runner_invoked": false
+  },
+  "global_absence_proved": false,
+  "oc6_external_recheck_marker": "2026-06-21/10/0/0/0/False/False",
+  "oc6_reopen_condition": "suite_specific_source_equivalent_reopen_conditions",
+  "official_article_checked": true,
+  "positive_public_code_artifact_rows": 0,
+  "publisher_artifact_disposition": {
+    "accepted_use": "publisher_availability_boundary_only_not_source_policy_evidence",
+    "positive_public_code_artifact_found": false,
+    "reason": "official article text/PDF is identified and carries a data-availability statement, but no code-availability, supplementary-source, GitHub, source-code, or repository signal was found in the local article text",
+    "source_code_equivalent_artifact_found": false,
+    "source_policy_reopen_triggered": false,
+    "source_policy_rows_closed_by_publisher_audit": 0
+  },
+  "read_only": true,
+  "schema": "oc6-tfe-publisher-artifact-availability-audit-20260621-v1",
+  "source_article": {
+    "authors": [
+      "Ekansh Chaturvedi",
+      "Corina Sandu",
+      "Adrian Sandu"
+    ],
+    "authors_present_in_local_text": {
+      "Adrian Sandu": true,
+      "Corina Sandu": true,
+      "Ekansh Chaturvedi": true
+    },
+    "code_availability_heading_found": false,
+    "data_availability_statement": "Data availability No datasets were generated or analysed during the current study.",
+    "data_availability_statement_found": true,
+    "doi": "10.1007/s11044-026-10153-w",
+    "doi_present_in_local_text": true,
+    "github_token_count": 0,
+    "local_pdf_path": "external/literature/s11044-026-10153-w.pdf",
+    "local_text_path": "external/literature/s11044-026-10153-w.txt",
+    "official_url": "https://link.springer.com/article/10.1007/s11044-026-10153-w",
+    "repository_token_count": 0,
+    "source_artifact_signal_count": 0,
+    "source_code_token_count": 0,
+    "supplementary_source_signal_found": false,
+    "title": "Higher-order integration of index-3 DAE with friction using time finite elements on Lie groups",
+    "title_present_in_local_text": true
+  },
+  "source_code_equivalent_artifact_rows": 0,
+  "source_policy_closed": false,
+  "source_policy_reopen_triggered": false,
+  "source_policy_rows_closed_by_publisher_audit": 0,
+  "status": "publisher_article_checked_no_code_or_supplement_source_artifact_found",
+  "submission_ready": false,
+  "tfe_runner_contract_preflight_status": "contract_entrypoints_callable_candidate_backed_source_policy_open",
+  "tfe_runner_contract_source_policy_rows_completed": 0
+}

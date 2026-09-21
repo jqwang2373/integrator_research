@@ -1,0 +1,412 @@
+{
+  "b4_source_policy_execution_invoked": false,
+  "brown_mcphee_candidate_friction_law_encoded": true,
+  "brown_mcphee_published_formula_structure_encoded": true,
+  "brown_mcphee_source_code_equivalent_law": false,
+  "brown_mcphee_transition_velocity_policy_resolved_from_source": false,
+  "brown_mcphee_transition_velocity_sensitivity": {
+    "accepted_use": "local_candidate_sensitivity_boundary_not_source_policy",
+    "all_contract_dae_residuals_below_1e_9": true,
+    "all_contract_equivalence_flags_false": true,
+    "all_contract_friction_power_nonpositive": true,
+    "all_contract_rows_finite": true,
+    "all_contract_source_policy_rows_completed_zero": true,
+    "baseline_stribeck_velocity": 0.5,
+    "brown_mcphee_source_code_equivalent_law": false,
+    "contract_row_count": 36,
+    "contract_summaries": [
+      {
+        "all_candidate_friction_power_nonpositive": true,
+        "all_dae_residuals_below_1e_9": true,
+        "all_rows_finite": true,
+        "brown_mcphee_source_code_equivalent_law": false,
+        "max_candidate_step_residual_norm": 1.0919946884137529e-11,
+        "monolithic_absolute_coordinate_dae_time_integrator": false,
+        "row_count": 12,
+        "source_policy_dae_runner_equivalent": false,
+        "source_policy_method_runner_equivalent": false,
+        "source_policy_rows_completed": 0,
+        "step_residual_row_count": 56,
+        "stribeck_velocity": 0.05
+      },
+      {
+        "all_candidate_friction_power_nonpositive": true,
+        "all_dae_residuals_below_1e_9": true,
+        "all_rows_finite": true,
+        "brown_mcphee_source_code_equivalent_law": false,
+        "max_candidate_step_residual_norm": 1.5039524944745906e-11,
+        "monolithic_absolute_coordinate_dae_time_integrator": false,
+        "row_count": 12,
+        "source_policy_dae_runner_equivalent": false,
+        "source_policy_method_runner_equivalent": false,
+        "source_policy_rows_completed": 0,
+        "step_residual_row_count": 56,
+        "stribeck_velocity": 0.5
+      },
+      {
+        "all_candidate_friction_power_nonpositive": true,
+        "all_dae_residuals_below_1e_9": true,
+        "all_rows_finite": true,
+        "brown_mcphee_source_code_equivalent_law": false,
+        "max_candidate_step_residual_norm": 1.3813331710349352e-11,
+        "monolithic_absolute_coordinate_dae_time_integrator": false,
+        "row_count": 12,
+        "source_policy_dae_runner_equivalent": false,
+        "source_policy_method_runner_equivalent": false,
+        "source_policy_rows_completed": 0,
+        "step_residual_row_count": 56,
+        "stribeck_velocity": 1.0
+      }
+    ],
+    "endpoint_delta_row_count": 3,
+    "endpoint_delta_rows": [
+      {
+        "baseline_stribeck_velocity": 0.5,
+        "coordinate_error_q": 2.8991542837530915e-06,
+        "diagnostics": {
+          "max_residual_norm": 0.0,
+          "steps": 240.0,
+          "total_newton_iterations": 0.0
+        },
+        "frobenius_error_norm_eta": 4.100023307534639e-06,
+        "mechanical_energy_deviation": 0.02164110837733091,
+        "omega_final": 0.9231444804532618,
+        "signed_coordinate_error_q": 2.8991542837530915e-06,
+        "signed_velocity_error_v": 0.00023551663524623567,
+        "stribeck_velocity": 0.05,
+        "theta_final": 0.023077349380844436,
+        "velocity_error_v": 0.00023551663524623567
+      },
+      {
+        "baseline_stribeck_velocity": 0.5,
+        "coordinate_error_q": 0.0,
+        "diagnostics": {
+          "max_residual_norm": 0.0,
+          "steps": 240.0,
+          "total_newton_iterations": 0.0
+        },
+        "frobenius_error_norm_eta": 0.0,
+        "mechanical_energy_deviation": 0.0,
+        "omega_final": 0.9229089638180156,
+        "signed_coordinate_error_q": 0.0,
+        "signed_velocity_error_v": 0.0,
+        "stribeck_velocity": 0.5,
+        "theta_final": 0.023074450226560655,
+        "velocity_error_v": 0.0
+      },
+      {
+        "baseline_stribeck_velocity": 0.5,
+        "coordinate_error_q": 1.3970905197169259e-06,
+        "diagnostics": {
+          "max_residual_norm": 0.0,
+          "steps": 240.0,
+          "total_newton_iterations": 0.0
+        },
+        "frobenius_error_norm_eta": 1.9757843609202355e-06,
+        "mechanical_energy_deviation": -0.00992189564603052,
+        "omega_final": 0.9228011988347291,
+        "signed_coordinate_error_q": -1.3970905197169259e-06,
+        "signed_velocity_error_v": -0.00010776498328646245,
+        "stribeck_velocity": 1.0,
+        "theta_final": 0.023073053136040887,
+        "velocity_error_v": 0.00010776498328646245
+      }
+    ],
+    "external_superiority_claim_allowed": false,
+    "frictional": true,
+    "max_endpoint_coordinate_delta_vs_baseline": 2.8991542837530915e-06,
+    "max_endpoint_velocity_delta_vs_baseline": 0.00023551663524623567,
+    "missing_transition_velocity_is_numerically_material": true,
+    "omega0": 1.0,
+    "reference_h": 0.0001,
+    "runner_scope": "candidate_brown_mcphee_transition_velocity_sensitivity_not_source_policy",
+    "schema": "tfe-brown-mcphee-transition-velocity-sensitivity-v1",
+    "source_policy_dae_runner_equivalent": false,
+    "source_policy_method_runner_equivalent": false,
+    "source_policy_rows_completed": 0,
+    "source_policy_rows_promoted": 0,
+    "status": "candidate_transition_velocity_sensitivity_recorded_not_source_policy",
+    "step_residual_row_count": 168,
+    "t_final": 0.024,
+    "tested_stribeck_velocities": [
+      0.05,
+      0.5,
+      1.0
+    ],
+    "theta0": 0.0
+  },
+  "candidate_formula_code_scan": {
+    "candidate_docstring_denies_source_policy_equivalence": true,
+    "candidate_docstring_names_surrogate": true,
+    "candidate_exposes_stribeck_velocity_parameter": true,
+    "candidate_exposes_viscous_damping_parameter": true,
+    "candidate_function_present": true,
+    "candidate_uses_rational_stiction_term": true,
+    "candidate_uses_tanh_coulomb_term": true
+  },
+  "candidate_friction_torque_smoke": {
+    "dissipative_sign_check": true,
+    "negative_omega_power": -3.316325967936434,
+    "normal_load": 25.0,
+    "positive_omega_power": -3.316325967936434,
+    "stribeck_velocity": 0.5,
+    "torque_at_negative_omega": 3.316325967936434,
+    "torque_at_positive_omega": -3.316325967936434,
+    "torque_at_zero_omega": -0.0
+  },
+  "candidate_frictional_dae_trajectory_contract": {
+    "accepted_use": "candidate_frictional_dae_trajectory_contract_not_source_policy",
+    "all_candidate_friction_power_nonpositive": true,
+    "all_dae_residuals_below_1e_9": true,
+    "all_rows_finite": true,
+    "brown_mcphee_source_code_equivalent_law": false,
+    "comparison_h": [
+      0.012,
+      0.006,
+      0.003
+    ],
+    "frictional": true,
+    "implemented": true,
+    "max_candidate_friction_power": -3.021548013478168,
+    "max_candidate_step_residual_norm": 1.5039524944745906e-11,
+    "method_count": 4,
+    "min_candidate_friction_power": -3.958587711558086,
+    "monolithic_absolute_coordinate_dae_time_integrator": false,
+    "omega0": 1.0,
+    "reference_h": 0.0001,
+    "row_count": 12,
+    "runner_api": "candidate_frictional_dae_trajectory_contract_smoke",
+    "runner_scope": "candidate_brown_mcphee_friction_bound_to_stepwise_absolute_dae_residuals_not_source_policy",
+    "schema": "tfe-candidate-frictional-dae-trajectory-contract-smoke-v1",
+    "source_policy_dae_runner_equivalent": false,
+    "source_policy_method_runner_equivalent": false,
+    "source_policy_rows_completed": 0,
+    "step_residual_row_count": 56,
+    "t_final": 0.024,
+    "theta0": 0.0
+  },
+  "closure_decision": {
+    "can_close_brown_mcphee_source_code_equivalent_law_now": false,
+    "can_promote_frictional_tfe_source_policy_rows_now": false,
+    "reason": "The artifact confirms that a Brown--McPhee-style candidate formula is encoded and dissipative, with local v021/v022 surrogate provenance and a bounded multi-step candidate DAE trajectory contract. A bounded transition-velocity sensitivity check also shows that the unresolved Stribeck/transition velocity changes the candidate endpoint state. The TFE source paper does not provide the transition velocity, source-code coupling, or implementation details needed to certify source-code-equivalent friction rows."
+  },
+  "exact_b4_opt_in_required_for_execution": true,
+  "external_superiority_claim_allowed": false,
+  "formula_boundary": {
+    "encoded_candidate_formula": "tau = -R N [mu_d tanh(4 omega/vs) + (mu_s-mu_d)(omega/vs)/(0.25(omega/vs)^2+0.75)^2] - c tanh(4) omega",
+    "encoded_parameters": {
+      "hinge_pin_radius_m": 0.5,
+      "mu_dynamic": 0.2,
+      "mu_static": 0.3
+    },
+    "missing_for_source_policy_equivalence": [
+      "transition/Stribeck velocity used by the source experiments",
+      "source-code treatment of normal-load coupling and joint multipliers",
+      "source-code treatment of viscous damping or zero-viscous default",
+      "source implementation tolerance/Jacobian coupling for friction rows",
+      "Brown--McPhee reference source code or Refs. 38--39 implementation details",
+      "complete law details are not available in the TFE source paper text"
+    ]
+  },
+  "frictional_candidate_smoke_trajectory": {
+    "max_candidate_friction_power": -3.678258852171585,
+    "min_candidate_friction_power": -4.102596792258375,
+    "source_policy_rows_completed": null
+  },
+  "frictional_source_policy_row_demotion_contract": {
+    "candidate_evidence_allowed_use": "local_dissipativity_residual_sensitivity_diagnostic_only",
+    "demotion_reason": "The source paper supplies mu_s/mu_d and names the Brown--McPhee model family, but it does not provide the transition/Stribeck velocity, source-code normal-load coupling, viscous damping/default policy, or implementation-level coupling needed to bind the candidate law to source-policy rows.",
+    "demotion_scope": "all original-TFE frictional pendulum rows whose acceptance depends on a Brown--McPhee source-code-equivalent law",
+    "frictional_source_policy_rows_demoted": true,
+    "required_to_promote": [
+      "source-code or Refs. 38--39 transition/Stribeck velocity",
+      "source-code normal-load and joint-multiplier coupling policy",
+      "source-code viscous damping or zero-viscous default policy",
+      "source implementation tolerance/Jacobian coupling for friction rows",
+      "source-equivalent absolute-coordinate DAE and method-runner contracts"
+    ],
+    "source_policy_rows_completed": 0,
+    "source_policy_rows_promoted": 0
+  },
+  "frictional_source_policy_rows_demoted": true,
+  "guarded_execution_driver": "run_b4_source_policy_after_opt_in.sh",
+  "heavy_numerical_run_invoked": false,
+  "local_surrogate_provenance": {
+    "accepted_source_policy_equivalence": false,
+    "provenance_label": "v022_revolute_brown_mcphee_surrogate_not_source_policy_equivalent",
+    "v021_formula_mentions_componentwise_surrogate": true,
+    "v021_readme": "../../numerics/v021_brown_mcphee_lambda_friction/README.md",
+    "v021_readme_present": true,
+    "v021_run_present": true,
+    "v022_formula_matches_candidate_family": true,
+    "v022_local_stribeck_velocity_cases": [
+      0.5,
+      0.05
+    ],
+    "v022_readme": "../../numerics/v022_revolute_brown_mcphee/README.md",
+    "v022_readme_present": true,
+    "v022_run_has_matching_candidate_function": true,
+    "v022_run_present": true
+  },
+  "next_safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "next_safe_actions": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "nonheavy_contract_block_closed": false,
+  "opt_in_action_ids": [
+    "authorized_b4_ra_hi_source_policy_execution"
+  ],
+  "read_only": true,
+  "referenced_detail_sources": {
+    "reference_38": {
+      "boundary": "bibliographic pointer only in current package; no implementation constants or code binding available",
+      "label": "Brown--McPhee continuous velocity-based friction model paper",
+      "local_full_text_or_source_code_present": false,
+      "source_text_entry_found": true
+    },
+    "reference_39": {
+      "boundary": "bibliographic pointer only in current package; no transition velocity or coupling policy extracted",
+      "label": "Chaturvedi--Mukherjee--Sandu dynamic dry friction model paper",
+      "local_full_text_or_source_code_present": false,
+      "source_text_entry_found": true
+    }
+  },
+  "required_user_approval_statement": "I explicitly approve running the B4 source-policy execution commands listed in B4_SOURCE_POLICY_EXECUTION_OPT_IN_PACKET.json.",
+  "row_audit_gap_status": {
+    "blocking_source_fields": [
+      "brown_mcphee_published_formula_structure_encoded=True",
+      "brown_mcphee_source_code_equivalent_law=False",
+      "brown_mcphee_transition_velocity_policy_resolved_from_source=False"
+    ],
+    "can_resolve_without_heavy_run": true,
+    "first_required_artifact": "Brown--McPhee source-code-equivalent friction-law certificate",
+    "gap_id": "brown_mcphee_source_code_equivalent_law_open",
+    "gap_status": "open"
+  },
+  "run_v047_invoked": false,
+  "safe_action_ids": [
+    "rebuild_read_only_audit_chain",
+    "rerun_read_only_validators",
+    "keep_narrowed_archive_provenance_only",
+    "monitor_reopen_conditions"
+  ],
+  "safe_actions_without_b4_opt_in": [
+    {
+      "action_id": "rebuild_read_only_audit_chain",
+      "description": "Regenerate read-only audit/manifest/review artifacts from existing evidence."
+    },
+    {
+      "action_id": "rerun_read_only_validators",
+      "description": "Run validators that inspect artifacts without launching numerical campaigns."
+    },
+    {
+      "action_id": "keep_narrowed_archive_provenance_only",
+      "description": "Use the current archive only for narrowed-claim replay and provenance evidence."
+    },
+    {
+      "action_id": "monitor_reopen_conditions",
+      "description": "Refresh read-only reopen-condition monitors for new local/public-code evidence."
+    }
+  ],
+  "safe_next_actions": [
+    "Keep the candidate law labeled as a surrogate in manuscript and package text.",
+    "Use the candidate-friction DAE trajectory contract only as a local dissipativity/residual sanity check.",
+    "Use the transition-velocity sensitivity only to justify the open source-law boundary.",
+    "Only promote Brown--McPhee frictional rows after source code or Refs. 38--39 resolve the transition velocity and coupling policy.",
+    "Do not close TFE source-policy work/precision rows from this boundary audit."
+  ],
+  "schema": "tfe-brown-mcphee-source-law-boundary-audit-v1",
+  "source_files": {
+    "source_pendulum_model_audit": "TFE_SOURCE_PENDULUM_MODEL_AUDIT.json",
+    "source_policy_row_audit": "TFE_SOURCE_POLICY_ROW_AUDIT.json",
+    "source_policy_spec": "TFE_SOURCE_POLICY_SPEC.json",
+    "tfe_model_source": "../../numerics/v048_cross_paper_same_test_benchmarks/tfe_source_pendulum_model.py",
+    "v021_readme": "../../numerics/v021_brown_mcphee_lambda_friction/README.md",
+    "v022_readme": "../../numerics/v022_revolute_brown_mcphee/README.md"
+  },
+  "source_policy_execution_allowed_now": false,
+  "source_policy_execution_invoked": false,
+  "source_policy_friction_spec_boundary": {
+    "law_details_available_in_source_paper": false,
+    "model_family": "Brown--McPhee velocity-based continuous friction model",
+    "mu_dynamic": 0.2,
+    "mu_static": 0.3,
+    "requires_reference_38_39_or_existing_source_code": true
+  },
+  "source_policy_rows_completed": 0,
+  "source_policy_rows_promoted": 0,
+  "source_text_anchor": {
+    "defers_law_details_to_refs_38_39": true,
+    "names_velocity_based_continuous_model": true,
+    "reports_mu_static_dynamic": true,
+    "source_text": "../../external/literature/s11044-026-10153-w.txt",
+    "source_text_found": true
+  },
+  "source_text_line_anchors": [
+    {
+      "evidence_role": "source paper reports the static friction coefficient used in the pendulum case study",
+      "found": true,
+      "id": "mu_static_parameter",
+      "line_number": 1040,
+      "token": "\u03bcs                   0.3"
+    },
+    {
+      "evidence_role": "source paper reports the dynamic friction coefficient used in the pendulum case study",
+      "found": true,
+      "id": "mu_dynamic_parameter",
+      "line_number": 1041,
+      "token": "\u03bcd                   0.2"
+    },
+    {
+      "evidence_role": "source paper names the Brown--McPhee velocity-based model family",
+      "found": true,
+      "id": "brown_mcphee_model_family",
+      "line_number": 1056,
+      "token": "McPhee\u2019s velocity based continuous friction model"
+    },
+    {
+      "evidence_role": "source paper defers continuous-friction model details to external references",
+      "found": true,
+      "id": "details_deferred",
+      "line_number": 1056,
+      "token": "For more details on continuous"
+    },
+    {
+      "evidence_role": "reference 38 is the Brown--McPhee model paper, not local executable source code",
+      "found": true,
+      "id": "reference_38_entry",
+      "line_number": 1579,
+      "token": "38. Brown, P., McPhee, J."
+    },
+    {
+      "evidence_role": "reference 39 is an additional friction-model paper, not local executable source code",
+      "found": true,
+      "id": "reference_39_entry",
+      "line_number": 1581,
+      "token": "39. Chaturvedi, E., Mukherjee, J., Sandu, C."
+    }
+  ],
+  "status": "source_formula_structure_encoded_surrogate_not_source_code_equivalent",
+  "submission_ready": false,
+  "v048_runner_invoked": false
+}
