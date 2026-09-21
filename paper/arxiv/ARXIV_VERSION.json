@@ -1,9 +1,9 @@
 {
   "schema": "arxiv-version-v2",
   "source": "main_cmame.tex",
-  "source_sha256": "51bbb8c16998d188fdf0eca553ac898f0a11b1fa981dbaa7824d016b47cc0d61",
+  "source_sha256": "a48ed09534debb8b4cbf284f7fef7f387a249ebc09d2743d8592776a6cf8c394",
   "output_tex": "arxiv/main_arxiv.tex",
-  "output_tex_sha256": "b2a16e411be8e5e87aeeb22d927a9e87130cb41a9af951a2eff77b687bcd437a",
+  "output_tex_sha256": "6125ea9f6a2cb80a6c470ac70c82dfd203375af02a4813f1b8cbdb92fc0bbffa",
   "document_class": "article",
   "figures": [
     "Figure_1_chain_schematic.png",
@@ -25,5 +25,5 @@
     "cs.CE (Computational Engineering, Finance, and Science) - cross-list",
     "physics.comp-ph (Computational Physics) - optional cross-list"
   ],
-  "zip_sha256": "d3911af50fdd809585c364dc422a40ad259d1e9046b6b76b4f19921df557deb8"
+  "zip_sha256": "5f4e02cc01c53aec0991f2b8ee5bd083dfe1a14abccd7522d25b62bdec10b316"
 }

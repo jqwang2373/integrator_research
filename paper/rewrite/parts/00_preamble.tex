@@ -22,11 +22,17 @@
 \newcommand{\tfe}{TFE}
 \newcommand{\figpath}{figures}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
 \newcommand{\paperfig}[3]{%
-  \begin{figure}[htbp]
+  \begin{figure}[!htb]
     \centering
     \IfFileExists{#1}{%
-      \includegraphics[width=0.90\linewidth]{#1}%
+      \includegraphics[width=\linewidth]{#1}%
     }{%
       \fbox{\parbox{0.86\linewidth}{Missing figure: \nolinkurl{#1}}}%
     }

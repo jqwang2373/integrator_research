@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 08:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,7 +378,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \c@theorem=\count318
 \c@proposition=\count319
 \c@corollary=\count320
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 43
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 49
 .
  (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -390,24 +390,24 @@ File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
 ) (./main_arxiv.aux)
 \openout1 = `main_arxiv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -469,54 +469,54 @@ cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 43.
+Package hyperref Info: Link coloring ON on input line 49.
  (./main_arxiv.out) (./main_arxiv.out)
 \@outlinefile=\write3
 \openout3 = `main_arxiv.out'.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-3.
+9.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-1.
+7.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-1.
+7.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-61.
+67.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-61.
+67.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 61.
+(Font)              <10> on input line 67.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 61.
+(Font)              <7> on input line 67.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 61.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+(Font)              <5> on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -530,13 +530,13 @@ rs/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/jin
 gquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/jingq
 uanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 108.
+(Font)              <10.95> on input line 114.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 108.
+(Font)              <8> on input line 114.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 108.
+(Font)              <6> on input line 114.
  [2] [3]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 272
+LaTeX Font Info:    Trying to load font information for U+euf on input line 278
 .
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/ueuf.fd
@@ -544,79 +544,78 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 [4{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}
 ]
-<./Figure_1_chain_schematic.png, id=290, 406.3545pt x 270.3555pt>
+<./Figure_1_chain_schematic.png, id=290, 406.026pt x 259.1865pt>
 File: ./Figure_1_chain_schematic.png Graphic file (type png)
 <use ./Figure_1_chain_schematic.png>
-Package pdftex.def Info: ./Figure_1_chain_schematic.png  used on input line 348
+Package pdftex.def Info: ./Figure_1_chain_schematic.png  used on input line 354
 .
-(pdftex.def)             Requested size: 407.66833pt x 271.2335pt.
+(pdftex.def)             Requested size: 452.9679pt x 289.16765pt.
  [5] [6 <./Figure_1_chain_schematic.png>]
-<./Figure_2_method_overview.png, id=311, 708.246pt x 359.379pt>
+<./Figure_2_method_overview.png, id=311, 390.5865pt x 348.21pt>
 File: ./Figure_2_method_overview.png Graphic file (type png)
 <use ./Figure_2_method_overview.png>
-Package pdftex.def Info: ./Figure_2_method_overview.png  used on input line 437
+Package pdftex.def Info: ./Figure_2_method_overview.png  used on input line 443
 .
-(pdftex.def)             Requested size: 407.66833pt x 206.86613pt.
+(pdftex.def)             Requested size: 452.9679pt x 403.8442pt.
  [7] [8 <./Figure_2_method_overview.png>] [9] [10] [11] [12] [13] [14]
-<./Figure_3_e1_convergence.png, id=480, 664.52264pt x 281.853pt>
+<./Figure_3_e1_convergence.png, id=480, 462.528pt x 216.81pt>
 File: ./Figure_3_e1_convergence.png Graphic file (type png)
 <use ./Figure_3_e1_convergence.png>
-Package pdftex.def Info: ./Figure_3_e1_convergence.png  used on input line 994.
-
-(pdftex.def)             Requested size: 407.66833pt x 172.91493pt.
- [15 <./Figure_3_e1_convergence.png>]
+Package pdftex.def Info: ./Figure_3_e1_convergence.png  used on input line 1000
+.
+(pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
+ [15] [16 <./Figure_3_e1_convergence.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1041.
- [16]
-<./Figure_4_e2_gauss_family.png, id=521, 903.375pt x 281.853pt>
+(Font)              <9> on input line 1095.
+<./Figure_4_e2_gauss_family.png, id=516, 462.528pt x 216.81pt>
 File: ./Figure_4_e2_gauss_family.png Graphic file (type png)
 <use ./Figure_4_e2_gauss_family.png>
 Package pdftex.def Info: ./Figure_4_e2_gauss_family.png  used on input line 115
-2.
-(pdftex.def)             Requested size: 407.66833pt x 127.19394pt.
+8.
+(pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
 
 [17]
-<./Figure_5_e3_friction_sweep.png, id=534, 693.792pt x 281.853pt>
+<./Figure_5_e3_friction_sweep.png, id=533, 462.528pt x 216.81pt>
 File: ./Figure_5_e3_friction_sweep.png Graphic file (type png)
 <use ./Figure_5_e3_friction_sweep.png>
 Package pdftex.def Info: ./Figure_5_e3_friction_sweep.png  used on input line 1
-195.
-(pdftex.def)             Requested size: 407.66833pt x 165.61661pt.
-<./Figure_6_mechanisms.png, id=540, 497.6775pt x 459.5715pt>
+201.
+(pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
+ [18 <./Figure_4_e2_gauss_family.png>]
+<./Figure_6_mechanisms.png, id=546, 356.4225pt x 337.041pt>
 File: ./Figure_6_mechanisms.png Graphic file (type png)
 <use ./Figure_6_mechanisms.png>
-Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1225.
-(pdftex.def)             Requested size: 407.66833pt x 376.46538pt.
- [18 <./Figure_4_e2_gauss_family.png>]
-<./Figure_7_e4_benchmarks.png, id=550, 693.792pt x 534.798pt>
+Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1231.
+(pdftex.def)             Requested size: 452.9679pt x 428.35101pt.
+<./Figure_7_e4_benchmarks.png, id=549, 462.528pt x 404.712pt>
 File: ./Figure_7_e4_benchmarks.png Graphic file (type png)
 <use ./Figure_7_e4_benchmarks.png>
-Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1260.
+Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1266.
 
-(pdftex.def)             Requested size: 407.66833pt x 314.2469pt.
- [19 <./Figure_5_e3_friction_sweep.png>] [20 <./Figure_6_mechanisms.png>] [21 <
-./Figure_7_e4_benchmarks.png>]
-<./Figure_8_e5_double_pendulum.png, id=574, 693.792pt x 281.853pt>
+(pdftex.def)             Requested size: 452.9679pt x 396.36804pt.
+ [19 <./Figure_5_e3_friction_sweep.png>] [20 <./Figure_6_mechanisms.png>]
+<./Figure_8_e5_double_pendulum.png, id=568, 462.528pt x 224.037pt>
 File: ./Figure_8_e5_double_pendulum.png Graphic file (type png)
 <use ./Figure_8_e5_double_pendulum.png>
 Package pdftex.def Info: ./Figure_8_e5_double_pendulum.png  used on input line 
-1323.
-(pdftex.def)             Requested size: 407.66833pt x 165.61661pt.
-<./Figure_9_e6_regular_branch.png, id=576, 903.375pt x 281.853pt>
+1329.
+(pdftex.def)             Requested size: 452.9679pt x 219.418pt.
+ [21 <./Figure_7_e4_benchmarks.png>]
+<./Figure_9_e6_regular_branch.png, id=576, 462.528pt x 216.81pt>
 File: ./Figure_9_e6_regular_branch.png Graphic file (type png)
 <use ./Figure_9_e6_regular_branch.png>
 Package pdftex.def Info: ./Figure_9_e6_regular_branch.png  used on input line 1
-345.
-(pdftex.def)             Requested size: 407.66833pt x 127.19394pt.
+350.
+(pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
 
 [22 <./Figure_8_e5_double_pendulum.png>] [23 <./Figure_9_e6_regular_branch.png>
 ] [24] [25] [26] [27]
-Underfull \hbox (badness 1552) in paragraph at lines 1692--1696
+Underfull \hbox (badness 1552) in paragraph at lines 1697--1701
 []\T1/lmr/m/n/10.95 V. Wie-loch, M. Arnold, BDF in-te-gra-tors for con-strained
  me-chan-i-cal sys-tems on
  []
 
-[28] [29] [30] (./main_arxiv.aux)
+[28] [29] (./main_arxiv.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
@@ -625,13 +624,13 @@ Package rerunfilecheck Info: File `main_arxiv.out' has not changed.
 (rerunfilecheck)             Checksum: D0C18E5ABF38878108BA775624A1D0BA;4926.
  ) 
 Here is how much of TeX's memory you used:
- 11780 strings out of 467159
- 181617 string characters out of 5404997
- 633829 words of memory out of 5000000
+ 11779 strings out of 467159
+ 181610 string characters out of 5404997
+ 633017 words of memory out of 5000000
  40668 multiletter control sequences out of 15000+600000
  696931 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,12n,79p,622b,727s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,12n,79p,622b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler
 /eufm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/l
 mbx10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmb
@@ -650,18 +649,17 @@ ve/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/jingquanw/texlive/2
 026/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/jingquanw/texlive/2026/
 texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/jingquanw/texlive/2026/te
 xmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/jingquanw/texlive/2026/texm
-f-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/jingquanw/texlive/2026/texmf-d
-ist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist
-/fonts/type1/public/lm/lmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fo
-nts/type1/public/lm/lmsy9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts
-/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
-ype1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_arxiv.pdf (30 pages, 1682570 bytes).
+f-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-d
+ist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist
+/fonts/type1/public/lm/lmsy9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fo
+nts/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/font
+s/type1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
+ype1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main_arxiv.pdf (29 pages, 1409211 bytes).
 PDF statistics:
- 829 PDF objects out of 1000 (max. 8388607)
- 714 compressed objects within 8 object streams
- 205 named destinations out of 1000 (max. 500000)
+ 819 PDF objects out of 1000 (max. 8388607)
+ 707 compressed objects within 8 object streams
+ 204 named destinations out of 1000 (max. 500000)
  238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

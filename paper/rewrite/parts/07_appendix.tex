@@ -96,14 +96,14 @@ The Lean~4 development (Mathlib pinned by its manifest) machine-checks the algeb
 perturbation lemmas of Section~\ref{sec:order}: $57$ theorems, no open goals, and an exhaustive
 axiom audit showing that every theorem depends only on the standard axioms
 \nolinkurl{propext}, \nolinkurl{Classical.choice} and \nolinkurl{Quot.sound}. It builds with
-\nolinkurl{lake build}; the script \nolinkurl{scripts/check.sh} runs the build, the axiom audit and
+\texttt{lake build}; the script \nolinkurl{scripts/check.sh} runs the build, the axiom audit and
 a lint pass. Table~\ref{tab:lean-development} maps the statements of the paper to the theorems that
 check them. The row identities are proved for a transcription of the implemented residual into
 Lean; the perturbation lemmas are proved in the abstract normed-space setting with the constants of
 the paper. Butcher's order theorem and the Gauss local-error estimate are not formalized and enter
 as cited results.
 
-\begin{table}[htbp]
+\begin{table}[!htb]
 \centering
 \caption{Statements of the paper and the Lean theorems that check them.}
 \label{tab:lean-development}

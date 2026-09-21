@@ -38,10 +38,10 @@ def load_gpf():
     return mod
 
 
-def box(ax, x, y, w, h, title, lines, edge, face="#ffffff", title_size=11.5, body_size=10):
+def box(ax, x, y, w, h, title, lines, edge, face="#ffffff", title_size=11.5, body_size=10, title_gap=0.03, body_gap=0.12):
     ax.add_patch(patches.FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.01,rounding_size=0.015", ec=edge, fc=face, lw=1.4))
-    ax.text(x + w / 2, y + h - 0.03, title, ha="center", va="top", fontsize=title_size, weight="bold", color=INK)
-    ax.text(x + w / 2, y + h - 0.12, "\n".join(lines), ha="center", va="top", fontsize=body_size, color=MUTED, linespacing=1.25)
+    ax.text(x + w / 2, y + h - title_gap, title, ha="center", va="top", fontsize=title_size, weight="bold", color=INK)
+    ax.text(x + w / 2, y + h - body_gap, "\n".join(lines), ha="center", va="top", fontsize=body_size, color=MUTED, linespacing=1.25)
 
 
 def arrow(ax, p, q, color=MUTED):
@@ -49,39 +49,40 @@ def arrow(ax, p, q, color=MUTED):
 
 
 def method_overview() -> None:
-    fig, ax = plt.subplots(figsize=(11.5, 6.2))
+    fig, ax = plt.subplots(figsize=(6.4, 6.0))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1); ax.axis("off")
-    y, h = 0.62, 0.32
-    box(ax, 0.01, y, 0.17, h, "endpoint state", ["$x_n=(q_n,v_n)$", "predictor $Z^{(0)}$"], BLUE)
-    box(ax, 0.23, y, 0.24, h, "stage system", ["$F_h(Z;x_n)=0$", "132 rows / 132 unknowns", "3 stages $\\times$ $(r,\\eta,v,\\omega,a,\\alpha,\\lambda)$"], ORANGE)
-    box(ax, 0.52, y, 0.18, h, "Newton solve", ["AD Jacobian, dense LU", "5--6 iterations", "$\\|F_h\\|\\leq 10^{-11}$"], PURPLE)
-    box(ax, 0.75, y, 0.23, h, "endpoint", ["Gauss weights $b_i$", "$Q_{n+1}=Q_n\\,\\mathrm{Exp}(h\\sum b_iJ_r^{-1}\\omega_i)$", "velocity-level closure $\\mathcal{C}_h$"], GREEN)
-    for a, b in ((0.18, 0.23), (0.47, 0.52), (0.70, 0.75)):
-        arrow(ax, (a, y + h / 2), (b, y + h / 2))
-    # row families
-    fam_y, fam_h = 0.03, 0.47
-    ax.add_patch(patches.FancyBboxPatch((0.23, fam_y), 0.47, fam_h, boxstyle="round,pad=0.01,rounding_size=0.015", ec=ORANGE, fc="#fff7f0", lw=1.2))
-    ax.text(0.465, fam_y + fam_h - 0.03, "row families (per stage)", ha="center", va="top", fontsize=11.5, weight="bold", color=INK)
+    # left column: the flow of one step
+    x, w, h = 0.02, 0.42, 0.20
+    ys = [0.78, 0.53, 0.28, 0.03]
+    box(ax, x, ys[0], w, h, "endpoint state", ["$x_n=(q_n,v_n)$", "predictor $Z^{(0)}$"], BLUE, title_size=10.5, body_size=8.5, body_gap=0.09)
+    box(ax, x, ys[1], w, h, "stage system", ["$F_h(Z;x_n)=0$, 132 rows and unknowns", "3 stages $\\times$ $(r,\\eta,v,\\omega,a,\\alpha,\\lambda)$"], ORANGE, title_size=10.5, body_size=8.5, body_gap=0.09)
+    box(ax, x, ys[2], w, h, "Newton solve", ["AD Jacobian, dense LU", "5--6 iterations, $\\|F_h\\|\\leq 10^{-11}$"], PURPLE, title_size=10.5, body_size=8.5, body_gap=0.09)
+    box(ax, x, ys[3], w, h, "endpoint", ["$r_{n+1},v_{n+1},\\omega_{n+1}$: Gauss weights", "$Q_{n+1}=Q_n\\mathrm{Exp}(h\\sum_i b_iJ_r^{-1}\\omega_i)$", "velocity-level closure $\\mathcal{C}_h$"], GREEN, title_size=10.5, body_size=8, body_gap=0.085)
+    for a, b in zip(ys[:-1], ys[1:]):
+        arrow(ax, (x + w / 2, a), (x + w / 2, b + h))
+    # right column: row families and the identity
+    rx, rw = 0.52, 0.46
+    ax.add_patch(patches.FancyBboxPatch((rx, 0.46), rw, 0.52, boxstyle="round,pad=0.01,rounding_size=0.015", ec=ORANGE, fc="#fff7f0", lw=1.2))
+    ax.text(rx + rw / 2, 0.955, "row families (per stage)", ha="center", va="top", fontsize=10.5, weight="bold", color=INK)
     rows = [
-        ("constraints, three levels", "$\\Phi(q_i)=0,\\ \\Phi_qv_i=0,\\ \\Phi_qa_i+\\dot\\Phi_qv_i=0$", "24 rows"),
-        ("joint-coordinate collocation", "$\\Delta_i[s_j]=\\Delta_i[\\dot s_j]=\\Delta_i[\\theta_j]=\\Delta_i[\\dot\\theta_j]=0$", "8 rows"),
-        ("Newton--Euler balance", "$m_ba_{b,i}=F^r_{b,i},\\ J_b\\alpha_{b,i}+\\omega_{b,i}\\times J_b\\omega_{b,i}=T^\\theta_{b,i}$", "12 rows"),
+        ("constraints, three levels", "24 rows", "$\\Phi(q_i)=0$, $\\Phi_qv_i=0$,\n$\\Phi_qa_i+\\dot\\Phi_qv_i=0$"),
+        ("joint collocation", "8 rows", "$\\Delta_i[s_j]=\\Delta_i[\\dot s_j]=0$,\n$\\Delta_i[\\theta_j]=\\Delta_i[\\dot\\theta_j]=0$"),
+        ("Newton--Euler balance", "12 rows", "$m_ba_{b,i}=F^r_{b,i}$,\n$J_b\\alpha_{b,i}+\\omega_{b,i}\\times J_b\\omega_{b,i}=T^\\theta_{b,i}$"),
     ]
-    for k, (name, formula, count) in enumerate(rows):
-        yy = fam_y + fam_h - 0.115 - 0.115 * k
-        ax.text(0.25, yy, name, fontsize=11.5, color=INK, va="center")
-        ax.text(0.685, yy, count, fontsize=11.5, color=INK, va="center", ha="right")
-        ax.text(0.27, yy - 0.05, formula, fontsize=10, color=MUTED, va="center")
-    arrow(ax, (0.35, y), (0.35, fam_y + fam_h), color=ORANGE)
-    # identity note
-    ax.text(0.74, fam_y + fam_h - 0.03, "exact stage identity (Lemma 1)", fontsize=11.5, weight="bold", color=INK, va="top")
-    ax.text(0.74, fam_y + fam_h - 0.11, "$F_h(Z_G;x_n)=0$ for the lifted reduced\nGauss stage $Z_G$; on the regular branch\nevery root of the 96 non-dynamic rows is\nsuch a lift.  The step is Gauss collocation\nof the reduced equations $\\dot y=f(y,t)$\nexecuted in absolute coordinates.",
-            fontsize=10.5, color=MUTED, va="top", linespacing=1.3)
+    for k, (name, count, formula) in enumerate(rows):
+        yy = 0.875 - 0.145 * k
+        ax.text(rx + 0.02, yy, name, fontsize=9, color=INK, va="center")
+        ax.text(rx + rw - 0.02, yy, count, fontsize=9, color=INK, va="center", ha="right")
+        ax.text(rx + 0.04, yy - 0.055, formula, fontsize=8, color=MUTED, va="center", linespacing=1.2)
+    arrow(ax, (x + w, ys[1] + h / 2), (rx, ys[1] + h / 2 + 0.06), color=ORANGE)
+    ax.text(rx, 0.40, "exact stage identity (Lemma 1)", fontsize=10.5, weight="bold", color=INK, va="top")
+    ax.text(rx, 0.33, "$F_h(Z_G;x_n)=0$ for the lifted reduced Gauss\nstage $Z_G$; on the regular branch every root\nof the 96 non-dynamic rows is such a lift.\nThe step is Gauss collocation of the reduced\nequations $\\dot y=f(y,t)$ in absolute coordinates.",
+            fontsize=8.5, color=MUTED, va="top", linespacing=1.3)
     fig.savefig(FIGURES / "method_overview.png", dpi=220, bbox_inches="tight"); plt.close(fig)
 
 
 def chain_schematic() -> None:
-    fig, ax = plt.subplots(figsize=(7.4, 4.6))
+    fig, ax = plt.subplots(figsize=(6.4, 4.4))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1.05); ax.set_aspect("equal"); ax.axis("off")
     # ground axis
     g0, g1 = np.array([0.08, 0.22]), np.array([0.62, 0.62])
@@ -138,7 +139,7 @@ def mechanisms() -> None:
     def setup_panel(ax, title, subtitle):
         orig_setup(ax, title, subtitles.get(title, ""))
     gpf.setup_panel = setup_panel
-    fig, axes = plt.subplots(2, 2, figsize=(9.2, 8.0))
+    fig, axes = plt.subplots(2, 2, figsize=(6.4, 5.8))
     for ax, draw in zip(axes.ravel(), (gpf.draw_single, gpf.draw_double, gpf.draw_four_link, gpf.draw_slider)):
         draw(ax)
         for txt in list(ax.texts):

@@ -76,30 +76,30 @@ velocity $v_s$; the friction force enters the Newton--Euler rows through the mul
 force) and the sliding speed, and is $C^\infty$ in the state for $v_s>0$. The smooth case uses
 $v_s=0.5$; Section~\ref{sec:numerical} varies $v_s$ down to $0.02$.
 
-\begin{table}[htbp]
+\begin{table}[!htb]
 \centering
 \caption{Two-body chain benchmark. Directions are given before normalization; the initial rotations
 are the unique rotations mapping the body-fixed axis and twist vectors of each pair onto their
 parent-side counterparts.}
 \label{tab:chain}
 \small
-\begin{tabular}{P{0.30\linewidth}P{0.60\linewidth}}
+\begin{tabular}{P{0.42\linewidth}P{0.52\linewidth}}
 \toprule
 Quantity & Value \\
 \midrule
 Masses $m_0,m_1$ [kg] & $2.7$, $1.9$ \\
 Inertias $J_0,J_1$ [kg\,m$^2$] & $\operatorname{diag}(0.11,0.24,0.31)$, $\operatorname{diag}(0.08,0.19,0.27)$ \\
 Ground axis, ground twist & $(0.31,0.78,0.54)$, first vector of an orthonormal complement \\
-Body-fixed axes (parent side) $\hat a^{\rm prev}_0,\hat a^{\rm prev}_1$ & $(0.18,0.91,-0.37)$, $(-0.24,0.87,0.43)$ \\
-Body-fixed axes (child side) $\hat a^{\rm next}_0,\hat a^{\rm next}_1$ & $(0.42,0.69,0.59)$, $(0,1,0)$ \\
+Parent-side axes $\hat a^{\rm prev}_0,\hat a^{\rm prev}_1$ & $(0.18,0.91,-0.37)$, $(-0.24,0.87,0.43)$ \\
+Child-side axes $\hat a^{\rm next}_0,\hat a^{\rm next}_1$ & $(0.42,0.69,0.59)$, $(0,1,0)$ \\
 Attachment points $s^{\rm prev}_0,s^{\rm prev}_1$ [m] & $(0.12,-0.04,0.18)$, $(-0.08,0.05,0.16)$ \\
 Attachment points $s^{\rm next}_0,s^{\rm next}_1$ [m] & $(0.16,0.02,-0.20)$, $(0,0,0)$ \\
 Gravity [m/s$^2$] & $(0,0,-9.81)$ \\
 External forces (world) [N] & $(0.8,-0.35,0.25)$, $(-0.25,0.45,-0.10)$ \\
 External torques (body) [N\,m] & $(0.03,-0.02,0.015)$, $(-0.018,0.026,-0.014)$ \\
-Friction $\mu_s,\mu_d$, viscous coefficient, radius & $0.30$, $0.20$, $0.030$, $1.0$ \\
+Friction $\mu_s$, $\mu_d$, viscous coefficient, radius & $0.30$, $0.20$, $0.030$, $1.0$ \\
 Stribeck velocity $v_s$ & $0.5$ (smooth case); $0.2,0.1,0.05,0.02$ in the sweep \\
-Initial slide $s_j(0)$, slide rate $\dot s_j(0)$, spin rate $\dot\theta_j(0)$ & $(0.35,0.42)$, $(0.42,-0.26)$, $(0.18,-0.14)$ \\
+Initial $s_j(0)$, $\dot s_j(0)$, $\dot\theta_j(0)$ & $(0.35,0.42)$, $(0.42,-0.26)$, $(0.18,-0.14)$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -173,7 +173,7 @@ Driven mechanisms add prescribed right-hand sides to the three constraint levels
 row. The multiplier wrench collects the joint normal forces, the axis-alignment torques and the
 friction force along the joint axis; the friction law enters only there.
 
-\begin{table}[htbp]
+\begin{table}[!htb]
 \centering
 \caption{Row inventory of the stage system for the two-body chain (per stage and in total).}
 \label{tab:rows}
@@ -237,7 +237,7 @@ this choice for the convergence analysis are discussed after Lemma~\ref{lem:newt
 the chain the solve takes between five and six Newton iterations per step at every step size
 (Section~\ref{sec:numerical}).
 
-\begin{table}[htbp]
+\begin{table}[!htb]
 \centering
 \caption{One step of \method{}.}
 \label{tab:algorithm}

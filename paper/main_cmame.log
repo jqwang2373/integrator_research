@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 08:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -257,20 +257,20 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 (./main_cmame.aux)
 \openout1 = `main_cmame.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -297,12 +297,12 @@ cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
 
  (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -314,170 +314,173 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {c:/Users/jingquanw/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{
 c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1
 .enc}]
-LaTeX Font Info:    Calculating math sizes for size <> on input line 83.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
-(Font)              size <5> substituted on input line 83.
+(Font)              size <5> substituted on input line 89.
 
 [2] [3] [4] [5] [6]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 278
+LaTeX Font Info:    Trying to load font information for U+euf on input line 284
 .
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
 [7]
-<figures/chain_schematic.png, id=44, 406.3545pt x 270.3555pt>
+Overfull \hbox (0.60095pt too wide) in paragraph at lines 335--354
+ [][] 
+ []
+
+<figures/chain_schematic.png, id=44, 406.026pt x 259.1865pt>
 File: figures/chain_schematic.png Graphic file (type png)
 <use figures/chain_schematic.png>
-Package pdftex.def Info: figures/chain_schematic.png  used on input line 354.
-(pdftex.def)             Requested size: 350.99762pt x 233.52838pt.
- [8] [9 <./figures/chain_schematic.png>] [10]
-<figures/method_overview.png, id=61, 708.246pt x 359.379pt>
+Package pdftex.def Info: figures/chain_schematic.png  used on input line 360.
+(pdftex.def)             Requested size: 390.0pt x 248.97043pt.
+[8] [9 <./figures/chain_schematic.png>]
+<figures/method_overview.png, id=58, 390.5865pt x 348.21pt>
 File: figures/method_overview.png Graphic file (type png)
 <use figures/method_overview.png>
-Package pdftex.def Info: figures/method_overview.png  used on input line 443.
-(pdftex.def)             Requested size: 350.99762pt x 178.10976pt.
- [11] [12 <./figures/method_overview.png>] [13] [14]
-Underfull \hbox (badness 2913) in paragraph at lines 562--566
+Package pdftex.def Info: figures/method_overview.png  used on input line 449.
+(pdftex.def)             Requested size: 390.0pt x 347.70439pt.
+ [10] [11] [12 <./figures/method_overview.png>] [13]
+Underfull \hbox (badness 2913) in paragraph at lines 568--572
 \T1/cmr/m/it/12 row rank, the con-strained mass ma-trix is non-sin-gu-lar on th
 e
  []
 
-[15] [16] [17] [18] [19] [20] [21] [22]
-<figures/e1_convergence.png, id=102, 664.52264pt x 281.853pt>
+[14] [15] [16] [17] [18] [19] [20] [21] [22]
+<figures/e1_convergence.png, id=102, 462.528pt x 216.81pt>
 File: figures/e1_convergence.png Graphic file (type png)
 <use figures/e1_convergence.png>
-Package pdftex.def Info: figures/e1_convergence.png  used on input line 1000.
-(pdftex.def)             Requested size: 350.99762pt x 148.87389pt.
+Package pdftex.def Info: figures/e1_convergence.png  used on input line 1006.
+(pdftex.def)             Requested size: 390.0pt x 182.8205pt.
  [23] [24 <./figures/e1_convergence.png>] [25]
-<figures/e2_gauss_family.png, id=114, 903.375pt x 281.853pt>
+<figures/e2_gauss_family.png, id=115, 462.528pt x 216.81pt>
 File: figures/e2_gauss_family.png Graphic file (type png)
 <use figures/e2_gauss_family.png>
-Package pdftex.def Info: figures/e2_gauss_family.png  used on input line 1158.
-(pdftex.def)             Requested size: 350.99762pt x 109.51366pt.
- [26] [27 <./figures/e2_gauss_family.png>]
-<figures/e3_friction_sweep.png, id=122, 693.792pt x 281.853pt>
+Package pdftex.def Info: figures/e2_gauss_family.png  used on input line 1164.
+(pdftex.def)             Requested size: 390.0pt x 182.8205pt.
+ [26]
+<figures/e3_friction_sweep.png, id=119, 462.528pt x 216.81pt>
 File: figures/e3_friction_sweep.png Graphic file (type png)
 <use figures/e3_friction_sweep.png>
-Package pdftex.def Info: figures/e3_friction_sweep.png  used on input line 1201
+Package pdftex.def Info: figures/e3_friction_sweep.png  used on input line 1207
 .
-(pdftex.def)             Requested size: 350.99762pt x 142.59053pt.
- [28]
-<figures/mechanisms.png, id=126, 497.6775pt x 459.5715pt>
+(pdftex.def)             Requested size: 390.0pt x 182.8205pt.
+ [27 <./figures/e2_gauss_family.png>]
+<figures/mechanisms.png, id=124, 356.4225pt x 337.041pt>
 File: figures/mechanisms.png Graphic file (type png)
 <use figures/mechanisms.png>
-Package pdftex.def Info: figures/mechanisms.png  used on input line 1231.
-(pdftex.def)             Requested size: 350.99762pt x 324.13118pt.
-<figures/e4_benchmarks.png, id=127, 693.792pt x 534.798pt>
+Package pdftex.def Info: figures/mechanisms.png  used on input line 1237.
+(pdftex.def)             Requested size: 390.0pt x 368.80739pt.
+<figures/e4_benchmarks.png, id=125, 462.528pt x 404.712pt>
 File: figures/e4_benchmarks.png Graphic file (type png)
 <use figures/e4_benchmarks.png>
-Package pdftex.def Info: figures/e4_benchmarks.png  used on input line 1266.
-(pdftex.def)             Requested size: 350.99762pt x 270.5564pt.
- [29 <./figures/e3_friction_sweep.png>] [30 <./figures/mechanisms.png>] [31 <./
-figures/e4_benchmarks.png>]
-<figures/e5_double_pendulum.png, id=141, 693.792pt x 281.853pt>
+Package pdftex.def Info: figures/e4_benchmarks.png  used on input line 1272.
+(pdftex.def)             Requested size: 390.0pt x 341.26495pt.
+ [28 <./figures/e3_friction_sweep.png>] [29 <./figures/mechanisms.png>]
+<figures/e5_double_pendulum.png, id=134, 462.528pt x 224.037pt>
 File: figures/e5_double_pendulum.png Graphic file (type png)
 <use figures/e5_double_pendulum.png>
-Package pdftex.def Info: figures/e5_double_pendulum.png  used on input line 132
-9.
-(pdftex.def)             Requested size: 350.99762pt x 142.59053pt.
- [32]
-<figures/e6_regular_branch.png, id=145, 903.375pt x 281.853pt>
+Package pdftex.def Info: figures/e5_double_pendulum.png  used on input line 133
+5.
+(pdftex.def)             Requested size: 390.0pt x 188.9145pt.
+ [30]
+<figures/e6_regular_branch.png, id=138, 462.528pt x 216.81pt>
 File: figures/e6_regular_branch.png Graphic file (type png)
 <use figures/e6_regular_branch.png>
-Package pdftex.def Info: figures/e6_regular_branch.png  used on input line 1351
+Package pdftex.def Info: figures/e6_regular_branch.png  used on input line 1356
 .
-(pdftex.def)             Requested size: 350.99762pt x 109.51366pt.
- [33 <./figures/e5_double_pendulum.png> <./figures/e6_regular_branch.png>] [34]
- [35] [36] [37]
-Underfull \hbox (badness 1490) in paragraph at lines 1564--1578
+(pdftex.def)             Requested size: 390.0pt x 182.8205pt.
+ [31 <./figures/e4_benchmarks.png>] [32 <./figures/e5_double_pendulum.png>] [33
+ <./figures/e6_regular_branch.png>] [34] [35] [36]
+Underfull \hbox (badness 1490) in paragraph at lines 1569--1583
 \T1/cmr/m/n/12 the ex-per-i-ments of Sec-tion 6[] are the scripts $\T1/cmtt/m/n
 /12 e1 _ convergence . py$ \T1/cmr/m/n/12 to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1564--1578
+Underfull \hbox (badness 10000) in paragraph at lines 1569--1583
 \T1/cmtt/m/n/12 e7 _ solver _ envelope . py$ \T1/cmr/m/n/12 in $\T1/cmtt/m/n/12
  numerics / v049 _ paper _ experiments/$\T1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 1564--1578
+Underfull \hbox (badness 3803) in paragraph at lines 1569--1583
 \T1/cmr/m/n/12 each of which writes a CSV and a JSON file un-der $\T1/cmtt/m/n/
 12 results/$\T1/cmr/m/n/12 ;
  []
 
 
-Underfull \hbox (badness 3679) in paragraph at lines 1564--1578
+Underfull \hbox (badness 3679) in paragraph at lines 1569--1583
 \T1/cmr/m/n/12 the fig-ures are drawn from those files by $\T1/cmtt/m/n/12 make
  _ figures . py$\T1/cmr/m/n/12 , and
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 1564--1578
+Underfull \hbox (badness 5431) in paragraph at lines 1569--1583
 \T1/cmtt/m/n/12 validation / validate _ manuscript . py$ \T1/cmr/m/n/12 checks 
 that ev-ery num-ber in
  []
 
-[38] [39]
-Underfull \hbox (badness 1681) in paragraph at lines 1624--1628
+[37] [38]
+Underfull \hbox (badness 1681) in paragraph at lines 1629--1633
 \T1/cmr/m/n/12 Euler--Lagrange equa-tions with con-straints, Jour-nal of Com-pu
 -ta-
  []
 
-[40] [41] [42]
-Underfull \hbox (badness 2150) in paragraph at lines 1823--1828
+[39] [40] [41]
+Underfull \hbox (badness 2150) in paragraph at lines 1828--1833
 []\T1/cmr/m/n/12 M. An-itescu, F.A. Po-tra, For-mu-lat-ing dy-namic multi-rigid
 -body
  []
 
 
-Underfull \hbox (badness 6110) in paragraph at lines 1823--1828
+Underfull \hbox (badness 6110) in paragraph at lines 1828--1833
 \T1/cmr/m/n/12 con-tact prob-lems with fric-tion as solv-able lin-ear com-ple-m
 en-
  []
 
 
-Underfull \hbox (badness 6094) in paragraph at lines 1823--1828
+Underfull \hbox (badness 6094) in paragraph at lines 1828--1833
 \T1/cmr/m/n/12 tar-ity prob-lems, Non-lin-ear Dy-nam-ics 14 (3) (1997) 231--247
 .
  []
 
-[43] [44] (./main_cmame.aux)
+[42] [43] (./main_cmame.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
@@ -491,7 +494,7 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  5146 strings out of 467159
  76612 string characters out of 5404997
- 508044 words of memory out of 5000000
+ 516028 words of memory out of 5000000
  34354 multiletter control sequences out of 15000+600000
  647255 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -505,31 +508,32 @@ type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/jingquanw/texlive/2026/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/jingquanw/texlive/2026
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/jingquanw/texliv
-e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/jingquanw/t
-exlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/jingqu
-anw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users
-/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:
-/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/eule
-r/eufm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dis
-t/fonts/type1/public/cm-super/sfbx1200.pfb><c:/Users/jingquanw/texlive/2026/tex
-mf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/Users/jingquanw/texlive/20
-26/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/Users/jingquanw/texl
-ive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/Users/jingquan
-w/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/Users/ji
-ngquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/Us
-ers/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb>
-<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti100
-0.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/s
-fti1200.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-s
-uper/sftt1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publi
-c/cm-super/sftt1200.pfb>
-Output written on main_cmame.pdf (44 pages, 1697566 bytes).
+e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/Users/jingquanw/t
+exlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/jingqu
+anw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/j
+ingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/
+Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts
+/euler/eufm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publi
+c/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb><c:/Users/jingquanw/texlive/2026/texm
+f-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/Users/jingquanw/texlive/202
+6/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/Users/jingquanw/texli
+ve/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/Users/jingquanw
+/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/Users/jin
+gquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/Use
+rs/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><
+c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0700
+.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sf
+ti1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-su
+per/sfti1200.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public
+/cm-super/sftt1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/
+public/cm-super/sftt1200.pfb>
+Output written on main_cmame.pdf (43 pages, 1443383 bytes).
 PDF statistics:
- 303 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
+ 305 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
