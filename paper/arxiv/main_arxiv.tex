@@ -692,7 +692,7 @@ reconstruction and an $O(h^7)$ closure correction; this gives the Lipschitz scal
 \end{proof}
 
 The threshold $h_0$ of the Neumann argument is not sharp. On the chain
-(Table~\ref{tab:p2-constants-check} in Section~\ref{sec:numerical}) the sufficient condition
+(Table~\ref{tab:p2-constants-check} in \ref{app:diagnostics}) the sufficient condition
 $\|J_0^{-1}\|\,\|J_h-J_0\|\le\tfrac12$ would require $h\le2\times10^{-5}$ in the Euclidean norm on
 the stage layout and $h\le8\times10^{-4}$ in the endpoint-linearized norm $\|J_0^{-1}\,\cdot\,\|$,
 whereas the conclusion $\|J_h^{-1}\|\le2\|J_0^{-1}\|$ holds on every grid used with ratio at most
@@ -999,112 +999,15 @@ over all grid points (right) against the $h_{\rm ref}=0.1/256$ reference, with t
 anchored at the finest position error and the resolution floor of the reference.}
 {fig:e1}
 
-\paragraph{Exact stage identity and constants of the analysis}
-Three diagnostics of Section~\ref{sec:order} are evaluated on the chain runs.
-(i)~Each converged stage vector, obtained with a Newton tolerance of $10^{-13}$, is read in the
-joint-coordinate chart and the reduced collocation defects $\Delta_i[s_j]$, $\Delta_i[\dot s_j]$,
-$\Delta_i[\theta_j]$, $\Delta_i[\dot\theta_j]$ of Eq.~\eqref{eq:collocation-defect-operator} are
-evaluated together with the component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$: all are at
-roundoff (Table~\ref{tab:exact-identity-check}), as Lemma~\ref{lem:exact-stage-identity} states.
-(ii)~The constants of Lemma~\ref{lem:p2-from-p1} are measured from the implemented Jacobian at the
-converged stage and at the root of the $h=0$ stage system (Table~\ref{tab:p2-constants-check}): the
-conclusion $\|J_h^{-1}\|\le2\|J_0^{-1}\|$ holds with ratio at most $1.55$, while the sufficient
-Neumann condition would need $h\le2\times10^{-5}$ in the Euclidean norm and $h\le8\times10^{-4}$ in
-the endpoint-linearized norm; without joint friction the threshold rises to $1.4\times10^{-2}$.
-(iii)~The distances of the two predictors to $Z_G$ (Table~\ref{tab:predictor-check}) confirm the
-discussion after Lemma~\ref{lem:newton-envelope}: the lifted endpoint predictor is $O(h)$ from the
-Gauss stage, the implemented predictor is at distance about $50$ and its first Newton step expands
-that distance by up to $18\%$.
-
-\begin{table}[!htb]
-\centering
-\caption{Exact stage identity at the converged stages of the chain (Newton tolerance $10^{-13}$,
-window $[0,0.08]$): maximal implemented residual, maximal reduced collocation defect and maximal
-component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$.}
-\label{tab:exact-identity-check}
-\small
-\begin{tabular}{P{0.07\linewidth}P{0.08\linewidth}P{0.13\linewidth}P{0.17\linewidth}P{0.17\linewidth}P{0.17\linewidth}}
-\toprule
-$h$ & steps & Newton total & max stage residual & max reduced defect & max $\perp n_j$ component \\
-\midrule
-0.04 & 2 & 12 & $6.8\times10^{-14}$ & $9.0\times10^{-15}$ & $1.5\times10^{-15}$ \\
-0.02 & 4 & 24 & $1.5\times10^{-14}$ & $5.5\times10^{-16}$ & $1.9\times10^{-15}$ \\
-0.01 & 8 & 48 & $1.6\times10^{-14}$ & $5.8\times10^{-16}$ & $2.0\times10^{-15}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[!htb]
-\centering
-\caption{Constants of Lemma~\ref{lem:p2-from-p1} on the chain: $M_0=\max_n\|J_0^{-1}\|$,
-$C_J=\max_n\|J_h-J_0\|/h$, observed inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$ and Neumann threshold
-$h_0=1/(2M_0C_J)$, in the Euclidean norm on the stage layout (E) and in the endpoint-linearized
-norm $\|J_0^{-1}\,\cdot\,\|$ (L, where $M_0=1$); the last two columns repeat the L-norm quantities
-for the same mechanism without joint friction.}
-\label{tab:p2-constants-check}
-\scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lrlrllllr@{}}
-\toprule
-$h$ & $M_0$ (E) & $C_J$ (E) & ratio & $h_0$ (E) & $C_J$ (L) & $h_0$ (L) & $C_J$ (L, no fr.) & $h_0$ (L, no fr.) \\
-\midrule
-0.04 & 18.2 & $7.5\mathrm{e}{2}$ & 1.55 & $3.7\mathrm{e}{-5}$ & $5.1\mathrm{e}{2}$ & $9.8\mathrm{e}{-4}$ & 34.1 & $1.5\mathrm{e}{-2}$ \\
-0.02 & 24.3 & $8.2\mathrm{e}{2}$ & 1.26 & $2.5\mathrm{e}{-5}$ & $5.6\mathrm{e}{2}$ & $8.9\mathrm{e}{-4}$ & 35.5 & $1.4\mathrm{e}{-2}$ \\
-0.01 & 28.4 & $9.6\mathrm{e}{2}$ & 1.18 & $1.8\mathrm{e}{-5}$ & $6.5\mathrm{e}{2}$ & $7.6\mathrm{e}{-4}$ & 36.5 & $1.4\mathrm{e}{-2}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[!htb]
-\centering
-\caption{Predictor distances for Lemma~\ref{lem:newton-envelope} on the chain (Euclidean norm on
-the stage layout): distance of the lifted endpoint predictor $Z^{(0)}_\ast$ and of the implemented
-predictor to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step
-from the implemented predictor.}
-\label{tab:predictor-check}
-\small
-\begin{tabular}{P{0.08\linewidth}P{0.20\linewidth}P{0.22\linewidth}P{0.20\linewidth}}
-\toprule
-$h$ & lifted predictor & implemented predictor & first-step ratio \\
-\midrule
-0.04 & 3.23 & 50.2 & 1.12 \\
-0.02 & 2.11 & 50.3 & 1.16 \\
-0.01 & 1.07 & 50.4 & 1.18 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{Solver envelope}
-Table~\ref{tab:e7} records, for every grid of the sweep, the largest residual of the accepted Newton
-iterate under the production stopping rule and its ratio to $h^7$, which is the constant $c_\eta$
-with which that grid satisfies (H3). The accepted residual is set by the tolerance, not by $h$, so
-the ratio grows from $10^{-4}$ to $10^{6}$ across the sweep; as discussed after
-Lemma~\ref{lem:newton-envelope}, the resulting bound $2M\|F_h(\widetilde Z)\|$ on the stage
-perturbation is pessimistic by three orders of magnitude relative to the observed errors. The
-endpoint position-level constraint norm of Table~\ref{tab:e1} is the quantity that actually
-dominates the deviation of the numerical trajectory from the constraint manifold; it decreases as
-$h^6$ as the theorem requires.
-
-\begin{table}[!htb]
-\centering
-\caption{Solver envelope on the chain sweep ($\tau_N=10^{-11}$): largest residual norm of the
-accepted iterate over all steps, its ratio to $h^7$ (the $c_\eta$ of (H3) for that grid), and the
-largest components of the stage displacements $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$.}
-\label{tab:e7}
-\footnotesize
-\begin{tabular}{@{}lrlll@{}}
-\toprule
-$h$ & Newton/step & $\max_n\|F_h(\widetilde Z_n)\|$ & ratio to $h^7$ ($c_\eta$) & max $\perp n_j$ component \\
-\midrule
-$0.1$      & 6.00 & $8.1\mathrm{e}{-12}$ & $8.1\mathrm{e}{-5}$ & $5.6\mathrm{e}{-13}$ \\
-$0.05$     & 6.00 & $3.5\mathrm{e}{-13}$ & $4.5\mathrm{e}{-4}$ & $3.2\mathrm{e}{-15}$ \\
-$0.025$    & 5.90 & $8.8\mathrm{e}{-12}$ & $1.4$               & $6.4\mathrm{e}{-14}$ \\
-$0.0125$   & 5.72 & $2.7\mathrm{e}{-12}$ & $5.7\mathrm{e}{1}$  & $4.3\mathrm{e}{-15}$ \\
-$0.00625$  & 5.72 & $3.1\mathrm{e}{-12}$ & $8.3\mathrm{e}{3}$  & $4.1\mathrm{e}{-15}$ \\
-$0.003125$ & 5.72 & $3.4\mathrm{e}{-12}$ & $1.2\mathrm{e}{6}$  & $5.3\mathrm{e}{-15}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+\paragraph{Diagnostics of the analysis}
+The constants and hypotheses of Section~\ref{sec:order} are measured on the same runs and
+reported in \ref{app:diagnostics}: the converged stage vectors satisfy the exact stage identity to
+roundoff (Table~\ref{tab:exact-identity-check}); the inverse bound of Lemma~\ref{lem:p2-from-p1}
+holds with ratio at most $1.55$ although its sufficient Neumann condition would need
+$h\le8\times10^{-4}$ (Table~\ref{tab:p2-constants-check}); the implemented predictor sits at
+distance about $50$ from the Gauss stage (Table~\ref{tab:predictor-check}); and under the fixed
+tolerance the accepted residual is $10^{-14}$ to $8\times10^{-12}$, so that (H3) holds with
+$c_\eta$ growing from $10^{-4}$ to $10^{6}$ across the sweep (Table~\ref{tab:e7}).
 
 \subsection{The Gauss family: orders two, four and six at the same Newton work}
 \label{sec:e2}
@@ -1506,6 +1409,115 @@ $(0.15,0,0)$ to slider point $0$ along $e_y$, $e_z$), translational joint D (sli
 $(-e_x,e_x)$, $(e_y,e_x)$, $(-e_x,e_y)$, DP2 rows from slider point $0$ to ground point
 $(0.2,0,0)$ along $-e_x$, $e_y$), distance row between rod point $(0.15,0,0)$ and slider point
 $(0,0,1)$ with $\ell=1$; driving DP1 row $(e_y,e_y)$ with $c(t)=\cos(-2\pi t+\pi/2)$.
+
+\section{Diagnostics of the analysis constants}
+\label{app:diagnostics}
+
+Three diagnostics of Section~\ref{sec:order} are evaluated on the chain runs of Section~\ref{sec:e1}.
+(i)~Each converged stage vector, obtained with a Newton tolerance of $10^{-13}$, is read in the
+joint-coordinate chart and the reduced collocation defects $\Delta_i[s_j]$, $\Delta_i[\dot s_j]$,
+$\Delta_i[\theta_j]$, $\Delta_i[\dot\theta_j]$ of Eq.~\eqref{eq:collocation-defect-operator} are
+evaluated together with the component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$: all are at
+roundoff (Table~\ref{tab:exact-identity-check}), as Lemma~\ref{lem:exact-stage-identity} states.
+(ii)~The constants of Lemma~\ref{lem:p2-from-p1} are measured from the implemented Jacobian at the
+converged stage and at the root of the $h=0$ stage system (Table~\ref{tab:p2-constants-check}): the
+conclusion $\|J_h^{-1}\|\le2\|J_0^{-1}\|$ holds with ratio at most $1.55$, while the sufficient
+Neumann condition would need $h\le2\times10^{-5}$ in the Euclidean norm and $h\le8\times10^{-4}$ in
+the endpoint-linearized norm; without joint friction the threshold rises to $1.4\times10^{-2}$.
+(iii)~The distances of the two predictors to $Z_G$ (Table~\ref{tab:predictor-check}) confirm the
+discussion after Lemma~\ref{lem:newton-envelope}: the lifted endpoint predictor is $O(h)$ from the
+Gauss stage, the implemented predictor is at distance about $50$ and its first Newton step expands
+that distance by up to $18\%$.
+
+\begin{table}[!htb]
+\centering
+\caption{Exact stage identity at the converged stages of the chain (Newton tolerance $10^{-13}$,
+window $[0,0.08]$): maximal implemented residual, maximal reduced collocation defect and maximal
+component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$.}
+\label{tab:exact-identity-check}
+\small
+\begin{tabular}{P{0.07\linewidth}P{0.08\linewidth}P{0.13\linewidth}P{0.17\linewidth}P{0.17\linewidth}P{0.17\linewidth}}
+\toprule
+$h$ & steps & Newton total & max stage residual & max reduced defect & max $\perp n_j$ component \\
+\midrule
+0.04 & 2 & 12 & $6.8\times10^{-14}$ & $9.0\times10^{-15}$ & $1.5\times10^{-15}$ \\
+0.02 & 4 & 24 & $1.5\times10^{-14}$ & $5.5\times10^{-16}$ & $1.9\times10^{-15}$ \\
+0.01 & 8 & 48 & $1.6\times10^{-14}$ & $5.8\times10^{-16}$ & $2.0\times10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Constants of Lemma~\ref{lem:p2-from-p1} on the chain: $M_0=\max_n\|J_0^{-1}\|$,
+$C_J=\max_n\|J_h-J_0\|/h$, observed inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$ and Neumann threshold
+$h_0=1/(2M_0C_J)$, in the Euclidean norm on the stage layout (E) and in the endpoint-linearized
+norm $\|J_0^{-1}\,\cdot\,\|$ (L, where $M_0=1$); the last two columns repeat the L-norm quantities
+for the same mechanism without joint friction.}
+\label{tab:p2-constants-check}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrlrllllr@{}}
+\toprule
+$h$ & $M_0$ (E) & $C_J$ (E) & ratio & $h_0$ (E) & $C_J$ (L) & $h_0$ (L) & $C_J$ (L, no fr.) & $h_0$ (L, no fr.) \\
+\midrule
+0.04 & 18.2 & $7.5\mathrm{e}{2}$ & 1.55 & $3.7\mathrm{e}{-5}$ & $5.1\mathrm{e}{2}$ & $9.8\mathrm{e}{-4}$ & 34.1 & $1.5\mathrm{e}{-2}$ \\
+0.02 & 24.3 & $8.2\mathrm{e}{2}$ & 1.26 & $2.5\mathrm{e}{-5}$ & $5.6\mathrm{e}{2}$ & $8.9\mathrm{e}{-4}$ & 35.5 & $1.4\mathrm{e}{-2}$ \\
+0.01 & 28.4 & $9.6\mathrm{e}{2}$ & 1.18 & $1.8\mathrm{e}{-5}$ & $6.5\mathrm{e}{2}$ & $7.6\mathrm{e}{-4}$ & 36.5 & $1.4\mathrm{e}{-2}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+\centering
+\caption{Predictor distances for Lemma~\ref{lem:newton-envelope} on the chain (Euclidean norm on
+the stage layout): distance of the lifted endpoint predictor $Z^{(0)}_\ast$ and of the implemented
+predictor to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step
+from the implemented predictor.}
+\label{tab:predictor-check}
+\small
+\begin{tabular}{P{0.08\linewidth}P{0.20\linewidth}P{0.22\linewidth}P{0.20\linewidth}}
+\toprule
+$h$ & lifted predictor & implemented predictor & first-step ratio \\
+\midrule
+0.04 & 3.23 & 50.2 & 1.12 \\
+0.02 & 2.11 & 50.3 & 1.16 \\
+0.01 & 1.07 & 50.4 & 1.18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Solver envelope}
+Table~\ref{tab:e7} records, for every grid of the sweep, the largest residual of the accepted Newton
+iterate under the production stopping rule and its ratio to $h^7$, which is the constant $c_\eta$
+with which that grid satisfies (H3). The accepted residual is set by the tolerance, not by $h$, so
+the ratio grows from $10^{-4}$ to $10^{6}$ across the sweep; as discussed after
+Lemma~\ref{lem:newton-envelope}, the resulting bound $2M\|F_h(\widetilde Z)\|$ on the stage
+perturbation is pessimistic by three orders of magnitude relative to the observed errors. The
+endpoint position-level constraint norm of Table~\ref{tab:e1} is the quantity that actually
+dominates the deviation of the numerical trajectory from the constraint manifold; it decreases as
+$h^6$ as the theorem requires.
+
+\begin{table}[!htb]
+\centering
+\caption{Solver envelope on the chain sweep ($\tau_N=10^{-11}$): largest residual norm of the
+accepted iterate over all steps, its ratio to $h^7$ (the $c_\eta$ of (H3) for that grid), and the
+largest components of the stage displacements $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$.}
+\label{tab:e7}
+\footnotesize
+\begin{tabular}{@{}lrlll@{}}
+\toprule
+$h$ & Newton/step & $\max_n\|F_h(\widetilde Z_n)\|$ & ratio to $h^7$ ($c_\eta$) & max $\perp n_j$ component \\
+\midrule
+$0.1$      & 6.00 & $8.1\mathrm{e}{-12}$ & $8.1\mathrm{e}{-5}$ & $5.6\mathrm{e}{-13}$ \\
+$0.05$     & 6.00 & $3.5\mathrm{e}{-13}$ & $4.5\mathrm{e}{-4}$ & $3.2\mathrm{e}{-15}$ \\
+$0.025$    & 5.90 & $8.8\mathrm{e}{-12}$ & $1.4$               & $6.4\mathrm{e}{-14}$ \\
+$0.0125$   & 5.72 & $2.7\mathrm{e}{-12}$ & $5.7\mathrm{e}{1}$  & $4.3\mathrm{e}{-15}$ \\
+$0.00625$  & 5.72 & $3.1\mathrm{e}{-12}$ & $8.3\mathrm{e}{3}$  & $4.1\mathrm{e}{-15}$ \\
+$0.003125$ & 5.72 & $3.4\mathrm{e}{-12}$ & $1.2\mathrm{e}{6}$  & $5.3\mathrm{e}{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Lean development}
 \label{app:lean}

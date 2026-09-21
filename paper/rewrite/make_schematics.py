@@ -82,8 +82,8 @@ def method_overview() -> None:
 
 
 def chain_schematic() -> None:
-    fig, ax = plt.subplots(figsize=(6.4, 4.4))
-    ax.set_xlim(0, 1); ax.set_ylim(0, 1.05); ax.set_aspect("equal"); ax.axis("off")
+    fig, ax = plt.subplots(figsize=(6.0, 5.4))
+    ax.set_xlim(0, 1); ax.set_ylim(0.12, 1.05); ax.set_aspect("equal"); ax.axis("off")
     # ground axis
     g0, g1 = np.array([0.08, 0.22]), np.array([0.62, 0.62])
     u = (g1 - g0) / np.linalg.norm(g1 - g0)
@@ -121,9 +121,6 @@ def chain_schematic() -> None:
     ax.add_patch(body1)
     ax.text(c1[0] - 0.20, c1[1] + 0.04, "body 1", fontsize=9.5, color=GREEN, weight="bold")
     ax.text(c1[0] - 0.20, c1[1] - 0.02, "$s_1,\\ \\theta_1$", fontsize=9, color=GREEN)
-    ax.text(0.02, 0.05, "pair 0: slide $s_0$ and spin $\\theta_0$ about the ground axis;   pair 1: slide $s_1$ and spin $\\theta_1$ about $a_1(q)$,\n"
-            "four constraint rows each ($e_{j,m}\\cdot d_j=0$, $e_{j,m}\\cdot\\psi_j=0$); regular while $n_1\\cdot a_1(q)\\neq0$",
-            fontsize=8.5, color=INK, va="bottom")
     fig.savefig(FIGURES / "chain_schematic.png", dpi=220, bbox_inches="tight"); plt.close(fig)
 
 
