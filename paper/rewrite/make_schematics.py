@@ -55,7 +55,7 @@ def method_overview() -> None:
     x, w, h = 0.02, 0.42, 0.20
     ys = [0.78, 0.53, 0.28, 0.03]
     box(ax, x, ys[0], w, h, "endpoint state", ["$x_n=(q_n,v_n)$", "predictor $Z^{(0)}$"], BLUE, title_size=10.5, body_size=8.5, body_gap=0.09)
-    box(ax, x, ys[1], w, h, "stage system", ["$F_h(Z;x_n)=0$, 132 rows and unknowns", "3 stages $\\times$ $(r,\\eta,v,\\omega,a,\\alpha,\\lambda)$"], ORANGE, title_size=10.5, body_size=8.5, body_gap=0.09)
+    box(ax, x, ys[1], w, h, "stage system", ["$F_h(Z;x_n)=0$", "132 rows, 132 unknowns", "3 stages $\\times$ $(r,\\eta,v,\\omega,a,\\alpha,\\lambda)$"], ORANGE, title_size=10.5, body_size=8, body_gap=0.085)
     box(ax, x, ys[2], w, h, "Newton solve", ["AD Jacobian, dense LU", "5--6 iterations, $\\|F_h\\|\\leq 10^{-11}$"], PURPLE, title_size=10.5, body_size=8.5, body_gap=0.09)
     box(ax, x, ys[3], w, h, "endpoint", ["$r_{n+1},v_{n+1},\\omega_{n+1}$: Gauss weights", "$Q_{n+1}=Q_n\\mathrm{Exp}(h\\sum_i b_iJ_r^{-1}\\omega_i)$", "velocity-level closure $\\mathcal{C}_h$"], GREEN, title_size=10.5, body_size=8, body_gap=0.085)
     for a, b in zip(ys[:-1], ys[1:]):
