@@ -8,14 +8,10 @@ checks} (a validator or an experiment built to test the statement), \emph{agent 
 agent noticing an inconsistency between two things it had itself produced), and \emph{human
 judgment} (the researcher looking at the output and objecting).
 
-\begin{table}[!htbp]
+\begin{table*}[t]
 \centering
-\caption{Incidents in the final phase. ``Detected by'' is the mechanism that first raised the
-problem; A = artefact check (validator or purpose-built experiment), C = agent cross-check, H =
-human judgment.}
-\label{tab:incidents}
 \scriptsize
-\begin{tabularx}{\linewidth}{@{}P{0.02\linewidth}P{0.27\linewidth}P{0.25\linewidth}P{0.15\linewidth}Y@{}}
+\begin{tabularx}{\textwidth}{@{}P{0.02\linewidth}P{0.27\linewidth}P{0.25\linewidth}P{0.15\linewidth}Y@{}}
 \toprule
 \# & Wrong or misleading statement & Cause & Detected by & Resolution \\
 \midrule
@@ -57,9 +53,12 @@ snapshot records pinned the sizes of scripts that had changed. & A (frozen valid
 sequence rerun; both frozen chains green. \\
 \bottomrule
 \end{tabularx}
-\end{table}
+\caption{Incidents in the final phase. ``Detected by'' is the mechanism that first raised the
+problem; A = artefact check (validator or purpose-built experiment), C = agent cross-check, H =
+human judgment.}
+\label{tab:incidents}
+\end{table*}
 
-\FloatBarrier
 \paragraph{What the artefact checks caught}
 Incidents 3, 5, 7 and 10 were caught by things that fail loudly: a Newton solve that does not
 converge, a table full of $10^{-14}$, a purpose-built measurement, a validator. Incident~7 is the

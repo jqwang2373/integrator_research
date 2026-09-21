@@ -11,7 +11,7 @@ pipeline contract; authoritative claim boundaries remain in
 integrator_research/
   paper/         the manuscript (rewritten 2026-09-21): rewrite/parts/ -> main_cmame.tex (+pdf/log), figures/,
                  cmame_submission_flat/ (+zip), arxiv/, highlights/declarations/cover letter, slides/,
-                 agentic_research/ (the process paper, NeurIPS style; own README.md and make_figures.py)
+                 agentic_research/ (the process paper, ACL/NAACL template; own README.md and make_figures.py)
   proof/         Lean 4 development copy (IntegratorOrderProof/, scripts/, README.md)
   numerics/      v001_… v048_… (v047 = accepted method, v048 = benchmarks), reproduction/, scratch
   external/      sbel-reproducibility/, public-metadata/ (untracked clone), literature/ (reference PDFs)

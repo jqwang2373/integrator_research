@@ -1,255 +1,250 @@
 \begin{thebibliography}{33}
 \providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[{Anthropic}(2025)]{anthropic2025claudecode}
-{Anthropic}.
+\bibitem[{{Anthropic}(2025)}]{anthropic2025claudecode}
+{Anthropic}. 2025.
 \newblock {Claude Code}.
-\newblock \url{https://docs.anthropic.com/en/docs/claude-code}, 2025.
+\newblock \url{https://docs.anthropic.com/en/docs/claude-code}.
 
-\bibitem[Boiko et~al.(2023)Boiko, MacKnight, Kline, and
-  Gomes]{boiko2023coscientist}
-Daniil~A. Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes.
+\bibitem[{Boiko et~al.(2023)Boiko, MacKnight, Kline, and
+  Gomes}]{boiko2023coscientist}
+Daniil~A. Boiko, Robert MacKnight, Ben Kline, and Gabe Gomes. 2023.
 \newblock Autonomous chemical research with large language models.
-\newblock \emph{Nature}, 624:\penalty0 570--578, 2023.
+\newblock \emph{Nature}, 624:570--578.
 
-\bibitem[Bran et~al.(2024)Bran, Cox, Schilter, Baldassari, White, and
-  Schwaller]{bran2024chemcrow}
+\bibitem[{Bran et~al.(2024)Bran, Cox, Schilter, Baldassari, White, and
+  Schwaller}]{bran2024chemcrow}
 Andres~M. Bran, Sam Cox, Oliver Schilter, Carlo Baldassari, Andrew~D. White,
-  and Philippe Schwaller.
+  and Philippe Schwaller. 2024.
 \newblock Augmenting large language models with chemistry tools.
-\newblock \emph{Nature Machine Intelligence}, 6:\penalty0 525--535, 2024.
+\newblock \emph{Nature Machine Intelligence}, 6:525--535.
 
-\bibitem[Br{\"u}ls et~al.(2012)Br{\"u}ls, Cardona, and Arnold]{bruls2012lie}
-Olivier Br{\"u}ls, Alberto Cardona, and Martin Arnold.
+\bibitem[{Br{\"u}ls et~al.(2012)Br{\"u}ls, Cardona, and Arnold}]{bruls2012lie}
+Olivier Br{\"u}ls, Alberto Cardona, and Martin Arnold. 2012.
 \newblock {Lie} group generalized-$\alpha$ time integration of constrained
   flexible multibody systems.
-\newblock \emph{Mechanism and Machine Theory}, 48:\penalty0 121--137, 2012.
+\newblock \emph{Mechanism and Machine Theory}, 48:121--137.
 
-\bibitem[Chan et~al.(2025)Chan, Chowdhury, Jaffe, Aung, Sherburn, Mays,
-  Starace, Liu, Maksin, Patwardhan, Weng, and M{\k{a}}dry]{chan2025mlebench}
+\bibitem[{Chan et~al.(2025)Chan, Chowdhury, Jaffe, Aung, Sherburn, Mays,
+  Starace, Liu, Maksin, Patwardhan, Weng, and M{\k{a}}dry}]{chan2025mlebench}
 Jun~Shern Chan, Neil Chowdhury, Oliver Jaffe, James Aung, Dane Sherburn, Evan
   Mays, Giulio Starace, Kevin Liu, Leon Maksin, Tejal Patwardhan, Lilian Weng,
-  and Aleksander M{\k{a}}dry.
+  and Aleksander M{\k{a}}dry. 2025.
 \newblock {MLE-bench}: Evaluating machine learning agents on machine learning
   engineering.
-\newblock In \emph{International Conference on Learning Representations}, 2025.
+\newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[Chaturvedi et~al.(2026)Chaturvedi, Sandu, and
-  Sandu]{chaturvedi2026tfe}
-Eshan Chaturvedi, Corina Sandu, and Adrian Sandu.
-\newblock Higher-order integration of index-3 {DAE} with friction using time
-  finite elements on {Lie} groups.
-\newblock \emph{Multibody System Dynamics}, 2026.
-\newblock \doi{10.1007/s11044-026-10153-w}.
+\bibitem[{Chaturvedi et~al.(2026)Chaturvedi, Sandu, and
+  Sandu}]{chaturvedi2026tfe}
+Eshan Chaturvedi, Corina Sandu, and Adrian Sandu. 2026.
+\newblock \href {https://doi.org/10.1007/s11044-026-10153-w} {Higher-order
+  integration of index-3 {DAE} with friction using time finite elements on
+  {Lie} groups}.
+\newblock \emph{Multibody System Dynamics}.
 
-\bibitem[Chen et~al.(2025)Chen, Chen, Ning, Zhang, Wang, Yu, Li, Liao, Wei, Lu,
-  Dey, Xue, Baker, Burns, Adu-Ampratwum, Huang, Ning, Gao, Su, and
-  Sun]{chen2025scienceagentbench}
+\bibitem[{Chen et~al.(2025)Chen, Chen, Ning, Zhang, Wang, Yu, Li, Liao, Wei,
+  Lu, Dey, Xue, Baker, Burns, Adu-Ampratwum, Huang, Ning, Gao, Su, and
+  Sun}]{chen2025scienceagentbench}
 Ziru Chen, Shijie Chen, Yuting Ning, Qianheng Zhang, Boshi Wang, Botao Yu,
   Yifei Li, Zeyi Liao, Chen Wei, Zitong Lu, Vishal Dey, Mingyi Xue, Frazier~N.
   Baker, Benjamin Burns, Daniel Adu-Ampratwum, Xuhui Huang, Xia Ning, Song Gao,
-  Yu~Su, and Huan Sun.
+  Yu~Su, and Huan Sun. 2025.
 \newblock {ScienceAgentBench}: Toward rigorous assessment of language agents
   for data-driven scientific discovery.
-\newblock In \emph{International Conference on Learning Representations}, 2025.
+\newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[de~Moura and Ullrich(2021)]{demoura2021lean4}
-Leonardo de~Moura and Sebastian Ullrich.
+\bibitem[{de~Moura and Ullrich(2021)}]{demoura2021lean4}
+Leonardo de~Moura and Sebastian Ullrich. 2021.
 \newblock The {Lean} 4 theorem prover and programming language.
-\newblock In \emph{Automated Deduction -- CADE 28}, pages 625--635. Springer,
-  2021.
+\newblock In \emph{Automated Deduction -- CADE 28}, pages 625--635. Springer.
 
-\bibitem[Fang et~al.(2023)Fang, Kissel, Zhang, and
-  Negrut]{fang2023halfimplicit}
-Luning Fang, Alexandra Kissel, Ruochun Zhang, and Dan Negrut.
+\bibitem[{Fang et~al.(2023)Fang, Kissel, Zhang, and
+  Negrut}]{fang2023halfimplicit}
+Luning Fang, Alexandra Kissel, Ruochun Zhang, and Dan Negrut. 2023.
 \newblock On the use of half-implicit numerical integration in multibody
   dynamics.
-\newblock \emph{Journal of Computational and Nonlinear Dynamics}, 18\penalty0
-  (1):\penalty0 014501, 2023.
+\newblock \emph{Journal of Computational and Nonlinear Dynamics}, 18(1):014501.
 
-\bibitem[Gottweis et~al.(2025)Gottweis, Weng, Daryin, Tu, Palepu, Sirkovic,
-  Myaskovsky, Weissenberger, Rong, Tanno, et~al.]{gottweis2025coscientist}
+\bibitem[{Gottweis et~al.(2025)Gottweis, Weng, Daryin, Tu, Palepu, Sirkovic,
+  Myaskovsky, Weissenberger, Rong, Tanno et~al.}]{gottweis2025coscientist}
 Juraj Gottweis, Wei-Hung Weng, Alexander Daryin, Tao Tu, Anil Palepu, Petar
   Sirkovic, Artiom Myaskovsky, Felix Weissenberger, Keran Rong, Ryutaro Tanno,
-  et~al.
+  et~al. 2025.
 \newblock Towards an {AI} co-scientist.
-\newblock \emph{arXiv preprint arXiv:2502.18864}, 2025.
+\newblock \emph{arXiv preprint arXiv:2502.18864}.
 
-\bibitem[Hairer and Wanner(1996)]{hairer1996solving}
-Ernst Hairer and Gerhard Wanner.
+\bibitem[{Hairer and Wanner(1996)}]{hairer1996solving}
+Ernst Hairer and Gerhard Wanner. 1996.
 \newblock \emph{Solving Ordinary Differential Equations {II}: Stiff and
-  Differential-Algebraic Problems}.
-\newblock Springer, Berlin, 2nd edition, 1996.
+  Differential-Algebraic Problems}, 2nd edition.
+\newblock Springer, Berlin.
 
-\bibitem[Huang et~al.(2024)Huang, Vora, Liang, and
-  Leskovec]{huang2024mlagentbench}
-Qian Huang, Jian Vora, Percy Liang, and Jure Leskovec.
+\bibitem[{Huang et~al.(2024)Huang, Vora, Liang, and
+  Leskovec}]{huang2024mlagentbench}
+Qian Huang, Jian Vora, Percy Liang, and Jure Leskovec. 2024.
 \newblock {MLAgentBench}: Evaluating language agents on machine learning
   experimentation.
-\newblock In \emph{International Conference on Machine Learning}, 2024.
+\newblock In \emph{International Conference on Machine Learning}.
 
-\bibitem[Jansen et~al.(2025)Jansen, Tafjord, Radensky, Siangliulue, Weld,
-  Majumder, Bragg, and Clark]{jansen2025codescientist}
+\bibitem[{Jansen et~al.(2025)Jansen, Tafjord, Radensky, Siangliulue, Weld,
+  Majumder, Bragg, and Clark}]{jansen2025codescientist}
 Peter Jansen, Oyvind Tafjord, Marissa Radensky, Pao Siangliulue, Daniel~S.
-  Weld, Bodhisattwa~Prasad Majumder, Jonathan Bragg, and Peter Clark.
+  Weld, Bodhisattwa~Prasad Majumder, Jonathan Bragg, and Peter Clark. 2025.
 \newblock {CodeScientist}: End-to-end semi-automated scientific discovery with
   code-based experimentation.
-\newblock \emph{arXiv preprint arXiv:2503.22708}, 2025.
+\newblock \emph{arXiv preprint arXiv:2503.22708}.
 
-\bibitem[Jiang et~al.(2023)Jiang, Welleck, Zhou, Li, Liu, Jamnik, Lacroix, Wu,
-  and Lample]{jiang2023dsp}
+\bibitem[{Jiang et~al.(2023)Jiang, Welleck, Zhou, Li, Liu, Jamnik, Lacroix, Wu,
+  and Lample}]{jiang2023dsp}
 Albert~Q. Jiang, Sean Welleck, Jin~Peng Zhou, Wenda Li, Jiacheng Liu, Mateja
-  Jamnik, Timoth{\'e}e Lacroix, Yuhuai Wu, and Guillaume Lample.
+  Jamnik, Timoth{\'e}e Lacroix, Yuhuai Wu, and Guillaume Lample. 2023.
 \newblock Draft, sketch, and prove: Guiding formal theorem provers with
   informal proofs.
-\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[Jimenez et~al.(2024)Jimenez, Yang, Wettig, Yao, Pei, Press, and
-  Narasimhan]{jimenez2024swebench}
+\bibitem[{Jimenez et~al.(2024)Jimenez, Yang, Wettig, Yao, Pei, Press, and
+  Narasimhan}]{jimenez2024swebench}
 Carlos~E. Jimenez, John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei, Ofir
-  Press, and Karthik Narasimhan.
+  Press, and Karthik Narasimhan. 2024.
 \newblock {SWE-bench}: Can language models resolve real-world {GitHub} issues?
-\newblock In \emph{International Conference on Learning Representations}, 2024.
+\newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[Kissel et~al.(2022)Kissel, Negrut, and Taves]{kissel2022absolute}
-Alexandra Kissel, Dan Negrut, and Jay Taves.
+\bibitem[{Kissel et~al.(2022)Kissel, Negrut, and Taves}]{kissel2022absolute}
+Alexandra Kissel, Dan Negrut, and Jay Taves. 2022.
 \newblock Constrained multibody kinematics and dynamics in absolute
   coordinates: a discussion of three approaches to representing rigid body
   rotation.
-\newblock \emph{Journal of Computational and Nonlinear Dynamics}, 17\penalty0
-  (10):\penalty0 101008, 2022.
+\newblock \emph{Journal of Computational and Nonlinear Dynamics},
+  17(10):101008.
 
-\bibitem[Lu et~al.(2024)Lu, Lu, Lange, Foerster, Clune, and
-  Ha]{lu2024aiscientist}
+\bibitem[{Lu et~al.(2024)Lu, Lu, Lange, Foerster, Clune, and
+  Ha}]{lu2024aiscientist}
 Chris Lu, Cong Lu, Robert~Tjarko Lange, Jakob Foerster, Jeff Clune, and David
-  Ha.
+  Ha. 2024.
 \newblock The {AI} {Scientist}: Towards fully automated open-ended scientific
   discovery.
-\newblock \emph{arXiv preprint arXiv:2408.06292}, 2024.
+\newblock \emph{arXiv preprint arXiv:2408.06292}.
 
-\bibitem[Munthe-Kaas(1998)]{munthekaas1998rk}
-Hans Munthe-Kaas.
+\bibitem[{Munthe-Kaas(1998)}]{munthekaas1998rk}
+Hans Munthe-Kaas. 1998.
 \newblock Runge--kutta methods on {Lie} groups.
-\newblock \emph{BIT Numerical Mathematics}, 38:\penalty0 92--111, 1998.
+\newblock \emph{BIT Numerical Mathematics}, 38:92--111.
 
-\bibitem[Novikov et~al.(2025)Novikov, V{\~u}, Eisenberger, Dupont, Huang,
-  Wagner, Shirobokov, Kozlovskii, Ruiz, Mehrabian,
-  et~al.]{novikov2025alphaevolve}
+\bibitem[{Novikov et~al.(2025)Novikov, V{\~u}, Eisenberger, Dupont, Huang,
+  Wagner, Shirobokov, Kozlovskii, Ruiz, Mehrabian
+  et~al.}]{novikov2025alphaevolve}
 Alexander Novikov, Ng{\^a}n V{\~u}, Marvin Eisenberger, Emilien Dupont, Po-Sen
   Huang, Adam~Zsolt Wagner, Sergey Shirobokov, Borislav Kozlovskii, Francisco
-  J.~R. Ruiz, Abbas Mehrabian, et~al.
+  J.~R. Ruiz, Abbas Mehrabian, et~al. 2025.
 \newblock {AlphaEvolve}: A coding agent for scientific and algorithmic
   discovery.
-\newblock \emph{arXiv preprint arXiv:2506.13131}, 2025.
+\newblock \emph{arXiv preprint arXiv:2506.13131}.
 
-\bibitem[Romera-Paredes et~al.(2024)Romera-Paredes, Barekatain, Novikov, Balog,
-  Kumar, Dupont, Ruiz, Ellenberg, Wang, Fawzi, Kohli, and
-  Fawzi]{romeraparedes2024funsearch}
+\bibitem[{Romera-Paredes et~al.(2024)Romera-Paredes, Barekatain, Novikov,
+  Balog, Kumar, Dupont, Ruiz, Ellenberg, Wang, Fawzi, Kohli, and
+  Fawzi}]{romeraparedes2024funsearch}
 Bernardino Romera-Paredes, Mohammadamin Barekatain, Alexander Novikov, Matej
   Balog, M.~Pawan Kumar, Emilien Dupont, Francisco J.~R. Ruiz, Jordan~S.
   Ellenberg, Pengming Wang, Omar Fawzi, Pushmeet Kohli, and Alhussein Fawzi.
+  2024.
 \newblock Mathematical discoveries from program search with large language
   models.
-\newblock \emph{Nature}, 625:\penalty0 468--475, 2024.
+\newblock \emph{Nature}, 625:468--475.
 
-\bibitem[Schmidgall et~al.(2025)Schmidgall, Su, Wang, Sun, Wu, Yu, Liu, Liu,
-  and Barsoum]{schmidgall2025agentlab}
+\bibitem[{Schmidgall et~al.(2025)Schmidgall, Su, Wang, Sun, Wu, Yu, Liu, Liu,
+  and Barsoum}]{schmidgall2025agentlab}
 Samuel Schmidgall, Yusheng Su, Ze~Wang, Ximeng Sun, Jialian Wu, Xiaodong Yu,
-  Jiang Liu, Zicheng Liu, and Emad Barsoum.
+  Jiang Liu, Zicheng Liu, and Emad Barsoum. 2025.
 \newblock Agent {Laboratory}: Using {LLM} agents as research assistants.
-\newblock \emph{arXiv preprint arXiv:2501.04227}, 2025.
+\newblock \emph{arXiv preprint arXiv:2501.04227}.
 
-\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
-  Yao]{shinn2023reflexion}
+\bibitem[{Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao}]{shinn2023reflexion}
 Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu
-  Yao.
+  Yao. 2023.
 \newblock Reflexion: Language agents with verbal reinforcement learning.
 \newblock In \emph{Advances in Neural Information Processing Systems},
-  volume~36, 2023.
+  volume~36.
 
-\bibitem[Si et~al.(2025)Si, Yang, and Hashimoto]{si2025ideas}
-Chenglei Si, Diyi Yang, and Tatsunori Hashimoto.
+\bibitem[{Si et~al.(2025)Si, Yang, and Hashimoto}]{si2025ideas}
+Chenglei Si, Diyi Yang, and Tatsunori Hashimoto. 2025.
 \newblock Can {LLMs} generate novel research ideas? a large-scale human study
   with 100+ {NLP} researchers.
-\newblock In \emph{International Conference on Learning Representations}, 2025.
+\newblock In \emph{International Conference on Learning Representations}.
 
-\bibitem[Song et~al.(2024)Song, Yang, and Anandkumar]{song2024leancopilot}
-Peiyang Song, Kaiyu Yang, and Anima Anandkumar.
+\bibitem[{Song et~al.(2024)Song, Yang, and Anandkumar}]{song2024leancopilot}
+Peiyang Song, Kaiyu Yang, and Anima Anandkumar. 2024.
 \newblock Towards large language models as copilots for theorem proving in
   {Lean}.
-\newblock \emph{arXiv preprint arXiv:2404.12534}, 2024.
+\newblock \emph{arXiv preprint arXiv:2404.12534}.
 
-\bibitem[Starace et~al.(2025)Starace, Jaffe, Sherburn, Aung, Chan, Maksin,
+\bibitem[{Starace et~al.(2025)Starace, Jaffe, Sherburn, Aung, Chan, Maksin,
   Dias, Mays, Kinsella, Thompson, Heidecke, Glaese, and
-  Patwardhan]{starace2025paperbench}
+  Patwardhan}]{starace2025paperbench}
 Giulio Starace, Oliver Jaffe, Dane Sherburn, James Aung, Jun~Shern Chan, Leon
   Maksin, Rachel Dias, Evan Mays, Benjamin Kinsella, Wyatt Thompson, Johannes
-  Heidecke, Amelia Glaese, and Tejal Patwardhan.
+  Heidecke, Amelia Glaese, and Tejal Patwardhan. 2025.
 \newblock {PaperBench}: Evaluating {AI}'s ability to replicate {AI} research.
-\newblock \emph{arXiv preprint arXiv:2504.01848}, 2025.
+\newblock \emph{arXiv preprint arXiv:2504.01848}.
 
-\bibitem[{The mathlib Community}(2020)]{mathlib2020}
-{The mathlib Community}.
+\bibitem[{{The mathlib Community}(2020)}]{mathlib2020}
+{The mathlib Community}. 2020.
 \newblock The {Lean} mathematical library.
 \newblock In \emph{Proceedings of the 9th ACM SIGPLAN International Conference
-  on Certified Programs and Proofs}, pages 367--381, 2020.
+  on Certified Programs and Proofs}, pages 367--381.
 
-\bibitem[Trinh et~al.(2024)Trinh, Wu, Le, He, and
-  Luong]{trinh2024alphageometry}
-Trieu~H. Trinh, Yuhuai Wu, Quoc~V. Le, He~He, and Thang Luong.
+\bibitem[{Trinh et~al.(2024)Trinh, Wu, Le, He, and
+  Luong}]{trinh2024alphageometry}
+Trieu~H. Trinh, Yuhuai Wu, Quoc~V. Le, He~He, and Thang Luong. 2024.
 \newblock Solving olympiad geometry without human demonstrations.
-\newblock \emph{Nature}, 625:\penalty0 476--482, 2024.
+\newblock \emph{Nature}, 625:476--482.
 
-\bibitem[Wang(2026)]{wang2026gauss6}
-Jingquan Wang.
+\bibitem[{Wang(2026)}]{wang2026gauss6}
+Jingquan Wang. 2026.
 \newblock A sixth-order {Lie}-group {Gauss} collocation integrator for
   lower-pair mechanisms with position-, velocity- and acceleration-level
   constraints.
 \newblock Manuscript, 2026 (repository
-  \url{https://github.com/jqwang2373/integrator_research}), 2026.
+  \url{https://github.com/jqwang2373/integrator_research}).
 
-\bibitem[Xin et~al.(2024)Xin, Guo, Shao, Ren, Zhu, Liu, Ruan, Li, and
-  Liang]{xin2024deepseekprover}
+\bibitem[{Xin et~al.(2024)Xin, Guo, Shao, Ren, Zhu, Liu, Ruan, Li, and
+  Liang}]{xin2024deepseekprover}
 Huajian Xin, Daya Guo, Zhihong Shao, Zhizhou Ren, Qihao Zhu, Bo~Liu, Chong
-  Ruan, Wenda Li, and Xiaodan Liang.
+  Ruan, Wenda Li, and Xiaodan Liang. 2024.
 \newblock {DeepSeek-Prover}: Advancing theorem proving in {LLMs} through
   large-scale synthetic data.
-\newblock \emph{arXiv preprint arXiv:2405.14333}, 2024.
+\newblock \emph{arXiv preprint arXiv:2405.14333}.
 
-\bibitem[Yamada et~al.(2025)Yamada, Lange, Lu, Hu, Lu, Foerster, Clune, and
-  Ha]{yamada2025aiscientistv2}
+\bibitem[{Yamada et~al.(2025)Yamada, Lange, Lu, Hu, Lu, Foerster, Clune, and
+  Ha}]{yamada2025aiscientistv2}
 Yutaro Yamada, Robert~Tjarko Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob
-  Foerster, Jeff Clune, and David Ha.
+  Foerster, Jeff Clune, and David Ha. 2025.
 \newblock The {AI} {Scientist}-v2: Workshop-level automated scientific
   discovery via agentic tree search.
-\newblock \emph{arXiv preprint arXiv:2504.08066}, 2025.
+\newblock \emph{arXiv preprint arXiv:2504.08066}.
 
-\bibitem[Yang et~al.(2024)Yang, Jimenez, Wettig, Lieret, Yao, Narasimhan, and
-  Press]{yang2024sweagent}
+\bibitem[{Yang et~al.(2024)Yang, Jimenez, Wettig, Lieret, Yao, Narasimhan, and
+  Press}]{yang2024sweagent}
 John Yang, Carlos~E. Jimenez, Alexander Wettig, Kilian Lieret, Shunyu Yao,
-  Karthik Narasimhan, and Ofir Press.
+  Karthik Narasimhan, and Ofir Press. 2024.
 \newblock {SWE-agent}: Agent-computer interfaces enable automated software
   engineering.
 \newblock In \emph{Advances in Neural Information Processing Systems},
-  volume~37, 2024.
+  volume~37.
 
-\bibitem[Yang et~al.(2023)Yang, Swope, Gu, Chalamala, Song, Yu, Godil, Prenger,
-  and Anandkumar]{yang2023leandojo}
+\bibitem[{Yang et~al.(2023)Yang, Swope, Gu, Chalamala, Song, Yu, Godil,
+  Prenger, and Anandkumar}]{yang2023leandojo}
 Kaiyu Yang, Aidan Swope, Alex Gu, Rahul Chalamala, Peiyang Song, Shixing Yu,
-  Saad Godil, Ryan Prenger, and Anima Anandkumar.
+  Saad Godil, Ryan Prenger, and Anima Anandkumar. 2023.
 \newblock {LeanDojo}: Theorem proving with retrieval-augmented language models.
 \newblock In \emph{Advances in Neural Information Processing Systems},
-  volume~36, 2023.
+  volume~36.
 
-\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
-  Cao]{yao2023react}
+\bibitem[{Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and
+  Cao}]{yao2023react}
 Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan,
-  and Yuan Cao.
+  and Yuan Cao. 2023.
 \newblock {ReAct}: Synergizing reasoning and acting in language models.
-\newblock In \emph{International Conference on Learning Representations}, 2023.
+\newblock In \emph{International Conference on Learning Representations}.
 
 \end{thebibliography}

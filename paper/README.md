@@ -14,7 +14,7 @@ historical evidence ledger in `../validation/`.
 | `rewrite/OUTLINE.md`, `rewrite/EXPERIMENT_PLAN.md` | The rewrite plan and the execution record of the experiments E1–E7. |
 | `figures/` | Figures referenced as `\figpath/<name>.png`: `e1_…`–`e6_…` (data, drawn by `../numerics/v049_paper_experiments/make_figures.py`) and the three schematics. |
 | `highlights_cmame.txt`, `declarations_cmame.md`, `COVER_LETTER.md` | Journal sidecars. |
-| `agentic_research/` | The process paper (NeurIPS style): how the program was carried out by the coding agent, the incidents, the session statistics. Own `README.md`; figures and `stats.tex` from `agentic_research/make_figures.py`. |
+| `agentic_research/` | The process paper (ACL/NAACL two-column template): how the program was carried out by the coding agent, the incidents, the session statistics. Own `README.md`; figures and `stats.tex` from `agentic_research/make_figures.py`. |
 | `slides/` | Talks and the autoresearch-methodology write-up (separate documents). |
 
 The pre-rewrite manuscript package (2026-09-19 draft, its flat and arXiv copies, figures and

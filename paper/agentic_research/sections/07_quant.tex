@@ -1,30 +1,35 @@
 \section{Quantitative account}
 \label{sec:quant}
 
-\begin{table}[t]
+\begin{table}[b]
 \centering
-\caption{What the program produced (repository state at the end of the final phase).}
-\label{tab:artefacts}
-\footnotesize
-\begin{tabular}{@{}lr@{\hspace{1.5em}}lr@{}}
+\small
+\begin{tabular}{@{}lr@{}}
 \toprule
-Versioned experiments & 49 & Ledger scripts (builders/validators) & 341 (146/183) \\
-Result files & 793 & Ledger records (JSON / Markdown) & 171 / 186 \\
-Python lines (all) & 356\,167 & Ledger checks (top-level / package) & 4\,896 / 162\,327 \\
-Lean files / lines / theorems & 10 / 1\,672 / 57 & Manuscript validator checks & 359 \\
-Manuscript & 44 pp., 51 refs & Memory files & 11 \\
+Versioned experiments & 49 \\
+Result files & 793 \\
+Python lines (all) & 356\,167 \\
+Lean files / lines / theorems & 10 / 1\,672 / 57 \\
+Manuscript & 44 pp., 51 refs \\
+Ledger scripts (builders / validators) & 341 (146 / 183) \\
+Ledger records (JSON / Markdown) & 171 / 186 \\
+Ledger checks (top-level / package) & 4\,896 / 162\,327 \\
+Manuscript validator checks & 359 \\
+Memory files & 11 \\
 \bottomrule
 \end{tabular}
+\caption{What the program produced (repository state at the end of the final phase).}
+\label{tab:artefacts}
 \end{table}
 
-\begin{figure}[t]
+\begin{figure*}[t]
   \centering
-  \includegraphics[width=\linewidth]{figures/fig_session.png}
+  \includegraphics[width=0.92\textwidth]{figures/fig_session.png}
   \caption{The final session (the manuscript rewrite, September 17--21, 2026), from the transcript:
   \nHuman{} human messages, \nTurns{} agent turns, \nTools{} tool calls. Left: agent tool calls and
   human messages per six hours. Right: what the tool calls did.}
   \label{fig:session}
-\end{figure}
+\end{figure*}
 
 \paragraph{Effort}
 Table~\ref{tab:artefacts} summarizes the artefacts. The transcript of the final session (the

@@ -1,26 +1,26 @@
-\documentclass{article}
+\documentclass[11pt]{article}
 
-% NeurIPS 2025 style in preprint mode; switch to [final] for a camera-ready copy or drop the
-% option for an anonymous submission.
-\usepackage[preprint]{neurips_2025}
+% ACL Rolling Review / NAACL template. "review": anonymous with line numbers (submission);
+% "preprint": non-anonymous with page numbers; "final": camera-ready.
+\usepackage[preprint]{acl}
 
-\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{latexsym}
 \usepackage[T1]{fontenc}
-\usepackage{hyperref}
-\usepackage{url}
-\usepackage{booktabs}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{nicefrac}
+\usepackage[utf8]{inputenc}
 \usepackage{microtype}
-\usepackage{xcolor}
+\usepackage{inconsolata}
 \usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{placeins}
+\usepackage{xcolor}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
-\makeatletter\setlength{\@fptop}{0pt}\makeatother   % top-align float pages (appendix tables)
+\makeatletter\setlength{\@fptop}{0pt}\setlength{\@dblfptop}{0pt}\makeatother   % top-align float pages (appendix tables)
 
 \newcommand{\method}{Gauss6\slash FullVA}
 \IfFileExists{stats.tex}{\input{stats.tex}}{}
@@ -31,37 +31,32 @@
 a coding agent finds, proves and validates\\
 a sixth-order Lie-group integrator}
 
-\author{%
-  Jingquan Wang\\
-  Department of Mechanical Engineering\\
-  University of Wisconsin--Madison\\
-  \texttt{jingquanw@wisc.edu}
-}
+\author{Jingquan Wang \\
+  Department of Mechanical Engineering \\
+  University of Wisconsin--Madison \\
+  \texttt{jingquanw@wisc.edu}}
 
 \begin{document}
-
 \maketitle
 
 \begin{abstract}
-We report a research program in computational mechanics that was carried out by a large-language-model
+We report a research program in computational mechanics carried out by a large-language-model
 coding agent under human direction, from the first prototype to a manuscript with machine-checked
-proofs, and we analyse what made the outcome trustworthy and where it nearly was not. Over four months
+proofs, and analyse what made the outcome trustworthy and where it nearly was not. Over four months
 the agent produced 49 versioned experiments on Lie-group integrators for constrained multibody
-systems, converged on a three-stage Gauss collocation step with full velocity- and acceleration-level
-constraint enforcement, and then discovered, while auditing its own manuscript against its own code,
-that the implemented stage system is exactly reduced Gauss collocation lifted to absolute coordinates.
-That identity became the central theorem of the resulting paper; the agent formalized it and the
-surrounding error analysis in Lean~4 (57 theorems, standard axioms only), designed and ran the
-experiments, and wrote the manuscript. The process that made this possible is the subject of this
-paper: a versioned exploration tree in which every hypothesis is a read-only directory, an evidence
-ledger of 183 validators that pin every claim and number to an artefact, a proof sandbox, persistent
-cross-session memory, explicit command and authorization boundaries, and a manuscript pipeline in
-which every table entry is checked against the result file it comes from. We document ten incidents
-in which a wrong claim was caught, and by what: four by validators or purpose-built experiments, four
-by the agent's own cross-checks, and two only by the human reading the output. The human sent \nHuman{}
-messages in the final four-day session against \nTools{} agent tool calls; the messages that mattered
-were judgments of taste, scope and fairness rather than instructions. We release the repository,
-the ledger and the session transcript.
+systems, converged on a three-stage Gauss collocation step with full velocity- and
+acceleration-level constraint enforcement, and then discovered, while auditing its own manuscript
+against its own code, that the implemented stage system is exactly reduced Gauss collocation lifted
+to absolute coordinates. That identity became the central theorem of the resulting paper; the agent
+formalized it in Lean~4 (57 theorems), designed and ran the experiments, and wrote the manuscript.
+The process is the subject of this paper: a versioned exploration tree, an evidence ledger of 183
+validators that pin every claim to an artefact, a proof sandbox, persistent cross-session memory,
+explicit command boundaries, and a manuscript pipeline that checks every table entry against its
+result file. We document ten incidents in which a wrong claim was caught and by what: four by
+validators or purpose-built experiments, four by the agent's own cross-checks, two only by the human
+reading the output. The human typed \nHuman{} messages in the final four-day session against
+\nTools{} agent tool calls; the messages that mattered were judgments of taste, scope and fairness
+rather than instructions. We release the repository, the ledger and the transcript.
 \end{abstract}
 
 \input{sections/01_intro}
@@ -73,12 +68,13 @@ the ledger and the session transcript.
 \input{sections/07_quant}
 \input{sections/08_discussion}
 \input{sections/09_conclusion}
+\input{sections/10_limitations}
+\input{sections/11_ethics}
 
-\bibliographystyle{plainnat}
 \bibliography{references}
 
 \appendix
-\raggedbottom   % appendix pages: tables float, do not stretch the text
+\raggedbottom
 \input{sections/appendix}
 
 \end{document}

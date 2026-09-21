@@ -1,13 +1,10 @@
 \section{The 49 versions}
 \label{app:ledger}
 
-\begin{table}[tp]
+\begin{table*}[t]
 \centering
-\caption{Phases of the exploration. ``Kept'' is what survived into the final method; ``ruled out''
-is preserved as a versioned negative result.}
-\label{tab:phases}
 \small
-\begin{tabularx}{\linewidth}{P{0.12\linewidth}P{0.22\linewidth}YY}
+\begin{tabularx}{\textwidth}{P{0.12\linewidth}P{0.22\linewidth}YY}
 \toprule
 Versions & Phase & Kept & Ruled out \\
 \midrule
@@ -35,17 +32,18 @@ one & external superiority claims (source-policy rows 0/40) \\
 v049 & Experiments for the rewritten paper & E1--E7 & long horizons ($T=1$, $T=20$) on the chain \\
 \bottomrule
 \end{tabularx}
-\end{table}
+\caption{Phases of the exploration. ``Kept'' is what survived into the final method; ``ruled out''
+is preserved as a versioned negative result.}
+\label{tab:phases}
+\end{table*}
 
 Table~\ref{tab:phases} condenses the exploration into phases; Table~\ref{tab:ledger} gives one line per version: the method family tested and the role the
 version plays in the record (its ``current role'' field in the machine-readable ledger).
 
-\begin{table}[tp]
+\begin{table*}[t]
 \centering
-\caption{Version ledger (condensed from \texttt{validation/docs/version\_ledger.csv}).}
-\label{tab:ledger}
 \scriptsize
-\begin{tabularx}{\linewidth}{P{0.05\linewidth}P{0.34\linewidth}Y}
+\begin{tabularx}{\textwidth}{P{0.05\linewidth}P{0.34\linewidth}Y}
 \toprule
 v & Method family & Role in the record \\
 \midrule
@@ -100,7 +98,9 @@ v & Method family & Role in the record \\
 049 & paper experiments E1--E7 & the numerical section of the rewritten manuscript \\
 \bottomrule
 \end{tabularx}
-\end{table}
+\caption{Version ledger (condensed from \texttt{validation/docs/version\_ledger.csv}).}
+\label{tab:ledger}
+\end{table*}
 
 \section{Memory files}
 \label{app:memory}
