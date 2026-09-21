@@ -815,3 +815,20 @@ nonlinear recurrent history source law，把缺的 8 个 lower-pair closure rows
   但账本还在验证它们，所以保留。
 - 脚本通过 `paper_paths.py` 找到其他目录；记录里的相对标签一致改写（`../v048_…`→`../../numerics/v048_…`、
   `../.venv_sbel`→`../../.venv_sbel`、`../../s11044…`→`../../external/literature/…`）。两条验证链重跑通过后提交。
+
+## 2026-09-21 补充六：稿子重写完成，旧账本冻结
+
+- 用户判断旧稿质量差，批准按 `paper/rewrite/OUTLINE.md` 全文重写。新稿 `paper/main_cmame.tex`（42 页）由
+  `paper/rewrite/parts/` 的分节文件经 `assemble.py` 拼成；只改 parts，不直接改 main。派生版本（Elsevier
+  flat、arXiv）由 `paper/rewrite/build_derived.py` 生成。
+- 新实验全部在 `numerics/v049_paper_experiments/`：E1 收敛（链，T=0.5，六个步长，四个量的拟合阶
+  6.25/6.28/6.11/6.27）、E2 Gauss 家族（1/2/3 级：2.10/4.17/6.25，Newton 次数相同）、E3 摩擦锐度扫描
+  （v_s 从 0.5 到 0.02，阶从 6.25 掉到 2.47，最细一对恢复到 5.3–6.7）、E4 四个 ASME 机构（双摆 6 阶；
+  三个受驱机构在所有步长下都是舍入误差量级——它们不是动力学测试）、E5 双摆对公开 rA/rp/rε 与 2022
+  半隐式代码的共同参考比较（T=3，参考 h=1e-4）、E6 正则分支上的约束漂移与能量（能量误差 4e-12）、
+  E7 求解器包络（生产容差 1e-11 下残差/h^7 在最细网格达 1e6，(H3) 只能以很大的 c_η 成立，正文如实写出）。
+- 基准链的冻结滑动方向在 t≈0.605 退化（n₁·a₁→0），所有链实验取 T=0.5（用户选 A）；正文和 Limitations 都写了。
+- 旧账本（`paper_v047_cylindrical_chain/` 全部 builder/validator、`validate_pipeline_outputs.py`）冻结在
+  重写前的稿子包 `legacy_drafts/main_cmame_pre_rewrite/`，`paper_paths.LATEX` 与 `LATEX_DIR` 指向那里，
+  两条链对冻结包继续跑绿，但对新稿不作任何断言。新稿只由 `validation/validate_manuscript.py` 检查
+  （log 干净、表中每个数字等于结果文件里的值、Lean 定理名与数量、arXiv 同步）。

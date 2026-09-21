@@ -1,0 +1,429 @@
+\section{Error analysis}
+\label{sec:order}
+
+The analysis has three parts. Lemma~\ref{lem:exact-stage-identity} shows that the stage system of
+Eq.~\eqref{eq:g6fullva-expanded-stage} is exactly three-stage Gauss collocation of the reduced
+joint-coordinate equations of motion, written in absolute coordinates; the stage residual vanishes
+identically at the lifted reduced Gauss stage and no stage-residual perturbation term appears.
+The two perturbations the implementation does introduce, the endpoint closure and the inexact
+Newton solve, are bounded by $O(h^7)$ (Lemmas~\ref{lem:endpoint-closure}
+and~\ref{lem:inexact-newton}), and the local defect is transferred to the grid by a discrete
+Gronwall argument (Lemma~\ref{lem:local-global-transfer}). The hypotheses are collected in
+Assumption~\ref{ass:regularity}; Lemmas~\ref{lem:p2-from-p1} and~\ref{lem:newton-envelope} show that
+the second and third of them follow from the first for small steps. The algebraic identities and the
+perturbation lemmas are machine-checked in Lean~4/Mathlib (\ref{app:lean}); Butcher's
+order theorem for the Gauss tableau and the classical Gauss local-error estimate
+\cite{hairer1993solving} are used as cited results.
+
+\subsection{Reduced chart, lift and hypotheses}
+
+Let $y=(s_0,\theta_0,s_1,\theta_1,\dot s_0,\dot\theta_0,\dot s_1,\dot\theta_1)$ collect the joint
+coordinates of Eq.~\eqref{eq:joint-coordinates} and their rates. On the smooth constrained branch
+the equations of motion reduce to
+\begin{equation}
+  \dot y=f(y,t),
+  \label{eq:reduced-ode}
+\end{equation}
+where $f$ returns the rates and the joint accelerations obtained from the constrained Newton--Euler
+equations. Let $\varphi_h$ denote the flow of Eq.~\eqref{eq:reduced-ode} over one step,
+$\mathcal L(y,t)=(q,v,a,\lambda)$ the smooth lift to absolute coordinates given by forward
+kinematics together with the velocities, accelerations and multipliers of the constrained dynamics,
+and $Y_1,Y_2,Y_3$ the Gauss collocation stages of Eq.~\eqref{eq:reduced-ode} from $y_n$,
+\begin{equation}
+  Y_i=y_n+h\sum_{k=1}^3A_{ik}f(Y_k,t_k),\qquad i=1,2,3 .
+  \label{eq:reduced-gauss-stages}
+\end{equation}
+The lifted reduced Gauss stage is $Z_G=(\mathcal L(Y_1),\mathcal L(Y_2),\mathcal L(Y_3))$. We write
+$F_h(\cdot;x_n)$ for the implemented $132$-row residual, $\mathcal E_h$ for the endpoint
+reconstruction of Eqs.~\eqref{eq:end-trans}--\eqref{eq:end-rot}, $\mathcal C_h$ for the endpoint
+closure, $\mathcal P_h=\mathcal C_h\circ\mathcal E_h$, and $\Psi_h^G=\mathcal E_h(Z_G)$ for the
+reconstructed Gauss endpoint. Norms are fixed finite-dimensional norms on the reduced chart, the
+stage space and the endpoint space; chart-to-configuration norm equivalences on the compact tube are
+absorbed into the constants.
+
+\begin{assumption}[Regularity and perturbation scale]
+\label{ass:regularity}
+Fix a final time $T$ and a compact reduced-state tube $K$ containing the exact trajectory of
+Eq.~\eqref{eq:reduced-ode} at distance at least $d_K>0$ from $\partial K$. The following hold
+uniformly for $y\in K$, $0\le t\le T$ and $0<h\le h_0$, with constants independent of $h$ and of
+the number of steps.
+\begin{enumerate}
+  \item[(H1)] (Smooth branch.) The constraint Jacobian $\Phi_q$ has constant full row rank, the
+  constrained mass matrix is nonsingular on the tangent space, $f$ is $C^7$, the lift $\mathcal L$
+  is smooth on the tube, and the joint coordinates complete the constraints to a chart, i.e.\ the
+  map $q\mapsto(\Phi(q),s_0(q),\theta_0(q),s_1(q),\theta_1(q))$ has an invertible Jacobian.
+  \item[(H2)] (Local inverses and stability.) The stage Jacobian $J_h=D_ZF_h(Z_G;x_n)$ is
+  invertible with $\|J_h^{-1}\|\le M$ and $\|D_Z^2F_h\|\le L$ on a ball $B_\rho(Z_G)$ with
+  $ML\rho\le\tfrac12$. The closure subsystem $E$ of Lemma~\ref{lem:endpoint-closure} is $C^2$ on a
+  ball $B_{r_E}(z_\ast)$ around a same-branch closed anchor $z_\ast$ with $E(z_\ast)=0$;
+  $DE(z_\ast)$ has a right inverse $B_\ast$ with $\|B_\ast\|\le M_{E}$,
+  $\|DE(z)-DE(z_\ast)\|\le L_E\|z-z_\ast\|$ on that ball, $M_{E}L_Er_E\le\tfrac12$, the unclosed
+  endpoint $z_u=\Psi_h^G$ lies in $B_{r_E/2}(z_\ast)$, and its raw closure defect satisfies
+  $\|E(z_u)\|\le C_{E,\mathrm{raw}}h^7$. The one-step map satisfies
+  \begin{equation}
+  \label{eq:assumption-stability-scale}
+    \|\Psi_h(y)-\Psi_h(\bar y)\|\le (1+C_sh)\|y-\bar y\|,\qquad y,\bar y\in K .
+  \end{equation}
+  \item[(H3)] (Solver envelope.) The computed Newton iterate $\widetilde Z$ lies in the ball
+  $B_\rho(Z_G)$ of (H2) and its residual satisfies $\|F_h(\widetilde Z;x_n)\|\le\eta_h\le c_\eta h^7$.
+  The output map satisfies $\|D_Z\mathcal P_h\|\le M_N$ on that ball.
+\end{enumerate}
+\end{assumption}
+
+(H1) is the compact-tube regularity hypothesis of classical collocation theory. (H2) and (H3) are
+the interfaces through which the implementation enters; Lemmas~\ref{lem:p2-from-p1}
+and~\ref{lem:newton-envelope} derive them from (H1) for $h\le h_0$, and they are kept as separate
+items only because the theorem is stated for any mechanism whose stage system has the form of
+Eq.~\eqref{eq:g6fullva-expanded-stage}. (In the accompanying repository the three hypotheses are
+called P1, P2 and P6.) The theorem also uses the classical Gauss local-error estimate: for
+$f\in C^7$ on the compact tube there is $C_{G,0}$ with
+\begin{equation}
+  \|u(t_n+h)-\varphi_h(y_n)\|\le C_{G,0}h^7,
+  \label{eq:gauss-local-truncation}
+\end{equation}
+where $u$ is the degree-three collocation polynomial through Eq.~\eqref{eq:reduced-gauss-stages}
+\cite{hairer1993solving}. The tableau used in the implementation satisfies Butcher's simplifying
+assumptions $B(6)$, $C(3)$, $D(3)$ and fails $B(7)$, so its order is exactly six; these algebraic
+conditions are machine-checked for the coefficients hard-coded in the implementation.
+
+\subsection{Exact stage identity}
+
+\begin{lemma}[Exact stage identity]
+\label{lem:exact-stage-identity}
+Under (H1), the implemented $132$-row residual satisfies
+\begin{equation}
+  F_h(Z_G;x_n)=0 .
+  \label{eq:exact-stage-identity}
+\end{equation}
+Conversely, on the branch where $n_j\cdot a_j(q_i)\neq0$, every stage vector that satisfies the
+$96$ non-dynamic rows of Eq.~\eqref{eq:g6fullva-expanded-stage} lies on the constraint manifold
+with consistent velocities and accelerations and has joint coordinates satisfying
+Eq.~\eqref{eq:reduced-gauss-stages}. Hence the stage solve is three-stage Gauss collocation of
+Eq.~\eqref{eq:reduced-ode} in the joint-coordinate chart, written in absolute coordinates.
+\end{lemma}
+
+\begin{proof}
+The $72$ constraint rows vanish on $Z_G$ because each $\mathcal L(Y_k)$ lies on the constraint
+manifold with consistent velocities and accelerations. The $24$ joint-coordinate rows are, by
+Eq.~\eqref{eq:joint-coordinates}, the reduced collocation equations~\eqref{eq:reduced-gauss-stages}
+read component-wise, because $s_j,\theta_j,\dot s_j,\dot\theta_j$ are coordinates of $y$ and
+$\ddot s_j,\ddot\theta_j$ are components of $f$; the implemented projection onto $a_j(q_i)$
+multiplies each translational row by $n_j\cdot a_j(q_i)$. The $36$ Newton--Euler rows vanish because
+$\mathcal L$ supplies the stage accelerations and multipliers satisfying force and moment balance,
+and the implemented rows are exactly these balance defects with the implemented wrench sign
+conventions. For the converse, the constraint rows force $d_j,\dot d_j,\ddot d_j\parallel n_j$, so
+each translational collocation row factors as
+$\bigl(s_j(Z_i)-s_j(x_n)-h\sum_kA_{ik}\dot s_j(Z_k)\bigr)\,(n_j\cdot a_j(q_i))$, and the twist rows
+are already scalar. Both directions are verified row by row for a transcription of the implemented
+residual in the Lean development.
+\end{proof}
+
+The lemma replaces any stage-residual perturbation estimate: the residual at the lifted Gauss
+stage is not small, it is zero. What remains to be controlled is which root Newton selects, how the
+endpoint is reconstructed and closed, and how inexact the Newton solve is. The lemma is stated for
+the open chain, where the joint coordinates form a global chart; for closed loops the same argument
+applies on any local chart of independent coordinates. The rows of
+Eq.~\eqref{eq:g6fullva-expanded-stage} are transcribed from the single implemented residual
+function, whose automatic derivative is the Newton Jacobian, so there is one residual and Jacobian
+path; the Lean development transcribes the same rows, and the binding between transcription and
+source is a static check, not a theorem. Numerically, the converged stage vectors of the chain runs
+read in the joint-coordinate chart have reduced collocation defects and out-of-axis components of
+$d_j,\dot d_j,\ddot d_j$ at roundoff (Section~\ref{sec:numerical}).
+
+\begin{lemma}[Branch selection]
+\label{lem:stage-residual-defect}
+Under (H2), $Z_G$ is the unique zero of $F_h(\cdot;x_n)$ in $B_\rho(Z_G)$. In particular the exact
+stage root on that branch equals $Z_G$, and $\mathcal E_h(Z_G)=\Psi_h^G$.
+\end{lemma}
+
+\begin{proof}
+For $Z\in B_\rho(Z_G)$ the mean value inequality gives
+$\|F_h(Z)-F_h(Z_G)-J_h(Z-Z_G)\|\le\tfrac{L\rho}{2}\|Z-Z_G\|$. If $F_h(Z)=0$, then
+Eq.~\eqref{eq:exact-stage-identity} gives
+$\|Z-Z_G\|\le M\|F_h(Z)-F_h(Z_G)-J_h(Z-Z_G)\|\le\tfrac{ML\rho}{2}\|Z-Z_G\|\le\tfrac14\|Z-Z_G\|$,
+so $Z=Z_G$.
+\end{proof}
+
+\begin{lemma}[(H2) from (H1) for small steps]
+\label{lem:p2-from-p1}
+Assume (H1). Then there is $h_0>0$ such that for $0<h\le h_0$: (i) the stage Jacobian
+$J_h=D_ZF_h(Z_G)$ is invertible with
+\begin{equation}
+  \|J_h^{-1}\|\le 2\|J_0^{-1}\|,\qquad J_0=\lim_{h\to0}J_h,\qquad \|J_h-J_0\|\le C_Jh ,
+  \label{eq:p2-perturbation-bound}
+\end{equation}
+(ii) the closure Jacobian is invertible, so $B_\ast$ exists with $\|B_\ast\|$ bounded uniformly,
+(iii) the raw closure defect satisfies $\|E(z_u)\|\le C_{E,\mathrm{raw}}h^7$, and (iv) the one-step
+map satisfies Eq.~\eqref{eq:assumption-stability-scale}. Hence all of (H2) follows from (H1) for
+small steps.
+\end{lemma}
+
+\begin{proof}
+At $h=0$ the collocation rows reduce to $s_j(Z_i)-s_j(x_n)$, $\theta_j(Z_i)-\theta_j(x_n)$ and
+their rate analogues, so $J_0$ is block diagonal over the stages and block triangular within a
+stage: the position block is the Jacobian of $q\mapsto(\Phi,s,\theta)$, the velocity block is the
+same matrix acting on $(v,\omega)$ because on the constraint manifold the rate rows are the time
+derivatives of the coordinate rows, and the acceleration block is the constrained Newton--Euler
+system $\bigl[\begin{smallmatrix}M&\Phi_q^T\\ \Phi_q&0\end{smallmatrix}\bigr]$ acting on
+$(a,\alpha,\lambda)$. Each block is invertible under (H1), so $J_0$ is invertible with an
+$h$-independent inverse bound. The only $h$-dependence of $F_h$ is the factor $h\sum_kA_{ik}$ in
+the collocation rows, so $\|J_h-J_0\|\le C_Jh$ on the compact tube, and for
+$2\|J_0^{-1}\|C_Jh\le1$ Eq.~\eqref{eq:p2-perturbation-bound} follows from the Neumann series. The
+endpoint closure is a square KKT system in the endpoint velocities whose matrix is
+$\bigl[\begin{smallmatrix}I&\Phi_q^T\\ \Phi_q&0\end{smallmatrix}\bigr]$, invertible by full row rank
+of $\Phi_q$; its raw defect is the velocity-level constraint value at the Gauss-weight endpoint,
+which is the quadrature error of Lemma~\ref{lem:gauss-endpoint-defect} and hence $O(h^7)$; the
+implicit function theorem gives a same-branch closed anchor $z_\ast$ within $O(h^7)$ of $z_u$, so
+$z_u\in B_{r_E/2}(z_\ast)$ for small $h$. Finally, by Lemma~\ref{lem:exact-stage-identity} the
+one-step map read in the reduced chart is the reduced Gauss step, whose derivative is $I+O(h)$ by
+the implicit function theorem for the stage equations, composed with the smooth endpoint
+reconstruction and an $O(h^7)$ closure correction; this gives the Lipschitz scale $1+C_sh$.
+\end{proof}
+
+The threshold $h_0$ of the Neumann argument is not sharp. On the chain
+(Table~\ref{tab:p2-constants-check} in Section~\ref{sec:numerical}) the sufficient condition
+$\|J_0^{-1}\|\,\|J_h-J_0\|\le\tfrac12$ would require $h\le2\times10^{-5}$ in the Euclidean norm on
+the stage layout and $h\le8\times10^{-4}$ in the endpoint-linearized norm $\|J_0^{-1}\,\cdot\,\|$,
+whereas the conclusion $\|J_h^{-1}\|\le2\|J_0^{-1}\|$ holds on every grid used with ratio at most
+$1.55$. The gap comes from the curvature of the friction law: the largest entries of $(J_h-J_0)/h$
+sit in the Newton--Euler rows against the stage velocities, where the second derivative of the
+Brown--McPhee law with $v_s=0.5$ enters, and the same mechanism without joint friction has $C_J$
+smaller by a factor of about fifteen and $h_0\approx1.4\times10^{-2}$. The friction law, not the
+collocation structure, sets the small-step threshold; Section~\ref{sec:numerical} shows the same
+dependence in the observed orders when $v_s$ is decreased.
+
+\subsection{Endpoint defect, closure and inexact Newton}
+
+\begin{lemma}[Gauss endpoint defect]
+\label{lem:gauss-endpoint-defect}
+Under (H1) there is a constant $C_G$, uniform on the compact tube, such that
+\begin{equation}
+  \|\Psi_h^G(y)-\varphi_h(y)\|\le C_Gh^7 .
+  \label{eq:gauss-endpoint-defect}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $u$ be the collocation polynomial of Eq.~\eqref{eq:reduced-gauss-stages} and $g$ any
+component of the lifted state along $u$, so that $g(t)=\rho(u(t))$ for a smooth chart function
+$\rho$ and $g'(t_k)$ equals the lifted stage velocity at $Y_k$; for the rotational component, $g$
+is the Lie-algebra increment $\eta(t)$ with $\eta'=J_r^{-1}(\eta)\omega$ along the lifted
+trajectory. The reconstruction Eqs.~\eqref{eq:end-trans}--\eqref{eq:end-rot} replaces
+$g(t_n+h)-g(t_n)=\int_{t_n}^{t_n+h}g'(t)\,dt$ by the Gauss quadrature $h\sum_ib_ig'(t_i)$. Because
+the Gauss weights integrate polynomials of degree at most five exactly, a Peano-kernel argument
+gives
+\begin{equation}
+  \Bigl|\int_{t_n}^{t_n+h}g'(t)\,dt-h\sum_{i=1}^3b_ig'(t_i)\Bigr|
+  \le\frac{h^7}{60}\max_{[t_n,t_n+h]}|g^{(7)}| ,
+  \label{eq:gauss-quadrature-defect}
+\end{equation}
+with $g^{(7)}$ bounded uniformly on the tube by (H1) and the smoothness of $u$. Hence each
+reconstructed endpoint component equals the lifted endpoint of $u$ up to $O(h^7)$, and $\mathrm{Exp}$
+is smooth. Combining with Eq.~\eqref{eq:gauss-local-truncation} and the chart norm equivalence gives
+Eq.~\eqref{eq:gauss-endpoint-defect}. The bound Eq.~\eqref{eq:gauss-quadrature-defect} is
+machine-checked.
+\end{proof}
+
+\begin{lemma}[Endpoint-closure perturbation]
+\label{lem:endpoint-closure}
+Let $E(z)=0$ be the velocity-level KKT closure subsystem solved by $\mathcal C_h$, and let
+$z_u=\Psi_h^G$ be the unclosed endpoint. Under (H2) the right-inverse Newton iteration
+$z_{l+1}=z_l-B_\ast E(z_l)$, $z_0=z_u$, converges to a closed endpoint $z_E=\mathcal C_h(z_u)$
+with $E(z_E)=0$, and any closed endpoint of the form $z_u+B_\ast w$ in $B_{r_E}(z_\ast)$ satisfies
+\begin{equation}
+  \|z_E-z_u\|\le 2M_{E}\|E(z_u)\|\le C_Eh^7,\qquad C_E=2M_{E}C_{E,\mathrm{raw}} .
+  \label{eq:endpoint-correction-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $G(w)=E(z_u+B_\ast w)$. Since $DE(z_\ast)B_\ast=I$ and
+$\|DE(z)-DE(z_\ast)\|\le L_E\|z-z_\ast\|\le L_Er_E$ on the ball, the mean value inequality gives
+$\|G(w_1)-G(w_2)-(w_1-w_2)\|\le M_{E}L_Er_E\|w_1-w_2\|\le\tfrac12\|w_1-w_2\|$ whenever both
+arguments stay in the ball. The map $w\mapsto w-G(w)$ is therefore a $\tfrac12$-contraction of the
+ball of radius $2\|E(z_u)\|$ into itself, which stays inside $B_{r_E}(z_\ast)$ for $h\le h_0$; its
+fixed point $w_\ast$ gives $z_E=z_u+B_\ast w_\ast$ with $E(z_E)=0$. For any root of this form, the
+same inequality with $w_2=0$ yields $\|w\|\le2\|E(z_u)\|$, hence
+$\|z_E-z_u\|=\|B_\ast w\|\le2M_{E}\|E(z_u)\|$. The raw-defect bound of (H2) completes
+Eq.~\eqref{eq:endpoint-correction-bound}.
+\end{proof}
+
+\begin{lemma}[Inexact Newton]
+\label{lem:inexact-newton}
+Under (H2) and (H3),
+\begin{equation}
+\label{eq:inexact-newton-stage-output-bounds}
+\begin{aligned}
+  \|\widetilde Z-Z_G\|&\le 2M\eta_h,\\
+  \|\mathcal P_h(\widetilde Z)-\mathcal P_h(Z_G)\|&\le C_N\eta_h\le C_Nc_\eta h^7,\qquad C_N=2MM_N .
+\end{aligned}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+With Eq.~\eqref{eq:exact-stage-identity} and the mean value inequality of
+Lemma~\ref{lem:stage-residual-defect},
+$\|\widetilde Z-Z_G\|\le M\bigl(\|F_h(\widetilde Z)\|+\tfrac{L\rho}{2}\|\widetilde Z-Z_G\|\bigr)$,
+so $\|\widetilde Z-Z_G\|\le 2M\eta_h$. The output bound follows from $\|D_Z\mathcal P_h\|\le M_N$ on
+the ball and the envelope $\eta_h\le c_\eta h^7$.
+\end{proof}
+
+\begin{lemma}[Newton reaches the solver envelope]
+\label{lem:newton-envelope}
+Under (H1) and (H2) there is $h_0>0$ such that for $0<h\le h_0$ the lifted endpoint predictor
+$Z^{(0)}_\ast=(\mathcal L(x_n),\mathcal L(x_n),\mathcal L(x_n))$ lies in $B_{\rho/2}(Z_G)$; for
+every predictor $Z^{(0)}\in B_{\rho/2}(Z_G)$ the simplified Newton iteration
+$Z^{(k+1)}=Z^{(k)}-J_h^{-1}F_h(Z^{(k)})$ stays in $B_\rho(Z_G)$ and
+\begin{equation}
+  \|Z^{(k)}-Z_G\|\le 2^{-k}\|Z^{(0)}-Z_G\|,\qquad
+  \|F_h(Z^{(k)})\|\le L_F\,2^{-k}\|Z^{(0)}-Z_G\| ,
+  \label{eq:newton-envelope-decay}
+\end{equation}
+where $L_F$ is a Lipschitz constant of $F_h$ on the ball; the same decay holds for the full Newton
+iteration of Eq.~\eqref{eq:newton}. Consequently the stopping rule $\|F_h(Z^{(k)})\|\le c_\eta h^7$
+is met after $k=O(\log(1/h))$ iterations, and (H3) holds by construction whenever the stage solve
+starts in $B_{\rho/2}(Z_G)$.
+\end{lemma}
+
+\begin{proof}
+The stages of $Z_G$ are $\mathcal L(Y_k)$ with $\|Y_k-y_n\|=O(h)$ on the compact tube, so
+$\|Z^{(0)}_\ast-Z_G\|=O(h)$ and $Z^{(0)}_\ast\in B_{\rho/2}(Z_G)$ for small $h$. The linearization
+inequality of (H2) makes the simplified Newton map a $\tfrac12$-contraction of $B_\rho(Z_G)$ into
+itself with fixed point $Z_G$ (Lemma~\ref{lem:stage-residual-defect}), which gives the first bound
+in Eq.~\eqref{eq:newton-envelope-decay}; the second follows from $F_h(Z_G)=0$ and the Lipschitz
+bound. For the full Newton iteration, (H2) gives $\|D_ZF_h(Z)-J_h\|\le L\|Z-Z_G\|\le L\rho$ on the
+ball, so the perturbation bound of Lemma~\ref{lem:p2-from-p1} yields $\|D_ZF_h(Z)^{-1}\|\le 2M$,
+and the standard estimate $\|Z^{(k+1)}-Z_G\|\le ML\|Z^{(k)}-Z_G\|^2\le\tfrac12\|Z^{(k)}-Z_G\|$
+gives the same decay. The simplified-Newton decay estimate is machine-checked.
+\end{proof}
+
+The predictor of the implementation (Section~\ref{sec:method}) is not $Z^{(0)}_\ast$: it sets the
+angular-velocity and angular-acceleration guesses to zero, so its distance to $Z_G$ is of the
+order of $\|\omega_n\|+\|\alpha_n\|$ rather than $O(h)$ (about $50$ on the chain,
+Table~\ref{tab:predictor-check}), and the first full Newton step from it expands the distance by
+$12$ to $18\%$ before the quadratic phase sets in. The lemma therefore covers the implemented run
+through the ball membership of (H3), which is confirmed a posteriori on every grid used: the
+converged roots are the Gauss roots to roundoff. Replacing the zero angular guesses by the endpoint
+values would make the implemented predictor an $O(h)$ predictor and bring the run under the lemma
+directly.
+
+The experiments of Section~\ref{sec:numerical} use the fixed tolerance $\tau_N=10^{-11}$ rather
+than the $h^7$-scaled rule. On the chain sweep the residual of the accepted iterate is between
+$10^{-14}$ and $8\times10^{-12}$ at every step and step size (Table~\ref{tab:e7}); relative to
+$h^7$ this is $c_\eta\le10^{-3}$ for $h\ge0.05$ but $c_\eta\approx10^{6}$ at $h=0.003125$, so
+the fixed-tolerance runs satisfy (H3) only with a large constant on the finest grids, and the
+inexact-Newton term $C_Nc_\eta h^7$ of the theorem is then a pessimistic bound: the observed errors
+keep decreasing as $h^6$ down to $10^{-13}$, three orders of magnitude below $2M\|F_h(\widetilde Z)\|$.
+One additional Newton iteration per step would bring the accepted residual to roundoff at every
+step size; the $h^7$-scaled rule with $c_\eta=10^4$ has been exercised on the chain and gives the
+same observed orders as the fixed tolerance.
+
+\subsection{Local-to-global transfer and main theorem}
+
+\begin{lemma}[Local-to-global transfer]
+\label{lem:local-global-transfer}
+Let $\Psi_h$ be a one-step map on the reduced chart, $t_n=nh$, and $y_{n+1}=\Psi_h(y_n)$ with $y_0$
+the exact initial state. Suppose that for $0\le n<N$ with $Nh\le T$ the exact states
+$Y_n=\varphi_{t_n}(y_0)$ satisfy $\|\Psi_h(Y_n)-Y_{n+1}\|\le C_\ell h^{p+1}$, that
+$\|\Psi_h(y_n)-\Psi_h(Y_n)\|\le(1+C_sh)\|y_n-Y_n\|$ whenever $y_n\in K$, and that
+$C_\ell\Gamma_s(T)h^p\le d_K$, where $\Gamma_s(T)=(e^{C_sT}-1)/C_s$ for $C_s>0$ and
+$\Gamma_s(T)=T$ for $C_s=0$. Then $y_n\in K$ for all $n\le N$ and
+\begin{equation}
+\label{eq:local-global-lemma-grid-bound}
+  \max_{0\le n\le N}\|y_n-Y_n\|\le C_\ell\Gamma_s(T)h^p .
+\end{equation}
+If moreover the reporting map $\mathcal R$ (chart to reported position and velocity) is
+$C_{\mathcal R}$-Lipschitz on $K$, then
+$\max_n\|\mathcal R(y_n)-\mathcal R(Y_n)\|\le C_{\mathcal R}C_\ell\Gamma_s(T)h^p$.
+\end{lemma}
+
+\begin{proof}
+Let $e_n=\|y_n-Y_n\|$. By induction, as long as $y_n\in K$,
+$e_{n+1}\le(1+C_sh)e_n+C_\ell h^{p+1}$, hence $e_n\le C_\ell h^{p+1}\sum_{k<n}(1+C_sh)^k$. For
+$C_s>0$ the geometric sum equals $((1+C_sh)^n-1)/(C_sh)\le(e^{C_snh}-1)/(C_sh)\le\Gamma_s(T)/h$,
+and for $C_s=0$ it equals $n\le T/h$. Thus $e_n\le C_\ell\Gamma_s(T)h^p\le d_K$, which keeps $y_n$
+in the tube and closes the induction. The reporting bound is the Lipschitz property. The lemma is
+machine-checked.
+\end{proof}
+
+\begin{definition}[Branch-selected one-step map]
+\label{def:accepted-branch-map}
+The one-step map $\Psi_h$ is defined on the set $\mathcal D_h\subset K$ of reduced states for which
+the transition satisfies (H2) and (H3): the computed iterate lies in $B_\rho(Z_G)$ with residual at
+most $\eta_h$, the endpoint is reconstructed by Eqs.~\eqref{eq:end-trans}--\eqref{eq:end-rot} and
+closed by $\mathcal C_h$, and $\Psi_h(y)=\mathcal P_h(\widetilde Z)$.
+\end{definition}
+
+\begin{theorem}[Sixth-order error bound]
+\label{thm:g6fullva-order}
+Let Assumption~\ref{ass:regularity} hold and let $C_{\rm loc}=C_G+C_E+C_Nc_\eta$ with $C_G$, $C_E$,
+$C_N$ from Lemmas~\ref{lem:gauss-endpoint-defect}, \ref{lem:endpoint-closure}
+and~\ref{lem:inexact-newton}. Then there is $h_0>0$ such that for $0<h\le h_0$ and every
+$y\in\mathcal D_h$,
+\begin{equation}
+\label{eq:g6fva-local-defect-theorem}
+  \|\Psi_h(y)-\varphi_h(y)\|\le C_{\rm loc}h^7 .
+\end{equation}
+Consequently, for every grid $t_n=nh$, $0\le n\le N_h$, $N_hh\le T$, whose transitions lie in
+$\mathcal D_h$ and whose numerical trajectory $y_{n+1}=\Psi_h(y_n)$ starts from the exact reduced
+initial state,
+\begin{equation}
+\label{eq:g6fva-reduced-grid-bound}
+  \max_{0\le n\le N_h}\|y_n-y(t_n)\|\le C_{\rm red}h^6,\qquad C_{\rm red}=C_{\rm loc}\Gamma_s(T),
+\end{equation}
+and the reported position--velocity map $\mathcal R(y)=(q(y),v(y))$ satisfies
+\begin{equation}
+\label{eq:g6fva-reported-grid-bound}
+  \max_{0\le n\le N_h}\|\mathcal R(y_n)-\mathcal R(y(t_n))\|\le C_{qv}h^6,\qquad
+  C_{qv}=C_{\mathcal R}C_{\rm red} .
+\end{equation}
+The constants depend on the tube, on $T$ and on the constants of Assumption~\ref{ass:regularity},
+including $c_\eta$, but not on $h$, $N_h$ or the linear-algebra backend. Under (H1) alone the same
+conclusions hold for $h\le h_0$ whenever the stage solve is started in $B_{\rho/2}(Z_G)$ and
+stopped by the rule $\|F_h\|\le c_\eta h^7$ (Lemmas~\ref{lem:p2-from-p1}
+and~\ref{lem:newton-envelope}).
+\end{theorem}
+
+\begin{proof}
+Fix $y\in\mathcal D_h$ and write $\Psi_h^G=\mathcal E_h(Z_G)$, $\Psi_h^E=\mathcal P_h(Z_G)$ and
+$\Psi_h(y)=\mathcal P_h(\widetilde Z)$. By Lemma~\ref{lem:stage-residual-defect} the exact stage
+root on the branch is $Z_G$, so there is no stage-root perturbation term, and
+\begin{equation}
+\label{eq:three-term-local-defect-sum}
+\begin{aligned}
+  \|\Psi_h(y)-\varphi_h(y)\|
+  &\le\|\Psi_h^G(y)-\varphi_h(y)\|+\|\Psi_h^E(y)-\Psi_h^G(y)\|\\
+  &\quad+\|\Psi_h(y)-\Psi_h^E(y)\|
+  \le C_Gh^7+C_Eh^7+C_Nc_\eta h^7
+\end{aligned}
+\end{equation}
+by Lemmas~\ref{lem:gauss-endpoint-defect}, \ref{lem:endpoint-closure}
+and~\ref{lem:inexact-newton}, after shrinking $h_0$ so that all three apply on the tube. This is
+Eq.~\eqref{eq:g6fva-local-defect-theorem}. Choose $h_0$ additionally so that
+$C_{\rm loc}\Gamma_s(T)h_0^6\le d_K$. Lemma~\ref{lem:local-global-transfer} with $p=6$,
+$C_\ell=C_{\rm loc}$ and the stability scale Eq.~\eqref{eq:assumption-stability-scale} gives
+Eq.~\eqref{eq:g6fva-reduced-grid-bound}; the reporting-map clause gives
+Eq.~\eqref{eq:g6fva-reported-grid-bound}. The last sentence follows from
+Lemmas~\ref{lem:p2-from-p1} and~\ref{lem:newton-envelope}, which supply (H2) and (H3) from (H1) for
+small steps.
+\end{proof}
+
+Two remarks on the scope of the theorem. First, it is an estimate for the reduced state and for the
+reported positions and velocities; it says nothing about the accuracy of the stage multipliers or
+reaction forces beyond what follows from the smooth dependence of the lift on the reduced state, and
+it does not turn a small constraint residual on a closed-loop mechanism into a trajectory-error
+bound, which would need a stability constant for that mechanism. Second, because the stage residual
+vanishes identically at the lifted Gauss stage, the order of the method is that of reduced Gauss
+collocation; the absolute-coordinate formulation contributes the exact three-level constraint
+enforcement, the multipliers and reaction forces at every stage, the friction law through the
+multipliers, and the Lie-group endpoint reconstruction, but no additional stage-level
+approximation. The same argument gives order $2s$ for the $s$-stage Gauss member with the same
+stage system, which Section~\ref{sec:numerical} confirms for $s=1,2$.
+
+\paragraph{Formal-order comparison with time finite elements}
+The Lie-group time finite-element family of~\cite{chaturvedi2026tfe} with Gauss--Lobatto
+polynomials of degree $m$ has formal order $2m-1$~\cite{kim2017higher}; its $m=3$ member is a
+fifth-order formula. The comparison of the present method with that family is at this formal level
+only: order six against order five for a stage system of comparable size. We have not implemented
+the time finite-element method and make no statement about its accuracy or cost on its own test
+problems.

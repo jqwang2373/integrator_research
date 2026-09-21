@@ -1,0 +1,44 @@
+{
+  "schema": "e6-long-time-v1",
+  "h": 0.01,
+  "t_final": 0.5,
+  "rows": [
+    {
+      "case": "conservative",
+      "h": 0.01,
+      "t_final": 0.5,
+      "steps": 50,
+      "converged": true,
+      "runtime_sec": 11.351627280993853,
+      "energy_t0": 11.78149183617827,
+      "max_relative_energy_drift": 4.250805336844055e-12,
+      "final_relative_energy_drift": 4.250805336844055e-12,
+      "max_position_constraint_norm": 1.0732366421069206e-13,
+      "max_velocity_constraint_norm": 9.544968249307066e-14,
+      "max_acc_position_constraint_norm": 5.687116766346677e-15,
+      "max_acc_orientation_constraint_norm": 1.751204873938778e-14,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "mean_newton_iterations": 5.0,
+      "max_newton_iterations": 5
+    },
+    {
+      "case": "smooth_friction",
+      "h": 0.01,
+      "t_final": 0.5,
+      "steps": 50,
+      "converged": true,
+      "runtime_sec": 2.4751366910059005,
+      "energy_t0": 11.78149183617827,
+      "max_relative_energy_drift": 0.3669696421193568,
+      "final_relative_energy_drift": 0.3669696421193568,
+      "max_position_constraint_norm": 9.821211186202903e-14,
+      "max_velocity_constraint_norm": 9.401888366260452e-14,
+      "max_acc_position_constraint_norm": 5.3705425095741715e-15,
+      "max_acc_orientation_constraint_norm": 1.3620326993659171e-14,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "mean_newton_iterations": 5.72,
+      "max_newton_iterations": 6
+    }
+  ],
+  "runtime_sec": 14.016800353012513
+}

@@ -630,3 +630,25 @@ manuscript edit: install `main_cmame.tex` → flat copy → `python3 build_arxiv
 - Commands in this contract and in `docs/VALIDATION_QUICKSTART.md` are relative to `validation/`
   unless they `cd` first; the venv is `../.venv_sbel/bin/python` from here and
   `../../.venv_sbel/bin/python` from the ledger or a version directory.
+
+### 2026-09-21 manuscript rewrite; evidence ledger frozen (claim state of the ledger unchanged)
+
+- `paper/main_cmame.tex` is now the rewritten manuscript (assembled from `paper/rewrite/parts/`
+  by `paper/rewrite/assemble.py`; 42 pages; figures from the new experiment set E1–E7 in
+  `numerics/v049_paper_experiments/`). Its derived copies (`paper/cmame_submission_flat/`,
+  `paper/arxiv/`) are written by `paper/rewrite/build_derived.py`. It is validated by
+  `validation/validate_manuscript.py` only (LaTeX log clean; every number in the result tables
+  equals the value in its result file to the printed precision; Lean theorem names present and the
+  quoted theorem count equal to `proof/`; arXiv manifest in sync).
+- The evidence ledger (`paper_v047_cylindrical_chain/`, `validate_pipeline_outputs.py`, the
+  builder sequence, B1–B7 gates, phrase pins) is frozen at the pre-rewrite manuscript package,
+  copied to `legacy_drafts/main_cmame_pre_rewrite/` (tex, pdf, log, txt, sidecars, `figures/`,
+  `cmame_submission_flat/`, `arxiv/`). `paper_paths.LATEX` and the top-level `LATEX_DIR` point
+  there; `../../paper/...` and `paper/...` labels resolve into the frozen package. The ledger's
+  chains still run green on that package and are not to be edited further; they make no
+  statement about the rewritten paper. Its `run_v047.py` command boundary (no campaign, no default
+  `1e-4`) is unchanged.
+- The new experiments never call the `run_v047.py` campaign: `common.py` drives `gauss_step` on the
+  accepted residual path; E5 replays the public 2021/2022 codes with their own steppers; E4 uses the
+  v048 closed-loop shard runner (coarse-first, `T = 1`) and the v029 double-revolute harness with the
+  v048 AD-safe small-angle patch.

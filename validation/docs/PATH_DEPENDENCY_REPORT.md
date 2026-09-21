@@ -7,33 +7,33 @@ A script is *reachable* when the active machinery (the two validator chains, the
 the review agent, the gate/arXiv generators) invokes or imports it, transitively. A record is
 *retired* when its JSON carries `superseded_by`.
 
-Files: **932**. Reachable scripts: **300**.
+Files: **993**. Reachable scripts: **300**.
 
 ## Families
 
 | family | count | meaning |
 | --- | ---: | --- |
 | builder | 146 | `build_*.py`: regenerate one record each; run on demand |
-| derived_output | 19 | PDF / log / text dumps of the manuscripts (validators read the logs and text dumps) |
-| figure | 33 | figure sources under `figures/` |
+| derived_output | 29 | PDF / log / text dumps of the manuscripts (validators read the logs and text dumps) |
+| figure | 9 | figure sources under `figures/` |
 | lean | 18 | byte-identical copy of the Lean development (`~/lean/integrator_order_proof`) |
 | manuscript | 5 | LaTeX sources; `main_cmame.tex` is authoritative, the flat and arXiv copies are derived |
-| note | 10 | backups and working notes (`notes/`), not read by validators |
+| note | 81 | backups and working notes (`notes/`), not read by validators |
 | record | 368 | JSON/Markdown/CSV audit records and gates (the evidence ledger) |
 | reproducibility_bundle | 63 | runner candidates and the narrowed reproducibility bundle (`cmame_*` directories) |
 | runner | 9 | `run_*.py` / `run_*.sh`: numerical probes and guarded drivers |
 | script | 4 | other scripts (review agent, figure generator, manifest sync, replay core) |
-| submission_copy | 36 | files inside `cmame_submission_flat/` and `arxiv/` (derived; regenerate, do not edit) |
-| submission_sidecar | 38 | highlights, declarations, cover letter, checklists, manifests |
+| submission_copy | 25 | files inside `cmame_submission_flat/` and `arxiv/` (derived; regenerate, do not edit) |
+| submission_sidecar | 53 | highlights, declarations, cover letter, checklists, manifests |
 | validator | 183 | `validate_*.py`: read-only checks of one record each |
 
 ## Status
 
 | status | count |
 | --- | ---: |
-| active | 866 |
+| active | 911 |
 | manual_or_retired_script | 41 |
-| not_read_by_active_scripts | 10 |
+| not_read_by_active_scripts | 26 |
 | retired | 15 |
 
 ## Retired records (kept, marked `superseded_by`)
@@ -109,6 +109,22 @@ validated read-only or because they are the reproducibility scripts of reported 
 | `notes/b4_run_2026-09-20/executed_state_B4_SOURCE_POLICY_ROW_CLOSURE_READINESS_LEDGER.md` | not_read_by_active_scripts | 0 |
 | `notes/b4_run_2026-09-20/executed_state_HI2022_RA_HALF_DOUBLE_SOURCE_POLICY_FAILURE_DIAGNOSIS.md` | not_read_by_active_scripts | 0 |
 | `notes/b4_run_2026-09-20/executed_state_RA2021_DOUBLE_SOURCE_POLICY_LOW_ORDER_DIAGNOSIS.md` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_bounded_formula.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_bounded_gradient.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_component_mixing.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_derivative_aware.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_direction_capacity.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_higher_order_capacity.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_history_capacity.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_multi_step_history_capacity.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_nondegenerate.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_nonlinear_capacity.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_recurrent_history_capacity.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_row_space_compression.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_state_dependent.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_target_free_formula.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_value_level.png` | not_read_by_active_scripts | 0 |
+| `../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_weak_row_structure_capacity.png` | not_read_by_active_scripts | 0 |
 | `../legacy_drafts/manuscript_backups/PROPOSED_METHOD_SECTION_REVISION.tex` | not_read_by_active_scripts | 0 |
 | `../legacy_drafts/manuscript_backups/main_cmame_pre_v049_backup.tex` | not_read_by_active_scripts | 0 |
 | `../legacy_drafts/manuscript_backups/main_cmame_submission_pre_v049_backup.tex` | not_read_by_active_scripts | 0 |
@@ -125,7 +141,6 @@ validated read-only or because they are the reproducibility scripts of reported 
 | `SUBMISSION_PACKET.md` | active | 5 |
 | `../../paper/COVER_LETTER.md` | active | 7 |
 | `../../paper/README.md` | active | 19 |
-| `../../paper/README_CMAME_FLAT_SUBMISSION.md` | active | 5 |
 | `../../paper/arxiv/main_arxiv.tex` | active | 3 |
 | `../../paper/cmame_submission_flat.zip` | active | 68 |
 | `../../paper/cmame_submission_flat/main_cmame_submission.tex` | active | 66 |
@@ -134,7 +149,23 @@ validated read-only or because they are the reproducibility scripts of reported 
 | `../../paper/main_cmame.log` | active | 7 |
 | `../../paper/main_cmame.pdf` | active | 9 |
 | `../../paper/main_cmame.tex` | active | 72 |
-| `../../paper/main_cmame.txt` | active | 17 |
+| `../../paper/rewrite/COVER_LETTER.md` | active | 7 |
+| `../../paper/rewrite/EXPERIMENT_PLAN.md` | active | 0 |
+| `../../paper/rewrite/OUTLINE.md` | active | 0 |
+| `../../paper/rewrite/assemble.py` | active | 0 |
+| `../../paper/rewrite/build_derived.py` | active | 0 |
+| `../../paper/rewrite/highlights_cmame.txt` | active | 10 |
+| `../../paper/rewrite/intro_draft.tex` | active | 0 |
+| `../../paper/rewrite/make_schematics.py` | active | 0 |
+| `../../paper/rewrite/parts/00_preamble.tex` | active | 0 |
+| `../../paper/rewrite/parts/01_intro.tex` | active | 0 |
+| `../../paper/rewrite/parts/02_related.tex` | active | 0 |
+| `../../paper/rewrite/parts/03_setting_method.tex` | active | 0 |
+| `../../paper/rewrite/parts/04_analysis.tex` | active | 0 |
+| `../../paper/rewrite/parts/05_numerics.tex` | active | 0 |
+| `../../paper/rewrite/parts/06_limitations_conclusions.tex` | active | 0 |
+| `../../paper/rewrite/parts/07_appendix.tex` | active | 0 |
+| `../../paper/rewrite/parts/08_bib.tex` | active | 0 |
 | `../../paper/slides/AutoResearch_Agent_Meta_Huzaifa_style_slides.pptx` | active | 0 |
 | `../../paper/slides/Integrator_AutoResearch_Agent_Methodology.pptx` | active | 0 |
 | `../../paper/slides/Jingquan_FullVA_Huzaifa_style_slides.pptx` | active | 0 |
@@ -175,6 +206,16 @@ validated read-only or because they are the reproducibility scripts of reported 
 | `../legacy_drafts/main.pdf` | active | 6 |
 | `../legacy_drafts/main.tex` | active | 4 |
 | `../legacy_drafts/main.txt` | active | 10 |
+| `../legacy_drafts/main_cmame_pre_rewrite/arxiv/main_arxiv.log` | active | 2 |
+| `../legacy_drafts/main_cmame_pre_rewrite/arxiv/main_arxiv.pdf` | active | 2 |
+| `../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/highlights_cmame.txt` | active | 10 |
+| `../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.log` | active | 66 |
+| `../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.pdf` | active | 66 |
+| `../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.txt` | active | 66 |
+| `../legacy_drafts/main_cmame_pre_rewrite/highlights_cmame.txt` | active | 10 |
+| `../legacy_drafts/main_cmame_pre_rewrite/main_cmame.log` | active | 7 |
+| `../legacy_drafts/main_cmame_pre_rewrite/main_cmame.pdf` | active | 9 |
+| `../legacy_drafts/main_cmame_pre_rewrite/main_cmame.txt` | active | 17 |
 | `../legacy_drafts/main_concise.log` | active | 5 |
 | `../legacy_drafts/main_concise.pdf` | active | 5 |
 | `../legacy_drafts/main_concise.tex` | active | 4 |

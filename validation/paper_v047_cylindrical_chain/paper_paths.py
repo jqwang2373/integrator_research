@@ -18,7 +18,10 @@ from pathlib import Path
 PAPER = Path(__file__).resolve().parent                 # validation/paper_v047_cylindrical_chain
 VALIDATION = PAPER.parent                                # validation/
 REPO = VALIDATION.parent                                 # repository root
-LATEX = REPO / "paper"                                   # manuscript, figures, submission copies, sidecars
+# The evidence ledger was frozen on 2026-09-21 at the manuscript it audited (pre-rewrite CMAME draft).
+# The live manuscript in paper/ is the rewritten paper, validated by validation/validate_manuscript.py.
+LATEX = VALIDATION / "legacy_drafts" / "main_cmame_pre_rewrite"   # frozen manuscript package audited by this ledger
+LIVE_PAPER = REPO / "paper"                                          # rewritten manuscript (not covered by this ledger)
 PROOF = REPO / "proof"                                   # Lean development (byte-identical to ~/lean/integrator_order_proof)
 NUMERICS = REPO / "numerics"                             # v001..v048, reproduction, scratch
 V047 = NUMERICS / "v047_cylindrical_chain_pipeline"
@@ -56,11 +59,15 @@ _VALIDATION_TOPLEVEL = {"legacy_drafts", "docs", "tools", "pipeline_validation_r
 
 def _route(label: str, default: Path) -> Path:
     label = str(label).replace("\\", "/")
+    if label.startswith("../../paper/"):        # manuscript labels: the frozen package, not the live paper/
+        return LATEX / label[len("../../paper/"):]
     if label.startswith("../"):
         return (PAPER / label).resolve()
     first = label.lstrip("./").split("/")[0]
     if _VERSION_DIR.fullmatch(first):          # logical work-relative label such as v048_.../results/x
         return NUMERICS / label
+    if first == "paper":
+        return LATEX / label[len("paper/"):] if label.startswith("paper/") else LATEX
     if first in _REPO_TOPLEVEL:
         return REPO / label
     if first in _VALIDATION_TOPLEVEL and first != "paper_v047_cylindrical_chain":

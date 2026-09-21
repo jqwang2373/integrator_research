@@ -1,0 +1,281 @@
+{
+  "schema": "e1-convergence-v1",
+  "case": "cylindrical_smooth_stribeck_0p5",
+  "t_final": 0.5,
+  "h_values": [
+    0.1,
+    0.05,
+    0.025,
+    0.0125,
+    0.00625,
+    0.003125
+  ],
+  "h_ref": 0.000390625,
+  "h_ref2": 0.00078125,
+  "reference_steps": 1280,
+  "reference_runtime_sec": 26.912215267017018,
+  "richardson_floor": {
+    "final_position": 3.439456232283528e-15,
+    "final_orientation": 2.7268705363996802e-15,
+    "final_velocity": 1.5815929724075754e-14,
+    "final_angular_velocity": 1.2563223359249827e-14,
+    "linf_position": 3.439456232283528e-15,
+    "linf_orientation": 3.086934454614768e-15,
+    "linf_velocity": 1.6202434646915186e-14,
+    "linf_angular_velocity": 1.9133322709608784e-14
+  },
+  "min_branch_factor_n1_dot_a1": 0.3404351698019417,
+  "regular_branch_end_t": 0.605,
+  "orders": {
+    "final_position": {
+      "pairwise": [
+        6.953229402732915,
+        4.577149399112736,
+        7.64427234375969,
+        5.9755110476160835,
+        5.9870857496121435
+      ],
+      "fit": 6.252174612931529,
+      "points_used": 5,
+      "floor": 3.439456232283528e-15
+    },
+    "final_orientation": {
+      "pairwise": [
+        6.781110964486504,
+        4.823662425470972,
+        7.620782859528085,
+        5.974737647549509,
+        6.004427638494385
+      ],
+      "fit": 6.284503307906923,
+      "points_used": 5,
+      "floor": 2.7268705363996802e-15
+    },
+    "final_velocity": {
+      "pairwise": [
+        7.829283685227741,
+        3.483607809333951,
+        7.693220610121246,
+        5.979208162863542,
+        6.000048259916771
+      ],
+      "fit": 6.114746895454818,
+      "points_used": 5,
+      "floor": 1.5815929724075754e-14
+    },
+    "final_angular_velocity": {
+      "pairwise": [
+        6.865642853523796,
+        4.71953298434491,
+        7.626609948670883,
+        5.974958001006923,
+        6.023590822672386
+      ],
+      "fit": 6.271963050810884,
+      "points_used": 5,
+      "floor": 1.2563223359249827e-14
+    },
+    "linf_position": {
+      "pairwise": [
+        6.953229402732915,
+        4.577149399112736,
+        7.64427234375969,
+        5.9755110476160835,
+        5.9870857496121435
+      ],
+      "fit": 6.252174612931529,
+      "points_used": 5,
+      "floor": 3.439456232283528e-15
+    },
+    "linf_orientation": {
+      "pairwise": [
+        6.781110964486504,
+        4.823662425470972,
+        7.620782859528085,
+        5.974737647549509,
+        6.004427638494385
+      ],
+      "fit": 6.284503307906923,
+      "points_used": 5,
+      "floor": 3.086934454614768e-15
+    },
+    "linf_velocity": {
+      "pairwise": [
+        7.744155884469465,
+        2.7158603976057187,
+        7.07793832572429,
+        6.0755280329759564,
+        5.9597921984307805
+      ],
+      "fit": 5.702076400488091,
+      "points_used": 5,
+      "floor": 1.6202434646915186e-14
+    },
+    "linf_angular_velocity": {
+      "pairwise": [
+        6.865642853523796,
+        4.71953298434491,
+        7.626609948670883,
+        5.974958001006923,
+        6.023590822672386
+      ],
+      "fit": 6.271963050810884,
+      "points_used": 5,
+      "floor": 1.9133322709608784e-14
+    }
+  },
+  "rows": [
+    {
+      "h": 0.1,
+      "steps": 5,
+      "converged": true,
+      "runtime_sec": 3.8875894200173207,
+      "total_newton_iterations": 30,
+      "mean_newton_iterations": 6.0,
+      "max_position_constraint_norm": 9.804510577181098e-08,
+      "max_velocity_constraint_norm": 7.676782269596526e-16,
+      "max_acc_position_constraint_norm": 5.575741811109711e-13,
+      "max_acc_orientation_constraint_norm": 3.1884179791206502e-12,
+      "max_quaternion_unit_error": 0.0,
+      "final_position": 0.0002774980552359843,
+      "final_orientation": 8.773901352599236e-05,
+      "final_velocity": 0.0004958307519091387,
+      "final_angular_velocity": 0.0011038421687862546,
+      "linf_position": 0.0002774980552359843,
+      "linf_orientation": 8.773901352599236e-05,
+      "linf_velocity": 0.0006290008126157178,
+      "linf_angular_velocity": 0.0011038421687862546,
+      "order_final_position": 6.953229402732915,
+      "order_final_orientation": 6.781110964486504,
+      "order_final_velocity": 7.829283685227741,
+      "order_final_angular_velocity": 6.865642853523796
+    },
+    {
+      "h": 0.05,
+      "steps": 10,
+      "converged": true,
+      "runtime_sec": 0.19693414197536185,
+      "total_newton_iterations": 60,
+      "mean_newton_iterations": 6.0,
+      "max_position_constraint_norm": 1.5310299543989643e-09,
+      "max_velocity_constraint_norm": 1.257438917457626e-15,
+      "max_acc_position_constraint_norm": 3.972054645195637e-15,
+      "max_acc_orientation_constraint_norm": 1.1538790038474705e-14,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "final_position": 2.239387898020674e-06,
+      "final_orientation": 7.977649342195365e-07,
+      "final_velocity": 2.1801392050391493e-06,
+      "final_angular_velocity": 9.465477826538829e-06,
+      "linf_position": 2.239387898020674e-06,
+      "linf_orientation": 7.977649342195365e-07,
+      "linf_velocity": 2.933783043882699e-06,
+      "linf_angular_velocity": 9.465477826538829e-06,
+      "order_final_position": 4.577149399112736,
+      "order_final_orientation": 4.823662425470972,
+      "order_final_velocity": 3.483607809333951,
+      "order_final_angular_velocity": 4.71953298434491
+    },
+    {
+      "h": 0.025,
+      "steps": 20,
+      "converged": true,
+      "runtime_sec": 0.38874188100453466,
+      "total_newton_iterations": 118,
+      "mean_newton_iterations": 5.9,
+      "max_position_constraint_norm": 2.391479076983995e-11,
+      "max_velocity_constraint_norm": 1.188348526547132e-15,
+      "max_acc_position_constraint_norm": 6.502078749373701e-14,
+      "max_acc_orientation_constraint_norm": 2.8922650881582043e-13,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "final_position": 9.381452049011747e-08,
+      "final_orientation": 2.8171363273157658e-08,
+      "final_velocity": 1.9490087150452e-07,
+      "final_angular_velocity": 3.5927049194361164e-07,
+      "linf_position": 9.381452049011747e-08,
+      "linf_orientation": 2.8171363273157658e-08,
+      "linf_velocity": 4.465525261124486e-07,
+      "linf_angular_velocity": 3.5927049194361164e-07,
+      "order_final_position": 7.64427234375969,
+      "order_final_orientation": 7.620782859528085,
+      "order_final_velocity": 7.693220610121246,
+      "order_final_angular_velocity": 7.626609948670883
+    },
+    {
+      "h": 0.0125,
+      "steps": 40,
+      "converged": true,
+      "runtime_sec": 0.7169788799947128,
+      "total_newton_iterations": 229,
+      "mean_newton_iterations": 5.725,
+      "max_position_constraint_norm": 3.7368100546995637e-13,
+      "max_velocity_constraint_norm": 9.800993443868569e-14,
+      "max_acc_position_constraint_norm": 4.7207330545682824e-15,
+      "max_acc_orientation_constraint_norm": 1.5743444793301314e-14,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "final_position": 4.689373151752496e-10,
+      "final_orientation": 1.4312768034883882e-10,
+      "final_velocity": 9.41723946968444e-10,
+      "final_angular_velocity": 1.8179552510738162e-09,
+      "linf_position": 4.689373151752496e-10,
+      "linf_orientation": 1.4312768034883882e-10,
+      "linf_velocity": 3.305223310233999e-09,
+      "linf_angular_velocity": 1.8179552510738162e-09,
+      "order_final_position": 5.9755110476160835,
+      "order_final_orientation": 5.974737647549509,
+      "order_final_velocity": 5.979208162863542,
+      "order_final_angular_velocity": 5.974958001006923
+    },
+    {
+      "h": 0.00625,
+      "steps": 80,
+      "converged": true,
+      "runtime_sec": 1.4533972550416365,
+      "total_newton_iterations": 458,
+      "mean_newton_iterations": 5.725,
+      "max_position_constraint_norm": 6.25147411553124e-15,
+      "max_velocity_constraint_norm": 9.600673414075858e-14,
+      "max_acc_position_constraint_norm": 4.636427468134552e-15,
+      "max_acc_orientation_constraint_norm": 1.611746722108178e-14,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "final_position": 7.452581393226833e-12,
+      "final_orientation": 2.2758748922031527e-12,
+      "final_velocity": 1.49280337003957e-11,
+      "final_angular_velocity": 2.8902912474401538e-11,
+      "linf_position": 7.452581393226833e-12,
+      "linf_orientation": 2.2758748922031527e-12,
+      "linf_velocity": 4.900999176654629e-11,
+      "linf_angular_velocity": 2.8902912474401538e-11,
+      "order_final_position": 5.9870857496121435,
+      "order_final_orientation": 6.004427638494385,
+      "order_final_velocity": 6.000048259916771,
+      "order_final_angular_velocity": 6.023590822672386
+    },
+    {
+      "h": 0.003125,
+      "steps": 160,
+      "converged": true,
+      "runtime_sec": 2.761695357039571,
+      "total_newton_iterations": 915,
+      "mean_newton_iterations": 5.71875,
+      "max_position_constraint_norm": 3.004066637546255e-15,
+      "max_velocity_constraint_norm": 8.21095049736271e-15,
+      "max_acc_position_constraint_norm": 4.463041323674983e-15,
+      "max_acc_orientation_constraint_norm": 2.001223737622804e-14,
+      "max_quaternion_unit_error": 2.220446049250313e-16,
+      "final_position": 1.174936324238926e-13,
+      "final_orientation": 3.5451576992250764e-14,
+      "final_velocity": 2.3324272418328075e-13,
+      "final_angular_velocity": 4.442834017773289e-13,
+      "linf_position": 1.174936324238926e-13,
+      "linf_orientation": 3.5451576992250764e-14,
+      "linf_velocity": 7.874235690718244e-13,
+      "linf_angular_velocity": 4.442834017773289e-13,
+      "order_final_position": NaN,
+      "order_final_orientation": NaN,
+      "order_final_velocity": NaN,
+      "order_final_angular_velocity": NaN
+    }
+  ],
+  "runtime_sec": 9.516466407047119,
+  "error_definitions": "final_* at t=T; linf_* over all coarse output times; position/velocity/angular_velocity Frobenius over bodies; orientation max geodesic quaternion angle"
+}

@@ -1,0 +1,158 @@
+\section*{CRediT authorship contribution statement}
+
+Jingquan Wang: Conceptualization, Methodology, Software, Validation, Formal analysis, Writing --
+original draft, Writing -- review and editing.
+
+\section*{Declaration of competing interest}
+
+The author declares no competing interests relevant to this work.
+
+\section*{Funding}
+
+No external funding was received for this research.
+
+\section*{Data availability}
+
+The implementation, the experiment scripts that generate every table and figure of
+Section~\ref{sec:numerical}, the result files, and the Lean~4 development are available in the
+repository described in \ref{app:repro}.
+
+\section*{Declaration of generative AI and AI-assisted technologies in the writing process}
+
+During preparation of this work, the author used an AI coding assistant for drafting support,
+consistency checking and script editing. The author reviewed and edited the content and takes full
+responsibility for the published article.
+
+\appendix
+
+\section{Lower-pair constraint rows of the benchmark mechanisms}
+\label{app:lower-pair}
+
+The four benchmark mechanisms use the scalar constraint rows of the public suite
+\cite{kissel2022absolute}. Let body $i$ have centre position $r_i$, rotation matrix $A_i\in SO(3)$,
+translational velocity $v_i$, angular velocity $\omega_i$, translational acceleration $a_i$ and
+angular acceleration $\alpha_i$. A marked point and a marked direction fixed in body $i$ are
+$x_i=r_i+A_i s_i$ and $u_i=A_i a_i$. The row families are
+\begin{align}
+  C_{\mathrm{CD},k}(q,t) &= e_k^T\left(x_j-x_i\right)-d_k(t), &
+  C_{\mathrm{DP1}}(q,t) &= u_i^T u_j-c(t),\\
+  C_{\mathrm{DP2}}(q,t) &= u_i^T\left(x_j-x_i\right)-d(t), &
+  C_{\mathrm{D}}(q,t) &= \left\|x_j-x_i\right\|^2-\ell^2(t),
+  \label{eq:lower-pair-row-families}
+\end{align}
+where CD is a coordinate difference, DP1 constrains two body-fixed directions, DP2 constrains a
+body-fixed direction against a point difference, and D is a distance row. Revolute joints are
+assembled from CD and DP1 rows; the slider-crank prismatic joint additionally uses DP2 and distance
+rows; drivers prescribe $c(t)$ of a DP1 row. With
+$\dot x_i = v_i+\omega_i\times A_i s_i$, $\dot u_i = \omega_i\times u_i$,
+$\ddot x_i = a_i+\alpha_i\times A_i s_i+\omega_i\times(\omega_i\times A_i s_i)$,
+$\ddot u_i = \alpha_i\times u_i+\omega_i\times(\omega_i\times u_i)$, $\Delta x=x_j-x_i$ and
+its derivatives, the velocity- and acceleration-level rows enforced at every stage are
+\begin{align}
+  \dot C_{\mathrm{CD},k} &= e_k^T\Delta\dot x-\dot d_k, &
+  \ddot C_{\mathrm{CD},k} &= e_k^T\Delta\ddot x-\ddot d_k,\\
+  \dot C_{\mathrm{DP1}} &= \dot u_i^T u_j+u_i^T\dot u_j-\dot c, &
+  \ddot C_{\mathrm{DP1}} &= \ddot u_i^T u_j+2\dot u_i^T\dot u_j+u_i^T\ddot u_j-\ddot c,\\
+  \dot C_{\mathrm{DP2}} &= \dot u_i^T\Delta x+u_i^T\Delta\dot x-\dot d, &
+  \ddot C_{\mathrm{DP2}} &= \ddot u_i^T\Delta x+2\dot u_i^T\Delta\dot x+u_i^T\Delta\ddot x-\ddot d,\\
+  \dot C_{\mathrm{D}} &= 2\Delta x^T\Delta\dot x-2\ell\dot\ell, &
+  \ddot C_{\mathrm{D}} &= 2\Delta\dot x^T\Delta\dot x+2\Delta x^T\Delta\ddot x-2(\dot\ell^2+\ell\ddot\ell).
+  \label{eq:lower-pair-acceleration-rows}
+\end{align}
+
+\paragraph{Mechanism data}
+All bodies are steel bars of square cross-section $0.05$~m and density $7800$~kg/m$^3$ unless
+stated otherwise; $e_x,e_y,e_z$ are the coordinate directions and body-fixed vectors are given in
+the body frame.
+\emph{Single pendulum}: one bar of length $4$~m (mass $78$~kg,
+$J=\operatorname{diag}(0.0325,104.016,104.016)$~kg\,m$^2$), ground revolute joint with CD rows
+$s_1=(-2,0,0)$, $s_0=0$ and DP1 rows $(e_x,e_x)$, $(e_y,e_x)$; driven DP1 row $(e_y,-e_z)$ with
+$c(t)=\cos\theta(t)$, $\theta(t)=\pi/2+(\pi/4)\cos 2t$.
+\emph{Double pendulum}: bars of length $4$ and $2$~m (masses $78$ and $39$~kg), ground revolute
+joint as above, inter-link revolute joint with CD rows $s_1=(2,0,0)$, $s_2=(-1,0,0)$ and DP1 rows
+on body 2 against ground $(e_x,e_x)$, $(e_y,e_x)$; released from the horizontal configuration
+$(\theta_1,\theta_2)(0)=(-\pi/2,0)$ at rest; no friction, no drive.
+\emph{Four-link loop}: rotor, link 2 and link 3 with masses $2,1,1$~kg and inertia diagonals
+$(4,2,0)$, $(12.4,0.01,0)$, $(4.54,0.01,0)$~kg\,m$^2$; revolute joint A (body 1--ground, CD
+$s_1=s_0=0$, DP1 $(e_x,e_x)$, $(e_y,e_x)$), revolute joint D (body 3--ground, CD $s_3=(0,3.7,0)$,
+$s_0=(-4,-8.5,0)$, DP1 $((0,0,1),e_y)$, $(e_y,e_y)$), spherical joint (bodies 3--2, CD
+$s_3=(0,-3.7,0)$, $s_2=(0,-6.1,0)$), universal joint (bodies 1--2, CD $s_1=(-2,0,0)$,
+$s_2=(0,6.1,0)$, DP1 $((0,-0.662,0.75),e_z)$); driving DP1 row $((-1,0,0),e_y)$ with
+$c(t)=\cos(\pi t+\pi/2)$.
+\emph{Slider-crank}: crank, rod and slider with masses $0.12,0.5,2$~kg and inertia diagonals
+$(10^{-4},10^{-5},10^{-4})$, $(4\times10^{-3},4\times10^{-4},4\times10^{-3})$,
+$(10^{-4},10^{-4},10^{-4})$~kg\,m$^2$; revolute joint A (ground--crank, CD $s_4=(0,0.1,0.12)$,
+$s_1=0$, DP1 $(e_y,e_x)$, $(e_z,e_x)$), spherical joint B (rod--crank, CD $s_2=(-0.15,0,0)$,
+$s_1=(0,0.08,0)$), joint C (rod--slider, DP1 $(e_y,e_z)$, two DP2 rows from rod point
+$(0.15,0,0)$ to slider point $0$ along $e_y$, $e_z$), translational joint D (slider--ground, DP1
+$(-e_x,e_x)$, $(e_y,e_x)$, $(-e_x,e_y)$, DP2 rows from slider point $0$ to ground point
+$(0.2,0,0)$ along $-e_x$, $e_y$), distance row between rod point $(0.15,0,0)$ and slider point
+$(0,0,1)$ with $\ell=1$; driving DP1 row $(e_y,e_y)$ with $c(t)=\cos(-2\pi t+\pi/2)$.
+
+\section{Lean development}
+\label{app:lean}
+
+The Lean~4 development (Mathlib pinned by its manifest) machine-checks the algebraic and
+perturbation lemmas of Section~\ref{sec:order}: $57$ theorems, no open goals, and an exhaustive
+axiom audit showing that every theorem depends only on the standard axioms
+\nolinkurl{propext}, \nolinkurl{Classical.choice} and \nolinkurl{Quot.sound}. It builds with
+\nolinkurl{lake build}; the script \nolinkurl{scripts/check.sh} runs the build, the axiom audit and
+a lint pass. Table~\ref{tab:lean-development} maps the statements of the paper to the theorems that
+check them. The row identities are proved for a transcription of the implemented residual into
+Lean; the perturbation lemmas are proved in the abstract normed-space setting with the constants of
+the paper. Butcher's order theorem and the Gauss local-error estimate are not formalized and enter
+as cited results.
+
+\begin{table}[htbp]
+\centering
+\caption{Statements of the paper and the Lean theorems that check them.}
+\label{tab:lean-development}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{P{0.40\linewidth}P{0.52\linewidth}}
+\toprule
+Statement & Lean theorem \\
+\midrule
+Lemma~\ref{lem:exact-stage-identity}, non-dynamic rows (both directions) &
+\nolinkurl{FullVA.Transition.nondynamic_rows_iff} \\
+Lemma~\ref{lem:exact-stage-identity}, Newton--Euler rows &
+\nolinkurl{NewtonEuler.dynamic_rows_vanish} \\
+Lemma~\ref{lem:p2-from-p1}, bound Eq.~\eqref{eq:p2-perturbation-bound} &
+\nolinkurl{uniform_inverse_of_perturbation} \\
+Lemma~\ref{lem:stage-residual-defect}, root uniqueness &
+\nolinkurl{root_unique_of_linearization} \\
+Lemma~\ref{lem:gauss-endpoint-defect}, bound Eq.~\eqref{eq:gauss-quadrature-defect} &
+\nolinkurl{gauss6_step_defect} \\
+Butcher conditions $B(6)$, $C(3)$, $D(3)$; failure of $B(7)$ &
+\nolinkurl{Gauss6.butcher_order_six_hypotheses}, \nolinkurl{Gauss6.not_B_seven} \\
+Lemma~\ref{lem:endpoint-closure} &
+\nolinkurl{endpoint_closure_exists}, \nolinkurl{endpoint_correction_bound_h7} \\
+Lemma~\ref{lem:inexact-newton} &
+\nolinkurl{inexact_newton_output_bound} \\
+Lemma~\ref{lem:newton-envelope}, decay Eq.~\eqref{eq:newton-envelope-decay} &
+\nolinkurl{simplified_newton_residual_decay} \\
+Lemma~\ref{lem:local-global-transfer} &
+\nolinkurl{local_to_global}, \nolinkurl{reported_grid_bound} \\
+Theorem~\ref{thm:g6fullva-order}, three-term chain and grid bounds &
+\nolinkurl{local_defect_bound}, \nolinkurl{conditional_sixth_order_grid_bound} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Reproducibility}
+\label{app:repro}
+
+The repository accompanying the paper has five top-level folders: \nolinkurl{paper/} (this
+manuscript), \nolinkurl{proof/} (the Lean development), \nolinkurl{numerics/} (the implementation
+and all experiment scripts), \nolinkurl{external/} (the public benchmark codes as git submodules or
+mirrors) and \nolinkurl{validation/} (the audit trail of the development, including the check that
+the numbers in this paper equal the values in the result files). The implementation of the step is
+the single residual function in \nolinkurl{numerics/v047_cylindrical_chain_pipeline/run_v047.py};
+the experiments of Section~\ref{sec:numerical} are the scripts \nolinkurl{e1_convergence.py} to
+\nolinkurl{e7_solver_envelope.py} in \nolinkurl{numerics/v049_paper_experiments/}, each of which
+writes a CSV and a JSON file under \nolinkurl{results/}; the figures are drawn from those files by
+\nolinkurl{make_figures.py}, and \nolinkurl{validation/validate_manuscript.py} checks that every
+number in the tables of that section equals the value in its result file. The Lean development is checked by
+\nolinkurl{proof/scripts/check.sh}. All runs reported were made on one CPU core; the double
+pendulum reference at $h=10^{-4}$ over $T=3$ took $1.6$~h, each of the other scripts between a
+minute and about an hour.

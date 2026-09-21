@@ -1,0 +1,83 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{xcolor}
+\providecommand{\nolinkurl}[1]{\url{#1}}
+
+\journal{Computer Methods in Applied Mechanics and Engineering}
+\emergencystretch=4em
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\newcommand{\method}{Gauss6\slash FullVA}
+\newcommand{\tfe}{TFE}
+\newcommand{\figpath}{figures}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\paperfig}[3]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{#1}{%
+      \includegraphics[width=0.90\linewidth]{#1}%
+    }{%
+      \fbox{\parbox{0.86\linewidth}{Missing figure: \nolinkurl{#1}}}%
+    }
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{A sixth-order Lie-group Gauss collocation integrator for lower-pair mechanisms with position-, velocity- and acceleration-level constraints}
+
+\author[inst1]{Jingquan Wang\corref{cor1}}
+\ead{jingquanw@wisc.edu}
+\cortext[cor1]{Corresponding author.}
+
+\affiliation[inst1]{organization={University of Wisconsin--Madison},
+  addressline={Department of Mechanical Engineering, 1513 University Avenue},
+  city={Madison},
+  state={WI},
+  postcode={53706},
+  country={United States}}
+
+\begin{abstract}
+Multibody systems with lower-pair joints in absolute coordinates are index-3 differential-algebraic
+equations on a Lie group. We study \method{}, a three-stage Gauss collocation step whose stage
+system enforces the joint constraints at position, velocity and acceleration level together with
+the Newton--Euler balance, and reconstructs the rotational endpoint through the exponential map.
+The central result is an exact algebraic identity: the lifted reduced Gauss stage, obtained by
+collocating the joint-coordinate equations of motion and lifting the result to absolute
+coordinates, satisfies every one of the $132$ implemented stage rows, and conversely every root of
+the non-dynamic rows on the regular branch is such a lift. The method is therefore reduced Gauss
+collocation executed in absolute coordinates. Everything the implementation adds, the
+velocity-level endpoint closure and the inexact Newton solve, is an $O(h^7)$ perturbation, which
+gives a sixth-order error bound whose only standing hypothesis is smoothness on a compact
+neighbourhood of the trajectory; the solver and inverse interfaces are derived for $h\le h_0$, and
+$h_0$ is quantified and traced to the curvature of the friction law. The row identities, the
+perturbation chain and the Butcher conditions are machine-checked in Lean~4 with Mathlib
+($57$ theorems). Numerically the method is sixth order on a frictional two-body chain and on the
+ASME double pendulum, reproduces the driven ASME mechanisms to roundoff, is two to seven orders of
+magnitude more accurate than the one- and two-stage members of the same family at the same Newton
+work, and reaches errors below $10^{-10}$ on the double pendulum where the public
+absolute-coordinate codes have errors of order one. A sweep of the Stribeck velocity locates the
+regime in which a sharp friction law reduces the observed order on coarse grids.
+\end{abstract}
+
+\begin{keyword}
+Lie group integrator \sep index-3 DAE \sep multibody dynamics \sep
+lower-pair mechanisms \sep Gauss collocation \sep machine-checked proof
+\end{keyword}
+
+\end{frontmatter}

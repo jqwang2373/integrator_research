@@ -1,7 +1,5 @@
-Highlights
-
-- The implemented FullVA stage system is exactly reduced Gauss collocation.
-- Conditional sixth-order theorem with a three-term local defect; lemmas Lean-checked.
-- Smooth cylindrical chain records orders 7.161/7.066 as consistency diagnostics.
-- Four ASME-style mechanisms tested; the paper-style m=3 TFE comparator has order five.
-- Full source-paper TFE stage replacement remains an explicit non-claim.
+- The FullVA Gauss stage system is exactly reduced Gauss collocation lifted to absolute coordinates.
+- Sixth-order error bound for lower-pair mechanisms under a smoothness hypothesis alone.
+- Row identities, perturbation chain and tableau conditions machine-checked in Lean 4 (57 theorems).
+- Sixth order confirmed on a frictional chain and the ASME double pendulum; driven loops at roundoff.
+- Friction sharpness sets the small-step threshold and the coarse-grid order reduction.

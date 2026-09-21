@@ -1,0 +1,62 @@
+{
+  "full_external_campaign_completed": false,
+  "models": {
+    "slider_crank": {
+      "acc_observed_order": -0.17186808306101,
+      "lambda_observed_order": -0.17476542800773173,
+      "max_acceleration_constraint_norm": 2.7906433529070366e-15,
+      "max_condition_number": 79.15032691838567,
+      "max_dynamics_residual_norm": 8.226564318060504e-15,
+      "max_multiplier_norm": 34.31547115277573,
+      "max_newton_iterations": 6,
+      "max_position_constraint_norm": 9.500435109604041e-16,
+      "max_rot_dynamics_residual": 4.488492449269769e-15,
+      "max_so3_fro": 1.8564654665410212e-15,
+      "max_step_correction_norm": 0.45913331928694556,
+      "max_trans_dynamics_residual": 7.57771338225194e-15,
+      "max_velocity_constraint_norm": 4.599643149717886e-16,
+      "min_singular_value": 0.037460798196553256,
+      "ok_row_count": 6,
+      "pos_observed_order": -0.18664873082182515,
+      "reference_h": 0.00078125,
+      "row_count": 6,
+      "status": "accepted_closed_loop_kinematic_reaction",
+      "step_sizes": [
+        0.05,
+        0.025,
+        0.0125,
+        0.00625,
+        0.003125,
+        0.0015625
+      ],
+      "t_end": 1.0,
+      "total_newton_iterations": 5182,
+      "vel_observed_order": -0.21877636238351994
+    }
+  },
+  "notes": "Public-horizon 2021 closed-loop tranche using the accepted local kinematic FullVA solve and reaction reconstruction on the public four_link/slider_crank mechanisms. These rows use the 2021 public time window and public h policy when selected, but they remain constraint/reaction residual rows rather than dynamic order/work-superiority rows.",
+  "ok_row_count": 6,
+  "planned_row_count": 0,
+  "policy": "gauss6_fullva_public_horizon_closed_loop_kinematic_reaction_not_full_campaign",
+  "public_closed_loop_step_trios_completed": false,
+  "public_policy_time_window": false,
+  "public_step_size_required_count": 3,
+  "public_step_size_rows_completed": 0,
+  "row_count": 6,
+  "run_mode": "gauss6_fullva_public_horizon_closed_loop_2021_tranche_shard",
+  "run_model": true,
+  "selected_models": [
+    "slider_crank"
+  ],
+  "selected_reference_h": 0.00078125,
+  "selected_rows_completed": true,
+  "selected_step_sizes": [
+    0.05,
+    0.025,
+    0.0125,
+    0.00625,
+    0.003125,
+    0.0015625
+  ],
+  "selected_t_end": 1.0
+}

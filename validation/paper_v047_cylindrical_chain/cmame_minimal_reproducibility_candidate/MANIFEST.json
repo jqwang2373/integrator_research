@@ -40,10 +40,10 @@
       "source": "RESULT_TO_MANUSCRIPT_TRACEABILITY_AUDIT.json"
     },
     {
-      "bytes": 472131,
+      "bytes": 472299,
       "path": "data/CMAME_REVIEW_AGENT_REPORT.json",
       "role": "paper_evidence_artifact",
-      "sha256": "6a5d92d1cf339a28c81eea7175b6f6186c5ea7effc1844aaed5ac180feb838fb",
+      "sha256": "abb28233e86652d1cd4bf82c4fde41c1cfcbbe484d5fbc9dbc06aa0627327040",
       "source": "CMAME_REVIEW_AGENT_REPORT.json"
     },
     {
@@ -170,7 +170,7 @@
   "source_policy_total_rows": 40,
   "source_repository_context": {
     "full_audit_code_bloat_risk_for_submission": true,
-    "full_audit_python_lines": 230217,
+    "full_audit_python_lines": 230224,
     "research_audit_primary_submission_allowed": false,
     "research_audit_primary_submission_line_limit": 20000,
     "research_audit_provenance_only": true,

@@ -1,0 +1,410 @@
+\section{Numerical experiments}
+\label{sec:numerical}
+
+All experiments use the implementation of Section~\ref{sec:method} with the fixed Newton tolerance
+$\tau_N=10^{-11}$ and the dense automatic-differentiation Jacobian; the scripts that produce every
+number and figure of this section are listed in \ref{app:repro}. Errors are measured
+against a reference solution computed with the same method at a step size $h_{\rm ref}$ much
+smaller than the finest step of the sweep; the difference between the references at $h_{\rm ref}$
+and $2h_{\rm ref}$ is reported as the resolution floor of the reference, and a fitted order uses only
+the step sizes whose errors exceed that floor by a factor of $100$. Position and velocity errors are
+Frobenius norms over the bodies at the final time; the orientation error is the largest geodesic
+angle between the numerical and reference rotations, and the angular-velocity error the Frobenius
+norm of the body-frame difference.
+
+\subsection{Convergence on the frictional chain}
+\label{sec:e1}
+
+The chain of Table~\ref{tab:chain} with $v_s=0.5$ is integrated over its regular branch $[0,0.5]$
+with $h=0.1/2^k$, $k=0,\dots,5$, against the reference at $h_{\rm ref}=0.1/256$ ($1280$ steps).
+Table~\ref{tab:e1} and Figure~\ref{fig:e1} show the result. All four error measures decrease by
+$5.5$ to $6$ orders of magnitude over the sweep; the fitted orders over the five step pairs above
+the floor are $6.25$ (position), $6.28$ (orientation), $6.11$ (velocity) and $6.27$ (angular
+velocity), and the consecutive pairwise orders settle at $5.98$ and $5.99$ on the two finest
+pairs. The endpoint velocity-level constraint norm is at roundoff on every step because of the
+closure; the position-level norm, which is not projected, decreases as $h^6$ from $10^{-7}$ to
+$3\times10^{-15}$ as the theory predicts. The Newton solve takes $6.0$ iterations per step on the
+coarse grids and $5.7$ on the fine ones.
+
+\begin{table}[htbp]
+\centering
+\caption{Convergence on the frictional chain, $T=0.5$, $v_s=0.5$: errors at $t=T$ against the
+$h_{\rm ref}=0.1/256$ reference, pairwise order of the position error to the next finer step, and
+maximal endpoint constraint norms at position ($\Phi$) and velocity ($\Phi_qv$) level; the number of steps is $0.5/h$. Resolution
+floor of the reference: $3\times10^{-15}$ (position), $3\times10^{-15}$ (orientation),
+$2\times10^{-14}$ (velocity), $1\times10^{-14}$ (angular velocity).}
+\label{tab:e1}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}lrllllrll@{}}
+\toprule
+$h$ & Newton/step & position & orientation & velocity & ang.\ velocity & order & $\|\Phi\|$ & $\|\Phi_qv\|$ \\
+\midrule
+$0.1$      & 6.00 & $2.77\mathrm{e}{-4}$  & $8.77\mathrm{e}{-5}$  & $4.96\mathrm{e}{-4}$  & $1.10\mathrm{e}{-3}$  & 6.95 & $9.8\mathrm{e}{-8}$  & $7.7\mathrm{e}{-16}$ \\
+$0.05$     & 6.00 & $2.24\mathrm{e}{-6}$  & $7.98\mathrm{e}{-7}$  & $2.18\mathrm{e}{-6}$  & $9.47\mathrm{e}{-6}$  & 4.58 & $1.5\mathrm{e}{-9}$  & $1.3\mathrm{e}{-15}$ \\
+$0.025$    & 5.90 & $9.38\mathrm{e}{-8}$  & $2.82\mathrm{e}{-8}$  & $1.95\mathrm{e}{-7}$  & $3.59\mathrm{e}{-7}$  & 7.64 & $2.4\mathrm{e}{-11}$ & $1.2\mathrm{e}{-15}$ \\
+$0.0125$   & 5.72 & $4.69\mathrm{e}{-10}$ & $1.43\mathrm{e}{-10}$ & $9.42\mathrm{e}{-10}$ & $1.82\mathrm{e}{-9}$  & 5.98 & $3.7\mathrm{e}{-13}$ & $9.8\mathrm{e}{-14}$ \\
+$0.00625$  & 5.72 & $7.45\mathrm{e}{-12}$ & $2.28\mathrm{e}{-12}$ & $1.49\mathrm{e}{-11}$ & $2.89\mathrm{e}{-11}$ & 5.99 & $6.3\mathrm{e}{-15}$ & $9.6\mathrm{e}{-14}$ \\
+$0.003125$ & 5.72 & $1.17\mathrm{e}{-13}$ & $3.55\mathrm{e}{-14}$ & $2.33\mathrm{e}{-13}$ & $4.44\mathrm{e}{-13}$ & --   & $3.0\mathrm{e}{-15}$ & $8.2\mathrm{e}{-15}$ \\
+\midrule
+fitted order & & 6.25 & 6.28 & 6.11 & 6.27 & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/e1_convergence.png}
+{Convergence on the frictional chain over the regular branch $[0,0.5]$: errors at $t=T$ (left) and
+over all grid points (right) against the $h_{\rm ref}=0.1/256$ reference, with the slope-6 line
+anchored at the finest position error and the resolution floor of the reference.}
+{fig:e1}
+
+\paragraph{Exact stage identity and constants of the analysis}
+Three diagnostics of Section~\ref{sec:order} are evaluated on the chain runs.
+(i)~Each converged stage vector, obtained with a Newton tolerance of $10^{-13}$, is read in the
+joint-coordinate chart and the reduced collocation defects $\Delta_i[s_j]$, $\Delta_i[\dot s_j]$,
+$\Delta_i[\theta_j]$, $\Delta_i[\dot\theta_j]$ of Eq.~\eqref{eq:collocation-defect-operator} are
+evaluated together with the component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$: all are at
+roundoff (Table~\ref{tab:exact-identity-check}), as Lemma~\ref{lem:exact-stage-identity} states.
+(ii)~The constants of Lemma~\ref{lem:p2-from-p1} are measured from the implemented Jacobian at the
+converged stage and at the root of the $h=0$ stage system (Table~\ref{tab:p2-constants-check}): the
+conclusion $\|J_h^{-1}\|\le2\|J_0^{-1}\|$ holds with ratio at most $1.55$, while the sufficient
+Neumann condition would need $h\le2\times10^{-5}$ in the Euclidean norm and $h\le8\times10^{-4}$ in
+the endpoint-linearized norm; without joint friction the threshold rises to $1.4\times10^{-2}$.
+(iii)~The distances of the two predictors to $Z_G$ (Table~\ref{tab:predictor-check}) confirm the
+discussion after Lemma~\ref{lem:newton-envelope}: the lifted endpoint predictor is $O(h)$ from the
+Gauss stage, the implemented predictor is at distance about $50$ and its first Newton step expands
+that distance by up to $18\%$.
+
+\begin{table}[htbp]
+\centering
+\caption{Exact stage identity at the converged stages of the chain (Newton tolerance $10^{-13}$,
+window $[0,0.08]$): maximal implemented residual, maximal reduced collocation defect and maximal
+component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$.}
+\label{tab:exact-identity-check}
+\small
+\begin{tabular}{P{0.07\linewidth}P{0.08\linewidth}P{0.13\linewidth}P{0.17\linewidth}P{0.17\linewidth}P{0.17\linewidth}}
+\toprule
+$h$ & steps & Newton total & max stage residual & max reduced defect & max $\perp n_j$ component \\
+\midrule
+0.04 & 2 & 12 & $6.8\times10^{-14}$ & $9.0\times10^{-15}$ & $1.5\times10^{-15}$ \\
+0.02 & 4 & 24 & $1.5\times10^{-14}$ & $5.5\times10^{-16}$ & $1.9\times10^{-15}$ \\
+0.01 & 8 & 48 & $1.6\times10^{-14}$ & $5.8\times10^{-16}$ & $2.0\times10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Constants of Lemma~\ref{lem:p2-from-p1} on the chain: $M_0=\max_n\|J_0^{-1}\|$,
+$C_J=\max_n\|J_h-J_0\|/h$, observed inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$ and Neumann threshold
+$h_0=1/(2M_0C_J)$, in the Euclidean norm on the stage layout (E) and in the endpoint-linearized
+norm $\|J_0^{-1}\,\cdot\,\|$ (L, where $M_0=1$); the last two columns repeat the L-norm quantities
+for the same mechanism without joint friction.}
+\label{tab:p2-constants-check}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{P{0.05\linewidth}P{0.07\linewidth}P{0.10\linewidth}P{0.08\linewidth}P{0.10\linewidth}P{0.10\linewidth}P{0.10\linewidth}P{0.10\linewidth}P{0.10\linewidth}}
+\toprule
+$h$ & $M_0$ (E) & $C_J$ (E) & inverse ratio & $h_0$ (E) & $C_J$ (L) & $h_0$ (L) & $C_J$ (L, no friction) & $h_0$ (L, no friction) \\
+\midrule
+0.04 & 18.2 & $7.5\times10^{2}$ & 1.55 & $3.7\times10^{-5}$ & $5.1\times10^{2}$ & $9.8\times10^{-4}$ & 34.1 & $1.5\times10^{-2}$ \\
+0.02 & 24.3 & $8.2\times10^{2}$ & 1.26 & $2.5\times10^{-5}$ & $5.6\times10^{2}$ & $8.9\times10^{-4}$ & 35.5 & $1.4\times10^{-2}$ \\
+0.01 & 28.4 & $9.6\times10^{2}$ & 1.18 & $1.8\times10^{-5}$ & $6.5\times10^{2}$ & $7.6\times10^{-4}$ & 36.5 & $1.4\times10^{-2}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Predictor distances for Lemma~\ref{lem:newton-envelope} on the chain (Euclidean norm on
+the stage layout): distance of the lifted endpoint predictor $Z^{(0)}_\ast$ and of the implemented
+predictor to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step
+from the implemented predictor.}
+\label{tab:predictor-check}
+\small
+\begin{tabular}{P{0.08\linewidth}P{0.20\linewidth}P{0.22\linewidth}P{0.20\linewidth}}
+\toprule
+$h$ & lifted predictor & implemented predictor & first-step ratio \\
+\midrule
+0.04 & 3.23 & 50.2 & 1.12 \\
+0.02 & 2.11 & 50.3 & 1.16 \\
+0.01 & 1.07 & 50.4 & 1.18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Solver envelope}
+Table~\ref{tab:e7} records, for every grid of the sweep, the largest residual of the accepted Newton
+iterate under the production stopping rule and its ratio to $h^7$, which is the constant $c_\eta$
+with which that grid satisfies (H3). The accepted residual is set by the tolerance, not by $h$, so
+the ratio grows from $10^{-4}$ to $10^{6}$ across the sweep; as discussed after
+Lemma~\ref{lem:newton-envelope}, the resulting bound $2M\|F_h(\widetilde Z)\|$ on the stage
+perturbation is pessimistic by three orders of magnitude relative to the observed errors. The
+endpoint position-level constraint norm of Table~\ref{tab:e1} is the quantity that actually
+dominates the deviation of the numerical trajectory from the constraint manifold; it decreases as
+$h^6$ as the theorem requires.
+
+\begin{table}[htbp]
+\centering
+\caption{Solver envelope on the chain sweep ($\tau_N=10^{-11}$): largest residual norm of the
+accepted iterate over all steps, its ratio to $h^7$ (the $c_\eta$ of (H3) for that grid), and the
+largest components of the stage displacements $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$.}
+\label{tab:e7}
+\footnotesize
+\begin{tabular}{@{}lrlll@{}}
+\toprule
+$h$ & Newton/step & $\max_n\|F_h(\widetilde Z_n)\|$ & ratio to $h^7$ ($c_\eta$) & max $\perp n_j$ component \\
+\midrule
+$0.1$      & 6.00 & $8.1\mathrm{e}{-12}$ & $8.1\mathrm{e}{-5}$ & $5.6\mathrm{e}{-13}$ \\
+$0.05$     & 6.00 & $3.5\mathrm{e}{-13}$ & $4.5\mathrm{e}{-4}$ & $3.2\mathrm{e}{-15}$ \\
+$0.025$    & 5.90 & $8.8\mathrm{e}{-12}$ & $1.4$               & $6.4\mathrm{e}{-14}$ \\
+$0.0125$   & 5.72 & $2.7\mathrm{e}{-12}$ & $5.7\mathrm{e}{1}$  & $4.3\mathrm{e}{-15}$ \\
+$0.00625$  & 5.72 & $3.1\mathrm{e}{-12}$ & $8.3\mathrm{e}{3}$  & $4.1\mathrm{e}{-15}$ \\
+$0.003125$ & 5.72 & $3.4\mathrm{e}{-12}$ & $1.2\mathrm{e}{6}$  & $5.3\mathrm{e}{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The Gauss family: orders two, four and six at the same Newton work}
+\label{sec:e2}
+
+Replacing the three-stage tableau by the two-stage Gauss tableau (order four) or by the implicit
+midpoint rule (order two) leaves the stage system of Eq.~\eqref{eq:g6fullva-expanded-stage}
+unchanged except for its size ($88$ and $44$ unknowns). Figure~\ref{fig:e2} and
+Table~\ref{tab:e2} compare the three members on the chain over $[0,0.5]$ against the same
+reference. The fitted position orders are $2.10$, $4.17$ and $6.25$, in agreement with the remark
+after Theorem~\ref{thm:g6fullva-order}. The Newton iteration count per step is the same for the
+three members ($5.7$ to $6.0$), so at a given step size the work differs only by the size of the
+dense factorization; in the present Python implementation the wall time per step differs by at most
+a third across the family, being dominated by interpreter overhead. At $h=0.0125$ the three-stage
+member is $1.6\times10^{5}$ times more accurate than the one-stage and $310$ times more accurate
+than the two-stage member, and at $h=0.003125$ the factors are $4\times10^{7}$ and
+$5\times10^{3}$; to reach the accuracy of the three-stage member at $h=0.05$ ($2\times10^{-6}$)
+the one-stage member needs $h\approx2\times10^{-3}$, that is, about $23$ times more steps and
+Newton iterations.
+
+\begin{table}[htbp]
+\centering
+\caption{Gauss family with the same stage system on the chain, $T=0.5$: position and velocity
+errors at $t=T$ and total Newton iterations. The wall time of the first row of each member includes
+just-in-time compilation and is omitted.}
+\label{tab:e2}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllrlllr@{}}
+\toprule
+$h$ & \multicolumn{3}{l}{1 stage (order 2)} & \multicolumn{3}{l}{2 stages (order 4)} & \\
+    & position & velocity & Newton & position & velocity & Newton & \\
+\midrule
+$0.1$      & $1.16\mathrm{e}{-2}$ & $6.53\mathrm{e}{-2}$ & 31   & $1.48\mathrm{e}{-3}$ & $3.23\mathrm{e}{-3}$ & 30 & \\
+$0.05$     & $1.16\mathrm{e}{-3}$ & $1.21\mathrm{e}{-2}$ & 60   & $6.23\mathrm{e}{-5}$ & $8.38\mathrm{e}{-5}$ & 60 & \\
+$0.025$    & $2.95\mathrm{e}{-4}$ & $2.97\mathrm{e}{-3}$ & 115  & $1.61\mathrm{e}{-6}$ & $2.81\mathrm{e}{-6}$ & 117 & \\
+$0.0125$   & $7.41\mathrm{e}{-5}$ & $7.39\mathrm{e}{-4}$ & 229  & $1.45\mathrm{e}{-7}$ & $2.66\mathrm{e}{-7}$ & 229 & \\
+$0.00625$  & $1.87\mathrm{e}{-5}$ & $1.85\mathrm{e}{-4}$ & 457  & $9.09\mathrm{e}{-9}$ & $1.67\mathrm{e}{-8}$ & 458 & \\
+$0.003125$ & $4.68\mathrm{e}{-6}$ & $4.61\mathrm{e}{-5}$ & 915  & $5.69\mathrm{e}{-10}$ & $1.04\mathrm{e}{-9}$ & 915 & \\
+$0.0015625$ & $1.17\mathrm{e}{-6}$ & $1.15\mathrm{e}{-5}$ & 1829 & $3.55\mathrm{e}{-11}$ & $6.51\mathrm{e}{-11}$ & 1830 & \\
+$0.00078125$ & $2.93\mathrm{e}{-7}$ & $2.88\mathrm{e}{-6}$ & 3658 & -- & -- & -- & \\
+\midrule
+fitted order & 2.10 & 2.04 & & 4.17 & 4.17 & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/e2_gauss_family.png}
+{Gauss family with the same FullVA stage system on the chain, $T=0.5$: position error against step
+size (left), against wall time (middle) and against total Newton iterations (right). Three stages
+(order six) are the method of this paper.}
+{fig:e2}
+
+\subsection{Sharpness of the friction law}
+\label{sec:e3}
+
+The Brown--McPhee law is smooth for every $v_s>0$, but its derivatives grow like $v_s^{-k}$, and
+Lemma~\ref{lem:p2-from-p1} predicts a small-step threshold that shrinks accordingly.
+Figure~\ref{fig:e3} and Table~\ref{tab:e3} repeat the convergence sweep of Section~\ref{sec:e1}
+for $v_s\in\{0.5,0.2,0.1,0.05,0.02\}$, each against its own reference at $h_{\rm ref}=0.1/256$.
+Two things happen as $v_s$ decreases. The fitted order over the whole sweep drops from $6.25$ to
+$2.47$, because the coarse grids are in a pre-asymptotic regime in which the error is dominated by
+the friction transition; and the step size at which the pairwise order returns to six moves from
+$h=0.1$ to $h\approx3\times10^{-3}$, where all five cases show pairwise orders between $5.3$ and
+$6.7$ on the finest pair. The measured Neumann threshold $h_0$ decreases from $7.6\times10^{-4}$ to
+$7.1\times10^{-6}$ over the same range, so the analysis predicts the trend correctly but its
+sufficient condition is two to three orders of magnitude more conservative than the observed
+recovery step. Every run in the sweep converged, with $5.7$ to $6.4$ Newton iterations per step.
+
+\begin{table}[htbp]
+\centering
+\caption{Friction sweep on the chain, $T=0.5$: fitted position and velocity orders over the six
+step sizes, pairwise position orders from $h=0.1$ to $h=0.003125$, coarsest step at which the
+pairwise order reaches $5.5$, and the Neumann threshold $h_0=1/(2C_J)$ in the endpoint-linearized
+norm measured over the first ten steps at $h=0.01$.}
+\label{tab:e3}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{P{0.06\linewidth}P{0.09\linewidth}P{0.09\linewidth}P{0.30\linewidth}P{0.12\linewidth}P{0.12\linewidth}}
+\toprule
+$v_s$ & pos.\ order & vel.\ order & pairwise position orders & recovery $h$ & $h_0$ (L) \\
+\midrule
+0.5  & 6.25 & 6.11 & 6.95, 4.58, 7.64, 5.98, 5.99 & 0.1     & $7.6\times10^{-4}$ \\
+0.2  & 4.84 & 4.74 & 2.11, 4.54, 2.74, 8.57, 5.85 & 0.0125  & $1.4\times10^{-4}$ \\
+0.1  & 4.74 & 4.78 & 0.47, 5.71, 4.14, 5.88, 6.72 & 0.05    & $6.7\times10^{-5}$ \\
+0.05 & 3.66 & 3.66 & 0.17, 4.11, 4.47, 3.46, 5.27 & --      & $2.1\times10^{-5}$ \\
+0.02 & 2.47 & 2.48 & $-0.22$, 2.29, 2.90, 1.55, 6.20 & 0.00625 & $7.1\times10^{-6}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/e3_friction_sweep.png}
+{Friction sweep on the chain: position error against step size for five Stribeck velocities (left)
+and fitted orders against $v_s$ (right).}
+{fig:e3}
+
+\subsection{The four benchmark mechanisms}
+\label{sec:e4}
+
+The public benchmark suite of~\cite{kissel2022absolute} consists of a driven single pendulum, a
+free double pendulum released from the horizontal, and two driven closed loops, a four-link
+mechanism and a slider-crank (\ref{app:lower-pair}). Three of the four are kinematically
+driven: their motion is fixed by the drive constraint and the dynamics only determines the
+reactions. \method{} is run on all four over $T=1$ with $h=0.1/2^k$ (Figure~\ref{fig:e4},
+Table~\ref{tab:e4}). For the driven single pendulum, whose exact motion is known in closed form,
+the final-state position errors are $5.9\times10^{-10}$, $9.3\times10^{-12}$ and
+$1.5\times10^{-13}$ at $h=0.1$, $0.05$ and $0.025$ (pairwise orders $6.0$ and $6.0$) and at
+roundoff, $10^{-14}$ to $10^{-15}$, for every finer step; its velocity errors scatter between
+$10^{-15}$ and $4\times10^{-9}$ without trend in $h$, at the level set by the Newton tolerance of
+that harness, which does not project the endpoint velocities. For the two closed loops the trajectory errors against the
+$h=0.1/128$ reference are between $6\times10^{-16}$ and $1.3\times10^{-14}$ at every step size
+from $0.05$ down to $0.0016$: the driven motion is reproduced to roundoff, the loop-closure
+constraints included, and no order can be measured. The double pendulum is the only genuine
+dynamics test of the suite. Its final-state errors against the $h=0.1/128$ reference are
+$4.6\times10^{-5}$, $1.6\times10^{-7}$, $1.2\times10^{-9}$, $1.9\times10^{-11}$ and
+$3.1\times10^{-13}$ for $h=0.1$ to $0.00625$, with pairwise orders $8.2$, $7.0$, $6.0$, $6.0$ in
+position and $9.7$, $7.0$, $6.0$, $5.9$ in velocity; the coarsest pair is pre-asymptotic, the rest
+is the sixth order of Theorem~\ref{thm:g6fullva-order}. At $h=0.003125$ the error,
+$2.3\times10^{-14}$, has reached the resolution floor of the reference ($2\times10^{-14}$,
+the difference between the $h=0.1/128$ and $h=0.1/64$ runs).
+
+\paperfig{\figpath/mechanisms.png}
+{The four benchmark mechanisms of the public suite~\cite{kissel2022absolute}; joint data in
+\ref{app:lower-pair}.}
+{fig:mechanisms}
+
+\begin{table}[htbp]
+\centering
+\caption{The four benchmark mechanisms over $T=1$: final-state position and velocity errors (single
+pendulum: against the analytic driven motion; double pendulum: against the $h=0.1/128$ reference)
+and trajectory $L^\infty$ errors of the closed loops against their $h=0.1/128$ reference. The
+pairwise order refers to the position error and the next finer step; the double-pendulum reference
+has a resolution floor of $2\times10^{-14}$.}
+\label{tab:e4}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lllrllr@{}}
+\toprule
+$h$ & \multicolumn{3}{l}{single pendulum (driven, analytic reference)} & \multicolumn{3}{l}{double pendulum (free)} \\
+    & position & velocity & order & position & velocity & order \\
+\midrule
+$0.1$      & $5.94\mathrm{e}{-10}$ & $2.43\mathrm{e}{-9}$  & 6.0 & $4.59\mathrm{e}{-5}$  & $1.56\mathrm{e}{-4}$  & 8.2 \\
+$0.05$     & $9.32\mathrm{e}{-12}$ & $3.83\mathrm{e}{-11}$ & 6.0 & $1.58\mathrm{e}{-7}$  & $1.85\mathrm{e}{-7}$  & 7.0 \\
+$0.025$    & $1.45\mathrm{e}{-13}$ & $9.49\mathrm{e}{-11}$ & --  & $1.24\mathrm{e}{-9}$  & $1.48\mathrm{e}{-9}$  & 6.0 \\
+$0.0125$   & $1.08\mathrm{e}{-14}$ & $6.77\mathrm{e}{-10}$ & --  & $1.93\mathrm{e}{-11}$ & $2.29\mathrm{e}{-11}$ & 6.0 \\
+$0.00625$  & $1.58\mathrm{e}{-14}$ & $3.73\mathrm{e}{-9}$  & --  & $3.10\mathrm{e}{-13}$ & $3.86\mathrm{e}{-13}$ & 3.8 \\
+$0.003125$ & $1.33\mathrm{e}{-15}$ & $1.05\mathrm{e}{-15}$ & --  & $2.29\mathrm{e}{-14}$ & $6.15\mathrm{e}{-14}$ & -- \\
+\midrule
+ & \multicolumn{3}{l}{four-link (driven loop)} & \multicolumn{3}{l}{slider-crank (driven loop)} \\
+ & position & velocity & & position & velocity & \\
+\midrule
+$0.05$--$0.0016$ & $0.9$--$1.3\mathrm{e}{-14}$ & $1.5$--$4.0\mathrm{e}{-14}$ & -- & $0.6$--$1.2\mathrm{e}{-15}$ & $1.4$--$2.8\mathrm{e}{-15}$ & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/e4_benchmarks.png}
+{\method{} on the four benchmark mechanisms over $T=1$. The three driven mechanisms are reproduced at
+roundoff for every step size; the double pendulum shows the sixth order.}
+{fig:e4}
+
+\subsection{Comparison with the public absolute-coordinate codes}
+\label{sec:e5}
+
+The public codes of the benchmark suite (the 2021 rA, rp and r$\varepsilon$ formulations of
+\cite{kissel2022absolute} and the 2022 half-implicit rA and rA-half codes of
+\cite{fang2023halfimplicit}) are run as published, in their dynamics mode with their own tolerance
+policies, on the double pendulum over the public horizon $T=3$. Every error in
+Table~\ref{tab:e5} is the final-state $L^\infty$ difference to one common reference, the local
+\method{} run at $h=10^{-4}$ ($30\,000$ steps). That the public model and the local one are the same
+mechanism is checked on the short horizon $T=0.1$, where the public rA final state differs from
+the local one by $3.7\times10^{-3}$ at $h=0.1/16$ and $9.2\times10^{-4}$ at $h=0.1/64$, a
+first-order decrease and not a constant offset.
+
+Over $T=3$ the double pendulum amplifies perturbations strongly, and the public codes do not
+resolve it at any of the step sizes: the rA, r$\varepsilon$ and 2022 rA codes give identical
+results with position errors from $1.8$ at $h=0.1$ to $0.17$ at $h=0.001$ (pairwise orders
+$0.2$ to $0.9$, approaching first order only below $h=0.002$); the rp code fails to converge for
+$h\ge0.025$ and is at first order below; the half-implicit rA-half code does not converge at all
+on this horizon (errors between $0.9$ and $5.8$). \method{} reaches $4.3\times10^{-4}$ at
+$h=0.1$, $2.1\times10^{-11}$ at $h=0.01$ and the resolution floor of the reference,
+$2\times10^{-13}$, at $h\le0.002$, with pairwise orders $7.2$, $9.2$, $6.0$ and $6.1$ on the first
+four pairs. The Newton counts are $3.0$ to $4.5$ iterations per step for \method{} against $1.8$
+to $6.8$ for the 2021 codes and $3$ to $32$ for the 2022 codes; wall times are not comparable
+across the implementations (the local harness is a Python reference implementation with a dense
+automatic-differentiation Jacobian) and are omitted.
+
+On the three driven mechanisms the public horizon adds nothing to Section~\ref{sec:e4}:
+\method{} reproduces the driven motion to $10^{-14}$ over $T=3$ at $h=10^{-2}$, $10^{-3}$ and
+$10^{-4}$, while the public rA code, measured against its own kinematic-mode reference, has
+position errors below $10^{-9}$ but velocity errors that decrease at first order,
+$1.1\times10^{-1}$, $1.1\times10^{-2}$, $1.1\times10^{-3}$ on the four-link mechanism and
+$8.5\times10^{-3}$, $8.7\times10^{-4}$, $8.8\times10^{-5}$ on the slider-crank.
+
+\begin{table}[htbp]
+\centering
+\caption{Double pendulum over the public horizon $T=3$: final-state $L^\infty$ errors against the
+common \method{} reference at $h=10^{-4}$. The 2021 r$\varepsilon$ and the 2022 half-implicit rA
+codes return the same numbers as the 2021 rA code. ``fail'': the public Newton iteration did not
+converge. The reference has a resolution floor of about $2\times10^{-13}$.}
+\label{tab:e5}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+$h$ & \multicolumn{2}{l}{\method{}} & \multicolumn{2}{l}{2021 public rA} & 2021 public rp & 2022 rA-half \\
+    & position & velocity & position & velocity & position & position \\
+\midrule
+$0.1$    & $4.29\mathrm{e}{-4}$  & $1.51\mathrm{e}{-3}$  & $1.84$ & $6.04$ & fail   & $5.76$ \\
+$0.05$   & $3.03\mathrm{e}{-6}$  & $9.84\mathrm{e}{-6}$  & $1.58$ & $5.03$ & fail   & $5.01$ \\
+$0.025$  & $5.34\mathrm{e}{-9}$  & $1.72\mathrm{e}{-8}$  & $1.34$ & $4.13$ & fail   & $1.34$ \\
+$0.0125$ & $8.12\mathrm{e}{-11}$ & $2.66\mathrm{e}{-10}$ & $1.06$ & $3.43$ & $0.749$ & $0.903$ \\
+$0.01$   & $2.10\mathrm{e}{-11}$ & $7.09\mathrm{e}{-11}$ & $0.958$ & $3.40$ & $1.25$ & $1.12$ \\
+$0.002$  & $2.56\mathrm{e}{-13}$ & $1.76\mathrm{e}{-12}$ & $0.319$ & $1.10$ & $0.233$ & $4.26$ \\
+$0.001$  & $2.16\mathrm{e}{-13}$ & $1.66\mathrm{e}{-12}$ & $0.169$ & $0.532$ & $0.113$ & $1.92$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/e5_double_pendulum.png}
+{Double pendulum over the public horizon $T=3$: final position (left) and velocity (right) errors
+of \method{} and of the public absolute-coordinate codes against the common $h=10^{-4}$ reference.}
+{fig:e5}
+
+
+\subsection{Constraint drift and energy over the regular branch}
+\label{sec:e6}
+
+Figure~\ref{fig:e6} follows the chain over the whole regular branch $[0,0.5]$ at $h=0.01$ in two
+variants: the frictional benchmark, and a conservative variant with $\mu_s=\mu_d=0$, no viscous
+damping and no external loads, for which the total mechanical energy is an invariant of the exact
+flow. The endpoint position- and velocity-level constraint norms stay at $1.1\times10^{-13}$ and
+$9.5\times10^{-14}$ in both variants, the acceleration-level norms at the stages below
+$2\times10^{-14}$, and the quaternion unit error at $2\times10^{-16}$; the relative energy error of
+the conservative variant is $4.3\times10^{-12}$ at every step (the exact Gauss step is symplectic
+on the reduced problem, and the endpoint closure perturbs it by $O(h^7)$), while the frictional
+variant dissipates $37\%$ of its initial energy over the branch. The Newton count is $5$ per step
+without friction and $5.7$ with it.
+
+\paperfig{\figpath/e6_regular_branch.png}
+{Chain over the regular branch $[0,0.5]$ at $h=0.01$: relative energy error of the conservative
+variant (left), endpoint constraint norms of both variants (middle; the velocity-level closure is
+applied only when the raw defect exceeds $10^{-13}$, hence the saw-tooth), Newton iterations per
+step (right).}
+{fig:e6}

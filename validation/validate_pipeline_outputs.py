@@ -22,7 +22,10 @@ if (importlib.util.find_spec("jax") is None and _VENV_PYTHON.exists()
     os.execv(str(_VENV_PYTHON), [str(_VENV_PYTHON), *sys.argv])
 REPO = ROOT.parent
 NUMERICS_DIR = REPO / "numerics"          # v001..v048 method code and results
-LATEX_DIR = REPO / "paper"                # manuscript sources, figures, submission copies (since 2026-09-20)
+# Version directories created after the ledger freeze (2026-09-21) belong to the rewritten paper and are
+# validated by validate_manuscript.py, not by this frozen ledger.
+FROZEN_EXCLUDED_VERSIONS = {"v049_paper_experiments"}
+LATEX_DIR = ROOT / "legacy_drafts" / "main_cmame_pre_rewrite"   # frozen manuscript package audited by this ledger (2026-09-21); the live paper/ is validated by validate_manuscript.py
 PROOF_DIR = REPO / "proof"                # Lean development copy
 LEGACY_DIR = ROOT / "legacy_drafts"       # superseded internal drafts kept for the ledger
 _MANUSCRIPT_TOPLEVEL = {"main_cmame.tex", "main_cmame.pdf", "main_cmame.log", "main_cmame.txt", "highlights_cmame.txt",
@@ -162,7 +165,8 @@ def validate_version_inventory(v: Validator) -> tuple[list[dict[str, object]], d
     ledger_rows = read_csv_rows(ROOT / "docs" / "version_ledger.csv")
     ledger_by_version = {row["version"]: row for row in ledger_rows}
     version_dirs = sorted(
-        [path for path in NUMERICS_DIR.iterdir() if path.is_dir() and re.fullmatch(r"v\d{3}_.+", path.name)],
+        [path for path in NUMERICS_DIR.iterdir() if path.is_dir() and re.fullmatch(r"v\d{3}_.+", path.name)
+         and path.name not in FROZEN_EXCLUDED_VERSIONS],
         key=lambda path: version_number(path.name[:4]),
     )
     versions = [path.name[:4] for path in version_dirs]

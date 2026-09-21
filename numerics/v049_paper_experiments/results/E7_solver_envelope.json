@@ -1,0 +1,88 @@
+{
+  "schema": "e7-solver-envelope-v1",
+  "t_final": 0.5,
+  "newton_tolerance": 1e-11,
+  "max_iterations": 80,
+  "max_c_eta_needed": 1165270.8373113128,
+  "rows": [
+    {
+      "h": 0.1,
+      "steps": 5,
+      "mean_newton_iterations": 6.0,
+      "max_newton_iterations": 6,
+      "max_residual_norm": 8.136884026255725e-12,
+      "max_residual_over_h7": 8.136884026255723e-05,
+      "h7": 1.0000000000000004e-07,
+      "max_reduced_collocation_defect": 3.19647925905997e-08,
+      "max_perp_component": 5.590279472232989e-13,
+      "max_factorization_defect": 1.2333760970243234e-08,
+      "min_n_dot_axis": 0.38585456048053324
+    },
+    {
+      "h": 0.05,
+      "steps": 10,
+      "mean_newton_iterations": 6.0,
+      "max_newton_iterations": 6,
+      "max_residual_norm": 3.5074776433916184e-13,
+      "max_residual_over_h7": 0.000448957138354127,
+      "h7": 7.812500000000003e-10,
+      "max_reduced_collocation_defect": 2.991452641154524e-10,
+      "max_perp_component": 3.2023728339893768e-15,
+      "max_factorization_defect": 1.5843087791197743e-10,
+      "min_n_dot_axis": 0.36314879135627
+    },
+    {
+      "h": 0.025,
+      "steps": 20,
+      "mean_newton_iterations": 5.9,
+      "max_newton_iterations": 6,
+      "max_residual_norm": 8.81868177173167e-12,
+      "max_residual_over_h7": 1.4448528214805163,
+      "h7": 6.103515625000002e-12,
+      "max_reduced_collocation_defect": 1.3387194131020408e-11,
+      "max_perp_component": 6.414872575288138e-14,
+      "max_factorization_defect": 4.709680594237666e-12,
+      "min_n_dot_axis": 0.3518007150221613
+    },
+    {
+      "h": 0.0125,
+      "steps": 40,
+      "mean_newton_iterations": 5.725,
+      "max_newton_iterations": 6,
+      "max_residual_norm": 2.704980827810827e-12,
+      "max_residual_over_h7": 56.727559530051295,
+      "h7": 4.7683715820312517e-14,
+      "max_reduced_collocation_defect": 2.5088264798966975e-13,
+      "max_perp_component": 4.265337574760008e-15,
+      "max_factorization_defect": 8.669138516632976e-14,
+      "min_n_dot_axis": 0.34611998389228865
+    },
+    {
+      "h": 0.00625,
+      "steps": 80,
+      "mean_newton_iterations": 5.725,
+      "max_newton_iterations": 6,
+      "max_residual_norm": 3.091476333831824e-12,
+      "max_residual_over_h7": 8298.618593853536,
+      "h7": 3.7252902984619154e-16,
+      "max_reduced_collocation_defect": 7.328859741306815e-14,
+      "max_perp_component": 4.124295487574583e-15,
+      "max_factorization_defect": 1.3950292313171297e-15,
+      "min_n_dot_axis": 0.3432780549890042
+    },
+    {
+      "h": 0.003125,
+      "steps": 160,
+      "mean_newton_iterations": 5.71875,
+      "max_newton_iterations": 6,
+      "max_residual_norm": 3.391384488528458e-12,
+      "max_residual_over_h7": 1165270.8373113128,
+      "h7": 2.9103830456733714e-18,
+      "max_reduced_collocation_defect": 3.427813588530171e-15,
+      "max_perp_component": 5.333694441429199e-15,
+      "max_factorization_defect": 7.838317808037684e-16,
+      "min_n_dot_axis": 0.3418567266908505
+    }
+  ],
+  "runtime_sec": 855.2777921009692
+}

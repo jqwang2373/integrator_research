@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  20 SEP 2026 01:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 08:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,223 +481,187 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-3.
+1.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-3.
+1.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-63.
+61.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-63.
+61.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 63.
+(Font)              <10> on input line 61.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 63.
+(Font)              <7> on input line 61.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 63.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
+(Font)              <5> on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 105.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 105.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 105.
-
 [1
 
 {c:/Users/jingquanw/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{
 c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Use
 rs/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/jin
 gquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/jingq
-uanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [2] [3]
-[4] [5] [6] [7{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm
--mathex.enc}] [8]
-Underfull \hbox (badness 1960) in paragraph at lines 666--669
-[]\T1/lmr/m/n/10.95 Build the body mass and in-er-tia blocks, lower-pair graph,
- joint frames, axes,
- []
-
-[9]
-<Figure_11_method_stage_architecture.png, id=307, 604.4181pt x 362.3136pt>
-File: Figure_11_method_stage_architecture.png Graphic file (type png)
-<use Figure_11_method_stage_architecture.png>
-Package pdftex.def Info: Figure_11_method_stage_architecture.png  used on input
- line 735.
-(pdftex.def)             Requested size: 407.66833pt x 244.3742pt.
- [10] [11 <./Figure_11_method_stage_architecture.png>] [12] [13] [14]
-[15] [16] [17] [18] [19] [20] [21] [22]
+uanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1763.
- [23] [24] [25] [26] [27] [28]
-<Figure_1_convergence.png, id=625, 543.4704pt x 434.5836pt>
-File: Figure_1_convergence.png Graphic file (type png)
-<use Figure_1_convergence.png>
-Package pdftex.def Info: Figure_1_convergence.png  used on input line 2229.
-(pdftex.def)             Requested size: 407.66833pt x 325.98994pt.
- [29 <./Figure_1_convergence.png>] [30] [31]
-<Figure_2_asme_lower_pair_graph_bridge.png, id=649, 488.5452pt x 423.7431pt>
-File: Figure_2_asme_lower_pair_graph_bridge.png Graphic file (type png)
-<use Figure_2_asme_lower_pair_graph_bridge.png>
-Package pdftex.def Info: Figure_2_asme_lower_pair_graph_bridge.png  used on inp
-ut line 2461.
-(pdftex.def)             Requested size: 407.66833pt x 353.60115pt.
-<Figure_3_asme_closed_loop_kinematic_fullva.png, id=650, 794.97pt x 303.534pt>
-File: Figure_3_asme_closed_loop_kinematic_fullva.png Graphic file (type png)
-<use Figure_3_asme_closed_loop_kinematic_fullva.png>
-Package pdftex.def Info: Figure_3_asme_closed_loop_kinematic_fullva.png  used o
-n input line 2466.
-(pdftex.def)             Requested size: 407.66833pt x 155.65712pt.
- [32] [33 <./Figure_2_asme_lower_pair_graph_bridge.png> <./Figure_3_asme_closed
-_loop_kinematic_fullva.png>]
-<Figure_4_order_closure_blend.png, id=678, 1141.866pt x 303.534pt>
-File: Figure_4_order_closure_blend.png Graphic file (type png)
-<use Figure_4_order_closure_blend.png>
-Package pdftex.def Info: Figure_4_order_closure_blend.png  used on input line 2
-558.
-(pdftex.def)             Requested size: 407.66833pt x 108.36899pt.
-<Figure_5_velocity_compression.png, id=679, 1192.455pt x 332.0405pt>
-File: Figure_5_velocity_compression.png Graphic file (type png)
-<use Figure_5_velocity_compression.png>
-Package pdftex.def Info: Figure_5_velocity_compression.png  used on input line 
-2564.
-(pdftex.def)             Requested size: 407.66833pt x 113.51546pt.
- [34 <./Figure_4_order_closure_blend.png>]
-<Figure_6_sparse_speed_gap.png, id=696, 780.516pt x 289.08pt>
-File: Figure_6_sparse_speed_gap.png Graphic file (type png)
-<use Figure_6_sparse_speed_gap.png>
-Package pdftex.def Info: Figure_6_sparse_speed_gap.png  used on input line 2581
+(Font)              <10.95> on input line 108.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 108.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 108.
+ [2] [3]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 272
 .
-(pdftex.def)             Requested size: 407.66833pt x 150.98851pt.
-<Figure_7_strict_common_reference_work_precision.png, id=697, 498.38504pt x 213
-.1965pt>
-File: Figure_7_strict_common_reference_work_precision.png Graphic file (type pn
-g)
-<use Figure_7_strict_common_reference_work_precision.png>
-Package pdftex.def Info: Figure_7_strict_common_reference_work_precision.png  u
-sed on input line 2591.
-(pdftex.def)             Requested size: 407.66833pt x 174.39284pt.
-<Figure_8_claim_boundary_limitations.png, id=698, 554.3109pt x 434.5836pt>
-File: Figure_8_claim_boundary_limitations.png Graphic file (type png)
-<use Figure_8_claim_boundary_limitations.png>
-Package pdftex.def Info: Figure_8_claim_boundary_limitations.png  used on input
- line 2601.
-(pdftex.def)             Requested size: 407.66833pt x 319.63062pt.
-<Figure_9_coarse_baseline_work_precision.png, id=699, 611.6451pt x 467.1051pt>
-File: Figure_9_coarse_baseline_work_precision.png Graphic file (type png)
-<use Figure_9_coarse_baseline_work_precision.png>
-Package pdftex.def Info: Figure_9_coarse_baseline_work_precision.png  used on i
-nput line 2612.
-(pdftex.def)             Requested size: 407.66833pt x 311.33372pt.
-<Figure_10_closed_loop_true_dynamic_order.png, id=700, 571.8966pt x 434.5836pt>
 
-File: Figure_10_closed_loop_true_dynamic_order.png Graphic file (type png)
-<use Figure_10_closed_loop_true_dynamic_order.png>
-Package pdftex.def Info: Figure_10_closed_loop_true_dynamic_order.png  used on 
-input line 2629.
-(pdftex.def)             Requested size: 407.66833pt x 309.79654pt.
-<Figure_12_all_method_result_matrix.png, id=701, 608.0316pt x 492.3996pt>
-File: Figure_12_all_method_result_matrix.png Graphic file (type png)
-<use Figure_12_all_method_result_matrix.png>
-Package pdftex.def Info: Figure_12_all_method_result_matrix.png  used on input 
-line 2639.
-(pdftex.def)             Requested size: 407.66833pt x 330.15396pt.
-<Figure_13_work_precision_compendium.png, id=702, 788.2248pt x 467.1051pt>
-File: Figure_13_work_precision_compendium.png Graphic file (type png)
-<use Figure_13_work_precision_compendium.png>
-Package pdftex.def Info: Figure_13_work_precision_compendium.png  used on input
- line 2654.
-(pdftex.def)             Requested size: 407.66833pt x 241.5846pt.
- [35 <./Figure_5_velocity_compression.png> <./Figure_6_sparse_speed_gap.png>] [
-36 <./Figure_7_strict_common_reference_work_precision.png> <./Figure_8_claim_bo
-undary_limitations.png>] [37 <./Figure_9_coarse_baseline_work_precision.png>] [
-38 <./Figure_10_closed_loop_true_dynamic_order.png>]
-[39 <./Figure_12_all_method_result_matrix.png>] [40 <./Figure_13_work_precision
-_compendium.png>] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
-[52] [53] [54] [55]
-Underfull \hbox (badness 1552) in paragraph at lines 3933--3937
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+[4{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}
+]
+<./Figure_1_chain_schematic.png, id=290, 406.3545pt x 270.3555pt>
+File: ./Figure_1_chain_schematic.png Graphic file (type png)
+<use ./Figure_1_chain_schematic.png>
+Package pdftex.def Info: ./Figure_1_chain_schematic.png  used on input line 348
+.
+(pdftex.def)             Requested size: 407.66833pt x 271.2335pt.
+ [5] [6 <./Figure_1_chain_schematic.png>]
+<./Figure_2_method_overview.png, id=311, 708.246pt x 359.379pt>
+File: ./Figure_2_method_overview.png Graphic file (type png)
+<use ./Figure_2_method_overview.png>
+Package pdftex.def Info: ./Figure_2_method_overview.png  used on input line 437
+.
+(pdftex.def)             Requested size: 407.66833pt x 206.86613pt.
+ [7] [8 <./Figure_2_method_overview.png>] [9] [10] [11] [12] [13] [14]
+<./Figure_3_e1_convergence.png, id=480, 664.52264pt x 281.853pt>
+File: ./Figure_3_e1_convergence.png Graphic file (type png)
+<use ./Figure_3_e1_convergence.png>
+Package pdftex.def Info: ./Figure_3_e1_convergence.png  used on input line 994.
+
+(pdftex.def)             Requested size: 407.66833pt x 172.91493pt.
+ [15 <./Figure_3_e1_convergence.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 1041.
+ [16]
+<./Figure_4_e2_gauss_family.png, id=521, 903.375pt x 281.853pt>
+File: ./Figure_4_e2_gauss_family.png Graphic file (type png)
+<use ./Figure_4_e2_gauss_family.png>
+Package pdftex.def Info: ./Figure_4_e2_gauss_family.png  used on input line 115
+2.
+(pdftex.def)             Requested size: 407.66833pt x 127.19394pt.
+
+[17]
+<./Figure_5_e3_friction_sweep.png, id=534, 693.792pt x 281.853pt>
+File: ./Figure_5_e3_friction_sweep.png Graphic file (type png)
+<use ./Figure_5_e3_friction_sweep.png>
+Package pdftex.def Info: ./Figure_5_e3_friction_sweep.png  used on input line 1
+195.
+(pdftex.def)             Requested size: 407.66833pt x 165.61661pt.
+<./Figure_6_mechanisms.png, id=540, 497.6775pt x 459.5715pt>
+File: ./Figure_6_mechanisms.png Graphic file (type png)
+<use ./Figure_6_mechanisms.png>
+Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1225.
+(pdftex.def)             Requested size: 407.66833pt x 376.46538pt.
+ [18 <./Figure_4_e2_gauss_family.png>]
+<./Figure_7_e4_benchmarks.png, id=550, 693.792pt x 534.798pt>
+File: ./Figure_7_e4_benchmarks.png Graphic file (type png)
+<use ./Figure_7_e4_benchmarks.png>
+Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1260.
+
+(pdftex.def)             Requested size: 407.66833pt x 314.2469pt.
+ [19 <./Figure_5_e3_friction_sweep.png>] [20 <./Figure_6_mechanisms.png>] [21 <
+./Figure_7_e4_benchmarks.png>]
+<./Figure_8_e5_double_pendulum.png, id=574, 693.792pt x 281.853pt>
+File: ./Figure_8_e5_double_pendulum.png Graphic file (type png)
+<use ./Figure_8_e5_double_pendulum.png>
+Package pdftex.def Info: ./Figure_8_e5_double_pendulum.png  used on input line 
+1323.
+(pdftex.def)             Requested size: 407.66833pt x 165.61661pt.
+<./Figure_9_e6_regular_branch.png, id=576, 903.375pt x 281.853pt>
+File: ./Figure_9_e6_regular_branch.png Graphic file (type png)
+<use ./Figure_9_e6_regular_branch.png>
+Package pdftex.def Info: ./Figure_9_e6_regular_branch.png  used on input line 1
+345.
+(pdftex.def)             Requested size: 407.66833pt x 127.19394pt.
+
+[22 <./Figure_8_e5_double_pendulum.png>] [23 <./Figure_9_e6_regular_branch.png>
+] [24] [25] [26] [27]
+Underfull \hbox (badness 1552) in paragraph at lines 1692--1696
 []\T1/lmr/m/n/10.95 V. Wie-loch, M. Arnold, BDF in-te-gra-tors for con-strained
  me-chan-i-cal sys-tems on
  []
 
-[56]
-Underfull \hbox (badness 1152) in paragraph at lines 4011--4017
-[]\T1/lmr/m/n/10.95 D.E. Stew-art, J.C. Trin-kle, An im-plicit time-stepping sc
-heme for rigid body dy-
- []
-
-[57] (./main_arxiv.aux)
+[28] [29] [30] (./main_arxiv.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
  ***********
 Package rerunfilecheck Info: File `main_arxiv.out' has not changed.
-(rerunfilecheck)             Checksum: F79FFDB767AB41FCC5C73EC024C71F27;5517.
+(rerunfilecheck)             Checksum: D0C18E5ABF38878108BA775624A1D0BA;4926.
  ) 
 Here is how much of TeX's memory you used:
- 11909 strings out of 467159
- 184828 string characters out of 5404997
- 644342 words of memory out of 5000000
- 40715 multiletter control sequences out of 15000+600000
- 698588 words of font info for 95 fonts, out of 8000000 for 9000
+ 11780 strings out of 467159
+ 181617 string characters out of 5404997
+ 633829 words of memory out of 5000000
+ 40668 multiletter control sequences out of 15000+600000
+ 696931 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,12n,79p,1094b,690s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
-<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c
-:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/
-Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/Us
-ers/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/Users
-/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c:/Users/ji
-ngquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/jingq
-uanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/Users/jingquan
-w/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/jingquanw/t
-exlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/jingquanw/texl
-ive/2026/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/jingquanw/texlive
-/2026/texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/Users/jingquanw/texlive/202
-6/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/jingquanw/texlive/2026/te
-xmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/jingquanw/texlive/2026/texmf-
-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist
-/fonts/type1/public/lm/lmr9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fon
-ts/type1/public/lm/lmri10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts
-/type1/public/lm/lmsy10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
-ype1/public/lm/lmsy5.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type
-1/public/lm/lmsy6.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/p
-ublic/lm/lmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publ
-ic/lm/lmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/
-lm/lmsy9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/
-lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lm
-tt8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt9
-.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb>
-Output written on main_arxiv.pdf (57 pages, 3495687 bytes).
+ 74i,12n,79p,622b,727s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler
+/eufm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/l
+mbx10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmb
+x12.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex1
+0.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.
+pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
+><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb><c
+:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/U
+sers/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb><c:/User
+s/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/j
+ingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/jing
+quanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/jingqua
+nw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/jingquanw/t
+exlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/Users/jingquanw/texli
+ve/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/jingquanw/texlive/2
+026/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/jingquanw/texlive/2026/
+texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/Users/jingquanw/texlive/2026/te
+xmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/jingquanw/texlive/2026/texm
+f-dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/jingquanw/texlive/2026/texmf-d
+ist/fonts/type1/public/lm/lmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist
+/fonts/type1/public/lm/lmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fo
+nts/type1/public/lm/lmsy9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts
+/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
+ype1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main_arxiv.pdf (30 pages, 1682570 bytes).
 PDF statistics:
- 1092 PDF objects out of 1200 (max. 8388607)
- 937 compressed objects within 10 object streams
- 291 named destinations out of 1000 (max. 500000)
- 298 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 829 PDF objects out of 1000 (max. 8388607)
+ 714 compressed objects within 8 object streams
+ 205 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

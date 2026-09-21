@@ -1,0 +1,267 @@
+\section{Problem setting}
+\label{sec:setting}
+
+\paragraph{Equations of motion}
+A rigid body $b$ has centre-of-mass position $r_b\in\mathbb R^3$, rotation $Q_b\in SO(3)$,
+translational velocity $v_b=\dot r_b$, body-frame angular velocity $\omega_b$ with
+$\dot Q_b=Q_b\,\widehat{\omega_b}$, mass $m_b$ and body-frame inertia $J_b$. With
+$q=(r_b,Q_b)_b$, $v=(v_b,\omega_b)_b$ and $a=\dot v$, a mechanism with lower-pair joints is
+governed by
+\begin{align}
+  M\dot v + G(v) + \Phi_q(q)^T\lambda &= F(q,v,t), \label{eq:dae-dyn}\\
+  \dot q &= \mathcal K(q)v, \label{eq:dae-kin}\\
+  \Phi(q) &= 0, \label{eq:dae-constraint}
+\end{align}
+where $M=\operatorname{diag}(m_bI,J_b)$, $G$ collects the gyroscopic terms
+$\omega_b\times J_b\omega_b$, $\Phi$ stacks the joint constraints, $\lambda$ are the Lagrange
+multipliers, and $\mathcal K$ is the kinematic map, which is the identity on the translational part
+and $\omega_b\mapsto Q_b\widehat{\omega_b}$ on the rotational part. The system is an index-3
+differential-algebraic equation on $(\mathbb R^3\times SO(3))^{N}$. Differentiating the constraint
+once and twice gives the velocity- and acceleration-level constraints
+\begin{equation}
+  \Phi_q(q)v=0,\qquad \Phi_q(q)a+\dot\Phi_q(q,v)v=0,
+  \label{eq:fullva}
+\end{equation}
+which the exact solution satisfies identically; the method of Section~\ref{sec:method} enforces
+Eq.~\eqref{eq:dae-constraint} and both equations of Eq.~\eqref{eq:fullva} at every stage, which
+is what the acronym FullVA (full velocity- and acceleration-level enforcement) refers to.
+
+\paragraph{Rotations}
+Rotations are represented by unit quaternions in the implementation and advanced by the retraction
+\begin{equation}
+  Q_{n+1}=Q_n\,\mathrm{Exp}(\eta_{n+1}),\qquad Q_i=Q_n\,\mathrm{Exp}(\eta_i),
+  \label{eq:retraction}
+\end{equation}
+with $\eta\in\mathbb R^3\cong\mathfrak{so}(3)$ the local rotation increment and $\mathrm{Exp}$
+the exponential map. The right-trivialized differential of the exponential map is written
+$J_r(\eta)$, so that $\dot\eta=J_r^{-1}(\eta)\,\omega$ along a motion with body angular velocity
+$\omega$.
+
+\paragraph{Lower pairs and joint coordinates}
+A lower pair $j$ connects a parent body $p(j)$ (possibly the ground) and a child body $c(j)$. Let
+$P_j(q)$ and $C_j(q)$ be the attachment points on the two bodies, $d_j(q)=C_j(q)-P_j(q)$ the
+relative displacement, $a_j(q)$ the joint axis carried by the parent, $\tilde a_j(q)$ the axis
+carried by the child, and $\omega^{\rm rel}_j=Q_{c(j)}\omega_{c(j)}-Q_{p(j)}\omega_{p(j)}$ the
+relative angular velocity in the world frame. Each pair carries a fixed world direction $n_j$, the
+joint axis at $t=0$, and a fixed orthonormal pair $e_{j,1},e_{j,2}\perp n_j$. A pair with two
+degrees of freedom (sliding along and rotating about its axis) has the joint coordinates
+\begin{equation}
+  s_j(q)=n_j\cdot d_j(q),\qquad
+  \theta_j(q)=\operatorname{atan2}\bigl(\tilde t_j\cdot(a_j\times t_j),\ \tilde t_j\cdot t_j\bigr),
+  \label{eq:joint-coordinates}
+\end{equation}
+where $t_j,\tilde t_j$ are twist reference vectors fixed in the parent and in the child. Their
+rates are $\dot s_j=n_j\cdot\dot d_j$ and $\dot\theta_j=a_j\cdot\omega^{\rm rel}_j$, and their
+second rates are $\ddot s_j=n_j\cdot\ddot d_j$ and
+$\ddot\theta_j=a_j\cdot\dot\omega^{\rm rel}_j+\dot a_j\cdot\omega^{\rm rel}_j$. Revolute,
+prismatic and spherical joints are obtained by fixing one or both coordinates or by dropping the
+alignment rows; the constraint rows of the four benchmark mechanisms are listed in
+\ref{app:lower-pair}.
+
+\paragraph{The two-body chain}
+The main benchmark is a two-body open chain (Table~\ref{tab:chain}). Body $0$ is connected to the
+ground by a pair with sliding and rotation along a fixed ground axis; body $1$ is connected to body
+$0$ by a second pair whose axis $a_1(q)=Q_0\hat a^{\rm next}_0$ is fixed in body $0$. The two axes
+fixed in body $0$ are not parallel and body $0$ spins, so $a_1(q)$ moves on a cone about the ground
+axis while $n_1$ and $e_{1,m}$ stay frozen at their $t=0$ values. The second pair is therefore a
+four-constraint lower pair with a fixed sliding direction and a moving rotation axis, not a
+cylindrical pair in the strict sense; its friction sliding speed is $\dot s_1\,(n_1\cdot a_1)$, and
+the modelling is regular as long as $n_1\cdot a_1(q)\neq0$. On the initial state of
+Table~\ref{tab:chain} this factor decreases from $1$ to $0.34$ on $[0,0.5]$ and vanishes at
+$t\approx0.605$, where the frozen sliding direction ceases to define the pair; all chain
+experiments are run on the regular branch $[0,0.5]$. Each joint carries gravity, constant external
+loads, viscous damping and a regularized Brown--McPhee friction torque and force
+\cite{browmcphee2016friction} with static and dynamic coefficients $\mu_s,\mu_d$ and Stribeck
+velocity $v_s$; the friction force enters the Newton--Euler rows through the multipliers (normal
+force) and the sliding speed, and is $C^\infty$ in the state for $v_s>0$. The smooth case uses
+$v_s=0.5$; Section~\ref{sec:numerical} varies $v_s$ down to $0.02$.
+
+\begin{table}[htbp]
+\centering
+\caption{Two-body chain benchmark. Directions are given before normalization; the initial rotations
+are the unique rotations mapping the body-fixed axis and twist vectors of each pair onto their
+parent-side counterparts.}
+\label{tab:chain}
+\small
+\begin{tabular}{P{0.30\linewidth}P{0.60\linewidth}}
+\toprule
+Quantity & Value \\
+\midrule
+Masses $m_0,m_1$ [kg] & $2.7$, $1.9$ \\
+Inertias $J_0,J_1$ [kg\,m$^2$] & $\operatorname{diag}(0.11,0.24,0.31)$, $\operatorname{diag}(0.08,0.19,0.27)$ \\
+Ground axis, ground twist & $(0.31,0.78,0.54)$, first vector of an orthonormal complement \\
+Body-fixed axes (parent side) $\hat a^{\rm prev}_0,\hat a^{\rm prev}_1$ & $(0.18,0.91,-0.37)$, $(-0.24,0.87,0.43)$ \\
+Body-fixed axes (child side) $\hat a^{\rm next}_0,\hat a^{\rm next}_1$ & $(0.42,0.69,0.59)$, $(0,1,0)$ \\
+Attachment points $s^{\rm prev}_0,s^{\rm prev}_1$ [m] & $(0.12,-0.04,0.18)$, $(-0.08,0.05,0.16)$ \\
+Attachment points $s^{\rm next}_0,s^{\rm next}_1$ [m] & $(0.16,0.02,-0.20)$, $(0,0,0)$ \\
+Gravity [m/s$^2$] & $(0,0,-9.81)$ \\
+External forces (world) [N] & $(0.8,-0.35,0.25)$, $(-0.25,0.45,-0.10)$ \\
+External torques (body) [N\,m] & $(0.03,-0.02,0.015)$, $(-0.018,0.026,-0.014)$ \\
+Friction $\mu_s,\mu_d$, viscous coefficient, radius & $0.30$, $0.20$, $0.030$, $1.0$ \\
+Stribeck velocity $v_s$ & $0.5$ (smooth case); $0.2,0.1,0.05,0.02$ in the sweep \\
+Initial slide $s_j(0)$, slide rate $\dot s_j(0)$, spin rate $\dot\theta_j(0)$ & $(0.35,0.42)$, $(0.42,-0.26)$, $(0.18,-0.14)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/chain_schematic.png}
+{The two-body chain: body $0$ slides and spins along the fixed ground axis, body $1$ slides and spins
+along the axis $a_1(q)$ carried by body $0$; the second pair keeps its sliding direction $n_1$ and
+its basis $e_{1,m}$ frozen at their $t=0$ values.}
+{fig:chain}
+
+\paragraph{Notation}
+Throughout, $h$ is the step size, $t_n=nh$, $x_n=(q_n,v_n)$ the endpoint state (accelerations and
+multipliers are stage quantities), $c_i,b_i,A_{ik}$ ($i,k=1,2,3$) the nodes, weights and matrix of
+the three-stage Gauss tableau, $Z$ the stacked stage vector, and $\|\cdot\|$ a fixed norm on the
+finite-dimensional space at hand. Constants $C$ with subscripts are independent of $h$ and of the
+number of steps.
+
+\section{The \method{} step}
+\label{sec:method}
+
+\subsection{Stage unknowns and stage system}
+
+For each stage $i=1,2,3$ and each body $b$ the unknowns are the translational position $r_{b,i}$,
+the rotation increment $\eta_{b,i}$ with $Q_{b,i}=Q_{b,n}\mathrm{Exp}(\eta_{b,i})$, the velocities
+$v_{b,i},\omega_{b,i}$ and the accelerations $a_{b,i},\alpha_{b,i}$; each lower pair $j$
+contributes its multipliers $\lambda_{j,i}$, four per pair for the chain. With two bodies and two
+pairs the stage vector
+\begin{equation}
+  Z=(Z_1,Z_2,Z_3),\qquad Z_i=(r_i,\eta_i,v_i,\omega_i,a_i,\alpha_i,\lambda_i),
+  \label{eq:stage-variable-block}
+\end{equation}
+has $3\,(2\cdot18+2\cdot4)=132$ components.
+
+Write $\psi_j(q)=\tilde a_j(q)-a_j(q)$ for the axis-alignment residual and, for a joint-coordinate
+function $g$ with rate $\dot g$,
+\begin{equation}
+  \Delta_i[g]=g(Z_i)-g(x_n)-h\sum_{k=1}^3A_{ik}\,\dot g(Z_k)
+  \label{eq:collocation-defect-operator}
+\end{equation}
+for its Gauss collocation defect at stage $i$. With $t_i=t_n+c_ih$, the applied wrench
+$(f_{b,i},\tau_{b,i})$ evaluated at the stage, and the total force and torque
+$F^r_{b,i}=f_{b,i}+\Phi_{r,b}(q_i)^T\lambda_i$, $T^\theta_{b,i}=\tau_{b,i}+\Phi_{\theta,b}(q_i)^T\lambda_i$
+including the multiplier wrench, the stage system reads, for every pair $j$, every $m=1,2$ and
+every body $b$,
+\begin{equation}
+\label{eq:g6fullva-expanded-stage}
+\begin{aligned}
+0 &= e_{j,m}\cdot d_j(q_i), &
+0 &= e_{j,m}\cdot\psi_j(q_i),\\
+0 &= e_{j,m}\cdot\dot d_j(q_i,v_i), &
+0 &= e_{j,m}\cdot\dot\psi_j(q_i,v_i),\\
+0 &= e_{j,m}\cdot\ddot d_j(q_i,v_i,a_i), &
+0 &= e_{j,m}\cdot\ddot\psi_j(q_i,v_i,a_i),\\
+0 &= \Delta_i[s_j], & 0 &= \Delta_i[\dot s_j],\\
+0 &= \Delta_i[\theta_j], & 0 &= \Delta_i[\dot\theta_j],\\
+0 &= m_b a_{b,i}-F^r_{b,i}, &
+0 &= J_b\alpha_{b,i}+\omega_{b,i}\times J_b\omega_{b,i}-T^\theta_{b,i} .
+\end{aligned}
+\end{equation}
+The first three lines are the lower-pair constraints at position, velocity and acceleration level
+($12$ rows per pair and stage); the fourth and fifth lines are Gauss collocation of the four joint
+coordinates $(s_j,\dot s_j,\theta_j,\dot\theta_j)$ ($4$ rows per pair and stage); the last line is
+the Newton--Euler balance ($6$ rows per body and stage). Table~\ref{tab:rows} gives the inventory:
+$44$ rows per stage for the $44$ unknowns, $72+24+36=132$ over the three stages. The absolute body
+coordinates $(r_i,\eta_i,v_i,\omega_i)$ carry no collocation row of their own; they are determined
+by the constraint rows once the joint coordinates are collocated. The implementation projects the
+two translational collocation rows onto the current joint axis $a_j(q_i)$ rather than onto $n_j$;
+on the constraint manifold $d_j,\dot d_j,\ddot d_j\parallel n_j$, so the two forms differ by the
+factor $n_j\cdot a_j(q_i)$, nonzero on the regular branch, and define the same stage solution.
+Driven mechanisms add prescribed right-hand sides to the three constraint levels of the driven
+row. The multiplier wrench collects the joint normal forces, the axis-alignment torques and the
+friction force along the joint axis; the friction law enters only there.
+
+\begin{table}[htbp]
+\centering
+\caption{Row inventory of the stage system for the two-body chain (per stage and in total).}
+\label{tab:rows}
+\small
+\begin{tabular}{P{0.46\linewidth}P{0.16\linewidth}P{0.10\linewidth}P{0.10\linewidth}}
+\toprule
+Row family & Per pair or body & Per stage & Total \\
+\midrule
+Position-level constraints $\Phi=0$ & $4$ per pair & $8$ & $24$ \\
+Velocity-level constraints $\Phi_qv=0$ & $4$ per pair & $8$ & $24$ \\
+Acceleration-level constraints $\Phi_qa+\dot\Phi_qv=0$ & $4$ per pair & $8$ & $24$ \\
+Joint-coordinate collocation $\Delta_i[s_j],\Delta_i[\dot s_j],\Delta_i[\theta_j],\Delta_i[\dot\theta_j]$ & $4$ per pair & $8$ & $24$ \\
+Newton--Euler balance & $6$ per body & $12$ & $36$ \\
+\midrule
+Unknowns $(r,\eta,v,\omega,a,\alpha)$ per body, $\lambda$ per pair & $18$, $4$ & $44$ & $132$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paperfig{\figpath/method_overview.png}
+{One step of \method{}: the stage system couples the three constraint levels, the joint-coordinate
+collocation rows and the Newton--Euler balance; the endpoint is reconstructed with the Gauss weights
+and the exponential map and closed at velocity level.}
+{fig:overview}
+
+\subsection{Endpoint reconstruction and closure}
+
+After the stage solve the endpoint is reconstructed with the Gauss weights,
+\begin{align}
+  r_{n+1} &= r_n+h\sum_{i=1}^3 b_i v_i, &
+  v_{n+1} &= v_n+h\sum_{i=1}^3 b_i a_i, \label{eq:end-trans}\\
+  Q_{n+1} &= Q_n\mathrm{Exp}\!\left(h\sum_{i=1}^3 b_i J_r^{-1}(\eta_i)\omega_i\right), &
+  \omega_{n+1} &= \omega_n+h\sum_{i=1}^3 b_i \alpha_i .
+  \label{eq:end-rot}
+\end{align}
+The reconstructed endpoint satisfies the position-level constraints only up to the quadrature
+error ($O(h^7)$ per step, Lemma~\ref{lem:gauss-endpoint-defect}) and the velocity-level constraints
+likewise. The endpoint closure map $\mathcal C_h$ then projects the endpoint velocities
+$(v_{n+1},\omega_{n+1})$ onto the velocity-level constraint manifold of Eq.~\eqref{eq:fullva} at
+$q_{n+1}$ by the minimal-norm correction, that is, by solving the KKT system with matrix
+$\bigl[\begin{smallmatrix}I&\Phi_q^T\\ \Phi_q&0\end{smallmatrix}\bigr]$; positions and rotations are
+not projected. The correction is an $O(h^7)$ perturbation of the step (Lemma~\ref{lem:endpoint-closure}).
+The closed endpoint $x_{n+1}=\mathcal C_h(\mathcal E_h(Z))$, with $\mathcal E_h$ the map of
+Eqs.~\eqref{eq:end-trans}--\eqref{eq:end-rot}, defines the one-step map
+$\Psi_h(x_n)=x_{n+1}$.
+
+\subsection{Newton solve and predictor}
+
+The stage system $F_h(Z;x_n)=0$ is solved by Newton's method,
+\begin{equation}
+  D_ZF_h(Z^{(k)};x_n)\,\Delta Z=-F_h(Z^{(k)};x_n),\qquad Z^{(k+1)}=Z^{(k)}+\Delta Z,
+  \label{eq:newton}
+\end{equation}
+with the $132\times132$ Jacobian assembled by forward-mode automatic differentiation of the single
+residual function and factorized densely. The iteration stops when the residual norm or the update norm falls below the tolerance
+$\tau_N=10^{-11}$ and is declared failed after $k_{\max}=80$ iterations. The predictor
+extrapolates positions and velocities from the endpoint state with the constant endpoint
+acceleration, sets the rotation increments, angular velocities and angular accelerations of the
+stages to zero, and estimates the multipliers from the endpoint force balance; the consequences of
+this choice for the convergence analysis are discussed after Lemma~\ref{lem:newton-envelope}. On
+the chain the solve takes between five and six Newton iterations per step at every step size
+(Section~\ref{sec:numerical}).
+
+\begin{table}[htbp]
+\centering
+\caption{One step of \method{}.}
+\label{tab:algorithm}
+\small
+\begin{tabular}{P{0.06\linewidth}P{0.84\linewidth}}
+\toprule
+Step & Operation \\
+\midrule
+1 & From $x_n=(q_n,v_n)$ and $h$, form the predictor $Z^{(0)}$. \\
+2 & Assemble the stage residual $F_h(Z;x_n)$ of Eq.~\eqref{eq:g6fullva-expanded-stage}:
+constraint rows at the three levels, joint-coordinate collocation rows, Newton--Euler rows. \\
+3 & Iterate Eq.~\eqref{eq:newton} with the automatic-differentiation Jacobian until
+$\|F_h\|\le\tau_N$ or $\|\Delta Z\|\le\tau_N$. \\
+4 & Reconstruct the endpoint by Eqs.~\eqref{eq:end-trans}--\eqref{eq:end-rot}. \\
+5 & Apply the velocity-level closure $\mathcal C_h$; record the Newton count and the endpoint
+constraint norms. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Cost}
+One Newton iteration costs one residual and Jacobian evaluation and one dense $132\times132$
+factorization; a step costs five to six such iterations. The Jacobian is block-sparse (each stage
+couples to the others only through the collocation rows), which the present reference
+implementation does not exploit. The two- and one-stage members of the same family, obtained by
+replacing the Gauss tableau, have $88$ and $44$ unknowns and are used for the work/precision
+comparison of Section~\ref{sec:numerical}.

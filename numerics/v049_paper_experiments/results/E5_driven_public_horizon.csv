@@ -1,0 +1,49 @@
+model,method,t_end,h,status,error_reference,pos_final_error,vel_final_error,runtime_sec,avg_iterations,source_csv
+single_pendulum,2021 public rA,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.105002755963369e-10,6.01481824835148,0.298498039948754,3.736666666666667,ra2021_order_rows.csv
+single_pendulum,2021 public rA,3.0,0.001,ok,"public kinematics mode, h = 0.001",1.100619595462149e-10,0.002545877157588694,1.726168008055538,1.8803333333333334,ra2021_order_rows.csv
+single_pendulum,2021 public rA,3.0,0.0001,ok,"public kinematics mode, h = 0.001",1.1005729660951147e-10,0.5758083686214988,12.201117517077364,0.9992,ra2021_order_rows.csv
+single_pendulum,2021 public rA (timing run),3.0,0.001,ok,none (timing row),nan,nan,9.89467491605319,1.8803333333333334,ra2021_public_timing_rows.csv
+single_pendulum,2021 public reps,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.1050049764094183e-10,6.014818248351818,0.4117361700627953,3.736666666666667,ra2021_order_rows.csv
+single_pendulum,2021 public reps,3.0,0.001,ok,"public kinematics mode, h = 0.001",1.1006151545700504e-10,0.002545877157463461,2.6188654230209067,1.8803333333333334,ra2021_order_rows.csv
+single_pendulum,2021 public reps,3.0,0.0001,ok,"public kinematics mode, h = 0.001",1.1006107136779519e-10,0.5758083686214835,20.12235050101299,0.9991666666666666,ra2021_order_rows.csv
+single_pendulum,2021 public reps (timing run),3.0,0.001,ok,none (timing row),nan,nan,2.953751645050943,1.8803333333333334,ra2021_public_timing_rows.csv
+single_pendulum,2021 public rp,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.1040501846082407e-10,5.778784451544591,0.5526030790060759,3.8233333333333333,ra2021_order_rows.csv
+single_pendulum,2021 public rp,3.0,0.001,ok,"public kinematics mode, h = 0.001",1.1005707456490654e-10,0.00021242069821003629,3.7053539670305327,1.9073333333333333,ra2021_order_rows.csv
+single_pendulum,2021 public rp,3.0,0.0001,ok,"public kinematics mode, h = 0.001",1.1005640843109177e-10,0.5758316767491723,25.826645778026432,0.9995666666666667,ra2021_order_rows.csv
+single_pendulum,2021 public rp (timing run),3.0,0.001,ok,none (timing row),nan,nan,4.109216463053599,1.9073333333333333,ra2021_public_timing_rows.csv
+single_pendulum,Gauss6/FullVA,3.0,0.01,ok,analytic driven solution,1.4995461985903105e-14,9.082863950624981e-10,3.3401848459616303,2.0,gauss6_fullva_public_horizon_single_rows.csv
+single_pendulum,Gauss6/FullVA,3.0,0.001,ok,analytic driven solution,7.869280847691828e-15,2.9996574304705472e-15,8.144448293955065,1.0,gauss6_fullva_public_horizon_single_rows.csv
+single_pendulum,Gauss6/FullVA,3.0,0.0001,ok,analytic driven solution,2.5841260732974822e-14,7.012005498302777e-15,85.58841725206003,1.0,gauss6_fullva_public_horizon_single_rows.csv
+double_pendulum,2021 public rA (timing run),3.0,0.001,ok,none (timing row),nan,nan,2.700848160078749,1.772,ra2021_public_timing_rows.csv
+double_pendulum,2021 public reps (timing run),3.0,0.001,ok,none (timing row),nan,nan,4.902654498000629,1.772,ra2021_public_timing_rows.csv
+double_pendulum,2021 public rp (timing run),3.0,0.001,ok,none (timing row),nan,nan,6.321827861014754,1.8826666666666667,ra2021_public_timing_rows.csv
+four_link,2021 public rA,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.9930412875623915e-10,0.1075472540624034,0.6195845979964361,3.5433333333333334,ra2021_order_rows.csv
+four_link,2021 public rA,3.0,0.001,ok,"public kinematics mode, h = 0.001",4.654054919228656e-13,0.010681969239533018,4.421862978953868,1.9756666666666667,ra2021_order_rows.csv
+four_link,2021 public rA,3.0,0.0001,ok,"public kinematics mode, h = 0.001",2.219557870830613e-12,0.0010674680258153657,31.66976316901855,1.0005,ra2021_order_rows.csv
+four_link,2021 public rA (timing run),3.0,0.001,ok,none (timing row),nan,nan,5.903306939988397,1.9756666666666667,ra2021_public_timing_rows.csv
+four_link,2021 public reps,3.0,0.01,ok,"public kinematics mode, h = 0.001",5.872120567573802e-09,0.01782833066959366,3.25816643005237,16.65,ra2021_order_rows.csv
+four_link,2021 public reps,3.0,0.001,ok,"public kinematics mode, h = 0.001",9.596812233780838e-11,0.001802317818538235,24.79783359298017,11.796666666666667,ra2021_order_rows.csv
+four_link,2021 public reps,3.0,0.0001,ok,"public kinematics mode, h = 0.001",1.0125233984581428e-12,0.00018045994043003333,180.1481813050341,7.6978,ra2021_order_rows.csv
+four_link,2021 public reps (timing run),3.0,0.001,ok,none (timing row),nan,nan,31.92214892397169,11.796666666666667,ra2021_public_timing_rows.csv
+four_link,2021 public rp,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.2375700464417605e-10,0.017828345883747154,1.4750678880373016,4.29,ra2021_order_rows.csv
+four_link,2021 public rp,3.0,0.001,ok,"public kinematics mode, h = 0.001",8.043565813409259e-14,0.0018023180013955198,9.718519861926325,2.1386666666666665,ra2021_order_rows.csv
+four_link,2021 public rp,3.0,0.0001,ok,"public kinematics mode, h = 0.001",3.9968028886505635e-15,0.0001804599176997712,74.56000318995211,1.1796333333333333,ra2021_order_rows.csv
+four_link,2021 public rp (timing run),3.0,0.001,ok,none (timing row),nan,nan,11.622613813029602,2.1386666666666665,ra2021_public_timing_rows.csv
+four_link,Gauss6/FullVA,3.0,0.01,ok,local Gauss6/FullVA h = 0.001,1.6431300764452317e-14,4.04121180963557e-14,0.8223315810319036,4.286666666666667,gauss6_fullva_public_horizon_closed_loop_rows.csv
+four_link,Gauss6/FullVA,3.0,0.001,reference row (h = h_ref),local Gauss6/FullVA h = 0.001,nan,nan,8.901606000959873,4.001333333333333,gauss6_fullva_public_horizon_closed_loop_rows.csv
+four_link,Gauss6/FullVA,3.0,0.0001,ok,local Gauss6/FullVA h = 0.001,2.0872192862952943e-14,5.284661597215745e-14,73.24680230300874,3.0001333333333333,gauss6_fullva_public_horizon_closed_loop_rows.csv
+slider_crank,2021 public rA,3.0,0.01,ok,"public kinematics mode, h = 0.001",2.6688187770851357e-10,0.008521036102903279,0.577081646071747,2.88,ra2021_order_rows.csv
+slider_crank,2021 public rA,3.0,0.001,ok,"public kinematics mode, h = 0.001",5.6130655678998664e-11,0.0008716010681739106,3.684065966983326,1.3093333333333332,ra2021_order_rows.csv
+slider_crank,2021 public rA,3.0,0.0001,ok,"public kinematics mode, h = 0.001",1.3566925360919413e-13,8.766500920154296e-05,36.56134914199356,1.0000666666666667,ra2021_order_rows.csv
+slider_crank,2021 public rA (timing run),3.0,0.001,ok,none (timing row),nan,nan,5.182220738031901,1.3093333333333332,ra2021_public_timing_rows.csv
+slider_crank,2021 public reps,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.4788328894788094e-10,0.00852067945411511,1.2891935149673373,3.3266666666666667,ra2021_order_rows.csv
+slider_crank,2021 public reps,3.0,0.001,ok,"public kinematics mode, h = 0.001",5.708183925534627e-11,0.0008712488697215637,7.762554882094264,1.475,ra2021_order_rows.csv
+slider_crank,2021 public reps,3.0,0.0001,ok,"public kinematics mode, h = 0.001",5.134781488891349e-15,8.731349309815117e-05,64.41053697699681,1.0005,ra2021_order_rows.csv
+slider_crank,2021 public reps (timing run),3.0,0.001,ok,none (timing row),nan,nan,9.306522367987782,1.475,ra2021_public_timing_rows.csv
+slider_crank,2021 public rp,3.0,0.01,ok,"public kinematics mode, h = 0.001",1.3449910629681483e-10,0.0085206780415934,1.266771405003965,2.94,ra2021_order_rows.csv
+slider_crank,2021 public rp,3.0,0.001,ok,"public kinematics mode, h = 0.001",2.744038329893783e-11,0.0008712487974356087,8.35868602595292,1.1406666666666667,ra2021_order_rows.csv
+slider_crank,2021 public rp,3.0,0.0001,ok,"public kinematics mode, h = 0.001",3.1363800445660672e-15,8.731349433038771e-05,79.26679354195949,1.0001,ra2021_order_rows.csv
+slider_crank,2021 public rp (timing run),3.0,0.001,ok,none (timing row),nan,nan,10.070111277978867,1.1406666666666667,ra2021_public_timing_rows.csv
+slider_crank,Gauss6/FullVA,3.0,0.01,ok,local Gauss6/FullVA h = 0.001,9.159339953157541e-16,1.8318679906315083e-15,0.9932005520677194,4.42,gauss6_fullva_public_horizon_closed_loop_rows.csv
+slider_crank,Gauss6/FullVA,3.0,0.001,reference row (h = h_ref),local Gauss6/FullVA h = 0.001,nan,nan,10.504753684042953,4.001,gauss6_fullva_public_horizon_closed_loop_rows.csv
+slider_crank,Gauss6/FullVA,3.0,0.0001,ok,local Gauss6/FullVA h = 0.001,1.4155343563970746e-15,3.0531133177191805e-15,89.48545099701732,3.0001,gauss6_fullva_public_horizon_closed_loop_rows.csv

@@ -4,6 +4,18 @@ The evidence ledger of the paper and the machinery that checks it. The manuscrip
 the proofs in `../proof/`, the code and results in `../numerics/`; this folder holds the audit
 records, the validators, the cross-version ledgers and the pipeline documentation.
 
+## Two validation layers (since 2026-09-21)
+
+- **Live manuscript** `../paper/main_cmame.tex` (rewritten 2026-09-21): checked by
+  `validate_manuscript.py` (LaTeX log clean, every number in the result tables equals the value in
+  the result file it comes from, Lean theorem names and count, arXiv copy in sync).
+  Run: `../.venv_sbel/bin/python validate_manuscript.py`.
+- **Frozen evidence ledger** `paper_v047_cylindrical_chain/` and `validate_pipeline_outputs.py`:
+  the audit trail of the 2026 development, frozen at the pre-rewrite manuscript package
+  `legacy_drafts/main_cmame_pre_rewrite/` (its `paper_paths.LATEX` and the top-level `LATEX_DIR`
+  point there). It still runs green and is kept as the historical record; it says nothing about
+  the rewritten paper.
+
 ## Map (layout since 2026-09-20)
 
 | Path | Role |
@@ -12,7 +24,9 @@ records, the validators, the cross-version ledgers and the pipeline documentatio
 | `validate_pipeline_outputs.py` | Top-level validator over all versions, the paper package and the ledgers (re-executes under `../.venv_sbel` when `jax` is missing). Run: `../.venv_sbel/bin/python validate_pipeline_outputs.py`. |
 | `docs/` | Ledgers and audits: `VERSION_LEDGER.md`, `VERSION_TREE.md`, `ORDER_PROOF_LEDGER.md`, `PIPELINE_AUDIT.md`, `VALIDATION_QUICKSTART.md`, `METHOD_COMPARISON.md`, `LEAN_FORMALIZATION.md`, `FOLDER_MAP.md`, `PATH_DEPENDENCY_REPORT.md`, `version_ledger.csv`, `version_progression.png`. |
 | `tools/` | `plot_version_ledger.py` (ledger plot), `build_path_dependency_report.py` (who reads which paper-package file). |
-| `../paper/` | The manuscript (LaTeX only): `main_cmame.tex`, `figures/`, `cmame_submission_flat/`, `arxiv/`, journal sidecars, `slides/`. Scripts here reach it through `paper_v047_cylindrical_chain/paper_paths.py`. |
+| `../paper/` | The rewritten manuscript (`rewrite/parts/` → `main_cmame.tex`), its figures, flat and arXiv copies, sidecars, `slides/`. Validated by `validate_manuscript.py`. |
+| `validate_manuscript.py` | Validator of the live manuscript (see above). |
+| `legacy_drafts/main_cmame_pre_rewrite/` | Frozen pre-rewrite manuscript package audited by the ledger below. |
 | `paper_v047_cylindrical_chain/` | The evidence ledger for the paper: audit records, builders, validators, reproducibility bundles, `notes/`. Its `README.md` has the map. |
 | `../numerics/v047_cylindrical_chain_pipeline/` | Accepted method implementation (`run_v047.py`, do not run as a routine check) and its validators. |
 | `../numerics/v048_cross_paper_same_test_benchmarks/` | External same-test benchmark layer; no external superiority claim. |

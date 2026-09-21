@@ -1,0 +1,68 @@
+\section{Related work}
+\label{sec:related}
+
+\paragraph{Lie-group integrators}
+Integrators that advance rotations in a local tangent chart and return to the group through the
+exponential map go back to Crouch and Grossman~\cite{crouch1993numerical} and to the
+Runge--Kutta--Munthe-Kaas construction~\cite{munthe1998lie,munthe1999high}; the surveys of
+Iserles et al.~\cite{iserles2000lie} and of Celledoni, Marthinsen and Owren~\cite{celledoni2014lie}
+and the monograph of Hairer, Lubich and Wanner~\cite{hairer2006geometric} give the general theory.
+In multibody dynamics the same viewpoint underlies the Lie-group generalized-$\alpha$ schemes of
+Br\"uls, Cardona and Arnold~\cite{bruls2010lie,bruls2012lie}, whose convergence for constrained
+systems was analysed in~\cite{arnold2007convergence,arnold2015error}, BDF schemes on Lie
+groups~\cite{wieloch2021bdf}, the geometrically exact beam and rigid-body formulations on
+$SE(3)$~\cite{sonneville2014geometrically}, and singularity-free quaternion
+integration~\cite{terze2016singularity,terze2020aircraft}. Bottasso and Borri~\cite{bottasso1998integrating}
+discuss the interaction between the rotation parametrization and the integrator. These methods
+establish how to evolve rotations geometrically; they are of order at most two, or, in the
+Runge--Kutta--Munthe-Kaas case, are formulated for ordinary differential equations on the group
+rather than for the constrained index-3 problem.
+
+\paragraph{Constrained mechanical systems and index-3 DAEs}
+Absolute-coordinate multibody systems are index-3 differential-algebraic equations
+\cite{hairer1993solving,ascher1998computer,petzold1986numerical}. Their numerical order depends
+not only on the integrator but on how the constraints and their differentiated forms are enforced:
+index reduction with stabilization~\cite{gear1985automatic}, projection, and the review of
+constraint-enforcement approaches by Bauchau and Laulusa~\cite{bauchau2008review} describe the
+options and their failure modes. Runge--Kutta methods for index-2 and overdetermined index-3
+formulations were analysed by Jay~\cite{jay1996symplectic,jay2006specialized,jay2007specialized};
+the Lobatto IIIA--IIIB pairs of that work are the closest relatives of the present stage system in
+that they enforce the position and velocity constraints at every stage. Lunk and
+Simeon~\cite{lunk2006solving} and Arnold and Br\"uls~\cite{arnold2007convergence} treat the
+Newmark and generalized-$\alpha$ families for constrained systems. The absolute-coordinate
+formulations of Negrut and co-workers
+\cite{taves2020exponential,kissel2021dwelling,kissel2022absolute,fang2023halfimplicit,kissel2024velocitypartitioning}
+compare three rotation parametrizations and a half-implicit scheme on a public suite of four
+mechanisms; that suite and its public code are used in Section~\ref{sec:numerical}. Reduced
+(joint-coordinate) formulations, for which the constrained problem becomes an ordinary
+differential equation, are classical~\cite{nikravesh1988computer,shabana2020dynamics,jain2011robot};
+the present paper shows that a particular absolute-coordinate collocation step coincides with
+Gauss collocation of such a reduced formulation without forming it.
+
+\paragraph{Collocation and variational integrators}
+Gauss collocation is the standard high-order implicit Runge--Kutta family: the $s$-stage method has
+order $2s$, is symplectic and $B$-stable, and its stages are the values of a collocation polynomial
+\cite{hairer1993nonstiff,butcher2016numerical,hairer2006geometric}. Variational and symplectic
+integrators~\cite{marsden2001discrete,leyendecker2008variational,leok2012prolongation,bourabee2009hamilton}
+derive the discrete equations from a discrete action and treat holonomic constraints at the
+discrete level; Betsch and Steinmann~\cite{betsch2002conservation} obtain energy--momentum
+conserving time finite elements for constrained systems. The present method is not variational: it
+enforces the constraint hierarchy pointwise at the stages and leaves the conservation properties
+to those of Gauss collocation on the reduced problem.
+
+\paragraph{Friction and nonsmooth dynamics}
+Regularized friction laws such as the Brown--McPhee model~\cite{browmcphee2016friction} replace the
+set-valued Coulomb law by a smooth velocity-dependent force; Pennestr\`{\i} et
+al.~\cite{pennestri2016review} review the alternatives. Nonsmooth time-stepping and complementarity
+formulations~\cite{stewart1996implicit,anitescu1997formulating,tasora2011matrixfree} handle
+unilateral contact and Coulomb friction without regularization but are of low order by design. The
+problems in this paper are bilateral lower-pair mechanisms with regularized friction; the effect of
+the regularization parameter on the observed order is quantified in Section~\ref{sec:numerical}.
+
+\paragraph{Time finite elements}
+Time finite elements for structural and rigid-body dynamics~\cite{borri1988rigid,hughes1988spacetime,hulbert1992time,kim2017higher,jog2016robust,bauchau2024time}
+provide a different route to high order. The Lie-group time finite-element method of Chaturvedi,
+Sandu and Sandu~\cite{chaturvedi2026tfe} extends this route to frictional index-3 multibody DAEs;
+its Gauss--Lobatto family of degree $m$ has formal order $2m-1$, so that its $m=3$ member is a
+fifth-order formula, although the source paper reports order reduction on the DAE problem. We do
+not reimplement that method; the comparison with it in this paper is at the level of formal order.

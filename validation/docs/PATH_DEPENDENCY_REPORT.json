@@ -22,26 +22,26 @@
     "run_p2_constants_numerical_check.py",
     "generate_publication_figures.py"
   ],
-  "file_count": 932,
+  "file_count": 993,
   "family_counts": {
     "builder": 146,
-    "derived_output": 19,
-    "figure": 33,
+    "derived_output": 29,
+    "figure": 9,
     "lean": 18,
     "manuscript": 5,
-    "note": 10,
+    "note": 81,
     "record": 368,
     "reproducibility_bundle": 63,
     "runner": 9,
     "script": 4,
-    "submission_copy": 36,
-    "submission_sidecar": 38,
+    "submission_copy": 25,
+    "submission_sidecar": 53,
     "validator": 183
   },
   "status_counts": {
-    "active": 866,
+    "active": 911,
     "manual_or_retired_script": 41,
-    "not_read_by_active_scripts": 10,
+    "not_read_by_active_scripts": 26,
     "retired": 15
   },
   "reachable_script_count": 300,
@@ -14758,23 +14758,6 @@
       "description": null
     },
     {
-      "path": "../../paper/README_CMAME_FLAT_SUBMISSION.md",
-      "family": "submission_sidecar",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 5,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "paper_paths.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
       "path": "../../paper/arxiv/ARXIV_VERSION.json",
       "family": "submission_copy",
       "status": "active",
@@ -14789,252 +14772,102 @@
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_10_closed_loop_true_dynamic_order.png",
+      "path": "../../paper/arxiv/Figure_1_chain_schematic.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_11_method_stage_architecture.png",
+      "path": "../../paper/arxiv/Figure_2_method_overview.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_12_all_method_result_matrix.png",
+      "path": "../../paper/arxiv/Figure_3_e1_convergence.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_13_work_precision_compendium.png",
+      "path": "../../paper/arxiv/Figure_4_e2_gauss_family.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_1_convergence.png",
+      "path": "../../paper/arxiv/Figure_5_e3_friction_sweep.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_2_asme_lower_pair_graph_bridge.png",
+      "path": "../../paper/arxiv/Figure_6_mechanisms.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_submission.py",
-        "validate_cmame_visual_legibility_audit.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_3_asme_closed_loop_kinematic_fullva.png",
+      "path": "../../paper/arxiv/Figure_7_e4_benchmarks.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_4_order_closure_blend.png",
+      "path": "../../paper/arxiv/Figure_8_e5_double_pendulum.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/arxiv/Figure_5_velocity_compression.png",
+      "path": "../../paper/arxiv/Figure_9_e6_regular_branch.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/arxiv/Figure_6_sparse_speed_gap.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/arxiv/Figure_7_strict_common_reference_work_precision.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/arxiv/Figure_8_claim_boundary_limitations.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/arxiv/Figure_9_coarse_baseline_work_precision.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
@@ -15144,252 +14977,102 @@
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_10_closed_loop_true_dynamic_order.png",
+      "path": "../../paper/cmame_submission_flat/Figure_1_chain_schematic.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_11_method_stage_architecture.png",
+      "path": "../../paper/cmame_submission_flat/Figure_2_method_overview.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_12_all_method_result_matrix.png",
+      "path": "../../paper/cmame_submission_flat/Figure_3_e1_convergence.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_13_work_precision_compendium.png",
+      "path": "../../paper/cmame_submission_flat/Figure_4_e2_gauss_family.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_1_convergence.png",
+      "path": "../../paper/cmame_submission_flat/Figure_5_e3_friction_sweep.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_2_asme_lower_pair_graph_bridge.png",
+      "path": "../../paper/cmame_submission_flat/Figure_6_mechanisms.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_submission.py",
-        "validate_cmame_visual_legibility_audit.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_3_asme_closed_loop_kinematic_fullva.png",
+      "path": "../../paper/cmame_submission_flat/Figure_7_e4_benchmarks.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_4_order_closure_blend.png",
+      "path": "../../paper/cmame_submission_flat/Figure_8_e5_double_pendulum.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/Figure_5_velocity_compression.png",
+      "path": "../../paper/cmame_submission_flat/Figure_9_e6_regular_branch.png",
       "family": "submission_copy",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/cmame_submission_flat/Figure_6_sparse_speed_gap.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/cmame_submission_flat/Figure_7_strict_common_reference_work_precision.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 6,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/cmame_submission_flat/Figure_8_claim_boundary_limitations.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/cmame_submission_flat/Figure_9_coarse_baseline_work_precision.png",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
@@ -15437,54 +15120,6 @@
       "description": null
     },
     {
-      "path": "../../paper/cmame_submission_flat/main_cmame_submission.log",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 66,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_arxiv_version.py",
-        "build_b3_direct_proof_review_audit.py",
-        "build_cmame_claim_hygiene_audit.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_cmame_pdf_style_review_audit.py",
-        "build_cmame_strict_proof_audit.py",
-        "build_cmame_strict_proof_policy_reconciliation_audit.py",
-        "build_cmame_submission_integrity_audit.py",
-        "build_d5_conditional_taylor_certificate.py",
-        "build_d5_dynamic_defect_readiness_audit.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/cmame_submission_flat/main_cmame_submission.pdf",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 66,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_arxiv_version.py",
-        "build_b3_direct_proof_review_audit.py",
-        "build_cmame_claim_hygiene_audit.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_cmame_pdf_style_review_audit.py",
-        "build_cmame_strict_proof_audit.py",
-        "build_cmame_strict_proof_policy_reconciliation_audit.py",
-        "build_cmame_submission_integrity_audit.py",
-        "build_d5_conditional_taylor_certificate.py",
-        "build_d5_dynamic_defect_readiness_audit.py"
-      ],
-      "description": null
-    },
-    {
       "path": "../../paper/cmame_submission_flat/main_cmame_submission.tex",
       "family": "manuscript",
       "status": "active",
@@ -15509,30 +15144,6 @@
       "description": "Elsevier flat copy (derived from main_cmame.tex)"
     },
     {
-      "path": "../../paper/cmame_submission_flat/main_cmame_submission.txt",
-      "family": "submission_copy",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 66,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_arxiv_version.py",
-        "build_b3_direct_proof_review_audit.py",
-        "build_cmame_claim_hygiene_audit.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_cmame_pdf_style_review_audit.py",
-        "build_cmame_strict_proof_audit.py",
-        "build_cmame_strict_proof_policy_reconciliation_audit.py",
-        "build_cmame_submission_integrity_audit.py",
-        "build_d5_conditional_taylor_certificate.py",
-        "build_d5_dynamic_defect_readiness_audit.py"
-      ],
-      "description": null
-    },
-    {
       "path": "../../paper/declarations_cmame.md",
       "family": "submission_sidecar",
       "status": "active",
@@ -15555,313 +15166,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/all_method_result_matrix.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 10,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_paper_core_to_manuscript_audit.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_figure_set_audit.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/asme_closed_loop_kinematic_fullva.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_claims.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/asme_lower_pair_graph_bridge.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_submission.py",
-        "validate_cmame_visual_legibility_audit.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/claim_boundary_limitations.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/closed_loop_true_dynamic_order.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 14,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_four_example_source_policy_dashboard.py",
-        "build_paper_core_result_consolidation.py",
-        "cmame_submission_review_agent.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_review_agent.py",
-        "validate_cmame_submission.py",
-        "validate_four_example_source_policy_dashboard.py",
-        "validate_paper_core_result_consolidation.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/coarse_baseline_work_precision.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 11,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_cmame_scalability_boundary_audit.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_figure_set_audit.py",
-        "validate_cmame_scalability_boundary_audit.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/convergence.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/endpoint_kkt_closure.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 1,
-      "readers": [
-        "validate_proof_solver_scale_audit.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/friction_smoothness_sweep.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 3,
-      "readers": [
-        "build_smooth_force_lift_certificate.py",
-        "validate_paper_claims.py",
-        "validate_smooth_force_lift_certificate.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/method_stage_architecture.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 8,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "generate_publication_figures.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/order_closure_blend.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_claims.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/source_free_final_stage_velocity_closure.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 2,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "validate_paper_claims.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/sparse_speed_gap.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 9,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "build_cmame_scalability_boundary_audit.py",
-        "validate_cmame_scalability_boundary_audit.py",
-        "validate_cmame_submission.py",
-        "validate_paper_claims.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/strict_common_reference_work_precision.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_external_baseline_gate.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/tfe_algorithm_literal_work_precision.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_b4_b7_non_superiority_route_audit.py",
-        "build_b4_source_policy_work_precision_execution_plan.py",
-        "build_tfe_algorithm_literal_work_precision_audit.py",
-        "validate_b4_source_policy_work_precision_execution_plan.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_tfe_algorithm_literal_work_precision_audit.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 7,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "validate_cmame_submission.py",
-        "validate_paper_claims.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_bounded_formula.png",
+      "path": "../../paper/figures/chain_schematic.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15872,7 +15177,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_bounded_gradient.png",
+      "path": "../../paper/figures/e1_convergence.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15883,7 +15188,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_component_mixing.png",
+      "path": "../../paper/figures/e2_gauss_family.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15894,7 +15199,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_derivative_aware.png",
+      "path": "../../paper/figures/e3_friction_sweep.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15905,7 +15210,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_direction_capacity.png",
+      "path": "../../paper/figures/e4_benchmarks.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15916,7 +15221,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_higher_order_capacity.png",
+      "path": "../../paper/figures/e5_double_pendulum.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15927,7 +15232,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_history_capacity.png",
+      "path": "../../paper/figures/e6_regular_branch.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15938,7 +15243,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_multi_step_history_capacity.png",
+      "path": "../../paper/figures/mechanisms.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15949,7 +15254,7 @@
       "description": null
     },
     {
-      "path": "../../paper/figures/velocity_compression_nondegenerate.png",
+      "path": "../../paper/figures/method_overview.png",
       "family": "figure",
       "status": "active",
       "superseded_by": null,
@@ -15957,107 +15262,6 @@
       "read_by_active_script": false,
       "reader_count": 0,
       "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_nonlinear_capacity.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_recurrent_history_capacity.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_row_space_compression.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_state_dependent.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_target_free_formula.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_value_level.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/velocity_compression_weak_row_structure_capacity.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": false,
-      "reader_count": 0,
-      "readers": [],
-      "description": null
-    },
-    {
-      "path": "../../paper/figures/work_precision_compendium.png",
-      "family": "figure",
-      "status": "active",
-      "superseded_by": null,
-      "reachable_from_active_roots": null,
-      "read_by_active_script": true,
-      "reader_count": 12,
-      "readers": [
-        "../validate_pipeline_outputs.py",
-        "build_b4_b7_non_superiority_route_audit.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_flat_archive.py",
-        "cmame_submission_review_agent.py",
-        "generate_publication_figures.py",
-        "validate_b4_b7_non_superiority_route_audit.py",
-        "validate_cmame_blocker_closure_gate.py",
-        "validate_cmame_figure_set_audit.py",
-        "validate_cmame_submission.py",
-        "validate_paper_package.py",
-        "validate_submission_bundle.py"
-      ],
       "description": null
     },
     {
@@ -16147,27 +15351,209 @@
       "description": "CMAME manuscript source (authoritative)"
     },
     {
-      "path": "../../paper/main_cmame.txt",
+      "path": "../../paper/rewrite/COVER_LETTER.md",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "paper_paths.py",
+        "validate_cmame_claim_hygiene_audit.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/EXPERIMENT_PLAN.md",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/OUTLINE.md",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/assemble.py",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/build_derived.py",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/highlights_cmame.txt",
       "family": "derived_output",
       "status": "active",
       "superseded_by": null,
       "reachable_from_active_roots": null,
       "read_by_active_script": true,
-      "reader_count": 17,
+      "reader_count": 10,
       "readers": [
         "../validate_pipeline_outputs.py",
-        "build_b3_direct_proof_review_audit.py",
-        "build_cmame_claim_hygiene_audit.py",
-        "build_cmame_figure_set_audit.py",
-        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_reproducibility_package_manifest.py",
         "build_cmame_submission_integrity_audit.py",
-        "build_paper_core_to_manuscript_audit.py",
-        "build_proof_claim_traceability_audit.py",
-        "build_result_to_manuscript_traceability_audit.py",
         "cmame_submission_review_agent.py",
         "paper_paths.py",
-        "validate_cmame_claim_hygiene_audit.py"
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
       ],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/intro_draft.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/make_schematics.py",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/00_preamble.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/01_intro.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/02_related.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/03_setting_method.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/04_analysis.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/05_numerics.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/06_limitations_conclusions.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/07_appendix.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../../paper/rewrite/parts/08_bib.tex",
+      "family": "submission_sidecar",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
       "description": null
     },
     {
@@ -16926,6 +16312,1462 @@
         "validate_cmame_strict_proof_policy_reconciliation_audit.py",
         "validate_d5_conditional_taylor_certificate.py",
         "validate_objective_completion_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/COVER_LETTER.md",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "paper_paths.py",
+        "validate_cmame_claim_hygiene_audit.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/README.md",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 19,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_closed_loop_local_runner_candidate.py",
+        "build_cmame_local_accepted_runner_companion.py",
+        "build_cmame_minimal_reproducibility_candidate.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_runner_adapter_candidate.py",
+        "build_tfe_brown_mcphee_source_law_boundary_audit.py",
+        "validate_arxiv_version.py",
+        "validate_cmame_claim_hygiene_audit.py",
+        "validate_cmame_local_accepted_runner_companion.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/README_CMAME_FLAT_SUBMISSION.md",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 5,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/ARXIV_VERSION.json",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 2,
+      "readers": [
+        "build_arxiv_version.py",
+        "validate_paper_package.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_10_closed_loop_true_dynamic_order.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_11_method_stage_architecture.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_12_all_method_result_matrix.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_13_work_precision_compendium.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_1_convergence.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_2_asme_lower_pair_graph_bridge.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_submission.py",
+        "validate_cmame_visual_legibility_audit.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_3_asme_closed_loop_kinematic_fullva.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_4_order_closure_blend.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_5_velocity_compression.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_6_sparse_speed_gap.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_7_strict_common_reference_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_8_claim_boundary_limitations.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/Figure_9_coarse_baseline_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/README.md",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 19,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_closed_loop_local_runner_candidate.py",
+        "build_cmame_local_accepted_runner_companion.py",
+        "build_cmame_minimal_reproducibility_candidate.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_runner_adapter_candidate.py",
+        "build_tfe_brown_mcphee_source_law_boundary_audit.py",
+        "validate_arxiv_version.py",
+        "validate_cmame_claim_hygiene_audit.py",
+        "validate_cmame_local_accepted_runner_companion.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/arxiv_submission.zip",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 3,
+      "readers": [
+        "build_arxiv_version.py",
+        "validate_arxiv_version.py",
+        "validate_paper_package.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/main_arxiv.log",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 2,
+      "readers": [
+        "validate_arxiv_version.py",
+        "validate_paper_package.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/main_arxiv.pdf",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 2,
+      "readers": [
+        "validate_arxiv_version.py",
+        "validate_paper_package.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/arxiv/main_arxiv.tex",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 3,
+      "readers": [
+        "build_arxiv_version.py",
+        "validate_arxiv_version.py",
+        "validate_paper_package.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat.zip",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 68,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_strict_proof_audit.py",
+        "build_cmame_strict_proof_policy_reconciliation_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_d5_conditional_taylor_certificate.py",
+        "build_d5_dynamic_defect_readiness_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_10_closed_loop_true_dynamic_order.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_11_method_stage_architecture.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_12_all_method_result_matrix.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_13_work_precision_compendium.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_1_convergence.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_2_asme_lower_pair_graph_bridge.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_submission.py",
+        "validate_cmame_visual_legibility_audit.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_3_asme_closed_loop_kinematic_fullva.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_4_order_closure_blend.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_5_velocity_compression.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_6_sparse_speed_gap.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_7_strict_common_reference_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 6,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_8_claim_boundary_limitations.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/Figure_9_coarse_baseline_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/declarations_cmame.md",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 10,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_submission_integrity_audit.py",
+        "cmame_submission_review_agent.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/highlights_cmame.txt",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 10,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_submission_integrity_audit.py",
+        "cmame_submission_review_agent.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.log",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 66,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_strict_proof_audit.py",
+        "build_cmame_strict_proof_policy_reconciliation_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_d5_conditional_taylor_certificate.py",
+        "build_d5_dynamic_defect_readiness_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.pdf",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 66,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_strict_proof_audit.py",
+        "build_cmame_strict_proof_policy_reconciliation_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_d5_conditional_taylor_certificate.py",
+        "build_d5_dynamic_defect_readiness_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.tex",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 66,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_strict_proof_audit.py",
+        "build_cmame_strict_proof_policy_reconciliation_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_d5_conditional_taylor_certificate.py",
+        "build_d5_dynamic_defect_readiness_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/cmame_submission_flat/main_cmame_submission.txt",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 66,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_strict_proof_audit.py",
+        "build_cmame_strict_proof_policy_reconciliation_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_d5_conditional_taylor_certificate.py",
+        "build_d5_dynamic_defect_readiness_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/declarations_cmame.md",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 10,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_submission_integrity_audit.py",
+        "cmame_submission_review_agent.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/all_method_result_matrix.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 10,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_paper_core_to_manuscript_audit.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_figure_set_audit.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/asme_closed_loop_kinematic_fullva.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/asme_lower_pair_graph_bridge.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_submission.py",
+        "validate_cmame_visual_legibility_audit.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/claim_boundary_limitations.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/closed_loop_true_dynamic_order.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 14,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_four_example_source_policy_dashboard.py",
+        "build_paper_core_result_consolidation.py",
+        "cmame_submission_review_agent.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_review_agent.py",
+        "validate_cmame_submission.py",
+        "validate_four_example_source_policy_dashboard.py",
+        "validate_paper_core_result_consolidation.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/coarse_baseline_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 11,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_scalability_boundary_audit.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_figure_set_audit.py",
+        "validate_cmame_scalability_boundary_audit.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/convergence.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/endpoint_kkt_closure.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 1,
+      "readers": [
+        "validate_proof_solver_scale_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/friction_smoothness_sweep.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 3,
+      "readers": [
+        "build_smooth_force_lift_certificate.py",
+        "validate_paper_claims.py",
+        "validate_smooth_force_lift_certificate.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/method_stage_architecture.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 8,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "generate_publication_figures.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/order_closure_blend.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/source_free_final_stage_velocity_closure.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 2,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "validate_paper_claims.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/sparse_speed_gap.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 9,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_scalability_boundary_audit.py",
+        "validate_cmame_scalability_boundary_audit.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/strict_common_reference_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_external_baseline_gate.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/tfe_algorithm_literal_work_precision.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_b4_b7_non_superiority_route_audit.py",
+        "build_b4_source_policy_work_precision_execution_plan.py",
+        "build_tfe_algorithm_literal_work_precision_audit.py",
+        "validate_b4_source_policy_work_precision_execution_plan.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_tfe_algorithm_literal_work_precision_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_bounded_formula.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_bounded_gradient.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_component_mixing.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_derivative_aware.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_direction_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_higher_order_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_history_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_multi_step_history_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_nondegenerate.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_nonlinear_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_recurrent_history_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_row_space_compression.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_state_dependent.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_target_free_formula.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_value_level.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/velocity_compression_weak_row_structure_capacity.png",
+      "family": "note",
+      "status": "not_read_by_active_scripts",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": false,
+      "reader_count": 0,
+      "readers": [],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/figures/work_precision_compendium.png",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 12,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_b4_b7_non_superiority_route_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_flat_archive.py",
+        "cmame_submission_review_agent.py",
+        "generate_publication_figures.py",
+        "validate_b4_b7_non_superiority_route_audit.py",
+        "validate_cmame_blocker_closure_gate.py",
+        "validate_cmame_figure_set_audit.py",
+        "validate_cmame_submission.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/highlights_cmame.txt",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 10,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_flat_archive.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_submission_integrity_audit.py",
+        "cmame_submission_review_agent.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/main_cmame.log",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 7,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_submission_integrity_audit.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_cmame_visual_legibility_audit.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/main_cmame.pdf",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 9,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_submission_integrity_audit.py",
+        "paper_paths.py",
+        "validate_cmame_submission.py",
+        "validate_paper_claims.py",
+        "validate_paper_package.py",
+        "validate_submission_bundle.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/main_cmame.tex",
+      "family": "note",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 72,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_arxiv_version.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_reproducibility_package_manifest.py",
+        "build_cmame_strict_proof_audit.py",
+        "build_cmame_strict_proof_policy_reconciliation_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_d5_conditional_taylor_certificate.py",
+        "build_d5_dynamic_defect_readiness_audit.py",
+        "build_d5_open_primitive_gap_audit.py"
+      ],
+      "description": null
+    },
+    {
+      "path": "../legacy_drafts/main_cmame_pre_rewrite/main_cmame.txt",
+      "family": "derived_output",
+      "status": "active",
+      "superseded_by": null,
+      "reachable_from_active_roots": null,
+      "read_by_active_script": true,
+      "reader_count": 17,
+      "readers": [
+        "../validate_pipeline_outputs.py",
+        "build_b3_direct_proof_review_audit.py",
+        "build_cmame_claim_hygiene_audit.py",
+        "build_cmame_figure_set_audit.py",
+        "build_cmame_pdf_style_review_audit.py",
+        "build_cmame_submission_integrity_audit.py",
+        "build_paper_core_to_manuscript_audit.py",
+        "build_proof_claim_traceability_audit.py",
+        "build_result_to_manuscript_traceability_audit.py",
+        "cmame_submission_review_agent.py",
+        "paper_paths.py",
+        "validate_cmame_claim_hygiene_audit.py"
       ],
       "description": null
     },

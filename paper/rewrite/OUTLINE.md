@@ -1,6 +1,10 @@
 # Rewrite outline: Gauss6/FullVA paper (target: CMAME, 25–30 pages)
 
-Status: proposal for review (2026-09-20). Nothing in `main_cmame.tex` is changed yet.
+Status: executed 2026-09-21. `main_cmame.tex` is now assembled from `parts/` by `assemble.py`; the
+execution record of the experiments is in `EXPERIMENT_PLAN.md`. Deviations from this outline: the chain
+horizon is `T = 0.5` (regular branch), E6 became a regular-branch check, E4/E5 centre on the double pendulum
+(the other three public mechanisms are driven), E7 (solver envelope) was added, and the mechanism/architecture
+schematics are drawn by `make_schematics.py`.
 
 ## The paper in one paragraph
 

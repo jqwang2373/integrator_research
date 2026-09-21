@@ -37,3 +37,39 @@ exercised and gives the same slopes as a fixed `1e-10` tolerance).
 5. Manuscript rewrite section by section against the new figures; Lean table and constants table
    carried over; arXiv version regenerated.
 6. New lightweight validator; ledger frozen with a pointer in `validation/README.md`.
+
+## Execution record (2026-09-21)
+
+Design changes after the first runs (user decision "A": keep the implementation, document the limit):
+
+- **Horizon.** The implemented second frozen-basis pair carries the factor `n_1 · a_1(q)`, which
+  vanishes at `t ≈ 0.605` on the benchmark initial state (minimum `0.34` on `[0, 0.5]`). Newton
+  fails there at every `h`; this is the end of the regular branch of the frozen sliding direction,
+  not a numerical failure. All chain experiments (E1, E2, E3, E6) therefore use `T = 0.5`; the
+  `T = 20` long-time study is dropped and E6 becomes a regular-branch check over `[0, 0.5]`. The
+  paper states the limit in the modelling section and in Limitations.
+- **Orientation error.** The geodesic angle is evaluated from the quaternion chord
+  (`2 asin(|p ∓ q|/2)`), not from `2 acos(p·q)`, whose resolution floor is `3e-8` rad.
+- **E4.** Three of the four public mechanisms (single pendulum, four-link, slider-crank) are
+  kinematically driven; Gauss6/FullVA reproduces them at roundoff (`≤ 1e-13`) for every `h`, so
+  no order is fitted there and they are reported as consistency rows. The double pendulum is the
+  only genuine dynamics test. The single pendulum uses the analytic driven state as reference; the
+  old v027/v029 harnesses need the v048 AD-safe small-angle patch below `h ≈ 1e-3`; `T = 1` for all
+  four.
+- **E5.** Restricted to what can be measured against one common reference: the double pendulum on
+  the public horizon `T = 3` against the cached local `h = 1e-4` reference (30 000 steps), with the
+  2021 public rA/rp/reps and the 2022 half-implicit rA/rA_half codes replayed on `t_i = i h`; a
+  `T = 0.1` model-alignment check; plus the driven-mechanism rows assembled from the v048 files.
+  Wall-time comparisons across implementations are labelled indicative.
+
+Results (files under `numerics/v049_paper_experiments/results/`):
+
+| Id | Result | File |
+| --- | --- | --- |
+| E1 | fitted final-state orders (5 asymptotic points, floor `3e-15`): position 6.25, orientation 6.28, velocity 6.11, angular velocity 6.27; position error `2.8e-4 → 1.2e-13` over `h = 0.1 → 0.003125`; position-constraint norm `≤ 1e-7` at `h = 0.1`, `3e-15` at the finest step; velocity-constraint norm `≤ 1e-13` throughout; 5.7–6.0 Newton iterations per step | `E1_convergence.*` |
+| E2 | fitted position orders 2.10 / 4.17 / 6.25 for 1 / 2 / 3 stages; Newton iterations per step identical (5.7–6.0) across the family, wall time per step nearly identical (Python/JAX overhead dominates the dense 44/88/132 solves), so at equal work the 3-stage member is 4–7 orders of magnitude more accurate at `h ≤ 0.0125`; first row of each family includes JIT compilation | `E2_gauss_family.*` |
+| E3 | fitted position orders 6.25 / 4.84 / 4.74 / 3.66 / 2.47 for `v_s = 0.5 / 0.2 / 0.1 / 0.05 / 0.02`; the finest pairwise orders return to 5.3–6.7 for every `v_s`; the Neumann threshold `h_0` falls from `7.6e-4` to `7.1e-6` while the observed order-recovery step falls from `0.1` to `≈ 0.003`: `h_0` is a conservative bound by two to three orders of magnitude | `E3_friction_sweep.*` |
+| E6 | conservative variant over `[0, 0.5]`, `h = 0.01`: relative energy drift `4.3e-12`, position/velocity constraint norms `1.1e-13 / 9.5e-14`, acceleration-level norms `≤ 2e-14`, quaternion unit error `2e-16`, 5 Newton iterations per step; frictional chain: same constraint levels, 5.7 iterations per step, energy decreases by 37 % (dissipation) | `E6_long_time.*` |
+| E4 | driven single pendulum (analytic reference): `5.9e-10, 9.3e-12, 1.5e-13` at `h = 0.1, 0.05, 0.025` (pairwise 6.0, 6.0), roundoff below; double pendulum (`T = 1`, reference `h = 0.1/128`): `4.6e-5 → 3.1e-13` over `h = 0.1 → 0.00625`, pairwise position orders 8.2, 7.0, 6.0, 6.0; four-link and slider-crank (driven loops): trajectory errors `1e-14`/`1e-15` at every `h` from 0.05 to 0.0016, no order measurable | `E4_asme.*` |
+| E5 | double pendulum, `T = 3`, common reference = local Gauss6 `h = 1e-4`: Gauss6 `4.3e-4 → 2.2e-13` over `h = 0.1 → 0.001` (pairwise 7.2, 9.2, 6.0, 6.1, then the reference floor `~2e-13`); public 2021 rA = rε = 2022 rA: `1.84 → 0.17` (pairwise 0.2–0.9, first order only below `h = 0.002`); rp fails for `h ≥ 0.025`, `0.75 → 0.11` below; 2022 rA-half does not converge (`0.9–5.8`). Model alignment at `T = 0.1`: rA vs local `3.7e-3` (h = 0.1/16), `9.2e-4` (h = 0.1/64), first-order decrease. Driven mechanisms assembled from v048 (Gauss6 at `1e-14`, rA velocity first order). Runtime 60 min (the `h = 0.001` Gauss6 row alone 37 min) | `E5_double_pendulum.*`, `E5_driven_public_horizon.csv` |
+| E7 | solver envelope on the E1 grid with the production rule (`tol 1e-11`): accepted residual `1e-14 … 8e-12` at every step; ratio to `h^7` from `8e-5` (h = 0.1) to `1.2e6` (h = 0.003125), i.e. the fixed-tolerance runs satisfy (H3) only with a large `c_eta` on fine grids; out-of-axis components of `d, d', d''` at the stages `≤ 6e-13`; the chart-defect measure of the identity check is dominated by the unprojected endpoint position drift (`~1e-7 h^6`), so the identity table keeps the tight-tolerance (`1e-13`) numbers | `E7_solver_envelope.*` |

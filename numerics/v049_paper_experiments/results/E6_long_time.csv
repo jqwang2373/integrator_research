@@ -1,0 +1,3 @@
+case,h,t_final,steps,converged,runtime_sec,energy_t0,max_relative_energy_drift,final_relative_energy_drift,max_position_constraint_norm,max_velocity_constraint_norm,max_acc_position_constraint_norm,max_acc_orientation_constraint_norm,max_quaternion_unit_error,mean_newton_iterations,max_newton_iterations
+conservative,0.01,0.5,50,True,11.351627280993853,11.78149183617827,4.250805336844055e-12,4.250805336844055e-12,1.0732366421069206e-13,9.544968249307066e-14,5.687116766346677e-15,1.751204873938778e-14,2.220446049250313e-16,5.0,5
+smooth_friction,0.01,0.5,50,True,2.4751366910059005,11.78149183617827,0.3669696421193568,0.3669696421193568,9.821211186202903e-14,9.401888366260452e-14,5.3705425095741715e-15,1.3620326993659171e-14,2.220446049250313e-16,5.72,6

@@ -1,45 +1,35 @@
 # arXiv version
 
-Generated from `../main_cmame.tex` by `../../validation/paper_v047_cylindrical_chain/build_arxiv_version.py`; do not edit `main_arxiv.tex`
-by hand.  Compile locally with `latexmk -pdf main_arxiv.tex` (pdflatex, TeX Live 2023 or later;
-no BibTeX run is needed because the bibliography is inline).
+Generated from `../main_cmame.tex` by `../rewrite/build_derived.py`; do not edit `main_arxiv.tex` by hand.
+Compile with `latexmk -pdf main_arxiv.tex` (pdflatex; the bibliography is inline, no BibTeX run).
 
-## Metadata for the arXiv submission form
+## Metadata
 
-**Title.** A Conditional Sixth-Order Lie-Group FullVA Integrator for Lower-Pair Mechanisms
+**Title.** A sixth-order Lie-group Gauss collocation integrator for lower-pair mechanisms with position-, velocity- and acceleration-level constraints
 
-**Abstract** (1887 characters, limit 1920):
+**Abstract** (1863 characters, limit 1920):
 
-Lower-pair mechanisms require Lie-group integrators that keep position, velocity, and acceleration constraints synchronized. This paper studies Gauss6/FullVA, a three-stage Gauss collocation integrator whose stage system couples absolute-coordinate stage kinematics, Newton-Euler balance, and lower-pair constraints at position, velocity, and acceleration level in one square nonlinear system with Lie-group endpoint reconstruction. We show that the implemented stage system is exactly three-stage Gauss collocation of the reduced joint-coordinate equation of motion written in absolute coordinates: the lifted reduced Gauss stage satisfies all 132 stage rows identically. Building on this identity, the main theorem proves a conditional sixth-order same-initial-state reported-grid estimate for the selected smooth branch. The local defect is the sum of the classical Gauss endpoint defect, an endpoint-closure perturbation, and an inexact-Newton perturbation; the retained hypotheses are compact-tube regularity, uniform local inverses, a one-step stability scale, and the branch-selected solver envelope eta_h <= c_eta h^7. The algebraic stage identity, the perturbation lemmas with their explicit constants, the Gauss tableau order conditions, and the quadrature-defect bound are machine-checked in Lean 4/Mathlib. On a smooth cylindrical-chain benchmark the implementation records position/velocity orders 7.161/7.066 as branch-consistency diagnostics. Four ASME-style mechanisms exercise the same residual vocabulary: single- and double-pendulum rows provide dynamic-order evidence, while four-link and slider-crank rows provide closed-loop constraint/reaction consistency. Residual-to-error promotion, full external same-test reproduction, and complete source-paper TFE residual replacement are not claimed; the comparison to TFE is kept at the formal-order and diagnostic levels.
+Multibody systems with lower-pair joints in absolute coordinates are index-3 differential-algebraic equations on a Lie group. We study Gauss6/FullVA, a three-stage Gauss collocation step whose stage system enforces the joint constraints at position, velocity and acceleration level together with the Newton-Euler balance, and reconstructs the rotational endpoint through the exponential map. The central result is an exact algebraic identity: the lifted reduced Gauss stage, obtained by collocating the joint-coordinate equations of motion and lifting the result to absolute coordinates, satisfies every one of the 132 implemented stage rows, and conversely every root of the non-dynamic rows on the regular branch is such a lift. The method is therefore reduced Gauss collocation executed in absolute coordinates. Everything the implementation adds, the velocity-level endpoint closure and the inexact Newton solve, is an O(h^7) perturbation, which gives a sixth-order error bound whose only standing hypothesis is smoothness on a compact neighbourhood of the trajectory; the solver and inverse interfaces are derived for h h_0, and h_0 is quantified and traced to the curvature of the friction law. The row identities, the perturbation chain and the Butcher conditions are machine-checked in Lean 4 with Mathlib (57 theorems). Numerically the method is sixth order on a frictional two-body chain and on the ASME double pendulum, reproduces the driven ASME mechanisms to roundoff, is two to seven orders of magnitude more accurate than the one- and two-stage members of the same family at the same Newton work, and reaches errors below 10^{-10} on the double pendulum where the public absolute-coordinate codes have errors of order one. A sweep of the Stribeck velocity locates the regime in which a sharp friction law reduces the observed order on coarse grids.
 
 **Suggested categories.**
 - math.NA (Numerical Analysis) - primary
 - cs.CE (Computational Engineering, Finance, and Science) - cross-list
 - physics.comp-ph (Computational Physics) - optional cross-list
 
-**Comments field (suggestion).** 13 figures. Lean 4/Mathlib development and
-reproducibility records accompany the manuscript.
+**Comments field (suggestion).** 9 figures. Lean 4/Mathlib development and experiment scripts accompany the manuscript.
 
 ## Upload
 
-1. Upload `arxiv_submission.zip` (this directory's `main_arxiv.tex` and the figures listed below;
-   arXiv detects the main file automatically).
-2. Choose the license (arXiv non-exclusive license is the minimal choice; CC BY 4.0 if the journal
-   policy allows it).
-3. Paste the title, abstract and categories above.
+Upload `arxiv_submission.zip`; arXiv detects the main file automatically.
 
-## Figures shipped in the archive
+## Figures
 
-- `Figure_10_closed_loop_true_dynamic_order.png`
-- `Figure_11_method_stage_architecture.png`
-- `Figure_12_all_method_result_matrix.png`
-- `Figure_13_work_precision_compendium.png`
-- `Figure_1_convergence.png`
-- `Figure_2_asme_lower_pair_graph_bridge.png`
-- `Figure_3_asme_closed_loop_kinematic_fullva.png`
-- `Figure_4_order_closure_blend.png`
-- `Figure_5_velocity_compression.png`
-- `Figure_6_sparse_speed_gap.png`
-- `Figure_7_strict_common_reference_work_precision.png`
-- `Figure_8_claim_boundary_limitations.png`
-- `Figure_9_coarse_baseline_work_precision.png`
+- `Figure_1_chain_schematic.png`
+- `Figure_2_method_overview.png`
+- `Figure_3_e1_convergence.png`
+- `Figure_4_e2_gauss_family.png`
+- `Figure_5_e3_friction_sweep.png`
+- `Figure_6_mechanisms.png`
+- `Figure_7_e4_benchmarks.png`
+- `Figure_8_e5_double_pendulum.png`
+- `Figure_9_e6_regular_branch.png`

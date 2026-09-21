@@ -1,0 +1,66 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\begin{enumerate}
+  \item \textbf{Scope of the identity.} Lemma~\ref{lem:exact-stage-identity} is stated for the open
+  chain, where the joint coordinates form a global chart. For closed loops the same rows are solved,
+  but the identity holds only on local charts of independent coordinates, and the theorem does not
+  by itself turn the roundoff-level constraint residuals observed on the four-link and slider-crank
+  mechanisms into a trajectory-error bound; that needs a stability constant for the mechanism at
+  hand.
+  \item \textbf{Regular branch.} The frozen sliding direction of the chain's second pair is a
+  modelling choice that is regular only while $n_1\cdot a_1(q)\neq0$; on the benchmark initial state
+  this holds up to $t\approx0.6$, and all chain experiments stop at $T=0.5$. A pair whose sliding
+  direction follows the axis would remove the limit at the cost of a different (still smooth) stage
+  system; the analysis applies unchanged.
+  \item \textbf{Sharp friction.} The theorem's constants and its threshold $h_0$ are governed by the
+  curvature of the regularized friction law. For Stribeck velocities below about $0.1$ the observed
+  order is reduced on coarse grids and recovers only for $h\lesssim3\times10^{-3}$
+  (Section~\ref{sec:numerical}). Set-valued Coulomb friction is outside the smoothness hypothesis.
+  \item \textbf{Solver hypothesis.} Lemma~\ref{lem:newton-envelope} covers predictors within $O(h)$
+  of the Gauss stage. The implemented predictor is not of that kind, and the experiments use a fixed
+  Newton tolerance rather than the $h^7$-scaled rule, so on the finest grids they satisfy (H3) only
+  with a large constant $c_\eta$; that the accepted iterates are nevertheless the Gauss roots to
+  within $10^{-11}$ is checked a posteriori, not guaranteed a priori.
+  \item \textbf{Cost.} The reference implementation forms and factorizes a dense
+  $132\times132$ Jacobian by automatic differentiation in Python; wall-clock times are dominated by
+  interpreter overhead and are reported only as indications. A production implementation would
+  exploit the stage-block structure and the sparsity of the constraint rows; no scalability study
+  in the number of bodies is reported.
+  \item \textbf{Comparisons.} The time finite-element method of~\cite{chaturvedi2026tfe} has not
+  been implemented; the comparison with it is formal (order six against order five). The public
+  absolute-coordinate codes are run as published, with their own tolerances, and are compared on the
+  double pendulum only, the one benchmark mechanism whose motion is not prescribed.
+\end{enumerate}
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+The \method{} step solves a single square stage system that couples three-stage Gauss collocation
+of the joint coordinates, the lower-pair constraints at position, velocity and acceleration level,
+and the Newton--Euler balance, and reconstructs the rotational endpoint through the exponential
+map. The stage system is exactly reduced Gauss collocation lifted to absolute coordinates: the
+lifted reduced Gauss stage satisfies all $132$ rows, and every root of the non-dynamic rows on the
+regular branch is such a lift. The sixth order of the method is therefore inherited from Gauss
+collocation, and the implementation-side perturbations, endpoint closure and inexact Newton, are
+$O(h^7)$ under a smoothness hypothesis alone; the interfaces through which the implementation enters
+are derived for small steps, with a threshold that is set by the friction law. The algebra and the
+perturbation chain are machine-checked.
+
+The experiments confirm the picture at every point where it can be tested: sixth order in position,
+orientation, velocity and angular velocity over the regular branch of a frictional chain, with
+constraint norms at the $10^{-13}$ level and energy conservation of the frictionless variant to
+$10^{-12}$; orders two, four and six for the one-, two- and three-stage members with the same
+stage system at the same Newton work; sixth order on the ASME double pendulum and roundoff-level
+reproduction of the three driven mechanisms; and a controlled loss of order when the friction law is
+sharpened, in the direction the analysis predicts. Against the public absolute-coordinate codes on
+the double pendulum over the public horizon, the method reaches errors below $10^{-10}$ at step
+sizes where those codes still have errors of order one.
+
+Three directions follow. The identity suggests that other stage-level constraint hierarchies
+(Lobatto, Radau) inherit their reduced-problem order in the same way, which would give
+$L$-stable members for stiff joints. The $O(h)$ predictor of Lemma~\ref{lem:newton-envelope}
+would remove the last a-posteriori element of the analysis at no cost. And a sparse, block-structured
+implementation would turn the per-step cost into one comparable to that of the low-order
+absolute-coordinate schemes, at which point the work/precision advantage measured here in Newton
+iterations would appear in wall-clock time as well.

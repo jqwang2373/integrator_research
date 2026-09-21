@@ -1,0 +1,639 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  19 SEP 2026 15:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main_cmame.tex
+(./main_cmame.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/elsarticle/elsarticle.cls
+Document Class: elsarticle 2026/01/09, 3.5: Elsevier Ltd
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-07-20 L3 programming layer (loader) 
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdfte
+x.def
+File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count276
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.
+sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count277
+)
+\@bls=\dimen150
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count278
+\c@section=\count279
+\c@subsection=\count280
+\c@subsubsection=\count281
+\c@paragraph=\count282
+\c@subparagraph=\count283
+\c@figure=\count284
+\c@table=\count285
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen151
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+)
+\c@tnote=\count286
+\c@fnote=\count287
+\c@cnote=\count288
+\c@ead=\count289
+\c@elsarticle@author=\count290
+\@eadauthor=\toks18
+\c@affn=\count291
+\absbox=\box53
+\elsarticlehighlightsbox=\box54
+\elsarticlegrabsbox=\box55
+\keybox=\box56
+\Columnwidth=\dimen154
+\space@left=\dimen155
+\els@boxa=\box57
+\els@boxb=\box58
+\leftMargin=\dimen156
+\@enLab=\toks19
+\@sep=\skip51
+\@@sep=\skip52
+ (./main_cmame.spl)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip53
+\bibsep=\skip54
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count292
+)
+\splwrite=\write3
+\openout3 = `main_cmame.spl'.
+
+\appnamewidth=\dimen157
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2026/05/19 v2.18d AMS math features
+\@mathmargin=\skip55
+
+For additional information on amsmath, use the `?' option.
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen158
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen159
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count293
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count294
+\leftroot@=\count295
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count296
+\DOTSCASE@=\count297
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box59
+\strutbox@=\box60
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen160
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count298
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count299
+\dotsspace@=\muskip17
+\c@parentequation=\count300
+\dspbrk@lvl=\count301
+\tag@help=\toks21
+\row@=\count302
+\column@=\count303
+\maxfields@=\count304
+\andhelp@=\toks22
+\eqnshift@=\dimen161
+\alignsep@=\dimen162
+\tagshift@=\dimen163
+\tagwidth@=\dimen164
+\totwidth@=\dimen165
+\lineht@=\dimen166
+\@envbody=\toks23
+\multlinegap=\skip56
+\multlinetaggap=\skip57
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip58
+\thm@postskip=\skip59
+\thm@headsep=\skip60
+\dth@everypar=\toks30
+LaTeX Info: Redefining \qed on input line 273.
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
+\col@sep=\dimen167
+\ar@mcellbox=\box61
+\extrarowheight=\dimen168
+\NC@list=\toks31
+\extratabsurround=\skip61
+\backup@length=\skip62
+\ar@cellbox=\box62
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen169
+\lightrulewidth=\dimen170
+\cmidrulewidth=\dimen171
+\belowrulesep=\dimen172
+\belowbottomsep=\dimen173
+\aboverulesep=\dimen174
+\abovetopsep=\dimen175
+\cmidrulesep=\dimen176
+\cmidrulekern=\dimen177
+\defaultaddspace=\dimen178
+\@cmidla=\count305
+\@cmidlb=\count306
+\@aboverulesep=\dimen179
+\@belowrulesep=\dimen180
+\@thisruleclass=\count307
+\@lastruleclass=\count308
+\@thisrulewidth=\dimen181
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+\c@assumption=\count309
+\c@definition=\count310
+\c@lemma=\count311
+\c@theorem=\count312
+\c@proposition=\count313
+\c@corollary=\count314
+
+(./main_cmame.aux)
+\openout1 = `main_cmame.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count315
+\scratchdimen=\dimen182
+\scratchbox=\box63
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen183
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks33
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-bas
+e.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.
+cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+
+ (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[1
+
+
+{c:/Users/jingquanw/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{
+c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1
+.enc}]
+LaTeX Font Info:    Calculating math sizes for size <> on input line 89.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.7> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <0.5> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.7> not available
+(Font)              size <5> substituted on input line 89.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <0.5> not available
+(Font)              size <5> substituted on input line 89.
+
+[2]
+Underfull \hbox (badness 3168) in paragraph at lines 136--143
+\T1/cmr/m/n/12 smooth slopes 7.161/7.066 re-ported only as branch-consistency
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 143--146
+[]\T1/cmr/m/n/12 method-side dynamic-order ev-i-dence for the single- and doubl
+e-
+ []
+
+
+Underfull \hbox (badness 3333) in paragraph at lines 143--146
+\T1/cmr/m/n/12 pendulum ex-am-ples, and mechanism-coverage ev-i-dence for the
+ []
+
+[3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+Underfull \hbox (badness 4492) in paragraph at lines 678--688
+[]\T1/cmr/m/n/12 For each $\OML/cmm/m/it/12 h \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/
+12 H[]$\T1/cmr/m/n/12 , first check the accepted-grid con-di-tion
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 678--688
+\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 T[]=h \OMS/cmsy/m/n/12 ^^@ []\OT1/cmr/m/n/12
+ (\OML/cmm/m/it/12 T[]=h\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j ^^T \OML/cmm/m/it/1
+2 "[]$\T1/cmr/m/n/12 . Ac-cepted or-der rows use only
+ []
+
+[15]
+<figures/method_stage_architecture.png, id=74, 604.4181pt x 362.3136pt>
+File: figures/method_stage_architecture.png Graphic file (type png)
+<use figures/method_stage_architecture.png>
+Package pdftex.def Info: figures/method_stage_architecture.png  used on input l
+ine 741.
+(pdftex.def)             Requested size: 350.99762pt x 210.40187pt.
+ [16] [17 <./figures/method_stage_architecture.png>]
+Underfull \hbox (badness 2103) in paragraph at lines 859--868
+\T1/cmr/m/n/12 mechanism-coverage ev-i-dence for lower-pair ex-am-ples, and di-
+ag-nos-tic
+ []
+
+[18] [19] [20]
+Underfull \hbox (badness 6842) in paragraph at lines 906--908
+[]\T1/cmr/m/n/12 Complete source-paper resid-ual re-pro-duc-tion and in-de-pen-
+dent
+ []
+
+[21] [22] [23] [24] [25] [26] [27] [28] [29]
+Underfull \hbox (badness 1024) in paragraph at lines 1364--1370
+[]\T1/cmr/bx/n/12 Lemma 7 \T1/cmr/m/n/12 (New-ton reaches the solver en-ve-lope
+)\T1/cmr/bx/n/12 . []\T1/cmr/m/it/12 Un-der P1 and P2
+ []
+
+[30] [31] [32]
+Underfull \hbox (badness 1112) in paragraph at lines 1499--1505
+[]\T1/cmr/bx/n/12 Theorem 1 \T1/cmr/m/n/12 (Con-di-tional six-th-order er-ror t
+he-o-rem for the ac-cepted
+ []
+
+[33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+Underfull \hbox (badness 1354) in paragraph at lines 2213--2227
+\T1/cmr/m/n/12 ta-bles, not ac-cepted fair base-line com-par-isons. Run-time va
+l-ues are
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 2213--2227
+\T1/cmr/m/n/12 single-machine recorded tim-ings, and the mech-a-nism rows re-po
+rt the
+ []
+
+
+Underfull \hbox (badness 2521) in paragraph at lines 2213--2227
+\T1/cmr/m/n/12 demon-strate closed-loop mech-a-nism cov-er-age and con-sis-tenc
+y of the
+ []
+
+[45]
+<figures/convergence.png, id=176, 543.4704pt x 434.5836pt>
+File: figures/convergence.png Graphic file (type png)
+<use figures/convergence.png>
+Package pdftex.def Info: figures/convergence.png  used on input line 2235.
+(pdftex.def)             Requested size: 350.99762pt x 280.6723pt.
+ [46 <./figures/convergence.png>] [47] [48] [49] [50]
+<figures/asme_lower_pair_graph_bridge.png, id=195, 488.5452pt x 423.7431pt>
+File: figures/asme_lower_pair_graph_bridge.png Graphic file (type png)
+<use figures/asme_lower_pair_graph_bridge.png>
+Package pdftex.def Info: figures/asme_lower_pair_graph_bridge.png  used on inpu
+t line 2467.
+(pdftex.def)             Requested size: 350.99762pt x 304.44174pt.
+<figures/asme_closed_loop_kinematic_fullva.png, id=196, 794.97pt x 303.534pt>
+File: figures/asme_closed_loop_kinematic_fullva.png Graphic file (type png)
+<use figures/asme_closed_loop_kinematic_fullva.png>
+Package pdftex.def Info: figures/asme_closed_loop_kinematic_fullva.png  used on
+ input line 2472.
+(pdftex.def)             Requested size: 350.99762pt x 134.01852pt.
+ [51] [52 <./figures/asme_lower_pair_graph_bridge.png>] [53 <./figures/asme_clo
+sed_loop_kinematic_fullva.png>]
+<figures/order_closure_blend.png, id=208, 1141.866pt x 303.534pt>
+File: figures/order_closure_blend.png Graphic file (type png)
+<use figures/order_closure_blend.png>
+Package pdftex.def Info: figures/order_closure_blend.png  used on input line 25
+64.
+(pdftex.def)             Requested size: 350.99762pt x 93.30257pt.
+<figures/velocity_compression.png, id=209, 1192.455pt x 332.0405pt>
+File: figures/velocity_compression.png Graphic file (type png)
+<use figures/velocity_compression.png>
+Package pdftex.def Info: figures/velocity_compression.png  used on input line 2
+570.
+(pdftex.def)             Requested size: 350.99762pt x 97.73323pt.
+ [54] [55 <./figures/order_closure_blend.png> <./figures/velocity_compression.p
+ng>]
+<figures/sparse_speed_gap.png, id=219, 780.516pt x 289.08pt>
+File: figures/sparse_speed_gap.png Graphic file (type png)
+<use figures/sparse_speed_gap.png>
+Package pdftex.def Info: figures/sparse_speed_gap.png  used on input line 2587.
+
+(pdftex.def)             Requested size: 350.99762pt x 130.00098pt.
+<figures/strict_common_reference_work_precision.png, id=220, 498.38504pt x 213.
+1965pt>
+File: figures/strict_common_reference_work_precision.png Graphic file (type png
+)
+<use figures/strict_common_reference_work_precision.png>
+Package pdftex.def Info: figures/strict_common_reference_work_precision.png  us
+ed on input line 2597.
+(pdftex.def)             Requested size: 350.99762pt x 150.14738pt.
+<figures/claim_boundary_limitations.png, id=221, 550.9383pt x 434.5836pt>
+File: figures/claim_boundary_limitations.png Graphic file (type png)
+<use figures/claim_boundary_limitations.png>
+Package pdftex.def Info: figures/claim_boundary_limitations.png  used on input 
+line 2607.
+(pdftex.def)             Requested size: 350.99762pt x 276.87926pt.
+<figures/coarse_baseline_work_precision.png, id=222, 611.6451pt x 467.1051pt>
+File: figures/coarse_baseline_work_precision.png Graphic file (type png)
+<use figures/coarse_baseline_work_precision.png>
+Package pdftex.def Info: figures/coarse_baseline_work_precision.png  used on in
+put line 2618.
+(pdftex.def)             Requested size: 350.99762pt x 268.05591pt.
+<figures/closed_loop_true_dynamic_order.png, id=223, 571.8966pt x 434.5836pt>
+File: figures/closed_loop_true_dynamic_order.png Graphic file (type png)
+<use figures/closed_loop_true_dynamic_order.png>
+Package pdftex.def Info: figures/closed_loop_true_dynamic_order.png  used on in
+put line 2635.
+(pdftex.def)             Requested size: 350.99762pt x 266.72688pt.
+<figures/all_method_result_matrix.png, id=224, 608.0316pt x 492.3996pt>
+File: figures/all_method_result_matrix.png Graphic file (type png)
+<use figures/all_method_result_matrix.png>
+Package pdftex.def Info: figures/all_method_result_matrix.png  used on input li
+ne 2645.
+(pdftex.def)             Requested size: 350.99762pt x 284.25458pt.
+<figures/work_precision_compendium.png, id=225, 787.9839pt x 467.1051pt>
+File: figures/work_precision_compendium.png Graphic file (type png)
+<use figures/work_precision_compendium.png>
+Package pdftex.def Info: figures/work_precision_compendium.png  used on input l
+ine 2660.
+(pdftex.def)             Requested size: 350.99762pt x 208.06424pt.
+ [56 <./figures/sparse_speed_gap.png>] [57 <./figures/strict_common_reference_w
+ork_precision.png>] [58 <./figures/claim_boundary_limitations.png>] [59 <./figu
+res/coarse_baseline_work_precision.png>] [60 <./figures/closed_loop_true_dynami
+c_order.png>] [61 <./figures/all_method_result_matrix.png>]
+[62 <./figures/work_precision_compendium.png>] [63]
+Underfull \hbox (badness 3849) in paragraph at lines 2752--2764
+\T1/cmr/m/n/12 Gauss6/FullVA dy-namic or-der/work rows un-der the pub-lished
+ []
+
+[64] [65] [66] [67] [68] [69] [70] [71]
+Underfull \hbox (badness 1082) in paragraph at lines 3236--3243
+\T1/cmr/m/n/12 bounded common-reference di-ag-nos-tics rather than source-polic
+y-closed
+ []
+
+[72] [73] [74] [75] [76] [77] [78] [79] [80]
+Underfull \hbox (badness 5403) in paragraph at lines 3867--3892
+[]\T1/cmr/m/n/12 The El-se-vier source pack-age con-tains the ed-itable $\T1/cm
+tt/m/n/12 elsarticle$
+ []
+
+[81] [82] [83] [84] [85]
+Underfull \hbox (badness 1681) in paragraph at lines 3916--3920
+\T1/cmr/m/n/12 Euler--Lagrange equa-tions with con-straints, Jour-nal of Com-pu
+-ta-
+ []
+
+[86]
+Underfull \hbox (badness 7963) in paragraph at lines 3932--3937
+[]\T1/cmr/m/n/12 O. Bruls, A. Car-dona, M. Arnold, Lie group generalized-
+ []
+
+
+Underfull \hbox (badness 6461) in paragraph at lines 3932--3937
+\T1/cmr/m/n/12 alpha time in-te-gra-tion of con-strained flex-i-ble multi-body 
+sys-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3932--3937
+\T1/cmr/m/n/12 tems, Mech-a-nism and Ma-chine The-ory 48 (2012) 121--137.
+ []
+
+[87]
+Underfull \hbox (badness 10000) in paragraph at lines 4017--4023
+\T1/cmr/m/n/12 2673--2691. doi:10.1002/(SICI)1097-0207(19960815)39:15<2673::AID
+-
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 4025--4030
+[]\T1/cmr/m/n/12 M. An-itescu, F.A. Po-tra, For-mu-lat-ing dy-namic multi-rigid
+-body
+ []
+
+
+Underfull \hbox (badness 6110) in paragraph at lines 4025--4030
+\T1/cmr/m/n/12 con-tact prob-lems with fric-tion as solv-able lin-ear com-ple-m
+en-
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 4025--4030
+\T1/cmr/m/n/12 tar-ity prob-lems, Non-lin-ear Dy-nam-ics 14 (3) (1997) 231--247
+.
+ []
+
+[88] [89] (./main_cmame.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-07-20>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 4.5pt have occurred.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5140 strings out of 467159
+ 78110 string characters out of 5404997
+ 521054 words of memory out of 5000000
+ 34351 multiletter control sequences out of 15000+600000
+ 647465 words of font info for 96 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,12n,79p,1085b,432s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/jingquanw/texlive/2026/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/jingquanw/texlive/2026
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/jingquanw/texliv
+e/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/jingquanw/t
+exlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/Users/jingqu
+anw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/j
+ingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Us
+ers/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y5.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy6.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msbm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dis
+t/fonts/type1/public/cm-super/sfbx1095.pfb><c:/Users/jingquanw/texlive/2026/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/Users/jingquanw/texlive/20
+26/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/Users/jingquanw/texl
+ive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/Users/jingquan
+w/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/Users/ji
+ngquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/Us
+ers/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+<c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm172
+8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-super/s
+fti0700.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-s
+uper/sfti1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publi
+c/cm-super/sfti1200.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1
+/public/cm-super/sftt0800.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts
+/type1/public/cm-super/sftt1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist
+/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main_cmame.pdf (89 pages, 3582069 bytes).
+PDF statistics:
+ 480 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+
