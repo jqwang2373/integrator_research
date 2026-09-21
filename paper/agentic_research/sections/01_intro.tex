@@ -1,0 +1,50 @@
+\section{Introduction}
+\label{sec:intro}
+
+Coding agents built on large language models can now read a code base, run experiments, edit
+proofs and write prose for days at a time. Whether they can carry a research program is a
+different question, and the evidence so far comes mostly from short, benchmark-shaped tasks: an
+idea to test, a paper to replicate, a Kaggle competition to enter
+\citep{lu2024aiscientist,chan2025mlebench,starace2025paperbench}. Real research is longer, its
+success criteria move, and its characteristic failure is not a crash but a claim that is slightly
+stronger than what was shown. In numerical analysis this failure mode is acute: a convergence plot
+can look sixth order for the wrong reason, a comparison with a public code can be unfair in ways
+that take a domain expert to see, and a theorem can be true of a slightly different method than
+the one implemented.
+
+This paper is a longitudinal case study of one such program, conducted between May and September
+2026 by LLM coding agents under the direction of a single human researcher. The subject of the
+program was a high-order time integrator for constrained multibody systems modelled in absolute
+coordinates on a Lie group. Its outcome is a method, \method{}, with an exact algebraic identity at
+its core, a sixth-order error theorem whose algebra and perturbation lemmas are machine-checked in
+Lean~4, and a numerical study on a frictional chain and on the four public ASME benchmark
+mechanisms; that result is reported in a companion manuscript \citep{wang2026gauss6}. Here we
+report on the process: what the agent did, how the work was organized so that its claims could be
+trusted, what went wrong, what caught it, and what the human actually contributed.
+
+We make four contributions.
+\begin{enumerate}
+  \item \textbf{A documented instance of agentic research with a non-trivial result.} The 49
+  versioned experiments, the 341 ledger scripts, the Lean development and the manuscript are
+  released with the session transcript of the final phase, so that the process can be inspected
+  rather than described.
+  \item \textbf{A process architecture} (Section~\ref{sec:system}) of six components that together
+  kept the program honest: a versioned exploration tree, an evidence ledger of builders and
+  validators with claim gates, a proof sandbox, persistent memory, command and authorization
+  boundaries, and a manuscript pipeline whose validator checks every printed number against its
+  result file.
+  \item \textbf{A trajectory analysis} (Section~\ref{sec:trajectory}) of how the method emerged:
+  which hypotheses were rejected and why, and how an audit of the manuscript against the code
+  produced the central theorem.
+  \item \textbf{An incident analysis} (Section~\ref{sec:incidents}) of ten wrong or misleading
+  claims that arose during the program, classified by what detected them. Validators and
+  purpose-built experiments caught four, the agent's own cross-checks four, and the human two,
+  both by looking at a figure or a page and saying that it looked wrong; one more needed a human
+  decision after an experiment had failed.
+\end{enumerate}
+
+Our reading of the evidence is that the agent was reliable at what can be checked mechanically and
+unreliable at what cannot: it proved, ran, measured and cross-referenced without fatigue, and it
+overclaimed, over-hedged and mistook artefacts for results whenever the only check was judgment.
+The design consequence is not to keep the human in every loop but to build loops that end in an
+artefact a machine can check, and to route the residual judgments, which are few, to the human.

@@ -1,0 +1,91 @@
+\section{The process architecture}
+\label{sec:system}
+
+The agent was a general-purpose coding agent \citep{anthropic2025claudecode} with file, shell,
+LaTeX, Lean and git access, working in a repository on the researcher's machine. Nothing in the
+agent was specialized to the domain. What was specialized is the set of artefacts the agent was
+required to produce and consult, summarized in Figure~\ref{fig:pipeline}. We describe the six
+components and, for each, the failure it was introduced to prevent.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig_pipeline.png}
+  \caption{The process. The agent reads and writes five kinds of artefact; the human supplies
+  goals, authorizations and judgments. Every claim in the manuscript must be traceable to a
+  validator-checked record, a Lean theorem or a result file.}
+  \label{fig:pipeline}
+\end{figure}
+
+\subsection{Versioned exploration tree}
+Every hypothesis about the method got its own directory \texttt{vNNN\_<name>} with a README, the
+scripts, and a \texttt{results/} folder; once a version was superseded it became read-only, and
+new work started a new version. Forty-nine versions exist (Figure~\ref{fig:versions}). The rule
+prevents the most common way an agent loses information: editing a working script in place until
+the earlier state, and the reason it was abandoned, are gone. It also makes negative results
+first-class: the Lobatto node swap (v024), the projection repair (v025), matrix-free Newton--Krylov
+(v032) and Jacobian lagging (v033) are all preserved with the numbers that ruled them out, and the
+manuscript can cite them as things that were tried.
+
+\subsection{Evidence ledger: builders, validators, gates}
+The ledger separates producing evidence from checking it. \emph{Builders} (146 scripts) read
+result files and write JSON and Markdown records: convergence tables, constraint norms, Newton
+statistics, claim inventories. \emph{Validators} (183 scripts) read those records and the
+manuscript and assert relations between them: that a quoted order equals the recorded fit, that a
+phrase the paper is not allowed to use is absent, that a file the paper cites exists and has the
+recorded hash, that a gate's preconditions hold. The top-level validator ran $4\,896$ checks and
+the paper-package validator $162\,327$. \emph{Gates} are named preconditions for stronger claims:
+the exact-stage-identity gate requires the Lean copy in the repository to be byte-identical to the
+development and its axiom audit clean; the order-acceptance gate lists which mechanisms may carry a
+dynamic-order claim. \emph{Blockers} record what would be needed to close an open claim and are
+kept even when the claim is abandoned. The failure this prevents is claim drift: a diagnostic row
+becoming a result, a consistency check becoming a proof, a number in the text outliving the run
+that produced it.
+
+The ledger has a cost: by September it pinned hundreds of phrases of a 13\,000-line manuscript and
+had shaped it into an audit report. When the manuscript was rewritten (Section~\ref{sec:trajectory})
+the ledger was \emph{frozen}, pointed at a snapshot of the old paper as the historical record, and
+replaced for the new paper by one validator with a different contract (Section~\ref{sec:manuscript}).
+
+\subsection{Proof sandbox}
+The analysis lives in a Lean~4/Mathlib project outside the working tree, with a copy in the
+repository that a gate keeps synchronized. Fifty-seven theorems cover the row identities of the
+implemented residual (transcribed into Lean), the perturbation lemmas with explicit constants, the
+Peano-kernel quadrature bound, the Butcher conditions $B(6)$, $C(3)$, $D(3)$ and the failure of
+$B(7)$, and the local-to-global transfer. A check script builds the project and runs an exhaustive axiom audit (standard axioms only)
+and a linter. What is not formalized is stated: Butcher's order theorem and the
+classical Gauss local-error estimate enter as cited results. The proof sandbox changed the paper:
+the attempt to formalize the theorem's hypotheses showed that two of them (uniform invertibility of
+the stage Jacobian, reachability of the solver tolerance) follow from smoothness for small steps,
+and those derivations became lemmas.
+
+\subsection{Persistent memory}
+The agent's context is finite and sessions end. A memory directory holds one file per fact, each
+with a one-line description and a type (project fact, user feedback, reference), and an index
+loaded at the start of every session. Eleven such files exist; they record, for example, that the
+benchmark leaves its regular branch at $t\approx0.605$ and all chain experiments therefore stop at
+$T=0.5$, that a particular external campaign may not be rerun without explicit authorization, and
+that the human judged the earlier manuscript poor and approved a rewrite. The failure this prevents is repetition: without memory, an
+agent that has learned why an experiment fails will run it again in the next session.
+
+\subsection{Command and authorization boundaries}
+Some commands are expensive or change the meaning of the evidence. The pipeline contract lists
+them: the full campaign of the method implementation is never run as a routine check, default
+$h=10^{-4}$ reruns are forbidden, and the external ``source-policy'' campaign against the public
+codes runs only on explicit human authorization; its driver refuses to start unless a literal
+approval sentence is passed to it. The one time it ran (September 20) the human's instruction was
+two words (``run B4''); the agent supplied the sentence, recorded that it had done so, and the
+campaign executed 13 commands and promoted 0 of 40 rows, with the reason written down: the public
+codes' own reference policy cannot be reproduced by running them harder. The boundary is
+procedural rather than technical, since the agent can type the sentence; what it buys is a
+deliberate, recorded step. The failure this prevents is the agent spending hours, or changing the
+claim state, on its own initiative.
+
+\subsection{Manuscript pipeline}
+\label{sec:manuscript}
+The rewritten manuscript is assembled from nine section files by a script; its figures are drawn
+from result JSON files by another script, so no number is typed; and a validator checks that the
+LaTeX log is clean, that every number in every result table equals, to the printed precision, a
+value in the result file the table cites (359 checks), that every Lean theorem named in the paper
+exists and that the quoted theorem count is the true count, and that the arXiv and flat copies were
+generated from the current source. The failure this prevents is the one the old ledger had grown
+to prevent with phrase pins, but at a fraction of the cost and without shaping the prose.

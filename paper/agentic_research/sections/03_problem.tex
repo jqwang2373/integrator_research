@@ -1,0 +1,40 @@
+\section{The research problem and its outcome}
+\label{sec:problem}
+
+\paragraph{Problem}
+A mechanism of rigid bodies connected by lower-pair joints (revolute, prismatic, cylindrical,
+spherical) is described in absolute coordinates by the position and rotation of every body. The
+equations of motion are an index-3 differential-algebraic system on $(\mathbb R^3\times SO(3))^N$:
+Newton--Euler balance for each body, algebraic constraints for each joint, Lagrange multipliers for
+the joint reactions. An integrator has to keep the constraints satisfied at position level and at
+their first and second time derivatives, keep rotations on the group, and handle joint friction,
+which is regularized (Brown--McPhee) and can be sharp. Existing Lie-group methods for this class
+are of order two, or are formulated for ordinary differential equations on the group; a recent
+time-finite-element method reaches higher order on pendulum problems \citep{chaturvedi2026tfe}.
+The program was started with the question whether a method of order higher than four, with a
+provable order, exists for the full absolute-coordinate index-3 problem.
+
+\paragraph{Outcome}
+The method the program converged on, \method{}, solves one square nonlinear system per step in
+which three-stage Gauss collocation of the joint coordinates, the joint constraints at position,
+velocity and acceleration level, and the Newton--Euler balance at every stage appear as rows
+($132$ for the two-body benchmark), and reconstructs the rotational endpoint through the
+exponential map. The central result is that the reduced Gauss stage, i.e.\ the collocation solution
+of the reduced joint-coordinate equations of motion lifted to absolute coordinates, satisfies every
+one of the $132$ rows, and that every root of the non-dynamic rows on the regular branch is such a
+lift. The method is therefore reduced Gauss collocation executed in absolute coordinates, its sixth
+order follows from classical theory, and the two things the implementation adds (a velocity-level
+endpoint closure and an inexact Newton solve) are $O(h^7)$ perturbations with explicit constants.
+The identity, the perturbation chain and the Butcher conditions are proved in Lean~4 (57 theorems).
+Numerically the method is sixth order on a frictional two-body chain and on the ASME double
+pendulum, reproduces the three kinematically driven ASME mechanisms to roundoff, and reaches errors
+below $10^{-10}$ where the public absolute-coordinate codes have errors of order one
+\citep{wang2026gauss6}.
+
+\paragraph{Why this is a good test of agentic research}
+The result is not a benchmark score. It required choosing among method families, building
+verifiers that did not exist, recognizing that a coding convention (joint-coordinate collocation
+rows projected onto the current axis) was mathematically an identity, formalizing that identity,
+designing experiments whose references and error measures are defensible, and writing for a
+journal audience. Each of these is a place where an agent can produce something that looks right
+and is not.

@@ -16,3 +16,6 @@ __pycache__/
 paper/**/*.out
 paper/*.out
 validation/legacy_drafts/*.out
+# meta-paper build byproducts (main.log, main.bbl and main.pdf stay tracked)
+paper/agentic_research/latexmk.log
+paper/agentic_research/main.blg

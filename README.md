@@ -5,7 +5,7 @@ machine-checked proofs, the numerical evidence, and the audit ledger that ties t
 
 ```
 integrator_research/
-  paper/        the manuscript (LaTeX only)                 → paper/README.md
+  paper/        the manuscript + the process paper        → paper/README.md
   proof/        Lean 4 / Mathlib development                → proof/README.md
   numerics/     method code, results, benchmarks, history   → numerics/README.md
   external/     public code mirrors and reference papers    → external/README.md

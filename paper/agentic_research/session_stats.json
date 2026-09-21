@@ -1,0 +1,83 @@
+{
+ "human_messages": 36,
+ "user_role_entries": 63,
+ "shell_commands_typed": 2,
+ "agent_turns": 1749,
+ "tool_calls": 1108,
+ "categories": [
+  [
+   "inspect / edit",
+   328
+  ],
+  [
+   "validators",
+   196
+  ],
+  [
+   "file read",
+   175
+  ],
+  [
+   "manuscript build",
+   108
+  ],
+  [
+   "Lean",
+   97
+  ],
+  [
+   "file write",
+   80
+  ],
+  [
+   "git / GitHub",
+   60
+  ],
+  [
+   "experiments",
+   56
+  ],
+  [
+   "file edit",
+   4
+  ],
+  [
+   "file toolsearch",
+   3
+  ],
+  [
+   "file monitor",
+   1
+  ]
+ ],
+ "tool_calls_per_6h": {
+  "0": 350,
+  "6": 7,
+  "18": 24,
+  "24": 28,
+  "48": 60,
+  "54": 14,
+  "60": 6,
+  "66": 35,
+  "72": 48,
+  "78": 131,
+  "84": 148,
+  "90": 108,
+  "96": 149
+ },
+ "human_per_6h": {
+  "0": 14,
+  "6": 0,
+  "18": 2,
+  "24": 0,
+  "48": 3,
+  "54": 2,
+  "60": 0,
+  "66": 3,
+  "72": 2,
+  "78": 5,
+  "84": 0,
+  "90": 2,
+  "96": 3
+ }
+}

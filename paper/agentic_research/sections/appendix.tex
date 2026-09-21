@@ -1,0 +1,138 @@
+\section{The 49 versions}
+\label{app:ledger}
+
+\begin{table}[tp]
+\centering
+\caption{Phases of the exploration. ``Kept'' is what survived into the final method; ``ruled out''
+is preserved as a versioned negative result.}
+\label{tab:phases}
+\small
+\begin{tabularx}{\linewidth}{P{0.12\linewidth}P{0.22\linewidth}YY}
+\toprule
+Versions & Phase & Kept & Ruled out \\
+\midrule
+v001--v005 & Lie-group basics: $SO(3)$ benchmarks, corrected right-action CF4/RKMK4, Yoshida
+composition, two-stage Gauss--Lie & Gauss collocation as the high-order family; right-action
+conventions & Yoshida composition (negative substeps unsuitable for friction) \\
+v006--v013 & Constrained DAE closure: reduced fixed-pivot DAE, absolute-coordinate Gauss DAE,
+endpoint constraints inside Newton, friction, AD Jacobian, quaternion transport, three-stage Gauss
+& absolute coordinates; endpoint constraints in the solve; JAX automatic differentiation;
+quaternions; six stages & position-only closure; finite-difference Jacobians \\
+v014--v022 & Friction regimes and baselines: smoothness sweep, adaptive Gauss6/4, trapezoidal,
+BDF2 and Lobatto baselines, multiplier-dependent Brown--McPhee friction & Brown--McPhee law through
+the multipliers; the smooth/sharp split as a stated regime & trapezoidal, BDF2 and Lobatto endpoint
+methods as accuracy candidates; adaptivity as the main result \\
+v023--v029 & Absolute-coordinate revolute DAE: full DAE, Lobatto node swap, projection repair,
+stage velocity rows, stage acceleration rows, off-axis torque, two joints & \emph{stage-level
+velocity and acceleration constraint rows} (``FullVA''), the decisive move & node swap; post-step
+projection as a fix \\
+v030--v045 & Sparse solver scaling: Jacobian sparsity, sparse Newton, matrix-free Krylov, lagging,
+coloured AD, symbolic patterns, caches, larger topologies, prismatic joints & correctness of
+sparse patterns; prismatic and skew-axis coverage & every speed claim: dense AD stayed faster \\
+v046--v048 & Validation anchors: four ASME mechanisms, two-body cylindrical chain pipeline,
+cross-paper benchmark harness & the chain as the main benchmark; the public suite as the external
+one & external superiority claims (source-policy rows 0/40) \\
+v049 & Experiments for the rewritten paper & E1--E7 & long horizons ($T=1$, $T=20$) on the chain \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Table~\ref{tab:phases} condenses the exploration into phases; Table~\ref{tab:ledger} gives one line per version: the method family tested and the role the
+version plays in the record (its ``current role'' field in the machine-readable ledger).
+
+\begin{table}[tp]
+\centering
+\caption{Version ledger (condensed from \texttt{validation/docs/version\_ledger.csv}).}
+\label{tab:ledger}
+\scriptsize
+\begin{tabularx}{\linewidth}{P{0.05\linewidth}P{0.34\linewidth}Y}
+\toprule
+v & Method family & Role in the record \\
+\midrule
+001 & $SO(3)$ kinematics and Euler top & benchmark infrastructure \\
+002 & CF4 and RKMK4 (right action) & prescribed-orientation baseline, order four \\
+003 & public rA code reproduction & reproducibility anchor for the public suite \\
+004 & Yoshida-composed Lie midpoint & conservative baseline; negative substeps unsuitable for friction \\
+005 & two-stage Gauss--Lie & smooth conservative mechanics, order four \\
+006 & reduced fixed-pivot Gauss DAE & reduced constrained prototype \\
+007 & absolute-coordinate Gauss DAE & index-3 consistency lesson \\
+008 & endpoint-constrained Gauss DAE & projection-free absolute-coordinate prototype \\
+009 & frictional endpoint Gauss4 & friction order-reduction evidence \\
+010 & JAX AD Jacobian & nonlinear-solve backend \\
+011 & $S^3$ transport operators & bridge to the quaternion formulation \\
+012 & quaternion endpoint Gauss4 & verified quaternion residual \\
+013 & Gauss6 endpoint collocation & first smooth sixth-order candidate \\
+014 & Gauss4 vs Gauss6 friction sweep & smoothness decision rule \\
+015 & adaptive embedded Gauss6/4 & near-nonsmooth regime tool \\
+016 & reduced Lie-trapezoidal & ruled out as accuracy candidate \\
+017 & reduced Lie-BDF2 & ruled out as accuracy candidate \\
+018 & reduced Lie-Lobatto endpoint & TFE-style baseline ruled out \\
+019 & multiplier-dependent Stribeck friction & AD-friendly friction through multipliers \\
+020 & adaptive multiplier friction & sharp-friction regime tool \\
+021 & Brown--McPhee multiplier friction & the friction law kept \\
+022 & revolute Brown--McPhee Gauss6/4 & paper-like revolute friction evidence \\
+023 & absolute-coordinate revolute Gauss DAE & full DAE; endpoint drift exposed \\
+024 & direct Lobatto full revolute DAE & node swap ruled out \\
+025 & projected absolute revolute DAE & projection repair: works, changes the method \\
+026 & stage pivot-velocity rows & non-projection closure, velocity level \\
+027 & stage velocity + acceleration rows & \textbf{FullVA}: the stage system kept \\
+028 & off-axis FullVA revolute & axis-torque stress test \\
+029 & double-revolute FullVA & generalizes to two joints \\
+030 & Jacobian sparsity diagnosis & motivates sparse solvers \\
+031 & sparse Newton & correct; not faster \\
+032 & matrix-free Newton--Krylov & ruled out \\
+033 & lagged sparse Newton & ruled out \\
+034 & coloured-JVP sparse Jacobian & correct structured sparse AD \\
+035 & batched coloured JVP & sparse-AD backend \\
+036 & block-symbolic sparse pattern & production-style pattern \\
+037 & JVP-pruned pattern & pattern discovery \\
+038 & pattern cache reuse & cache policy \\
+039 & triple-revolute scaling & transfer to larger topology \\
+040 & generated block triple pattern & pattern acquisition \\
+041 & triple-revolute cache refresh & cache policy \\
+042 & skew-axis triple revolute & non-coplanar geometry \\
+043 & skew prismatic pair & first non-revolute pair \\
+044 & double-prismatic chain & interbody prismatic pair \\
+045 & row-coloured VJP sparse AD & sparse-assembly diagnostic \\
+046 & four ASME mechanisms & public-suite validation anchor \\
+047 & two-body cylindrical chain pipeline & the main benchmark and the accepted implementation \\
+048 & cross-paper same-test harness & external comparison scaffold; 0/40 source-policy rows \\
+049 & paper experiments E1--E7 & the numerical section of the rewritten manuscript \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Memory files}
+\label{app:memory}
+
+The eleven memory files at the end of the program, by their one-line descriptions: where the Lean
+project lives and why it is kept off the synchronized drive; what the Lean development covers and
+what it must not be claimed to close; the row-family mismatch between manuscript and code and its
+resolution ($F(Z_G)=0$ exactly); the manuscript compaction of September~17 and the builder order;
+the implemented predictor's zero angular guesses and their consequence for the Newton lemma; the
+derived arXiv version and how it is rebuilt; the five-folder repository layout and its path
+routing; the guarded external campaign of September~20 (approval sentence, 0/40 rows, why it
+cannot close by execution); the paper rewrite of September~20--21 and its state; the benchmark's
+regular-branch limit and the choice $T=0.5$; and the driven single-pendulum harness whose predictor
+is the analytic drive. Each file has a ``why'' and a ``how to apply'' paragraph; the index is
+loaded at the start of every session.
+
+\section{Human messages of the final session}
+\label{app:messages}
+
+The \nHuman{} messages typed by the human (the other \nHarness{} user-role entries of the
+transcript are harness-generated: task notifications, command echoes, compaction summaries and
+image attachments; \nShell{} more are shell commands typed for the GitHub login), lightly
+paraphrased from Chinese and grouped. \emph{Goals} (11): can Lean prove the convergence
+order; install it; run the Lean check and report; continue and look for problems; tidy the Lean
+development; make an arXiv version in a simple template; reorganize the folders; split the LaTeX
+out of the ledger; make a clean five-folder layout keeping only the best manuscript; read it again
+and find what else is wrong; write this paper. \emph{Approvals of the agent's own proposals} (9):
+``do as you said'' and variants, including the two approvals of the rewrite plan.
+\emph{Authorizations} (3): any permission including network access; push to GitHub as you see fit;
+run the external campaign. \emph{Decision} (1): option A for the benchmark horizon, against the
+agent's recommendation. \emph{Judgments} (3): the paper quality feels poor; the PDF does not look
+good, visualize the pages; why does the top-left panel of Figure~7 look strange.
+\emph{Questions} (6): what is this doing; what do you think is appropriate; what does that mean;
+what is still missing; what is the status; what else is there to do. \emph{Other} (3): an
+acknowledgment, ``continue'', and a report that the GitHub login had failed.

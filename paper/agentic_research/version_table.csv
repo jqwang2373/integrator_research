@@ -1,0 +1,50 @@
+version,dir,python_lines,result_files,phase
+1,v001_so3_benchmarks,561,4,Lie-group basics
+2,v002_cf4_right_order,567,4,Lie-group basics
+3,v003_sbel_ra_repro,413,3,Lie-group basics
+4,v004_yoshida_midpoint,666,5,Lie-group basics
+5,v005_gauss_lie4,807,7,Lie-group basics
+6,v006_fixed_pivot_dae,565,6,constrained DAE closure
+7,v007_absolute_gauss_dae,727,6,constrained DAE closure
+8,v008_endpoint_constrained_dae,821,6,constrained DAE closure
+9,v009_friction_endpoint_dae,946,9,constrained DAE closure
+10,v010_jax_jacobian_endpoint_dae,1110,7,constrained DAE closure
+11,v011_s3_transport_operator,516,5,constrained DAE closure
+12,v012_quaternion_endpoint_dae,1036,8,constrained DAE closure
+13,v013_gauss6_quaternion_endpoint_dae,1077,7,constrained DAE closure
+14,v014_friction_smoothness_sweep,321,6,friction and baselines
+15,v015_adaptive_gauss64_endpoint,471,4,friction and baselines
+16,v016_trapezoidal_baseline,427,5,friction and baselines
+17,v017_lie_bdf2_baseline,415,5,friction and baselines
+18,v018_lobatto_endpoint_baseline,456,5,friction and baselines
+19,v019_lambda_dependent_friction,677,5,friction and baselines
+20,v020_adaptive_lambda_friction,486,4,friction and baselines
+21,v021_brown_mcphee_lambda_friction,547,4,friction and baselines
+22,v022_revolute_brown_mcphee,764,4,friction and baselines
+23,v023_absolute_revolute_dae,664,4,absolute-coordinate FullVA
+24,v024_absolute_revolute_lobatto_dae,863,5,absolute-coordinate FullVA
+25,v025_absolute_revolute_projected_dae,795,5,absolute-coordinate FullVA
+26,v026_absolute_revolute_stage_velocity_dae,877,5,absolute-coordinate FullVA
+27,v027_absolute_revolute_stage_acceleration_dae,995,5,absolute-coordinate FullVA
+28,v028_offaxis_revolute_full_axis_dae,1115,6,absolute-coordinate FullVA
+29,v029_double_revolute_pivotva_dae,1039,5,absolute-coordinate FullVA
+30,v030_double_revolute_jacobian_sparsity,373,5,sparse solver scaling
+31,v031_sparse_newton_double_revolute,632,5,sparse solver scaling
+32,v032_matrix_free_newton_krylov,696,6,sparse solver scaling
+33,v033_lagged_sparse_newton,550,5,sparse solver scaling
+34,v034_colored_jvp_sparse_jacobian,667,5,sparse solver scaling
+35,v035_batched_colored_jvp,604,5,sparse solver scaling
+36,v036_symbolic_block_pattern,492,5,sparse solver scaling
+37,v037_jvp_pruned_symbolic_pattern,479,5,sparse solver scaling
+38,v038_pattern_cache_reuse,491,5,sparse solver scaling
+39,v039_triple_revolute_scaling,999,4,sparse solver scaling
+40,v040_generated_block_triple_pattern,569,5,sparse solver scaling
+41,v041_triple_pattern_cache_refresh,524,5,sparse solver scaling
+42,v042_skew_axis_triple_revolute,1089,5,sparse solver scaling
+43,v043_skew_prismatic_lower_pair,949,5,sparse solver scaling
+44,v044_double_prismatic_chain,1128,5,sparse solver scaling
+45,v045_row_colored_vjp_prismatic,516,5,sparse solver scaling
+46,v046_asme_four_examples_validation,428,5,validation anchors
+47,v047_cylindrical_chain_pipeline,82279,292,validation anchors
+48,v048_cross_paper_same_test_benchmarks,28742,228,validation anchors
+49,v049_paper_experiments,1315,34,paper experiments
