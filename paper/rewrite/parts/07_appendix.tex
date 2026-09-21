@@ -263,9 +263,10 @@ manuscript), \texttt{proof/} (the Lean development), \texttt{numerics/} (the imp
 experiment scripts), \texttt{external/} (the public benchmark codes) and \texttt{validation/} (the
 audit trail of the development).
 \begin{itemize}
-  \item The step is implemented by the single residual function in
+  \item The step for the chain is implemented by the single residual function in
   \texttt{numerics/v047\_cylindrical\_chain\_pipeline/run\_v047.py}; its automatic derivative is the
-  Newton Jacobian.
+  Newton Jacobian. The assemblies for the benchmark mechanisms are referenced from the experiment
+  scripts below.
   \item The experiments of Section~\ref{sec:numerical} are the scripts \texttt{e1\_convergence.py}
   to \texttt{e7\_solver\_envelope.py} in \texttt{numerics/v049\_paper\_experiments/}; each writes a
   CSV and a JSON file under \texttt{results/}, and \texttt{make\_figures.py} draws the figures from

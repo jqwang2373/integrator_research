@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -561,7 +561,7 @@ Package pdftex.def Info: ./Figure_2_method_overview.png  used on input line 443
 <./Figure_3_e1_convergence.png, id=483, 462.528pt x 216.81pt>
 File: ./Figure_3_e1_convergence.png Graphic file (type png)
 <use ./Figure_3_e1_convergence.png>
-Package pdftex.def Info: ./Figure_3_e1_convergence.png  used on input line 1000
+Package pdftex.def Info: ./Figure_3_e1_convergence.png  used on input line 1001
 .
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
  [15]
@@ -569,26 +569,26 @@ Package pdftex.def Info: ./Figure_3_e1_convergence.png  used on input line 1000
 File: ./Figure_4_e2_gauss_family.png Graphic file (type png)
 <use ./Figure_4_e2_gauss_family.png>
 Package pdftex.def Info: ./Figure_4_e2_gauss_family.png  used on input line 106
-1.
+2.
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
  [16 <./Figure_3_e1_convergence.png>]
 <./Figure_5_e3_friction_sweep.png, id=519, 462.528pt x 216.81pt>
 File: ./Figure_5_e3_friction_sweep.png Graphic file (type png)
 <use ./Figure_5_e3_friction_sweep.png>
 Package pdftex.def Info: ./Figure_5_e3_friction_sweep.png  used on input line 1
-104.
+105.
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
 
 [17 <./Figure_4_e2_gauss_family.png>]
-<./Figure_6_mechanisms.png, id=531, 356.4225pt x 337.041pt>
+<./Figure_6_mechanisms.png, id=533, 356.4225pt x 337.041pt>
 File: ./Figure_6_mechanisms.png Graphic file (type png)
 <use ./Figure_6_mechanisms.png>
-Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1138.
+Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1140.
 (pdftex.def)             Requested size: 452.9679pt x 428.35101pt.
-<./Figure_7_e4_benchmarks.png, id=534, 462.528pt x 404.712pt>
+<./Figure_7_e4_benchmarks.png, id=536, 462.528pt x 404.712pt>
 File: ./Figure_7_e4_benchmarks.png Graphic file (type png)
 <use ./Figure_7_e4_benchmarks.png>
-Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1175.
+Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1177.
 
 (pdftex.def)             Requested size: 452.9679pt x 396.36804pt.
  [18 <./Figure_5_e3_friction_sweep.png>]
@@ -596,22 +596,22 @@ Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1175.
 LaTeX Warning: Text page 19 contains only floats.
 
 [19 <./Figure_6_mechanisms.png>]
-<./Figure_8_e5_double_pendulum.png, id=555, 462.528pt x 252.945pt>
+<./Figure_8_e5_double_pendulum.png, id=557, 462.528pt x 252.945pt>
 File: ./Figure_8_e5_double_pendulum.png Graphic file (type png)
 <use ./Figure_8_e5_double_pendulum.png>
 Package pdftex.def Info: ./Figure_8_e5_double_pendulum.png  used on input line 
-1238.
+1240.
 (pdftex.def)             Requested size: 452.9679pt x 247.73003pt.
  [20 <./Figure_7_e4_benchmarks.png>]
-<./Figure_9_e6_regular_branch.png, id=562, 462.528pt x 216.81pt>
+<./Figure_9_e6_regular_branch.png, id=564, 462.528pt x 216.81pt>
 File: ./Figure_9_e6_regular_branch.png Graphic file (type png)
 <use ./Figure_9_e6_regular_branch.png>
 Package pdftex.def Info: ./Figure_9_e6_regular_branch.png  used on input line 1
-259.
+261.
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
  [21 <./Figure_8_e5_double_pendulum.png>] [22 <./Figure_9_e6_regular_branch.png
 >] [23]
-Overfull \hbox (11.0308pt too wide) in paragraph at lines 1395--1399
+Overfull \hbox (11.0308pt too wide) in paragraph at lines 1397--1401
 []\T1/lmr/m/it/10.95 Single pen-du-lum. \T1/lmr/m/n/10.95 One bar of length $\O
 T1/lmr/m/n/10.95 4$ \T1/lmr/m/n/10.95 m (mass $\OT1/lmr/m/n/10.95 78$ \T1/lmr/m
 /n/10.95 kg, $\OML/lmm/m/it/10.95 J \OT1/lmr/m/n/10.95 = [](0\OML/lmm/m/it/10.9
@@ -622,29 +622,28 @@ OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 016)$ \T1/lmr/m/n/10.95 kgm$[]$).
 
 [24]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1521.
+(Font)              <9> on input line 1523.
  [25] [26]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-593.
+595.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (146.83473pt too wide) in paragraph at lines 1593--1596
-[]\T1/lmr/m/n/10.95 The step is im-ple-mented by the sin-gle resid-ual func-tio
-n in \T1/lmtt/m/n/10.95 numerics/v047_cylindrical_chain_pipeline/run_v047.py\T1
-/lmr/m/n/10.95 ;
+Underfull \hbox (badness 5274) in paragraph at lines 1595--1599
+[]\T1/lmr/m/n/10.95 The step for the chain is im-ple-mented by the sin-gle resi
+d-ual func-tion in
  []
 
 
-Overfull \hbox (13.34958pt too wide) in paragraph at lines 1596--1600
+Overfull \hbox (13.34958pt too wide) in paragraph at lines 1599--1603
 []\T1/lmr/m/n/10.95 The ex-per-i-ments of Sec-tion [][]6[][] are the scripts \T
 1/lmtt/m/n/10.95 e1_convergence.py \T1/lmr/m/n/10.95 to \T1/lmtt/m/n/10.95 e7_s
 olver_envelope.py
  []
 
 [27{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \hbox (badness 1552) in paragraph at lines 1729--1733
+Underfull \hbox (badness 1552) in paragraph at lines 1732--1736
 []\T1/lmr/m/n/10.95 V. Wie-loch, M. Arnold, BDF in-te-gra-tors for con-strained
  me-chan-i-cal sys-tems on
  []
@@ -690,10 +689,10 @@ nts/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/font
 s/type1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_arxiv.pdf (30 pages, 1397991 bytes).
+Output written on main_arxiv.pdf (30 pages, 1398227 bytes).
 PDF statistics:
- 844 PDF objects out of 1000 (max. 8388607)
- 730 compressed objects within 8 object streams
+ 846 PDF objects out of 1000 (max. 8388607)
+ 732 compressed objects within 8 object streams
  206 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

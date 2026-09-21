@@ -162,8 +162,8 @@ that method is at the level of formal order and is stated as such.
   \item A Lean~4/Mathlib development of $57$ theorems covering the row identities, the perturbation
   chain with explicit constants, and the tableau order conditions.
   \item Convergence, work/precision, friction-regime and constraint-drift results on a frictional
-  chain and on the four public benchmark mechanisms, all generated from a single implementation path
-  and reproducible from the accompanying repository.
+  chain and on the four public benchmark mechanisms, every number generated from result files by
+  scripts in the accompanying repository.
 \end{enumerate}
 
 Section~\ref{sec:related} reviews Lie-group and index-3 integrators for multibody systems.
@@ -942,8 +942,9 @@ problems.
 \section{Numerical experiments}
 \label{sec:numerical}
 
-All experiments use the implementation of Section~\ref{sec:method} with the fixed Newton tolerance
-$\tau_N=10^{-11}$ and the dense automatic-differentiation Jacobian; the scripts that produce every
+All experiments use the implementation of Section~\ref{sec:method} with fixed Newton tolerances
+($\tau_N=10^{-11}$ for the chain and the pendulums, $10^{-10}$ for the closed-loop runner) and the
+dense automatic-differentiation Jacobian; the scripts that produce every
 number and figure of this section are listed in \ref{app:repro}. Errors are measured
 against a reference solution computed with the same method at a step size $h_{\rm ref}$ much
 smaller than the finest step of the sweep; the difference between the references at $h_{\rm ref}$
@@ -1110,8 +1111,9 @@ The public benchmark suite of~\cite{kissel2022absolute} consists of a driven sin
 free double pendulum released from the horizontal, and two driven closed loops, a four-link
 mechanism and a slider-crank (\ref{app:lower-pair}). Three of the four are kinematically
 driven: their motion is fixed by the drive constraint and the dynamics only determines the
-reactions. \method{} is run on all four over $T=1$ with $h=0.1/2^k$ (Figure~\ref{fig:e4},
-Table~\ref{tab:e4}). For the driven
+reactions. Each mechanism has its own assembly of the stage system of Section~\ref{sec:method} (the same
+row families with the joint list of \ref{app:lower-pair}); \method{} is run on all four over
+$T=1$ with $h=0.1/2^k$ (Figure~\ref{fig:e4}, Table~\ref{tab:e4}). For the driven
 single pendulum the harness starts its stage solve from the analytic drive, so this panel checks
 the endpoint reconstruction and the roundoff level rather than the convergence of the stage solve:
 the final-state position and orientation errors are $5.9\times10^{-10}$ and $3.9\times10^{-10}$ at
@@ -1590,9 +1592,10 @@ manuscript), \texttt{proof/} (the Lean development), \texttt{numerics/} (the imp
 experiment scripts), \texttt{external/} (the public benchmark codes) and \texttt{validation/} (the
 audit trail of the development).
 \begin{itemize}
-  \item The step is implemented by the single residual function in
+  \item The step for the chain is implemented by the single residual function in
   \texttt{numerics/v047\_cylindrical\_chain\_pipeline/run\_v047.py}; its automatic derivative is the
-  Newton Jacobian.
+  Newton Jacobian. The assemblies for the benchmark mechanisms are referenced from the experiment
+  scripts below.
   \item The experiments of Section~\ref{sec:numerical} are the scripts \texttt{e1\_convergence.py}
   to \texttt{e7\_solver\_envelope.py} in \texttt{numerics/v049\_paper\_experiments/}; each writes a
   CSV and a JSON file under \texttt{results/}, and \texttt{make\_figures.py} draws the figures from
