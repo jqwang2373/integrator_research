@@ -78,8 +78,8 @@ Table~\ref{tab:e2} compare the three members on the chain over $[0,0.5]$ against
 reference. The fitted position orders are $2.10$, $4.17$ and $6.25$, in agreement with the remark
 after Theorem~\ref{thm:g6fullva-order}. The Newton iteration count per step is the same for the
 three members ($5.7$ to $6.0$), so at a given step size the work differs only by the size of the
-dense factorization; in the present Python implementation the wall time per step differs by at most
-a third across the family, being dominated by interpreter overhead. At $h=0.0125$ the three-stage
+dense factorization; in the present Python implementation the wall time per step of the three-stage member is only
+$15$ to $25\%$ above that of the one-stage member, both being dominated by interpreter overhead. At $h=0.0125$ the three-stage
 member is $1.6\times10^{5}$ times more accurate than the one-stage and $310$ times more accurate
 than the two-stage member, and at $h=0.003125$ the factors are $4\times10^{7}$ and
 $5\times10^{3}$; to reach the accuracy of the three-stage member at $h=0.05$ ($2\times10^{-6}$)

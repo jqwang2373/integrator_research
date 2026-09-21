@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,56 +430,74 @@ Package pdftex.def Info: figures/e6_regular_branch.png  used on input line 1265
 LaTeX Warning: Text page 31 contains only floats.
 
 [31 <./figures/e5_double_pendulum.png> <./figures/e6_regular_branch.png>]
-[32] [33] [34] [35] [36] [37]
-Underfull \hbox (badness 1490) in paragraph at lines 1587--1601
-\T1/cmr/m/n/12 the ex-per-i-ments of Sec-tion 6[] are the scripts $\T1/cmtt/m/n
-/12 e1 _ convergence . py$ \T1/cmr/m/n/12 to
+[32] [33] [34]
+Underfull \hbox (badness 1590) in paragraph at lines 1401--1405
+[]\T1/cmr/m/it/12 Single pen-du-lum. \T1/cmr/m/n/12 One bar of length $\OT1/cmr
+/m/n/12 4$ \T1/cmr/m/n/12 m (mass $\OT1/cmr/m/n/12 78$ \T1/cmr/m/n/12 kg, $\OML
+/cmm/m/it/12 J \OT1/cmr/m/n/12 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1587--1601
-\T1/cmtt/m/n/12 e7 _ solver _ envelope . py$ \T1/cmr/m/n/12 in $\T1/cmtt/m/n/12
- numerics / v049 _ paper _ experiments/$\T1/cmr/m/n/12 ,
+Underfull \hbox (badness 4492) in paragraph at lines 1419--1428
+\T1/cmr/m/n/12 in-er-tia di-ag-o-nals $\OT1/cmr/m/n/12 (10[]\OML/cmm/m/it/12 ; 
+\OT1/cmr/m/n/12 10[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 10[])$\T1/cmr/m/n/12 , $
+\OT1/cmr/m/n/12 (4 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[]\OML/cmm/m/it/12 ; 
+\OT1/cmr/m/n/12 4 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[]\OML/cmm/m/it/12 ; \
+OT1/cmr/m/n/12 4 \OMS/cmsy/m/n/12 ^^B \OT1/cmr/m/n/12 10[])$\T1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 1587--1601
-\T1/cmr/m/n/12 each of which writes a CSV and a JSON file un-der $\T1/cmtt/m/n/
-12 results/$\T1/cmr/m/n/12 ;
+Underfull \hbox (badness 5147) in paragraph at lines 1419--1428
+\OT1/cmr/m/n/12 (10[]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 10[]\OML/cmm/m/it/12 ; 
+\OT1/cmr/m/n/12 10[])$ \T1/cmr/m/n/12 kgm$[]$. Rev-o-lute joint A (ground--cran
+k): CD
+ []
+
+[35] [36] [37]
+Underfull \hbox (badness 4242) in paragraph at lines 1599--1602
+[]\T1/cmr/m/n/12 The step is im-ple-mented by the sin-gle resid-ual func-tion i
+n
  []
 
 
-Underfull \hbox (badness 3679) in paragraph at lines 1587--1601
-\T1/cmr/m/n/12 the fig-ures are drawn from those files by $\T1/cmtt/m/n/12 make
- _ figures . py$\T1/cmr/m/n/12 , and
- []
-
-
-Underfull \hbox (badness 5431) in paragraph at lines 1587--1601
-\T1/cmtt/m/n/12 validation / validate _ manuscript . py$ \T1/cmr/m/n/12 checks 
-that ev-ery num-ber in
+Underfull \hbox (badness 10000) in paragraph at lines 1599--1602
+\T1/cmtt/m/n/12 numerics/v047_cylindrical_chain_pipeline/run_v047.py\T1/cmr/m/n
+/12 ; its
  []
 
 [38]
-Underfull \hbox (badness 1681) in paragraph at lines 1647--1651
+Underfull \hbox (badness 3291) in paragraph at lines 1602--1606
+\T1/cmtt/m/n/12 e7_solver_envelope.py \T1/cmr/m/n/12 in \T1/cmtt/m/n/12 numeric
+s/v049_paper_experiments/\T1/cmr/m/n/12 ;
+ []
+
+
+Underfull \hbox (badness 3758) in paragraph at lines 1602--1606
+\T1/cmr/m/n/12 each writes a CSV and a JSON file un-der \T1/cmtt/m/n/12 results
+/\T1/cmr/m/n/12 , and
+ []
+
+[39{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-supe
+r-ts1.enc}]
+Underfull \hbox (badness 1681) in paragraph at lines 1661--1665
 \T1/cmr/m/n/12 Euler--Lagrange equa-tions with con-straints, Jour-nal of Com-pu
 -ta-
  []
 
-[39] [40] [41] [42]
-Underfull \hbox (badness 2150) in paragraph at lines 1846--1851
+[40] [41] [42]
+Underfull \hbox (badness 2150) in paragraph at lines 1860--1865
 []\T1/cmr/m/n/12 M. An-itescu, F.A. Po-tra, For-mu-lat-ing dy-namic multi-rigid
 -body
  []
 
 
-Underfull \hbox (badness 6110) in paragraph at lines 1846--1851
+Underfull \hbox (badness 6110) in paragraph at lines 1860--1865
 \T1/cmr/m/n/12 con-tact prob-lems with fric-tion as solv-able lin-ear com-ple-m
 en-
  []
 
 
-Underfull \hbox (badness 6094) in paragraph at lines 1846--1851
+Underfull \hbox (badness 6094) in paragraph at lines 1860--1865
 \T1/cmr/m/n/12 tar-ity prob-lems, Non-lin-ear Dy-nam-ics 14 (3) (1997) 231--247
 .
  []
@@ -496,11 +514,11 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 5147 strings out of 467159
- 76629 string characters out of 5404997
- 509245 words of memory out of 5000000
- 34355 multiletter control sequences out of 15000+600000
- 647255 words of font info for 100 fonts, out of 8000000 for 9000
+ 5153 strings out of 467159
+ 76738 string characters out of 5404997
+ 509573 words of memory out of 5000000
+ 34359 multiletter control sequences out of 15000+600000
+ 647592 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,12n,79p,615b,429s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cm
@@ -534,10 +552,10 @@ ti1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-su
 per/sfti1200.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public
 /cm-super/sftt1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/
 public/cm-super/sftt1200.pfb>
-Output written on main_cmame.pdf (44 pages, 1430600 bytes).
+Output written on main_cmame.pdf (44 pages, 1432264 bytes).
 PDF statistics:
- 308 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
+ 312 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

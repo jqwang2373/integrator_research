@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -572,7 +572,7 @@ Package pdftex.def Info: ./Figure_4_e2_gauss_family.png  used on input line 106
 1.
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
  [16 <./Figure_3_e1_convergence.png>]
-<./Figure_5_e3_friction_sweep.png, id=517, 462.528pt x 216.81pt>
+<./Figure_5_e3_friction_sweep.png, id=519, 462.528pt x 216.81pt>
 File: ./Figure_5_e3_friction_sweep.png Graphic file (type png)
 <use ./Figure_5_e3_friction_sweep.png>
 Package pdftex.def Info: ./Figure_5_e3_friction_sweep.png  used on input line 1
@@ -611,11 +611,40 @@ Package pdftex.def Info: ./Figure_9_e6_regular_branch.png  used on input line 1
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
  [21 <./Figure_8_e5_double_pendulum.png>] [22 <./Figure_9_e6_regular_branch.png
 >] [23]
-[24] [25]
+Overfull \hbox (11.0308pt too wide) in paragraph at lines 1395--1399
+[]\T1/lmr/m/it/10.95 Single pen-du-lum. \T1/lmr/m/n/10.95 One bar of length $\O
+T1/lmr/m/n/10.95 4$ \T1/lmr/m/n/10.95 m (mass $\OT1/lmr/m/n/10.95 78$ \T1/lmr/m
+/n/10.95 kg, $\OML/lmm/m/it/10.95 J \OT1/lmr/m/n/10.95 = [](0\OML/lmm/m/it/10.9
+5 :\OT1/lmr/m/n/10.95 0325\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 104\OML/lmm/
+m/it/10.95 :\OT1/lmr/m/n/10.95 016\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 104\
+OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 016)$ \T1/lmr/m/n/10.95 kgm$[]$).
+ []
+
+[24]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1514.
- [26] [27]
-Underfull \hbox (badness 1552) in paragraph at lines 1715--1719
+(Font)              <9> on input line 1521.
+ [25] [26]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+593.
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (146.83473pt too wide) in paragraph at lines 1593--1596
+[]\T1/lmr/m/n/10.95 The step is im-ple-mented by the sin-gle resid-ual func-tio
+n in \T1/lmtt/m/n/10.95 numerics/v047_cylindrical_chain_pipeline/run_v047.py\T1
+/lmr/m/n/10.95 ;
+ []
+
+
+Overfull \hbox (13.34958pt too wide) in paragraph at lines 1596--1600
+[]\T1/lmr/m/n/10.95 The ex-per-i-ments of Sec-tion [][]6[][] are the scripts \T
+1/lmtt/m/n/10.95 e1_convergence.py \T1/lmr/m/n/10.95 to \T1/lmtt/m/n/10.95 e7_s
+olver_envelope.py
+ []
+
+[27{c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \hbox (badness 1552) in paragraph at lines 1729--1733
 []\T1/lmr/m/n/10.95 V. Wie-loch, M. Arnold, BDF in-te-gra-tors for con-strained
  me-chan-i-cal sys-tems on
  []
@@ -629,11 +658,11 @@ Package rerunfilecheck Info: File `main_arxiv.out' has not changed.
 (rerunfilecheck)             Checksum: D4217941C3D680E8393C68298148B0D4;5168.
  ) 
 Here is how much of TeX's memory you used:
- 11783 strings out of 467159
- 181656 string characters out of 5404997
- 630946 words of memory out of 5000000
- 40670 multiletter control sequences out of 15000+600000
- 696931 words of font info for 100 fonts, out of 8000000 for 9000
+ 11820 strings out of 467159
+ 182627 string characters out of 5404997
+ 630985 words of memory out of 5000000
+ 40702 multiletter control sequences out of 15000+600000
+ 697296 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,12n,79p,622b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler
@@ -661,10 +690,10 @@ nts/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/font
 s/type1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_arxiv.pdf (30 pages, 1396595 bytes).
+Output written on main_arxiv.pdf (30 pages, 1397991 bytes).
 PDF statistics:
- 836 PDF objects out of 1000 (max. 8388607)
- 723 compressed objects within 8 object streams
+ 844 PDF objects out of 1000 (max. 8388607)
+ 730 compressed objects within 8 object streams
  206 named destinations out of 1000 (max. 500000)
  246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

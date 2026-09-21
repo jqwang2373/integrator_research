@@ -1025,8 +1025,8 @@ Table~\ref{tab:e2} compare the three members on the chain over $[0,0.5]$ against
 reference. The fitted position orders are $2.10$, $4.17$ and $6.25$, in agreement with the remark
 after Theorem~\ref{thm:g6fullva-order}. The Newton iteration count per step is the same for the
 three members ($5.7$ to $6.0$), so at a given step size the work differs only by the size of the
-dense factorization; in the present Python implementation the wall time per step differs by at most
-a third across the family, being dominated by interpreter overhead. At $h=0.0125$ the three-stage
+dense factorization; in the present Python implementation the wall time per step of the three-stage member is only
+$15$ to $25\%$ above that of the one-stage member, both being dominated by interpreter overhead. At $h=0.0125$ the three-stage
 member is $1.6\times10^{5}$ times more accurate than the one-stage and $310$ times more accurate
 than the two-stage member, and at $h=0.003125$ the factors are $4\times10^{7}$ and
 $5\times10^{3}$; to reach the accuracy of the three-stage member at $h=0.05$ ($2\times10^{-6}$)
@@ -1397,36 +1397,43 @@ its derivatives, the velocity- and acceleration-level rows enforced at every sta
 All bodies are steel bars of square cross-section $0.05$~m and density $7800$~kg/m$^3$ unless
 stated otherwise; $e_x,e_y,e_z$ are the coordinate directions and body-fixed vectors are given in
 the body frame.
-\emph{Single pendulum}: one bar of length $4$~m (mass $78$~kg,
-$J=\operatorname{diag}(0.0325,104.016,104.016)$~kg\,m$^2$), ground revolute joint with CD rows
-$s_1=(-2,0,0)$, $s_0=0$ and DP1 rows $(e_x,e_x)$, $(e_y,e_x)$; driven DP1 row $(e_y,-e_z)$ with
+
+\emph{Single pendulum.} One bar of length $4$~m (mass $78$~kg,
+$J=\operatorname{diag}(0.0325,104.016,104.016)$~kg\,m$^2$). Ground revolute joint: CD rows with
+$s_1=(-2,0,0)$, $s_0=0$; DP1 rows $(e_x,e_x)$, $(e_y,e_x)$. Driven DP1 row $(e_y,-e_z)$ with
 $c(t)=\cos\theta(t)$, $\theta(t)=\pi/2+(\pi/4)\cos 2t$.
-\emph{Double pendulum}: bars of length $4$ and $2$~m (masses $78$ and $39$~kg), ground revolute
-joint as above, inter-link revolute joint with CD rows $s_1=(2,0,0)$, $s_2=(-1,0,0)$ and DP1 rows
-on body 2 against ground $(e_x,e_x)$, $(e_y,e_x)$; released from the horizontal configuration
+
+\emph{Double pendulum.} Bars of length $4$ and $2$~m (masses $78$ and $39$~kg). Ground revolute
+joint as above; inter-link revolute joint: CD rows with $s_1=(2,0,0)$, $s_2=(-1,0,0)$, DP1 rows on
+body 2 against ground $(e_x,e_x)$, $(e_y,e_x)$. Released from the horizontal configuration
 $(\theta_1,\theta_2)(0)=(-\pi/2,0)$ at rest; no friction, no drive.
-\emph{Four-link loop}: rotor, link 2 and link 3 with masses $2,1,1$~kg and inertia diagonals
-$(4,2,0)$, $(12.4,0.01,0)$, $(4.54,0.01,0)$~kg\,m$^2$; revolute joint A (body 1--ground, CD
-$s_1=s_0=0$, DP1 $(e_x,e_x)$, $(e_y,e_x)$), revolute joint D (body 3--ground, CD $s_3=(0,3.7,0)$,
-$s_0=(-4,-8.5,0)$, DP1 $((0,0,1),e_y)$, $(e_y,e_y)$), spherical joint (bodies 3--2, CD
-$s_3=(0,-3.7,0)$, $s_2=(0,-6.1,0)$), universal joint (bodies 1--2, CD $s_1=(-2,0,0)$,
-$s_2=(0,6.1,0)$, DP1 $((0,-0.662,0.75),e_z)$); driving DP1 row $((-1,0,0),e_y)$ with
+
+\emph{Four-link loop.} Rotor, link 2 and link 3 with masses $2,1,1$~kg and inertia diagonals
+$(4,2,0)$, $(12.4,0.01,0)$, $(4.54,0.01,0)$~kg\,m$^2$. Revolute joint A (body 1--ground): CD
+$s_1=s_0=0$, DP1 $(e_x,e_x)$, $(e_y,e_x)$. Revolute joint D (body 3--ground): CD $s_3=(0,3.7,0)$,
+$s_0=(-4,-8.5,0)$, DP1 $((0,0,1),e_y)$, $(e_y,e_y)$. Spherical joint (bodies 3--2): CD
+$s_3=(0,-3.7,0)$, $s_2=(0,-6.1,0)$. Universal joint (bodies 1--2): CD $s_1=(-2,0,0)$,
+$s_2=(0,6.1,0)$, DP1 $((0,-0.662,0.75),e_z)$. Driving DP1 row $((-1,0,0),e_y)$ with
 $c(t)=\cos(\pi t+\pi/2)$.
-\emph{Slider-crank}: crank, rod and slider with masses $0.12,0.5,2$~kg and inertia diagonals
+
+\emph{Slider-crank.} Crank, rod and slider with masses $0.12,0.5,2$~kg and inertia diagonals
 $(10^{-4},10^{-5},10^{-4})$, $(4\times10^{-3},4\times10^{-4},4\times10^{-3})$,
-$(10^{-4},10^{-4},10^{-4})$~kg\,m$^2$; revolute joint A (ground--crank, CD $s_4=(0,0.1,0.12)$,
-$s_1=0$, DP1 $(e_y,e_x)$, $(e_z,e_x)$), spherical joint B (rod--crank, CD $s_2=(-0.15,0,0)$,
-$s_1=(0,0.08,0)$), joint C (rod--slider, DP1 $(e_y,e_z)$, two DP2 rows from rod point
-$(0.15,0,0)$ to slider point $0$ along $e_y$, $e_z$), translational joint D (slider--ground, DP1
-$(-e_x,e_x)$, $(e_y,e_x)$, $(-e_x,e_y)$, DP2 rows from slider point $0$ to ground point
-$(0.2,0,0)$ along $-e_x$, $e_y$), distance row between rod point $(0.15,0,0)$ and slider point
-$(0,0,1)$ with $\ell=1$; driving DP1 row $(e_y,e_y)$ with $c(t)=\cos(-2\pi t+\pi/2)$.
+$(10^{-4},10^{-4},10^{-4})$~kg\,m$^2$. Revolute joint A (ground--crank): CD $s_4=(0,0.1,0.12)$,
+$s_1=0$, DP1 $(e_y,e_x)$, $(e_z,e_x)$. Spherical joint B (rod--crank): CD $s_2=(-0.15,0,0)$,
+$s_1=(0,0.08,0)$. Joint C (rod--slider): DP1 $(e_y,e_z)$ and two DP2 rows from rod point
+$(0.15,0,0)$ to slider point $0$ along $e_y$, $e_z$. Translational joint D (slider--ground): DP1
+$(-e_x,e_x)$, $(e_y,e_x)$, $(-e_x,e_y)$ and DP2 rows from slider point $0$ to ground point
+$(0.2,0,0)$ along $-e_x$, $e_y$. Distance row between rod point $(0.15,0,0)$ and slider point
+$(0,0,1)$ with $\ell=1$. Driving DP1 row $(e_y,e_y)$ with $c(t)=\cos(-2\pi t+\pi/2)$.
 
 \section{Diagnostics of the analysis constants}
 \label{app:diagnostics}
 
-Three diagnostics of Section~\ref{sec:order} are evaluated on the chain runs of Section~\ref{sec:e1}.
-(i)~Each converged stage vector, obtained with a Newton tolerance of $10^{-13}$, is read in the
+Three diagnostics of Section~\ref{sec:order} are evaluated on the chain benchmark ($v_s=0.5$) over the
+short window $[0,0.08]$ with $h=0.04$, $0.02$, $0.01$ and a tight Newton tolerance of $10^{-13}$, so that
+the quantities measured are those of the converged stage vectors and not of the solver; the solver
+envelope (Table~\ref{tab:e7}) is measured on the sweep of Section~\ref{sec:e1} itself.
+(i)~Each converged stage vector is read in the
 joint-coordinate chart and the reduced collocation defects $\Delta_i[s_j]$, $\Delta_i[\dot s_j]$,
 $\Delta_i[\theta_j]$, $\Delta_i[\dot\theta_j]$ of Eq.~\eqref{eq:collocation-defect-operator} are
 evaluated together with the component of $d_j,\dot d_j,\ddot d_j$ orthogonal to $n_j$: all are at
@@ -1461,7 +1468,7 @@ $h$ & steps & Newton total & max stage residual & max reduced defect & max $\per
 
 \begin{table}[!htb]
 \centering
-\caption{Constants of Lemma~\ref{lem:p2-from-p1} on the chain: $M_0=\max_n\|J_0^{-1}\|$,
+\caption{Constants of Lemma~\ref{lem:p2-from-p1} on the chain (window $[0,0.08]$): $M_0=\max_n\|J_0^{-1}\|$,
 $C_J=\max_n\|J_h-J_0\|/h$, observed inverse ratio $\|J_h^{-1}\|/\|J_0^{-1}\|$ and Neumann threshold
 $h_0=1/(2M_0C_J)$, in the Euclidean norm on the stage layout (E) and in the endpoint-linearized
 norm $\|J_0^{-1}\,\cdot\,\|$ (L, where $M_0=1$); the last two columns repeat the L-norm quantities
@@ -1482,8 +1489,8 @@ $h$ & $M_0$ (E) & $C_J$ (E) & ratio & $h_0$ (E) & $C_J$ (L) & $h_0$ (L) & $C_J$ 
 
 \begin{table}[!htb]
 \centering
-\caption{Predictor distances for Lemma~\ref{lem:newton-envelope} on the chain (Euclidean norm on
-the stage layout): distance of the lifted endpoint predictor $Z^{(0)}_\ast$ and of the implemented
+\caption{Predictor distances for Lemma~\ref{lem:newton-envelope} on the chain (window $[0,0.08]$,
+Euclidean norm on the stage layout): distance of the lifted endpoint predictor $Z^{(0)}_\ast$ and of the implemented
 predictor to $Z_G$, and the ratio $\|Z^{(1)}-Z_G\|/\|Z^{(0)}-Z_G\|$ of the first full Newton step
 from the implemented predictor.}
 \label{tab:predictor-check}
@@ -1584,20 +1591,27 @@ Theorem~\ref{thm:g6fullva-order}, three-term chain and grid bounds &
 \section{Reproducibility}
 \label{app:repro}
 
-The repository accompanying the paper has five top-level folders: \nolinkurl{paper/} (this
-manuscript), \nolinkurl{proof/} (the Lean development), \nolinkurl{numerics/} (the implementation
-and all experiment scripts), \nolinkurl{external/} (the public benchmark codes as git submodules or
-mirrors) and \nolinkurl{validation/} (the audit trail of the development, including the check that
-the numbers in this paper equal the values in the result files). The implementation of the step is
-the single residual function in \nolinkurl{numerics/v047_cylindrical_chain_pipeline/run_v047.py};
-the experiments of Section~\ref{sec:numerical} are the scripts \nolinkurl{e1_convergence.py} to
-\nolinkurl{e7_solver_envelope.py} in \nolinkurl{numerics/v049_paper_experiments/}, each of which
-writes a CSV and a JSON file under \nolinkurl{results/}; the figures are drawn from those files by
-\nolinkurl{make_figures.py}, and \nolinkurl{validation/validate_manuscript.py} checks that every
-number in the tables of that section equals the value in its result file. The Lean development is checked by
-\nolinkurl{proof/scripts/check.sh}. All runs reported were made on one CPU core; the double
-pendulum reference at $h=10^{-4}$ over $T=3$ took $1.6$~h, each of the other scripts between a
-minute and about an hour.
+The repository accompanying the paper has five top-level folders: \texttt{paper/} (this
+manuscript), \texttt{proof/} (the Lean development), \texttt{numerics/} (the implementation and all
+experiment scripts), \texttt{external/} (the public benchmark codes) and \texttt{validation/} (the
+audit trail of the development).
+\begin{itemize}
+  \item The step is implemented by the single residual function in
+  \texttt{numerics/v047\_cylindrical\_chain\_pipeline/run\_v047.py}; its automatic derivative is the
+  Newton Jacobian.
+  \item The experiments of Section~\ref{sec:numerical} are the scripts \texttt{e1\_convergence.py}
+  to \texttt{e7\_solver\_envelope.py} in \texttt{numerics/v049\_paper\_experiments/}; each writes a
+  CSV and a JSON file under \texttt{results/}, and \texttt{make\_figures.py} draws the figures from
+  those files.
+  \item \texttt{validation/validate\_manuscript.py} checks that every number in the tables of
+  Section~\ref{sec:numerical} and of \ref{app:diagnostics} equals the value in its result file, that
+  the LaTeX log is clean, and that the theorem names of Table~\ref{tab:lean-development} exist in
+  \texttt{proof/}.
+  \item The Lean development is checked by \texttt{proof/scripts/check.sh} (build, exhaustive axiom
+  audit, linter).
+\end{itemize}
+All runs reported were made on one CPU core; the double pendulum reference at $h=10^{-4}$ over
+$T=3$ took $1.6$~h, each of the other scripts between a minute and about an hour.
 
 \begin{thebibliography}{00}
 
