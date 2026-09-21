@@ -1117,12 +1117,16 @@ free double pendulum released from the horizontal, and two driven closed loops, 
 mechanism and a slider-crank (\ref{app:lower-pair}). Three of the four are kinematically
 driven: their motion is fixed by the drive constraint and the dynamics only determines the
 reactions. \method{} is run on all four over $T=1$ with $h=0.1/2^k$ (Figure~\ref{fig:e4},
-Table~\ref{tab:e4}). For the driven single pendulum, whose exact motion is known in closed form,
-the final-state position errors are $5.9\times10^{-10}$, $9.3\times10^{-12}$ and
-$1.5\times10^{-13}$ at $h=0.1$, $0.05$ and $0.025$ (pairwise orders $6.0$ and $6.0$) and at
-roundoff, $10^{-14}$ to $10^{-15}$, for every finer step; its velocity errors scatter between
-$10^{-15}$ and $4\times10^{-9}$ without trend in $h$, at the level set by the Newton tolerance of
-that harness, which does not project the endpoint velocities. For the two closed loops the trajectory errors against the
+Table~\ref{tab:e4}). For the driven
+single pendulum the harness starts its stage solve from the analytic drive, so this panel checks
+the endpoint reconstruction and the roundoff level rather than the convergence of the stage solve:
+the final-state position and orientation errors are $5.9\times10^{-10}$ and $3.9\times10^{-10}$ at
+$h=0.1$, $9.3\times10^{-12}$ and $6.0\times10^{-12}$ at $h=0.05$, $1.5\times10^{-13}$ and
+$9.4\times10^{-14}$ at $h=0.025$ (pairwise orders $6.0$ and $6.0$, the quadrature error of the
+Gauss-weight reconstruction) and at roundoff, $10^{-14}$ to $10^{-16}$, for every finer step. Its
+velocity errors are not reported: the stage Jacobian of this driven problem has condition number
+$10^{10}$ to $10^{13}$, and with a predictor already at the solution the accepted velocities carry
+roundoff amplified by that conditioning ($10^{-11}$ to $10^{-8}$, with no trend in $h$). For the two closed loops the trajectory errors against the
 $h=0.1/128$ reference are between $6\times10^{-16}$ and $1.3\times10^{-14}$ at every step size
 from $0.05$ down to $0.0016$: the driven motion is reproduced to roundoff, the loop-closure
 constraints included, and no order can be measured. The double pendulum is the only genuine
@@ -1151,15 +1155,15 @@ has a resolution floor of $2\times10^{-14}$.}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}lllrllr@{}}
 \toprule
-$h$ & \multicolumn{3}{l}{single pendulum (driven, analytic reference)} & \multicolumn{3}{l}{double pendulum (free)} \\
-    & position & velocity & order & position & velocity & order \\
+$h$ & \multicolumn{3}{l}{driven single pendulum (analytic reference)} & \multicolumn{3}{l}{double pendulum (free)} \\
+    & position & orientation & order & position & velocity & order \\
 \midrule
-$0.1$      & $5.94\mathrm{e}{-10}$ & $2.43\mathrm{e}{-9}$  & 6.0 & $4.59\mathrm{e}{-5}$  & $1.56\mathrm{e}{-4}$  & 8.2 \\
-$0.05$     & $9.32\mathrm{e}{-12}$ & $3.83\mathrm{e}{-11}$ & 6.0 & $1.58\mathrm{e}{-7}$  & $1.85\mathrm{e}{-7}$  & 7.0 \\
-$0.025$    & $1.45\mathrm{e}{-13}$ & $9.49\mathrm{e}{-11}$ & --  & $1.24\mathrm{e}{-9}$  & $1.48\mathrm{e}{-9}$  & 6.0 \\
-$0.0125$   & $1.08\mathrm{e}{-14}$ & $6.77\mathrm{e}{-10}$ & --  & $1.93\mathrm{e}{-11}$ & $2.29\mathrm{e}{-11}$ & 6.0 \\
-$0.00625$  & $1.58\mathrm{e}{-14}$ & $3.73\mathrm{e}{-9}$  & --  & $3.10\mathrm{e}{-13}$ & $3.86\mathrm{e}{-13}$ & 3.8 \\
-$0.003125$ & $1.33\mathrm{e}{-15}$ & $1.05\mathrm{e}{-15}$ & --  & $2.29\mathrm{e}{-14}$ & $6.15\mathrm{e}{-14}$ & -- \\
+$0.1$ & $5.94\mathrm{e}{-10}$ & $3.85\mathrm{e}{-10}$ & 6.0 & $4.59\mathrm{e}{-5}$  & $1.56\mathrm{e}{-4}$  & 8.2 \\
+$0.05$ & $9.32\mathrm{e}{-12}$ & $5.97\mathrm{e}{-12}$ & 6.0 & $1.58\mathrm{e}{-7}$  & $1.85\mathrm{e}{-7}$  & 7.0 \\
+$0.025$ & $1.45\mathrm{e}{-13}$ & $9.36\mathrm{e}{-14}$ & -- & $1.24\mathrm{e}{-9}$  & $1.48\mathrm{e}{-9}$  & 6.0 \\
+$0.0125$ & $1.08\mathrm{e}{-14}$ & $5.95\mathrm{e}{-15}$ & -- & $1.93\mathrm{e}{-11}$ & $2.29\mathrm{e}{-11}$ & 6.0 \\
+$0.00625$ & $1.58\mathrm{e}{-14}$ & $9.40\mathrm{e}{-15}$ & -- & $3.10\mathrm{e}{-13}$ & $3.86\mathrm{e}{-13}$ & 3.8 \\
+$0.003125$ & $1.33\mathrm{e}{-15}$ & $1.55\mathrm{e}{-16}$ & -- & $2.29\mathrm{e}{-14}$ & $6.15\mathrm{e}{-14}$ & -- \\
 \midrule
  & \multicolumn{3}{l}{four-link (driven loop)} & \multicolumn{3}{l}{slider-crank (driven loop)} \\
  & position & velocity & & position & velocity & \\
@@ -1170,8 +1174,9 @@ $0.05$--$0.0016$ & $0.9$--$1.3\mathrm{e}{-14}$ & $1.5$--$4.0\mathrm{e}{-14}$ & -
 \end{table}
 
 \paperfig{\figpath/e4_benchmarks.png}
-{\method{} on the four benchmark mechanisms over $T=1$. The three driven mechanisms are reproduced at
-roundoff for every step size; the double pendulum shows the sixth order.}
+{\method{} on the four benchmark mechanisms over $T=1$. The driven single pendulum shows the
+reconstruction error (order six) down to roundoff, the two driven loops are at roundoff for every
+step size, and the double pendulum shows the sixth order of the method.}
 {fig:e4}
 
 \subsection{Comparison with the public absolute-coordinate codes}

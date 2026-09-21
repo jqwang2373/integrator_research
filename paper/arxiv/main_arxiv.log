@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 12:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 13:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,36 +583,39 @@ Package pdftex.def Info: ./Figure_5_e3_friction_sweep.png  used on input line 1
 <./Figure_6_mechanisms.png, id=531, 356.4225pt x 337.041pt>
 File: ./Figure_6_mechanisms.png Graphic file (type png)
 <use ./Figure_6_mechanisms.png>
-Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1134.
+Package pdftex.def Info: ./Figure_6_mechanisms.png  used on input line 1138.
 (pdftex.def)             Requested size: 452.9679pt x 428.35101pt.
 <./Figure_7_e4_benchmarks.png, id=534, 462.528pt x 404.712pt>
 File: ./Figure_7_e4_benchmarks.png Graphic file (type png)
 <use ./Figure_7_e4_benchmarks.png>
-Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1169.
+Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1174.
 
 (pdftex.def)             Requested size: 452.9679pt x 396.36804pt.
  [18 <./Figure_5_e3_friction_sweep.png>]
+
+LaTeX Warning: Text page 19 contains only floats.
+
 [19 <./Figure_6_mechanisms.png>]
 <./Figure_8_e5_double_pendulum.png, id=555, 462.528pt x 252.945pt>
 File: ./Figure_8_e5_double_pendulum.png Graphic file (type png)
 <use ./Figure_8_e5_double_pendulum.png>
 Package pdftex.def Info: ./Figure_8_e5_double_pendulum.png  used on input line 
-1232.
+1237.
 (pdftex.def)             Requested size: 452.9679pt x 247.73003pt.
  [20 <./Figure_7_e4_benchmarks.png>]
-<./Figure_9_e6_regular_branch.png, id=563, 462.528pt x 216.81pt>
+<./Figure_9_e6_regular_branch.png, id=562, 462.528pt x 216.81pt>
 File: ./Figure_9_e6_regular_branch.png Graphic file (type png)
 <use ./Figure_9_e6_regular_branch.png>
 Package pdftex.def Info: ./Figure_9_e6_regular_branch.png  used on input line 1
-253.
+258.
 (pdftex.def)             Requested size: 452.9679pt x 212.34001pt.
  [21 <./Figure_8_e5_double_pendulum.png>] [22 <./Figure_9_e6_regular_branch.png
 >] [23]
-[24]
+[24] [25]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 1508.
- [25] [26] [27]
-Underfull \hbox (badness 1552) in paragraph at lines 1709--1713
+(Font)              <9> on input line 1513.
+ [26] [27]
+Underfull \hbox (badness 1552) in paragraph at lines 1714--1718
 []\T1/lmr/m/n/10.95 V. Wie-loch, M. Arnold, BDF in-te-gra-tors for con-strained
  me-chan-i-cal sys-tems on
  []
@@ -628,11 +631,11 @@ Package rerunfilecheck Info: File `main_arxiv.out' has not changed.
 Here is how much of TeX's memory you used:
  11783 strings out of 467159
  181656 string characters out of 5404997
- 630833 words of memory out of 5000000
+ 630921 words of memory out of 5000000
  40670 multiletter control sequences out of 15000+600000
  696931 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,12n,79p,622b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,12n,79p,622b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler
 /eufm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/l
 mbx10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmb
@@ -658,7 +661,7 @@ nts/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/font
 s/type1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_arxiv.pdf (30 pages, 1401877 bytes).
+Output written on main_arxiv.pdf (30 pages, 1396591 bytes).
 PDF statistics:
  836 PDF objects out of 1000 (max. 8388607)
  723 compressed objects within 8 object streams

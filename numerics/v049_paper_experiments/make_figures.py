@@ -91,13 +91,18 @@ def fig_e3(d: dict) -> None:
 
 def fig_e4(d: dict) -> None:
     fig, axes = plt.subplots(2, 2, figsize=(W, 5.6))
-    titles = {"single_pendulum": "driven single pendulum (analytic reference)", "double_pendulum": "double pendulum ($h_{\\rm ref}=0.1/128$)",
+    titles = {"single_pendulum": "driven single pendulum (reconstruction only)", "double_pendulum": "double pendulum ($h_{\\rm ref}=0.1/128$)",
               "four_link": "four-link loop (driven)", "slider_crank": "slider-crank (driven)"}
     for ax, model in zip(axes.ravel(), titles):
         rows = [r for r in d["rows"] if r["model"] == model and r.get("status", "ok") in ("ok", "") and not r.get("is_floor_row")]
         hs = np.array([r["h"] for r in rows])
-        keys = ["final_position", "final_velocity"] if model.endswith("pendulum") else ["linf_position", "linf_velocity"]
-        for k, lab, mk in zip(keys, ("position", "velocity"), ("o", "^")):
+        if model == "single_pendulum":
+            keys, labs = ["final_position", "final_orientation"], ("position", "orientation")
+        elif model == "double_pendulum":
+            keys, labs = ["final_position", "final_velocity"], ("position", "velocity")
+        else:
+            keys, labs = ["linf_position", "linf_velocity"], ("position", "velocity")
+        for k, lab, mk in zip(keys, labs, ("o", "^")):
             ax.loglog(hs, [r[k] for r in rows], marker=mk, label=lab)
         if model == "double_pendulum":
             slope_line(ax, hs, rows[-1][keys[0]], hs[-1], 6, label="slope 6")

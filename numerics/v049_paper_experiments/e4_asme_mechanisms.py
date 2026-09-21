@@ -3,7 +3,10 @@
 
 * single pendulum (kinematically driven, theta(t) = pi/2 + pi/4 cos 2t): the absolute-coordinate
   FullVA harness `run_v047.integrate_asme_single_driven_absolute_fullva`; errors are against the
-  analytic state, so no reference run and no Richardson floor are needed;
+  analytic state, so no reference run and no Richardson floor are needed.  Its predictor is built
+  from the analytic drive, so only the position/orientation errors (Gauss-weight reconstruction,
+  order six down to roundoff) are meaningful; the velocity errors sit at the roundoff level set by
+  the conditioning of the driven stage Jacobian and carry no h-dependence;
 * double pendulum: the v029 double-revolute FullVA harness (`integrate_v029_asme_double_trajectory`,
   method `double_revolute_gauss6_fullva`), errors on the recorded world-frame trajectories against
   the h_ref = 0.1/128 run (the 0.1/64 run gives the Richardson floor).  The v029 module is loaded
