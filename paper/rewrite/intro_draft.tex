@@ -1,0 +1,87 @@
+% Draft introduction for the rewritten manuscript (2026-09-20). Plain elsarticle body text; no
+% new macros beyond \method{} and \tfe{} from the current preamble.
+
+\section{Introduction}
+
+Multibody systems with lower-pair joints are most conveniently modelled in absolute coordinates:
+each body carries its own position and rotation, and every joint contributes algebraic constraints.
+The price is an index-3 differential-algebraic system on a Lie group, and the integrator has to keep
+three things consistent at once: the constraints at position level, their time derivatives at
+velocity and acceleration level, and the rotation group structure of the configuration. Methods
+that enforce only the position constraints let the velocity and acceleration constraints drift;
+methods that stabilize them by projection or index reduction change the equations that are being
+solved; and methods that integrate a reduced set of joint coordinates require the reduced equations
+of motion, which are mechanism-specific to derive and lose the direct access to reaction forces
+that the absolute formulation provides.
+
+Time finite elements on Lie groups~\cite{chaturvedi2026tfe} have recently shown that high order is
+attainable for frictional index-3 pendulum problems, and the absolute-coordinate formulations of
+Negrut and co-workers~\cite{taves2020exponential,kissel2021dwelling,kissel2022absolute,fang2023halfimplicit}
+have established a public benchmark suite of four mechanisms on which such methods can be compared.
+What has been missing is a method of order higher than four for the full index-3 problem in
+absolute coordinates whose order can actually be proved rather than observed, and whose proof
+survives the details that implementations add: acceleration-level constraint rows, Lagrange
+multipliers as stage unknowns, a Newton solver with a finite tolerance, and an endpoint
+reconstruction through the exponential map.
+
+This paper studies such a method, \method{}. Its one-step map solves a single square nonlinear
+system in which the three-stage Gauss collocation conditions for the joint coordinates, the joint
+constraints at position, velocity and acceleration level, and the Newton--Euler balance at every
+stage appear as rows (Section~\ref{sec:method}); the rotational endpoint is then reconstructed from
+the Gauss quadrature of the body angular velocities through the exponential map. The stage system
+has $132$ rows for the two-body chain used throughout, and it is the same system for the four
+benchmark mechanisms up to the joint list.
+
+The central result is algebraic. We show that the lifted reduced Gauss stage, that is, the stage
+vector obtained by taking the three-stage Gauss collocation solution of the reduced joint-coordinate
+equations of motion and lifting it to absolute coordinates, makes every one of the $132$ rows
+vanish, and conversely that any root of the non-dynamic rows on the regular branch is such a lift
+(Lemma~\ref{lem:exact-stage-identity}). The implemented method is therefore reduced Gauss
+collocation, executed in absolute coordinates without ever forming the reduced equations, and the
+classical sixth-order theory of Gauss collocation applies to it verbatim. Everything that the
+implementation adds on top of the reduced collocation step, namely the endpoint closure of the
+velocity-level constraints and the inexact Newton solve, is a perturbation whose size we bound
+explicitly. The resulting local error bound (Theorem~\ref{thm:g6fullva-order}) is
+$C_{\rm loc}h^7 = (C_G + C_E + C_N c_\eta)h^7$, and its only standing hypothesis is the smoothness
+of the constrained problem on a compact neighbourhood of the trajectory: the uniform invertibility
+of the stage Jacobian and the reachability of the $c_\eta h^7$ solver tolerance follow from
+smoothness for $h\le h_0$ (Lemmas~\ref{lem:p2-from-p1} and~\ref{lem:newton-envelope}). We quantify
+$h_0$ on the benchmark and find that it is set by the curvature of the friction law, not by the
+collocation structure.
+
+The algebraic identities and the perturbation lemmas are machine-checked in Lean~4 with Mathlib:
+the row identities are proved for a transcription of the implemented residual, the perturbation
+chain is proved with its explicit constants, and the Gauss tableau is shown to satisfy Butcher's
+simplifying assumptions $B(6)$, $C(3)$, $D(3)$ and to fail $B(7)$. Butcher's order theorem and the
+classical Gauss local-error estimate enter as cited results. The development ships with the paper
+(Appendix~\ref{app:lean}).
+
+Numerically, the method is sixth order on a frictional two-body chain over a full period for six
+step sizes (Section~\ref{sec:numerical}), sixth order on the four benchmark mechanisms including
+the two closed loops, and its sixth-order cost is repaid in work/precision terms against the
+lower-order members of the same Gauss family and against the public absolute-coordinate baseline.
+A sweep of the friction regularization locates the regime in which a sharp Stribeck law reduces the
+observed order on coarse grids, and the long-time behaviour of the constraint norms and of the
+invariants of the frictionless variant is reported. What we do not do is reproduce the temporal
+finite-element method of~\cite{chaturvedi2026tfe} on its own problems; the comparison with that
+method is at the level of formal order and is stated as such.
+
+\paragraph{Contributions}
+\begin{enumerate}
+  \item The exact stage identity: the FullVA stage system with acceleration-level constraints is
+  reduced three-stage Gauss collocation lifted to absolute coordinates, in both directions.
+  \item A sixth-order local and global error theorem for the implemented one-step map under a
+  smoothness assumption alone, with the solver and inverse interfaces derived and the small-step
+  threshold quantified.
+  \item A Lean~4/Mathlib development of $57$ theorems covering the row identities, the perturbation
+  chain with explicit constants, and the tableau order conditions.
+  \item Sixth-order convergence, work/precision, friction-regime and long-time results on a
+  frictional chain and on the four public benchmark mechanisms, all generated from a single
+  implementation path and reproducible from the accompanying repository.
+\end{enumerate}
+
+Section~\ref{sec:related} reviews Lie-group and index-3 integrators for multibody systems.
+Section~\ref{sec:setting} fixes the setting and notation. Section~\ref{sec:method} defines the
+one-step map. Section~\ref{sec:order} contains the identity, the perturbation lemmas and the
+theorem. Section~\ref{sec:numerical} reports the experiments, Section~\ref{sec:limitations} the
+limitations, and Section~\ref{sec:conclusions} concludes.
