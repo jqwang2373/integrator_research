@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -593,12 +593,12 @@ Package pdftex.def Info: ./Figure_7_e4_benchmarks.png  used on input line 1169.
 (pdftex.def)             Requested size: 452.9679pt x 396.36804pt.
  [18 <./Figure_5_e3_friction_sweep.png>]
 [19 <./Figure_6_mechanisms.png>]
-<./Figure_8_e5_double_pendulum.png, id=555, 462.528pt x 224.037pt>
+<./Figure_8_e5_double_pendulum.png, id=555, 462.528pt x 252.945pt>
 File: ./Figure_8_e5_double_pendulum.png Graphic file (type png)
 <use ./Figure_8_e5_double_pendulum.png>
 Package pdftex.def Info: ./Figure_8_e5_double_pendulum.png  used on input line 
 1232.
-(pdftex.def)             Requested size: 452.9679pt x 219.418pt.
+(pdftex.def)             Requested size: 452.9679pt x 247.73003pt.
  [20 <./Figure_7_e4_benchmarks.png>]
 <./Figure_9_e6_regular_branch.png, id=563, 462.528pt x 216.81pt>
 File: ./Figure_9_e6_regular_branch.png Graphic file (type png)
@@ -632,7 +632,7 @@ Here is how much of TeX's memory you used:
  40670 multiletter control sequences out of 15000+600000
  696931 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,12n,79p,622b,573s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,12n,79p,622b,575s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/euler
 /eufm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/l
 mbx10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/lm/lmb
@@ -658,7 +658,7 @@ nts/type1/public/lm/lmtt10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/font
 s/type1/public/lm/lmtt9.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb><c:/Users/jingquanw/texlive/2026/texmf-
 dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_arxiv.pdf (30 pages, 1404047 bytes).
+Output written on main_arxiv.pdf (30 pages, 1401877 bytes).
 PDF statistics:
  836 PDF objects out of 1000 (max. 8388607)
  723 compressed objects within 8 object streams

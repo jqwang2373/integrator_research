@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -412,12 +412,12 @@ File: figures/e4_benchmarks.png Graphic file (type png)
 Package pdftex.def Info: figures/e4_benchmarks.png  used on input line 1175.
 (pdftex.def)             Requested size: 390.0pt x 341.26495pt.
  [27] [28 <./figures/mechanisms.png>] [29 <./figures/e4_benchmarks.png>]
-<figures/e5_double_pendulum.png, id=135, 462.528pt x 224.037pt>
+<figures/e5_double_pendulum.png, id=135, 462.528pt x 252.945pt>
 File: figures/e5_double_pendulum.png Graphic file (type png)
 <use figures/e5_double_pendulum.png>
 Package pdftex.def Info: figures/e5_double_pendulum.png  used on input line 123
 8.
-(pdftex.def)             Requested size: 390.0pt x 188.9145pt.
+(pdftex.def)             Requested size: 390.0pt x 213.29059pt.
 
 [30 <./figures/e5_double_pendulum.png>]
 <figures/e6_regular_branch.png, id=140, 462.528pt x 216.81pt>
@@ -531,7 +531,7 @@ ti1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/cm-su
 per/sfti1200.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public
 /cm-super/sftt1000.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/
 public/cm-super/sftt1200.pfb>
-Output written on main_cmame.pdf (44 pages, 1438096 bytes).
+Output written on main_cmame.pdf (44 pages, 1435934 bytes).
 PDF statistics:
  308 PDF objects out of 1000 (max. 8388607)
  186 compressed objects within 2 object streams

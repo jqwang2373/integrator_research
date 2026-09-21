@@ -115,7 +115,7 @@ def fig_e5(d: dict) -> None:
     styles = {"Gauss6/FullVA": dict(marker="o", color="C3", lw=1.8), "2021 public rA": dict(marker="s", color="C0"),
               "2021 public rp": dict(marker="^", color="C1"), "2021 public reps": dict(marker="v", color="C2"),
               "2022 half-implicit rA": dict(marker="D", color="C4"), "2022 half-implicit rA_half": dict(marker="P", color="C5")}
-    fig, axes = plt.subplots(1, 2, figsize=(W, 3.1))
+    fig, axes = plt.subplots(1, 2, figsize=(W, 3.5))
     for method, st in styles.items():
         ok = [r for r in rows if r["method"] == method and r["status"] == "ok" and np.isfinite(r["pos_final_linf"]) and r["pos_final_linf"] > 0]
         if not ok:
@@ -125,8 +125,9 @@ def fig_e5(d: dict) -> None:
         axes[1].loglog(hs, [r["vel_final_linf"] for r in ok], label=method, **st)
     axes[0].set_xlabel("$h$"); axes[0].set_ylabel("final position error ($L^\\infty$)"); axes[0].set_title("double pendulum, $T=3$: position")
     axes[1].set_xlabel("$h$"); axes[1].set_ylabel("final velocity error ($L^\\infty$)"); axes[1].set_title("velocity")
-    axes[0].legend(loc="center left", fontsize=6.8, bbox_to_anchor=(0.02, 0.42))
-    fig.tight_layout(); fig.savefig(RESULTS / "E5_double_pendulum.png"); plt.close(fig)
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=7.5, frameon=False, bbox_to_anchor=(0.5, -0.01))
+    fig.tight_layout(rect=(0, 0.12, 1, 1)); fig.savefig(RESULTS / "E5_double_pendulum.png"); plt.close(fig)
 
 
 def fig_e6(d6: dict) -> None:
