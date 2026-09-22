@@ -40,6 +40,21 @@ cmd.exe /c "latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex"   # W
 * The incident list (Table 1) is reconstructed from the transcript and the ledger records of the
   final phase; it is complete for that phase only.
 
+## NAACL 2027 (checked 2026-09-21 against the CFP and the ARR policy pages)
+
+* Submissions go through ACL Rolling Review; the ARR deadline for the NAACL 2027 cycle is
+  **2026-10-12**, commitment 2026-12-23, notification 2027-02-10, camera-ready 2027-03-03,
+  conference 2027-06-01 to 05 (San Francisco).
+* Long papers: 8 pages of content in the review version, 9 in the final version; references,
+  the mandatory `Limitations` section, the optional `Ethical considerations` section and the
+  appendices do not count, provided they come after the conclusion.
+* The Responsible NLP Research Checklist must be filled in at submission; use of generative AI in
+  writing or coding must be disclosed there and detailed in the Acknowledgments (done in
+  `sections/11_ethics.tex`; keep that section in the review version, it does not reveal identity).
+* No anonymity period: non-anonymous preprints are allowed during review (anonymous submissions get
+  priority for borderline decisions). The theme track is "Language as a Medium for Agentic
+  Communication".
+
 ## Submission notes
 
 * Use the `review` option for an anonymous submission (line numbers, no author block); the
