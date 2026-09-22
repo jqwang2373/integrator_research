@@ -1,24 +1,21 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{Where the agent was reliable}
-Everything that ended in an artefact a machine could check. The Lean development has no gaps
-because Lean would not accept them. The tables match the result files because a validator reads
-both. The negative results survived because the directory structure made deleting them harder than
-keeping them.
-
-\paragraph{Where it was not}
-Everything that ended in a sentence. Incident~1 is the clearest: a manuscript that passed
-$162\,327$ checks and was, in the researcher's words, of poor quality; over three months the prose
-had become a transcript of checks the agent had itself proposed. Incident~4 is the subtler one: the agent saw an anomaly,
-produced an explanation of the right shape, and accepted it. Both are failures of judgment, not of
-capability; both were invisible to every mechanism except a person reading.
+\paragraph{Where the agent was reliable, and where not}
+It was reliable at everything that ended in an artefact a machine could check: the Lean
+development has no gaps because Lean would not accept them, the tables match the result files
+because a validator reads both, the negative results survived because the directory structure made
+deleting them harder than keeping them. It was unreliable at everything that ended in a sentence.
+Incident~1 is the clearest: a manuscript that passed $162\,327$ checks and was, in the researcher's
+words, poor, because the prose had become a transcript of checks the agent had itself proposed. Incident~4 is the subtler one: the agent saw an anomaly, produced an
+explanation of the right shape, and accepted it. Both are failures of judgment, invisible to every
+mechanism except a person reading.
 
 \paragraph{Design consequences}
 Three follow. First, every claim should be routed toward an artefact check: if a constant is
 asserted, write the experiment that measures it (Incident~7); if two descriptions of the same object
 exist, require them to agree (the theorem). Second, validators should check facts, not prose: the
 frozen ledger pinned phrases and shaped the paper; its replacement pins numbers to files. Third, the
-human's attention should be spent on outputs, not on process: the three human-caught incidents came
-from reading a page and looking at a figure, and none of the \nHuman{} messages that steered the program
-needed domain expertise beyond recognizing that something looked wrong.
+human's attention should be spent on outputs, not process: the human-caught incidents came from
+reading a page and looking at a figure, and none of the \nHuman{} messages needed expertise beyond
+recognizing that something looked wrong.

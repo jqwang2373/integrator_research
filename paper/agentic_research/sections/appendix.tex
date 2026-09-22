@@ -42,8 +42,8 @@ version plays in the record (its ``current role'' field in the machine-readable 
 
 \begin{table*}[t]
 \centering
-\scriptsize
-\begin{tabularx}{\textwidth}{P{0.05\linewidth}P{0.34\linewidth}Y}
+\scriptsize\setlength{\tabcolsep}{3pt}
+\begin{tabular}[t]{@{}p{0.025\textwidth}p{0.19\textwidth}p{0.245\textwidth}@{}}
 \toprule
 v & Method family & Role in the record \\
 \midrule
@@ -72,6 +72,12 @@ v & Method family & Role in the record \\
 023 & absolute-coordinate revolute Gauss DAE & full DAE; endpoint drift exposed \\
 024 & direct Lobatto full revolute DAE & node swap ruled out \\
 025 & projected absolute revolute DAE & projection repair: works, changes the method \\
+\bottomrule
+\end{tabular}\hfill
+\begin{tabular}[t]{@{}p{0.025\textwidth}p{0.19\textwidth}p{0.245\textwidth}@{}}
+\toprule
+v & Method family & Role in the record \\
+\midrule
 026 & stage pivot-velocity rows & non-projection closure, velocity level \\
 027 & stage velocity + acceleration rows & \textbf{FullVA}: the stage system kept \\
 028 & off-axis FullVA revolute & axis-torque stress test \\
@@ -97,7 +103,7 @@ v & Method family & Role in the record \\
 048 & cross-paper same-test harness & external comparison scaffold; 0/40 source-policy rows \\
 049 & paper experiments E1--E7 & the numerical section of the rewritten manuscript \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \caption{Version ledger (condensed from \texttt{validation/docs/version\_ledger.csv}).}
 \label{tab:ledger}
 \end{table*}
@@ -123,16 +129,104 @@ loaded at the start of every session.
 The \nHuman{} messages typed by the human (the other \nHarness{} user-role entries of the
 transcript are harness-generated: task notifications, command echoes, compaction summaries and
 image attachments; \nShell{} more are shell commands typed for the GitHub login), lightly
-paraphrased from Chinese and grouped. \emph{Goals} (11): can Lean prove the convergence
-order; install it; run the Lean check and report; continue and look for problems; tidy the Lean
+paraphrased from Chinese and grouped. \emph{Goals} (12): can Lean prove the convergence order;
+install it; run the Lean check and report; continue and look for problems; tidy the Lean
 development; make an arXiv version in a simple template; reorganize the folders; split the LaTeX
 out of the ledger; make a clean five-folder layout keeping only the best manuscript; read it again
-and find what else is wrong; write this paper. \emph{Approvals of the agent's own proposals} (9):
-``do as you said'' and variants, including the two approvals of the rewrite plan.
+and find what else is wrong; write this paper; keep fixing. \emph{Approvals of the agent's own
+proposals} (9): ``do as you said'' and variants, including the two approvals of the rewrite plan.
 \emph{Authorizations} (3): any permission including network access; push to GitHub as you see fit;
-run the external campaign. \emph{Decision} (1): option A for the benchmark horizon, against the
-agent's recommendation. \emph{Judgments} (3): the paper quality feels poor; the PDF does not look
-good, visualize the pages; why does the top-left panel of Figure~7 look strange.
-\emph{Questions} (6): what is this doing; what do you think is appropriate; what does that mean;
-what is still missing; what is the status; what else is there to do. \emph{Other} (3): an
-acknowledgment, ``continue'', and a report that the GitHub login had failed.
+run the external campaign. \emph{Decisions} (2): option A for the benchmark horizon, against the
+agent's recommendation; target NAACL rather than a machine-learning conference for this paper.
+\emph{Judgments} (4): the paper quality feels poor; the PDF does not look good, visualize the
+pages; why does the top-left panel of Figure~7 look strange; this paper's quality is very poor,
+the figures and the content are unclear. \emph{Questions} (6): what is this doing; what do you
+think is appropriate; what does that mean; what is still missing; what is the status; what else is
+there to do. \emph{Other} (3): an acknowledgment, ``continue'', and a report that the GitHub login
+had failed.
+
+\section{The incidents in full}
+\label{app:incidents}
+
+Table~\ref{tab:incidents_full} gives, for each incident of Table~\ref{tab:incidents}, the
+wrong statement, its cause, the detector and the resolution.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}P{0.02\linewidth}P{0.27\linewidth}P{0.25\linewidth}P{0.15\linewidth}Y@{}}
+\toprule
+\# & Wrong or misleading statement & Cause & Detected by & Resolution \\
+\midrule
+1 & The manuscript was sound but unreadable: hundreds of ``diagnostic'', ``non-claim'' and
+``boundary'' sentences. & Every validator-pinned phrase had been written to satisfy the pin. & H
+(``the paper quality feels poor'') & Full rewrite; ledger frozen; one number-checking validator. \\
+2 & Orientation error converged at order 2.2 while position, velocity and angular velocity
+converged at order 6.2. & Geodesic angle computed as $2\arccos(p\cdot q)$, whose resolution floor
+is $3\times10^{-8}$ rad. & C (one of four quantities disagreed) & Chord formula
+$2\arcsin(\lVert p\mp q\rVert/2)$; orientation order 6.28. \\
+3 & Reference runs on the chain failed at $h=0.1/256$ over $T=1$; the plan said $T=1$ and
+$T=20$. & The benchmark's frozen sliding direction degenerates at $t\approx0.6$,
+a modelling limit, not a solver failure. & A (Newton residual $6\times10^{5}$) then H (chose to
+keep the model and stop at $T=0.5$) & All chain experiments on $[0,0.5]$; limit stated in the
+paper. \\
+4 & Driven single pendulum: velocity error rose and fell erratically between $10^{-15}$ and
+$4\times10^{-9}$ while position showed order 6. & The harness's Newton predictor is the analytic
+solution and the stage Jacobian has condition number $10^{10}$--$10^{13}$; velocities carry
+amplified roundoff. & H (``why does the top-left panel look strange?'') & Velocity not reported for
+that mechanism; the panel labelled as a reconstruction check; mechanism explained. \\
+5 & The four ASME mechanisms were planned as four convergence tests. & Three of the four are
+kinematically driven; their motion is fixed by the drive. & A (errors at $10^{-14}$ for all $h$) &
+Only the double pendulum is a dynamics test; the others are consistency rows. \\
+6 & The public-code comparison at $T=3$ showed the public methods with $O(1)$ errors; suspicion of
+a model mismatch. & The double pendulum amplifies perturbations over $T=3$. & C (added a $T=0.1$
+alignment run: first-order decrease, same model) & Comparison kept with the alignment check
+reported. \\
+7 & ``The $h^7$-scaled stopping rule with $c_\eta=10^{4}$ covers the reported grids.'' & With the
+fixed tolerance $10^{-11}$, the accepted residual over $h^7$ reaches $10^{6}$ at the finest
+step. & A (purpose-built experiment E7) & Statement replaced by the measured ratios and a
+discussion of the pessimistic bound. \\
+8 & The single pendulum ``converges at order 6 with a floor'' was fitted over roundoff points,
+giving 3.6. & Fit used a zero floor for the analytic reference. & C & Roundoff floor $10^{-15}$;
+fit 6.0 over the resolved points. \\
+9 & ``All results generated from a single implementation path.'' & Four harnesses assemble the
+same stage system for four mechanisms. & C (self-review) & Reworded; assemblies listed. \\
+10 & After the rewrite the frozen ledger reported stale line counts and lost markers. & Its
+snapshot records pinned the sizes of scripts that had changed. & A (frozen validators) & Builder
+sequence rerun; both frozen chains green. \\
+\bottomrule
+\end{tabularx}
+\caption{The ten incidents of the final phase in full (Table~\ref{tab:incidents} of the main text is the condensed version). ``Detected by'' is the mechanism that first raised the
+problem; A = artefact check (validator or purpose-built experiment), C = agent cross-check, H =
+human judgment.}
+\label{tab:incidents_full}
+\end{table*}
+
+\section{Artefacts and cost of the checks}
+\label{app:cost}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+Versioned experiments & 49 \\
+Result files & 793 \\
+Python lines (all) & 356\,167 \\
+Lean files / lines / theorems & 10 / 1\,672 / 57 \\
+Manuscript & 44 pp., 51 refs \\
+Ledger scripts (builders / validators) & 341 (146 / 183) \\
+Ledger records (JSON / Markdown) & 171 / 186 \\
+Ledger checks (top-level / package) & 4\,896 / 162\,327 \\
+Manuscript validator checks & 359 \\
+Memory files & 11 \\
+\bottomrule
+\end{tabular}
+\caption{What the program produced (repository state at the end of the final phase).}
+\label{tab:artefacts}
+\end{table}
+
+The frozen ledger's two validation chains take about twenty minutes, the builder sequence that
+refreshes their snapshots ten, the new manuscript validator two seconds, and the Lean check under a
+minute once the Mathlib cache is present. The longest single computation was the $h=10^{-4}$
+double-pendulum reference over $T=3$ (1.6~h), computed once and cached.

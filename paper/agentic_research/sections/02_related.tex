@@ -5,27 +5,24 @@
 End-to-end systems generate ideas, run experiments and write papers
 \citep{lu2024aiscientist,yamada2025aiscientistv2,schmidgall2025agentlab,jansen2025codescientist},
 propose hypotheses for wet-lab science \citep{gottweis2025coscientist}, or drive laboratory
-automation \citep{boiko2023coscientist,bran2024chemcrow}. Their evaluations are typically many
-short projects judged by reviewers or by a rubric; the systems are the object of study and the
-science is the test bed. We invert this: one program of research is the object, the science is
-real (a method that did not exist before, with a proof), and the question is what process made
-its claims hold up. Program-search systems such as FunSearch and AlphaEvolve
+automation \citep{boiko2023coscientist,bran2024chemcrow}. Their evaluations are many short projects judged by
+reviewers or a rubric; the systems are the object of study and the science is the test bed. We
+invert this: one research program is the object, the science is real (a method that did not exist
+before, with a proof), and the question is what process made its claims hold up. Program-search systems such as FunSearch and AlphaEvolve
 \citep{romeraparedes2024funsearch,novikov2025alphaevolve} discover objects that an automatic
 evaluator scores; our setting has no scalar score, and the evaluators (validators, proofs,
 convergence orders) had to be built as part of the work. Studies of LLM-generated research ideas
-\citep{si2025ideas} measure novelty and feasibility at the idea stage; our concern is the long tail
-after the idea.
+\citep{si2025ideas} stop at the idea stage; our concern is the long tail after it.
 
 \paragraph{Agents for software engineering and ML engineering}
 Benchmarks such as SWE-bench, MLE-bench, MLAgentBench, ScienceAgentBench and PaperBench
 \citep{jimenez2024swebench,chan2025mlebench,huang2024mlagentbench,chen2025scienceagentbench,starace2025paperbench}
 measure agents on tasks with a known target and a fixed grader. The coding-agent interface we used
-\citep{yang2024sweagent,anthropic2025claudecode} is the same kind of tool; the difference is that
-the target moved as the program learned what was true, and that the grader had to be constructed
-and then itself frozen when it became stale (Section~\ref{sec:system}). Agent architectures that
-interleave reasoning and acting or reflect on failures \citep{yao2023react,shinn2023reflexion}
-describe the inner loop; we describe the outer scaffolding that a months-long program needed
-around that loop.
+\citep{yang2024sweagent,anthropic2025claudecode} is the same kind of tool; here the target moved as
+the program learned what was true, and the grader had to be constructed and later frozen when it
+became stale (Section~\ref{sec:system}). Architectures that interleave reasoning and acting or
+reflect on failures \citep{yao2023react,shinn2023reflexion} describe the inner loop; we describe
+the outer scaffolding a months-long program needed around it.
 
 \paragraph{Machine-checked mathematics}
 Language models prove theorems in Lean and other systems
@@ -34,10 +31,4 @@ Our use is different in kind: the agent used Lean~4 with Mathlib \citep{demoura2
 as an instrument to check its own analysis of its own code, transcribing the implemented residual
 into Lean and proving that a specific 132-row system vanishes at a specific point. The
 formalization did not produce the mathematics; it produced the confidence that the informal
-argument, written by the same agent, had no gap, and it forced the hypotheses of the theorem to be
-stated in a form that could be discharged.
-
-\paragraph{Numerical analysis of constrained multibody systems}
-The domain itself has a long literature on Lie-group integrators and index-3 differential-algebraic
-equations \citep{munthekaas1998rk,bruls2012lie,hairer1996solving,kissel2022absolute,fang2023halfimplicit,chaturvedi2026tfe};
-the companion manuscript \citep{wang2026gauss6} reviews it.
+argument, written by the same agent, had no gap.

@@ -17,6 +17,7 @@
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{placeins}
+\usepackage{float}
 \usepackage{xcolor}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
@@ -54,8 +55,7 @@ validators that pin every claim to an artefact, a proof sandbox, persistent cros
 explicit command boundaries, and a manuscript pipeline that checks every table entry against its
 result file. We document ten incidents in which a wrong claim was caught and by what: four by
 validators or purpose-built experiments, four by the agent's own cross-checks, two only by the human
-reading the output. The human typed \nHuman{} messages in the final four-day session against
-\nTools{} agent tool calls; the messages that mattered were judgments of taste, scope and fairness
+reading the output. The human typed \nHuman{} messages in the final session against \nTools{} agent tool calls; the messages that mattered were judgments of taste, scope and fairness
 rather than instructions. We release the repository, the ledger and the transcript.
 \end{abstract}
 
@@ -75,6 +75,7 @@ rather than instructions. We release the repository, the ledger and the transcri
 
 \appendix
 \raggedbottom
+\renewcommand{\dbltopfraction}{0.95}\renewcommand{\dblfloatpagefraction}{0.85}\setcounter{dbltopnumber}{3}
 \input{sections/appendix}
 
 \end{document}

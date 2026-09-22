@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  21 SEP 2026 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  22 SEP 2026 00:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,46 +436,54 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 )
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count323
+\float@exts=\toks33
+\float@box=\box58
+\@float@everytoks=\toks34
+\@floatcapt=\box59
+)
 (./stats.tex)
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdfte
 x.def
 File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count323
+\l__color_backend_stack_int=\count324
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count324
+\scratchcounter=\count325
 \scratchdimen=\dimen259
-\scratchbox=\box58
-\nofMPsegments=\count325
-\nofMParguments=\count326
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count327
+\scratchbox=\box60
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count328
 \MPscratchDim=\dimen260
-\MPnumerator=\count328
-\makeMPintoPDFobject=\count329
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks36
 )
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-bas
 e.sty
@@ -523,20 +531,21 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 39.
+Package hyperref Info: Link coloring ON on input line 40.
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 39.
-Package microtype Info: Applying patch `item' on input line 39.
-Package microtype Info: Applying patch `toc' on input line 39.
-Package microtype Info: Applying patch `eqnum' on input line 39.
-Package microtype Info: Applying patch `footnote' on input line 39.
-Package microtype Info: Applying patch `verbatim' on input line 39.
-LaTeX Info: Redefining \microtypesetup on input line 39.
+LaTeX Info: Redefining \microtypecontext on input line 40.
+Package microtype Info: Applying patch `item' on input line 40.
+Package microtype Info: Applying patch `toc' on input line 40.
+Package microtype Info: Applying patch `eqnum' on input line 40.
+Package microtype Info: Applying patch `footnote' on input line 40.
+Package microtype Info: Applying patch `verbatim' on input line 40.
+LaTeX Info: Redefining \microtypesetup on input line 40.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -555,21 +564,21 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 40
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 41
 .
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 40.
+(Font)              scaled to size 12.0pt on input line 41.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 (./sections/01_intro.tex
-Underfull \hbox (badness 1048) in paragraph at lines 15--24
+Underfull \hbox (badness 1048) in paragraph at lines 15--25
 []\T1/ptm/m/n/10.95 (+20) This pa-per is a lon-gi-tu-di-nal case study of
  []
 
@@ -580,17 +589,24 @@ ers/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}
 
 
 ]) (./sections/02_related.tex) (./sections/03_problem.tex
+<figures/fig_problem.png, id=138, 504.2475pt x 178.3755pt>
+File: figures/fig_problem.png Graphic file (type png)
+<use figures/fig_problem.png>
+Package pdftex.def Info: figures/fig_problem.png  used on input line 6.
+(pdftex.def)             Requested size: 455.24411pt x 161.04816pt.
+
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 7.
-
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 14
+.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -598,7 +614,8 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
+
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -607,32 +624,65 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 [2]) (./sections/04_system.tex
-<figures/fig_pipeline.png, id=220, 384.0165pt x 198.0855pt>
-File: figures/fig_pipeline.png Graphic file (type png)
-<use figures/fig_pipeline.png>
-Package pdftex.def Info: figures/fig_pipeline.png  used on input line 12.
-(pdftex.def)             Requested size: 418.82375pt x 216.04794pt.
+<figures/fig_process.png, id=206, 411.939pt x 167.2065pt>
+File: figures/fig_process.png Graphic file (type png)
+<use figures/fig_process.png>
+Package pdftex.def Info: figures/fig_process.png  used on input line 6.
+(pdftex.def)             Requested size: 455.24411pt x 184.78241pt.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.95pt on input line 20.
- [3] [4 <./figures/fig_pipeline.png>])
-(./sections/05_trajectory.tex
-<figures/fig_versions.png, id=247, 476.982pt x 260.172pt>
-File: figures/fig_versions.png Graphic file (type png)
-<use figures/fig_versions.png>
-Package pdftex.def Info: figures/fig_versions.png  used on input line 6.
-(pdftex.def)             Requested size: 418.82375pt x 228.45183pt.
-) (./sections/06_incidents.tex
-Underfull \vbox (badness 5288) has occurred while \output is active []
+(Font)              scaled to size 10.95pt on input line 24.
 
- [5])
-(./sections/07_quant.tex [6 <./figures/fig_versions.png>]
-<figures/fig_session.png, id=273, 476.982pt x 169.8345pt>
+Underfull \hbox (badness 2980) in paragraph at lines 24--32
+ []\T1/ptm/b/n/10.95 (+20) Versioned ex-plo-ration tree[] \T1/ptm/m/n/10.95 (+2
+0) Ev-ery hy-poth-e-
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 24--32
+\T1/ptm/m/n/10.95 (+20) sis about the method got its own di-rec-tory
+ []
+
+[3 <./figures/fig_problem.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 50--57
+ []\T1/ptm/b/n/10.95 (+20) Proof sand-box[] \T1/ptm/m/n/10.95 (+20) The anal-y-
+sis lives in a
+ []
+
+
+Underfull \hbox (badness 2799) in paragraph at lines 50--57
+\T1/ptm/m/n/10.95 (+20) Lean 4/Math-lib project out-side the work-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--76
+ []\T1/ptm/b/n/10.95 (+20) Command and au-tho-riza-tion bound-aries[]
+ []
+
+[4 <./figures/fig_process.png>]) (./sections/05_trajectory.tex
+<figures/fig_tree.png, id=237, 497.6775pt x 266.742pt>
+File: figures/fig_tree.png Graphic file (type png)
+<use figures/fig_tree.png>
+Package pdftex.def Info: figures/fig_tree.png  used on input line 6.
+(pdftex.def)             Requested size: 455.24411pt x 244.00548pt.
+)
+(./sections/06_incidents.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+<figures/fig_incidents.png, id=260, 500.9625pt x 158.0085pt>
+File: figures/fig_incidents.png Graphic file (type png)
+<use figures/fig_incidents.png>
+Package pdftex.def Info: figures/fig_incidents.png  used on input line 38.
+(pdftex.def)             Requested size: 455.24411pt x 143.59505pt.
+)
+(./sections/07_quant.tex [6 <./figures/fig_tree.png>]
+<figures/fig_session.png, id=276, 490.122pt x 197.4285pt>
 File: figures/fig_session.png Graphic file (type png)
 <use figures/fig_session.png>
-Package pdftex.def Info: figures/fig_session.png  used on input line 27.
-(pdftex.def)             Requested size: 418.82375pt x 149.12828pt.
-)
-(./sections/08_discussion.tex [7]) (./sections/09_conclusion.tex)
+Package pdftex.def Info: figures/fig_session.png  used on input line 6.
+(pdftex.def)             Requested size: 455.24411pt x 183.38669pt.
+ [7 <./figures/fig_incidents.png>]) (./sections/08_discussion.tex) (./sections/
+09_conclusion.tex)
 (./sections/10_limitations.tex) (./sections/11_ethics.tex [8 <./figures/fig_ses
 sion.png>]) (./main.bbl
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
@@ -662,27 +712,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--222
 [][]$\T1/zi4/m/n/10 https : / / github . com / jqwang2373 / integrator _
  []
 
-[10]) (./sections/appendix.tex)
-Underfull \hbox (badness 1062) in paragraph at lines 123--79
+[10]) (./sections/appendix.tex
+Underfull \hbox (badness 3386) in paragraph at lines 53--53
+[]|\T1/ptm/m/n/7 (+20) Yoshida-composed Lie mid-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
+[]|\T1/ptm/m/n/7 (+20) absolute-coordinate Gauss
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--57
+[]|\T1/ptm/m/n/7 (+20) endpoint-constrained Gauss
+ []
+
+
+Underfull \hbox (badness 5302) in paragraph at lines 63--63
+[]|\T1/ptm/m/n/7 (+20) Gauss4 vs Gauss6 fric-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]|\T1/ptm/m/n/7 (+20) revolute Brown--McPhee
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--72
+[]|\T1/ptm/m/n/7 (+20) absolute-coordinate rev-o-lute
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 73--73
+[]|\T1/ptm/m/n/7 (+20) direct Lo-batto full rev-o-lute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+[]|\T1/ptm/m/n/7 (+20) projected ab-so-lute rev-o-lute
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
+[]|\T1/ptm/m/n/7 (+20) two-body cylin-dri-cal chain
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 103--104
+[]|\T1/ptm/m/n/7 (+20) external com-par-i-son scaf-fold; 0/40
+ []
+
+
+Underfull \hbox (badness 1062) in paragraph at lines 129--147
 \T1/ptm/m/n/10.95 (+20) lo-gin), lightly para-phrased from Chi-nese and
  []
 
-[11] [12] [13] (./main.aux)
+) [11] [12
+
+] [13] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 85D86E1A6FF69F60AF26588391137153;3095.
+(rerunfilecheck)             Checksum: 55896233B33334277407C1B89D68191A;2315.
  ) 
 Here is how much of TeX's memory you used:
- 15663 strings out of 467159
- 252971 string characters out of 5404997
- 739710 words of memory out of 5000000
- 44189 multiletter control sequences out of 15000+600000
- 689597 words of font info for 346 fonts, out of 8000000 for 9000
+ 15747 strings out of 467159
+ 254396 string characters out of 5404997
+ 762015 words of memory out of 5000000
+ 44258 multiletter control sequences out of 15000+600000
+ 689987 words of font info for 355 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,11n,93p,1001b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,12n,93p,1272b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/In
 consolata-zi4r.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/typ
@@ -699,15 +801,14 @@ s/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:
 pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy5.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy7.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/f
-onts/type1/urw/times/utmb8a.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts
-/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (13 pages, 503148 bytes).
+amsfonts/cm/cmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/u
+rw/times/utmb8a.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on main.pdf (13 pages, 802495 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 453 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 56480 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 519 PDF objects out of 1000 (max. 8388607)
+ 450 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 56458 words of extra memory for PDF output out of 61914 (max. 10000000)
 

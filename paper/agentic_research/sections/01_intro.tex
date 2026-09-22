@@ -18,33 +18,25 @@ program was a high-order time integrator for constrained multibody systems model
 coordinates on a Lie group. Its outcome is a method, \method{}, with an exact algebraic identity at
 its core, a sixth-order error theorem whose algebra and perturbation lemmas are machine-checked in
 Lean~4, and a numerical study on a frictional chain and on the four public ASME benchmark
-mechanisms; that result is reported in a companion manuscript \citep{wang2026gauss6}. Here we
+mechanisms; that result is reported in a companion manuscript \citep{wang2026gauss6} and
+summarized for a general reader in Figure~\ref{fig:problem}. Here we
 report on the process: what the agent did, how the work was organized so that its claims could be
 trusted, what went wrong, what caught it, and what the human actually contributed.
 
-We make four contributions.
-\begin{enumerate}
-  \item \textbf{A documented instance of agentic research with a non-trivial result.} The 49
-  versioned experiments, the 341 ledger scripts, the Lean development and the manuscript are
-  released with the session transcript of the final phase, so that the process can be inspected
-  rather than described.
-  \item \textbf{A process architecture} (Section~\ref{sec:system}) of six components that together
-  kept the program honest: a versioned exploration tree, an evidence ledger of builders and
-  validators with claim gates, a proof sandbox, persistent memory, command and authorization
-  boundaries, and a manuscript pipeline whose validator checks every printed number against its
-  result file.
-  \item \textbf{A trajectory analysis} (Section~\ref{sec:trajectory}) of how the method emerged:
-  which hypotheses were rejected and why, and how an audit of the manuscript against the code
-  produced the central theorem.
-  \item \textbf{An incident analysis} (Section~\ref{sec:incidents}) of ten wrong or misleading
-  claims that arose during the program, classified by what detected them. Validators and
-  purpose-built experiments caught four, the agent's own cross-checks four, and the human two,
-  both by looking at a figure or a page and saying that it looked wrong; one more needed a human
-  decision after an experiment had failed.
-\end{enumerate}
+We make four contributions. (1)~\textbf{A documented instance} of agentic research with a
+non-trivial result: the 49 versioned experiments, the 341 ledger scripts, the Lean development,
+the manuscript and the transcript of the final phase are released, so the process can be inspected
+rather than described. (2)~\textbf{A process architecture} (Section~\ref{sec:system}) of six
+components that kept the program honest, from a versioned exploration tree to a manuscript
+pipeline whose validator checks every printed number against its result file.
+(3)~\textbf{A trajectory analysis} (Section~\ref{sec:trajectory}) of how the method emerged:
+which hypotheses were rejected and why, and how an audit of the manuscript against the code
+produced the central theorem. (4)~\textbf{An incident analysis} (Section~\ref{sec:incidents}) of
+ten wrong or misleading claims, classified by what detected them: validators and purpose-built
+experiments caught four, the agent's own cross-checks four, and the human two, both by looking at
+a page or a figure and saying that it looked wrong.
 
 Our reading of the evidence is that the agent was reliable at what can be checked mechanically and
-unreliable at what cannot: it proved, ran, measured and cross-referenced without fatigue, and it
-overclaimed, over-hedged and mistook artefacts for results whenever the only check was judgment.
-The design consequence is not to keep the human in every loop but to build loops that end in an
-artefact a machine can check, and to route the residual judgments, which are few, to the human.
+unreliable at what cannot, and that the design consequence is not to keep the human in every loop
+but to build loops that end in an artefact a machine can check, routing the few residual
+judgments to the human.

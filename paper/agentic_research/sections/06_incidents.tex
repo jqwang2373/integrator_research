@@ -1,90 +1,83 @@
 \section{Incidents: wrong claims and what caught them}
 \label{sec:incidents}
 
-We recorded every case during the final phase in which a statement that had been written or was
-about to be written turned out to be wrong or misleading. Table~\ref{tab:incidents} lists them with
-the mechanism that detected each. We group the mechanisms into three kinds: \emph{artefact
-checks} (a validator or an experiment built to test the statement), \emph{agent cross-checks} (the
-agent noticing an inconsistency between two things it had itself produced), and \emph{human
-judgment} (the researcher looking at the output and objecting).
+We recorded every case during the final phase in which a written or about-to-be-written statement
+turned out to be wrong or misleading. Table~\ref{tab:incidents} lists the ten with what detected
+each; Figure~\ref{fig:incidents} shows four of them as the agent saw them and as they were. The
+detectors are of three kinds: \emph{artefact checks} (a validator or an experiment built to test
+the statement), \emph{agent cross-checks} (an inconsistency between two things the agent had itself
+produced), and \emph{human judgment} (the researcher looking at the output and objecting).
 
-\begin{table*}[t]
+\begin{table}[t]
 \centering
 \scriptsize
-\begin{tabularx}{\textwidth}{@{}P{0.02\linewidth}P{0.27\linewidth}P{0.25\linewidth}P{0.15\linewidth}Y@{}}
+\begin{tabularx}{\columnwidth}{@{}P{0.03\columnwidth}YP{0.14\columnwidth}@{}}
 \toprule
-\# & Wrong or misleading statement & Cause & Detected by & Resolution \\
+\# & Wrong or misleading statement & Caught by \\
 \midrule
-1 & The manuscript was sound but unreadable: hundreds of ``diagnostic'', ``non-claim'' and
-``boundary'' sentences. & Every validator-pinned phrase had been written to satisfy the pin. & H
-(``the paper quality feels poor'') & Full rewrite; ledger frozen; one number-checking validator. \\
-2 & Orientation error converged at order 2.2 while position, velocity and angular velocity
-converged at order 6.2. & Geodesic angle computed as $2\arccos(p\cdot q)$, whose resolution floor
-is $3\times10^{-8}$ rad. & C (one of four quantities disagreed) & Chord formula
-$2\arcsin(\lVert p\mp q\rVert/2)$; orientation order 6.28. \\
-3 & Reference runs on the chain failed at $h=0.1/256$ over $T=1$; the plan said $T=1$ and
-$T=20$. & The benchmark's frozen sliding direction degenerates at $t\approx0.605$ ($n_1\cdot a_1\to0$),
-a modelling limit, not a solver failure. & A (Newton residual $6\times10^{5}$) then H (chose to
-keep the model and stop at $T=0.5$) & All chain experiments on $[0,0.5]$; limit stated in the
-paper. \\
-4 & Driven single pendulum: velocity error rose and fell erratically between $10^{-15}$ and
-$4\times10^{-9}$ while position showed order 6. & The harness's Newton predictor is the analytic
-solution and the stage Jacobian has condition number $10^{10}$--$10^{13}$; velocities carry
-amplified roundoff. & H (``why does the top-left panel look strange?'') & Velocity not reported for
-that mechanism; the panel labelled as a reconstruction check; mechanism explained. \\
-5 & The four ASME mechanisms were planned as four convergence tests. & Three of the four are
-kinematically driven; their motion is fixed by the drive. & A (errors at $10^{-14}$ for all $h$) &
-Only the double pendulum is a dynamics test; the others are consistency rows. \\
-6 & The public-code comparison at $T=3$ showed the public methods with $O(1)$ errors; suspicion of
-a model mismatch. & The double pendulum amplifies perturbations over $T=3$. & C (added a $T=0.1$
-alignment run: first-order decrease, same model) & Comparison kept with the alignment check
-reported. \\
-7 & ``The $h^7$-scaled stopping rule with $c_\eta=10^{4}$ covers the reported grids.'' & With the
-fixed tolerance $10^{-11}$, the accepted residual over $h^7$ reaches $10^{6}$ at the finest
-step. & A (purpose-built experiment E7) & Statement replaced by the measured ratios and a
-discussion of the pessimistic bound. \\
-8 & The single pendulum ``converges at order 6 with a floor'' was fitted over roundoff points,
-giving 3.6. & Fit used a zero floor for the analytic reference. & C & Roundoff floor $10^{-15}$;
-fit 6.0 over the resolved points. \\
-9 & ``All results generated from a single implementation path.'' & Four harnesses assemble the
-same stage system for four mechanisms. & C (self-review) & Reworded; assemblies listed. \\
-10 & After the rewrite the frozen ledger reported stale line counts and lost markers. & Its
-snapshot records pinned the sizes of scripts that had changed. & A (frozen validators) & Builder
-sequence rerun; both frozen chains green. \\
+1 & Manuscript sound but unreadable: hundreds of ``diagnostic'' and ``non-claim'' sentences. & H \\
+2 & Orientation error converged at order 2.2 while three other measures gave 6.2. & C \\
+3 & Chain reference runs failed at $T=1$; the plan asked for $T=1$ and $T=20$. & A, then H \\
+4 & Driven pendulum: velocity error wandered between $10^{-15}$ and $4\times10^{-9}$. & H \\
+5 & Four ASME mechanisms planned as four convergence tests; three are kinematically driven. & A \\
+6 & Public codes showed $O(1)$ errors at $T=3$; suspicion of a model mismatch. & C \\
+7 & ``The stopping rule with $c_\eta=10^4$ covers the reported grids.'' & A \\
+8 & Single-pendulum order fitted over roundoff points, giving 3.6. & C \\
+9 & ``All results generated from a single implementation path.'' & C \\
+10 & Frozen ledger reported stale line counts after the rewrite. & A \\
 \bottomrule
 \end{tabularx}
-\caption{Incidents in the final phase. ``Detected by'' is the mechanism that first raised the
-problem; A = artefact check (validator or purpose-built experiment), C = agent cross-check, H =
-human judgment.}
+\caption{The ten incidents of the final phase and what first caught each: A = artefact check
+(validator or purpose-built experiment), C = agent cross-check, H = human judgment. Causes and
+resolutions are in Table~\ref{tab:incidents_full} (Appendix~\ref{app:incidents}).}
 \label{tab:incidents}
-\end{table*}
+\end{table}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/fig_incidents.png}
+  \caption{Four incidents, drawn from the result files. (a)~Incident~2: the first orientation-error
+  formula, $2\arccos(p\cdot q)$, cannot resolve angles below $3\times10^{-8}$ in double precision,
+  so the measured error flattened there and fitted order 2.2 (red: that floor applied to the
+  corrected data); the chord formula fits 6.3. (b)~Incident~3: the factor
+  $n_1\cdot a_1(q)$ that multiplies the benchmark's sliding row, along the trajectory; it changes
+  sign at $t\approx0.58$, after which the row degenerates and Newton fails. The plan had asked for
+  $T=1$ and $T=20$; all chain experiments now stop at $T=0.5$. (c)~Incident~4: on the driven
+  pendulum the position error falls at order six to roundoff while the velocity error wanders
+  between $10^{-15}$ and $4\times10^{-9}$ with no trend in $h$; the harness starts Newton at the
+  exact solution and its Jacobian is ill-conditioned by ten to thirteen orders, so the velocity
+  numbers are amplified roundoff. (d)~Incident~7: the manuscript claimed that the accepted Newton
+  residual is at most $10^{4}h^7$; the experiment written to measure it found $10^{6.1}$ at the
+  finest step.}
+  \label{fig:incidents}
+\end{figure*}
 
 \paragraph{What the artefact checks caught}
 Incidents 3, 5, 7 and 10 were caught by things that fail loudly: a Newton solve that does not
-converge, a table full of $10^{-14}$, a purpose-built measurement, a validator. Incident~7 is the
-instructive one. The analysis section stated that the fixed-tolerance runs satisfy the solver
-hypothesis with a modest constant; the agent wrote an experiment (E7) whose only purpose was to
-measure that constant, and the measurement contradicted the text by six orders of magnitude on the
-finest grid. The text was rewritten to report the measurement. Where experiments are cheap and the
-norm is to measure a claimed constant rather than argue for it, a class of overclaims becomes data.
+converge, a table full of $10^{-14}$, a purpose-built measurement, a validator. Incident~7
+(Figure~\ref{fig:incidents}d) is the instructive one. The analysis section stated that the
+fixed-tolerance runs satisfy the solver hypothesis with a modest constant; the agent wrote an
+experiment whose only purpose was to measure that constant, and the measurement contradicted the
+text by two orders of magnitude on the finest grid. The text was rewritten to report the
+measurement. Where experiments are cheap and claimed constants are measured rather than argued
+for, a class of overclaims becomes data.
 
 \paragraph{What the agent's cross-checks caught}
 Incidents 2, 6, 8 and 9 were caught because the agent had produced two things that had to agree
-and did not: four error measures of which one behaved differently, a comparison whose magnitude
-called for a sanity check at a shorter horizon, a fit whose value contradicted the visible slope,
-and a sentence in the introduction that the methods section did not support. These are the same
-habit that produced the central theorem (Section~\ref{sec:trajectory}): redundancy that the agent is
-required to reconcile.
+and did not: four error measures of which one behaved differently (Figure~\ref{fig:incidents}a),
+a comparison whose magnitude called for a check at a shorter horizon, a fit that contradicted the
+visible slope, and a sentence the methods section did not support. This is the habit that produced
+the central theorem: redundancy the agent is required to reconcile.
 
 \paragraph{What only the human caught}
 Incidents 1 and 4, and the decision in Incident 3, needed a person. Incident 1 is a judgment of
 quality that no validator expressed and the agent did not have: the manuscript satisfied every check
-and was bad. Incident 3 was a modelling decision (keep the benchmark as implemented and stop at
-$T=0.5$, or change the joint model) that the agent escalated with three options and a
-recommendation to change the model; the human chose to keep it, and the limit was documented.
-Incident 4 is the one we find most important. The agent had seen the non-monotone velocity curve,
-written a plausible and wrong explanation (a tolerance artefact of the harness), and moved on. The
-human's objection was not technical (``it looks strange''). The investigation it triggered found
-that the harness starts Newton at the exact solution and that the Jacobian is ill-conditioned by ten
-to thirteen orders, a fact about the benchmark that no validator could have known to check. Looking
-at figures is not a formality.
+and was bad. Incident 3 (Figure~\ref{fig:incidents}b) was a modelling decision, keep the benchmark
+as implemented and stop at $T=0.5$ or change the joint model, which the agent escalated with three
+options and a recommendation to change the model; the human chose to keep it, and the limit was
+documented. Incident 4 (Figure~\ref{fig:incidents}c) is the one we find most important. The agent
+had seen the non-monotone velocity curve, written a plausible and wrong explanation (a tolerance
+artefact of the harness), and moved on. The human's objection was not technical (``it looks
+strange''). The investigation it triggered found that the harness starts Newton at the exact
+solution and that the Jacobian is ill-conditioned by ten to thirteen orders, a fact about the
+benchmark that no validator could have known to check. Looking at figures is not a formality.
