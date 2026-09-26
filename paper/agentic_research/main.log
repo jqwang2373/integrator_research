@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  22 SEP 2026 00:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.12)  26 SEP 2026 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -444,46 +444,386 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks34
 \@floatcapt=\box59
 )
-(./stats.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.st
+y (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-c
+ommon.tex
+\pgfutil@everybye=\toks35
+\pgfutil@tempdima=\dimen259
+\pgfutil@tempdimb=\dimen260
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-l
+atex.def
+\pgfutil@abb=\box60
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.co
+de.tex
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2026-08-01 v3.1.12 (3.1.12)
+))
+Package: pgf 2026-08-01 v3.1.12 (3.1.12)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.st
+y
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.st
+y
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.
+code.tex
+Package: pgfsys 2026-08-01 v3.1.12 (3.1.12)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.c
+ode.tex
+\pgfkeys@pathtoks=\toks36
+\pgfkeys@temptoks=\toks37
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeysli
+braryfiltered.code.tex
+\pgfkeys@tmptoks=\toks38
+))
+\pgf@x=\dimen261
+\pgf@y=\dimen262
+\pgf@xa=\dimen263
+\pgf@ya=\dimen264
+\pgf@xb=\dimen265
+\pgf@yb=\dimen266
+\pgf@xc=\dimen267
+\pgf@yc=\dimen268
+\pgf@xd=\dimen269
+\pgf@yd=\dimen270
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count324
+\c@pgf@countb=\count325
+\c@pgf@countc=\count326
+\c@pgf@countd=\count327
+\t@pgf@toka=\toks39
+\t@pgf@tokb=\toks40
+\t@pgf@tokc=\toks41
+\pgf@sys@id@count=\count328
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2026-08-01 v3.1.12 (3.1.12)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-
+pdftex.def
+File: pgfsys-pdftex.def 2026-08-01 v3.1.12 (3.1.12)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-
+common-pdf.def
+File: pgfsys-common-pdf.def 2026-08-01 v3.1.12 (3.1.12)
+)))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyss
+oftpath.code.tex
+File: pgfsyssoftpath.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfsyssoftpath@smallbuffer@items=\count329
+\pgfsyssoftpath@bigbuffer@items=\count330
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysp
+rotocol.code.tex
+File: pgfsysprotocol.code.tex 2026-08-01 v3.1.12 (3.1.12)
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.
+code.tex
+Package: pgfcore 2026-08-01 v3.1.12 (3.1.12)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.t
+ex
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.co
+de.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.
+code.tex
+\pgfmath@dimen=\dimen271
+\pgfmath@count=\count331
+\pgfmath@box=\box61
+\pgfmath@toks=\toks42
+\pgfmath@stack@operand=\toks43
+\pgfmath@stack@operation=\toks44
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.basic.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.trigonometric.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.random.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.comparison.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.base.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.round.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.misc.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctio
+ns.integerarithmetics.code.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.co
+de.tex)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.c
+ode.tex
+\c@pgfmathroundto@lastzeros=\count332
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.te
+x)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
+oints.code.tex
+File: pgfcorepoints.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@picminx=\dimen272
+\pgf@picmaxx=\dimen273
+\pgf@picminy=\dimen274
+\pgf@picmaxy=\dimen275
+\pgf@pathminx=\dimen276
+\pgf@pathmaxx=\dimen277
+\pgf@pathminy=\dimen278
+\pgf@pathmaxy=\dimen279
+\pgf@xx=\dimen280
+\pgf@xy=\dimen281
+\pgf@yx=\dimen282
+\pgf@yy=\dimen283
+\pgf@zx=\dimen284
+\pgf@zy=\dimen285
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
+athconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@path@lastx=\dimen286
+\pgf@path@lasty=\dimen287
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
+athusage.code.tex
+File: pgfcorepathusage.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@shorten@end@additional=\dimen288
+\pgf@shorten@start@additional=\dimen289
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcores
+copes.code.tex
+File: pgfcorescopes.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count333
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreg
+raphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgflinewidth=\dimen290
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoret
+ransformations.code.tex
+File: pgfcoretransformations.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@pt@x=\dimen291
+\pgf@pt@y=\dimen292
+\pgf@pt@temp=\dimen293
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreq
+uick.code.tex
+File: pgfcorequick.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreo
+bjects.code.tex
+File: pgfcoreobjects.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
+athprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorea
+rrows.code.tex
+File: pgfcorearrows.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfarrowsep=\dimen294
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcores
+hade.code.tex
+File: pgfcoreshade.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@max=\dimen295
+\pgf@sys@shading@range@num=\count334
+\pgf@shadingcount=\count335
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorei
+mage.code.tex
+File: pgfcoreimage.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoree
+xternal.code.tex
+File: pgfcoreexternal.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfexternal@startupbox=\box65
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorel
+ayers.code.tex
+File: pgfcorelayers.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoret
+ransparency.code.tex
+File: pgfcoretransparency.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorep
+atterns.code.tex
+File: pgfcorepatterns.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorer
+df.code.tex
+File: pgfcorerdf.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulesh
+apes.code.tex
+File: pgfmoduleshapes.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfnodeparttextbox=\box66
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulepl
+ot.code.tex
+File: pgfmoduleplot.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp
+-version-0-65.sty
+Package: pgfcomp-version-0-65 2026-08-01 v3.1.12 (3.1.12)
+\pgf@nodesepstart=\dimen296
+\pgf@nodesepend=\dimen297
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp
+-version-1-18.sty
+Package: pgfcomp-version-1-18 2026-08-01 v3.1.12 (3.1.12)
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.c
+ode.tex))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.t
+ex))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.co
+de.tex
+Package: pgffor 2026-08-01 v3.1.12 (3.1.12)
+\pgffor@iter=\dimen298
+\pgffor@skip=\dimen299
+\pgffor@stack=\toks45
+\pgffor@toks=\toks46
+))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
+tikz.code.tex
+Package: tikz 2026-08-01 v3.1.12 (3.1.12)
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibrar
+yplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgf@plot@mark@count=\count336
+\pgfplotmarksize=\dimen300
+)
+\tikz@lastx=\dimen301
+\tikz@lasty=\dimen302
+\tikz@lastxsaved=\dimen303
+\tikz@lastysaved=\dimen304
+\tikz@lastmovetox=\dimen305
+\tikz@lastmovetoy=\dimen306
+\tikzleveldistance=\dimen307
+\tikzsiblingdistance=\dimen308
+\tikz@figbox=\box67
+\tikz@figbox@bg=\box68
+\tikz@tempbox=\box69
+\tikz@tempbox@bg=\box70
+\tikztreelevel=\count337
+\tikznumberofchildren=\count338
+\tikznumberofcurrentchild=\count339
+\tikz@fig@count=\count340
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulema
+trix.code.tex
+File: pgfmodulematrix.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfmatrixcurrentrow=\count341
+\pgfmatrixcurrentcolumn=\count342
+\pgf@matrix@numberofcolumns=\count343
+)
+\tikz@expandcount=\count344
+
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
+libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
+libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
+libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2026-08-01 v3.1.12 (3.1.12)
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibrar
+yarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2026-08-01 v3.1.12 (3.1.12)
+\pgfarrowinset=\dimen309
+\pgfarrowlength=\dimen310
+\pgfarrowwidth=\dimen311
+\pgfarrowlinewidth=\dimen312
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
+libraries/tikzlibrarydecorations.pathreplacing.code.tex
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/
+libraries/tikzlibrarydecorations.code.tex
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulede
+corations.code.tex
+\pgfdecoratedcompleteddistance=\dimen313
+\pgfdecoratedremainingdistance=\dimen314
+\pgfdecoratedinputsegmentcompleteddistance=\dimen315
+\pgfdecoratedinputsegmentremainingdistance=\dimen316
+\pgf@decorate@distancetomove=\dimen317
+\pgf@decorate@repeatstate=\count345
+\pgfdecorationsegmentamplitude=\dimen318
+\pgfdecorationsegmentlength=\dimen319
+)
+\tikz@lib@dec@box=\box71
+)
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decoratio
+ns/pgflibrarydecorations.pathreplacing.code.tex))
+(c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count346
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count347
+)
+(./figures/session_events.tex) (./stats.tex)
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdfte
 x.def
 File: l3backend-pdftex.def 2026-07-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count324
+\l__color_backend_stack_int=\count348
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen259
-\scratchbox=\box60
-\nofMPsegments=\count326
-\nofMParguments=\count327
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen260
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count349
+\scratchdimen=\dimen320
+\scratchbox=\box72
+\nofMPsegments=\count350
+\nofMParguments=\count351
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count352
+\MPscratchDim=\dimen321
+\MPnumerator=\count353
+\makeMPintoPDFobject=\count354
+\everyMPtoPDFconversion=\toks48
 )
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-bas
 e.sty
@@ -534,18 +874,18 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 40.
+Package hyperref Info: Link coloring ON on input line 47.
 (./main.out) (./main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
+\@outlinefile=\write4
+\openout4 = `main.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 40.
-Package microtype Info: Applying patch `item' on input line 40.
-Package microtype Info: Applying patch `toc' on input line 40.
-Package microtype Info: Applying patch `eqnum' on input line 40.
-Package microtype Info: Applying patch `footnote' on input line 40.
-Package microtype Info: Applying patch `verbatim' on input line 40.
-LaTeX Info: Redefining \microtypesetup on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 47.
+Package microtype Info: Applying patch `item' on input line 47.
+Package microtype Info: Applying patch `toc' on input line 47.
+Package microtype Info: Applying patch `eqnum' on input line 47.
+Package microtype Info: Applying patch `footnote' on input line 47.
+Package microtype Info: Applying patch `verbatim' on input line 47.
+LaTeX Info: Redefining \microtypesetup on input line 47.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -564,14 +904,14 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 41
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 48
 .
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 12.0pt on input line 41.
+(Font)              scaled to size 12.0pt on input line 48.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -589,23 +929,18 @@ ers/jingquanw/texlive/2026/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}
 
 
 ]) (./sections/02_related.tex) (./sections/03_problem.tex
-<figures/fig_problem.png, id=138, 504.2475pt x 178.3755pt>
-File: figures/fig_problem.png Graphic file (type png)
-<use figures/fig_problem.png>
-Package pdftex.def Info: figures/fig_problem.png  used on input line 6.
-(pdftex.def)             Requested size: 455.24411pt x 161.04816pt.
-
+(./figures/mechanism.tikz
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 14
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
 .
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -614,7 +949,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
 
 
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -622,13 +957,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (c:/Users/jingquanw/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+))
+<figures/fig_convergence.pdf, id=141, 133.6995pt x 133.6995pt>
+File: figures/fig_convergence.pdf Graphic file (type pdf)
+<use figures/fig_convergence.pdf>
+Package pdftex.def Info: figures/fig_convergence.pdf  used on input line 11.
+(pdftex.def)             Requested size: 133.69916pt x 133.69916pt.
+
+(./figures/identity.tikz) [2]) (./sections/04_system.tex
+(./figures/process.tikz
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 7.0pt on input line 7.
 )
-[2]) (./sections/04_system.tex
-<figures/fig_process.png, id=206, 411.939pt x 167.2065pt>
-File: figures/fig_process.png Graphic file (type png)
-<use figures/fig_process.png>
-Package pdftex.def Info: figures/fig_process.png  used on input line 6.
-(pdftex.def)             Requested size: 455.24411pt x 184.78241pt.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 24.
 
@@ -642,7 +982,7 @@ Underfull \hbox (badness 2237) in paragraph at lines 24--32
 \T1/ptm/m/n/10.95 (+20) sis about the method got its own di-rec-tory
  []
 
-[3 <./figures/fig_problem.png>]
+[3 <./figures/fig_convergence.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--57
  []\T1/ptm/b/n/10.95 (+20) Proof sand-box[] \T1/ptm/m/n/10.95 (+20) The anal-y-
 sis lives in a
@@ -658,41 +998,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--76
  []\T1/ptm/b/n/10.95 (+20) Command and au-tho-riza-tion bound-aries[]
  []
 
-[4 <./figures/fig_process.png>]) (./sections/05_trajectory.tex
-<figures/fig_tree.png, id=237, 497.6775pt x 266.742pt>
-File: figures/fig_tree.png Graphic file (type png)
-<use figures/fig_tree.png>
-Package pdftex.def Info: figures/fig_tree.png  used on input line 6.
-(pdftex.def)             Requested size: 455.24411pt x 244.00548pt.
+[4]) (./sections/05_trajectory.tex
+<figures/fig_tree.pdf, id=259, 455.30101pt x 260.17201pt>
+File: figures/fig_tree.pdf Graphic file (type pdf)
+<use figures/fig_tree.pdf>
+Package pdftex.def Info: figures/fig_tree.pdf  used on input line 6.
+(pdftex.def)             Requested size: 455.24411pt x 260.14752pt.
+) (./sections/06_incidents.tex [5]
+<figures/fig_incidents.pdf, id=283, 455.30101pt x 144.54pt>
+File: figures/fig_incidents.pdf Graphic file (type pdf)
+<use figures/fig_incidents.pdf>
+Package pdftex.def Info: figures/fig_incidents.pdf  used on input line 38.
+(pdftex.def)             Requested size: 455.24411pt x 144.52638pt.
 )
-(./sections/06_incidents.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5]
-<figures/fig_incidents.png, id=260, 500.9625pt x 158.0085pt>
-File: figures/fig_incidents.png Graphic file (type png)
-<use figures/fig_incidents.png>
-Package pdftex.def Info: figures/fig_incidents.png  used on input line 38.
-(pdftex.def)             Requested size: 455.24411pt x 143.59505pt.
+(./sections/07_quant.tex [6 <./figures/fig_tree.pdf>]
+<figures/fig_session.pdf, id=318, 455.30101pt x 155.38051pt>
+File: figures/fig_session.pdf Graphic file (type pdf)
+<use figures/fig_session.pdf>
+Package pdftex.def Info: figures/fig_session.pdf  used on input line 6.
+(pdftex.def)             Requested size: 455.2999pt x 155.38011pt.
 )
-(./sections/07_quant.tex [6 <./figures/fig_tree.png>]
-<figures/fig_session.png, id=276, 490.122pt x 197.4285pt>
-File: figures/fig_session.png Graphic file (type png)
-<use figures/fig_session.png>
-Package pdftex.def Info: figures/fig_session.png  used on input line 6.
-(pdftex.def)             Requested size: 455.24411pt x 183.38669pt.
- [7 <./figures/fig_incidents.png>]) (./sections/08_discussion.tex) (./sections/
-09_conclusion.tex)
-(./sections/10_limitations.tex) (./sections/11_ethics.tex [8 <./figures/fig_ses
-sion.png>]) (./main.bbl
+(./sections/08_discussion.tex [7 <./figures/fig_incidents.pdf>])
+(./sections/09_conclusion.tex) (./sections/10_limitations.tex)
+(./sections/11_ethics.tex [8 <./figures/fig_session.pdf>]) (./main.bbl
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 10.0pt on input line 7.
- [9]
+
 Underfull \hbox (badness 2435) in paragraph at lines 74--80
 \T1/ptm/m/n/10 (+20) Tao Tu, Anil Palepu, Petar Sirkovic, Ar-tiom
  []
 
-
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 154--161
 []\T1/ptm/m/n/10 (+20) Bernardino Romera-Paredes, Mo-ham-madamin
  []
@@ -763,13 +1099,11 @@ Underfull \hbox (badness 4001) in paragraph at lines 103--104
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 129--147
+Underfull \hbox (badness 1062) in paragraph at lines 129--148
 \T1/ptm/m/n/10.95 (+20) lo-gin), lightly para-phrased from Chi-nese and
  []
 
-) [11] [12
-
-] [13] (./main.aux)
+) [11] [12] [13] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-07-20>
@@ -778,13 +1112,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 55896233B33334277407C1B89D68191A;2315.
  ) 
 Here is how much of TeX's memory you used:
- 15747 strings out of 467159
- 254396 string characters out of 5404997
- 762015 words of memory out of 5000000
- 44258 multiletter control sequences out of 15000+600000
- 689987 words of font info for 355 fonts, out of 8000000 for 9000
+ 27292 strings out of 467159
+ 517355 string characters out of 5404997
+ 986212 words of memory out of 5000000
+ 55519 multiletter control sequences out of 15000+600000
+ 697859 words of font info for 386 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,12n,93p,1272b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,12n,94p,1450b,1166s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/public/inconsolata/In
 consolata-zi4r.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/typ
@@ -805,10 +1139,10 @@ amsfonts/cm/cmsy8.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/u
 rw/times/utmb8a.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb><c:/Users/jingquanw/texlive/2026/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on main.pdf (13 pages, 802495 bytes).
+Output written on main.pdf (13 pages, 343288 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 450 compressed objects within 5 object streams
+ 589 PDF objects out of 1000 (max. 8388607)
+ 492 compressed objects within 5 object streams
  99 named destinations out of 1000 (max. 500000)
- 56458 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 65169 words of extra memory for PDF output out of 74296 (max. 10000000)
 

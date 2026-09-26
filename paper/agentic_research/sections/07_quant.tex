@@ -3,14 +3,10 @@
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_session.png}
-  \caption{The final session, from its transcript. Bars: agent tool calls per three hours. Ticks in
-  the strip: the \nHuman{} messages typed by the human. Numbered markers: milestones and the
-  human's interventions, keyed in the empty region of the plot and coloured by kind. The identity
-  was found within the first two hours (event~2); the rewrite (events 7--12) took about ten hours
-  of agent time and four human messages; the two remaining human judgments (13, 14) and the
-  request for this paper (15) came after the manuscript was delivered. The gaps are hours in which
-  the human was away and the agent idle.}
+  \includegraphics{figures/fig_session.pdf}
+  \caption{The final session, from its transcript. Bars: agent tool calls per three hours; ticks
+  in the strip: the \nHuman{} messages typed by the human; the axis is broken over the idle days
+  between 22 and 26 September. Numbered markers, coloured by kind: \sessionEvents.}
   \label{fig:session}
 \end{figure*}
 
@@ -26,7 +22,7 @@ and are documented by the version ledger and the dated logs.
 \paragraph{What the human said}
 Of the transcript's \nEntries{} user-role entries, \nHarness{} are harness-generated and
 \nShell{} are shell commands; \nHuman{} were typed by the human. They fall into six kinds (Appendix~\ref{app:messages}): goals (twelve), approvals of the agent's own proposals
-(nine), authorizations (three), decisions (two), judgments (four) and questions (six); the rest
+(nine), authorizations (three), decisions (two), judgments (five) and questions (six); the rest
 were acknowledgments. None contained a technical instruction about the method, the proofs or the
 experiments. The judgments produced Incidents 1 and 4, the layout overhaul of the manuscript and
 the redrawing of this paper's figures; the benchmark-horizon decision went against the agent's

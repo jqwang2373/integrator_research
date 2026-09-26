@@ -1,17 +1,17 @@
 {
- "human_messages": 39,
- "user_role_entries": 66,
+ "human_messages": 40,
+ "user_role_entries": 71,
  "shell_commands_typed": 2,
- "agent_turns": 2025,
- "tool_calls": 1308,
+ "agent_turns": 2070,
+ "tool_calls": 1337,
  "categories": [
   [
    "inspect / edit",
-   353
+   360
   ],
   [
    "file read",
-   283
+   297
   ],
   [
    "validators",
@@ -19,7 +19,7 @@
   ],
   [
    "manuscript build",
-   137
+   143
   ],
   [
    "Lean",
@@ -35,7 +35,7 @@
   ],
   [
    "experiments",
-   64
+   65
   ],
   [
    "file toolsearch",
@@ -55,6 +55,10 @@
   ],
   [
    "file websearch",
+   1
+  ],
+  [
+   "file skill",
    1
   ]
  ],
@@ -97,6 +101,17 @@
   97.07,
   98.4,
   100.16,
-  107.31
+  107.31,
+  215.4
+ ],
+ "axis_segments_hours": [
+  [
+   -2.0,
+   111.0
+  ],
+  [
+   213.0,
+   219.0
+  ]
  ]
 }

@@ -3,15 +3,26 @@
 
 \begin{figure*}[t]
   \centering
-  \includegraphics[width=\textwidth]{figures/fig_problem.png}
-  \caption{The research problem and what came out of it. (a)~The benchmark: two rigid bodies, each
-  sliding and turning on an axis, with friction in both joints. A time integrator advances all
-  positions, rotations and velocities by a step $h$ while keeping the joints exactly closed.
-  (b)~The measured error of the final method on this benchmark at $t=0.5$, from the E1 result file:
-  the slope of $6$ on log axes is what ``sixth order'' means. (c)~The central result. Auditing the
-  manuscript against the code showed that the two described different equations; making them
-  agree revealed that the implemented stage system is satisfied exactly by the classical Gauss
-  collocation solution, which is why the order is six.}
+  \begin{subfigure}[b]{0.30\textwidth}\centering
+    \input{figures/mechanism.tikz}%
+    \caption{The benchmark mechanism}\label{fig:mechanism}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.30\textwidth}\centering
+    \includegraphics{figures/fig_convergence.pdf}
+    \caption{Measured convergence (E1)}\label{fig:convergence}
+  \end{subfigure}\hfill
+  \begin{subfigure}[b]{0.36\textwidth}\centering
+    \input{figures/identity.tikz}%
+    \caption{The identity found by the audit}\label{fig:identity}
+  \end{subfigure}
+  \caption{The research problem and what came out of it. (a)~Two rigid bodies, each sliding
+  ($s_i$) and turning ($\theta_i$) on an axis, with friction in both joints; a time integrator
+  advances all positions, rotations and velocities by a step $h$ while keeping the joints exactly
+  closed. (b)~The error of the final method on this benchmark at $t=0.5$, from the E1 result file:
+  each halving of $h$ divides the error by about $2^6=64$, which is what ``sixth order'' means.
+  (c)~The central result. Auditing the manuscript against the code showed that they described
+  different equations; making them agree revealed that the implemented system is satisfied
+  exactly by the classical Gauss collocation solution, which is why the order is six.}
   \label{fig:problem}
 \end{figure*}
 

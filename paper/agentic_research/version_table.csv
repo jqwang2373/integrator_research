@@ -47,4 +47,4 @@ version,dir,python_lines,result_files,phase,role
 46,v046_asme_four_examples_validation,428,5,validation anchors,kept
 47,v047_cylindrical_chain_pipeline,82279,292,validation anchors,kept
 48,v048_cross_paper_same_test_benchmarks,28742,228,validation anchors,infrastructure / diagnostic
-49,v049_paper_experiments,1315,34,paper experiments,kept
+49,v049_paper_experiments,1315,34,paper exp.,kept

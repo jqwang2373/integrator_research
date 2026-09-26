@@ -18,6 +18,13 @@
 \usepackage{tabularx}
 \usepackage{placeins}
 \usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc,arrows.meta,decorations.pathreplacing}
+\usepackage{subcaption}
+\captionsetup[sub]{font=footnotesize,skip=4pt}
+\definecolor{vizblue}{HTML}{2A78D6}\definecolor{vizorange}{HTML}{EB6834}\definecolor{vizaqua}{HTML}{1BAF7A}
+\definecolor{vizred}{HTML}{E34948}\definecolor{vizviolet}{HTML}{4A3AA7}\definecolor{inkgray}{HTML}{52514E}
+\IfFileExists{figures/session_events.tex}{\input{figures/session_events.tex}}{\providecommand{\sessionEvents}{}}
 \usepackage{xcolor}
 \newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}

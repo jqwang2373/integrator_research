@@ -1,0 +1,11 @@
+% The identity found by auditing the manuscript against the code.  Static TikZ.
+\begin{tikzpicture}[font=\scriptsize, >={Stealth[length=3pt]},
+  box/.style={draw, rounded corners=2pt, line width=0.7pt, align=center, inner sep=3pt, text width=2.05cm, minimum height=1.55cm}]
+  \node[box, draw=vizred, fill=vizred!7, anchor=north] (m) at (0,0) {\textbf{manuscript said}\\[1pt] body-level collocation rows for position and rotation};
+  \node[box, draw=vizblue, fill=vizblue!7, anchor=north] (c) at (2.6,0) {\textbf{code solved}\\[1pt] joint-coordinate rows; constraints at three levels; Newton--Euler; 132 rows};
+  \node[box, draw=vizaqua!70!black, fill=vizaqua!9, text width=4.6cm, minimum height=0pt, anchor=north] (f) at (1.3,-2.45)
+    {\textbf{found: an exact identity}\\[1pt] the reduced Gauss stage, lifted to absolute coordinates, satisfies all 132 rows: $F_h(Z_G)=0$. The method is classical Gauss collocation in disguise, its sixth order follows from known theory, and 57 Lean theorems check the algebra.};
+  \draw[->, inkgray, line width=0.6pt] (m.south) -- (m.south |- f.north);
+  \draw[->, inkgray, line width=0.6pt] (c.south) -- (c.south |- f.north);
+  \node[inkgray, font=\scriptsize\itshape, align=center, text width=2cm] at (1.3,-2.0) {audit: make them\\ agree, row by row};
+\end{tikzpicture}%

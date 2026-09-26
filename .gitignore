@@ -19,3 +19,4 @@ validation/legacy_drafts/*.out
 # meta-paper build byproducts (main.log, main.bbl and main.pdf stay tracked)
 paper/agentic_research/latexmk.log
 paper/agentic_research/main.blg
+paper/agentic_research/_probe/

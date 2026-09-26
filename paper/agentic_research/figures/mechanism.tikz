@@ -1,0 +1,31 @@
+% The benchmark mechanism: body 0 slides and turns on a fixed axis; body 1 slides and turns on an
+% axis carried by body 0.  Static TikZ.  Labels are placed in world coordinates, outside the rotated scopes.
+\begin{tikzpicture}[x=0.73cm, y=0.73cm, font=\scriptsize, >={Stealth[length=3pt]}, line cap=round, line join=round]
+  \begin{scope}[rotate=18]
+    % ground axis with hatching below
+    \fill[gray!30, rounded corners=1.2pt] (-0.2,-0.07) rectangle (4.9,0.07);
+    \draw[gray!65, line width=0.4pt, rounded corners=1.2pt] (-0.2,-0.07) rectangle (4.9,0.07);
+    \foreach \x in {0.1,0.5,...,4.7} { \draw[gray!60, line width=0.4pt] (\x,-0.07) -- (\x-0.13,-0.28); }
+    % body 0
+    \fill[vizblue!14, rounded corners=1.5pt] (1.25,-0.33) rectangle (2.75,0.33);
+    \draw[vizblue, line width=0.7pt, rounded corners=1.5pt] (1.25,-0.33) rectangle (2.75,0.33);
+    \draw[<->, vizblue, line width=0.6pt] (1.25,-0.6) -- (2.75,-0.6);
+    \node[inkgray, below=0pt] at (2.0,-0.6) {$s_0$};
+    \draw[->, vizblue, line width=0.6pt] (0.75,0.36) arc[start angle=90, end angle=-160, x radius=0.11, y radius=0.36];
+    \node[inkgray, left=1pt] at (0.62,0.05) {$\theta_0$};
+    % second axis, carried by body 0
+    \begin{scope}[shift={(2.0,0.33)}, rotate=62]
+      \fill[vizorange!40, rounded corners=1pt] (-0.1,-0.05) rectangle (2.55,0.05);
+      \draw[vizorange!80!black, line width=0.4pt, rounded corners=1pt] (-0.1,-0.05) rectangle (2.55,0.05);
+      \fill[vizaqua!14, rounded corners=1.5pt] (1.05,-0.28) rectangle (2.1,0.28);
+      \draw[vizaqua!70!black, line width=0.7pt, rounded corners=1.5pt] (1.05,-0.28) rectangle (2.1,0.28);
+      \draw[<->, vizaqua!70!black, line width=0.6pt] (1.05,-0.52) -- (2.1,-0.52);
+      \node[inkgray, left=0pt] at (1.6,-0.52) {$s_1$};
+      \draw[->, vizaqua!70!black, line width=0.6pt] (0.55,0.3) arc[start angle=90, end angle=-160, x radius=0.1, y radius=0.3];
+      \node[inkgray, right=0pt] at (0.62,0.02) {$\theta_1$};
+    \end{scope}
+  \end{scope}
+  \node[inkgray, anchor=south west] at (3.15,1.3) {ground axis, fixed};
+  \node[inkgray, anchor=north, align=center] at (2.2,-0.55) {body 0: slides ($s_0$) and turns ($\theta_0$)\\ on the ground axis};
+  \node[inkgray, anchor=west, align=left] at (2.95,2.55) {body 1: slides ($s_1$)\\ and turns ($\theta_1$) on an\\ axis carried by body 0};
+\end{tikzpicture}%
